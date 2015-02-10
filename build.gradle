@@ -25,6 +25,7 @@ repositories {
     mavenLocal()
     mavenCentral()
 
+    // FIXME -- 3rd-party repository for org.netbeans.external:AbsoluteLayout:RELEASE701
     maven {
         url 'http://bits.netbeans.org/maven2/'
     }
