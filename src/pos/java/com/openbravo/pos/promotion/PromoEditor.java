@@ -38,7 +38,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Escartin Aur√(c)lien aurelien.escartin@gmail.com
+ * @author Escartin Aur√É(c)lien aurelien.escartin@gmail.com
  */
 public class PromoEditor extends JPanel implements EditorRecord {
 

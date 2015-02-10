@@ -202,10 +202,10 @@ public class PaymentGatewayCaixa implements PaymentGateway {
                                 payinfo.paymentError(AppLocal.getIntString("message.paymentnotauthorised"), "Card date expired");
                                 break;
                             case "0102":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta en excepción transitoria o bajo sospecha de fraude.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta en excepciÃ³n transitoria o bajo sospecha de fraude.");
                                 break;
                             case "0104":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Operación no permitida para esa tarjeta o terminal.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "OperaciÃ³n no permitida para esa tarjeta o terminal.");
                                 break;
                             case "0116":
                                 payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Disponible insuficiente.");
@@ -229,7 +229,7 @@ public class PaymentGatewayCaixa implements PaymentGateway {
                                 payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Expiry date invalid.");
                                 break;
                             case "0202":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta en excepción transitoria o bajo sospecha de fraude con retirada de tarjeta.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta en excepciÃ³n transitoria o bajo sospecha de fraude con retirada de tarjeta.");
                                 break;
                             case "0904":
                                 payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Comercio no registrado en FUC.");
@@ -250,10 +250,10 @@ public class PaymentGatewayCaixa implements PaymentGateway {
                                 payinfo.paymentError(AppLocal.getIntString("message.paymentnotauthorised"), "Pedido repetido.");
                                 break;
                             case "SIS0078":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "M�(c)todo de pago no disponible para su tarjeta.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "MÃ(c)todo de pago no disponible para su tarjeta.");
                                 break;
                             case "SIS0093":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta no válida.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta no vÃ¡lida.");
                                 break;
                             case "SIS0094":
                                 payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Error en la llamada al MPI sin controlar.");
