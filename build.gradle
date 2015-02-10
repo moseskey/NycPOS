@@ -19,7 +19,7 @@ apply plugin: 'cobertura'
 version         = '0.1'
 group           = 'io.knq.NycPOS'
 description     = 'NycPOS'
-mainClassName   = 'io.knq.NycPOS.NycPOS'
+mainClassName   = 'com.openbravo.pos.config.JFrmConfig'
 
 repositories {
     mavenLocal()
