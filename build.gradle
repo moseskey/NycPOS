@@ -50,13 +50,13 @@ dependencies {
     compile 'org.swinglabs:swing-layout:1.0.3'
     compile 'org.swinglabs.swingx:swingx-all:1.6.4'
 
-    // uses the 3rd-party maven repo
+    // uses the 3rd-party maven repo listed above -- FIXME
     compile 'org.netbeans.external:AbsoluteLayout:RELEASE701'
 
     // manually installed jars
+    compile 'io.knq.beanshell2:bsh:2.1.8'
     compile 'io.knq.javapos:javapos:1.14.0'
     //compile 'io.knq.javapos:javapos-controls:1.14.0'
-    compile 'io.knq.beanshell2:bsh:2.1.8'
 }
 
 jar {
