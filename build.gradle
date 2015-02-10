@@ -46,18 +46,6 @@ jar {
     }
 }
 
-// setting the sourceSets for the main 'java' gradle project to point to the 'pos' project
-sourceSets {
-    main {
-        java {
-            srcDir 'src/pos'
-        }
-        resources {
-            srcDir 'src/pos-resources'
-        }
-    }
-}
-
 // simple divider ...
 project.ext.dv = "--------------------------------------------------------------------------------------------------------"
 
