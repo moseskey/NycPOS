@@ -100,3 +100,15 @@ test {
         }
     }
 }
+
+compileJava {
+    // original unicenta code is overriding deprecated APIs (what the f???)
+    // so toggle error output
+    options.compilerArgs << '-Xlint:deprecation'
+    options.compilerArgs << '-Xlint:unchecked'
+
+    // inject annotation processor to compiler
+    //options.compilerArgs << '-processorpath'
+    //options.compilerArgs << file('path/to/annotation-processor.jar')
+}
+
