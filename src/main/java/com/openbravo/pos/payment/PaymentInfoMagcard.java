@@ -350,8 +350,9 @@ public class PaymentInfoMagcard extends PaymentInfo {
         // hide start numbers
         if (m_sCardNumber.length() > 4) {
 
-            return m_sCardNumber.substring(0, m_sCardNumber.length()-4).replaceAll(".", "*") +
-                    m_sCardNumber.substring(m_sCardNumber.length() - 4);
+//            return m_sCardNumber.substring(0, m_sCardNumber.length() - 4).replaceAll(".", "*") +
+//                    m_sCardNumber.substring(m_sCardNumber.length() - 4);
+              return "**** **** **** " + m_sCardNumber.substring(m_sCardNumber.length() - 4);
         } else {
             return "**** **** **** ****";
         }
