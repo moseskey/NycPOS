@@ -23,15 +23,20 @@ mainClassName   = 'io.knq.NycPOS.NycPOS'
 
 repositories {
     mavenLocal()
-        mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
     //testCompile 'junit:junit:4.11'
     testCompile 'org.testng:testng:6.8.8'
 
-        // logging dependencies
-        compile 'org.slf4j:slf4j-simple:1.7.10'
+    // logging dependencies
+    compile 'org.slf4j:slf4j-simple:1.7.10'
+
+    // dependencies taken from unicenta source
+    //compile 'org.apache.directory.studio:org.dom4j.dom4j:1.6.1'
+
+    compile 'net.sf.jasperreports:jasperreports:4.5.1'
 }
 
 jar {
