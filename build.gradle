@@ -41,7 +41,12 @@ dependencies {
     compile 'org.swinglabs.swingx:swingx-all:1.6.4'
     compile 'net.sourceforge.javacsv:javacsv:2.0'
     compile 'commons-lang:commons-lang:2.4'
-    compile 'axis:axis-jaxrpc:1.4'
+    compile 'org.apache.axis:axis-jaxrpc:1.4'
+    compile 'net.sf.barcode4j:barcode4j:2.1'
+
+    // manually installed jars
+    compile 'io.knq.javapos:javapos:1.14.0'
+    compile 'io.knq.javapos:javapos-controls:1.14.0'
 }
 
 jar {
