@@ -57,6 +57,7 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
         }
 
         m_sDialogTicket = null;
+
         setVisible(true);
         return m_sDialogTicket;
     }
@@ -79,6 +80,8 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
         mydialog.initComponents();
 
         mydialog.jScrollPane1.getVerticalScrollBar().setPreferredSize(new Dimension(35, 35));
+        mydialog.jScrollPane1.getHorizontalScrollBar().setPreferredSize(new Dimension(25, 25));
+
 
         return mydialog;
     }
@@ -106,11 +109,12 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
             setFocusable(false);
             setRequestFocusEnabled(false);
             setMargin(new Insets(8, 14, 8, 14));
-            setFont(new java.awt.Font ("Dialog", 1, 16));
+            setFont(new java.awt.Font ("Dialog", 0, 14));
             setBackground(new java.awt.Color (220, 220, 220));
             addActionListener(new ActionListenerImpl());
 
             setText(ticket.getName());
+
         }
 
         private class ActionListenerImpl implements ActionListener {
@@ -147,15 +151,17 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
         m_jButtonCancel = new javax.swing.JButton();
 
         setTitle(AppLocal.getIntString("caption.tickets")); // NOI18N
-        setResizable(false);
+        setPreferredSize(new java.awt.Dimension(400, 100));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jPanel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPanel2.setMaximumSize(new java.awt.Dimension(600, 400));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         m_jtickets.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        m_jtickets.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         m_jtickets.setLayout(new java.awt.GridLayout(0, 1, 5, 5));
         jPanel2.add(m_jtickets, java.awt.BorderLayout.NORTH);
 
@@ -184,8 +190,8 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.SOUTH);
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-340)/2, (screenSize.height-335)/2, 340, 335);
+        setSize(new java.awt.Dimension(411, 335));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed

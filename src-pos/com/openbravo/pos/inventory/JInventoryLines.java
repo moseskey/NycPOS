@@ -315,6 +315,7 @@ public class JInventoryLines extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         m_tableinventory = new javax.swing.JTable();
 
+        setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setLayout(new java.awt.BorderLayout());
 
         jScrollPane1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N

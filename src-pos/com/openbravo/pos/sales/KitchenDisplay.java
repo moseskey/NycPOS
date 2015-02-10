@@ -45,7 +45,8 @@ public class KitchenDisplay {
             s=m_App.getSession();
             con=s.getConnection();
         }
-        catch (Exception e){System.out.print("No session or connection");
+        catch (Exception e){
+//            System.out.print("No session or connection");
         }
     }
 
@@ -68,7 +69,7 @@ public class KitchenDisplay {
             SQL = "INSERT INTO KITCHENDISPLAY (ID, ORDERTIME, PLACE, PICKUPID, PRODUCT, MULTIPLY, ATTRIBUTES) VALUES (?, ?, ?, ?, ?, ?, ?) ";
             pstmt=con.prepareStatement(SQL);
             pstmt.setString(1,ID);
-            pstmt.setString(2,dateFormat.format(date).toString());
+            pstmt.setString(2,dateFormat.format(date));
             pstmt.setString(3,table);
             pstmt.setString(4,pickupID);
             pstmt.setString(5,product);

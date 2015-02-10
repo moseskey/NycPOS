@@ -48,7 +48,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
     private DataLogicSystem dlSystem;
 
 // JG 16 May 12 use diamond inference
-    private Map<String, JPaymentInterface> payments = new HashMap<>();
+    private final Map<String, JPaymentInterface> payments = new HashMap<>();
     private String m_sTransactionID;
 
 
@@ -125,10 +125,10 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
         this.customerext = customerext;
 
-        setPrintSelected(!Boolean.valueOf(app.getProperties().getProperty("till.receiptprintoff")).booleanValue());
+        setPrintSelected(!Boolean.parseBoolean(app.getProperties().getProperty("till.receiptprintoff")));
         m_jButtonPrint.setSelected(printselected);
 
-        m_jTotalEuros.setText(Formats.CURRENCY.formatValue(new Double(m_dTotal)));
+        m_jTotalEuros.setText(Formats.CURRENCY.formatValue(m_dTotal));
 
         addTabs();
 
@@ -645,7 +645,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
     private void printState() {
 
-        m_jRemaininglEuros.setText(Formats.CURRENCY.formatValue(new Double(m_dTotal - m_aPaymentInfo.getTotal())));
+        m_jRemaininglEuros.setText(Formats.CURRENCY.formatValue(m_dTotal - m_aPaymentInfo.getTotal()));
         m_jButtonRemove.setEnabled(!m_aPaymentInfo.isEmpty());
         m_jTabPayment.setSelectedIndex(0); // selecciono el primero
         ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).activate(customerext, m_dTotal - m_aPaymentInfo.getTotal(), m_sTransactionID);
@@ -828,8 +828,8 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
         getContentPane().add(jPanel5, java.awt.BorderLayout.SOUTH);
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-672)/2, (screenSize.height-497)/2, 672, 497);
+        setSize(new java.awt.Dimension(672, 497));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void m_jButtonRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonRemoveActionPerformed
@@ -852,7 +852,10 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
     private void m_jTabPaymentStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_m_jTabPaymentStateChanged
 
         if (m_jTabPayment.getSelectedComponent() != null) {
-            ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).activate(customerext, m_dTotal - m_aPaymentInfo.getTotal(), m_sTransactionID);
+//            ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).activate(customerext, m_dTotal - m_aPaymentInfo.getTotal(), m_sTransactionID);
+            ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).activate(customerext,
+                    m_dTotal - m_aPaymentInfo.getTotal(),
+                    m_sTransactionID);
         }
 
     }//GEN-LAST:event_m_jTabPaymentStateChanged
@@ -860,9 +863,12 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
     private void m_jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonOKActionPerformed
 
         PaymentInfo returnPayment = ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).executePayment();
+
         if (returnPayment != null) {
+
             m_aPaymentInfo.add(returnPayment);
             accepted = true;
+
             dispose();
         }
 

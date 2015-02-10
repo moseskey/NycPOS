@@ -46,11 +46,11 @@ import javax.swing.SwingConstants;
  */
 public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInterface {
 
-    private JPaymentNotifier m_notifier;
+    private final JPaymentNotifier m_notifier;
 
     private double m_dPaid;
     private double m_dTotal;
-    private Boolean priceWith00;
+    private final Boolean priceWith00;
 
     /** Creates new form JPaymentCash
      * @param notifier
@@ -142,9 +142,9 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
         int iCompare = RoundUtils.compare(m_dPaid, m_dTotal);
 
-        m_jMoneyEuros.setText(Formats.CURRENCY.formatValue(new Double(m_dPaid)));
+        m_jMoneyEuros.setText(Formats.CURRENCY.formatValue(m_dPaid));
         m_jChangeEuros.setText(iCompare > 0
-                ? Formats.CURRENCY.formatValue(new Double(m_dPaid - m_dTotal))
+                ? Formats.CURRENCY.formatValue(m_dPaid - m_dTotal)
                 : null);
 
         m_notifier.setStatus(m_dPaid > 0.0, iCompare >= 0);
@@ -162,9 +162,9 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
      */
     public class ScriptPaymentCash {
 
-        private DataLogicSystem dlSystem;
-        private ThumbNailBuilder tnbbutton;
-        private AppConfig m_config;
+        private final DataLogicSystem dlSystem;
+        private final ThumbNailBuilder tnbbutton;
+        private final AppConfig m_config;
 
         /**
          *
@@ -212,7 +212,7 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
 
     private class AddAmount implements ActionListener {
-        private double amount;
+        private final double amount;
         public AddAmount(double amount) {
             this.amount = amount;
         }
@@ -260,7 +260,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
         jPanel4.setPreferredSize(new java.awt.Dimension(0, 70));
         jPanel4.setLayout(null);
 
-        m_jChangeEuros.setBackground(new java.awt.Color(255, 255, 255));
         m_jChangeEuros.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         m_jChangeEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         m_jChangeEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
@@ -281,7 +280,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
         jPanel4.add(jLabel8);
         jLabel8.setBounds(10, 4, 100, 30);
 
-        m_jMoneyEuros.setBackground(new java.awt.Color(204, 255, 51));
         m_jMoneyEuros.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         m_jMoneyEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         m_jMoneyEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));

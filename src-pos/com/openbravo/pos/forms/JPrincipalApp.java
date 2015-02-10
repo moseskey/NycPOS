@@ -461,8 +461,8 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
     @Override
     public void showTask(String sTaskClass) {
 
-        customerInfo = new CustomerInfo("1234");
-        customerInfo.setName("Hugh Test ");
+        customerInfo = new CustomerInfo("");
+        customerInfo.setName("");
 
         m_appview.waitCursorBegin();
 

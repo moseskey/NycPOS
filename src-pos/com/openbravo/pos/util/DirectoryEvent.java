@@ -44,6 +44,7 @@ public class DirectoryEvent implements ActionListener {
 
         m_fc.resetChoosableFileFilters();
         m_fc.addChoosableFileFilter(new FileFilter() {
+            @Override
             public boolean accept(File f) {
                 if (f.isDirectory()) {
                     return true;
@@ -55,6 +56,7 @@ public class DirectoryEvent implements ActionListener {
                         || filename.endsWith(".ZIP");
                 }
             }
+            @Override
             public String getDescription() {
                 return AppLocal.getIntString("filter.dbdriverlib");
             }
@@ -62,6 +64,7 @@ public class DirectoryEvent implements ActionListener {
         m_fc.setFileSelectionMode(JFileChooser.FILES_ONLY );
     }
 
+    @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
         m_fc.setCurrentDirectory(new File(m_jTxtField.getText()));

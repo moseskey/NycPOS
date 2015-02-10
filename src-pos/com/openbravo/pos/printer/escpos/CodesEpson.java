@@ -36,20 +36,12 @@ public class CodesEpson extends Codes {
      *
      */
     public static final byte[] BOLD_SET = {0x1B, 0x45, 0x01};
-
-    /**
-     *
-     */
     public static final byte[] BOLD_RESET = {0x1B, 0x45, 0x00};
 
     /**
      *
      */
     public static final byte[] UNDERLINE_SET = {0x1B, 0x2D, 0x01};
-
-    /**
-     *
-     */
     public static final byte[] UNDERLINE_RESET = {0x1B, 0x2D, 0x00};
 
     private static final byte[] OPEN_DRAWER = {0x1B, 0x70, 0x00, 0x32, -0x06};

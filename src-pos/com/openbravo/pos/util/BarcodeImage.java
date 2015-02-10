@@ -32,16 +32,6 @@ import org.krysalis.barcode4j.output.java2d.Java2DCanvasProvider;
 public class BarcodeImage {
 
 
-//    * org.krysalis.barcode4j.impl.codabar.CodabarBean
-//    * org.krysalis.barcode4j.impl.code128.Code128Bean
-//    * org.krysalis.barcode4j.impl.code39.Code39Bean
-//    * org.krysalis.barcode4j.impl.int2of5.Interleaved2Of5Bean
-//    * org.krysalis.barcode4j.impl.postnet.POSTNETBean
-//    * org.krysalis.barcode4j.impl.upcean.EAN13Bean
-//    * org.krysalis.barcode4j.impl.upcean.EAN8Bean
-//    * org.krysalis.barcode4j.impl.upcean.UPCABean
-//    * org.krysalis.barcode4j.impl.upcean.UPCEBean
-
     /**
      *
      * @param value

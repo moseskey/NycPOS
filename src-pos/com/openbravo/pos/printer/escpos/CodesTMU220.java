@@ -21,10 +21,7 @@ package com.openbravo.pos.printer.escpos;
 
 import java.awt.image.BufferedImage;
 
-/**
- *
- * @author JG uniCenta
- */
+
 public class CodesTMU220 extends Codes {
 
     private static final byte[] INITSEQUENCE = {};

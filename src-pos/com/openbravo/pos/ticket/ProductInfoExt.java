@@ -148,51 +148,47 @@ public class ProductInfoExt {
      */
         protected boolean m_bWarranty;
 
+    /**
+    * JG 7 June 2014 Stock Units
+    */
+        public double m_dStockUnits;
 
     /*
      * Creates new ProductInfo
      */
 
-    /**
-     *
-     */
-
     public ProductInfoExt() {
-        m_ID = null;
-        m_sRef = "0000";
-        m_sCode = "0000";
-        m_sName = null;
-        m_bCom = false;
-        m_bScale = false;
-        categoryid = null;
-        taxcategoryid = null;
-        attributesetid = null;
-        m_dPriceBuy = 0.0;
-        m_dPriceSell = 0.0;
-        m_stockCost = 0.0;
-        m_stockVolume = 0.0;
-        m_Image = null;
+        m_ID = null;                    //1
+        m_sRef = "0000";                //2
+        m_sCode = "0000";               //3
+        m_sName = null;                 //4
+        m_bCom = false;                 //5
+        m_bScale = false;               //6
+        categoryid = null;              //7
+        taxcategoryid = null;           //8
+        attributesetid = null;          //9
+        m_dPriceBuy = 0.0;              //10
+        m_dPriceSell = 0.0;             //11
+        m_stockCost = 0.0;              //12
+        m_stockVolume = 0.0;            //13
+        m_Image = null;                 //14
 // ADDED JG 20.12.10 - Kitchen Print
-        m_bKitchen = false;
-// **
+        m_bKitchen = false;             //15
 // ADDED JG 25.06.11 - Is Service
-        m_bService = false;
-// **
+        m_bService = false;             //16
 // ADDED JG 13 Nov 12 - Display
-        m_sDisplay = null;
-
-        attributes = new Properties();
-
+        m_sDisplay = null;              //17
+        attributes = new Properties();  //18
 // ADDED JDL 19.12.12 - Variable price product
-        m_bVprice = false;
-//
+        m_bVprice = false;              //19
 // ADDED JDL 09.02.13
-        m_bVerpatrib = false;
+        m_bVerpatrib = false;           //20
 // ADDED JDL 10.04.13
-        m_sTextTip = null;
+        m_sTextTip = null;              //21
 // ADDED JDL 25.05.13
-        m_bWarranty = false;
-
+        m_bWarranty = false;            //22
+// ADDED JG 7 June 2014 - Display
+        m_dStockUnits = 0.0;              //23
 
     }
 
@@ -350,7 +346,6 @@ public class ProductInfoExt {
 // **
 
 // ADDED JDL 19.12.12 - Variable price product
-
     /**
      *
      * @return
@@ -360,7 +355,6 @@ public class ProductInfoExt {
     }
 
     // ADDED JDL 09.02.13 - for Chris
-
     /**
      *
      * @return
@@ -471,6 +465,19 @@ public class ProductInfoExt {
      */
     public final void setPriceSell(double dPrice) {
         m_dPriceSell = dPrice;
+    }
+
+    /**
+     * JG 7 June 2014
+     *
+     * @return
+     */
+    public final Double getStockUnits() {
+        return m_dStockUnits;
+
+    }
+    public final void setStockUnits(double dStockUnits) {
+        m_dStockUnits = dStockUnits;
     }
 
     /**
@@ -604,28 +611,30 @@ public class ProductInfoExt {
                 product.m_sRef = dr.getString(2);
                 product.m_sCode = dr.getString(3);
                 product.m_sName = dr.getString(4);
-                product.m_bCom = dr.getBoolean(5).booleanValue();
-                product.m_bScale = dr.getBoolean(6).booleanValue();
-                product.m_dPriceBuy = dr.getDouble(7).doubleValue();
-                product.m_dPriceSell = dr.getDouble(8).doubleValue();
+                product.m_bCom = dr.getBoolean(5);
+                product.m_bScale = dr.getBoolean(6);
+                product.m_dPriceBuy = dr.getDouble(7);
+                product.m_dPriceSell = dr.getDouble(8);
                 product.taxcategoryid = dr.getString(9);
                 product.categoryid = dr.getString(10);
                 product.attributesetid = dr.getString(11);
                 product.m_Image = ImageUtils.readImage(dr.getBytes(12));
                 product.attributes = ImageUtils.readProperties(dr.getBytes(13));
-                product.m_bKitchen = dr.getBoolean(14).booleanValue();
-                product.m_bService = dr.getBoolean(15).booleanValue();
+                product.m_bKitchen = dr.getBoolean(14);
+                product.m_bService = dr.getBoolean(15);
 // ADDED JG 13 Nov 12 - Display
                 product.m_sDisplay = dr.getString(16);
 // ADDED JDL 19.12.12
-                product.m_bVprice = dr.getBoolean(17).booleanValue();
+                product.m_bVprice = dr.getBoolean(17);
 // ADDED JDL 09.0.2.13 for Chris
-                product.m_bVerpatrib = dr.getBoolean(18).booleanValue();
+                product.m_bVerpatrib = dr.getBoolean(18);
 // ADDED JDL 09.04.13
                 product.m_sTextTip = dr.getString(19);
-
 // ADDED JDL 25.04.13
-                product.m_bWarranty = dr.getBoolean(20).booleanValue();
+                product.m_bWarranty = dr.getBoolean(20);
+// JG July 2014 - added for Stock count
+                product.m_dStockUnits = dr.getDouble(21);
+
                 return product;
             }
         };

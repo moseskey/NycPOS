@@ -30,8 +30,9 @@ report.setSentence("SELECT " +
             "taxes.NAME AS TAXNAME, " +
             "products.REFERENCE, " +
             "products.NAME, " +
+            "PRODUCTS.PRICESELL, " +
             "Sum(ticketlines.UNITS) AS UNITS, " +
-            "Sum(TICKETLINES.UNITS*TICKETLINES.PRICE) AS TOTAL " +
+            "Sum((TICKETLINES.PRICE+(TICKETLINES.PRICE*TAXES.RATE))*TICKETLINES.UNITS) AS TOTAL " +
         "FROM (taxes INNER JOIN " +
             "((products INNER JOIN " +
             "(TICKETS INNER JOIN ticketlines ON TICKETS.ID = ticketlines.TICKET) " +
@@ -39,9 +40,8 @@ report.setSentence("SELECT " +
             "INNER JOIN receipts ON TICKETS.ID = receipts.ID) " +
             "ON taxes.ID = ticketlines.TAXID) INNER JOIN closedcash " +
             "ON receipts.MONEY = closedcash.MONEY " +
-//        "WHERE (CLOSEDCASH.HOST = 'KIOSK') AND ?(QBF_FILTER) " +
         "WHERE ?(QBF_FILTER) " +
-        "GROUP BY CLOSEDCASH.HOST, CLOSEDCASH.DATESTART, CLOSEDCASH.DATEEND, taxes.NAME, products.REFERENCE, products.NAME " +
+        "GROUP BY CLOSEDCASH.HOST, CLOSEDCASH.DATESTART, CLOSEDCASH.DATEEND, taxes.NAME, products.REFERENCE, products.NAME, PRODUCTS.PRICESELL " +
         "ORDER BY CLOSEDCASH.HOST, taxes.NAME, products.NAME");
 
 report.addParameter("CLOSEDCASH.DATEEND");
@@ -61,6 +61,7 @@ report.addField("DATEEND", com.openbravo.data.loader.Datas.TIMESTAMP);
 report.addField("TAXNAME", com.openbravo.data.loader.Datas.STRING);
 report.addField("REFERENCE", com.openbravo.data.loader.Datas.STRING);
 report.addField("NAME", com.openbravo.data.loader.Datas.STRING);
+report.addField("PRICE", com.openbravo.data.loader.Datas.DOUBLE);
 report.addField("UNITS", com.openbravo.data.loader.Datas.DOUBLE);
 report.addField("TOTAL", com.openbravo.data.loader.Datas.DOUBLE);
 

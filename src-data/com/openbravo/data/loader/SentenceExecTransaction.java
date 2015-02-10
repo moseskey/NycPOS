@@ -54,6 +54,7 @@ public abstract class SentenceExecTransaction implements SentenceExec {
      * @return
      * @throws BasicException
      */
+    @Override
     public final int exec(Object... params) throws BasicException {
         return exec((Object) params);
     }
@@ -64,9 +65,11 @@ public abstract class SentenceExecTransaction implements SentenceExec {
      * @return
      * @throws BasicException
      */
+    @Override
     public final int exec(final Object params) throws BasicException {
 
         Transaction<Integer> t = new Transaction<Integer>(m_s) {
+            @Override
             public Integer transact() throws BasicException{
                 return execInTransaction(params);
             }

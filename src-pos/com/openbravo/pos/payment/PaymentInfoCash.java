@@ -135,10 +135,7 @@ public class PaymentInfoCash extends PaymentInfo {
      * @return
      */
     public boolean hasPrePay() {
-        if (prePayAmount > 0) {
-            return true;
-        }
-        return false;
+        return prePayAmount > 0;
     }
 
     /**
@@ -154,7 +151,7 @@ public class PaymentInfoCash extends PaymentInfo {
      * @return
      */
     public String printTendered() {
-       return Formats.CURRENCY.formatValue(new Double(m_dTendered));
+       return Formats.CURRENCY.formatValue(m_dTendered);
    }
 
     /**
@@ -162,7 +159,7 @@ public class PaymentInfoCash extends PaymentInfo {
      * @return
      */
     public String printPaid() {
-        return Formats.CURRENCY.formatValue(new Double(m_dPaid));
+        return Formats.CURRENCY.formatValue(m_dPaid);
     }
 
     /**

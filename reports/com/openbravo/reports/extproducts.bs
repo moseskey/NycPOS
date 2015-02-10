@@ -32,8 +32,7 @@ report.setSentence("SELECT " +
         "PRODUCTS.REFERENCE AS REFERENCE,  " +
         "PRODUCTS.NAME AS PRODUCT, " +
         "SUM(TICKETLINES.UNITS) AS UNIT,  " +
-        "SUM(TICKETLINES.UNITS * TICKETLINES.PRICE) AS TOTAL, " +
-        "SUM(TICKETLINES.UNITS * TICKETLINES.PRICE) / SUM(TICKETLINES.UNITS) AS MEANPRICE " +
+        "SUM(TICKETLINES.UNITS * TICKETLINES.PRICE) AS TOTAL " +
         "FROM TICKETS  " +
             "LEFT OUTER JOIN CUSTOMERS ON TICKETS.CUSTOMER = CUSTOMERS.ID, TICKETLINES " +
             "LEFT OUTER JOIN PRODUCTS ON TICKETLINES.PRODUCT = PRODUCTS.ID " +
@@ -71,7 +70,6 @@ report.addField("REFERENCE", com.openbravo.data.loader.Datas.STRING);
 report.addField("PRODUCT", com.openbravo.data.loader.Datas.STRING);
 report.addField("UNIT", com.openbravo.data.loader.Datas.DOUBLE);
 report.addField("TOTAL", com.openbravo.data.loader.Datas.DOUBLE);
-report.addField("MEANPRICE", com.openbravo.data.loader.Datas.DOUBLE);
 
 report;
 

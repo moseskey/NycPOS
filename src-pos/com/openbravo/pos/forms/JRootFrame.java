@@ -80,8 +80,6 @@ public class JRootFrame extends javax.swing.JFrame implements AppMessage {
                 this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/com/openbravo/images/favicon.png")));
             } catch (IOException e) {
             }
-// Title with John L's sub[dot] updates commented out by JG 23 Jul 13
-//            setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION+ " - " + AppLocal.APP_VERSIONJL + "-" + AppLocal.APP_VERSIONJLCORE);
 
             setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION);
             pack();

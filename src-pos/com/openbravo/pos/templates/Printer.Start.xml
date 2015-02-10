@@ -21,12 +21,17 @@
  -->
 
 <output>
-    <display animation="scroll">
+<!-- DISPLAY ANIMATION OPTIONS -->
+             <display animation="flyer">
+<!--            <display animation="scroll"> -->
+<!--            <display animation="blink"> -->
+<!--            <display animation="curtain"> -->
+<!--            <display animation="none"> -->
         <line>
             <text>uniCenta oPOS</text>
         </line>
         <line>
-            <text>   Touch Friendly Point Of Sale   </text>
+            <text>Point Of Sale</text>
         </line>
     </display>
 </output>

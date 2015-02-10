@@ -24,6 +24,7 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.forms.AppView;
 import java.awt.BorderLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -82,6 +83,7 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
      *
      * @return
      */
+// JG July 2014
     @Override
     public PaymentInfo executePayment() {
 
@@ -89,11 +91,26 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
 
         PaymentInfoMagcard payinfo = m_cardpanel.getPaymentInfoMagcard();
 
+// this msg shows but only after transaction state returned
+//        jlblMessage.setText("Processing Transaction " + payinfo.getTransactionID() + "\n Please Wait...");
+        revalidate();
+
+// Go to Payment gateway
         m_paymentgateway.execute(payinfo);
+
         if (payinfo.isPaymentOK()) {
+//            jlblMessage.setText("Transaction ID: " + payinfo.getTransactionID() + "APPROVED!");
+            JOptionPane.showMessageDialog(getRootPane(), "Transaction APPROVED!", "Card Payment",
+                    JOptionPane.PLAIN_MESSAGE);
+            revalidate();
             return payinfo;
         } else {
-            jlblMessage.setText(payinfo.getMessage());
+            if (!payinfo.isPaymentOK()) {
+                JOptionPane.showMessageDialog(getRootPane(),payinfo.getMessage(), "Error",
+                    JOptionPane.ERROR_MESSAGE);
+                jlblMessage.setText(payinfo.getMessage());
+                revalidate();
+            }
             return null;
         }
     }
@@ -124,7 +141,7 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jlblMessage = new javax.swing.JTextArea();
+        jlblMessage = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(300, 40));
         setPreferredSize(new java.awt.Dimension(300, 40));
@@ -134,14 +151,11 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
         jPanel1.setMinimumSize(new java.awt.Dimension(290, 35));
         jPanel1.setPreferredSize(new java.awt.Dimension(290, 35));
 
-        jlblMessage.setBackground(new java.awt.Color(224, 223, 227));
-        jlblMessage.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jlblMessage.setLineWrap(true);
-        jlblMessage.setWrapStyleWord(true);
-        jlblMessage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jlblMessage.setFocusable(false);
-        jlblMessage.setPreferredSize(new java.awt.Dimension(290, 37));
-        jlblMessage.setRequestFocusEnabled(false);
+        jlblMessage.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jlblMessage.setText("jLabel1");
+        jlblMessage.setMaximumSize(new java.awt.Dimension(46, 25));
+        jlblMessage.setMinimumSize(new java.awt.Dimension(46, 25));
+        jlblMessage.setPreferredSize(new java.awt.Dimension(46, 25));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -149,13 +163,14 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+                .addComponent(jlblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jlblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addGap(2, 2, 2)
+                .addComponent(jlblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -165,7 +180,7 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextArea jlblMessage;
+    private javax.swing.JLabel jlblMessage;
     // End of variables declaration//GEN-END:variables
 
 }

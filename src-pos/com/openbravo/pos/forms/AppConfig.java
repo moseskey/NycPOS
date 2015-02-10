@@ -269,6 +269,9 @@ public class AppConfig implements AppProperties {
 
         m_propsconfig.setProperty("machine.uniqueinstance", "false");
 
+//JG July 2014 - Thank you Ron Isaacson On-screen receipt defauls to 42 columns
+        m_propsconfig.setProperty("screen.receipt.columns", "42");
+
 
     }
 }

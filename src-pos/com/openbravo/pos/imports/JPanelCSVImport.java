@@ -281,8 +281,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
 
         File f = new File(CSVFileName);
         if (f.exists()) {
-
-
             // Read file
             products = new CsvReader(CSVFileName);
             products.setDelimiter(((String) jComboSeparator.getSelectedItem()).charAt(0));
@@ -299,8 +297,8 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
                 currentRecord++;
 
                 // Strip Currency Symbols
-                BuyPrice = StringUtils.replaceChars(BuyPrice, "$", ""); // Remove Dolar, Euro and Pound sign Sign
-                SellPrice = StringUtils.replaceChars(SellPrice, "$", ""); // Remove Dolar, Euro and Pound Sign
+                BuyPrice = StringUtils.replaceChars(BuyPrice, "$", ""); // Remove currency symbol
+                SellPrice = StringUtils.replaceChars(SellPrice, "$", ""); // Remove currency symbol
 
                 dCategory = getCategory();
 
@@ -309,7 +307,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
                     csvMessage = "Bad category details";
                 } else {
                     csvMessage = "Missing data or Invalid number";
-                };
+                }
 
                 // Validate and convert the prices or change them to null
                 if (validateNumber(BuyPrice)) {
@@ -453,7 +451,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
             dCategory = (String) cat_list.get(prodInfo.getCategoryID());
             oldBuyPrice = prodInfo.getPriceBuy();
             oldSellPrice = prodInfo.getPriceSell();
-            productSellPrice = productSellPrice * (1 + dOriginalRate);
+            productSellPrice *= (1 + dOriginalRate);
             if ((oldBuyPrice != productBuyPrice) || (oldSellPrice != productSellPrice)) {
                 createCSVEntry("Updated Price Details", oldBuyPrice, oldSellPrice * (1 + dOriginalRate));
                 createProduct("update");
@@ -505,7 +503,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
         jComboDefaultCategory.setModel(m_CategoryModel);
 
         // Build the cat_list for later use
-        cat_list = new HashMap<String, String>();
+        cat_list = new HashMap<>();
         for (Object category : m_sentcat.list()) {
             m_CategoryModel.setSelectedItem(category);
             cat_list.put(category.toString(), m_CategoryModel.getSelectedKey().toString());
@@ -592,13 +590,13 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
      */
     public void createProduct(String pType) {
 // create a new product and save it using DalaLogicSales
-        Object[] myprod = new Object[24];
+        Object[] myprod = new Object[25];
         myprod[0] = UUID.randomUUID().toString();                               // ID string
         myprod[1] = productReference;                                           // Reference string
         myprod[2] = productBarcode;                                             // Barcode String
         myprod[3] = productName;                                                // Name string
-        myprod[4] = Boolean.valueOf(false);                                     // IScomment flag (Attribute modifier)
-        myprod[5] = Boolean.valueOf(false);                                     // ISscale flag
+        myprod[4] = false;                                                      // IScomment flag (Attribute modifier)
+        myprod[5] = false;                                                      // ISscale flag
         myprod[6] = productBuyPrice;                                            // Buy price double
         myprod[7] = productSellPrice;                                           // Sell price double
         myprod[8] = dCategory;                                                  // Category string
@@ -607,17 +605,17 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
         myprod[11] = null;                                                      // Image
         myprod[12] = null;                                                      // Stock cost double
         myprod[13] = null;                                                      // Stock volume double
-        myprod[14] = Boolean.valueOf(jCheckInCatalogue.isSelected());           // In catalog flag
+        myprod[14] = jCheckInCatalogue.isSelected();                            // In catalog flag
         myprod[15] = null;                                                      // catalog order
         myprod[16] = null;                                                      //
-        myprod[17] = Boolean.valueOf(false);                                    // IsKitchen flag
-        myprod[18] = Boolean.valueOf(false);                                    // isService flag
+        myprod[17] = false;                                                     // IsKitchen flag
+        myprod[18] = false;                                                     // isService flag
         myprod[19] = "<HTML>" + productName;                                    //
-        myprod[20] = Boolean.valueOf(false);                                    // isVariable price flag
-        myprod[21] = Boolean.valueOf(false);                                    // Compulsory Att flag
+        myprod[20] = false;                                                     // isVariable price flag
+        myprod[21] = false;                                                     // Compulsory Att flag
         myprod[22] = productName;                                               // Text tip string
-        myprod[23] = Boolean.valueOf(false);                                    // Warranty flag
-
+        myprod[23] = false;                                                     // Warranty flag
+        myprod[24] = 0.0;                                                       // StockUnits
         try {
             if (pType == "new") {
                 spr.insertData(myprod);
@@ -628,7 +626,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
         } catch (BasicException ex) {
             Logger.getLogger(JPanelCSVImport.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return;
     }
 
     /**

@@ -76,9 +76,6 @@ public class JRootKiosk extends javax.swing.JFrame implements AppMessage {
             // Show the application
             add(m_rootapp, BorderLayout.CENTER);
 
-// With John L's sub[dot] updates
-//            setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION+ " - " + AppLocal.APP_VERSIONJL + "-" + AppLocal.APP_VERSIONJLCORE);
-
             setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION);
 
             Dimension d = Toolkit.getDefaultToolkit().getScreenSize();

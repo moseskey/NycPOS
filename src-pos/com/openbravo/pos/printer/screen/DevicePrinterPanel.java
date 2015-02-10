@@ -20,6 +20,7 @@
 package com.openbravo.pos.printer.screen;
 
 import com.openbravo.pos.forms.AppLocal;
+import com.openbravo.pos.forms.AppProperties;
 import com.openbravo.pos.printer.DevicePrinter;
 import com.openbravo.pos.printer.ticket.BasicTicket;
 import com.openbravo.pos.printer.ticket.BasicTicketForScreen;
@@ -33,13 +34,16 @@ import javax.swing.JComponent;
  */
 public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrinter {
 
-    private String m_sName;
+    private final String m_sName;
 
-    private JTicketContainer m_jTicketContainer;
+    private final JTicketContainer m_jTicketContainer;
     private BasicTicket m_ticketcurrent;
+    private final AppProperties m_props;
 
-    /** Creates new form JPrinterScreen2 */
-    public DevicePrinterPanel() {
+    /** Creates new form JPrinterScreen2
+     * @param props */
+//JG July 2014 - Thank you Ron Isaacson    public DevicePrinterPanel() {
+    public DevicePrinterPanel(AppProperties props) {
         initComponents();
 
         m_sName = AppLocal.getIntString("Printer.Screen");
@@ -48,6 +52,8 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
         m_jTicketContainer = new JTicketContainer();
         m_jScrollView.setViewportView(m_jTicketContainer);
+
+        m_props = props;
     }
 
     /**
@@ -101,7 +107,7 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
      */
         @Override
     public void beginReceipt() {
-//        m_ticketcurrent = new BasicTicket();
+//JG July 2014 - Thank you Ron Isaacson        m_ticketcurrent = new BasicTicket();
         m_ticketcurrent = new BasicTicketForScreen();
 
     }
@@ -158,7 +164,8 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
      */
     @Override
     public void endReceipt() {
-        m_jTicketContainer.addTicket(new JTicket(m_ticketcurrent));
+//JG July 2014 - Thank you Ron Isaacson        m_jTicketContainer.addTicket(new JTicket(m_ticketcurrent));
+        m_jTicketContainer.addTicket(new JTicket(m_ticketcurrent, Integer.parseInt(m_props.getProperty("screen.receipt.columns"))));
         m_ticketcurrent = null;
     }
 

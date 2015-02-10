@@ -45,6 +45,7 @@ public class JEditorCurrencyPositive extends JEditorNumber {
      *
      * @return
      */
+    @Override
     protected int getMode() {
         return EditorKeys.MODE_DOUBLE_POSITIVE;
     }

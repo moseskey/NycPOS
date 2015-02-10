@@ -60,7 +60,7 @@ public class JTicketLines extends javax.swing.JPanel {
 
     private static SAXParser m_sp = null;
 
-    private TicketTableModel m_jTableModel;
+    private final TicketTableModel m_jTableModel;
     private Boolean sendStatus;
 
     /** Creates new form JLinesTicket
@@ -302,8 +302,8 @@ public class JTicketLines extends javax.swing.JPanel {
     private static class TicketTableModel extends AbstractTableModel {
 
 //        private AppView m_App;
-        private ColumnTicket[] m_acolumns;
-        private ArrayList m_rows = new ArrayList();
+        private final ColumnTicket[] m_acolumns;
+        private final ArrayList m_rows = new ArrayList();
 
         public TicketTableModel(ColumnTicket[] acolumns) {
             m_acolumns = acolumns;

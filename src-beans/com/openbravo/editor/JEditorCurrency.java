@@ -37,6 +37,7 @@ public class JEditorCurrency extends JEditorNumber {
      *
      * @return
      */
+        @Override
     protected Formats getFormat() {
         return Formats.CURRENCY;
     }
@@ -45,6 +46,7 @@ public class JEditorCurrency extends JEditorNumber {
      *
      * @return
      */
+        @Override
     protected int getMode() {
         return EditorKeys.MODE_DOUBLE;
     }

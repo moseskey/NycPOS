@@ -10,10 +10,6 @@ import com.openbravo.format.Formats;
 import java.awt.Component;
 import java.util.UUID;
 
-/**
- *
- * @author JG uniCenta
- */
 public class JRolesTree extends javax.swing.JPanel {
 
     private Object m_oId;

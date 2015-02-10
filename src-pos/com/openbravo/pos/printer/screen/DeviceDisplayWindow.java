@@ -29,8 +29,8 @@ import javax.swing.JComponent;
  */
 public class DeviceDisplayWindow extends javax.swing.JFrame implements DeviceDisplay {
 
-    private String m_sName;
-    private DeviceDisplayPanel m_display;
+    private final String m_sName;
+    private final DeviceDisplayPanel m_display;
 
     /** Creates new form DeviceDisplayWindow */
     public DeviceDisplayWindow() {

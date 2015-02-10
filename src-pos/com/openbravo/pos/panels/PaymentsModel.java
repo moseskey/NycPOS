@@ -66,14 +66,15 @@ public class PaymentsModel {
     private java.util.List<RemovedProductLines> m_lremovedlines;
     // end
 
-    private final static String[] PAYMENTHEADERS = {"Label.Payment", "label.totalcash"};
+    private final static String[] PAYMENTHEADERS = {"Label.Payment", "label.Money"};
 
     private Integer m_iSales;
     private Double m_dSalesBase;
     private Double m_dSalesTaxes;
+    private Double m_dSalesTaxNet;
     private java.util.List<SalesLine> m_lsales;
 
-    private final static String[] SALEHEADERS = {"label.taxcash", "label.totalcash"};
+    private final static String[] SALEHEADERS = {"label.taxcategory", "label.totaltax", "label.totalnet"};
 
     private PaymentsModel() {
     }
@@ -86,26 +87,28 @@ public class PaymentsModel {
 
         PaymentsModel p = new PaymentsModel();
 
-        p.m_iPayments = new Integer(0);
-        p.m_dPaymentsTotal = new Double(0.0);
+        p.m_iPayments = 0;
+        p.m_dPaymentsTotal = 0.0;
 // JG 16 May 2013 use diamond inference
         p.m_lpayments = new ArrayList<>();
 
 // JG 9 Nov 12
-        p.m_iCategorySalesRows = new Integer(0);
-        p.m_dCategorySalesTotalUnits = new Double(0.0);
-        p.m_dCategorySalesTotal = new Double(0.0);
+        p.m_iCategorySalesRows = 0;
+        p.m_dCategorySalesTotalUnits = 0.0;
+        p.m_dCategorySalesTotal = 0.0;
         p.m_lcategorysales = new ArrayList<>();
 // end
         p.m_iSales = null;
         p.m_dSalesBase = null;
         p.m_dSalesTaxes = null;
+        p.m_dSalesTaxNet = null;
+
 // JG 16 May 2013 use diamond inference
 
         // by janar153 @ 01.12.2013
-        p.m_iProductSalesRows = new Integer(0);
-        p.m_dProductSalesTotalUnits = new Double(0.0);
-        p.m_dProductSalesTotal = new Double(0.0);
+        p.m_iProductSalesRows = 0;
+        p.m_dProductSalesTotalUnits = 0.0;
+        p.m_dProductSalesTotal = 0.0;
         p.m_lproductsales = new ArrayList<>();
         // end
 
@@ -147,9 +150,9 @@ public class PaymentsModel {
             .find(app.getActiveCashIndex());
 
         if (valcategorysales == null) {
-            p.m_iCategorySalesRows = new Integer(0);
-            p.m_dCategorySalesTotalUnits = new Double(0.0);
-            p.m_dCategorySalesTotal = new Double(0.0);
+            p.m_iCategorySalesRows = 0;
+            p.m_dCategorySalesTotalUnits = 0.0;
+            p.m_dCategorySalesTotal = 0.0;
         } else {
             p.m_iCategorySalesRows = (Integer) valcategorysales[0];
             p.m_dCategorySalesTotalUnits = (Double) valcategorysales[1];
@@ -176,7 +179,7 @@ public class PaymentsModel {
         }
 // end
 
-        // Pagos
+        // Payments
         Object[] valtickets = (Object []) new StaticSentence(app.getSession()
             , "SELECT COUNT(*), SUM(PAYMENTS.TOTAL) " +
               "FROM PAYMENTS, RECEIPTS " +
@@ -186,8 +189,8 @@ public class PaymentsModel {
             .find(app.getActiveCashIndex());
 
         if (valtickets == null) {
-            p.m_iPayments = new Integer(0);
-            p.m_dPaymentsTotal = new Double(0.0);
+            p.m_iPayments = 0;
+            p.m_dPaymentsTotal = 0.0;
         } else {
             p.m_iPayments = (Integer) valtickets[0];
             p.m_dPaymentsTotal = (Double) valtickets[1];
@@ -226,19 +229,22 @@ public class PaymentsModel {
 
         // Taxes
         Object[] rectaxes = (Object []) new StaticSentence(app.getSession(),
-            "SELECT SUM(TAXLINES.AMOUNT) " +
+            "SELECT SUM(TAXLINES.AMOUNT), SUM(TAXLINES.BASE) " +
             "FROM RECEIPTS, TAXLINES WHERE RECEIPTS.ID = TAXLINES.RECEIPT AND RECEIPTS.MONEY = ?"
             , SerializerWriteString.INSTANCE
-            , new SerializerReadBasic(new Datas[] {Datas.DOUBLE}))
+            , new SerializerReadBasic(new Datas[] {Datas.DOUBLE, Datas.DOUBLE}))
             .find(app.getActiveCashIndex());
         if (rectaxes == null) {
             p.m_dSalesTaxes = null;
+            p.m_dSalesTaxNet = null;
         } else {
             p.m_dSalesTaxes = (Double) rectaxes[0];
+            p.m_dSalesTaxNet = (Double) rectaxes[1];
         }
 
+        // JG June 2014 Added .BASE for array
         List<SalesLine> asales = new StaticSentence(app.getSession(),
-                "SELECT TAXCATEGORIES.NAME, SUM(TAXLINES.AMOUNT) " +
+                "SELECT TAXCATEGORIES.NAME, SUM(TAXLINES.AMOUNT), SUM(TAXLINES.BASE), SUM(TAXLINES.BASE + TAXLINES.AMOUNT) " +
                 "FROM RECEIPTS, TAXLINES, TAXES, TAXCATEGORIES WHERE RECEIPTS.ID = TAXLINES.RECEIPT AND TAXLINES.TAXID = TAXES.ID AND TAXES.CATEGORY = TAXCATEGORIES.ID " +
                 "AND RECEIPTS.MONEY = ?" +
                 "GROUP BY TAXCATEGORIES.NAME"
@@ -317,7 +323,7 @@ public class PaymentsModel {
      * @return
      */
     public int getPayments() {
-        return m_iPayments.intValue();
+        return m_iPayments;
     }
 
     /**
@@ -325,7 +331,7 @@ public class PaymentsModel {
      * @return
      */
     public double getTotal() {
-        return m_dPaymentsTotal.doubleValue();
+        return m_dPaymentsTotal;
     }
 
     /**
@@ -439,7 +445,7 @@ public class PaymentsModel {
      * @return
      */
     public int getSales() {
-        return m_iSales == null ? 0 : m_iSales.intValue();
+        return m_iSales == null ? 0 : m_iSales;
     }
 
     /**
@@ -466,7 +472,7 @@ public class PaymentsModel {
         return Formats.CURRENCY.formatValue(m_dSalesTaxes);
     }
 
-    /**
+     /**
      *
      * @return
      */
@@ -491,7 +497,7 @@ public class PaymentsModel {
      * @return
      */
         public double getCategorySalesRows() {
-        return m_iCategorySalesRows.intValue();
+        return m_iCategorySalesRows;
     }
 
     /**
@@ -507,7 +513,7 @@ public class PaymentsModel {
      * @return
      */
     public double getCategorySalesTotalUnits() {
-        return m_dCategorySalesTotalUnits.doubleValue();
+        return m_dCategorySalesTotalUnits;
     }
 
     /**
@@ -523,7 +529,7 @@ public class PaymentsModel {
      * @return
      */
     public double getCategorySalesTotal() {
-        return m_dCategorySalesTotal.doubleValue();
+        return m_dCategorySalesTotal;
     }
 
     /**
@@ -550,7 +556,7 @@ public class PaymentsModel {
      * @return
      */
         public double getProductSalesRows() {
-        return m_iProductSalesRows.intValue();
+        return m_iProductSalesRows;
     }
 
     /**
@@ -566,7 +572,7 @@ public class PaymentsModel {
      * @return
      */
     public double getProductSalesTotalUnits() {
-        return m_dProductSalesTotalUnits.doubleValue();
+        return m_dProductSalesTotalUnits;
     }
 
     /**
@@ -582,7 +588,7 @@ public class PaymentsModel {
      * @return
      */
     public double getProductSalesTotal() {
-        return m_dProductSalesTotal.doubleValue();
+        return m_dProductSalesTotal;
     }
 
     /**
@@ -780,6 +786,7 @@ public class PaymentsModel {
         private Double m_ProductPrice;
         private Double m_TaxRate;
         private Double m_ProductPriceTax;
+        private Double m_ProductPriceNet;  //JG 7 June 2014
 
         /**
          *
@@ -794,6 +801,7 @@ public class PaymentsModel {
             m_TaxRate = dr.getDouble(4);
 
             m_ProductPriceTax = m_ProductPrice + m_ProductPrice*m_TaxRate;
+            m_ProductPriceNet = m_ProductPrice * m_TaxRate;
         }
 
         /**
@@ -867,6 +875,15 @@ public class PaymentsModel {
         public String printProductSubValue() {
             return Formats.CURRENCY.formatValue(m_ProductPriceTax*m_ProductUnits);
         }
+
+        /**
+         * JG 4 Jun 2014
+         * @return
+         */
+        public String printProductPriceNet() {
+            return Formats.CURRENCY.formatValue(m_ProductPrice*m_ProductUnits);
+        }
+
     }
     // end
 
@@ -877,7 +894,8 @@ public class PaymentsModel {
 
         private String m_SalesTaxName;
         private Double m_SalesTaxes;
-
+        private Double m_SalesTaxNet;           //JG June 2014
+        private Double m_SalesTaxGross;          //JG June 2014
         /**
          *
          * @param dr
@@ -887,6 +905,8 @@ public class PaymentsModel {
         public void readValues(DataRead dr) throws BasicException {
             m_SalesTaxName = dr.getString(1);
             m_SalesTaxes = dr.getDouble(2);
+            m_SalesTaxNet = dr.getDouble(3);    //JG June 2014
+            m_SalesTaxGross = dr.getDouble(4);    //JG June 2014
         }
 
         /**
@@ -906,6 +926,23 @@ public class PaymentsModel {
         }
 
         /**
+         * JG June 2014
+         * @return
+         */
+        public String printTaxNet() {
+            return Formats.CURRENCY.formatValue(m_SalesTaxNet);
+        }
+
+        /**
+         * JG June 2014
+         * @return
+         */
+        public String printTaxGross() {
+            return Formats.CURRENCY.formatValue(m_SalesTaxes + m_SalesTaxNet);
+        }
+
+
+        /**
          *
          * @return
          */
@@ -920,6 +957,25 @@ public class PaymentsModel {
         public Double getTaxes() {
             return m_SalesTaxes;
         }
+
+        /**
+         * JG June 2014
+         * @return
+         */
+        public Double getTaxNet() {
+            return m_SalesTaxNet;
+        }
+
+        /**
+         * JG June 2014
+         * @return
+         */
+        public Double getTaxGross() {
+            return m_SalesTaxGross;
+        }
+
+
+
     }
 
     /**
@@ -946,6 +1002,7 @@ public class PaymentsModel {
                 switch (column) {
                 case 0: return l.getTaxName();
                 case 1: return l.getTaxes();
+                case 2: return l.getTaxNet();       //JG June 2014
                 default: return null;
                 }
             }

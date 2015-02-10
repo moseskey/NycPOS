@@ -131,6 +131,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
             return (false);
         }
 
+// JG Aug 2014 for 3.80
         eScript = "/com/openbravo/pos/scripts/" + sdbmanager2 + "-create.sql";
         eScript1 = "/com/openbravo/pos/scripts/" + sdbmanager2 + "-createjl.sql";
         eScript2 = "/com/openbravo/pos/scripts/" + sdbmanager2 + "-DropFK.sql";
@@ -622,6 +623,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
                         pstmt.setBytes(4, rs.getBytes("IMAGE"));
                         pstmt.setString(5, rs.getString("TEXTTIP"));
                         pstmt.setBoolean(6, rs.getBoolean("CATSHOWNAME"));
+
                         pstmt.executeUpdate();
                     }
 
@@ -809,11 +811,12 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
 
 // copy Products  table
+// JG Aug 2014 - INSERT STOCKUNITS
                     SQL = "SELECT * FROM PRODUCTS";
                     rs = stmt.executeQuery(SQL);
                     while (rs.next()) {
-                        SQL = "INSERT INTO PRODUCTS (ID, REFERENCE, CODE, CODETYPE, NAME, PRICEBUY, PRICESELL, CATEGORY, TAXCAT, ATTRIBUTESET_ID, STOCKCOST, STOCKVOLUME, IMAGE, ISCOM, ISSCALE, ISKITCHEN, PRINTKB, SENDSTATUS, ISSERVICE, DISPLAY, ATTRIBUTES, ISVPRICE, ISVERPATRIB, TEXTTIP, WARRANTY )"
-                                + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                        SQL = "INSERT INTO PRODUCTS (ID, REFERENCE, CODE, CODETYPE, NAME, PRICEBUY, PRICESELL, CATEGORY, TAXCAT, ATTRIBUTESET_ID, STOCKCOST, STOCKVOLUME, IMAGE, ISCOM, ISSCALE, ISKITCHEN, PRINTKB, SENDSTATUS, ISSERVICE, DISPLAY, ATTRIBUTES, ISVPRICE, ISVERPATRIB, TEXTTIP, WARRANTY, STOCKUNITS)"
+                                + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                         pstmt = con2.prepareStatement(SQL);
                         pstmt.setString(1, rs.getString("ID"));
                         pstmt.setString(2, rs.getString("REFERENCE"));
@@ -840,8 +843,13 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
                         pstmt.setBoolean(23, rs.getBoolean("ISVERPATRIB"));
                         pstmt.setString(24, rs.getString("TEXTTIP"));
                         pstmt.setBoolean(25, rs.getBoolean("WARRANTY"));
+// JG Aug 2014 for 3.80 from 3.70
+                        pstmt.setDouble(26, rs.getDouble("STOCKUNITS"));
+// Dis-Allow Product Control account
+                    if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
                         pstmt.executeUpdate();
                     }
+                }
 
 
 // copy PRODUCTS_CAT table
@@ -852,8 +860,12 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
                         pstmt = con2.prepareStatement(SQL);
                         pstmt.setString(1, rs.getString("PRODUCT"));
                         pstmt.setInt(2, rs.getInt("CATORDER"));
+// JG Aug 2014 for 3.80
+// Dis-Allow Product Control account
+if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
                         pstmt.executeUpdate();
                     }
+                }
 
 
                     // copy PRODUCTS_COM table
@@ -1202,6 +1214,13 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 // Write new database settings to properties file
 
 
+//JG Aug 2014 - added to .properties
+                    if ("MySQL".equals(sdbmanager2)) {
+                        config.setProperty("db.engine", "MySQL");
+                    }else{
+                        config.setProperty("db.engine", "PostgreSQL");
+                    }
+//
                     config.setProperty("db.driverlib", jtxtDbDriverLib.getText());
                     config.setProperty("db.driver", jtxtDbDriver.getText());
                     config.setProperty("db.URL", jtxtDbURL.getText());
@@ -1285,7 +1304,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
             boolean isValid = (connection == null) ? false : connection.isValid(1000);
 
             if (isValid) {
-                JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.databasemigrationsuccess"), "Connection Test", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.databaseconnectsuccess"), "Connection Test", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, "Connection Error"));
             }

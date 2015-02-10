@@ -38,7 +38,6 @@ import com.openbravo.pos.sales.JProductAttEdit;
 import com.openbravo.pos.ticket.ProductInfoExt;
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -51,7 +50,7 @@ import java.util.UUID;
  */
 public final class StockDiaryEditor extends javax.swing.JPanel implements EditorRecord {
 
-    private CatalogSelector m_cat;
+    private final CatalogSelector m_cat;
 
     private String m_sID;
 
@@ -64,13 +63,13 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
     private String attsetinstdesc;
     private String sAppUser;
 
-    private ComboBoxValModel m_ReasonModel;
+    private final ComboBoxValModel m_ReasonModel;
 
-    private SentenceList m_sentlocations;
+    private final SentenceList m_sentlocations;
     private ComboBoxValModel m_LocationsModel;
 
-    private AppView m_App;
-    private DataLogicSales m_dlSales;
+    private final AppView m_App;
+    private final DataLogicSales m_dlSales;
 
     /** Creates new form StockDiaryEditor
      * @param app
@@ -81,11 +80,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         m_dlSales = (DataLogicSales) m_App.getBean("com.openbravo.pos.forms.DataLogicSales");
 
         initComponents();
-
-        m_cat = new JCatalog(m_dlSales);
-        m_cat.getComponent().setPreferredSize(new Dimension(0, 245));
-        m_cat.addActionListener(new CatalogListener());
-        add(m_cat.getComponent(), BorderLayout.SOUTH);
 
         // El modelo de locales
         m_sentlocations = m_dlSales.getLocationsList();
@@ -99,7 +93,13 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         m_ReasonModel.add(MovementReason.OUT_REFUND);
         m_ReasonModel.add(MovementReason.OUT_BREAK);
         m_ReasonModel.add(MovementReason.OUT_MOVEMENT);
+
         m_jreason.setModel(m_ReasonModel);
+
+        m_cat = new JCatalog(m_dlSales);
+        m_cat.addActionListener(new CatalogListener());
+
+        catcontainer.add(m_cat.getComponent(), BorderLayout.CENTER);
 
         m_jdate.getDocument().addDocumentListener(dirty);
         m_jreason.addActionListener(dirty);
@@ -337,8 +337,8 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
     private Double signum(Double d, Integer i) {
         if (d == null || i == null) {
             return d;
-        } else if (i.intValue() < 0) {
-            return new Double(-d.doubleValue());
+        } else if (i < 0) {
+            return -d;
         } else {
             return d;
         }
@@ -348,9 +348,9 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
 
         if (d == null || i == null) {
             return d;
-        } else if ((i.intValue() > 0 && d.doubleValue() < 0.0) ||
-            (i.intValue() < 0 && d.doubleValue() > 0.0)) {
-            return new Double(-d.doubleValue());
+        } else if ((i > 0 && d < 0.0) ||
+            (i < 0 && d > 0.0)) {
+            return -d;
         } else {
             return d;
         }
@@ -464,24 +464,30 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         m_junits = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         m_jprice = new javax.swing.JTextField();
+        catcontainer = new javax.swing.JPanel();
 
+        setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        setMinimumSize(new java.awt.Dimension(550, 250));
+        setPreferredSize(new java.awt.Dimension(550, 270));
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setLayout(null);
+        jPanel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel1.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
+        jPanel1.setMinimumSize(new java.awt.Dimension(780, 260));
+        jPanel1.setPreferredSize(new java.awt.Dimension(780, 200));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setText(AppLocal.getIntString("label.stockdate")); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(23, 20));
         jLabel1.setMinimumSize(new java.awt.Dimension(23, 20));
         jLabel1.setPreferredSize(new java.awt.Dimension(23, 20));
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 10, 80, 25);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 25));
 
         m_jdate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jdate.setMinimumSize(new java.awt.Dimension(40, 20));
         m_jdate.setPreferredSize(new java.awt.Dimension(40, 20));
-        jPanel1.add(m_jdate);
-        m_jdate.setBounds(100, 10, 200, 25);
+        jPanel1.add(m_jdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 25));
 
         m_jbtndate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
         m_jbtndate.setToolTipText("Open Calendar");
@@ -490,33 +496,28 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
                 m_jbtndateActionPerformed(evt);
             }
         });
-        jPanel1.add(m_jbtndate);
-        m_jbtndate.setBounds(310, 3, 40, 33);
+        jPanel1.add(m_jbtndate, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 3, 40, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText(AppLocal.getIntString("label.stockreason")); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(36, 20));
         jLabel2.setMinimumSize(new java.awt.Dimension(36, 20));
         jLabel2.setPreferredSize(new java.awt.Dimension(36, 20));
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(370, 10, 70, 25);
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 70, 25));
 
         m_jreason.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPanel1.add(m_jreason);
-        m_jreason.setBounds(440, 10, 200, 25);
+        jPanel1.add(m_jreason, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 200, 25));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel8.setText(AppLocal.getIntString("label.warehouse")); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(40, 20));
         jLabel8.setMinimumSize(new java.awt.Dimension(40, 20));
         jLabel8.setPreferredSize(new java.awt.Dimension(40, 20));
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(10, 45, 80, 25);
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 45, 80, 25));
 
         jproduct.setEditable(false);
         jproduct.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel1.add(jproduct);
-        jproduct.setBounds(100, 45, 200, 25);
+        jPanel1.add(jproduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 45, 200, 25));
 
         jEditProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
         jEditProduct.setToolTipText("Search Product List");
@@ -525,25 +526,21 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
                 jEditProductActionPerformed(evt);
             }
         });
-        jPanel1.add(jEditProduct);
-        jEditProduct.setBounds(310, 38, 40, 33);
+        jPanel1.add(jEditProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 38, 40, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel6.setText("Location");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(370, 45, 70, 25);
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 45, 70, 25));
 
         m_jLocation.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPanel1.add(m_jLocation);
-        m_jLocation.setBounds(440, 45, 200, 25);
+        jPanel1.add(m_jLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 45, 200, 25));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel7.setText(AppLocal.getIntString("label.prodbarcode")); // NOI18N
         jLabel7.setMaximumSize(new java.awt.Dimension(40, 20));
         jLabel7.setMinimumSize(new java.awt.Dimension(40, 20));
         jLabel7.setPreferredSize(new java.awt.Dimension(40, 20));
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(10, 80, 80, 25);
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 80, 25));
 
         m_jcodebar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jcodebar.addActionListener(new java.awt.event.ActionListener() {
@@ -551,8 +548,7 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
                 m_jcodebarActionPerformed(evt);
             }
         });
-        jPanel1.add(m_jcodebar);
-        m_jcodebar.setBounds(100, 80, 200, 25);
+        jPanel1.add(m_jcodebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 200, 25));
 
         m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/barcode.png"))); // NOI18N
         m_jEnter.setToolTipText("Get Barcode");
@@ -567,16 +563,14 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
                 m_jEnterActionPerformed(evt);
             }
         });
-        jPanel1.add(m_jEnter);
-        m_jEnter.setBounds(310, 73, 40, 33);
+        jPanel1.add(m_jEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 73, 40, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setText(AppLocal.getIntString("label.stockproduct")); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(40, 20));
         jLabel3.setMinimumSize(new java.awt.Dimension(40, 20));
         jLabel3.setPreferredSize(new java.awt.Dimension(40, 20));
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 120, 80, 25);
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 80, 25));
 
         m_jreference.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jreference.addActionListener(new java.awt.event.ActionListener() {
@@ -584,8 +578,7 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
                 m_jreferenceActionPerformed(evt);
             }
         });
-        jPanel1.add(m_jreference);
-        m_jreference.setBounds(100, 115, 200, 25);
+        jPanel1.add(m_jreference, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 115, 200, 25));
 
         m_jEnter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/products.png"))); // NOI18N
         m_jEnter1.setToolTipText("Enter Product ID");
@@ -600,21 +593,18 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
                 m_jEnter1ActionPerformed(evt);
             }
         });
-        jPanel1.add(m_jEnter1);
-        m_jEnter1.setBounds(310, 109, 40, 33);
+        jPanel1.add(m_jEnter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 109, 40, -1));
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel9.setText(AppLocal.getIntString("label.attributes")); // NOI18N
         jLabel9.setMaximumSize(new java.awt.Dimension(48, 20));
         jLabel9.setMinimumSize(new java.awt.Dimension(48, 20));
         jLabel9.setPreferredSize(new java.awt.Dimension(48, 20));
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(370, 115, 70, 25);
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 115, 70, 25));
 
         jattributes.setEditable(false);
         jattributes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel1.add(jattributes);
-        jattributes.setBounds(440, 115, 200, 25);
+        jPanel1.add(jattributes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 115, 200, 25));
 
         jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/attributes.png"))); // NOI18N
         jEditAttributes.setToolTipText("Product Attributes");
@@ -626,33 +616,36 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
                 jEditAttributesActionPerformed(evt);
             }
         });
-        jPanel1.add(jEditAttributes);
-        jEditAttributes.setBounds(650, 109, 40, 33);
+        jPanel1.add(jEditAttributes, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 109, 40, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel4.setText(AppLocal.getIntString("label.units")); // NOI18N
         jLabel4.setMaximumSize(new java.awt.Dimension(40, 20));
         jLabel4.setMinimumSize(new java.awt.Dimension(40, 20));
         jLabel4.setPreferredSize(new java.awt.Dimension(40, 20));
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(10, 145, 80, 25);
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 145, 80, 25));
 
         m_junits.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_junits.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jPanel1.add(m_junits);
-        m_junits.setBounds(100, 145, 70, 25);
+        jPanel1.add(m_junits, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 145, 70, 25));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel5.setText(AppLocal.getIntString("label.price")); // NOI18N
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(190, 145, 40, 25);
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 145, 40, 25));
 
         m_jprice.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jprice.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jPanel1.add(m_jprice);
-        m_jprice.setBounds(230, 145, 70, 25);
+        jPanel1.add(m_jprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 145, 70, 25));
 
-        add(jPanel1, java.awt.BorderLayout.CENTER);
+        add(jPanel1, java.awt.BorderLayout.PAGE_START);
+
+        catcontainer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        catcontainer.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
+        catcontainer.setMinimumSize(new java.awt.Dimension(0, 250));
+        catcontainer.setPreferredSize(new java.awt.Dimension(0, 250));
+        catcontainer.setLayout(new java.awt.BorderLayout());
+        add(catcontainer, java.awt.BorderLayout.CENTER);
+        catcontainer.getAccessibleContext().setAccessibleParent(jPanel1);
     }// </editor-fold>//GEN-END:initComponents
 
     private void m_jEnter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jEnter1ActionPerformed
@@ -727,6 +720,7 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel catcontainer;
     private javax.swing.JButton jEditAttributes;
     private javax.swing.JButton jEditProduct;
     private javax.swing.JLabel jLabel1;

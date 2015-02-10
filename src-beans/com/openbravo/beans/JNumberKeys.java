@@ -165,7 +165,7 @@ public class JNumberKeys extends javax.swing.JPanel {
 
     private class MyKeyNumberListener implements java.awt.event.ActionListener {
 
-        private char m_cCad;
+        private final char m_cCad;
 
         public MyKeyNumberListener(char cCad){
             m_cCad = cCad;

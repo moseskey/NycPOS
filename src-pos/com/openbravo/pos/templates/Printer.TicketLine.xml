@@ -27,10 +27,10 @@
             #else
                  <text align="left" length="15">${ticketline.printName()}</text>
             #end
-            <text align="right" length="5">x${ticketline.printMultiply()}</text>
+            <text align="right" length="4">x${ticketline.printMultiply()}</text>
         </line>
         <line>
-            <text align="right" length="10">${ticketline.printPrice()}</text>
+            <text align="left" length="10">${ticketline.printPrice()}</text>
             <text align="right" length="10">${ticketline.printSubValue()}</text>
         </line>
     </display>

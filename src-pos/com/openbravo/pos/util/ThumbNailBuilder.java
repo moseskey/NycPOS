@@ -21,6 +21,7 @@ package com.openbravo.pos.util;
 
 import java.awt.image.*;
 import java.awt.*;
+import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 
@@ -63,7 +64,7 @@ public class ThumbNailBuilder {
         Image defimg;
         try {
             init(width, height, ImageIO.read(getClass().getClassLoader().getResourceAsStream(img)));
-        } catch (Exception fnfe) {
+        } catch (IOException fnfe) {
             init(width, height, null);
         }
     }

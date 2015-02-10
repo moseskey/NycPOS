@@ -53,7 +53,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
     private JPaymentSelect paymentdialog;
 
     private CustomerInfoExt customerext;
-    private DirtyManager dirty;
+    private final DirtyManager dirty;
 
     /** Creates new form CustomersPayment */
     public CustomersPayment() {
@@ -164,7 +164,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         btnSave.setEnabled(true);
         btnPay.setEnabled(true);
 
-        btnPay.setEnabled(customer.getCurdebt() != null && customer.getCurdebt().doubleValue() > 0.0);
+        btnPay.setEnabled(customer.getCurdebt() != null && customer.getCurdebt() > 0.0);
 
     }
 

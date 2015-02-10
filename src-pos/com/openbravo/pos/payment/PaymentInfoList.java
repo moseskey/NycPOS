@@ -28,7 +28,7 @@ import java.util.LinkedList;
  */
 public class PaymentInfoList {
 
-    private LinkedList<PaymentInfo> m_apayment;
+    private final LinkedList<PaymentInfo> m_apayment;
 
     /** Creates a new instance of PaymentInfoComposed */
     public PaymentInfoList() {

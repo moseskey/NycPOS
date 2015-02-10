@@ -40,14 +40,8 @@ public class AppLocal {
     /**
      *
      */
-    public static final String APP_VERSION = "3.70";
+    public static final String APP_VERSION = "3.81";
 
-//    public static final String APP_IDJL = "Unicenta John L's changes";
-//    public static final String APP_VERSIONJL ="1.04";
-//    public static final String APP_VERSIONJLCORE="130703";
-
-
-    // private static List<ResourceBundle> m_messages;
     private static final LocaleResources m_resources;
 
     static {

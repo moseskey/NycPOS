@@ -23,6 +23,7 @@ import bsh.EvalError;
 import bsh.Interpreter;
 import com.openbravo.basic.BasicException;
 import com.openbravo.data.gui.ComboBoxValModel;
+import com.openbravo.data.gui.JMessageDialog;
 import com.openbravo.data.gui.ListKeyed;
 import com.openbravo.data.gui.MessageInf;
 import com.openbravo.data.loader.SentenceList;
@@ -165,7 +166,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
     private Action logout;
     private InactivityListener listener;
     private Integer delay = 0;
-    private String m_sCurrentTicket = null;
+    private final String m_sCurrentTicket = null;
 
     /**
      *
@@ -174,7 +175,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
     private DataLogicReceipts dlReceipts = null;
 // added 16.05.13 JDL customer name on table
     private Boolean priceWith00;
-    private String temp_jPrice="";
+    private final String temp_jPrice="";
     private String tableDetails;
     private RestaurantDBUtils restDB;
     private KitchenDisplay kitchenDisplay;
@@ -229,6 +230,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         }
 
         m_ticketsbag = getJTicketsBag();
+
         m_jPanelBag.add(m_ticketsbag.getBagComponent(), BorderLayout.LINE_START);
         add(m_ticketsbag.getNullComponent(), "null");
 
@@ -522,7 +524,11 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
             // Muestro el panel de nulos.
             cl.show(this, "null");
-            resetSouthComponent();
+// John L June 2014
+//            resetSouthComponent();
+            if ((m_oTicket != null) &&  (m_oTicket.getLinesCount()==0)) {
+              resetSouthComponent();
+            }
 
         } else {
             if (m_oTicket.getTicketType() == TicketInfo.RECEIPT_REFUND) {
@@ -550,7 +556,11 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
             // Muestro el panel de tickets.
             cl.show(this, "ticket");
-            resetSouthComponent();
+// JG June 2014 - Thanks John L
+//            resetSouthComponent();
+            if (m_oTicket.getLinesCount()==0) {
+                  resetSouthComponent();
+            }
 
             // activo el tecleador...
             m_jKeyFactory.setText(null);
@@ -713,11 +723,11 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     private ProductInfoExt getInputProduct() {
         ProductInfoExt oProduct = new ProductInfoExt(); // Es un ticket
-// JG 6 May 14 - always add Default Prod ID + Add Name to Misc. if empty
+// JG 6 May 14 - always add Default Prod ID + Null Name if free line entry
         oProduct.setID("xxx999_999xxx_x9x9x9");
         oProduct.setReference(null);
         oProduct.setCode(null);
-        oProduct.setName("***");
+        oProduct.setName("");
         oProduct.setTaxCategoryID(((TaxCategoryInfo) taxcategoriesmodel.getSelectedItem()).getID());
         oProduct.setPriceSell(includeTaxes(oProduct.getTaxCategoryID(), getInputValue()));
 
@@ -777,7 +787,10 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
             ProductInfoExt oProduct = dlSales.getProductInfoByCode(sCode);
             if (oProduct == null) {
                 Toolkit.getDefaultToolkit().beep();
-                new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.noproduct")).show(this);
+// JG Aug 2014 - MessageInf Type inappropriate
+//                new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.noproduct")).show(this);
+                JOptionPane.showMessageDialog(null,
+                   sCode + " - " + AppLocal.getIntString("message.noproduct"),"Check", JOptionPane.WARNING_MESSAGE);
                 stateToZero();
             } else {
                 // Se anade directamente una unidad con el precio y todo
@@ -918,14 +931,19 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
                 */
                 // added by janar153 @ 24.12.2013 to add scale barcode support
 // JG 27 Apr 2014 - missing bracket enclosures                } else if((sCode.length() == 13) && sCode.startsWith("2") || sCode.startsWith("02")) {
-                } else if((sCode.length() == 13) && (sCode.startsWith("2") || sCode.startsWith("02"))) {
+//                } else if((sCode.length() == 13) || ((sCode.length() == 8)) && (sCode.startsWith("2") || sCode.startsWith("02"))) {
+                } else if((sCode.length() == 13) || (sCode.length() == 8) || (sCode.startsWith("2") || sCode.startsWith("02"))) {
                     try {
                         ProductInfoExt oProduct = dlSales.getProductInfoByCode(sCode);
                         if(oProduct == null) {
                             Toolkit.getDefaultToolkit().beep();
-                            new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.noproduct")).show(this);
+//JG Aug 2014 - MessageInf Type inappropriate
+//                            new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.noproduct")).show(this);
+                            JOptionPane.showMessageDialog(null,
+                                sCode + " - " + AppLocal.getIntString("message.noproduct"),
+                                "Check", JOptionPane.WARNING_MESSAGE);
                             stateToZero();
-                } else {
+                        } else {
                             // set product properties that they can be used later in oPOS resources
                             oProduct.setProperty("product.barcode", sCode);
                             // get product base from barcode
@@ -933,8 +951,14 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
                             double weight = 1.0; // used if barcode includes weight
 
                             String sVariableTypePrefix = sCode.substring(0, 2);
-                            String sVariableNum = sCode.substring(8, 12);
-
+// JG Aug 2014 - Check for EAN-8 construct
+                            String sVariableNum;
+                            if (sCode.length() > 8) {
+                                sVariableNum = sCode.substring(8, 12);
+                            } else {
+                                sVariableNum = null;
+                            }
+//
                             if(sVariableTypePrefix.equals("20")) {
                                 dPriceSell = Double.parseDouble(sVariableNum) / 100; // price with two decimals
                             }
@@ -1344,12 +1368,11 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
                                 msg.show(this);
                             }
 
-
                             executeEvent(ticket, ticketext, "ticket.close", new ScriptArg("print", paymentdialog.isPrintSelected()));
 
                             // Print receipt.
-                            printTicket(paymentdialog.isPrintSelected()
-                                    //|| warrantyPrint
+// John L July 2014 previous || warranty print reinstated
+                            printTicket(paymentdialog.isPrintSelected() || warrantyPrint
                                     ? "Printer.Ticket"
 //                                    ? ticketPrintType
                                     : "Printer.Ticket2", ticket, ticketext);
@@ -1368,7 +1391,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
                                 restDB.clearCustomerNameInTable(ticketext.toString());
                                 restDB.clearWaiterNameInTable(ticketext.toString());
                                 restDB.clearTicketIdInTable(ticketext.toString());
-
+//                                restDB.
                             }
                         }
                     }
@@ -1392,16 +1415,20 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         return resultok;
     }
 
-    private void warrantyCheck(TicketInfo ticket){
+// John L July 2014
+//    private void warrantyCheck(TicketInfo ticket){
+    private boolean warrantyCheck(TicketInfo ticket) {
         warrantyPrint=false;
         int lines=0;
         while (lines < ticket.getLinesCount()) {
             if (!warrantyPrint){
                 warrantyPrint = ticket.getLine(lines).isProductWarranty();
+                return (true);
             }
             lines++;
             }
-        }
+        return false;
+    }
 
     /**
      *
@@ -1453,9 +1480,11 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
                 script.put("warranty", warrantyPrint);
                 script.put("pickupid",getPickupString(ticket));
 
-
+// JG Aug 2014
+                refreshTicket();
 
                 m_TTP.printTicket(script.eval(sresource).toString(), ticket);
+
 // JG May 2013 replaced with Multicatch
             } catch (    ScriptException | TicketPrinterException e) {
                 MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotprintticket"), e);
@@ -1766,8 +1795,8 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
             // more arguments
             for(ScriptArg arg : args) {
                 script.put(arg.getKey(), arg.getValue());
-                System.out.println(arg.getKey());
-                System.out.println(arg.getValue());
+//                System.out.println(arg.getKey());
+//                System.out.println(arg.getValue());
             }
 
             return script.eval(code);
@@ -1839,7 +1868,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         m_jOptions.setLayout(new java.awt.BorderLayout());
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_add_sml.png"))); // NOI18N
-        jButton1.setToolTipText("Add New Customer");
+        jButton1.setToolTipText("Go to Customers");
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
         jButton1.setMargin(new java.awt.Insets(0, 4, 0, 4));
@@ -1854,7 +1883,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         });
 
         btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_sml.png"))); // NOI18N
-        btnCustomer.setToolTipText("Show Customers");
+        btnCustomer.setToolTipText("Find Customers");
         btnCustomer.setFocusPainted(false);
         btnCustomer.setFocusable(false);
         btnCustomer.setMargin(new java.awt.Insets(0, 4, 0, 4));
@@ -1894,7 +1923,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
                 .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSplit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(5, 5, 5))
         );
         m_jButtonsLayout.setVerticalGroup(
             m_jButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1904,7 +1933,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSplit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5))
+                .addContainerGap())
         );
 
         m_jOptions.add(m_jButtons, java.awt.BorderLayout.LINE_START);
@@ -2089,9 +2118,10 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         jPanel4.setLayout(new java.awt.BorderLayout());
 
-        m_jTicketId.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        m_jTicketId.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         m_jTicketId.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jTicketId.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        m_jTicketId.setAutoscrolls(true);
         m_jTicketId.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         m_jTicketId.setOpaque(true);
         m_jTicketId.setPreferredSize(new java.awt.Dimension(300, 40));
@@ -2254,6 +2284,11 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         m_jaddtax.setFocusable(false);
         m_jaddtax.setPreferredSize(new java.awt.Dimension(40, 25));
         m_jaddtax.setRequestFocusEnabled(false);
+        m_jaddtax.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                m_jaddtaxActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
@@ -2507,6 +2542,14 @@ m_App.getAppUserView().showTask("com.openbravo.pos.customers.CustomersPanel");
                 }
 
     }//GEN-LAST:event_j_btnKitchenPrtActionPerformed
+
+    private void m_jaddtaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jaddtaxActionPerformed
+        if ("+".equals(m_jaddtax.getText())){
+            m_jaddtax.setText("-");
+        }else{
+            m_jaddtax.setText("+");
+        }
+    }//GEN-LAST:event_m_jaddtaxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

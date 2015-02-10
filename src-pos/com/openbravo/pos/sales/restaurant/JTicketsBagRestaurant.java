@@ -16,60 +16,7 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with uniCenta oPOS.  If not, see <http://www.gnu.org/licenses/>.
-//    uniCenta oPOS  - Touch Friendly Point Of Sale
-//    Copyright (c) 2009-2014 uniCenta & previous Openbravo POS works
-//    http://www.unicenta.com
 //
-//    This file is part of uniCenta oPOS
-//
-//    uniCenta oPOS is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation, either version 3 of the License, or
-//    (at your option) any later version.
-//
-//   uniCenta oPOS is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//
-//    You should have received a copy of the GNU General Public License
-//    along with uniCenta oPOS.  If not, see <http://www.gnu.org/licenses/>.
-//    uniCenta oPOS  - Touch Friendly Point Of Sale
-//    Copyright (c) 2009-2014 uniCenta & previous Openbravo POS works
-//    http://www.unicenta.com
-//
-//    This file is part of uniCenta oPOS
-//
-//    uniCenta oPOS is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation, either version 3 of the License, or
-//    (at your option) any later version.
-//
-//   uniCenta oPOS is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//
-//    You should have received a copy of the GNU General Public License
-//    along with uniCenta oPOS.  If not, see <http://www.gnu.org/licenses/>.
-//    uniCenta oPOS  - Touch Friendly Point Of Sale
-//    Copyright (c) 2009-2014 uniCenta & previous Openbravo POS works
-//    http://www.unicenta.com
-//
-//    This file is part of uniCenta oPOS
-//
-//    uniCenta oPOS is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation, either version 3 of the License, or
-//    (at your option) any later version.
-//
-//   uniCenta oPOS is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//
-//    You should have received a copy of the GNU General Public License
-//    along with uniCenta oPOS.  If not, see <http://www.gnu.org/licenses/>.
 
 package com.openbravo.pos.sales.restaurant;
 
@@ -104,18 +51,18 @@ import javax.swing.*;
  */
 public class JTicketsBagRestaurant extends javax.swing.JPanel {
 
-    private AppView m_App;
-    private JTicketsBagRestaurantMap m_restaurant;
+    private final AppView m_App;
+    private final JTicketsBagRestaurantMap m_restaurant;
     private List<TicketLineInfo> m_aLines;
     private TicketLineInfo line;
     private TicketInfo ticket;
-    private Object ticketExt;
+    private final Object ticketExt;
     private DataLogicSystem m_dlSystem = null;
-    private DeviceTicket m_TP;
-    private TicketParser m_TTP2;
-    private RestaurantDBUtils restDB;
+    private final DeviceTicket m_TP;
+    private final TicketParser m_TTP2;
+    private final RestaurantDBUtils restDB;
 
-    private DataLogicSystem dlSystem = null;
+    private final DataLogicSystem dlSystem = null;
     private TicketParser m_TTP;
 
     private SentenceList senttax;
@@ -139,7 +86,8 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         restDB = new  RestaurantDBUtils(m_App);
 
         m_dlSystem = (DataLogicSystem) m_App.getBean("com.openbravo.pos.forms.DataLogicSystem");
-        m_TP = new DeviceTicket();
+//JG July 2014 - Thank you Ron Isaacson        m_TP = new DeviceTicket();
+        m_TP = new DeviceTicket(app.getProperties());
         m_TTP2 = new TicketParser(m_App.getDeviceTicket(), m_dlSystem);
         m_KitchenPrint.setVisible(m_App.getAppUserView().getUser().hasPermission("sales.PrintKitchen"));
         m_KitchenPrint.setVisible(false);

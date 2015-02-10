@@ -162,14 +162,14 @@ public class DeviceDisplayPanel extends JPanel implements DeviceDisplay, DeviceD
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jline1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jline1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jline1.setText("jline1");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         jPanel1.add(jline1, gridBagConstraints);
 
-        jline2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jline2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jline2.setText("jline2");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;

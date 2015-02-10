@@ -29,10 +29,10 @@ import java.awt.Component;
  */
 public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterface {
 
-    private JPaymentNotifier m_notifier;
+    private final JPaymentNotifier m_notifier;
     private double m_dTotal;
 
-    private String m_sName;
+    private final String m_sName;
 
     /** Creates new form JPaymentChequeRefund
      * @param notifier

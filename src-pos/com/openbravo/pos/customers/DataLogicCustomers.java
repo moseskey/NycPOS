@@ -160,19 +160,19 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
                 Formats.NULL }
             , new int[] {0}
         );
-
     }
 
-    // JG 20 Sept 12 extended for Postal - CustomerList list
-    // JG 2 Sept 13 extended for Phone + Email - CustomerList list
+// JG 20 Sept 12 extended for Postal - CustomerList list
+// JG 2 Sept 13 extended for Phone + Email - CustomerList list
 
     /**
      *
      * @return customer data
-     */
+    */
+    //JG July 2014 - Amend to PHONE from PHONE2
         public SentenceList getCustomerList() {
         return new StaticSentence(s
-            , new QBFBuilder("SELECT ID, TAXID, SEARCHKEY, NAME, POSTAL, EMAIL, PHONE2 FROM CUSTOMERS WHERE VISIBLE = " + s.DB.TRUE() + " AND ?(QBF_FILTER) ORDER BY NAME", new String[] {"TAXID", "SEARCHKEY", "NAME", "POSTAL", "PHONE2", "EMAIL"})
+            , new QBFBuilder("SELECT ID, TAXID, SEARCHKEY, NAME, POSTAL, EMAIL, PHONE FROM CUSTOMERS WHERE VISIBLE = " + s.DB.TRUE() + " AND ?(QBF_FILTER) ORDER BY NAME", new String[] {"TAXID", "SEARCHKEY", "NAME", "POSTAL", "PHONE", "EMAIL"})
             , new SerializerWriteBasic(new Datas[] {
                 Datas.OBJECT, Datas.STRING,
                 Datas.OBJECT, Datas.STRING,
@@ -190,9 +190,10 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
                         c.setPostal(dr.getString(5));
                         c.setPhone(dr.getString(6));
                         c.setEmail(dr.getString(7));
+
                         return c;
                     }
-                });
+            });
     }
 
     /**

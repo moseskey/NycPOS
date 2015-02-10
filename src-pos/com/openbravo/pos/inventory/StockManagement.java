@@ -42,7 +42,6 @@ import com.openbravo.pos.scripting.ScriptException;
 import com.openbravo.pos.scripting.ScriptFactory;
 import com.openbravo.pos.ticket.ProductInfoExt;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -79,6 +78,7 @@ public class StockManagement extends JPanel implements JPanelView {
     private static final int DECIMAL = 2;
     private final String user;
 
+
     /** Creates new form StockManagement
      * @param app */
     public StockManagement(AppView app) {
@@ -91,10 +91,7 @@ public class StockManagement extends JPanel implements JPanelView {
         initComponents();
 
         user = m_App.getAppUserView().getUser().getName();
-
-
         btnDownloadProducts.setEnabled(m_App.getDeviceScanner() != null);
-
 
         // El modelo de locales
         m_sentlocations = m_dlSales.getLocationsList();
@@ -114,9 +111,11 @@ public class StockManagement extends JPanel implements JPanelView {
         m_jreason.setModel(m_ReasonModel);
 
         m_cat = new JCatalog(m_dlSales);
-        m_cat.getComponent().setPreferredSize(new Dimension(0, 245));
         m_cat.addActionListener(new CatalogListener());
+
         catcontainer.add(m_cat.getComponent(), BorderLayout.CENTER);
+
+
 
         // Las lineas de inventario
         m_invlines = new JInventoryLines();
@@ -422,7 +421,6 @@ public class StockManagement extends JPanel implements JPanelView {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        catcontainer = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         m_jdate = new javax.swing.JTextField();
@@ -446,19 +444,15 @@ public class StockManagement extends JPanel implements JPanelView {
         jNumberKeys = new com.openbravo.beans.JNumberKeys();
         m_jEnter = new javax.swing.JButton();
         m_jcodebar = new javax.swing.JLabel();
+        catcontainer = new javax.swing.JPanel();
 
+        setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setMinimumSize(new java.awt.Dimension(550, 250));
-        setPreferredSize(new java.awt.Dimension(550, 250));
+        setPreferredSize(new java.awt.Dimension(550, 270));
         setLayout(new java.awt.BorderLayout());
 
-        catcontainer.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        catcontainer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        catcontainer.setMinimumSize(new java.awt.Dimension(100, 100));
-        catcontainer.setPreferredSize(new java.awt.Dimension(470, 270));
-        catcontainer.setRequestFocusEnabled(false);
-        catcontainer.setLayout(new java.awt.BorderLayout());
-        add(catcontainer, java.awt.BorderLayout.SOUTH);
-
+        jPanel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel8.setPreferredSize(new java.awt.Dimension(780, 270));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -513,9 +507,9 @@ public class StockManagement extends JPanel implements JPanelView {
         jPanel8.add(m_jLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 200, 25));
 
         jPanel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel5.setPreferredSize(new java.awt.Dimension(400, 140));
+        jPanel5.setPreferredSize(new java.awt.Dimension(400, 245));
         jPanel5.setLayout(new java.awt.BorderLayout());
-        jPanel8.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, 400, 130));
+        jPanel8.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, -1, 150));
 
         m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1uparrow.png"))); // NOI18N
         m_jUp.setToolTipText("Scroll Up a Line");
@@ -684,6 +678,14 @@ public class StockManagement extends JPanel implements JPanelView {
         jPanel8.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 240, 260));
 
         add(jPanel8, java.awt.BorderLayout.PAGE_START);
+
+        catcontainer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        catcontainer.setMinimumSize(new java.awt.Dimension(0, 250));
+        catcontainer.setPreferredSize(new java.awt.Dimension(0, 250));
+        catcontainer.setRequestFocusEnabled(false);
+        catcontainer.setLayout(new java.awt.BorderLayout());
+        add(catcontainer, java.awt.BorderLayout.CENTER);
+        catcontainer.getAccessibleContext().setAccessibleParent(jPanel8);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped

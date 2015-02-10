@@ -35,10 +35,10 @@ public class InactivityListener implements ActionListener, AWTEventListener
      */
     public final static long USER_EVENTS = KEY_EVENTS + MOUSE_EVENTS;
 
-	private Action action;
+	private final Action action;
 	private int interval;
-	private long eventMask;
-	private Timer timer = new Timer(0, this);
+	private final long eventMask;
+	private final Timer timer = new Timer(0, this);
 
 
 // Specify the inactivity interval and listen for USER_EVENTS
@@ -75,12 +75,14 @@ public class InactivityListener implements ActionListener, AWTEventListener
 	}
 
 //  Implement ActionListener for the Timer
+    @Override
 	public void actionPerformed(ActionEvent e)
 	{
 		action.actionPerformed(e);
 	}
 
 //  Implement AWTEventListener, all events are dispatched via this
+    @Override
 	public void eventDispatched(AWTEvent e)
 	{
 		if (timer.isRunning())

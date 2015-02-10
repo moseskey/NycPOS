@@ -49,9 +49,11 @@ if(isCash) {
      pane.setMessage(FontText);
      pane.setPreferredSize( new Dimension(450,150));
      JDialog dialog = pane.createDialog("Cash payment");
-    new Thread(new Runnable() { void run() {
-        dialog.show();
-    } }).start();
+    new Thread(new Runnable() {
+         void run() {
+            dialog.show();
+        }
+    }).start();
 }
 
 // Return to default settings

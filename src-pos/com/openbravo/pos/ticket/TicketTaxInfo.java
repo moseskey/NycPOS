@@ -27,7 +27,7 @@ import com.openbravo.format.Formats;
  */
 public class TicketTaxInfo {
 
-    private TaxInfo tax;
+    private final TaxInfo tax;
 
     private double subtotal;
     private double taxtotal;

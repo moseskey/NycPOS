@@ -27,11 +27,11 @@ import com.openbravo.basic.BasicException;
  */
 public class QBFBuilder implements ISQLBuilderStatic {
 
-    private String m_sSentNullFilter;   // la sentencia que se devuelve cuando el filtro es vacio
-    private String m_sSentBeginPart;  // La sentencia que se devuelve es m_sSentBeginPart + ( filtro ) + m_sSentEndPart
-    private String m_sSentEndPart;
+    private final String m_sSentNullFilter;   // la sentencia que se devuelve cuando el filtro es vacio
+    private final String m_sSentBeginPart;  // La sentencia que se devuelve es m_sSentBeginPart + ( filtro ) + m_sSentEndPart
+    private final String m_sSentEndPart;
 
-    private String[] m_asFindFields;
+    private final String[] m_asFindFields;
 
 //    /** Creates a new instance of QBFBuilder */
 //    public QBFBuilder(TableDefinition tb, String[] asFindFields) {
@@ -97,9 +97,9 @@ public class QBFBuilder implements ISQLBuilderStatic {
 
     private static class QBFParameter implements DataWrite {
 
-        private String[] m_asFindFields;
-        private QBFCompareEnum[] m_aiCondFields;
-        private String[] m_aParams;
+        private final String[] m_asFindFields;
+        private final QBFCompareEnum[] m_aiCondFields;
+        private final String[] m_aParams;
 
         public QBFParameter(String[] asFindFields) {
             m_asFindFields = asFindFields;

@@ -10,8 +10,7 @@
 	<import value="net.sf.jasperreports.engine.data.*"/>
 	<parameter name="TAXESLOGIC" class="com.openbravo.pos.sales.TaxesLogic" isForPrompting="false"/>
 	<queryString>
-		<![CDATA[SELECT
-  PRODUCTS.ID,
+		<![CDATA[SELECT  PRODUCTS.ID,
   PRODUCTS.REFERENCE,
   PRODUCTS.CODE,
   PRODUCTS.NAME,
@@ -154,7 +153,7 @@ ORDER BY CATEGORIES.NAME, PRODUCTS.NAME]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None">
-					<font fontName="SansSerif" size="24" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="SansSerif" size="20" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[com.openbravo.format.Formats.CURRENCY.formatValue(new Double($F{PRICESELL}.doubleValue() * (1.0 + $P{TAXESLOGIC}.getTaxRate($F{TAXCAT}))))]]></textFieldExpression>
 			</textField>

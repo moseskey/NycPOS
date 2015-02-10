@@ -28,7 +28,8 @@ report.setSentence("SELECT PRODUCTS.ID, PRODUCTS.REFERENCE, PRODUCTS.CODE, PRODU
                  "WHERE ?(QBF_FILTER) " +
                  "ORDER BY CATEGORIES.NAME, PRODUCTS.NAME");
 
-report.addParameter("PRODUCTS.NAME");
+report.addParameter("CATEGORIES.NAME");
+// report.addParameter("PRODUCTS.NAME");
 report.addParameter("PRODUCTS.PRICEBUY");
 report.addParameter("PRODUCTS.PRICESELL");
 report.addParameter("PRODUCTS.CATEGORY");

@@ -28,6 +28,8 @@ import com.openbravo.data.loader.SerializableWrite;
 /**
  *
  * JG - add AppUser
+ * JG - Aug 2014 Add Customer
+ * Format is CustomerName : Ticket : User
  */
 public class SharedTicketInfo implements SerializableRead, SerializableWrite {
 
@@ -35,6 +37,7 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
     private String id;
     private String name;
     private String UserName;
+    private String CustomerName;
 
     /** Creates a new instance of SharedTicketInfo */
     public SharedTicketInfo() {
@@ -50,6 +53,8 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
         id = dr.getString(1);
         name = dr.getString(2);
         UserName = dr.getString(3);
+        CustomerName = dr.getString(4);
+
     }
 
     /**
@@ -62,6 +67,7 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
         dp.setString(1, id);
         dp.setString(2, name);
         dp.setString(3, UserName);
+        dp.setString(4, CustomerName);
     }
 
     /**
@@ -80,7 +86,7 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
         return name;
     }
 
-// JG Testing SharedTicket.content display in Dialog
+// JG Aug 2014 - Add User info
 
     /**
      *
@@ -88,5 +94,14 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
      */
         public String getAppUser() {
         return UserName;
+    }
+// JG Aug 2014 - Add Customer info
+
+    /**
+     *
+     * @return
+     */
+        public String getCustomerName() {
+        return CustomerName;
     }
 }

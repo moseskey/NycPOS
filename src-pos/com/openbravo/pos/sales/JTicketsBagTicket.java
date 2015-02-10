@@ -54,22 +54,22 @@ public class JTicketsBagTicket extends JTicketsBag {
      */
     protected DataLogicCustomers dlCustomers = null;
 
-    private DataLogicSales m_dlSales;
+    private final DataLogicSales m_dlSales;
     private TaxesLogic taxeslogic;
     private ListKeyed taxcollection;
 
 
 
-    private DeviceTicket m_TP;
-    private TicketParser m_TTP;
-    private TicketParser m_TTP2;
+    private final DeviceTicket m_TP;
+    private final TicketParser m_TTP;
+    private final TicketParser m_TTP2;
 
     private TicketInfo m_ticket;
     private TicketInfo m_ticketCopy;
 
-    private JTicketsBagTicketBag m_TicketsBagTicketBag;
+    private final JTicketsBagTicketBag m_TicketsBagTicketBag;
 
-    private JPanelTicketEdits m_panelticketedit;
+    private final JPanelTicketEdits m_panelticketedit;
 
     /** Creates new form JTicketsBagTicket
      * @param app
@@ -83,7 +83,8 @@ public class JTicketsBagTicket extends JTicketsBag {
         dlCustomers = (DataLogicCustomers) m_App.getBean("com.openbravo.pos.customers.DataLogicCustomers");
 
         // Inicializo la impresora...
-        m_TP = new DeviceTicket();
+//JG July 2014 - Thank you Ron Isaacson        m_TP = new DeviceTicket();
+        m_TP = new DeviceTicket(app.getProperties());
 
         // Inicializo el parser de documentos de ticket
         m_TTP = new TicketParser(m_TP, m_dlSystem); // para visualizar el ticket
@@ -204,7 +205,7 @@ public class JTicketsBagTicket extends JTicketsBag {
         Integer findTicket=0;
         try {
                 findTicket = m_jTicketEditor.getValueInteger();
-            }catch (Exception e){
+            }catch (BasicException e){
             }
 
         try {

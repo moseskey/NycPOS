@@ -15,10 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- *
- * @author JG uniCenta
- */
+
 public class PropertyUtils {
 
     private Properties m_propsconfig;
@@ -38,7 +35,7 @@ public class PropertyUtils {
     }
 
     private File getDefaultConfig() {
-        return new File(new File("C:\\Documents and Settings\\jack"), "unicentaopos.properties");
+        return new File(new File(".\\"), "unicentaopos.properties");
     }
 
     private void load() {

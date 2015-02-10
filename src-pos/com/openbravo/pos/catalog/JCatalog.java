@@ -71,6 +71,8 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     private CategoryInfo showingcategory = null;
 
+    private boolean b;
+
     /** Creates new form JCatalog
      * @param dlSales */
     public JCatalog(DataLogicSales dlSales) {
@@ -97,7 +99,7 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
         m_jListCategories.addListSelectionListener(this);
 //        m_jListCategories.getPreferredScrollableViewportSize().setSize(400, height);
 
-        m_jscrollcat.getVerticalScrollBar().setPreferredSize(new Dimension(35, 35));
+        m_jscrollcat.getVerticalScrollBar().setPreferredSize(new Dimension(48, 48));
 
         tnbcat = new ThumbNailBuilder(48, 48, "com/openbravo/images/category.png");
         tnbsubcat = new ThumbNailBuilder(width, height, "com/openbravo/images/subcategory.png");
@@ -343,7 +345,7 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
                     // Create  products panel
                     java.util.List<ProductInfoExt> products = m_dlSales.getProductComments(id);
 
-    // JG Aug 2013 switched to isEmpty()
+// JG Aug 2013 switched to isEmpty()
 //                    if (products.size() == 0) {
                         if (products.isEmpty()) {
                         // no hay productos por tanto lo anado a la de vacios y muestro el panel principal.

@@ -53,9 +53,9 @@ public class DeviceDisplayBase {
      */
     public static final int ANIMATION_CURTAIN = 4;
 
-    private DeviceDisplayImpl impl;
+    private final DeviceDisplayImpl impl;
     private DisplayAnimator anim;
-    private javax.swing.Timer m_tTimeTimer;
+    private final javax.swing.Timer m_tTimeTimer;
     private int counter = 0;
 
     /** Creates a new instance of DeviceDisplayBase

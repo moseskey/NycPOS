@@ -27,17 +27,26 @@ class JTicket extends javax.swing.JPanel {
 
     private static final int H_GAP = 8;
     private static final int V_GAP = 8;
-    private static final int COLUMNS = 42;
-    private static final int LINEWIDTH = COLUMNS * 7;
+//JG July 2014 - Thank you Ron Isaacson
+//    private static final int COLUMNS = 42;
+//    private static final int LINEWIDTH = COLUMNS * 7;
+    private final int columns;
+    private final int linewidth;
+
 
     private final BasicTicket basict;
     private final Map desktophints;
 
     /** Creates new form JTicket */
-    public JTicket(BasicTicket t) {
+//JG July 2014 - Thank you Ron Isaacson    public JTicket(BasicTicket t) {
+    public JTicket(BasicTicket t, int columns) {
 
         basict = t;
         desktophints = (Map) Toolkit.getDefaultToolkit().getDesktopProperty("awt.font.desktophints");
+
+       this.columns = columns;
+       this.linewidth = columns * 7;
+
         initComponents();
     }
 
@@ -57,14 +66,16 @@ class JTicket extends javax.swing.JPanel {
         g2d.fillRect(i.left, i.top, getWidth() - i.left - i.right, getHeight() - i.top - i.bottom);
 
         g.setColor(getForeground());
-        basict.draw(g2d, i.left + H_GAP, i.top + V_GAP, LINEWIDTH);
+//        basict.draw(g2d, i.left + H_GAP, i.top + V_GAP, LINEWIDTH);
+        basict.draw(g2d, i.left + H_GAP, i.top + V_GAP, linewidth);
     }
 
 
     @Override
     public Dimension getPreferredSize() {
         Insets ins = getInsets();
-        return new Dimension((int) (LINEWIDTH + 2 * H_GAP) + ins.left + ins.right
+//JG July 2014 - Thank you Ron Isaacson        return new Dimension((int) (LINEWIDTH + 2 * H_GAP) + ins.left + ins.right
+        return new Dimension((int) (linewidth + 2 * H_GAP) + ins.left + ins.right
                            , (int) (basict.getHeight() + 2 * V_GAP) + ins.top + ins.bottom);
     }
 

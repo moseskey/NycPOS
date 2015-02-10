@@ -30,104 +30,25 @@ import java.util.Date;
  */
 public class CustomerInfoExt extends CustomerInfo {
 
-    /**
-     * Customer Account ID
-     */
     protected String taxcustomerid;
-
-    /**
-     * Customer Notes text
-     */
     protected String notes;
-
-    /**
-     * Is Customer Visible boolean
-     */
     protected boolean visible;
-
-    /**
-     * Customer Mag Card string
-     */
     protected String card;
-
-    /**
-     * Maximum allowed Customer Debt (Credit Limit)
-     */
     protected Double maxdebt;
-
-    /**
-     * Customer's last account ticket (Date)
-     */
     protected Date curdate;
-
-    /**
-     * Customer's last account ticket (Debt)
-     */
     protected Double curdebt;
-
-    /**
-     * Customer's Firstname
-     */
     protected String firstname;
-
-    /**
-     * Customer's Lastname
-     */
     protected String lastname;
-
-    /**
-     * Customer's email address
-     */
     protected String email;
-
-    /**
-     * Customer's Primary telephone
-     */
     protected String phone;
-
-    /**
-     * Customer's Secondary telephone
-     */
     protected String phone2;
-
-    /**
-     * Customer's Secondary fax
-     */
     protected String fax;
-
-    /**
-     * Customer's Line Address 1
-     */
     protected String address;
-
-    /**
-     * Customer's Line Address 2
-     */
     protected String address2;
-
-    /**
-    * Customer's Address Postal/Zip code
-     */
     protected String postal;
-
-    /**
-     * Customer's Address City
-     */
     protected String city;
-
-    /**
-     * Customer's Address Region/County/State
-     */
     protected String region;
-
-    /**
-     * Customer's Address Country
-     */
     protected String country;
-
-    /**
-     * Customer's photo
-     */
     protected String image;
 
     /** Creates a new instance of UserInfoBasic
@@ -143,11 +64,6 @@ public class CustomerInfoExt extends CustomerInfo {
     public String getTaxCustCategoryID() {
         return taxcustomerid;
     }
-
-    /**
-     *
-     * @param taxcustomerid
-     */
     public void setTaxCustomerID(String taxcustomerid) {
         this.taxcustomerid = taxcustomerid;
     }
@@ -159,11 +75,6 @@ public class CustomerInfoExt extends CustomerInfo {
     public String getNotes() {
         return notes;
     }
-
-    /**
-     *
-     * @param notes
-     */
     public void setNotes(String notes) {
         this.notes = notes;
     }
@@ -175,11 +86,6 @@ public class CustomerInfoExt extends CustomerInfo {
     public boolean isVisible() {
         return visible;
     }
-
-    /**
-     *
-     * @param visible
-     */
     public void setVisible(boolean visible) {
         this.visible = visible;
     }
@@ -191,11 +97,6 @@ public class CustomerInfoExt extends CustomerInfo {
     public String getCard() {
         return card;
     }
-
-    /**
-     *
-     * @param card
-     */
     public void setCard(String card) {
         this.card = card;
     }
@@ -207,21 +108,11 @@ public class CustomerInfoExt extends CustomerInfo {
     public Double getMaxdebt() {
         return maxdebt;
     }
-
-    /**
-     *
-     * @return
-     */
-    public String printMaxDebt() {
-        return Formats.CURRENCY.formatValue(RoundUtils.getValue(getMaxdebt()));
-    }
-
-    /**
-     *
-     * @param maxdebt
-     */
     public void setMaxdebt(Double maxdebt) {
         this.maxdebt = maxdebt;
+    }
+    public String printMaxDebt() {
+        return Formats.CURRENCY.formatValue(RoundUtils.getValue(getMaxdebt()));
     }
 
     /**
@@ -231,13 +122,11 @@ public class CustomerInfoExt extends CustomerInfo {
     public Date getCurdate() {
         return curdate;
     }
-
-    /**
-     *
-     * @param curdate
-     */
     public void setCurdate(Date curdate) {
         this.curdate = curdate;
+    }
+    public String printCurDate() {
+        return Formats.DATE.formatValue(getCurdate());
     }
 
     /**
@@ -247,22 +136,13 @@ public class CustomerInfoExt extends CustomerInfo {
     public Double getCurdebt() {
         return curdebt;
     }
-
-    /**
-     *
-     * @return
-     */
+    public void setCurdebt(Double curdebt) {
+        this.curdebt = curdebt;
+    }
     public String printCurDebt() {
         return Formats.CURRENCY.formatValue(RoundUtils.getValue(getCurdebt()));
     }
 
-    /**
-     *
-     * @param curdebt
-     */
-    public void setCurdebt(Double curdebt) {
-        this.curdebt = curdebt;
-    }
 
     /**
      *
@@ -272,6 +152,8 @@ public class CustomerInfoExt extends CustomerInfo {
     public void updateCurDebt(Double amount, Date d) {
 
         curdebt = curdebt == null ? amount : curdebt + amount;
+// JG Aug 2014
+        curdate =  (new Date());
 
         if (RoundUtils.compare(curdebt, 0.0) > 0) {
             if (curdate == null) {
@@ -284,6 +166,7 @@ public class CustomerInfoExt extends CustomerInfo {
         } else { // < 0
             curdate = null;
         }
+
     }
 
     /**

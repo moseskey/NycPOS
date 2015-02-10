@@ -198,8 +198,8 @@ public class BrowsableEditableData {
     private void fireStateUpdate() {
         EventListener[] l = listeners.getListeners(StateListener.class);
         int iState = getState();
-        for (int i = 0; i < l.length; i++) {
-            ((StateListener) l[i]).updateState(iState);
+        for (EventListener l1 : l) {
+            ((StateListener) l1).updateState(iState);
         }
     }
 

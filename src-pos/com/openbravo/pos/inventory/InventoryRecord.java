@@ -32,11 +32,11 @@ import java.util.List;
  */
 public class InventoryRecord {
 
-    private Date m_dDate;
-    private MovementReason m_reason;
-    private LocationInfo m_locationOri;
-    private List<InventoryLine> m_invlines;
-    private String user;
+    private final Date m_dDate;
+    private final MovementReason m_reason;
+    private final LocationInfo m_locationOri;
+    private final List<InventoryLine> m_invlines;
+    private final String user;
 
     /** Creates a new instance of InventoryRecord
      * @param d
@@ -146,6 +146,6 @@ public class InventoryRecord {
      * @return
      */
     public String printSubTotal() {
-        return Formats.CURRENCY.formatValue(new Double(getSubTotal()));
+        return Formats.CURRENCY.formatValue(getSubTotal());
     }
 }

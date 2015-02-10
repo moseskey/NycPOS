@@ -54,6 +54,7 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
      *
      * @param app
      */
+    @Override
     public void init(AppView app) {
 
         DataLogicSales dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -74,6 +75,7 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
      *
      * @throws BasicException
      */
+    @Override
     public void activate() throws BasicException {
 
         List catlist = m_sentcat.list();
@@ -86,6 +88,7 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
      *
      * @return
      */
+    @Override
     public SerializerWrite getSerializerWrite() {
         return new SerializerWriteBasic(
                 new Datas[] {Datas.OBJECT, Datas.STRING, Datas.OBJECT, Datas.DOUBLE, Datas.OBJECT, Datas.DOUBLE, Datas.OBJECT, Datas.STRING, Datas.OBJECT, Datas.STRING});
@@ -95,6 +98,7 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
      *
      * @return
      */
+    @Override
     public Component getComponent() {
         return this;
     }
@@ -104,6 +108,7 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
      * @return
      * @throws BasicException
      */
+    @Override
     public Object createValue() throws BasicException {
 
         if (m_jBarcode.getText() == null || m_jBarcode.getText().equals("")) {
@@ -152,7 +157,9 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
         m_jCategory = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(AppLocal.getIntString("label.bybarcode"))); // NOI18N
+        setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, AppLocal.getIntString("label.bybarcode"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
         jPanel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -181,7 +188,7 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(AppLocal.getIntString("label.byform"))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, AppLocal.getIntString("label.byform"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
         jPanel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N

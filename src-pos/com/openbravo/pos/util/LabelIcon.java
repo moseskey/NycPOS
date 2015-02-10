@@ -32,8 +32,8 @@ import javax.swing.JLabel;
  */
 public class LabelIcon extends JLabel implements Icon {
 
-    private int iconwidth;
-    private int iconheight;
+    private final int iconwidth;
+    private final int iconheight;
 
     /**
      *
@@ -63,6 +63,7 @@ public class LabelIcon extends JLabel implements Icon {
         return imgtext;
     }
 
+    @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
 
         setBounds(0, 0, iconwidth, iconheight);
@@ -71,10 +72,12 @@ public class LabelIcon extends JLabel implements Icon {
         g.translate(-x, -y);
     }
 
+    @Override
     public int getIconWidth() {
         return iconwidth;
     }
 
+    @Override
     public int getIconHeight() {
         return iconheight;
     }

@@ -33,7 +33,7 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
 
     private double m_dTotal;
     private String m_sTransactionID;
-    private JPaymentNotifier m_notifier;
+    private final JPaymentNotifier m_notifier;
 
     /** Creates new form JPaymentCash
      * @param notifier */
@@ -68,6 +68,7 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
      * @param sTransaction
      * @param dTotal
      */
+    @Override
     public void activate(String sTransaction, double dTotal) {
 
         m_sTransactionID = sTransaction;

@@ -141,7 +141,7 @@ public class JProductFinder extends javax.swing.JDialog {
 
     private static class MyListData extends javax.swing.AbstractListModel {
 
-        private java.util.List m_data;
+        private final java.util.List m_data;
 
         public MyListData(java.util.List data) {
             m_data = data;
@@ -263,8 +263,8 @@ public class JProductFinder extends javax.swing.JDialog {
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-665)/2, (screenSize.height-565)/2, 665, 565);
+        setSize(new java.awt.Dimension(665, 565));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jListProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListProductsMouseClicked

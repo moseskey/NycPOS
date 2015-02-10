@@ -120,8 +120,10 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
         if (product == null) {
             pid = null;
+//            pid = product.getName();
         } else {
             pid = product.getID();
+
 // JDL 20.12.20 set product name to a default rather than blank    TO DO
             attributes.setProperty("product.name", product.getName());
                attributes.setProperty("product.com", product.isCom() ? "true" : "false");
@@ -205,12 +207,12 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
     @Override
     public void writeValues(DataWrite dp) throws BasicException {
         dp.setString(1, m_sTicket);
-        dp.setInt(2, new Integer(m_iLine));
+        dp.setInt(2, m_iLine);
         dp.setString(3, productid);
         dp.setString(4, attsetinstid);
 
-        dp.setDouble(5, new Double(multiply));
-        dp.setDouble(6, new Double(price));
+        dp.setDouble(5, multiply);
+        dp.setDouble(6, price);
 
         dp.setString(7, tax.getId());
         try {
@@ -230,7 +232,7 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
     @Override
     public void readValues(DataRead dr) throws BasicException {
         m_sTicket = dr.getString(1);
-        m_iLine = dr.getInt(2).intValue();
+        m_iLine = dr.getInt(2);
         productid = dr.getString(3);
         attsetinstid = dr.getString(4);
         multiply = dr.getDouble(5);
@@ -284,8 +286,25 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
      * @return
      */
     public String getProductID() {
+// System.out.println(productid);
         return productid;
+
     }
+        /**
+     *
+     * @param value
+     */
+    public void setProductID(String value) {
+//        if (value == null) {
+//            productid = getProductName();
+//System.out.println(getProductName());
+//System.out.println(value);
+//        }else{
+            productid = value;
+//System.out.println(value);
+
+    }
+
 
     /**
      *

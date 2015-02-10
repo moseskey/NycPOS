@@ -139,7 +139,7 @@ public class SwingWorkerProgress {
                 setProgress(progress);
                 try {
                     Thread.sleep(25);
-                } catch (Exception e) {
+                } catch (InterruptedException e) {
                 }
             }
 

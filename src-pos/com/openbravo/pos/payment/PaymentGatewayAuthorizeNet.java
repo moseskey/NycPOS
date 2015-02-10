@@ -26,12 +26,14 @@
  */
 
 /**
- *  Based on sample code and snipptes provided by:
+ *  Based on sample code and snippets provided by:
  *  Patrick Phelan, phelan@choicelogic.com
  *  Roedy Green, Canadian Mind Products
+ *  Authorize.net - //github.com/AuthorizeNet
  */
 
 // Modifications by Adrian Romero & Mikel Irurita
+// Modifications by Jack Gerrard uniCenta
 
 package com.openbravo.pos.payment;
 
@@ -50,6 +52,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
 
 /**
  *
@@ -75,7 +78,7 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
         AltEncrypter cypher = new AltEncrypter("cypherkey" + props.getProperty("payment.commerceid"));
         this.m_sCommercePassword = cypher.decrypt(props.getProperty("payment.commercepassword").substring(6));
 
-        m_bTestMode = Boolean.valueOf(props.getProperty("payment.testmode")).booleanValue();
+        m_bTestMode = Boolean.parseBoolean(props.getProperty("payment.testmode"));
 
         ENDPOINTADDRESS = (m_bTestMode)
                 ? "https://test.authorize.net/gateway/transact.dll"
@@ -97,15 +100,16 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
     public void execute(PaymentInfoMagcard payinfo) {
 
 // JG 16 May 12 use StringBuilder in place of StringBuilder
+// JG 17 May 14 further amends
         StringBuilder sb = new StringBuilder();
         try {
-            //test -> login:44CWBFp7wh9 / pass:43P7s8qb84CVT9Jx
-            sb.append("x_cpversion=1.0");
 
-            sb.append("&x_market_type=2");
+            sb.append("x_cpversion=1.0"); // current supported version
+
+            sb.append("&x_market_type=2"); // 2 = Retail
 
 //            sb.append("&x_device_type=1");  // JG 1 Oct 13 - changed from 1 unknown to PC based 5
-            sb.append("&x_device_type=5");
+            sb.append("&x_device_type=5"); //5 = PC based terminal
 
             sb.append("&x_login=");
             sb.append(URLEncoder.encode(m_sCommerceID, "UTF-8"));
@@ -143,10 +147,12 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
                 sb.append("&x_track2=");
                 sb.append(payinfo.getTrack2(false));
             }
-
+// JG 17 May 14 Gateway Response config
             sb.append("&x_method=CC");
             sb.append("&x_version=3.1");
-            sb.append("&x_delim_data=TRUE");
+// JG 23 May            sb.append("&x_delim_data=TRUE");
+// JG July 2014
+            sb.append("&x_repsonse_format=0");
             sb.append("&x_delim_char=|");
             sb.append("&x_relay_response=FALSE");
             sb.append("&x_test_request=");
@@ -177,34 +183,51 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
             // JG May 12 added try-with-resources
             connection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
             try (DataOutputStream out = new DataOutputStream(connection.getOutputStream())) {
+
                 out.write(sb.toString().getBytes());
                 out.flush();
+// JG 17 May 2014 - added as missing
+                out.close();
             }
+// JG 17 May 14 - String response from gateway
             String returned;
             try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
                 returned = in.readLine();
+
+// JG 17 May 2014 - added as missing
+                in.close();
             }
+
 
             AuthorizeNetParser anp = new AuthorizeNetParser(returned);
             Map props = anp.splitXML();
 
+// JG July 2014
+//            anp.parseData(props);
+
+// JG 17 May 14 - RESPONSE evaluation - this is error point!!
             if (anp.getResult().equals(LocalRes.getIntString("button.ok"))) {
                 if (APPROVED.equals(props.get("ResponseCode"))) {
                     //Transaction approved
-                    payinfo.paymentOK((String) props.get("AuthCode"), (String) props.get("TransID"), returned);
+//                    payinfo.paymentOK((String) props.get("AuthCode"), (String) props.get("TransID"), returned);
+                    payinfo.paymentOK(props.get("AuthCode").toString(), props.get("TransID").toString(), returned);
                 } else {
                     StringBuilder errorLine = new StringBuilder();
+// JG July 2014
                     //Transaction declined
                     if (anp.getNumErrors()>0) {
 
                         for (int i=1; i<=anp.getNumErrors(); i++) {
+// JG July 2014                            errorLine.append(props.get("Description").toString());
+//                            errorLine.append("\n");
                             errorLine.append(props.get("ErrorCode"+Integer.toString(i)));
                             errorLine.append(": ");
                             errorLine.append(props.get("ErrorText"+Integer.toString(i)));
                             errorLine.append("\n");
                         }
-                    }
+
                     payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), errorLine.toString());
+                    }
                 }
             }
             else {
@@ -223,9 +246,9 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
     private class AuthorizeNetParser extends DefaultHandler {
 
     private SAXParser m_sp = null;
-    private Map props = new HashMap();
+    private final Map props = new HashMap();
     private String text;
-    private InputStream is;
+    private final InputStream is;
     private String result;
     private int numMessages = 0;
     private int numErrors = 0;
@@ -240,8 +263,10 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
                 SAXParserFactory spf = SAXParserFactory.newInstance();
                 m_sp = spf.newSAXParser();
             }
+
             m_sp.parse(is, this);
-        } catch (ParserConfigurationException ePC) {
+
+         } catch (ParserConfigurationException ePC) {
             result = LocalRes.getIntString("exception.parserconfig");
         } catch (SAXException eSAX) {
             result = LocalRes.getIntString("exception.xmlfile");
@@ -254,64 +279,51 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
+
         try {
 // JG 16 May 12 use switch
-            switch (qName) {
-                    case "ResponseCode":
-                        props.put("ResponseCode", URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                    case "ErrorCode":
-                        numErrors++;
-                        props.put("ErrorCode"+Integer.toString(numErrors), URLDecoder.decode(text, "UTF-8"));
-                        text = "";
-                        break;
-                    case "ErrorText":
-                        props.put("ErrorText"+Integer.toString(numErrors), URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                    case "Code":
-                        numMessages++;
-                        props.put("Code"+Integer.toString(numMessages), URLDecoder.decode(text, "UTF-8"));
-                        text = "";
-                        break;
-                    case "Description":
-                        props.put("Description"+Integer.toString(numMessages), URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                    case "AuthCode":
-                        props.put("AuthCode", URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                    case "AVSResultCode":
-                        props.put("AVSResultCode", URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                    case "CVVResultCode":
-                        props.put("CVVResultCode", URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                    case "TransID":
-                        props.put("TransID", URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                    case "RefTransID":
-                        props.put("RefTransID", URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                    case "TransHash":
-                        props.put("TransHash", URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                    case "TestMode":
-                        props.put("TestMode", URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                    case "UserRef":
-                        props.put("UserRef", URLDecoder.decode(text, "UTF-8"));
-                        text="";
-                        break;
-                }
+            if (qName.equals("ResponseCode")) {
+                props.put("ResponseCode", URLDecoder.decode(text, "UTF-8"));
+                text="";
+            } else if (qName.equals("ErrorCode")){
+                numErrors++;
+                props.put("ErrorCode"+Integer.toString(numErrors), URLDecoder.decode(text, "UTF-8"));
+                text = "";
+            } else if (qName.equals("ErrorText")) {
+                props.put("ErrorText"+Integer.toString(numErrors), URLDecoder.decode(text, "UTF-8"));
+                text="";
+            } else if (qName.equals("Code")) {
+                numMessages++;
+                props.put("Code"+Integer.toString(numMessages), URLDecoder.decode(text, "UTF-8"));
+                text = "";
+            } else if (qName.equals("Description")) {
+                props.put("Description"+Integer.toString(numMessages), URLDecoder.decode(text, "UTF-8"));
+                text="";
+            } else if (qName.equals("AuthCode")) {
+                props.put("AuthCode", URLDecoder.decode(text, "UTF-8"));
+                text="";
+            } else if (qName.equals("AVSResultCode")) {
+                props.put("AVSResultCode", URLDecoder.decode(text, "UTF-8"));
+                text="";
+            } else if (qName.equals("CVVResultCode")) {
+                props.put("CVVResultCode", URLDecoder.decode(text, "UTF-8"));
+                text="";
+            } else if (qName.equals("TransID")) {
+                props.put("TransID", URLDecoder.decode(text, "UTF-8"));
+                text="";
+            } else if (qName.equals("RefTransID")) {
+                props.put("RefTransID", URLDecoder.decode(text, "UTF-8"));
+                text="";
+            } else if (qName.equals("TransHash")) {
+                props.put("TransHash", URLDecoder.decode(text, "UTF-8"));
+                text="";
+            } else if (qName.equals("TestMode")) {
+                props.put("TestMode", URLDecoder.decode(text, "UTF-8"));
+                text="";
+            } else if (qName.equals("UserRef")) {
+                props.put("UserRef", URLDecoder.decode(text, "UTF-8"));
+                text="";
+            }
         }
         catch(UnsupportedEncodingException eUE){
             result = eUE.getMessage();

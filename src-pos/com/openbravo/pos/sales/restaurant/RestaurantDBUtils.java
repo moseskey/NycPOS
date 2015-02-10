@@ -12,6 +12,7 @@ import com.openbravo.pos.ticket.TicketInfo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 
@@ -50,7 +51,7 @@ public class RestaurantDBUtils {
             s=m_App.getSession();
             con=s.getConnection();
         }
-        catch (Exception e){System.out.print("No session or connection");
+        catch (SQLException e){System.out.print("No session or connection");
         }
 
 

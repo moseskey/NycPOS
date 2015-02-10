@@ -32,10 +32,11 @@ import java.beans.PropertyChangeListener;
  */
 public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterface {
 
-    private JPaymentNotifier notifier;
+    private final JPaymentNotifier notifier;
     private CustomerInfoExt customerext;
     private double m_dPaid;
     private double m_dTotal;
+
 
     /** Creates new form JPaymentDebt
      * @param notifier */
@@ -129,7 +130,7 @@ public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterfac
                 m_dPaid = value;
             }
 
-            m_jMoneyEuros.setText(Formats.CURRENCY.formatValue(new Double(m_dPaid)));
+            m_jMoneyEuros.setText(Formats.CURRENCY.formatValue(m_dPaid));
 
 
             if (RoundUtils.compare(RoundUtils.getValue(customerext.getCurdebt()) + m_dPaid, RoundUtils.getValue(customerext.getMaxdebt())) >= 0) {

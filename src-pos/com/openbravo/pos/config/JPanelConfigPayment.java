@@ -1,6 +1,6 @@
 //    uniCenta oPOS  - Touch Friendly Point Of Sale
 //    Copyright (C) 2008-2009 Openbravo, S.L.
-//    Copyright (c) 2009-1024 uniCenta
+//    Copyright (c) 2009-2004 uniCenta
 //    http://www.unicenta.com
 //
 //    This file is part of uniCenta oPOS
@@ -102,7 +102,7 @@ public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConf
 
         jcboCardReader.setSelectedItem(config.getProperty("payment.magcardreader"));
         jcboPaymentGateway.setSelectedItem(config.getProperty("payment.gateway"));
-        jchkPaymentTest.setSelected(Boolean.valueOf(config.getProperty("payment.testmode")).booleanValue());
+        jchkPaymentTest.setSelected(Boolean.parseBoolean(config.getProperty("payment.testmode")));
         pc.loadProperties(config);
         dirty.setDirty(false);
     }

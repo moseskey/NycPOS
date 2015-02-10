@@ -68,6 +68,7 @@ public class ProductsPanel extends JPanelTable2 implements EditorListener {
             m_dlSales.getProductCatInsert(),
             m_dlSales.getProductCatDelete());
 
+
         // el panel del editor
         jeditor = new ProductsEditor(m_dlSales, dirty);
     }

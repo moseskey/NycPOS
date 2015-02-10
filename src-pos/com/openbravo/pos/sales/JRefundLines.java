@@ -31,10 +31,10 @@ import java.util.List;
  */
 public class JRefundLines extends javax.swing.JPanel {
 
-    private JTicketLines ticketlines;
+    private final JTicketLines ticketlines;
     private List m_aLines;
 
-    private JPanelTicketEdits m_jTicketEdit;
+    private final JPanelTicketEdits m_jTicketEdit;
 
     /** Creates new form JRefundLines
      * @param dlSystem
@@ -60,8 +60,8 @@ public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
         ticketlines.clearTicketLines();
 
         if (m_aLines != null) {
-            for (int i = 0; i < m_aLines.size(); i++) {
-                ticketlines.addTicketLine((TicketLineInfo) m_aLines.get(i));
+            for (Object m_aLine : m_aLines) {
+                ticketlines.addTicketLine((TicketLineInfo) m_aLine);
             }
         }
     }
@@ -146,8 +146,8 @@ public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
 
     private void m_jbtnAddAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtnAddAllActionPerformed
 
-        for (int i = 0; i < m_aLines.size(); i++) {
-            TicketLineInfo oLine = (TicketLineInfo) m_aLines.get(i);
+        for (Object m_aLine : m_aLines) {
+            TicketLineInfo oLine = (TicketLineInfo) m_aLine;
             TicketLineInfo oNewLine = new TicketLineInfo(oLine);
             oNewLine.setMultiply(-oLine.getMultiply());
             m_jTicketEdit.addTicketLine(oNewLine);

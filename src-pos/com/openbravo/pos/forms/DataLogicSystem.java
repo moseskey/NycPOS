@@ -87,38 +87,12 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
     private SentenceExec m_resourcebytesinsert;
     private SentenceExec m_resourcebytesupdate;
 
-    /**
-     *
-     */
     protected SentenceFind m_sequencecash;
-
-    /**
-     *
-     */
     protected SentenceFind m_activecash;
-
-    /**
-     *
-     */
     protected SentenceExec m_insertcash;
-
-    /**
-     *
-     */
     protected SentenceExec m_draweropened;
-
-    /**
-     *
-     */
     protected SentenceExec m_updatepermissions;
-
-// added by janar153 @ 29.12.2013
-
-    /**
-     *
-     */
-        protected SentenceExec m_lineremoved;
-    // end
+    protected SentenceExec m_lineremoved;
 
     private String SQL;
     private Map<String, byte[]> resourcescache;

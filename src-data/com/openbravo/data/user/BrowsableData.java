@@ -370,7 +370,7 @@ public class BrowsableData implements ListModel {
         }
     }
 
-    private final void putNewData(List aData) {
+    private void putNewData(List aData) {
 
         int oldSize = m_aData.size();
         m_aData = (aData == null) ? new ArrayList() : aData;

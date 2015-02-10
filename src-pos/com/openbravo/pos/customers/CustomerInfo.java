@@ -61,7 +61,7 @@ public class CustomerInfo implements Serializable {
     protected String phone;
 
     /**
-     * Customer Primary telephone
+     * Customer Email
      */
     protected String email;
 

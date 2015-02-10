@@ -38,7 +38,7 @@ import java.util.*;
  *
  * @author adrianromero
  */
-public class TicketInfo implements SerializableRead, Externalizable {
+public final class TicketInfo implements SerializableRead, Externalizable {
 
     private static final long serialVersionUID = 2765650092387265178L;
 
@@ -64,6 +64,7 @@ public class TicketInfo implements SerializableRead, Externalizable {
 
     private static final DateFormat m_dateformat = new SimpleDateFormat("hh:mm");
 
+    private String m_sHost;
     private String m_sId;
     private int tickettype;
     private int m_iTicketId;
@@ -79,6 +80,18 @@ public class TicketInfo implements SerializableRead, Externalizable {
     private final String m_sResponse;
     private String loyaltyCardNumber;
     private Boolean oldTicket;
+
+
+ // JG July 2014 Ticket creator Host - for ticket print
+    private static String Hostname;
+
+    public static void setHostname(String name) {
+        Hostname=name;
+    }
+
+    public static String getHostname() {
+        return Hostname;
+    }
 
 
     /** Creates new TicketModel */
@@ -124,10 +137,8 @@ public class TicketInfo implements SerializableRead, Externalizable {
         m_aLines = (List<TicketLineInfo>) in.readObject();
         m_User = null;
         m_sActiveCash = null;
-
         payments = new ArrayList<>(); // JG June 2102 diamond inference
         taxes = null;
-
     }
 
     /**
@@ -252,11 +263,11 @@ public class TicketInfo implements SerializableRead, Externalizable {
      * @return
      */
     public String getName(Object info) {
-
+// JG Aug 2014 - Add User info
         StringBuilder name = new StringBuilder();
 
-        if (getCustomerId() != null) {
-            name.append(m_Customer.toString());
+        if (m_User != null) {
+            name.append(m_User.getName());
             name.append(" - ");
         }
 
@@ -268,8 +279,12 @@ public class TicketInfo implements SerializableRead, Externalizable {
             }
         } else {
             name.append(info.toString());
-        }
 
+            }
+        if (getCustomerId() != null) {
+            name.append(" - ");
+            name.append(m_Customer.toString());
+        }
         return name.toString();
     }
 
@@ -712,7 +727,24 @@ public class TicketInfo implements SerializableRead, Externalizable {
      */
     public String printUser() {
         return m_User == null ? "" : m_User.getName();
+
     }
+    /**
+     * JG July 2014
+     * @return
+     */
+    /**
+     *
+     * @return
+     */
+    public String getHost() {
+        return m_sHost;
+    }
+
+    public String printHost() {
+        return StringUtils.encodeXML(m_sHost);
+    }
+
 
 
 // Added JDL 28.05.13 for loyalty card functions

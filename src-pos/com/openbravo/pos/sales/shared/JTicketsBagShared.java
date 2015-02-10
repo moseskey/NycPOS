@@ -95,7 +95,6 @@ public class JTicketsBagShared extends JTicketsBag {
      */
     @Override
     public void deleteTicket() {
-
         m_sCurrentTicket = null;
         selectValidTicket();
     }
@@ -124,7 +123,7 @@ public class JTicketsBagShared extends JTicketsBag {
         if (m_sCurrentTicket != null) {
             try {
                 dlReceipts.insertSharedTicket(m_sCurrentTicket, m_panelticket.getActiveTicket(),m_panelticket.getActiveTicket().getPickupId());
-
+                m_jListTickets.setText("*");
                 TicketInfo l = dlReceipts.getSharedTicket(m_sCurrentTicket);
                     if(l.getLinesCount() == 0) {
 //                      throw new BasicException(AppLocal.getIntString("message.nullticket"));
@@ -142,6 +141,7 @@ public class JTicketsBagShared extends JTicketsBag {
         // BEGIN TRANSACTION
         TicketInfo ticket = dlReceipts.getSharedTicket(id);
         if (ticket == null)  {
+            m_jListTickets.setText("");
             // Does it exist
             throw new BasicException(AppLocal.getIntString("message.noticket"));
         } else {
@@ -161,9 +161,12 @@ public class JTicketsBagShared extends JTicketsBag {
         try {
             List<SharedTicketInfo> l = dlReceipts.getSharedTicketList();
             if (l.isEmpty()) {
-                newTicket();
+                m_jListTickets.setText("");
+                 newTicket();
             } else {
-                setActiveTicket(l.get(0).getId());
+//                m_jListTickets.setText("*");
+//                setActiveTicket(l.get(0).getId());
+                newTicket();
             }
         } catch (BasicException e) {
             new MessageInf(e).show(this);
@@ -178,6 +181,7 @@ public class JTicketsBagShared extends JTicketsBag {
         TicketInfo ticket = new TicketInfo();
         m_sCurrentTicket = UUID.randomUUID().toString(); // m_fmtid.format(ticket.getId());
         m_panelticket.setActiveTicket(ticket, null);
+
     }
 
     /** This method is called from within the constructor to
@@ -228,10 +232,12 @@ public class JTicketsBagShared extends JTicketsBag {
         });
         jPanel1.add(m_jDelTicket);
 
+        m_jListTickets.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jListTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_pending.png"))); // NOI18N
         m_jListTickets.setToolTipText("Layaways");
         m_jListTickets.setFocusPainted(false);
         m_jListTickets.setFocusable(false);
+        m_jListTickets.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         m_jListTickets.setMargin(new java.awt.Insets(0, 4, 0, 4));
         m_jListTickets.setMaximumSize(new java.awt.Dimension(50, 40));
         m_jListTickets.setMinimumSize(new java.awt.Dimension(50, 40));
@@ -256,7 +262,9 @@ public class JTicketsBagShared extends JTicketsBag {
 
                 try {
                     List<SharedTicketInfo> l = dlReceipts.getSharedTicketList();
-
+//                    String itemCount = Integer.toString(l.size());
+//                    m_jListTickets.setText(itemCount);
+//                    m_jListTickets.setIcon(null);
                     JTicketsBagSharedList listDialog = JTicketsBagSharedList.newJDialog(JTicketsBagShared.this);
                     String id = listDialog.showTicketsList(l);
 

@@ -26,7 +26,7 @@ import com.openbravo.format.Formats;
 import com.openbravo.pos.ticket.TicketLineInfo;
 import com.openbravo.pos.ticket.TicketProductInfo;
 
-discountrate = 1 - sales.getInputValue();
+discountrate = 1 - (sales.getInputValue())/100;
 
 index = sales.getSelectedIndex();
 if (index >= 0) {

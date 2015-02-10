@@ -24,7 +24,7 @@
 
 <display>
 	<line><text align="left" length="10">Total</text><text align="right" length="10">${ticket.printTotal()}</text></line>
-	<line><text align="center" length="20">Thank you for your custom</text></line>
+	<line><text align="center" length="20">Thank you</text></line>
 </display>
 
 <ticket>
@@ -44,7 +44,9 @@
 	#if (${ticket.ticketType} == 1)
 		<line><text align="left" length="15">Refund:</text><text>${ticket.printId()}</text></line>
 	#end
-		<line><text align="left" length="15">Date:</text><text>${ticket.printDate()}</text></line>
+
+        <line><text align="left" length="15">Date:</text><text>${ticket.printDate()}</text></line>
+        <line><text align="left" length="15">Terminal: </text><text>${ticket.getHostname()}</text></line>
 
 	#if ($ticket.getCustomer())
 		<line><text align="left" length="15">Customer:</text><text>${ticket.getCustomer().printName()}</text></line>

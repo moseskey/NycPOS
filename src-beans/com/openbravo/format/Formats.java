@@ -99,8 +99,8 @@ public abstract class Formats {
     private static DateFormat m_timeformat = DateFormat.getTimeInstance();
     private static DateFormat m_datetimeformat = DateFormat.getDateTimeInstance();
 
-    private static DateFormat m_hourminformat = new SimpleDateFormat("H:mm:ss");
-    private static DateFormat m_simpledate = new SimpleDateFormat("dd-MM-yyyy");
+    private static final DateFormat m_hourminformat = new SimpleDateFormat("H:mm:ss");
+    private static final DateFormat m_simpledate = new SimpleDateFormat("dd-MM-yyyy");
     /** Creates a new instance of Formats */
     protected Formats() {
     }
@@ -282,7 +282,7 @@ public abstract class Formats {
         }
         @Override
         protected Object parseValueInt(String value) throws ParseException {
-            return new Integer(m_integerformat.parse(value).intValue());
+            return m_integerformat.parse(value).intValue();
         }
         @Override
         public int getAlignment() {
@@ -310,7 +310,7 @@ public abstract class Formats {
         }
         @Override
         protected Object parseValueInt(String value) throws ParseException {
-            return new Double(m_doubleformat.parse(value).doubleValue());
+            return m_doubleformat.parse(value).doubleValue();
         }
         @Override
         public int getAlignment() {
@@ -325,10 +325,10 @@ public abstract class Formats {
         @Override
         protected Object parseValueInt(String value) throws ParseException {
             try {
-                return new Double(m_percentformat.parse(value).doubleValue());
+                return m_percentformat.parse(value).doubleValue();
             } catch (ParseException e) {
                 // Segunda oportunidad como numero normalito
-                return new Double(m_doubleformat.parse(value).doubleValue() / 100);
+                return m_doubleformat.parse(value).doubleValue() / 100;
             }
         }
         @Override
@@ -344,10 +344,10 @@ public abstract class Formats {
         @Override
         protected Object parseValueInt(String value) throws ParseException {
             try {
-                return new Double(m_currencyformat.parse(value).doubleValue());
+                return m_currencyformat.parse(value).doubleValue();
             } catch (ParseException e) {
                 // Segunda oportunidad como numero normalito
-                return new Double(m_doubleformat.parse(value).doubleValue());
+                return m_doubleformat.parse(value).doubleValue();
             }
         }
         @Override

@@ -54,7 +54,8 @@ public class DeviceTicket {
  *
  * Creates a new instance of DeviceTicket
  */
-    public DeviceTicket() {
+//    public DeviceTicket() {
+    public DeviceTicket(AppProperties props) {
         // Una impresora solo de pantalla.
 
         m_deviceFiscal = new DeviceFiscalPrinterNull();
@@ -65,7 +66,8 @@ public class DeviceTicket {
         m_deviceprinters = new HashMap<>();
         m_deviceprinterslist = new ArrayList<>();
 
-        DevicePrinter p = new DevicePrinterPanel();
+//JG July 2014 - Thank you Ron Isaacson        DevicePrinter p = new DevicePrinterPanel();
+        DevicePrinter p = new DevicePrinterPanel(props);
         m_deviceprinters.put("1", p);
         m_deviceprinterslist.add(p);
     }
@@ -162,7 +164,8 @@ public class DeviceTicket {
 
                 switch (sPrinterType) {
                     case "screen":
-                        addPrinter(sPrinterIndex, new DevicePrinterPanel());
+//JG July 2014 - Thank you Ron Isaacson                        addPrinter(sPrinterIndex, new DevicePrinterPanel());
+                        addPrinter(sPrinterIndex, new DevicePrinterPanel(props));
                         break;
                     case "printer":
                         // backward compatibility
