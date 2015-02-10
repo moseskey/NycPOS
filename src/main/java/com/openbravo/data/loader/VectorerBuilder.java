@@ -87,7 +87,8 @@ public abstract class VectorerBuilder implements Vectorer {
 //        }
         public void setBytes(int paramIndex, byte[] value) throws BasicException {
             ensurePlace(paramIndex -1);
-            m_aParams.set(paramIndex - 1, value.toString()); // quiza un uuencode o algo asi
+            //m_aParams.set(paramIndex - 1, value.toString()); // quiza un uuencode o algo asi
+            m_aParams.set(paramIndex - 1, Arrays.toString(value)); // quiza un uuencode o algo asi
         }
         public void setObject(int paramIndex, Object value) throws BasicException {
             ensurePlace(paramIndex - 1);
