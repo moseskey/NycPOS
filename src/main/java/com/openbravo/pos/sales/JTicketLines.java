@@ -42,7 +42,6 @@ public class JTicketLines extends javax.swing.JPanel {
 
     /**
      * Creates new form JLinesTicket
-     * @param ticketline
      */
     public JTicketLines(String ticketline) {
 

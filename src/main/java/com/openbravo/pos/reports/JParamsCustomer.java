@@ -20,7 +20,8 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
     private CustomerInfo currentcustomer;
 
     /**
-     * Creates new form JParamsCustomer */
+     * Creates new form JParamsCustomer
+     */
     public JParamsCustomer() {
 
         initComponents();

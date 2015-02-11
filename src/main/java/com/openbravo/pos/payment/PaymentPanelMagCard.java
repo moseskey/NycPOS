@@ -15,7 +15,6 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
 
     /**
      * Creates new form JMagCardReader
-     * @param notifier
      */
     // public PaymentPanelMagCard(String sReader, JPaymentNotifier notifier) {
     public PaymentPanelMagCard(MagCardReader cardreader, JPaymentNotifier notifier) {

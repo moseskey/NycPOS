@@ -18,7 +18,6 @@ public class SQLTableModel extends AbstractTableModel {
 
     /**
      * Creates a new instance of SQLTableModel
-     * @param df
      */
     public SQLTableModel(DataField[] df) {
         m_aRows = new ArrayList();

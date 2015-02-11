@@ -14,7 +14,8 @@ public class ScriptFactory {
     public static final String RHINO = "rhino";
 
     /**
-     * Creates a new instance of ScriptFactory */
+     * Creates a new instance of ScriptFactory
+     */
     private ScriptFactory() {
     }
 

@@ -21,7 +21,7 @@ public class JdbUpdate extends javax.swing.JFrame {
 
     /**
      * Creates new form JdbUpdate
-     * @param props */
+     */
     public JdbUpdate(AppProperties props) {
 
         initComponents();

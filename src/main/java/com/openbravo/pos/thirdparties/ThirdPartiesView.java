@@ -13,7 +13,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      * Creates new form ThirdPartiesView
-     * @param dirty
      */
     public ThirdPartiesView(AppView app, DirtyManager dirty) {
         initComponents();

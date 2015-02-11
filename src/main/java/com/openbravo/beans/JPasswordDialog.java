@@ -12,7 +12,6 @@ public class JPasswordDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form JCalendarDialog
-     * @param modal
      */
     public JPasswordDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -20,7 +19,6 @@ public class JPasswordDialog extends javax.swing.JDialog {
     }
     /**
      * Creates new form JCalendarDialog
-     * @param modal
      */
     public JPasswordDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);

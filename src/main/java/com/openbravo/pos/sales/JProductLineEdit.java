@@ -20,12 +20,14 @@ public class JProductLineEdit extends javax.swing.JDialog {
     private boolean m_bpriceok;
 
     /**
-     * Creates new form JProductLineEdit */
+     * Creates new form JProductLineEdit
+     */
     private JProductLineEdit(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
     /**
-     * Creates new form JProductLineEdit */
+     * Creates new form JProductLineEdit
+     */
     private JProductLineEdit(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }

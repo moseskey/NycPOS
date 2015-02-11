@@ -5,7 +5,8 @@ import com.openbravo.format.Formats;
 public class RoundUtils {
 
     /**
-     * Creates a new instance of DoubleUtils */
+     * Creates a new instance of DoubleUtils
+     */
     private RoundUtils() {
     }
 

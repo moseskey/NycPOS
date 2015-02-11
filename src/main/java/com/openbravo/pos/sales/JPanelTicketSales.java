@@ -16,7 +16,8 @@ public class JPanelTicketSales extends JPanelTicket {
     private CatalogSelector m_cat;
 
     /**
-     * Creates a new instance of JPanelTicketSales */
+     * Creates a new instance of JPanelTicketSales
+     */
     public JPanelTicketSales() {
     }
 

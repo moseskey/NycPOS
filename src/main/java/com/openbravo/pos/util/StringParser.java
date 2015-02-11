@@ -8,7 +8,7 @@ public class StringParser {
 
     /**
      * Creates a new instance of StringParser
-     * @param str */
+     */
     public StringParser(String str) {
         this.str = str;
         currentPosition = 0;

@@ -19,7 +19,8 @@ public class CategoriesPanel extends JPanelTable {
     private CategoriesEditor jeditor;
 
     /**
-     * Creates a new instance of JPanelCategories */
+     * Creates a new instance of JPanelCategories
+     */
     public CategoriesPanel() {
     }
 

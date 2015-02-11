@@ -22,7 +22,8 @@ public class JRootFrame extends javax.swing.JFrame implements AppMessage {
     private OSValidator m_OS;
 
     /**
-     * Creates new form JRootFrame */
+     * Creates new form JRootFrame
+     */
     public JRootFrame() {
 
         initComponents();

@@ -42,7 +42,7 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
 
     /**
      * Creates new form JPanelReservations
-     * @param restaurantmap */
+     */
     public JTicketsBagRestaurantRes(AppView oApp, JTicketsBagRestaurantMap restaurantmap) {
 
         m_restaurantmap = restaurantmap;

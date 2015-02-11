@@ -15,7 +15,7 @@ public class HostInfo implements IKeyed {
 
     /**
      * Creates new CategoryInfo
-     * @param hostsequence */
+     */
     public HostInfo(String money, String host, String hostsequence) {
 
         m_sMoney = host; // hack to search by hostname

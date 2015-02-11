@@ -20,7 +20,7 @@ public class ScaleComm implements Scale, SerialPortEventListener {
 
     /**
      * Creates a new instance of ScaleComm
-     * @param sPortPrinter */
+     */
     public ScaleComm(String sPortPrinter) {
         m_sPortScale = sPortPrinter;
         m_out = null;

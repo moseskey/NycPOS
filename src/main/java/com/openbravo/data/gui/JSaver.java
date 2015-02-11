@@ -13,7 +13,6 @@ public class JSaver extends JPanel implements StateListener {
 
     /**
      * Creates new form JSaver
-     * @param bd
      */
     public JSaver(BrowsableEditableData bd) {
 

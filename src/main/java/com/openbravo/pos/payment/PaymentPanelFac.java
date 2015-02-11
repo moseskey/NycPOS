@@ -3,7 +3,8 @@ package com.openbravo.pos.payment;
 public class PaymentPanelFac {
 
     /**
-     * Creates a new instance of PaymentPanelFac */
+     * Creates a new instance of PaymentPanelFac
+     */
     private PaymentPanelFac() {
     }
 

@@ -13,7 +13,7 @@ public class SaveProvider {
 
     /**
      * Creates a new instance of SavePrSentence
-     * @param sentinsert */
+     */
     public SaveProvider(SentenceExec sentupdate, SentenceExec sentinsert, SentenceExec sentdelete) {
         m_sentupdate = sentupdate;
         m_sentinsert = sentinsert;

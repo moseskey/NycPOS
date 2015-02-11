@@ -11,7 +11,7 @@ public class JProductAttListItem extends javax.swing.JPanel implements JProductA
 
     /**
      * Creates new form JProductAttListItem
-     * @param values */
+     */
     public JProductAttListItem(String attid, String label, String value, List<String> values) {
 
         this.attid = attid;

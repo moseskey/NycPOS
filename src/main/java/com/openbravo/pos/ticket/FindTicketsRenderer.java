@@ -14,7 +14,8 @@ public class FindTicketsRenderer extends DefaultListCellRenderer {
     public static final int RECEIPT_NORMAL = 0;
 
     /**
-     * Creates a new instance of ProductRenderer */
+     * Creates a new instance of ProductRenderer
+     */
     public FindTicketsRenderer() {
         this.icoTicketNormal = new ImageIcon(getClass().getClassLoader().getResource("com/openbravo/images/pay.png"));
         this.icoTicketRefund = new ImageIcon(getClass().getClassLoader().getResource("com/openbravo/images/refundit.png"));

@@ -63,7 +63,7 @@ public class TicketParser extends DefaultHandler {
 
     /**
      * Creates a new instance of TicketParser
-     * @param system */
+     */
     public TicketParser(DeviceTicket printer, DataLogicSystem system) {
         m_printer = printer;
         m_system = system;

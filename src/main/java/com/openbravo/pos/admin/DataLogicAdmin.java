@@ -14,7 +14,8 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
 
 
     /**
-     * Creates a new instance of DataLogicAdmin */
+     * Creates a new instance of DataLogicAdmin
+     */
     public DataLogicAdmin() {
     }
 

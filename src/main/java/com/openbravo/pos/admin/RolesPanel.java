@@ -20,7 +20,8 @@ public class RolesPanel extends JPanelTable {
 
 
     /**
-     * Creates a new instance of RolesPanel */
+     * Creates a new instance of RolesPanel
+     */
     public RolesPanel() {
      }
 

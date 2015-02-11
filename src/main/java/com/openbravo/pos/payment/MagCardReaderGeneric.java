@@ -31,7 +31,8 @@ public final class MagCardReaderGeneric implements MagCardReader {
     private char m_cCardType;
 
     /**
-     * Creates a new instance of GenericMagCardReader */
+     * Creates a new instance of GenericMagCardReader
+     */
     public MagCardReaderGeneric() {
         reset();
     }

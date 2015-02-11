@@ -18,7 +18,6 @@ public class InventoryLine {
 
     /**
      * Creates a new instance of InventoryLine
-     * @param oProduct
      */
     public InventoryLine(ProductInfoExt oProduct) {
         m_sProdID = oProduct.getID();

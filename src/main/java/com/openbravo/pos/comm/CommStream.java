@@ -20,7 +20,6 @@ public class CommStream {
 
     /**
      * Creates a new instance of CommPort
-     * @param port
      */
     public CommStream(String port) {
         m_sPort = port;

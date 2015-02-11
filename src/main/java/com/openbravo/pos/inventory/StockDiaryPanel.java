@@ -14,7 +14,8 @@ public class StockDiaryPanel extends JPanelTable {
     private DataLogicSales m_dlSales;
 
     /**
-     * Creates a new instance of JPanelDiaryEditor */
+     * Creates a new instance of JPanelDiaryEditor
+     */
     public StockDiaryPanel() {
     }
 

@@ -26,7 +26,8 @@ public class Floor implements SerializableRead {
     private static Image defimg = null;
 
     /**
-     * Creates a new instance of Floor */
+     * Creates a new instance of Floor
+     */
     public Floor() {
         try {
 //            defimg = ImageIO.read(getClass().getClassLoader().getResourceAsStream("com/openbravo/images/atlantikdesigner.png"));

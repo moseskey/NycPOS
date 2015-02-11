@@ -7,7 +7,8 @@ public class JEditorCurrency extends JEditorNumber {
 	private static final long serialVersionUID = 5096754100573262803L;
 
 	/**
-	 * Creates a new instance of JEditorCurrency */
+	 * Creates a new instance of JEditorCurrency
+	 */
     public JEditorCurrency() {
     }
 

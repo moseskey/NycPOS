@@ -20,7 +20,7 @@ public class StaticSentence extends JDBCSentence {
 
     /**
      * Creates a new instance of StaticSentence
-     * @param serwrite */
+     */
     public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite, SerializerRead serread) {
         super(s);
         m_sentence = sentence;
@@ -30,31 +30,31 @@ public class StaticSentence extends JDBCSentence {
     }
     /**
      * Creates a new instance of StaticSentence
-     * @param sentence */
+     */
     public StaticSentence(Session s, ISQLBuilderStatic sentence) {
         this(s, sentence, null, null);
     }
     /**
      * Creates a new instance of StaticSentence
-     * @param serwrite */
+     */
     public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite) {
         this(s, sentence, serwrite, null);
     }
     /**
      * Creates a new instance of StaticSentence
-     * @param serwrite */
+     */
     public StaticSentence(Session s, String sentence, SerializerWrite serwrite, SerializerRead serread) {
         this(s, new NormalBuilder(sentence), serwrite, serread);
     }
     /**
      * Creates a new instance of StaticSentence
-     * @param serwrite */
+     */
     public StaticSentence(Session s, String sentence, SerializerWrite serwrite) {
         this(s, new NormalBuilder(sentence), serwrite, null);
     }
     /**
      * Creates a new instance of StaticSentence
-     * @param sentence */
+     */
     public StaticSentence(Session s, String sentence) {
         this(s, new NormalBuilder(sentence), null, null);
     }

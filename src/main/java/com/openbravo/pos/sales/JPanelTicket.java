@@ -137,7 +137,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
 
     /**
-     * Creates new form JTicketView */
+     * Creates new form JTicketView
+     */
     public JPanelTicket() {
 
         initComponents ();

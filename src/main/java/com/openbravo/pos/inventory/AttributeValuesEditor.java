@@ -17,7 +17,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
 
     /**
      * Creates new form AttributesValuesEditor
-     * @param dirty
      */
     public AttributeValuesEditor(DirtyManager dirty) {
 

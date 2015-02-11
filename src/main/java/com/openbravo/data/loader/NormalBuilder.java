@@ -9,7 +9,7 @@ public class NormalBuilder implements ISQLBuilderStatic {
 
     /**
      * Creates a new instance of NormalBuilder
-     * @param sSentence */
+     */
     public NormalBuilder(String sSentence) {
         m_sSentence = sSentence;
     }

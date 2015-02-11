@@ -16,7 +16,8 @@ public class FindTicketsInfo implements SerializableRead {
     private double total;
 
     /**
-     * Creates new ProductInfo */
+     * Creates new ProductInfo
+     */
     public FindTicketsInfo() {
 
     }

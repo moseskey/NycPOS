@@ -15,7 +15,8 @@ import java.util.Date;
 public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEditorCreator {
 
     /**
-     * Creates new form JParamsClosedPos */
+     * Creates new form JParamsClosedPos
+     */
     public JParamsDatesInterval() {
         initComponents();
     }

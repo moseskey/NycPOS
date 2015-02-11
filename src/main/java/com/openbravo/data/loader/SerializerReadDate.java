@@ -8,7 +8,8 @@ public class SerializerReadDate implements SerializerRead {
     public static final SerializerRead INSTANCE = new SerializerReadDate();
 
     /**
-     * Creates a new instance of SerializerReadImage */
+     * Creates a new instance of SerializerReadImage
+     */
     private SerializerReadDate() {
     }
 

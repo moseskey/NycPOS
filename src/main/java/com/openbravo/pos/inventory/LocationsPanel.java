@@ -19,7 +19,8 @@ public class LocationsPanel extends JPanelTable {
     private LocationsView jeditor;
 
     /**
-     * Creates a new instance of LocationsPanel */
+     * Creates a new instance of LocationsPanel
+     */
     public LocationsPanel() {
     }
 

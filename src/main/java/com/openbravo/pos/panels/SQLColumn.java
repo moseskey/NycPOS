@@ -10,7 +10,6 @@ public class SQLColumn implements TreeNode {
 
     /**
      * Creates a new instance of SQLColumn
-     * @param name
      */
     public SQLColumn(SQLTable t, String name) {
         m_table = t;

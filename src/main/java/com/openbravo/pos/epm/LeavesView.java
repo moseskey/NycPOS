@@ -26,7 +26,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      * Creates new form LeavesView
-     * @param dirty
      */
     public LeavesView(AppView app, DirtyManager dirty) {
 

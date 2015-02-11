@@ -6,7 +6,7 @@ public class KeyGetterBasic implements IKeyGetter {
 
     /**
      * Creates a new instance of KeyGetterBasic
-     * @param aElems */
+     */
     public KeyGetterBasic(int[] aElems) {
         m_aElems = aElems;
     }

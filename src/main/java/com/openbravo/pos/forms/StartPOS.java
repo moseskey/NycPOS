@@ -25,7 +25,8 @@ public class StartPOS {
 
 
     /**
-     * Creates a new instance of StartPOS */
+     * Creates a new instance of StartPOS
+     */
     private StartPOS() {
     }
 

@@ -29,7 +29,7 @@ public class PaymentGatewayPayPoint implements PaymentGateway {
 
     /**
      * Creates a new instance of PaymentGatewaySECPay
-     * @param props */
+     */
     public PaymentGatewayPayPoint(AppProperties props) {
 
         // Propiedades del sistema

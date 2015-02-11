@@ -18,7 +18,8 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
     private Session s;
 
     /**
-     * Creates a new instance of DataLogicReceipts */
+     * Creates a new instance of DataLogicReceipts
+     */
     public DataLogicReceipts() {
     }
 

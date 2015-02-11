@@ -15,7 +15,6 @@ public class JRefundLines extends javax.swing.JPanel {
 
     /**
      * Creates new form JRefundLines
-     * @param jTicketEdit
      */
 public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
 

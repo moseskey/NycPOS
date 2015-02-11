@@ -14,7 +14,8 @@ public class LocalRes {
     }
 
     /**
-     * Creates a new instance of LocalRes */
+     * Creates a new instance of LocalRes
+     */
     private LocalRes() {
     }
 

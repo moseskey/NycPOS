@@ -8,7 +8,8 @@ import javax.swing.JPanel;
 public class ConfigPaymentPanelBluePay20POST extends javax.swing.JPanel implements PaymentConfiguration {
 
     /**
-     * Creates new form ConfigPaymentPanelBluePay20POST */
+     * Creates new form ConfigPaymentPanelBluePay20POST
+     */
     public ConfigPaymentPanelBluePay20POST() {
         initComponents();
     }

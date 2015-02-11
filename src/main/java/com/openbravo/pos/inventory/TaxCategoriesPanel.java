@@ -19,7 +19,8 @@ public class TaxCategoriesPanel extends JPanelTable {
     private TaxCustCategoriesEditor jeditor;
 
     /**
-     * Creates a new instance of JPanelDuty */
+     * Creates a new instance of JPanelDuty
+     */
     public TaxCategoriesPanel() {
     }
 

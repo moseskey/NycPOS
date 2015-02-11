@@ -6,12 +6,14 @@ import javax.swing.*;
 public class JMessageDialog extends javax.swing.JDialog {
 
     /**
-     * Creates new form JMessageDialog */
+     * Creates new form JMessageDialog
+     */
     private JMessageDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
     /**
-     * Creates new form JMessageDialog */
+     * Creates new form JMessageDialog
+     */
     private JMessageDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }
@@ -196,7 +198,8 @@ public class JMessageDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jcmdOKActionPerformed
 
     /**
-     * Closes the dialog */
+     * Closes the dialog
+     */
     private void closeDialog(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_closeDialog
         setVisible(false);
         dispose();

@@ -35,13 +35,15 @@ public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator
     private FindTicketsInfo selectedTicket;
 
     /**
-     * Creates new form JTicketsFinder */
+     * Creates new form JTicketsFinder
+     */
     private JTicketsFinder(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
 
     /**
-     * Creates new form JTicketsFinder */
+     * Creates new form JTicketsFinder
+     */
     private JTicketsFinder(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }

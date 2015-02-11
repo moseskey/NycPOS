@@ -23,7 +23,8 @@ class ScriptEngineVelocity implements ScriptEngine {
 
 
     /**
-     * Creates a new instance of ScriptEngineVelocity */
+     * Creates a new instance of ScriptEngineVelocity
+     */
     public ScriptEngineVelocity() throws ScriptException {
 
         if (m_ve == null) {

@@ -18,7 +18,8 @@ public class JRDataSourceBasic implements JRDataSource {
 
     /**
      * Creates a new instance of JRDataSourceBasic
-     * @throws com.openbravo.basic.BasicException */
+     * @throws com.openbravo.basic.BasicException
+     */
     public JRDataSourceBasic(BaseSentence sent, ReportFields fields, Object params) throws BasicException  {
 
         this.sent = sent;

@@ -33,7 +33,8 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
     private final DirtyManager dirty;
 
     /**
-     * Creates new form CustomersPayment */
+     * Creates new form CustomersPayment
+     */
     public CustomersPayment() {
 
         initComponents();

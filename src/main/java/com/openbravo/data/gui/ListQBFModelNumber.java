@@ -10,7 +10,7 @@ private Object m_sel;
 
 /**
  * Creates a new instance of ListQBFModelNumber
-     * @param items */
+     */
 //    public ListQBFModelNumber() {
 //    private ListQBFModelNumber(Object... items) {
     public ListQBFModelNumber(Object... items) {

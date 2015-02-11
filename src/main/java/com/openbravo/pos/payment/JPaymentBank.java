@@ -16,7 +16,6 @@ public class JPaymentBank extends javax.swing.JPanel implements JPaymentInterfac
 
     /**
      * Creates new form JPaymentCash
-     * @param notifier
      */
     public JPaymentBank(JPaymentNotifier notifier) {
 

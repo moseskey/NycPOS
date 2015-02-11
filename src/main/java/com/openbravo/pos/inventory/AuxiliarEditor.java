@@ -27,7 +27,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
 
     /**
      * Creates new form AuxiliarEditor
-     * @param dirty
      */
     public AuxiliarEditor(AppView app, DirtyManager dirty) {
 

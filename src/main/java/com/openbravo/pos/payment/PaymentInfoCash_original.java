@@ -11,7 +11,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      * Creates a new instance of PaymentInfoCash
-     * @param dPaid
      */
     public PaymentInfoCash_original(double dTotal, double dPaid) {
         m_dTotal = dTotal;

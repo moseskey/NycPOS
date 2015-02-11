@@ -13,7 +13,7 @@ public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterf
 
     /**
      * Creates new form JPaymentChequeRefund
-     * @param sName */
+     */
     public JPaymentRefund(JPaymentNotifier notifier, String sName) {
 
         m_notifier = notifier;

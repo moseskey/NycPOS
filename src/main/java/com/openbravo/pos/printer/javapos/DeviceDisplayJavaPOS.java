@@ -17,7 +17,8 @@ public class DeviceDisplayJavaPOS implements DeviceDisplay, DeviceDisplayImpl {
 
     /**
      * Creates a new instance of DeviceDisplayJavaPOS
-     * @throws com.openbravo.pos.printer.TicketPrinterException */
+     * @throws com.openbravo.pos.printer.TicketPrinterException
+     */
     public DeviceDisplayJavaPOS(String sDeviceName) throws TicketPrinterException {
         m_sName = sDeviceName;
 

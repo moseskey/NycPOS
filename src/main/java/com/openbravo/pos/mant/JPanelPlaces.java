@@ -20,7 +20,8 @@ public class JPanelPlaces extends JPanelTable {
     private PlacesEditor jeditor;
 
     /**
-     * Creates a new instance of JPanelPlaces */
+     * Creates a new instance of JPanelPlaces
+     */
     public JPanelPlaces() {
     }
 

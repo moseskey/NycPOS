@@ -18,7 +18,6 @@ public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterfac
 
     /**
      * Creates new form JPaymentDebt
-     * @param notifier
      */
     public JPaymentDebt(JPaymentNotifier notifier) {
 

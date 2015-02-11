@@ -22,7 +22,8 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
     protected AppView app;
 
     /**
-     * Creates new form JPanelTableEditor */
+     * Creates new form JPanelTableEditor
+     */
     public JPanelTable() {
 
         initComponents();

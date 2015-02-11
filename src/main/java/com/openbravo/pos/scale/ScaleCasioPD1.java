@@ -24,7 +24,7 @@ public class ScaleCasioPD1 implements Scale, SerialPortEventListener {
 
     /**
      * Creates a new instance of ScaleComm
-     * @param sPortPrinter */
+     */
     public ScaleCasioPD1(String sPortPrinter) {
         m_sPortScale = sPortPrinter;
         m_out = null;

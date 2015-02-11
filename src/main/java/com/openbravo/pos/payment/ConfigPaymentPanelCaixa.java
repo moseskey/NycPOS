@@ -8,7 +8,8 @@ import javax.swing.JPanel;
 public class ConfigPaymentPanelCaixa extends javax.swing.JPanel implements PaymentConfiguration {
 
     /**
-     * Creates new form ConfigPaymentPanelCaixa */
+     * Creates new form ConfigPaymentPanelCaixa
+     */
     public ConfigPaymentPanelCaixa() {
         initComponents();
     }

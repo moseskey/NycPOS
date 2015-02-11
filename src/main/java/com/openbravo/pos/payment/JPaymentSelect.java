@@ -31,7 +31,6 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
     /**
      * Creates new form JPaymentSelect
-     * @param o
      */
     protected JPaymentSelect(java.awt.Frame parent, boolean modal, ComponentOrientation o) {
         super(parent, modal);
@@ -44,7 +43,6 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
     }
     /**
      * Creates new form JPaymentSelect
-     * @param o
      */
     protected JPaymentSelect(java.awt.Dialog parent, boolean modal, ComponentOrientation o) {
         super(parent, modal);

@@ -9,7 +9,6 @@ public class NullIcon implements Icon {
 
     /**
      * Creates a new instance of NullIcon
-     * @param height
      */
     public NullIcon(int width, int height) {
         m_iWidth = width;

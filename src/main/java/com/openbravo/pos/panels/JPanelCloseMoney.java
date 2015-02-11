@@ -51,7 +51,8 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
     private AppUser m_User;
 
     /**
-     * Creates new form JPanelCloseMoney */
+     * Creates new form JPanelCloseMoney
+     */
     public JPanelCloseMoney() {
 
         initComponents();

@@ -5,7 +5,8 @@ import com.openbravo.basic.BasicException;
 public class ImportSentence extends BaseSentence {
 
     /**
-     * Creates a new instance of ImportSentence */
+     * Creates a new instance of ImportSentence
+     */
     public ImportSentence() {
     }
 

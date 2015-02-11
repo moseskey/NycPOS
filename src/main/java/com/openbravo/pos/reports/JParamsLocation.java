@@ -16,7 +16,8 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
     private ComboBoxValModel m_LocationsModel;
 
     /**
-     * Creates new form JParamsLocation */
+     * Creates new form JParamsLocation
+     */
     public JParamsLocation() {
         initComponents();
     }

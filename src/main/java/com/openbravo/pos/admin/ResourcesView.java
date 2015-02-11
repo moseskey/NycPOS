@@ -20,7 +20,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
 
     /**
      * Creates new form ResourcesEditor
-     * @param dirty
      */
     public ResourcesView(DirtyManager dirty) {
         initComponents();

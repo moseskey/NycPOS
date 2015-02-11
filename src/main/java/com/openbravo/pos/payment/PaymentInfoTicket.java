@@ -17,7 +17,7 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      * Creates a new instance of PaymentInfoCash
-     * @param sName */
+     */
     public PaymentInfoTicket(double dTicket, String sName) {
         m_sName = sName;
         m_dTicket = dTicket;

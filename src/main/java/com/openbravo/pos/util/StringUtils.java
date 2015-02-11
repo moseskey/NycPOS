@@ -16,7 +16,8 @@ public class StringUtils {
     private static final Random cardrandom = new Random();
 
     /**
-     * Creates a new instance of StringUtils */
+     * Creates a new instance of StringUtils
+     */
     private StringUtils() {
     }
 

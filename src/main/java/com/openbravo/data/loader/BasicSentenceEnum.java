@@ -9,7 +9,7 @@ public class BasicSentenceEnum implements SentenceEnum {
 
     /**
      * Creates a new instance of AbstractSentenceEnum
-     * @param sent */
+     */
     public BasicSentenceEnum(BaseSentence sent) {
         this.sent = sent;
         this.SRS = null;

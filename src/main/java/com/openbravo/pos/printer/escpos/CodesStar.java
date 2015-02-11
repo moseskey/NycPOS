@@ -31,7 +31,8 @@ public class CodesStar extends Codes {
 
 
     /**
-     * Creates a new instance of CodesStar */
+     * Creates a new instance of CodesStar
+     */
     public CodesStar() {
     }
 

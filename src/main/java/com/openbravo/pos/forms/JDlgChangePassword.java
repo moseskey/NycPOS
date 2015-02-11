@@ -15,12 +15,14 @@ public class JDlgChangePassword extends javax.swing.JDialog {
     private String m_sNewPassword;
 
     /**
-     * Creates new form ChangePassword */
+     * Creates new form ChangePassword
+     */
     private JDlgChangePassword(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
     /**
-     * Creates new form ChangePassword */
+     * Creates new form ChangePassword
+     */
     private JDlgChangePassword(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }

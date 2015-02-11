@@ -14,7 +14,6 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
 
     /**
      * Creates new form JPaymentCash
-     * @param notifier
      */
     public PaymentPanelType(JPaymentNotifier notifier) {
 

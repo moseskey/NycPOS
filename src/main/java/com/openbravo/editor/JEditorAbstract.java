@@ -14,7 +14,8 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
     private final Border m_borderinactive =  new javax.swing.border.CompoundBorder(new javax.swing.border.LineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), new javax.swing.border.EmptyBorder(new java.awt.Insets(1, 4, 1, 4)));
 
     /**
-     * Creates new form JPanelNumber */
+     * Creates new form JPanelNumber
+     */
     public JEditorAbstract() {
 
         initComponents();

@@ -22,7 +22,7 @@ public class CategoryInfo implements IKeyed {
 
     /**
      * Creates new CategoryInfo
-     * @param catshowname */
+     */
     public CategoryInfo(String id, String name, BufferedImage image, String texttip, Boolean catshowname) {
         m_sID = id;
         m_sName = name;

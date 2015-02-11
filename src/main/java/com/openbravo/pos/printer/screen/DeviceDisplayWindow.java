@@ -10,7 +10,8 @@ public class DeviceDisplayWindow extends javax.swing.JFrame implements DeviceDis
     private final DeviceDisplayPanel m_display;
 
     /**
-     * Creates new form DeviceDisplayWindow */
+     * Creates new form DeviceDisplayWindow
+     */
     public DeviceDisplayWindow() {
         initComponents();
 

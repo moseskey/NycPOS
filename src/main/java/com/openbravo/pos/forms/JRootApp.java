@@ -105,7 +105,8 @@ public class JRootApp extends JPanel implements AppView {
 
 
     /**
-     * Creates new form JRootApp */
+     * Creates new form JRootApp
+     */
     public JRootApp() {
 
 // JG 16 May 2013 use multicatch

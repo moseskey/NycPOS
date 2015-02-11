@@ -18,7 +18,8 @@ public class RoleInfo implements SerializableRead, IKeyed {
     protected String m_sName;
 
     /**
-     * Creates a new instance of RoleInfo */
+     * Creates a new instance of RoleInfo
+     */
     public RoleInfo() {
         m_sID = null;
         m_sName = null;

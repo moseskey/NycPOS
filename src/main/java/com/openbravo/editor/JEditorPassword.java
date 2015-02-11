@@ -7,7 +7,8 @@ public class JEditorPassword extends JEditorText {
     private static final char ECHO_CHAR = '*';
 
     /**
-     * Creates a new instance of JEditorPassword */
+     * Creates a new instance of JEditorPassword
+     */
     public JEditorPassword() {
         super();
     }

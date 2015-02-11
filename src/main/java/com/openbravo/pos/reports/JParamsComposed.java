@@ -14,7 +14,8 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
     private List<ReportEditorCreator> editors = new ArrayList<>();
 
     /**
-     * Creates new form JParamsComposed */
+     * Creates new form JParamsComposed
+     */
     public JParamsComposed() {
         initComponents();
     }

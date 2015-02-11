@@ -12,7 +12,7 @@ public class TableRendererBasic extends DefaultTableCellRenderer {
 
     /**
      * Creates a new instance of TableRendererBasic
-     * @param aFormats */
+     */
     public TableRendererBasic(Formats[] aFormats) {
         m_aFormats = aFormats;
     }

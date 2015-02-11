@@ -17,7 +17,7 @@ public class MaterialFilter extends javax.swing.JPanel implements EditorCreator 
 
     /**
      * Creates new form JQBFProduct
-     * @param dlSales */
+     */
     public MaterialFilter(DataLogicSales dlSales) {
         initComponents();
 

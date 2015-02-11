@@ -10,7 +10,7 @@ public class JTicketsBagTicketBag extends javax.swing.JPanel {
 
     /**
      * Creates new form JTicketsBagTicketBag
-     * @param ticketsbagticket */
+     */
     public JTicketsBagTicketBag(JTicketsBagTicket ticketsbagticket) {
         m_ticketsbagticket = ticketsbagticket;
         initComponents();

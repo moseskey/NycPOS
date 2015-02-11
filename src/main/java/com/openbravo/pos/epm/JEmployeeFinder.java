@@ -16,13 +16,15 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
     private ListProvider lpr;
 
     /**
-     * Creates new form JEmployeeFinder */
+     * Creates new form JEmployeeFinder
+     */
     private JEmployeeFinder(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
 
     /**
-     * Creates new form JEmployeeFinder */
+     * Creates new form JEmployeeFinder
+     */
     private JEmployeeFinder(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }

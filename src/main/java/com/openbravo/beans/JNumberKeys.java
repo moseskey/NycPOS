@@ -12,7 +12,8 @@ public class JNumberKeys extends javax.swing.JPanel {
     private boolean equalsenabled = true;
 
     /**
-     * Creates new form JNumberKeys */
+     * Creates new form JNumberKeys
+     */
     public JNumberKeys() {
         initComponents ();
 

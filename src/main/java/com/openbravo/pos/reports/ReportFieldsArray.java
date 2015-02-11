@@ -10,7 +10,7 @@ public class ReportFieldsArray implements ReportFields {
 
     /**
      * Creates a new instance of ReportFieldsArray
-     * @param afields */
+     */
     public ReportFieldsArray(String[] afields) {
 
         // Creo el mapa de claves

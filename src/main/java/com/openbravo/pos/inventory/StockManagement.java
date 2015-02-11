@@ -58,7 +58,6 @@ public class StockManagement extends JPanel implements JPanelView {
 
     /**
      * Creates new form StockManagement
-     * @param app
      */
     public StockManagement(AppView app) {
 

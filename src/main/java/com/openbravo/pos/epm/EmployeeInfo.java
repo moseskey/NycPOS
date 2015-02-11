@@ -13,7 +13,6 @@ public class EmployeeInfo implements Serializable {
 
     /**
      * Creates a new instance of EmployeeInfo
-     * @param id
      */
     public EmployeeInfo(String id) {
         this.id = id;

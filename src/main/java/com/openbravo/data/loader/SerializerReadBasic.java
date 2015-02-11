@@ -8,7 +8,7 @@ public class SerializerReadBasic implements SerializerRead {
 
     /**
      * Creates a new instance of SerializerReadBasic
-     * @param classes */
+     */
     public SerializerReadBasic(Datas[] classes) {
         m_classes = classes;
     }

@@ -20,7 +20,7 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
 
     /**
      * Creates new form ProductFilterSales
-     * @param jKeys */
+     */
     public ProductFilterSales(DataLogicSales dlSales, JEditorKeys jKeys) {
         initComponents();
 

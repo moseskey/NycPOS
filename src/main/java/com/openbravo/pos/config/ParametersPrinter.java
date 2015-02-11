@@ -11,7 +11,7 @@ public class ParametersPrinter extends javax.swing.JPanel implements ParametersC
 
     /**
      * Creates new form ParametersPrinter
-     * @param printernames */
+     */
     public ParametersPrinter(String [] printernames) {
         initComponents();
 

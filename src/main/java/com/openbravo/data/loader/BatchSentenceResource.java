@@ -12,7 +12,7 @@ public class BatchSentenceResource extends BatchSentence {
 
     /**
      * Creates a new instance of BatchSentenceResource
-     * @param resscript */
+     */
     public BatchSentenceResource(Session s, String resscript) {
         super(s);
         m_sResScript = resscript;

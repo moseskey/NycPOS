@@ -11,7 +11,7 @@ public class DeviceScale {
 
     /**
      * Creates a new instance of DeviceScale
-     * @param props */
+     */
     public DeviceScale(Component parent, AppProperties props) {
         StringParser sd = new StringParser(props.getProperty("machine.scale"));
         String sScaleType = sd.nextToken(':');

@@ -16,7 +16,6 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
 
     /**
      * Creates new form JPaymentMagcard
-     * @param notifier
      */
     public JPaymentMagcard(AppView app, JPaymentNotifier notifier) {
 

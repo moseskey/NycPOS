@@ -58,7 +58,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     /**
      * Creates new form JTicketsBagRestaurant
-     * @param panelticket
      */
 
     public JTicketsBagRestaurantMap(AppView app, TicketsEditor panelticket) {

@@ -12,7 +12,7 @@ public abstract class JDBCSentence extends BaseSentence {
 
     /**
      * Creates a new instance of BaseSentence
-     * @param s */
+     */
     public JDBCSentence(Session s) {
         super();
         m_s = s;

@@ -9,7 +9,7 @@ public class SequenceForMySQL extends BaseSentence {
 
     /**
      * Creates a new instance of SequenceForMySQL
-     * @param sSeqTable */
+     */
     public SequenceForMySQL(Session s, String sSeqTable) {
 
         sent1 = new StaticSentence(s, "UPDATE " + sSeqTable + " SET ID = LAST_INSERT_ID(ID + 1)");

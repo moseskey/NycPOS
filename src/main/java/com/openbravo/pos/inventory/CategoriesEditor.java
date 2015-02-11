@@ -31,7 +31,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     /**
      * Creates new form JPanelCategories
-     * @param dirty
      */
     public CategoriesEditor(AppView app, DirtyManager dirty) {
 

@@ -30,7 +30,7 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
 
     /**
      * Creates a new instance of PaymentGatewayBluePay20POST
-     * @param props */
+     */
     public PaymentGatewayBluePay20POST(AppProperties props) {
         // Grab some configuration variables
         BP_AccountID = props.getProperty("payment.BluePay20POST.accountID");

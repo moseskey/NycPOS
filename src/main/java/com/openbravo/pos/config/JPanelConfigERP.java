@@ -11,7 +11,8 @@ public class JPanelConfigERP extends javax.swing.JPanel implements PanelConfig {
     private DirtyManager dirty = new DirtyManager();
 
     /**
-     * Creates new form JPanelConfigERP */
+     * Creates new form JPanelConfigERP
+     */
     public JPanelConfigERP() {
         initComponents();
 

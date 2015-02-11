@@ -6,7 +6,6 @@ public class BeanFactoryObj implements BeanFactory {
 
     /**
      * Creates a new instance of BeanFactoryObj
-     * @param bean
      */
     public BeanFactoryObj(Object bean) {
         this.bean = bean;

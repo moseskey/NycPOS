@@ -8,7 +8,7 @@ public class SerializerWriteBasic implements SerializerWrite<Object[]> {
 
     /**
      * Creates a new instance of SerializerWriteBasic
-     * @param classes */
+     */
     public SerializerWriteBasic(Datas... classes) {
         m_classes = classes;
     }

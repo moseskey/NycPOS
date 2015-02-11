@@ -27,7 +27,7 @@ public class FindInfo implements Finder {
 
     /**
      * Creates a new instance of FindInfo
-     * @param bMatchCase */
+     */
     public FindInfo(Vectorer vec, String sText, int iField, boolean bMatchCase, int iMatch) {
         m_vec = vec;
         m_sText = sText;
@@ -48,7 +48,6 @@ public class FindInfo implements Finder {
 
     /**
      * Creates a new instance of FindInfo
-     * @param vec
      */
     public FindInfo(Vectorer vec) {
         this(vec,  "", 0, true, MATCH_ANYPARTFIELD);

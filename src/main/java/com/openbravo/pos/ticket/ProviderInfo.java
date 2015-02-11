@@ -6,7 +6,8 @@ public class ProviderInfo {
     private String m_sName;
 
     /**
-     * Creates new Provider */
+     * Creates new Provider
+     */
     public ProviderInfo() {
         m_iProviderID = 0;
         m_sName = "";

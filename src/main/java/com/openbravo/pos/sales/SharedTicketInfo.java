@@ -21,7 +21,8 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
     private String CustomerName;
 
     /**
-     * Creates a new instance of SharedTicketInfo */
+     * Creates a new instance of SharedTicketInfo
+     */
     public SharedTicketInfo() {
     }
 

@@ -21,7 +21,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
 
     /**
      * Creates new form PlacesEditor
-     * @param dirty
      */
     public PlacesEditor(DataLogicSales dlSales, DirtyManager dirty) {
         initComponents();

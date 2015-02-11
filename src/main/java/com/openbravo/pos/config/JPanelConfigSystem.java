@@ -12,7 +12,8 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
     private DirtyManager dirty = new DirtyManager();
 
     /**
-     * Creates new form JPanelConfigDatabase */
+     * Creates new form JPanelConfigDatabase
+     */
     public JPanelConfigSystem() {
 
         initComponents();

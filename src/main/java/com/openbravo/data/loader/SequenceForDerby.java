@@ -10,7 +10,7 @@ public class SequenceForDerby extends BaseSentence {
 
     /**
      * Creates a new instance of SequenceForMySQL
-     * @param sSeqTable */
+     */
     public SequenceForDerby(Session s, String sSeqTable) {
 
         sent1 = new StaticSentence(s, "DELETE FROM  " + sSeqTable);

@@ -39,7 +39,8 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
     protected TaxesLogic taxeslogic;
 
     /**
-     * Creates new form JPanelReport */
+     * Creates new form JPanelReport
+     */
     public JPanelReport() {
 
         initComponents();

@@ -8,7 +8,6 @@ public class SerializerReadClass implements SerializerRead {
 
     /**
      * Creates a new instance of DefaultSerializerRead
-     * @param clazz
      */
     public SerializerReadClass(Class clazz) {
         m_clazz = clazz;

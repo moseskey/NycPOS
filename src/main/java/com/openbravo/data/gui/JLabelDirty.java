@@ -11,7 +11,6 @@ public class JLabelDirty extends JLabel {
 
     /**
      * Creates a new instance of JDirtyPicture
-     * @param dm
      */
     public JLabelDirty(DirtyManager dm) {
 

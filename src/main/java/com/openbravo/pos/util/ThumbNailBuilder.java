@@ -14,7 +14,6 @@ public class ThumbNailBuilder {
 
     /**
      * Creates a new instance of ThumbNailBuilder
-     * @param height
      */
     public ThumbNailBuilder(int width, int height) {
         init(width, height, null);

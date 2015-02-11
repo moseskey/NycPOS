@@ -49,7 +49,7 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     /**
      * Creates new form JCatalog
-     * @param dlSales */
+     */
     public JCatalog(DataLogicSales dlSales) {
         this(dlSales, false, false, 64, 54);
          // this(dlSales, false, false, 32, 32);

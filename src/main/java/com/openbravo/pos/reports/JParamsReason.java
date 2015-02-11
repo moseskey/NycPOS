@@ -16,7 +16,8 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
     private ComboBoxValModel m_ReasonModel;
 
     /**
-     * Creates new form JParamsReason */
+     * Creates new form JParamsReason
+     */
     public JParamsReason() {
         initComponents();
 

@@ -19,7 +19,7 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     /**
      * Creates new form JPrinterScreen2
-     * @param props */
+     */
 //JG July 2014 - Thank you Ron Isaacson    public DevicePrinterPanel() {
     public DevicePrinterPanel(AppProperties props) {
         initComponents();

@@ -19,7 +19,8 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
     //  private JSplitButton splitButton;
 
     /**
-     * Creates new form JCustomerFinder */
+     * Creates new form JCustomerFinder
+     */
     private JCustomerFinder(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }

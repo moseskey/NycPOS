@@ -16,7 +16,8 @@ public class AttributeSetFilter extends javax.swing.JPanel implements ReportEdit
     private ComboBoxValModel attusemodel;
 
     /**
-     * Creates new form AttributeUseFilter */
+     * Creates new form AttributeUseFilter
+     */
     public AttributeSetFilter() {
         initComponents();
     }

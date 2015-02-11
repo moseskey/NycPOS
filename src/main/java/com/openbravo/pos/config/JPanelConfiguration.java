@@ -16,7 +16,6 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
     /**
      * Creates new form JPanelConfiguration
-     * @param oApp
      */
     public JPanelConfiguration(AppView oApp) {
         this(oApp.getProperties());

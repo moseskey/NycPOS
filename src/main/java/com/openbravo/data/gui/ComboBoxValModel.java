@@ -13,7 +13,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      * Creates a new instance of ComboBoxValModel
-     * @param keygetter
      */
     public ComboBoxValModel(List aData, IKeyGetter keygetter) {
         m_aData = aData;

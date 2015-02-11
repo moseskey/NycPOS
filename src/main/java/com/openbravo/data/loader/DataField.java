@@ -3,7 +3,8 @@ package com.openbravo.data.loader;
 public class DataField {
 
     /**
-     * Creates a new instance of DataField */
+     * Creates a new instance of DataField
+     */
     public DataField() {
     }
 

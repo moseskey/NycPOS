@@ -11,7 +11,7 @@ public class AltEncrypter {
 
     /**
      * Creates a new instance of Encrypter
-     * @param passPhrase */
+     */
     public AltEncrypter(String passPhrase) {
 
         try {

@@ -17,7 +17,8 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
     private QBFCompareEnum comparevalue;
 
     /**
-     * Creates new form JParamsText */
+     * Creates new form JParamsText
+     */
     public JParamsText() {
         initComponents();
 

@@ -20,7 +20,8 @@ public class JClockPanel extends javax.swing.JPanel {
     private long m_lPeriod;
 
     /**
-     * Creates new form JClockPanel */
+     * Creates new form JClockPanel
+     */
     public JClockPanel() {
         this(true);
     }

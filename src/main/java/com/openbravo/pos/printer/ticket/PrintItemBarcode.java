@@ -24,7 +24,7 @@ public class PrintItemBarcode implements PrintItem {
 
     /**
      * Creates a new instance of PrinterItemBarcode
-     * @param scale */
+     */
     public PrintItemBarcode(String type, String position, String code, double scale) {
 
         m_sCode = code;

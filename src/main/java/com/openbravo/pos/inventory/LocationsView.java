@@ -15,7 +15,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
 
     /**
      * Creates new form LocationsEditor
-     * @param dirty
      */
     public LocationsView(DirtyManager dirty) {
         initComponents();

@@ -20,7 +20,8 @@ public class CustomersPanel extends JPanelTable {
     private CustomersView jeditor;
 
     /**
-     * Creates a new instance of CustomersPanel */
+     * Creates a new instance of CustomersPanel
+     */
     public CustomersPanel() {
         CustomerInfoGlobal.getInstance().setEditableData(bd);
     }

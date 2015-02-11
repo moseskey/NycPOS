@@ -11,7 +11,7 @@ public class FormatsRESOURCE extends Formats {
 
     /**
      * Creates a new instance of FormatsRESOURCE
-     * @param sPrefix */
+     */
     public FormatsRESOURCE(ResourceBundle rb, String sPrefix) {
         m_rb = rb;
         m_sPrefix = sPrefix;

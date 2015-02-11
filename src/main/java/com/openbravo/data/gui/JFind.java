@@ -12,12 +12,14 @@ public class JFind extends JDialog {
     private Vectorer m_vec;
 
     /**
-     * Creates new form JFind */
+     * Creates new form JFind
+     */
     private JFind(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
     /**
-     * Creates new form JFind */
+     * Creates new form JFind
+     */
     private JFind(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }

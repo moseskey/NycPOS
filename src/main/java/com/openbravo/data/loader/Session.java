@@ -22,7 +22,8 @@ public final class Session {
 
     /**
      * Creates a new instance of Session
-     * @throws java.sql.SQLException */
+     * @throws java.sql.SQLException
+     */
     public Session(String url, String user, String password) throws SQLException {
         m_surl = url;
         m_sappuser = user;

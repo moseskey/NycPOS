@@ -15,7 +15,8 @@ public class ProductVectorer implements Vectorer {
     };
 
     /**
-     * Creates a new instance of ProductVectorer */
+     * Creates a new instance of ProductVectorer
+     */
     public ProductVectorer() {
     }
 

@@ -30,7 +30,7 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
 
     /**
      * Creates a new instance of PaymentGatewayAuthorizeNet
-     * @param props */
+     */
     public PaymentGatewayAuthorizeNet(AppProperties props) {
         // Grab some configuration variables
         m_sCommerceID = props.getProperty("payment.commerceid");

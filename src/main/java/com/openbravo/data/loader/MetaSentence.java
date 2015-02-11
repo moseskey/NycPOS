@@ -16,7 +16,7 @@ public class MetaSentence extends JDBCSentence {
 
     /**
      * Creates a new instance of MetaDataSentence
-     * @param serread */
+     */
     public MetaSentence(Session s, String sSentence, SerializerWrite serwrite, SerializerRead serread) {
         super(s);
         m_sSentence = sSentence;
@@ -33,7 +33,8 @@ public class MetaSentence extends JDBCSentence {
         private ArrayList m_aParams;
 
         /**
-         * Creates a new instance of MetaParameter */
+         * Creates a new instance of MetaParameter
+         */
         public MetaParameter() {
             m_aParams = new ArrayList();
         }

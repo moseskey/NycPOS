@@ -15,7 +15,8 @@ public class JProductsSelector extends javax.swing.JPanel {
     private JFlowPanel flowpanel;
 
     /**
-     * Creates new form JProductsSelector */
+     * Creates new form JProductsSelector
+     */
     public JProductsSelector() {
         initComponents();
 

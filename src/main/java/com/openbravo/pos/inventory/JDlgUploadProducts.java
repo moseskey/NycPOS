@@ -19,12 +19,14 @@ public class JDlgUploadProducts extends javax.swing.JDialog {
     private BrowsableEditableData m_bd;
 
     /**
-     * Creates new form JDlgUploadProducts */
+     * Creates new form JDlgUploadProducts
+     */
     private JDlgUploadProducts(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
     /**
-     * Creates new form JDlgUploadProducts */
+     * Creates new form JDlgUploadProducts
+     */
     private JDlgUploadProducts(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }

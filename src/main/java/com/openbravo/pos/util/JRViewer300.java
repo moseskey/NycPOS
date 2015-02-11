@@ -136,7 +136,8 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @throws net.sf.jasperreports.engine.JRException */
+     * @throws net.sf.jasperreports.engine.JRException
+     */
 	public JRViewer300(String fileName, boolean isXML) throws JRException
 	{
 		this(fileName, isXML, null);
@@ -145,7 +146,8 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @throws net.sf.jasperreports.engine.JRException */
+     * @throws net.sf.jasperreports.engine.JRException
+     */
 	public JRViewer300(InputStream is, boolean isXML) throws JRException
 	{
 		this(is, isXML, null);
@@ -154,7 +156,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @param jrPrint
      */
 	public JRViewer300(JasperPrint jrPrint)
 	{
@@ -164,7 +165,8 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @throws net.sf.jasperreports.engine.JRException */
+     * @throws net.sf.jasperreports.engine.JRException
+     */
 	public JRViewer300(String fileName, boolean isXML, Locale locale) throws JRException
 	{
 		this(fileName, isXML, locale, null);
@@ -173,7 +175,8 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @throws net.sf.jasperreports.engine.JRException */
+     * @throws net.sf.jasperreports.engine.JRException
+     */
 	public JRViewer300(InputStream is, boolean isXML, Locale locale) throws JRException
 	{
 		this(is, isXML, locale, null);
@@ -182,7 +185,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @param locale
      */
 	public JRViewer300(JasperPrint jrPrint, Locale locale)
 	{
@@ -192,7 +194,8 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @throws net.sf.jasperreports.engine.JRException */
+     * @throws net.sf.jasperreports.engine.JRException
+     */
 	public JRViewer300(String fileName, boolean isXML, Locale locale, ResourceBundle resBundle) throws JRException
 	{
 		initResources(locale, resBundle);
@@ -215,7 +218,8 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @throws net.sf.jasperreports.engine.JRException */
+     * @throws net.sf.jasperreports.engine.JRException
+     */
 	public JRViewer300(InputStream is, boolean isXML, Locale locale, ResourceBundle resBundle) throws JRException
 	{
 		initResources(locale, resBundle);
@@ -238,7 +242,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @param resBundle */
+     */
 	public JRViewer300(JasperPrint jrPrint, Locale locale, ResourceBundle resBundle)
 	{
 		initResources(locale, resBundle);

@@ -17,7 +17,8 @@ public class JInventoryLines extends javax.swing.JPanel {
     private InventoryTableModel m_inventorylines;
 
     /**
-     * Creates new form JInventoryLines */
+     * Creates new form JInventoryLines
+     */
     public JInventoryLines() {
 
         initComponents();

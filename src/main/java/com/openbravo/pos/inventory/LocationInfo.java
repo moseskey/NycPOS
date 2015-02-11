@@ -18,7 +18,8 @@ public class LocationInfo implements SerializableRead, IKeyed {
     private String m_sAddress;
 
     /**
-     * Creates a new instance of LocationInfo */
+     * Creates a new instance of LocationInfo
+     */
     public LocationInfo() {
         m_sID = null;
         m_sName = null;

@@ -27,7 +27,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
     /**
      * Creates new form JPaneldbUpdate
-     * @param oApp
      */
     public JPaneldbUpdate(AppView oApp) {
         this(oApp.getProperties());

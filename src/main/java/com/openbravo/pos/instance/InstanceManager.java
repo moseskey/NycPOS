@@ -14,7 +14,8 @@ public class InstanceManager {
     /**
      * Creates a new instance of InstanceManager
      * @throws java.rmi.RemoteException
-     * @throws java.rmi.AlreadyBoundException */
+     * @throws java.rmi.AlreadyBoundException
+     */
     public InstanceManager(AppMessage message) throws RemoteException, AlreadyBoundException {
 
         m_registry = LocateRegistry.createRegistry(Registry.REGISTRY_PORT);

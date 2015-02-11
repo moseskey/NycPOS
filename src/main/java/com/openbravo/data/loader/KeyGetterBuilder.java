@@ -10,7 +10,8 @@ public class KeyGetterBuilder implements IKeyGetter {
     public final static IKeyGetter INSTANCE = new KeyGetterBuilder();
 
     /**
-     * Creates a new instance of KeyGetterBuilder */
+     * Creates a new instance of KeyGetterBuilder
+     */
     public KeyGetterBuilder() {
     }
 

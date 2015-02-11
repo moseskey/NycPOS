@@ -22,7 +22,6 @@ public class BrowsableData implements ListModel {
 
     /**
      * Creates a new instance of BrowsableData
-     * @param c
      */
     public BrowsableData(ListProvider dataprov, SaveProvider saveprov, Comparator c) {
         m_dataprov = dataprov;

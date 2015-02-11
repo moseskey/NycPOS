@@ -25,7 +25,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
 
     /**
      * Creates new form JPanelPayments
-     * @param dirty
      */
     public PaymentsEditor(AppView oApp, DirtyManager dirty) {
 

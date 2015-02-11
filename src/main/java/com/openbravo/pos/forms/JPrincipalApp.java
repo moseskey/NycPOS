@@ -46,7 +46,7 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
     /**
      * Creates new form JPrincipalApp
-     * @param appuser */
+     */
     public JPrincipalApp(JRootApp appview, AppUser appuser) {
 
         m_appview = appview;

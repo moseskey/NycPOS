@@ -18,7 +18,8 @@ public class ThirdPartiesPanel extends JPanelTable {
     private ThirdPartiesView jeditor;
 
     /**
-     * Creates a new instance of JPanelPeople */
+     * Creates a new instance of JPanelPeople
+     */
     public ThirdPartiesPanel() {
     }
 

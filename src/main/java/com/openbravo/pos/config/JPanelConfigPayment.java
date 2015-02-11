@@ -22,7 +22,8 @@ public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConf
     private PaymentConfiguration pc;
 
     /**
-     * Creates new form JPanelConfigPayment */
+     * Creates new form JPanelConfigPayment
+     */
     public JPanelConfigPayment() {
 
         initComponents();

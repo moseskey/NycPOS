@@ -23,12 +23,14 @@ public class JProductFinder extends javax.swing.JDialog {
     public final static int PRODUCT_AUXILIAR = 2;
 
     /**
-     * Creates new form JProductFinder */
+     * Creates new form JProductFinder
+     */
     private JProductFinder(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
     /**
-     * Creates new form JProductFinder */
+     * Creates new form JProductFinder
+     */
     private JProductFinder(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }

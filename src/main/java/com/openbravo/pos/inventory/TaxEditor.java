@@ -31,7 +31,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
 
     /**
      * Creates new form taxEditor
-     * @param dirty
      */
     public TaxEditor(AppView app, DirtyManager dirty) {
 

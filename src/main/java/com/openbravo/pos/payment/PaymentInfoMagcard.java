@@ -28,7 +28,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      * Creates a new instance of PaymentInfoMagcard
-     * @param dTotal
      */
     public PaymentInfoMagcard(
             String sHolderName,
@@ -57,7 +56,7 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      * Creates a new instance of PaymentInfoMagcard
-     * @param sTransactionID */
+     */
     public PaymentInfoMagcard(
             String sHolderName,
             String sCardNumber,

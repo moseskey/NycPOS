@@ -29,7 +29,7 @@ public class PaymentGatewayBluePayAUTHNETEMU implements PaymentGateway {
 
     /**
      * Creates a new instance of PaymentGatewayBluePayAUTHNETEMU
-     * @param props */
+     */
     public PaymentGatewayBluePayAUTHNETEMU(AppProperties props) {
         // Grab some configuration variables
         m_sCommerceID = props.getProperty("payment.BluePay.accountID");

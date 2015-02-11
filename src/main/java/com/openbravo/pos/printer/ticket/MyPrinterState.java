@@ -10,7 +10,6 @@ public class MyPrinterState {
 
     /**
      * Creates a new instance of PrinterState
-     * @param iSize
      */
     public MyPrinterState(int iSize) {
         m_iSize = iSize;

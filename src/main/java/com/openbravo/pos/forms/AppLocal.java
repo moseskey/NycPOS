@@ -19,7 +19,8 @@ public class AppLocal {
     }
 
     /**
-     * Creates a new instance of AppLocal */
+     * Creates a new instance of AppLocal
+     */
     private AppLocal() {
     }
 

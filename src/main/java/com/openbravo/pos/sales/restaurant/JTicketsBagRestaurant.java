@@ -50,7 +50,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
 
     /**
      * Creates new form JTicketsBagRestaurantMap
-     * @param restaurant */
+     */
     public JTicketsBagRestaurant(AppView app, JTicketsBagRestaurantMap restaurant) {
         super();
         m_App = app;

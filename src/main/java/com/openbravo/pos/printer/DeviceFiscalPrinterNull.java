@@ -5,7 +5,8 @@ import javax.swing.JComponent;
 public class DeviceFiscalPrinterNull implements DeviceFiscalPrinter {
 
     /**
-     * Creates a new instance of DeviceFiscalPrinterNull */
+     * Creates a new instance of DeviceFiscalPrinterNull
+     */
     public DeviceFiscalPrinterNull() {
     }
 

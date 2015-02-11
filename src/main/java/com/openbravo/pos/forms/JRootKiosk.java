@@ -20,7 +20,8 @@ public class JRootKiosk extends javax.swing.JFrame implements AppMessage {
     private OSValidator m_OS;
 
     /**
-     * Creates new form JRootKiosk */
+     * Creates new form JRootKiosk
+     */
     public JRootKiosk() {
 
         setUndecorated(true);

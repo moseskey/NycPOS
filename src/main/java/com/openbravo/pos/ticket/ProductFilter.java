@@ -22,7 +22,8 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
     private ComboBoxValModel m_CategoryModel;
 
     /**
-     * Creates new form JQBFProduct */
+     * Creates new form JQBFProduct
+     */
     public ProductFilter() {
 
         initComponents();

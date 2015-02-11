@@ -7,7 +7,8 @@ public class SerializerReadInteger implements SerializerRead {
     public static final SerializerRead INSTANCE = new SerializerReadInteger();
 
     /**
-     * Creates a new instance of SerializerReadInteger */
+     * Creates a new instance of SerializerReadInteger
+     */
     private SerializerReadInteger() {
     }
 

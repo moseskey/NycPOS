@@ -18,7 +18,6 @@ public final class FloorsEditor extends JPanel implements EditorRecord {
 
     /**
      * Creates new form FloorsEditor
-     * @param dirty
      */
     public FloorsEditor(DirtyManager dirty) {
         initComponents();

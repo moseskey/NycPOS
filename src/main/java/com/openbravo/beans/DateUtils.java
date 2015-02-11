@@ -7,7 +7,8 @@ import java.util.GregorianCalendar;
 public class DateUtils {
 
     /**
-     * Creates a new instance of DateUtils */
+     * Creates a new instance of DateUtils
+     */
     private DateUtils() {
     }
 

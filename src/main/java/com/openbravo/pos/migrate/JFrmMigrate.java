@@ -17,7 +17,7 @@ public class JFrmMigrate extends javax.swing.JFrame {
 
     /**
      * Creates new form JFrmMigrate
-     * @param props */
+     */
     public JFrmMigrate(AppProperties props) {
         initComponents();
 

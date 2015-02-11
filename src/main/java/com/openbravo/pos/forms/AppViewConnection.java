@@ -14,7 +14,8 @@ import java.sql.SQLException;
 public class AppViewConnection {
 
     /**
-     * Creates a new instance of AppViewConnection */
+     * Creates a new instance of AppViewConnection
+     */
     private AppViewConnection() {
     }
 

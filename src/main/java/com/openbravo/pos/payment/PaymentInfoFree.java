@@ -8,7 +8,6 @@ public class PaymentInfoFree extends PaymentInfo {
 
     /**
      * Creates a new instance of PaymentInfoFree
-     * @param dTotal
      */
     public PaymentInfoFree(double dTotal) {
         m_dTotal = dTotal;

@@ -39,7 +39,8 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
 
     /**
-     * Creates new form JEditorKeys */
+     * Creates new form JEditorKeys
+     */
     public JEditorKeys() {
         initComponents();
 

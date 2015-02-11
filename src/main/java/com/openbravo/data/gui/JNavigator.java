@@ -32,7 +32,7 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
 
     /**
      * Creates new form JNavigator
-     * @param iButtons */
+     */
     public JNavigator(BrowsableEditableData bd, Vectorer vec, ComparatorCreator cc, int iButtons) {
 
         initComponents();

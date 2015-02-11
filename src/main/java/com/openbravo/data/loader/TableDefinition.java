@@ -17,7 +17,6 @@ public class TableDefinition {
 
     /**
      * Creates a new instance of TableDefinition
-     * @param fielddata
      */
     public TableDefinition(
             Session s,

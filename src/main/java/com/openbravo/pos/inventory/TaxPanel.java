@@ -20,7 +20,8 @@ public class TaxPanel extends JPanelTable {
     private TaxEditor jeditor;
 
     /**
-     * Creates a new instance of JPanelDuty */
+     * Creates a new instance of JPanelDuty
+     */
     public TaxPanel() {
     }
 

@@ -8,7 +8,7 @@ public class EditorCreatorComposed implements EditorCreator{
 
     /**
      * Creates a new instance of EditorCreatorComposed
-     * @param editors */
+     */
     public EditorCreatorComposed(EditorCreator... editors) {
         m_editors = editors;
     }

@@ -14,7 +14,6 @@ public final class AttributeSetsEditor extends javax.swing.JPanel implements Edi
 
     /**
      * Creates new form AttributesEditor
-     * @param dirty
      */
     public AttributeSetsEditor(DirtyManager dirty) {
         initComponents();

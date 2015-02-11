@@ -24,7 +24,8 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
     protected EventListenerList listeners = new EventListenerList();
 
     /**
-     * Creates new form AuxiliarFilter */
+     * Creates new form AuxiliarFilter
+     */
     public AuxiliarFilter() {
         initComponents();
     }

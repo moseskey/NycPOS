@@ -31,7 +31,7 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
     /**
      * Creates new form JPaymentCash
-     * @param dlSystem */
+     */
     public JPaymentCashPos(JPaymentNotifier notifier, DataLogicSystem dlSystem) {
 
         m_notifier = notifier;

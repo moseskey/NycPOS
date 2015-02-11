@@ -14,7 +14,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
 
     /**
      * Creates new form RolesEditor
-     * @param dirty
      */
     public RolesView(DirtyManager dirty) {
         initComponents();

@@ -8,7 +8,6 @@ public class JPanelNull extends JPanel implements JPanelView {
 
     /**
      * Creates new form JPanelNull
-     * @param o
      */
     public JPanelNull(AppView oApp, Object o) {
 

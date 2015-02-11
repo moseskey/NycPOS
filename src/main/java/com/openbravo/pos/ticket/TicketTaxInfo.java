@@ -11,7 +11,6 @@ public class TicketTaxInfo {
 
     /**
      * Creates a new instance of TicketTaxInfo
-     * @param tax
      */
     public TicketTaxInfo(TaxInfo tax) {
         this.tax = tax;

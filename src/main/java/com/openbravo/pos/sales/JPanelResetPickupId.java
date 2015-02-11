@@ -33,7 +33,6 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
 
     /**
      * Creates new form JPaneldbUpdate
-     * @param oApp
      */
     public JPanelResetPickupId(AppView oApp) {
         this(oApp.getProperties());

@@ -15,7 +15,6 @@ public final class TaxCategoriesEditor extends JPanel implements EditorRecord {
 
     /**
      * Creates new form taxEditor
-     * @param dirty
      */
     public TaxCategoriesEditor(DirtyManager dirty) {
         initComponents();

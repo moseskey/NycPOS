@@ -39,7 +39,6 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
 
     /**
      * Creates new form CustomersView
-     * @param dirty
      */
     public CustomersView(AppView app, DirtyManager dirty) {
         try {

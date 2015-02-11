@@ -9,7 +9,7 @@ public class BatchSentenceScript extends BatchSentence {
 
     /**
      * Creates a new instance of BatchSentenceScript
-     * @param script */
+     */
     public BatchSentenceScript(Session s, String script) {
         super(s);
         m_sScript = script;

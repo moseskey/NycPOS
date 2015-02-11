@@ -35,7 +35,8 @@ public class JPanelConfigPeripheral extends javax.swing.JPanel implements PanelC
     private ParametersConfig printer6printerparams;
 
     /**
-     * Creates new form JPanelConfigGeneral */
+     * Creates new form JPanelConfigGeneral
+     */
     public JPanelConfigPeripheral() {
 
         initComponents();

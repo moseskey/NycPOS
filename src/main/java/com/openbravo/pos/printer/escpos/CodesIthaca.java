@@ -24,7 +24,8 @@ public class CodesIthaca extends Codes {
 
     private static final byte[] IMAGE_LOGO = {0x1B, 0x1C, 0x70, 0x01, 0x00};
     /**
-     * Creates a new instance of CodesIthaca */
+     * Creates a new instance of CodesIthaca
+     */
     public CodesIthaca() {
     }
 

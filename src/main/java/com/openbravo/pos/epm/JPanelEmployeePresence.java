@@ -17,7 +17,8 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
     private JFlowPanel jBreaks;
 
     /**
-     * Creates new form JPanelEmployeePresence */
+     * Creates new form JPanelEmployeePresence
+     */
     public JPanelEmployeePresence() {
         initComponents();
         this.setVisible(true);

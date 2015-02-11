@@ -13,7 +13,6 @@ public class ListProviderCreator implements ListProvider {
 
     /**
      * Creates a new instance of ListProviderEditor
-     * @param prov
      */
     public ListProviderCreator(SentenceList sent, EditorCreator prov) {
         this.sent = sent;

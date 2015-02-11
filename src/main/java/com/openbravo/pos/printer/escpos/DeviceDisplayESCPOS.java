@@ -8,7 +8,7 @@ public class DeviceDisplayESCPOS extends DeviceDisplaySerial {
 
     /**
      * Creates a new instance of DeviceDisplayESCPOS
-     * @param trans */
+     */
     public DeviceDisplayESCPOS(PrinterWritter display, UnicodeTranslator trans) {
         this.trans = trans;
         init(display);

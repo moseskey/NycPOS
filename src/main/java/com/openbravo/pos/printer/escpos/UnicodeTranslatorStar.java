@@ -3,7 +3,8 @@ package com.openbravo.pos.printer.escpos;
 public class UnicodeTranslatorStar extends UnicodeTranslator {
 
     /**
-     * Creates a UnicodeTranslatorStar instance of UnicodeTranslatorInt */
+     * Creates a UnicodeTranslatorStar instance of UnicodeTranslatorInt
+     */
     public UnicodeTranslatorStar() {
     }
 

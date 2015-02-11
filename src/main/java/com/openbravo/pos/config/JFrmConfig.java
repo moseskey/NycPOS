@@ -20,7 +20,7 @@ public class JFrmConfig extends javax.swing.JFrame {
 
     /**
      * Creates new form JFrmConfig
-     * @param props */
+     */
     public JFrmConfig(AppProperties props) {
 
         initComponents();

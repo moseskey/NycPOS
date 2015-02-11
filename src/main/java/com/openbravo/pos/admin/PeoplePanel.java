@@ -19,7 +19,8 @@ public class PeoplePanel extends JPanelTable {
     private PeopleView jeditor;
 
     /**
-     * Creates a new instance of JPanelPeople */
+     * Creates a new instance of JPanelPeople
+     */
     public PeoplePanel() {
     }
 

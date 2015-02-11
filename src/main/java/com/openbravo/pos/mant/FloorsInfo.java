@@ -17,7 +17,8 @@ public class FloorsInfo implements SerializableRead, IKeyed {
     private String m_sName;
 
     /**
-     * Creates a new instance of FloorsInfo */
+     * Creates a new instance of FloorsInfo
+     */
     public FloorsInfo() {
         m_sID = null;
         m_sName = null;

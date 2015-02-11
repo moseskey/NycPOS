@@ -26,7 +26,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
 
     /**
      * Creates new form AttributeSetEditor
-     * @param dirty
      */
     public AttributeUseEditor(AppView app, DirtyManager dirty) {
 

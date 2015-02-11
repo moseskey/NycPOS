@@ -19,7 +19,8 @@ public class ResourcesPanel extends JPanelTable {
     private ResourcesView jeditor;
 
     /**
-     * Creates a new instance of JPanelResources */
+     * Creates a new instance of JPanelResources
+     */
     public ResourcesPanel() {
     }
 

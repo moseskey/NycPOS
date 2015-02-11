@@ -14,7 +14,6 @@ public class JPanelPrinter extends JPanel implements JPanelView {
 
     /**
      * Creates new form JPrinter
-     * @param oApp
      */
     public JPanelPrinter(AppView oApp) {
 

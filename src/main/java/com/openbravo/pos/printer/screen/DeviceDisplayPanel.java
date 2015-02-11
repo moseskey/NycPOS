@@ -15,7 +15,8 @@ public class DeviceDisplayPanel extends JPanel implements DeviceDisplay, DeviceD
     private DeviceDisplayBase m_displaylines;
 
     /**
-     * Creates new form JVisor */
+     * Creates new form JVisor
+     */
     public DeviceDisplayPanel() {
         this(1.0);
     }

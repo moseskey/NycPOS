@@ -13,7 +13,6 @@ public class SQLDatabase implements TreeNode {
 
     /**
      * Creates a new instance of SQLDatabase
-     * @param name
      */
     public SQLDatabase(String name) {
         m_sName = name;

@@ -18,7 +18,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
 
     /**
      * Creates new form BreaksView
-     * @param dirty
      */
     public BreaksView(AppView app, DirtyManager dirty) {
 

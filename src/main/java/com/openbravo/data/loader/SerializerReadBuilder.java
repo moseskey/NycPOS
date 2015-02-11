@@ -8,7 +8,7 @@ public class SerializerReadBuilder  implements SerializerRead {
 
     /**
      * Creates a new instance of SerializerReadBuilder
-     * @param sb */
+     */
     public SerializerReadBuilder(SerializableBuilder sb) {
         m_sb = sb;
     }

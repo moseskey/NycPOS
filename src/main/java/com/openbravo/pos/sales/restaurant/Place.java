@@ -31,7 +31,8 @@ public class Place implements SerializableRead, java.io.Serializable {
     private JButton m_btn;
 
     /**
-     * Creates a new instance of TablePlace */
+     * Creates a new instance of TablePlace
+     */
     public Place() {
     }
 

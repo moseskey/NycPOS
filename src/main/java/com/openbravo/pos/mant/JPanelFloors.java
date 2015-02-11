@@ -19,7 +19,8 @@ public class JPanelFloors extends JPanelTable {
     private FloorsEditor jeditor;
 
     /**
-     * Creates a new instance of JPanelFloors */
+     * Creates a new instance of JPanelFloors
+     */
     public JPanelFloors() {
     }
 
