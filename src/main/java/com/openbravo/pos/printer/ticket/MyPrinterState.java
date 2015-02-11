@@ -23,9 +23,6 @@ import com.openbravo.pos.printer.DevicePrinter;
 import java.awt.Font;
 import java.awt.geom.AffineTransform;
 
-/**
- *
- */
 public class MyPrinterState {
 
     private int m_iSize;
@@ -36,16 +33,10 @@ public class MyPrinterState {
         m_iSize = iSize;
     }
 
-    /**
-     *
-     */
     public int getLineMult() {
         return getLineMult(m_iSize);
     }
 
-    /**
-     *
-     */
     public static int getLineMult(int iSize) {
         switch (iSize) {
             case 0:
@@ -59,9 +50,6 @@ public class MyPrinterState {
         }
     }
 
-    /**
-     *
-     */
     public Font getFont(Font baseFont, int iStyle) {
 
         Font f;

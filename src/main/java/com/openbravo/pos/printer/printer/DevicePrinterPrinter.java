@@ -179,9 +179,6 @@ public class DevicePrinterPrinter implements DevicePrinter {
     public void printLogo(){
     }
 
-    /**
-     *
-     */
     @Override
     public void printBarCode(String type, String position, String code) {
         m_ticketcurrent.printBarCode(type, position, code);

@@ -29,9 +29,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.HttpsURLConnection;
 
-/**
- *
- */
 public class PaymentGatewayBluePay20POST implements PaymentGateway {
 
     private static String ENDPOINTADDRESS;
@@ -60,16 +57,10 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
         ENDPOINTADDRESS = props.getProperty( "payment.BluePay20POST.URL" );
     }
 
-    /**
-     *
-     */
     public PaymentGatewayBluePay20POST() {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void execute(PaymentInfoMagcard payinfo)
     {

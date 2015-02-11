@@ -19,25 +19,16 @@
 
 package com.openbravo.pos.printer;
 
-/**
- *
- */
 public class ScrollAnimator extends BaseAnimator {
 
     private int msglength;
 
-    /**
-     *
-     */
     public ScrollAnimator(String line1, String line2) {
         msglength = Math.max(line1.length(), line2.length());
         baseLine1 = DeviceTicket.alignLeft(line1, msglength);
         baseLine2 = DeviceTicket.alignLeft(line2, msglength);
     }
 
-    /**
-     *
-     */
     @Override
     public void setTiming(int i) {
         int j = (i / 2) % (msglength + 20);

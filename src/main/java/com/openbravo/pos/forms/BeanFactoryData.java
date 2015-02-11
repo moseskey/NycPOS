@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.forms;
 
-/**
- *
- */
 public class BeanFactoryData implements BeanFactoryApp {
 
     private BeanFactoryApp bf;
@@ -51,9 +48,6 @@ public class BeanFactoryData implements BeanFactoryApp {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public Object getBean() {
         return bf.getBean();

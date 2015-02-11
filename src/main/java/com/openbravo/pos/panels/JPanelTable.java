@@ -32,24 +32,12 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.ListCellRenderer;
 
-/**
- *
- */
 public abstract class JPanelTable extends JPanel implements JPanelView, BeanFactoryApp {
 
-    /**
-     *
-     */
     protected BrowsableEditableData bd;
 
-    /**
-     *
-     */
     protected DirtyManager dirty;
 
-    /**
-     *
-     */
     protected AppView app;
 
     /** Creates new form JPanelTableEditor */
@@ -72,17 +60,11 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
         init();
     }
 
-    /**
-     *
-     */
     @Override
     public Object getBean() {
         return this;
     }
 
-    /**
-     *
-     */
     protected void startNavigation() {
 
         if (bd == null) {
@@ -138,64 +120,34 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
         }
     }
 
-    /**
-     *
-     */
     public Component getToolbarExtras() {
         return null;
     }
 
-    /**
-     *
-     */
     public Component getFilter() {
         return null;
     }
 
-    /**
-     *
-     */
     protected abstract void init();
 
-    /**
-     *
-     */
     public abstract EditorRecord getEditor();
 
-    /**
-     *
-     */
     public abstract ListProvider getListProvider();
 
-    /**
-     *
-     */
     public abstract SaveProvider getSaveProvider();
 
-    /**
-     *
-     */
     public Vectorer getVectorer() {
         return null;
     }
 
-    /**
-     *
-     */
     public ComparatorCreator getComparatorCreator() {
         return null;
     }
 
-    /**
-     *
-     */
     public ListCellRenderer getListCellRenderer() {
         return null;
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
@@ -217,9 +169,6 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
 

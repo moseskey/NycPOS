@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.scale;
 
-/**
- *
- */
 public class ScaleFake implements Scale {
 
     /** Creates a new instance of ScaleFake */

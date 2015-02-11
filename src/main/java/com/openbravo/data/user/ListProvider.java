@@ -22,9 +22,6 @@ package com.openbravo.data.user;
 import com.openbravo.basic.BasicException;
 import java.util.List;
 
-/**
- *
- */
 public interface ListProvider {
 
     /**

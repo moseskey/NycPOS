@@ -38,38 +38,23 @@ public class TaxCustCategoryInfo implements IKeyed {
         m_sName = name;
     }
 
-    /**
-     *
-     */
     @Override
     public Object getKey() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public void setID(String sID) {
         m_sID = sID;
     }
 
-    /**
-     *
-     */
     public String getID() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void setName(String sName) {
         m_sName = sName;
     }

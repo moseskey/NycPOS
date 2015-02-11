@@ -23,9 +23,6 @@ import com.openbravo.format.Formats;
 import com.openbravo.pos.util.RoundUtils;
 import java.util.Date;
 
-/**
- *
- */
 public class CustomerInfoExt extends CustomerInfo {
 
     protected String taxcustomerid;
@@ -142,9 +139,6 @@ public class CustomerInfoExt extends CustomerInfo {
     }
 
 
-    /**
-     *
-     */
     public void updateCurDebt(Double amount, Date d) {
 
         curdebt = curdebt == null ? amount : curdebt + amount;
@@ -173,9 +167,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return firstname;
     }
 
-    /**
-     *
-     */
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
@@ -188,9 +179,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return lastname;
     }
 
-    /**
-     *
-     */
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
@@ -204,9 +192,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return email;
     }
 
-    /**
-     *
-     */
     @Override
     public void setEmail(String email) {
         this.email = email;
@@ -221,9 +206,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return phone;
     }
 
-    /**
-     *
-     */
     @Override
     public void setPhone(String phone) {
         this.phone = phone;
@@ -237,9 +219,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return phone2;
     }
 
-    /**
-     *
-     */
     public void setPhone2(String phone2) {
         this.phone2 = phone2;
     }
@@ -252,9 +231,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return fax;
     }
 
-    /**
-     *
-     */
     public void setFax(String fax) {
         this.fax = fax;
     }
@@ -267,9 +243,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return address;
     }
 
-    /**
-     *
-     */
     public void setAddress(String address) {
         this.address = address;
     }
@@ -282,9 +255,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return address2;
     }
 
-    /**
-     *
-     */
     public void setAddress2(String address2) {
         this.address2 = address2;
     }
@@ -298,9 +268,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return postal;
     }
 
-    /**
-     *
-     */
     @Override
     public void setPostal(String postal) {
         this.postal = postal;
@@ -314,9 +281,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return city;
     }
 
-    /**
-     *
-     */
     public void setCity(String city) {
         this.city = city;
     }
@@ -329,9 +293,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return region;
     }
 
-    /**
-     *
-     */
     public void setRegion(String region) {
         this.region = region;
     }
@@ -344,9 +305,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return country;
     }
 
-    /**
-     *
-     */
     public void setCountry(String country) {
         this.country = country;
     }
@@ -359,9 +317,6 @@ public class CustomerInfoExt extends CustomerInfo {
         return image;
     }
 
-    /**
-     *
-     */
     public void setImage(String image) {
         this.image = image;
     }

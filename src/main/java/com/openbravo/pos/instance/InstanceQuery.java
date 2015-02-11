@@ -24,9 +24,6 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-/**
- *
- */
 public class InstanceQuery {
 
     private final AppMessage m_appstub;
@@ -40,9 +37,6 @@ public class InstanceQuery {
         m_appstub = (AppMessage) registry.lookup("AppMessage");
     }
 
-    /**
-     *
-     */
     public AppMessage getAppMessage() {
         return m_appstub;
     }

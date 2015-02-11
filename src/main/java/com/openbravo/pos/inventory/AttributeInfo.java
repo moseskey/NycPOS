@@ -21,9 +21,6 @@ package com.openbravo.pos.inventory;
 
 import com.openbravo.data.loader.IKeyed;
 
-/**
- *
- */
 public class AttributeInfo implements IKeyed {
 
     private String id;
@@ -36,17 +33,11 @@ public class AttributeInfo implements IKeyed {
         this.name = name;
     }
 
-    /**
-     *
-     */
     @Override
     public Object getKey() {
         return id;
     }
 
-    /**
-     *
-     */
     public String getId() {
         return id;
     }

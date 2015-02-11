@@ -22,9 +22,6 @@ package com.openbravo.data.model;
 import com.openbravo.data.loader.Datas;
 import com.openbravo.format.Formats;
 
-/**
- *
- */
 public class Field {
 
     private String label;
@@ -35,9 +32,6 @@ public class Field {
     private boolean comparable;
     private boolean title;
 
-    /**
-     *
-     */
     public Field(String label, Datas data, Formats format, boolean title, boolean searchable, boolean comparable) {
         this.label = label;
         this.data = data;
@@ -47,51 +41,30 @@ public class Field {
         this.comparable = comparable;
     }
 
-    /**
-     *
-     */
     public Field(String label, Datas data, Formats format) {
         this(label, data, format, false, false, false);
     }
 
-    /**
-     *
-     */
     public String getLabel() {
         return label;
     }
 
-    /**
-     *
-     */
     public Formats getFormat() {
         return format;
     }
 
-    /**
-     *
-     */
     public Datas getData() {
         return data;
     }
 
-    /**
-     *
-     */
     public boolean isSearchable() {
         return searchable;
     }
 
-    /**
-     *
-     */
     public boolean isComparable() {
         return comparable;
     }
 
-    /**
-     *
-     */
     public boolean isTitle() {
         return title;
     }

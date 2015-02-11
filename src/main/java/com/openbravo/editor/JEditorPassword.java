@@ -21,9 +21,6 @@ package com.openbravo.editor;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class JEditorPassword extends JEditorText {
 
     private static final char ECHO_CHAR = '*';
@@ -33,23 +30,14 @@ public class JEditorPassword extends JEditorText {
         super();
     }
 
-    /**
-     *
-     */
     protected final int getMode() {
         return EditorKeys.MODE_STRING;
     }
 
-    /**
-     *
-     */
     protected int getStartMode() {
         return MODE_Abc1;
     }
 
-    /**
-     *
-     */
     protected String getTextEdit() {
 
         StringBuilder s = new StringBuilder();
@@ -65,9 +53,6 @@ public class JEditorPassword extends JEditorText {
         return s.toString();
     }
 
-    /**
-     *
-     */
     public final String getPassword() {
 
         // como clave nunca devolvemos null

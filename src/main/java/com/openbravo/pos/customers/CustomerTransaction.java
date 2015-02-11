@@ -50,9 +50,6 @@ public class CustomerTransaction {
     public CustomerTransaction() {
     }
 
-    /**
-     *
-     */
     public CustomerTransaction(String ticketId, String productName, String unit, Double amount, Double total, Date transactionDate, String name) {
         this.ticketId = ticketId;
         this.productName = productName;
@@ -71,9 +68,6 @@ public class CustomerTransaction {
         return ticketId;
     }
 
-    /**
-     *
-     */
     public void setTicketId(String ticketId) {
         this.ticketId = ticketId;
     }
@@ -86,16 +80,10 @@ public class CustomerTransaction {
         return amount;
     }
 
-    /**
-     *
-     */
     public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    /**
-     *
-     */
     public void setTotal(Double  total) {
         this.total = total;
     }
@@ -116,9 +104,6 @@ public class CustomerTransaction {
         return productName;
     }
 
-    /**
-     *
-     */
     public void setProductName(String productName) {
         this.productName = productName;
     }
@@ -131,9 +116,6 @@ public class CustomerTransaction {
         return transactionDate;
     }
 
-    /**
-     *
-     */
     public void setTransactionDate(Date transactionDate) {
         this.transactionDate = transactionDate;
     }
@@ -146,9 +128,6 @@ public class CustomerTransaction {
         return unit;
     }
 
-    /**
-     *
-     */
     public void setUnit(String unit) {
         this.unit = unit;
     }
@@ -161,9 +140,6 @@ public class CustomerTransaction {
         return customerName;
     }
 
-    /**
-     *
-     */
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }

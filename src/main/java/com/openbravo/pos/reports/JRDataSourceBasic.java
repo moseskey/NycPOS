@@ -27,9 +27,6 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRField;
 
-/**
- *
- */
 public class JRDataSourceBasic implements JRDataSource {
 
     private BaseSentence sent;

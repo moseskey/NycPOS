@@ -23,9 +23,6 @@ import gnu.io.*;
 import java.io.*;
 import java.util.TooManyListenersException;
 
-/**
- *
- */
 public class ScaleComm implements Scale, SerialPortEventListener {
 
     private String m_sPortScale;
@@ -51,9 +48,6 @@ public class ScaleComm implements Scale, SerialPortEventListener {
         m_dWeightBuffer = 0.0;
     }
 
-    /**
-     *
-     */
     @Override
     public Double readWeight() {
 
@@ -120,9 +114,6 @@ public class ScaleComm implements Scale, SerialPortEventListener {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void serialEvent(SerialPortEvent e) {
 

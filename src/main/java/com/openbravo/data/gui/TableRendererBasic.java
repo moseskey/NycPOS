@@ -25,9 +25,6 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
-/**
- *
- */
 public class TableRendererBasic extends DefaultTableCellRenderer {
 
     private Formats[] m_aFormats;

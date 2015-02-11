@@ -40,9 +40,6 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.io.IOException;
 
-/**
- *
- */
 public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelConfig {
 
     private final DirtyManager dirty = new DirtyManager();
@@ -70,25 +67,16 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
 
     }
 
-    /**
-     *
-     */
     @Override
     public boolean hasChanged() {
         return dirty.isDirty();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getConfigComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
 
@@ -110,9 +98,6 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
         dirty.setDirty(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
 

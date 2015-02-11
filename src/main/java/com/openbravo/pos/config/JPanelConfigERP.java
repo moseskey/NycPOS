@@ -25,9 +25,6 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.util.AltEncrypter;
 import java.awt.Component;
 
-/**
- *
- */
 public class JPanelConfigERP extends javax.swing.JPanel implements PanelConfig {
 
     private DirtyManager dirty = new DirtyManager();
@@ -44,25 +41,16 @@ public class JPanelConfigERP extends javax.swing.JPanel implements PanelConfig {
         jtxtUrl.getDocument().addDocumentListener(dirty);
     }
 
-    /**
-     *
-     */
     @Override
     public boolean hasChanged() {
         return dirty.isDirty();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getConfigComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
 
@@ -84,9 +72,6 @@ public class JPanelConfigERP extends javax.swing.JPanel implements PanelConfig {
         dirty.setDirty(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
 

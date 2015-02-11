@@ -21,9 +21,6 @@ package com.openbravo.format;
 
 import java.text.ParseException;
 
-/**
- *
- */
 public class FormatsValidate extends Formats {
 
     private Formats m_fmt;
@@ -46,9 +43,6 @@ public class FormatsValidate extends Formats {
         this(fmt, new FormatsConstrain[]{constrain});
     }
 
-    /**
-     *
-     */
     @Override
     protected String formatValueInt(Object value) {
         return m_fmt.formatValueInt(value);
@@ -69,9 +63,6 @@ public class FormatsValidate extends Formats {
         return val;
     }
 
-    /**
-     *
-     */
     @Override
     public int getAlignment() {
         return m_fmt.getAlignment();

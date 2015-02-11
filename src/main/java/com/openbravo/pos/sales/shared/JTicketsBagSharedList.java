@@ -28,9 +28,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-/**
- *
- */
 public class JTicketsBagSharedList extends javax.swing.JDialog {
 
     private String m_sDialogTicket;
@@ -44,9 +41,6 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
         super(parent, modal);
     }
 
-    /**
-     *
-     */
     public String showTicketsList(java.util.List<SharedTicketInfo> atickets) {
 
         for (SharedTicketInfo aticket : atickets) {
@@ -59,9 +53,6 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
         return m_sDialogTicket;
     }
 
-    /**
-     *
-     */
     public static JTicketsBagSharedList newJDialog(JTicketsBagShared ticketsbagshared) {
 
         Window window = getWindow(ticketsbagshared);

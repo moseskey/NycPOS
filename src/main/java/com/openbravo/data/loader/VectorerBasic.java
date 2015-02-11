@@ -22,18 +22,12 @@ package com.openbravo.data.loader;
 import com.openbravo.format.Formats;
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class VectorerBasic implements Vectorer {
 
     private int[] m_aiIndex;
     private String[] m_asHeaders;
     private Formats[] m_aFormats;
 
-    /**
-     *
-     */
     public VectorerBasic(String[] asHeaders, Formats[] aFormats, int[] aiIndex) {
         m_asHeaders = asHeaders;
         m_aFormats = aFormats;

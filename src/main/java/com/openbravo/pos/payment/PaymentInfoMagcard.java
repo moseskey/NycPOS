@@ -19,69 +19,30 @@
 
 package com.openbravo.pos.payment;
 
-/**
- *
- */
 public class PaymentInfoMagcard extends PaymentInfo {
 
-    /**
-     *
-     */
     protected double m_dTotal;
 
-    /**
-     *
-     */
     protected String m_sHolderName;
 
-    /**
-     *
-     */
     protected String m_sCardNumber;
 
-    /**
-     *
-     */
     protected String m_sExpirationDate;
 
-    /**
-     *
-     */
     protected String track1;
 
-    /**
-     *
-     */
     protected String track2;
 
-    /**
-     *
-     */
     protected String track3;
 
-    /**
-     *
-     */
     protected String m_sTransactionID;
 
-    /**
-     *
-     */
     protected String m_sAuthorization;
 
-    /**
-     *
-     */
     protected String m_sErrorMessage;
 
-    /**
-     *
-     */
     protected String m_sReturnMessage;
 
-    /**
-     *
-     */
     protected String m_dCardName =null;
 
     /** Creates a new instance of PaymentInfoMagcard
@@ -122,9 +83,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
         this(sHolderName, sCardNumber, sExpirationDate, null, null, null, sTransactionID, dTotal);
     }
 
-    /**
-     *
-     */
     @Override
     public PaymentInfo copyPayment(){
         PaymentInfoMagcard p = new PaymentInfoMagcard(
@@ -142,69 +100,42 @@ public class PaymentInfoMagcard extends PaymentInfo {
         return p;
     }
 
-    /**
-     *
-     */
     @Override
     public String getName() {
         return "magcard";
     }
 
-    /**
-     *
-     */
     @Override
     public double getTotal() {
         return m_dTotal;
     }
 
-    /**
-     *
-     */
     public boolean isPaymentOK() {
         return m_sAuthorization != null;
     }
 
-    /**
-     *
-     */
     public String getHolderName() {
         return m_sHolderName;
     }
 
-    /**
-     *
-     */
     @Override
   public String getCardName() {
        return getCardType(m_sCardNumber);
    }
 
-    /**
-     *
-     */
     public String getCardNumber() {
         return m_sCardNumber;
     }
 
-    /**
-     *
-     */
     public String getExpirationDate() {
         return m_sExpirationDate;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTransactionID() {
         return m_sTransactionID;
     }
 
-    /**
-     *
-     */
     public String getCardType(String sCardNumber){
         String c = "UNKNOWN";
 
@@ -241,63 +172,39 @@ public class PaymentInfoMagcard extends PaymentInfo {
             : track1.substring(1, track1.length()-2);
     }
 
-    /**
-     *
-     */
     public String getTrack2(boolean framingChar) {
         return (framingChar)
             ? track2
             : track2.substring(1, track2.length()-2);
     }
 
-    /**
-     *
-     */
     public String getTrack3(boolean framingChar) {
         return (framingChar)
             ? track3
             : track3.substring(1, track3.length()-2);
     }
 
-    /**
-     *
-     */
     public String getAuthorization() {
         return m_sAuthorization;
     }
 
-    /**
-     *
-     */
     public String getMessage() {
         return m_sErrorMessage;
     }
 
-    /**
-     *
-     */
     public void paymentError(String sMessage, String moreInfo) {
         m_sAuthorization = null;
         m_sErrorMessage = sMessage + "\n" + moreInfo;
     }
 
-    /**
-     *
-     */
     public void setReturnMessage(String returnMessage){
         m_sReturnMessage = returnMessage;
     }
 
-    /**
-     *
-     */
     public String getReturnMessage(){
         return m_sReturnMessage;
     }
 
-    /**
-     *
-     */
     public void paymentOK(String sAuthorization, String sTransactionId, String sReturnMessage) {
         m_sAuthorization = sAuthorization;
         m_sTransactionID = sTransactionId;
@@ -305,9 +212,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
         m_sErrorMessage = null;
     }
 
-    /**
-     *
-     */
     public String printCardNumber() {
         // hide start numbers
         if (m_sCardNumber.length() > 4) {
@@ -320,46 +224,28 @@ public class PaymentInfoMagcard extends PaymentInfo {
         }
     }
 
-    /**
-     *
-     */
     public String printExpirationDate() {
         return m_sExpirationDate;
     }
 
-    /**
-     *
-     */
     public String printAuthorization() {
         return m_sAuthorization;
     }
 
-    /**
-     *
-     */
     public String printTransactionID() {
         return m_sTransactionID;
     }
 
-    /**
-     *
-     */
     @Override
     public double getPaid() {
         return (0.0);
     }
 
-    /**
-     *
-     */
     @Override
     public double getChange(){
        return 0.00;
    }
 
-    /**
-     *
-     */
     @Override
     public double getTendered() {
         throw new UnsupportedOperationException("Not supported yet.");

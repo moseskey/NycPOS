@@ -30,27 +30,15 @@ import com.openbravo.pos.ticket.ProductRenderer;
 import java.awt.*;
 import javax.swing.JFrame;
 
-/**
- *
- */
 public class JProductFinder extends javax.swing.JDialog {
 
     private ProductInfoExt m_ReturnProduct;
     private ListProvider lpr;
 
-    /**
-     *
-     */
     public final static int PRODUCT_ALL = 0;
 
-    /**
-     *
-     */
     public final static int PRODUCT_NORMAL = 1;
 
-    /**
-     *
-     */
     public final static int PRODUCT_AUXILIAR = 2;
 
     /** Creates new form JProductFinder */
@@ -108,16 +96,10 @@ public class JProductFinder extends javax.swing.JDialog {
         }
     }
 
-    /**
-     *
-     */
     public static ProductInfoExt showMessage(Component parent, DataLogicSales dlSales) {
         return showMessage(parent, dlSales, PRODUCT_ALL);
     }
 
-    /**
-     *
-     */
     public static ProductInfoExt showMessage(Component parent, DataLogicSales dlSales, int productsType) {
 
         Window window = getWindow(parent);

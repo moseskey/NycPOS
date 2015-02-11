@@ -29,9 +29,6 @@ import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-/**
- *
- */
 public class JParamsLocation extends javax.swing.JPanel implements ReportEditorCreator {
 
     private SentenceList m_sentlocations;
@@ -42,9 +39,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
 
@@ -68,39 +62,24 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
         m_jLocation.setModel(m_LocationsModel); // refresh model
     }
 
-    /**
-     *
-     */
     @Override
     public SerializerWrite getSerializerWrite() {
         return new SerializerWriteBasic(new Datas[] {Datas.OBJECT, Datas.STRING});
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     protected void addFirst(List a) {
         // do nothing
     }
 
-    /**
-     *
-     */
     public void addActionListener(ActionListener l) {
         m_jLocation.addActionListener(l);
     }
 
-    /**
-     *
-     */
     public void removeActionListener(ActionListener l) {
         m_jLocation.removeActionListener(l);
     }

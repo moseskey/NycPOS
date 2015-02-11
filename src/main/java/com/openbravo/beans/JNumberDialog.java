@@ -26,9 +26,6 @@ import java.awt.Window;
 import javax.swing.Icon;
 import javax.swing.SwingUtilities;
 
-/**
- *
- */
 public class JNumberDialog extends javax.swing.JDialog {
 
     private static LocaleResources m_resources;
@@ -75,23 +72,14 @@ public class JNumberDialog extends javax.swing.JDialog {
         m_lblMessage.setIcon(icon);
     }
 
-    /**
-     *
-     */
     public static Double showEditNumber(Component parent, String title) {
         return showEditNumber(parent, title, null, null);
     }
 
-    /**
-     *
-     */
     public static Double showEditNumber(Component parent, String title, String message) {
         return showEditNumber(parent, title, message, null);
     }
 
-    /**
-     *
-     */
     public static Double showEditNumber(Component parent, String title, String message, Icon icon) {
 
         Window window = SwingUtilities.windowForComponent(parent);

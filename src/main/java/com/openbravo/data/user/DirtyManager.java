@@ -24,16 +24,10 @@ import javax.swing.event.*;
 import java.util.*;
 import java.beans.*;
 
-/**
- *
- */
 public class DirtyManager implements DocumentListener, ChangeListener, ActionListener, PropertyChangeListener {
 
     private boolean m_bDirty;
 
-    /**
-     *
-     */
     protected Vector listeners = new Vector();
 
     /** Creates a new instance of DirtyManager */
@@ -41,23 +35,14 @@ public class DirtyManager implements DocumentListener, ChangeListener, ActionLis
         m_bDirty = false;
     }
 
-    /**
-     *
-     */
     public void addDirtyListener(DirtyListener l) {
         listeners.add(l);
     }
 
-    /**
-     *
-     */
     public void removeDirtyListener(DirtyListener l) {
         listeners.remove(l);
     }
 
-    /**
-     *
-     */
     protected void fireChangedDirty() {
 
         Enumeration e = listeners.elements();
@@ -67,9 +52,6 @@ public class DirtyManager implements DocumentListener, ChangeListener, ActionLis
         }
     }
 
-    /**
-     *
-     */
     public void setDirty(boolean bValue) {
 
         if (m_bDirty != bValue) {
@@ -78,9 +60,6 @@ public class DirtyManager implements DocumentListener, ChangeListener, ActionLis
         }
     }
 
-    /**
-     *
-     */
     public boolean isDirty() {
         return m_bDirty;
     }

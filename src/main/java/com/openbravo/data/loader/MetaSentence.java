@@ -25,21 +25,12 @@ import javax.sql.DataSource;
 import com.openbravo.basic.BasicException;
 import com.openbravo.data.loader.JDBCSentence.JDBCDataResultSet;
 
-/**
- *
- */
 public class MetaSentence extends JDBCSentence {
 
     private String m_sSentence;
 
-    /**
-     *
-     */
     protected SerializerRead m_SerRead = null;
 
-    /**
-     *
-     */
     protected SerializerWrite m_SerWrite = null;
 
     /** Creates a new instance of MetaDataSentence
@@ -51,9 +42,6 @@ public class MetaSentence extends JDBCSentence {
         m_SerRead = serread;
     }
 
-    /**
-     *
-     */
     public MetaSentence(Session s, String sSentence, SerializerRead serread) {
         this(s, sSentence, null, serread);
     }

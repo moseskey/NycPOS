@@ -44,9 +44,6 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-/**
- *
- */
 public class JPanelButtons extends javax.swing.JPanel {
 
     private static final Logger logger = Logger.getLogger("com.openbravo.pos.sales.JPanelButtons");
@@ -94,9 +91,6 @@ public class JPanelButtons extends javax.swing.JPanel {
 
     }
 
-    /**
-     *
-     */
     public void setPermissions(AppUser user) {
         for (Component c : this.getComponents()) {
             String sKey = c.getName();
@@ -108,23 +102,14 @@ public class JPanelButtons extends javax.swing.JPanel {
         }
     }
 
-    /**
-     *
-     */
     public String getProperty(String key) {
         return props.getProperty(key);
     }
 
-    /**
-     *
-     */
     public String getProperty(String key, String defaultvalue) {
         return props.getProperty(key, defaultvalue);
     }
 
-    /**
-     *
-     */
     public String getEvent(String key) {
         return events.get(key);
     }

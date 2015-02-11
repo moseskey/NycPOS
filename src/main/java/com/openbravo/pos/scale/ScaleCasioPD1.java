@@ -23,9 +23,6 @@ import gnu.io.*;
 import java.io.*;
 import java.util.TooManyListenersException;
 
-/**
- *
- */
 public class ScaleCasioPD1 implements Scale, SerialPortEventListener {
 
     private CommPortIdentifier m_PortIdPrinter;
@@ -56,9 +53,6 @@ public class ScaleCasioPD1 implements Scale, SerialPortEventListener {
         m_dWeightDecimals = 1.0;
     }
 
-    /**
-     *
-     */
     @Override
     public Double readWeight() {
 
@@ -130,9 +124,6 @@ public class ScaleCasioPD1 implements Scale, SerialPortEventListener {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void serialEvent(SerialPortEvent e) {
 

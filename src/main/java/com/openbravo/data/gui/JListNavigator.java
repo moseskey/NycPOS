@@ -30,14 +30,8 @@ import com.openbravo.data.user.BrowsableData;
 import com.openbravo.data.user.BrowsableEditableData;
 import com.openbravo.data.user.BrowseListener;
 
-/**
- *
- */
 public class JListNavigator extends javax.swing.JPanel implements BrowseListener, ListSelectionListener {
 
-    /**
-     *
-     */
     protected BrowsableEditableData m_bd;
 
     /** Creates new form JListBrowse
@@ -46,9 +40,6 @@ public class JListNavigator extends javax.swing.JPanel implements BrowseListener
         this(bd, false);
     }
 
-    /**
-     *
-     */
     public JListNavigator(BrowsableEditableData bd, boolean bTouchable) {
 
         m_bd = bd;
@@ -68,16 +59,10 @@ public class JListNavigator extends javax.swing.JPanel implements BrowseListener
         m_bd.addBrowseListener(this);
     }
 
-    /**
-     *
-     */
     public void setCellRenderer(ListCellRenderer cellRenderer) {
         m_jlist.setCellRenderer(cellRenderer);
     }
 
-    /**
-     *
-     */
     @Override
     public void updateIndex(int iIndex, int iCounter) {
 

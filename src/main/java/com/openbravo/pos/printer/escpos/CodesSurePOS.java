@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.printer.escpos;
 
-/**
- *
- */
 public class CodesSurePOS extends Codes {
 
     private static final byte[] INITSEQUENCE = {};
@@ -31,24 +28,12 @@ public class CodesSurePOS extends Codes {
     private static final byte[] CHAR_SIZE_2 = {0x1D, 0x21, 0x30};
     private static final byte[] CHAR_SIZE_3 = {0x1D, 0x21, 0x31};
 
-    /**
-     *
-     */
     public static final byte[] BOLD_SET = {0x1B, 0x45, 0x01};
 
-    /**
-     *
-     */
     public static final byte[] BOLD_RESET = {0x1B, 0x45, 0x00};
 
-    /**
-     *
-     */
     public static final byte[] UNDERLINE_SET = {0x1B, 0x2D, 0x01};
 
-    /**
-     *
-     */
     public static final byte[] UNDERLINE_RESET = {0x1B, 0x2D, 0x00};
 
     private static final byte[] OPEN_DRAWER = {0x1B, 0x70, 0x00, 0x32, -0x06};
@@ -61,93 +46,48 @@ public class CodesSurePOS extends Codes {
     public CodesSurePOS() {
     }
 
-    /**
-     *
-     */
     @Override
     public byte[] getInitSequence() { return INITSEQUENCE; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getSize0() { return CHAR_SIZE_0; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getSize1() { return CHAR_SIZE_1; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getSize2() { return CHAR_SIZE_2; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getSize3() { return CHAR_SIZE_3; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getBoldSet() { return BOLD_SET; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getBoldReset() { return BOLD_RESET; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getUnderlineSet() { return UNDERLINE_SET; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getUnderlineReset() { return UNDERLINE_RESET; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getOpenDrawer() { return OPEN_DRAWER; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getCutReceipt() { return PARTIAL_CUT_1; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getNewLine() { return NEW_LINE; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getImageHeader() { return IMAGE_HEADER; }
 
-    /**
-     *
-     */
     @Override
     public int getImageWidth() { return 256; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getImageLogo(){ return IMAGE_LOGO; }
 }

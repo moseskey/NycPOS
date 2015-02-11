@@ -23,9 +23,6 @@ import gnu.io.*;
 import java.io.*;
 import java.util.TooManyListenersException;
 
-/**
- *
- */
 public class ScaleSamsungEsp implements Scale, SerialPortEventListener {
 
     private CommPortIdentifier m_PortIdPrinter;
@@ -55,9 +52,6 @@ public class ScaleSamsungEsp implements Scale, SerialPortEventListener {
         m_dWeightDecimals = 1.0;
     }
 
-    /**
-     *
-     */
     @Override
     public Double readWeight() {
 
@@ -127,9 +121,6 @@ public class ScaleSamsungEsp implements Scale, SerialPortEventListener {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void serialEvent(SerialPortEvent e) {
 

@@ -31,24 +31,12 @@ import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public class SimpleReceipt extends javax.swing.JPanel {
 
-    /**
-     *
-     */
     protected DataLogicCustomers dlCustomers;
 
-    /**
-     *
-     */
     protected DataLogicSales dlSales;
 
-    /**
-     *
-     */
     protected TaxesLogic taxeslogic;
 
     private JTicketLines ticketlines;
@@ -70,16 +58,10 @@ public class SimpleReceipt extends javax.swing.JPanel {
         jPanel2.add(ticketlines, BorderLayout.CENTER);
     }
 
-    /**
-     *
-     */
     public void setCustomerEnabled(boolean value) {
         btnCustomer.setEnabled(value);
     }
 
-    /**
-     *
-     */
     public void setTicket(TicketInfo ticket, Object ticketext) {
 
         this.ticket = ticket;
@@ -121,9 +103,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
         }
     }
 
-    /**
-     *
-     */
     public TicketInfo getTicket()  {
         return ticket;
     }
@@ -137,9 +116,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
         return i;
     }
 
-    /**
-     *
-     */
     public TicketLineInfo[] getSelectedLines() {
 
         // never returns an empty array, or null, or an array with at least one element.
@@ -168,9 +144,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
         }
     }
 
-    /**
-     *
-     */
     public TicketLineInfo[] getSelectedLinesUnit() {
 
        // never returns an empty array, or null, or an array with at least one element.
@@ -214,9 +187,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
         }
     }
 
-    /**
-     *
-     */
     public void addSelectedLines(TicketLineInfo[] lines) {
 
         int i = findFirstNonAuxiliarLine();

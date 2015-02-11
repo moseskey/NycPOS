@@ -40,9 +40,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
-/**
- *
- */
 public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInterface {
 
     private final JPaymentNotifier m_notifier;
@@ -86,9 +83,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
     }
 
-    /**
-     *
-     */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
 
@@ -101,9 +95,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
         printState();
     }
 
-    /**
-     *
-     */
     @Override
     public PaymentInfo executePayment() {
         if (m_dPaid - m_dTotal >= 0.0) {
@@ -115,9 +106,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
         }
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
@@ -150,18 +138,12 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
         }
     }
 
-    /**
-     *
-     */
     public class ScriptPaymentCash {
 
         private final DataLogicSystem dlSystem;
         private final ThumbNailBuilder tnbbutton;
         private final AppConfig m_config;
 
-        /**
-         *
-         */
         public ScriptPaymentCash(DataLogicSystem dlSystem) {
 //added 19.04.13 JDL
             AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")), AppLocal.APP_ID + ".properties"));
@@ -172,9 +154,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
             tnbbutton = new ThumbNailBuilder(64, 50, "com/openbravo/images/cash.png");
         }
 
-        /**
-         *
-         */
         public void addButton(String image, double amount) {
             JButton btn = new JButton();
 //added 19.04.13 JDL removal of text on payment buttons if required.

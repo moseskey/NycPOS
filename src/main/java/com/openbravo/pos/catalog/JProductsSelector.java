@@ -29,9 +29,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
-/**
- *
- */
 public class JProductsSelector extends javax.swing.JPanel {
 
     private JFlowPanel flowpanel;
@@ -47,9 +44,6 @@ public class JProductsSelector extends javax.swing.JPanel {
 
     //public void addProduct(Image img, String name, ActionListener al) {
 
-    /**
-     *
-     */
         public void addProduct(Image img, String display, ActionListener al,String textTip) {
         JButton btn = new JButton();
         btn.applyComponentOrientation(getComponentOrientation());

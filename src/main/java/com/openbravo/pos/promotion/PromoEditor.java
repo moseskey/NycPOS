@@ -36,9 +36,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public class PromoEditor extends JPanel implements EditorRecord {
 
     private SentenceList m_sentPromo;
@@ -118,16 +115,10 @@ public class PromoEditor extends JPanel implements EditorRecord {
         onSelectPromoType(null);
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
 
@@ -164,9 +155,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
 
@@ -207,9 +195,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
 
@@ -265,9 +250,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
 
@@ -602,9 +584,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

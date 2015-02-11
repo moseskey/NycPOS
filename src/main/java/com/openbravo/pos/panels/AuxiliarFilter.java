@@ -35,17 +35,11 @@ import java.awt.event.ActionListener;
 import java.util.EventListener;
 import javax.swing.event.EventListenerList;
 
-/**
- *
- */
 public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCreator {
 
     private ProductInfoExt product;
     private DataLogicSales m_dlSales;
 
-    /**
-     *
-     */
     protected EventListenerList listeners = new EventListenerList();
 
     /** Creates new form AuxiliarFilter */
@@ -53,9 +47,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
          m_dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -73,31 +64,19 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
         m_jReference1.setText(null);
     }
 
-    /**
-     *
-     */
     @Override
     public SerializerWrite getSerializerWrite() {
         return SerializerWriteString.INSTANCE;
     }
 
-    /**
-     *
-     */
     public void addActionListener(ActionListener l){
         listeners.add(ActionListener.class, l);
     }
 
-    /**
-     *
-     */
     public void removeActionListener(ActionListener l) {
         listeners.remove(ActionListener.class, l);
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
@@ -112,9 +91,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
         return product == null ? null : product.getID();
     }
 
-    /**
-     *
-     */
     public ProductInfoExt getProductInfoExt() {
         return product;
     }
@@ -135,9 +111,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
         fireSelectedProduct();
     }
 
-    /**
-     *
-     */
     protected void fireSelectedProduct() {
         EventListener[] l = listeners.getListeners(ActionListener.class);
         ActionEvent e = null;

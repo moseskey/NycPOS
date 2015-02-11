@@ -30,9 +30,6 @@ import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-/**
- *
- */
 public class JTicketCatalogLines extends javax.swing.JPanel {
 
     private JRefundLines m_reflines;
@@ -58,9 +55,6 @@ public class JTicketCatalogLines extends javax.swing.JPanel {
         add(m_catalog.getComponent(), "catalog");
     }
 
-    /**
-     *
-     */
     public void showCatalog() {
         showView("catalog");
     }
@@ -73,23 +67,14 @@ public class JTicketCatalogLines extends javax.swing.JPanel {
         m_catalog.loadCatalog();
     }
 
-    /**
-     *
-     */
     public void addActionListener(ActionListener l) {
         m_catalog.addActionListener(l);
     }
 
-    /**
-     *
-     */
     public void removeActionListener(ActionListener l) {
         m_catalog.addActionListener(l);
     }
 
-    /**
-     *
-     */
     public void showRefundLines(List aRefundLines) {
         // anado las lineas de refund
         m_reflines.setLines(aRefundLines);

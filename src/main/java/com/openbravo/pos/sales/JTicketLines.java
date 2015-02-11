@@ -50,9 +50,6 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-/**
- *
- */
 public class JTicketLines extends javax.swing.JPanel {
 
     private static final Logger logger = Logger.getLogger("com.openbravo.pos.sales.JTicketLines");
@@ -113,38 +110,23 @@ public class JTicketLines extends javax.swing.JPanel {
         m_jTableModel.clear();
     }
 
-    /**
-     *
-     */
     public void addListSelectionListener(ListSelectionListener l) {
         m_jTicketTable.getSelectionModel().addListSelectionListener(l);
     }
 
-    /**
-     *
-     */
     public void removeListSelectionListener(ListSelectionListener l) {
         m_jTicketTable.getSelectionModel().removeListSelectionListener(l);
     }
 
-    /**
-     *
-     */
     public void clearTicketLines() {
         m_jTableModel.clear();
     }
 
-    /**
-     *
-     */
     public void setTicketLine(int index, TicketLineInfo oLine){
 
         m_jTableModel.setRow(index, oLine);
     }
 
-    /**
-     *
-     */
     public void addTicketLine(TicketLineInfo oLine) {
 
         m_jTableModel.addRow(oLine);
@@ -153,9 +135,6 @@ public class JTicketLines extends javax.swing.JPanel {
         setSelectedIndex(m_jTableModel.getRowCount() - 1);
     }
 
-    /**
-     *
-     */
     public void insertTicketLine(int index, TicketLineInfo oLine) {
 
         m_jTableModel.insertRow(index, oLine);
@@ -164,9 +143,6 @@ public class JTicketLines extends javax.swing.JPanel {
         setSelectedIndex(index);
     }
 
-    /**
-     *
-     */
     public void removeTicketLine(int i){
 
         m_jTableModel.removeRow(i);
@@ -182,9 +158,6 @@ public class JTicketLines extends javax.swing.JPanel {
         }
     }
 
-    /**
-     *
-     */
     public void setSelectedIndex(int i){
 
         // Seleccionamos
@@ -195,16 +168,10 @@ public class JTicketLines extends javax.swing.JPanel {
         m_jTicketTable.scrollRectToVisible(oRect);
     }
 
-    /**
-     *
-     */
     public int getSelectedIndex() {
         return m_jTicketTable.getSelectionModel().getMinSelectionIndex(); // solo sera uno, luego no importa...
     }
 
-    /**
-     *
-     */
     public void selectionDown() {
 
         int i = m_jTicketTable.getSelectionModel().getMaxSelectionIndex();
@@ -224,9 +191,6 @@ public class JTicketLines extends javax.swing.JPanel {
         }
     }
 
-    /**
-     *
-     */
     public void selectionUp() {
 
         int i = m_jTicketTable.getSelectionModel().getMinSelectionIndex();
@@ -412,9 +376,6 @@ public class JTicketLines extends javax.swing.JPanel {
         public void characters(char[] ch, int start, int length) throws SAXException {}
     }
 
-    /**
-     *
-     */
     public void setSendStatus(Boolean state){
         sendStatus = state;
     }

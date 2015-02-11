@@ -28,9 +28,6 @@ import com.openbravo.pos.forms.BeanFactoryException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public class PanelReportBean extends JPanelReport {
 
     private String title;
@@ -76,91 +73,55 @@ public class PanelReportBean extends JPanelReport {
         }
     }
 
-    /**
-     *
-     */
     @Override
     protected EditorCreator getEditorCreator() {
 
         return qbffilter;
     }
 
-    /**
-     *
-     */
     public void setTitle(String title) {
         this.title = title;
     }
 
-    /**
-     *
-     */
     public void setTitleKey(String titlekey) {
         title = AppLocal.getIntString(titlekey);
     }
 
-    /**
-     *
-     */
     public String getTitle() {
         return title;
     }
 
-    /**
-     *
-     */
     public void setReport(String report) {
         this.report = report;
     }
 
-    /**
-     *
-     */
     protected String getReport() {
         return report;
     }
 
-    /**
-     *
-     */
     public void setResourceBundle(String resourcebundle) {
         this.resourcebundle = resourcebundle;
     }
 
-    /**
-     *
-     */
     protected String getResourceBundle() {
         return resourcebundle == null
                 ? report
                 : resourcebundle;
     }
 
-    /**
-     *
-     */
     public void setSentence(String sentence) {
         this.sentence = sentence;
     }
 
-    /**
-     *
-     */
     public void addField(String name, Datas data) {
         fieldnames.add(name);
         fielddatas.add(data);
     }
 
-    /**
-     *
-     */
     public void addParameter(String name) {
         paramnames.add(name);
     }
 
-    /**
-     *
-     */
     protected BaseSentence getSentence() {
         return new StaticSentence(m_App.getSession()
             , new QBFBuilder(sentence, paramnames.toArray(new String[paramnames.size()]))
@@ -168,16 +129,10 @@ public class PanelReportBean extends JPanelReport {
             , new SerializerReadBasic(fielddatas.toArray(new Datas[fielddatas.size()])));
     }
 
-    /**
-     *
-     */
     protected ReportFields getReportFields() {
         return new ReportFieldsArray(fieldnames.toArray(new String[fieldnames.size()]));
     }
 
-    /**
-     *
-     */
     public void addQBFFilter(ReportEditorCreator qbff) {
         qbffilter.addEditor(qbff);
     }

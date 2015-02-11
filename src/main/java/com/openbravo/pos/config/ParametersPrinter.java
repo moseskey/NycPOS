@@ -24,9 +24,6 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.util.StringParser;
 import java.awt.Component;
 
-/**
- *
- */
 public class ParametersPrinter extends javax.swing.JPanel implements ParametersConfig {
 
     private String othersizename = "standard";
@@ -43,24 +40,15 @@ public class ParametersPrinter extends javax.swing.JPanel implements ParametersC
         }
     }
 
-    /**
-     *
-     */
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     public void addDirtyManager(DirtyManager dirty) {
         jPrinters.addActionListener(dirty);
         jReceiptPrinter.addActionListener(dirty);
     }
 
-    /**
-     *
-     */
     public void setParameters(StringParser p) {
         jPrinters.setSelectedItem(p.nextToken(','));
         String sizename = p.nextToken(',');
@@ -68,9 +56,6 @@ public class ParametersPrinter extends javax.swing.JPanel implements ParametersC
         othersizename = "receipt".equals(sizename) ? "standard" : sizename;
     }
 
-    /**
-     *
-     */
     public String getParameters() {
         return comboValue(jPrinters.getSelectedItem()) + "," + boolValue(jReceiptPrinter.isSelected());
     }

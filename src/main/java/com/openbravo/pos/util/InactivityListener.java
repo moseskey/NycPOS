@@ -12,26 +12,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-/**
- *
- */
 public class InactivityListener implements ActionListener, AWTEventListener
 {
 
-    /**
-     *
-     */
     public final static long KEY_EVENTS = AWTEvent.KEY_EVENT_MASK;
 
-    /**
-     *
-     */
     public final static long MOUSE_EVENTS =
 		AWTEvent.MOUSE_MOTION_EVENT_MASK + AWTEvent.MOUSE_EVENT_MASK;
 
-    /**
-     *
-     */
     public final static long USER_EVENTS = KEY_EVENTS + MOUSE_EVENTS;
 
 	private final Action action;
@@ -42,9 +30,6 @@ public class InactivityListener implements ActionListener, AWTEventListener
 
 // Specify the inactivity interval and listen for USER_EVENTS
 
-    /**
-     *
-     */
     	public InactivityListener(Action action, int seconds)
 	{
                 this.action = action;
@@ -52,9 +37,6 @@ public class InactivityListener implements ActionListener, AWTEventListener
                 timer.setInitialDelay(seconds);
 	}
 
-    /**
-     *
-     */
     public void start()
 	{
 		timer.setRepeats(false);
@@ -62,9 +44,6 @@ public class InactivityListener implements ActionListener, AWTEventListener
 		Toolkit.getDefaultToolkit().addAWTEventListener(this, eventMask);
 	}
 
-    /**
-     *
-     */
     public void stop()
 	{
 		Toolkit.getDefaultToolkit().removeAWTEventListener(this);
@@ -87,16 +66,10 @@ public class InactivityListener implements ActionListener, AWTEventListener
 	}
 // Impement a manually triggered restart
 
-    /**
-     *
-     */
             public void restart(){
 			timer.restart();
         }
 
-    /**
-     *
-     */
     public void setRunning()
 	{
 		if (!timer.isRunning())

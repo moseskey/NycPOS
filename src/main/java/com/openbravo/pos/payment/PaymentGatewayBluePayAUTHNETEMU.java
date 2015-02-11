@@ -32,9 +32,6 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-/**
- *
- */
 public class PaymentGatewayBluePayAUTHNETEMU implements PaymentGateway {
 
     private static String ENDPOINTADDRESS;
@@ -59,16 +56,10 @@ public class PaymentGatewayBluePayAUTHNETEMU implements PaymentGateway {
         ENDPOINTADDRESS = props.getProperty( "payment.BluePay.URL" );
     }
 
-    /**
-     *
-     */
     public PaymentGatewayBluePayAUTHNETEMU() {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {
 

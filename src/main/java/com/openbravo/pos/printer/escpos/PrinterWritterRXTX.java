@@ -25,9 +25,6 @@ import gnu.io.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-/**
- *
- */
 public class PrinterWritterRXTX extends PrinterWritter /* implements SerialPortEventListener */ {
 
     private CommPortIdentifier m_PortIdPrinter;
@@ -43,9 +40,6 @@ public class PrinterWritterRXTX extends PrinterWritter /* implements SerialPortE
         m_out = null;
     }
 
-    /**
-     *
-     */
     @Override
     protected void internalWrite(byte[] data) {
         try {
@@ -74,9 +68,6 @@ public class PrinterWritterRXTX extends PrinterWritter /* implements SerialPortE
         }
     }
 
-    /**
-     *
-     */
     @Override
     protected void internalFlush() {
         try {
@@ -88,9 +79,6 @@ public class PrinterWritterRXTX extends PrinterWritter /* implements SerialPortE
         }
     }
 
-    /**
-     *
-     */
     @Override
     protected void internalClose() {
         try {

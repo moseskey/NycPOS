@@ -27,9 +27,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-/**
- *
- */
 public class CommStream {
 
     private String m_sPort;
@@ -94,24 +91,15 @@ public class CommStream {
         }
     }
 
-    /**
-     *
-     */
     public String getPort() {
         return m_sPort;
     }
 
-    /**
-     *
-     */
     public InputStream getIn() {
         init();
         return m_in;
     }
 
-    /**
-     *
-     */
     public OutputStream getOut() {
         init();
         return m_out;

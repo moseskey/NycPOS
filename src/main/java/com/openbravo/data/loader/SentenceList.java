@@ -22,9 +22,6 @@ package com.openbravo.data.loader;
 import com.openbravo.basic.BasicException;
 import java.util.List;
 
-/**
- *
- */
 public interface SentenceList {
 
     /**

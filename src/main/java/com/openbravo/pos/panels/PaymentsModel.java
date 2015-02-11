@@ -31,10 +31,6 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- *
- */
 public class PaymentsModel {
 
     private String m_sHost;
@@ -78,9 +74,6 @@ public class PaymentsModel {
     private PaymentsModel() {
     }
 
-    /**
-     *
-     */
     public static PaymentsModel emptyInstance() {
 
         PaymentsModel p = new PaymentsModel();
@@ -314,204 +307,120 @@ public class PaymentsModel {
         return p;
     }
 
-    /**
-     *
-     */
     public int getPayments() {
         return m_iPayments;
     }
 
-    /**
-     *
-     */
     public double getTotal() {
         return m_dPaymentsTotal;
     }
 
-    /**
-     *
-     */
     public String getHost() {
         return m_sHost;
     }
 
-    /**
-     *
-     */
     public int getSequence() {
         return m_iSeq;
     }
 
-    /**
-     *
-     */
     public Date getDateStart() {
         return m_dDateStart;
     }
 
-    /**
-     *
-     */
     public void setDateEnd(Date dValue) {
         m_dDateEnd = dValue;
     }
 
-    /**
-     *
-     */
     public Date getDateEnd() {
         return m_dDateEnd;
     }
 
-    /**
-     *
-     */
     public String getDateStartDerby(){
         SimpleDateFormat ndf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return ndf.format(m_dDateStart);
     }
 
-    /**
-     *
-     */
     public String printHost() {
 //        return m_sHost;
         return StringUtils.encodeXML(m_sHost);
     }
 
-    /**
-     *
-     */
     public String printSequence() {
         return Formats.INT.formatValue(m_iSeq);
     }
 
-    /**
-     *
-     */
     public String printDateStart() {
         return Formats.TIMESTAMP.formatValue(m_dDateStart);
     }
 
-    /**
-     *
-     */
     public String printDateEnd() {
         return Formats.TIMESTAMP.formatValue(m_dDateEnd);
     }
 
-    /**
-     *
-     */
     public String printPayments() {
         return Formats.INT.formatValue(m_iPayments);
     }
 
-    /**
-     *
-     */
     public String printPaymentsTotal() {
         return Formats.CURRENCY.formatValue(m_dPaymentsTotal);
     }
 
-    /**
-     *
-     */
     public List<PaymentsLine> getPaymentLines() {
         return m_lpayments;
     }
 
-    /**
-     *
-     */
     public int getSales() {
         return m_iSales == null ? 0 : m_iSales;
     }
 
-    /**
-     *
-     */
     public String printSales() {
         return Formats.INT.formatValue(m_iSales);
     }
 
-    /**
-     *
-     */
     public String printSalesBase() {
         return Formats.CURRENCY.formatValue(m_dSalesBase);
     }
 
-    /**
-     *
-     */
     public String printSalesTaxes() {
         return Formats.CURRENCY.formatValue(m_dSalesTaxes);
     }
 
-     /**
-     *
-     */
     public String printSalesTotal() {
         return Formats.CURRENCY.formatValue((m_dSalesBase == null || m_dSalesTaxes == null)
                 ? null
                 : m_dSalesBase + m_dSalesTaxes);
     }
 
-    /**
-     *
-     */
     public List<SalesLine> getSaleLines() {
         return m_lsales;
     }
 
 // JG 9 Nov 12
 
-    /**
-     *
-     */
         public double getCategorySalesRows() {
         return m_iCategorySalesRows;
     }
 
-    /**
-     *
-     */
     public String printCategorySalesRows() {
         return Formats.INT.formatValue(m_iCategorySalesRows);
     }
 
-    /**
-     *
-     */
     public double getCategorySalesTotalUnits() {
         return m_dCategorySalesTotalUnits;
     }
 
-    /**
-     *
-     */
     public String printCategorySalesTotalUnits() {
         return Formats.DOUBLE.formatValue(m_dCategorySalesTotalUnits);
     }
 
-    /**
-     *
-     */
     public double getCategorySalesTotal() {
         return m_dCategorySalesTotal;
     }
 
-    /**
-     *
-     */
     public String printCategorySalesTotal() {
         return Formats.CURRENCY.formatValue(m_dCategorySalesTotal);
     }
 
-    /**
-     *
-     */
     public List<CategorySalesLine> getCategorySalesLines() {
         return m_lcategorysales;
     }
@@ -519,51 +428,30 @@ public class PaymentsModel {
 
     // by janar153 @ 01.12.2013
 
-    /**
-     *
-     */
         public double getProductSalesRows() {
         return m_iProductSalesRows;
     }
 
-    /**
-     *
-     */
     public String printProductSalesRows() {
         return Formats.INT.formatValue(m_iProductSalesRows);
     }
 
-    /**
-     *
-     */
     public double getProductSalesTotalUnits() {
         return m_dProductSalesTotalUnits;
     }
 
-    /**
-     *
-     */
     public String printProductSalesTotalUnits() {
         return Formats.DOUBLE.formatValue(m_dProductSalesTotalUnits);
     }
 
-    /**
-     *
-     */
     public double getProductSalesTotal() {
         return m_dProductSalesTotal;
     }
 
-    /**
-     *
-     */
     public String printProductSalesTotal() {
         return Formats.CURRENCY.formatValue(m_dProductSalesTotal);
     }
 
-    /**
-     *
-     */
     public List<ProductSalesLine> getProductSalesLines() {
         return m_lproductsales;
     }
@@ -571,17 +459,11 @@ public class PaymentsModel {
 
     // added by janar153 @ 29.12.2013
 
-    /**
-     *
-     */
         public List<RemovedProductLines> getRemovedProductLines() {
         return m_lremovedlines;
     }
     // end
 
-    /**
-     *
-     */
     public AbstractTableModel getPaymentsModel() {
         return new AbstractTableModel() {
             @Override
@@ -611,9 +493,6 @@ public class PaymentsModel {
 // JG 9 Nov 12
     // Products category sales class
 
-    /**
-     *
-     */
         public static class CategorySalesLine implements SerializableRead {
 
         private String m_CategoryName;
@@ -631,37 +510,22 @@ public class PaymentsModel {
             m_CategorySum = dr.getDouble(3);
         }
 
-        /**
-         *
-         */
         public String printCategoryName() {
             return m_CategoryName;
         }
 
-        /**
-         *
-         */
         public String printCategoryUnits() {
             return Formats.DOUBLE.formatValue(m_CategoryUnits);
         }
 
-        /**
-         *
-         */
         public Double getCategoryUnits() {
             return m_CategoryUnits;
         }
 
-        /**
-         *
-         */
         public String printCategorySum() {
             return Formats.CURRENCY.formatValue(m_CategorySum);
         }
 
-        /**
-         *
-         */
         public Double getCategorySum() {
             return m_CategorySum;
         }
@@ -670,9 +534,6 @@ public class PaymentsModel {
 
     // added by janar153 @ 29.12.2013
 
-    /**
-     *
-     */
         public static class RemovedProductLines implements SerializableRead {
         private String m_Name;
         private String m_TicketId;
@@ -691,30 +552,18 @@ public class PaymentsModel {
             m_TotalUnits = dr.getDouble(4);
         }
 
-        /**
-         *
-         */
         public String printWorkerName() {
             return StringUtils.encodeXML(m_Name);
         }
 
-        /**
-         *
-         */
         public String printTicketId() {
             return StringUtils.encodeXML(m_TicketId);
         }
 
-        /**
-         *
-         */
         public String printProductName() {
             return StringUtils.encodeXML(m_ProductName);
         }
 
-        /**
-         *
-         */
         public String printTotalUnits() {
             return Formats.DOUBLE.formatValue(m_TotalUnits);
         }
@@ -724,9 +573,6 @@ public class PaymentsModel {
 
     // by janar153 @ 01.12.2013
 
-    /**
-     *
-     */
         public static class ProductSalesLine implements SerializableRead {
 
         private String m_ProductName;
@@ -751,65 +597,38 @@ public class PaymentsModel {
             m_ProductPriceNet = m_ProductPrice * m_TaxRate;
         }
 
-        /**
-         *
-         */
         public String printProductName() {
             return StringUtils.encodeXML(m_ProductName);
         }
 
-        /**
-         *
-         */
         public String printProductUnits() {
             return Formats.DOUBLE.formatValue(m_ProductUnits);
         }
 
-        /**
-         *
-         */
         public Double getProductUnits() {
             return m_ProductUnits;
         }
 
-        /**
-         *
-         */
         public String printProductPrice() {
             return Formats.CURRENCY.formatValue(m_ProductPrice);
         }
 
-        /**
-         *
-         */
         public Double getProductPrice() {
             return m_ProductPrice;
         }
 
-        /**
-         *
-         */
         public String printTaxRate() {
             return Formats.PERCENT.formatValue(m_TaxRate);
         }
 
-        /**
-         *
-         */
         public Double getTaxRate() {
             return m_TaxRate;
         }
 
-        /**
-         *
-         */
         public String printProductPriceTax() {
             return Formats.CURRENCY.formatValue(m_ProductPriceTax);
         }
 
-        /**
-         *
-         */
         public String printProductSubValue() {
             return Formats.CURRENCY.formatValue(m_ProductPriceTax*m_ProductUnits);
         }
@@ -824,9 +643,6 @@ public class PaymentsModel {
     }
     // end
 
-    /**
-     *
-     */
     public static class SalesLine implements SerializableRead {
 
         private String m_SalesTaxName;
@@ -845,16 +661,10 @@ public class PaymentsModel {
             m_SalesTaxGross = dr.getDouble(4);    //JG June 2014
         }
 
-        /**
-         *
-         */
         public String printTaxName() {
             return m_SalesTaxName;
         }
 
-        /**
-         *
-         */
         public String printTaxes() {
             return Formats.CURRENCY.formatValue(m_SalesTaxes);
         }
@@ -874,16 +684,10 @@ public class PaymentsModel {
         }
 
 
-        /**
-         *
-         */
         public String getTaxName() {
             return m_SalesTaxName;
         }
 
-        /**
-         *
-         */
         public Double getTaxes() {
             return m_SalesTaxes;
         }
@@ -906,9 +710,6 @@ public class PaymentsModel {
 
     }
 
-    /**
-     *
-     */
     public AbstractTableModel getSalesModel() {
         return new AbstractTableModel() {
             @Override
@@ -936,9 +737,6 @@ public class PaymentsModel {
         };
     }
 
-    /**
-     *
-     */
     public static class PaymentsLine implements SerializableRead {
 
         private String m_PaymentType;
@@ -957,44 +755,26 @@ public class PaymentsModel {
             s_PaymentReason=dr.getString(3) == null ? "": dr.getString(3);
         }
 
-        /**
-         *
-         */
         public String printType() {
             return AppLocal.getIntString("transpayment." + m_PaymentType);
         }
 
-        /**
-         *
-         */
         public String getType() {
             return m_PaymentType;
         }
 
-        /**
-         *
-         */
         public String printValue() {
             return Formats.CURRENCY.formatValue(m_PaymentValue);
         }
 
-        /**
-         *
-         */
         public Double getValue() {
             return m_PaymentValue;
         }
 
-        /**
-         *
-         */
         public String printReason() {
             return s_PaymentReason;
         }
 
-        /**
-         *
-         */
         public String getReason() {
             return s_PaymentReason;
     }

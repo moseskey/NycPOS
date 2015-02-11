@@ -23,9 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 import com.openbravo.pos.forms.AppLocal;
 
-/**
- *
- */
 public class ReportFieldsArray implements ReportFields {
 
     private Map m_keys = null;

@@ -26,9 +26,6 @@ import java.util.Iterator;
 import java.util.List;
 
 
-/**
- *
- */
 public class InventoryRecord {
 
     private final Date m_dDate;
@@ -48,51 +45,30 @@ public class InventoryRecord {
 
     }
 
-    /**
-     *
-     */
     public Date getDate() {
         return m_dDate;
     }
 
-    /**
-     *
-     */
     public String getUser() {
         return user;
     }
 
-    /**
-     *
-     */
     public MovementReason getReason() {
         return m_reason;
     }
 
-    /**
-     *
-     */
     public LocationInfo getLocation() {
         return m_locationOri;
     }
 
-    /**
-     *
-     */
     public List<InventoryLine> getLines() {
         return m_invlines;
     }
 
-    /**
-     *
-     */
     public boolean isInput() {
         return m_reason.isInput();
     }
 
-    /**
-     *
-     */
     public double getSubTotal() {
         double dSuma = 0.0;
         InventoryLine oLine;
@@ -103,32 +79,20 @@ public class InventoryRecord {
         return dSuma;
     }
 
-    /**
-     *
-     */
     public String printDate() {
         return Formats.TIMESTAMP.formatValue(m_dDate);
     }
 
-    /**
-     *
-     */
     public String printLocation() {
 //        return m_locationOri.toString();
         return StringUtils.encodeXML(m_locationOri.toString());
     }
 
-    /**
-     *
-     */
     public String printReason() {
 //        return m_reason.toString();
         return StringUtils.encodeXML(m_reason.toString());
     }
 
-    /**
-     *
-     */
     public String printSubTotal() {
         return Formats.CURRENCY.formatValue(getSubTotal());
     }

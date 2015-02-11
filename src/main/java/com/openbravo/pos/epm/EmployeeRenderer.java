@@ -25,9 +25,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JList;
 
-/**
- *
- */
 public class EmployeeRenderer extends DefaultListCellRenderer {
 
     private Icon icoemployee;

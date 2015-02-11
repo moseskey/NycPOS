@@ -33,9 +33,6 @@ import com.openbravo.pos.forms.DataLogicSales;
 import com.openbravo.pos.panels.JPanelTable;
 import javax.swing.ListCellRenderer;
 
-/**
- *
- */
 public class TaxPanel extends JPanelTable {
 
     private TableDefinition ttaxes;
@@ -45,9 +42,6 @@ public class TaxPanel extends JPanelTable {
     public TaxPanel() {
     }
 
-    /**
-     *
-     */
     @Override
     protected void init() {
         DataLogicSales dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -66,57 +60,36 @@ public class TaxPanel extends JPanelTable {
         super.activate();
     }
 
-    /**
-     *
-     */
     @Override
     public ListProvider getListProvider() {
         return new ListProviderCreator(ttaxes);
     }
 
-    /**
-     *
-     */
     @Override
     public SaveProvider getSaveProvider() {
         return new SaveProvider(ttaxes);
     }
 
-    /**
-     *
-     */
     @Override
     public Vectorer getVectorer() {
         return ttaxes.getVectorerBasic(new int[]{1, 5, 7});
     }
 
-    /**
-     *
-     */
     @Override
     public ComparatorCreator getComparatorCreator() {
         return ttaxes.getComparatorCreator(new int[] {1, 5, 7});
     }
 
-    /**
-     *
-     */
     @Override
     public ListCellRenderer getListCellRenderer() {
         return new ListCellRendererBasic(ttaxes.getRenderStringBasic(new int[]{1}));
     }
 
-    /**
-     *
-     */
     @Override
     public EditorRecord getEditor() {
         return jeditor;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.Taxes");

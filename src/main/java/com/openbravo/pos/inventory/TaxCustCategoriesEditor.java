@@ -29,9 +29,6 @@ import java.awt.Component;
 import java.util.UUID;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public final class TaxCustCategoriesEditor extends JPanel implements EditorRecord {
 
     private Object m_oId;
@@ -46,9 +43,6 @@ public final class TaxCustCategoriesEditor extends JPanel implements EditorRecor
         writeValueEOF();
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_oId = null;
@@ -56,9 +50,6 @@ public final class TaxCustCategoriesEditor extends JPanel implements EditorRecor
         m_jName.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
         m_oId = UUID.randomUUID().toString();
@@ -66,9 +57,6 @@ public final class TaxCustCategoriesEditor extends JPanel implements EditorRecor
         m_jName.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
 
@@ -78,9 +66,6 @@ public final class TaxCustCategoriesEditor extends JPanel implements EditorRecor
         m_jName.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
 
@@ -105,17 +90,11 @@ public final class TaxCustCategoriesEditor extends JPanel implements EditorRecor
         return taxcustcat;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }

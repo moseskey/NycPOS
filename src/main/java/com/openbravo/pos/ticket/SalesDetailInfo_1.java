@@ -36,51 +36,30 @@ public class SalesDetailInfo_1 implements IKeyed {
     private String productName;
     private int lineNO;
 
-    /**
-     *
-     */
     public int getLineNO() {
         return lineNO;
     }
 
-    /**
-     *
-     */
     public void setLineNO(int lineNO) {
         this.lineNO = lineNO;
     }
 
-    /**
-     *
-     */
     public double getPrice() {
         return price;
     }
 
-    /**
-     *
-     */
     public String printPrice() {
         return Formats.CURRENCY.formatValue(price);
     }
 
-    /**
-     *
-     */
     public void setPrice(double price) {
         this.price = price;
     }
 
-    /**
-     *
-     */
     public String getProductName() {
         return productName;
     }
 
-    /**
-     *
-     */
     public void setProductName(String productName) {
         this.productName = productName;
     }
@@ -94,9 +73,6 @@ public class SalesDetailInfo_1 implements IKeyed {
         this.price = price;
     }
 
-    /**
-     *
-     */
     public static SerializerRead getSerializerRead() {
         return new SerializerRead() {@Override
  public Object readValues(DataRead dr) throws BasicException {
@@ -104,9 +80,6 @@ public class SalesDetailInfo_1 implements IKeyed {
         }};
     }
 
-    /**
-     *
-     */
     @Override
     public Object getKey() {
        return getLineNO();

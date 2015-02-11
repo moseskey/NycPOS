@@ -28,9 +28,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- */
 public class SQLTableModel extends AbstractTableModel {
 
     private List m_aRows;
@@ -109,9 +106,6 @@ public class SQLTableModel extends AbstractTableModel {
          m_aRows.add(m_values);
     }
 
-    /**
-     *
-     */
     public String getColumnString(int row) {
         Object [] rowvalues = (Object[]) m_aRows.get(row);
 // JG 16 May 2013 use StringBuilder instead of StringBuilder

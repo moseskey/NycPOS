@@ -34,9 +34,6 @@ import java.awt.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- */
 public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConfig {
 
     private final DirtyManager dirty = new DirtyManager();
@@ -73,25 +70,16 @@ public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConf
         jcboCardReader.addItem("Keyboard");
     }
 
-    /**
-     *
-     */
     @Override
     public boolean hasChanged() {
         return dirty.isDirty();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getConfigComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
 
@@ -102,9 +90,6 @@ public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConf
         dirty.setDirty(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
 

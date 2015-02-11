@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.payment;
 
-/**
- *
- */
 public class PaymentInfoMagcardRefund extends PaymentInfoMagcard {
 
     /** Creates a new instance of PaymentInfoMagcardRefund
@@ -36,9 +33,6 @@ public class PaymentInfoMagcardRefund extends PaymentInfoMagcard {
         super(sHolderName, sCardNumber, sExpirationDate, sTransactionID, dTotal);
     }
 
-    /**
-     *
-     */
     @Override
     public PaymentInfo copyPayment(){
         PaymentInfoMagcard p = new PaymentInfoMagcardRefund(m_sHolderName, m_sCardNumber, m_sExpirationDate, track1, track2, track3, m_sTransactionID, m_dTotal);
@@ -47,9 +41,6 @@ public class PaymentInfoMagcardRefund extends PaymentInfoMagcard {
         return p;
     }
 
-    /**
-     *
-     */
     @Override
     public String getName() {
         return "magcardrefund";

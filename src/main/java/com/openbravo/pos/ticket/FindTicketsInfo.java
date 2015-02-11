@@ -25,9 +25,6 @@ import com.openbravo.data.loader.SerializableRead;
 import com.openbravo.format.Formats;
 import java.util.Date;
 
-/**
- *
- */
 public class FindTicketsInfo implements SerializableRead {
 
     private int ticketid;
@@ -71,16 +68,10 @@ public class FindTicketsInfo implements SerializableRead {
         return sHtml;
     }
 
-    /**
-     *
-     */
     public int getTicketId(){
         return this.ticketid;
     }
 
-    /**
-     *
-     */
     public int getTicketType(){
         return this.tickettype;
     }

@@ -21,14 +21,8 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class SerializerReadInteger implements SerializerRead {
 
-    /**
-     *
-     */
     public static final SerializerRead INSTANCE = new SerializerReadInteger();
 
     /** Creates a new instance of SerializerReadInteger */

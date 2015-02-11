@@ -15,9 +15,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- *
- */
 public class KitchenDisplay {
     private Session s;
     private Connection con;
@@ -27,14 +24,8 @@ public class KitchenDisplay {
     private ResultSet rs;
     private AppView m_App;
 
-    /**
-     *
-     */
     protected DataLogicSystem dlSystem;
 
-    /**
-     *
-     */
     public KitchenDisplay(AppView oApp) {
         m_App=oApp;
 
@@ -48,9 +39,6 @@ public class KitchenDisplay {
         }
     }
 
-    /**
-     *
-     */
     public void addRecord(String ID, String table, String pickupID, String product, String multiply, String attributes){
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();

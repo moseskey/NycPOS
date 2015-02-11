@@ -27,9 +27,6 @@ import java.awt.event.KeyEvent;
 import java.util.EventListener;
 import javax.swing.event.EventListenerList;
 
-/**
- *
- */
 public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
     private final static char[] SET_DOUBLE = {'\u007f', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '-'};
@@ -37,9 +34,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
     private final static char[] SET_INTEGER = {'\u007f', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-'};
     private final static char[] SET_INTEGER_POSITIVE = {'\u007f', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
-    /**
-     *
-     */
     protected EventListenerList listeners = new EventListenerList();
 
     private EditorComponent editorcurrent ;
@@ -53,17 +47,11 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
     HS KeyShortcuts
      */
 
-    /**
-     *
-     */
 
     public JCustomerFinder getCustomerFinder() {
         return customerFinder;
     }
 
-    /**
-     *
-     */
     public void setCustomerFinder(JCustomerFinder customerFinder) {
         this.customerFinder = customerFinder;
     }
@@ -99,23 +87,14 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
         // Nothing to change
     }
 
-    /**
-     *
-     */
     public void addActionListener(ActionListener l) {
         listeners.add(ActionListener.class, l);
     }
 
-    /**
-     *
-     */
     public void removeActionListener(ActionListener l) {
         listeners.remove(ActionListener.class, l);
     }
 
-    /**
-     *
-     */
     protected void fireActionPerformed() {
         EventListener[] l = listeners.getListeners(ActionListener.class);
         ActionEvent e = null;
@@ -143,9 +122,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
         m_jMinus.setEnabled(b && m_bMinus);
     }
 
-    /**
-     *
-     */
     public void setMode(int iMode) {
         switch (iMode) {
             case MODE_DOUBLE:
@@ -193,9 +169,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
         }
     }
 
-    /**
-     *
-     */
     public void setActive(EditorComponent e, int iMode) {
 
         if (editorcurrent != null) {
@@ -214,9 +187,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
         });
     }
 
-    /**
-     *
-     */
     public void setInactive(EditorComponent e) {
 
         if (e == editorcurrent && editorcurrent != null) { // e != null
@@ -227,9 +197,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
         }
     }
 
-    /**
-     *
-     */
     public void dotIs00(boolean enabled) {
         if (enabled) {
             m_jKeyDot.setIcon(new javax.swing.ImageIcon(getClass()

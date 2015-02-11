@@ -23,9 +23,6 @@ import com.openbravo.basic.BasicException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public abstract class BaseSentence implements SentenceList, SentenceFind, SentenceExec {
 
     // Funciones de bajo nivel

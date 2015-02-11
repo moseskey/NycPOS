@@ -34,9 +34,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.Calendar;
 
-/**
- *
- */
 public final class LeavesView extends javax.swing.JPanel implements EditorRecord {
 
     private Object m_oId;
@@ -67,9 +64,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         a.add(0, null);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_oId = null;
@@ -83,9 +77,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         m_jLeaveNote.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
         m_oId = null;
@@ -99,9 +90,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         m_jLeaveNote.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
         Object[] leaves = (Object[]) value;
@@ -117,9 +105,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         m_jLeaveNote.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
         Object[] leaves = (Object[]) value;
@@ -135,16 +120,10 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         m_jLeaveNote.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

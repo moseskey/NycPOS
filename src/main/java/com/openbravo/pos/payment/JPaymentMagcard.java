@@ -26,9 +26,6 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 
-/**
- *
- */
 public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInterface {
 
     private PaymentPanel m_cardpanel;
@@ -57,9 +54,6 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
         this.transaction = transID;
@@ -74,9 +68,6 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
         }
     }
 
-    /**
-     *
-     */
 // JG July 2014
     @Override
     public PaymentInfo executePayment() {
@@ -109,17 +100,11 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
         }
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     public void setTransaction(String transid){
         transaction = transid;
     }

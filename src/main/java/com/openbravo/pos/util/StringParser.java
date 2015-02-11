@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.util;
 
-/**
- *
- */
 public class StringParser {
 
     private int currentPosition;
@@ -36,9 +33,6 @@ public class StringParser {
         maxPosition = str == null ? 0 : str.length();
     }
 
-    /**
-     *
-     */
     public String nextToken(char c) {
 
         if (currentPosition < maxPosition) {

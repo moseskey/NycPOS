@@ -22,34 +22,16 @@ package com.openbravo.pos.printer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- *
- */
 public class DeviceDisplayBase {
 
-    /**
-     *
-     */
     public static final int ANIMATION_NULL = 0;
 
-    /**
-     *
-     */
     public static final int ANIMATION_FLYER = 1;
 
-    /**
-     *
-     */
     public static final int ANIMATION_SCROLL = 2;
 
-    /**
-     *
-     */
     public static final int ANIMATION_BLINK = 3;
 
-    /**
-     *
-     */
     public static final int ANIMATION_CURTAIN = 4;
 
     private final DeviceDisplayImpl impl;
@@ -65,9 +47,6 @@ public class DeviceDisplayBase {
         m_tTimeTimer = new javax.swing.Timer(50, new PrintTimeAction());
     }
 
-    /**
-     *
-     */
     public void writeVisor(int animation, String sLine1, String sLine2) {
 
         m_tTimeTimer.stop();
@@ -99,30 +78,18 @@ public class DeviceDisplayBase {
         }
     }
 
-    /**
-     *
-     */
     public void writeVisor(String sLine1, String sLine2) {
         writeVisor(ANIMATION_NULL, sLine1, sLine2);
     }
 
-    /**
-     *
-     */
     public void clearVisor() {
         writeVisor(ANIMATION_NULL, "", "");
     }
 
-    /**
-     *
-     */
     public String getLine1() {
         return anim.getLine1();
     }
 
-    /**
-     *
-     */
     public String getLine2() {
         return anim.getLine2();
     }

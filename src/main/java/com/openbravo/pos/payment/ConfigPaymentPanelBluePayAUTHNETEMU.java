@@ -25,9 +25,6 @@ import com.openbravo.pos.forms.AppLocal;
 import javax.swing.JPanel;
 
 
-/**
- *
- */
 public class ConfigPaymentPanelBluePayAUTHNETEMU extends javax.swing.JPanel implements PaymentConfiguration {
 
     /** Creates new form ConfigPaymentPanelBluePayAUTHNETEMU */
@@ -35,17 +32,11 @@ public class ConfigPaymentPanelBluePayAUTHNETEMU extends javax.swing.JPanel impl
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public JPanel getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
         String sAccountID = config.getProperty("payment.BluePay.accountID");
@@ -61,9 +52,6 @@ public class ConfigPaymentPanelBluePayAUTHNETEMU extends javax.swing.JPanel impl
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
         config.setProperty("payment.BluePay.accountID", comboValue(jtxtAccountID.getText()));

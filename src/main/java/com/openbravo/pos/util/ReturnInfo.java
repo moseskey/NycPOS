@@ -19,16 +19,10 @@ public class ReturnInfo implements SerializableRead, IKeyed {
     private static final long serialVersionUID = 8906929819402L;
     private Integer idret;
 
-    /**
-     *
-     */
     public ReturnInfo() {
         idret = null;
     }
 
-    /**
-     *
-     */
     @Override
     public Object getKey() {
         return idret;
@@ -43,23 +37,14 @@ public class ReturnInfo implements SerializableRead, IKeyed {
         idret = dr.getInt(1);
     }
 
-    /**
-     *
-     */
     public void setId(Integer id) {
         idret = id;
     }
 
-    /**
-     *
-     */
     public Integer getId() {
         return idret;
     }
 
-    /**
-     *
-     */
     public static SerializerRead getSerializerRead() {
         return new SerializerRead() {
             @Override
@@ -70,9 +55,6 @@ public class ReturnInfo implements SerializableRead, IKeyed {
         };
     }
 
-    /**
-     *
-     */
     public ReturnInfo(Integer id) {
         this.idret = id;
     }

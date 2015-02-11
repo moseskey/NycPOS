@@ -4,9 +4,6 @@
  */
 package com.openbravo.pos.util;
 
-/**
-*
-*/
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,9 +18,6 @@ public class PropertyUtils {
     private File configFile;
     private final String APP_ID = "upos-app";
 
-    /**
-     *
-     */
     public PropertyUtils() {
         init(getDefaultConfig());
     }
@@ -50,37 +44,22 @@ public class PropertyUtils {
         }
     }
 
-    /**
-     *
-     */
     public String getProperty(String sKey) {
         return m_propsconfig.getProperty(sKey);
     }
 
-    /**
-     *
-     */
     public String getDriverName() {
         return m_propsconfig.getProperty("db.driver");
     }
 
-    /**
-     *
-     */
     public String getUrl() {
         return m_propsconfig.getProperty("db.URL");
     }
 
-    /**
-     *
-     */
     public String getDBUser() {
         return m_propsconfig.getProperty("db.user");
     }
 
-    /**
-     *
-     */
     public String getDBPassword() {
         String m_password = "[color=#FF0000]YourDBPassword[/color]";
         return m_password;

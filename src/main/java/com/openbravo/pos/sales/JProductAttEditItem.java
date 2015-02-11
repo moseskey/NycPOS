@@ -22,9 +22,6 @@ package com.openbravo.pos.sales;
 import com.openbravo.editor.JEditorKeys;
 import java.awt.Component;
 
-/**
- *
- */
 public class JProductAttEditItem extends javax.swing.JPanel implements JProductAttEditI {
 
     private String attid;
@@ -43,30 +40,18 @@ public class JProductAttEditItem extends javax.swing.JPanel implements JProductA
         jValue.setText(value);
     }
 
-    /**
-     *
-     */
     public void assignSelection() {
         jValue.activate();
     }
 
-    /**
-     *
-     */
     public String getAttribute() {
         return attid;
     }
 
-    /**
-     *
-     */
     public String getValue() {
         return jValue.getText();
     }
 
-    /**
-     *
-     */
     public Component getComponent() {
         return this;
     }

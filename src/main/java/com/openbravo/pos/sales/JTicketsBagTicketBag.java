@@ -23,9 +23,6 @@ import com.openbravo.pos.forms.AppLocal;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 
-/**
- *
- */
 public class JTicketsBagTicketBag extends javax.swing.JPanel {
 
     private JTicketsBagTicket m_ticketsbagticket;
@@ -37,16 +34,10 @@ public class JTicketsBagTicketBag extends javax.swing.JPanel {
         initComponents();
     }
 
-    /**
-     *
-     */
     public void showEdit() {
         showView("edit");
     }
 
-    /**
-     *
-     */
     public void showRefund() {
         showView("refund");
     }

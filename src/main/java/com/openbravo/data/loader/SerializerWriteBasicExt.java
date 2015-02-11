@@ -21,9 +21,6 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class SerializerWriteBasicExt implements SerializerWrite<Object[]> {
 
     private Datas[] m_classes;

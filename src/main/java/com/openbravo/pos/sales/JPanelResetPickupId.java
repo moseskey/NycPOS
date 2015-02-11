@@ -39,9 +39,6 @@ import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public class JPanelResetPickupId extends JPanel implements JPanelView {
 
 
@@ -59,9 +56,6 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
         this(oApp.getProperties());
     }
 
-    /**
-     *
-     */
     public JPanelResetPickupId(AppProperties props) {
 
         initComponents();
@@ -71,9 +65,6 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
 
     }
 
-    /**
-     *
-     */
     public void performReset(){
 
        if ("HSQL Database Engine".equals(sdbmanager)) {
@@ -116,17 +107,11 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
 
    }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.Resetpickup");
@@ -163,9 +148,6 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
 
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
     return(true);

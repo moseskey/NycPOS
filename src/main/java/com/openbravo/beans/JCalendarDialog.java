@@ -6,9 +6,6 @@ import java.beans.PropertyChangeListener;
 import javax.swing.*;
 import java.util.*;
 
-/**
- *
- */
 public class JCalendarDialog extends javax.swing.JDialog {
 
     // private static ResourceBundle m_Intl;
@@ -51,23 +48,14 @@ public class JCalendarDialog extends javax.swing.JDialog {
         }
     }
 
-    /**
-     *
-     */
     public static Date showCalendarTimeHours(Component parent, Date date) {
         return internalCalendarTime(parent, date == null ? DateUtils.getToday() : date, true);
     }
 
-    /**
-     *
-     */
     public static Date showCalendarTime(Component parent, Date date) {
         return internalCalendarTime(parent, date == null ? DateUtils.getTodayMinutes() : date, true);
     }
 
-    /**
-     *
-     */
     public static Date showCalendar(Component parent, Date date) {
         return internalCalendarTime(parent, date == null ? DateUtils.getTodayMinutes() : date, false);
     }

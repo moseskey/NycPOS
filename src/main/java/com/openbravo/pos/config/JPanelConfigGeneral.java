@@ -39,9 +39,6 @@ import com.openbravo.pos.util.DirectoryEvent;
 // import org.jvnet.substance.api.SubstanceSkin;
 // import org.jvnet.substance.skin.SkinInfo;
 
-/**
- *
- */
 
 public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConfig {
 
@@ -92,25 +89,16 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         jcboTicketsBag.addItem("restaurant");
     }
 
-    /**
-     *
-     */
     @Override
     public boolean hasChanged() {
         return dirty.isDirty();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getConfigComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
 
@@ -136,9 +124,6 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         dirty.setDirty(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
 

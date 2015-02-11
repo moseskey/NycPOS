@@ -38,9 +38,6 @@ import java.util.List;
 import java.util.UUID;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     private SentenceList m_sentcat;
@@ -78,9 +75,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         writeValueEOF();
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
 
@@ -99,9 +93,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         m_jCategory.setModel(m_CategoryModel);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_id = null;
@@ -120,9 +111,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
         m_id = UUID.randomUUID().toString();
@@ -141,9 +129,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
         Object[] cat = (Object[]) value;
@@ -163,9 +148,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
         Object[] cat = (Object[]) value;
@@ -204,9 +186,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         return cat;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

@@ -19,19 +19,10 @@
 
 package com.openbravo.pos.printer.escpos;
 
-/**
- *
- */
 public abstract class UnicodeTranslator {
 
-    /**
-     *
-     */
     public abstract byte[] getCodeTable();
 
-    /**
-     *
-     */
     public final byte[] transString(String sCad) {
 
         if (sCad == null) {
@@ -45,9 +36,6 @@ public abstract class UnicodeTranslator {
         }
     }
 
-    /**
-     *
-     */
     public abstract byte transChar(char sChar);
 
 //                case '\u0000': return -0x80; // 0x80 :

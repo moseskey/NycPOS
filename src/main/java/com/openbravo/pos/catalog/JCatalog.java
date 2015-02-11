@@ -41,14 +41,8 @@ import javax.swing.event.EventListenerList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-/**
- *
- */
 public class JCatalog extends JPanel implements ListSelectionListener, CatalogSelector {
 
-    /**
-     *
-     */
     protected EventListenerList listeners = new EventListenerList();
     private DataLogicSales m_dlSales;
     private TaxesLogic taxeslogic;
@@ -79,9 +73,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
          // this(dlSales, false, false, 32, 32);
     }
 
-    /**
-     *
-     */
     public JCatalog(DataLogicSales dlSales, boolean pricevisible, boolean taxesincluded, int width, int height) {
 
         m_dlSales = dlSales;
@@ -101,17 +92,11 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void showCatalogPanel(String id) {
 
@@ -161,9 +146,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
         showRootCategoriesPanel();
     }
 
-    /**
-     *
-     */
     @Override
     public void setComponentEnabled(boolean value) {
 
@@ -184,17 +166,11 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
         this.setEnabled(value);
     }
 
-    /**
-     *
-     */
     @Override
     public void addActionListener(ActionListener l) {
         listeners.add(ActionListener.class, l);
     }
 
-    /**
-     *
-     */
     @Override
     public void removeActionListener(ActionListener l) {
         listeners.remove(ActionListener.class, l);
@@ -213,9 +189,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
         }
     }
 
-    /**
-     *
-     */
     protected void fireSelectedProduct(ProductInfoExt prod) {
         EventListener[] l = listeners.getListeners(ActionListener.class);
         ActionEvent e = null;

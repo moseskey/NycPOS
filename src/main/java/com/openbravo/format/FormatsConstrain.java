@@ -21,9 +21,6 @@ package com.openbravo.format;
 
 import java.text.ParseException;
 
-/**
- *
- */
 public abstract class FormatsConstrain {
 
 //    public final static FormatsConstrain NOTNULL = new FormatsConstrainNOTNULL();
@@ -35,9 +32,6 @@ public abstract class FormatsConstrain {
 
     public abstract Object check(Object value) throws ParseException;
 
-    /**
-     *
-     */
     public FormatsConstrain() {
     }
 

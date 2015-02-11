@@ -31,9 +31,6 @@ import com.openbravo.pos.forms.AppView;
 import java.awt.Component;
 import java.util.Date;
 
-/**
- *
- */
 public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEditorCreator {
 
     /** Creates new form JParamsClosedPos */
@@ -41,23 +38,14 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
         initComponents();
     }
 
-    /**
-     *
-     */
     public void setStartDate(Date d) {
         jTxtStartDate.setText(Formats.TIMESTAMP.formatValue(d));
     }
 
-    /**
-     *
-     */
     public void setEndDate(Date d) {
         jTxtEndDate.setText(Formats.TIMESTAMP.formatValue(d));
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
     }
@@ -70,17 +58,11 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
     public void activate() throws BasicException {
     }
 
-    /**
-     *
-     */
     @Override
     public SerializerWrite getSerializerWrite() {
         return new SerializerWriteBasic(new Datas[] {Datas.OBJECT, Datas.TIMESTAMP, Datas.OBJECT, Datas.TIMESTAMP});
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

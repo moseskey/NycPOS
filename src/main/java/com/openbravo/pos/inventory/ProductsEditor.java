@@ -54,9 +54,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-/**
- *
- */
 public final class ProductsEditor extends JPanel implements EditorRecord {
 
     private final SentenceList m_sentcat;
@@ -176,16 +173,10 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         m_jAtt.setModel(attmodel);
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
 
@@ -276,9 +267,6 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         calculateGP();
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
 
@@ -367,9 +355,6 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 
    }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
 
@@ -457,9 +442,6 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         calculateGP();
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
 

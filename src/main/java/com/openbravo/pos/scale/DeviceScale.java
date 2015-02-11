@@ -24,9 +24,6 @@ import com.openbravo.pos.forms.AppProperties;
 import com.openbravo.pos.util.StringParser;
 import java.awt.Component;
 
-/**
- *
- */
 public class DeviceScale {
 
     private Scale m_scale;
@@ -62,9 +59,6 @@ public class DeviceScale {
         }
     }
 
-    /**
-     *
-     */
     public boolean existsScale() {
         return m_scale != null;
     }

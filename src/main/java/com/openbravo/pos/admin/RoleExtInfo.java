@@ -29,9 +29,6 @@ import com.openbravo.data.loader.DataRead;
  */
 public class RoleExtInfo extends RoleInfo {
 
-    /**
-     *
-     */
     protected byte[] m_aPermissions;
 
     /** Creates a new instance of RoleExtInfo */
@@ -52,23 +49,14 @@ public class RoleExtInfo extends RoleInfo {
 
     //  implements Vectorer, ComparatorCreator
 
-    /**
-     *
-     */
         public static String[] getHeaders() {
         return new String[] {"Name"};
     }
 
-    /**
-     *
-     */
     public String[] toStringArray() {
         return new String[] {m_sName};
     }
 
-    /**
-     *
-     */
     public Comparable[] toComparableArray() {
         return new Comparable[] {m_sName};
     }

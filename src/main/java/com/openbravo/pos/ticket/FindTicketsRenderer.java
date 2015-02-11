@@ -25,17 +25,11 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JList;
 
-/**
- *
- */
 public class FindTicketsRenderer extends DefaultListCellRenderer {
 
     private Icon icoTicketNormal;
     private Icon icoTicketRefund;
 
-    /**
-     *
-     */
     public static final int RECEIPT_NORMAL = 0;
 
     /** Creates a new instance of ProductRenderer */

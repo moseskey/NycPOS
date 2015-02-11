@@ -21,9 +21,6 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class SerializerReadBuilder  implements SerializerRead {
 
     private SerializableBuilder m_sb;

@@ -24,9 +24,6 @@ import com.openbravo.pos.forms.AppConfig;
 import java.awt.Component;
 import javax.swing.SpinnerNumberModel;
 
-/**
- *
- */
 public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig {
 
     private DirtyManager dirty = new DirtyManager();
@@ -36,9 +33,6 @@ public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig
     private String pickupSize;
     private Integer ps = 0;
 
-    /**
-     *
-     */
     public JPanelTicketSetup() {
 
         initComponents();
@@ -56,25 +50,16 @@ public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig
 
     }
 
-    /**
-     *
-     */
     @Override
     public boolean hasChanged() {
         return dirty.isDirty();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getConfigComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
 
@@ -132,9 +117,6 @@ public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig
 
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
 

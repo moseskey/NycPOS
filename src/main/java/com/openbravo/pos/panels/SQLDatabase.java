@@ -24,9 +24,6 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import javax.swing.tree.TreeNode;
 
-/**
- *
- */
 public class SQLDatabase implements TreeNode {
 
     private ArrayList m_aTables;
@@ -45,18 +42,12 @@ public class SQLDatabase implements TreeNode {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void addTable(String sTable) {
         SQLTable t = new SQLTable(this, sTable);
         m_aTables.add(t);
         m_mTables.put(sTable, t);
     }
 
-    /**
-     *
-     */
     public SQLTable getTable(String sTable) {
         return (SQLTable) m_mTables.get(sTable);
     }

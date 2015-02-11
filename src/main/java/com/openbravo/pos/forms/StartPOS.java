@@ -38,9 +38,6 @@ import com.openbravo.pos.ticket.TicketInfo;
 // import org.jvnet.substance.SubstanceLookAndFeel;
 // import org.jvnet.substance.api.SubstanceSkin;
 
-/**
- *
- */
 public class StartPOS {
 
     private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.StartPOS");
@@ -50,9 +47,6 @@ public class StartPOS {
     private StartPOS() {
     }
 
-    /**
-     *
-     */
     public static boolean registerApp() {
 
         // vemos si existe alguna instancia
@@ -67,9 +61,6 @@ public class StartPOS {
         }
     }
 
-    /**
-     *
-     */
     public static void main (final String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {

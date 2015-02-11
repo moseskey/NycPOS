@@ -12,9 +12,6 @@ import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
-/**
- *
- */
 public class NewOkCancelDialog extends javax.swing.JDialog {
 
     /**

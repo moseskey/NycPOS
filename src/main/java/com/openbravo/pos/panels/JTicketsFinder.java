@@ -44,9 +44,6 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 
-/**
- *
- */
 public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator {
 
     private ListProvider lpr;
@@ -66,9 +63,6 @@ public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator
         super(parent, modal);
     }
 
-    /**
-     *
-     */
     public static JTicketsFinder getReceiptFinder(Component parent, DataLogicSales dlSales, DataLogicCustomers dlCustomers) {
         Window window = getWindow(parent);
 
@@ -83,9 +77,6 @@ public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator
         return myMsg;
     }
 
-    /**
-     *
-     */
     public FindTicketsInfo getSelectedCustomer() {
         return selectedTicket;
     }
@@ -117,9 +108,6 @@ public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator
         selectedTicket = null;
     }
 
-    /**
-     *
-     */
     public void executeSearch() {
         try {
             jListTickets.setModel(new MyListData(lpr.loadData()));

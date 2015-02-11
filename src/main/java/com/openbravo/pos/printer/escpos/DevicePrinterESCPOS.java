@@ -25,9 +25,6 @@ import com.openbravo.pos.printer.TicketPrinterException;
 import java.awt.image.BufferedImage;
 import javax.swing.JComponent;
 
-/**
- *
- */
 public class DevicePrinterESCPOS implements DevicePrinter  {
 
     private PrinterWritter m_CommOutputPrinter;
@@ -61,47 +58,29 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
         m_CommOutputPrinter.flush();
     }
 
-    /**
-     *
-     */
     @Override
     public String getPrinterName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     @Override
     public String getPrinterDescription() {
         return null;
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getPrinterComponent() {
         return null;
     }
 
-    /**
-     *
-     */
     @Override
     public void reset() {
     }
 
-    /**
-     *
-     */
     @Override
     public void beginReceipt() {
     }
 
-    /**
-     *
-     */
     @Override
     public void printImage(BufferedImage image) {
 
@@ -109,18 +88,12 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
         m_CommOutputPrinter.write(m_codes.transImage(image));
     }
 
-    /**
-     *
-     */
     @Override
     public void printLogo() {
         m_CommOutputPrinter.write(ESCPOS.SELECT_PRINTER);
         m_CommOutputPrinter.write(m_codes.getImageLogo());
     }
 
-    /**
-     *
-     */
     @Override
     public void printBarCode(String type, String position, String code) {
 
@@ -128,9 +101,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
         m_codes.printBarcode(m_CommOutputPrinter, type, position, code);
     }
 
-    /**
-     *
-     */
     @Override
     public void beginLine(int iTextSize) {
 
@@ -149,9 +119,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void printText(int iStyle, String sText) {
 
@@ -172,18 +139,12 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void endLine() {
         m_CommOutputPrinter.write(ESCPOS.SELECT_PRINTER);
         m_CommOutputPrinter.write(m_codes.getNewLine());
     }
 
-    /**
-     *
-     */
     @Override
     public void endReceipt() {
         m_CommOutputPrinter.write(ESCPOS.SELECT_PRINTER);
@@ -198,9 +159,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
         m_CommOutputPrinter.flush();
     }
 
-    /**
-     *
-     */
     @Override
     public void openDrawer() {
 

@@ -25,9 +25,6 @@ import com.openbravo.pos.ticket.TicketLineInfo;
 import java.awt.BorderLayout;
 import java.util.List;
 
-/**
- *
- */
 public class JRefundLines extends javax.swing.JPanel {
 
     private final JTicketLines ticketlines;
@@ -48,9 +45,6 @@ public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
         jPanel3.add(ticketlines, BorderLayout.CENTER);
     }
 
-    /**
-     *
-     */
     public void setLines(List aRefundLines) {
 
         m_aLines = aRefundLines;

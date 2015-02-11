@@ -35,9 +35,6 @@ import com.openbravo.pos.reports.ReportEditorCreator;
 import java.awt.Component;
 import java.util.List;
 
-/**
- *
- */
 public class ProductFilter extends javax.swing.JPanel implements ReportEditorCreator {
 
     private SentenceList m_sentcat;
@@ -49,9 +46,6 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
 
@@ -82,18 +76,12 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
         m_jCategory.setModel(m_CategoryModel);
     }
 
-    /**
-     *
-     */
     @Override
     public SerializerWrite getSerializerWrite() {
         return new SerializerWriteBasic(
                 new Datas[] {Datas.OBJECT, Datas.STRING, Datas.OBJECT, Datas.DOUBLE, Datas.OBJECT, Datas.DOUBLE, Datas.OBJECT, Datas.STRING, Datas.OBJECT, Datas.STRING});
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

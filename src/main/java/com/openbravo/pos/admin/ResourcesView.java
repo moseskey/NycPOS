@@ -32,9 +32,6 @@ import java.awt.Component;
 import java.util.UUID;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public final class ResourcesView extends JPanel implements EditorRecord {
 
     private Object m_oId;
@@ -59,9 +56,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
         writeValueEOF();
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_oId = null;
@@ -75,9 +69,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
         m_jImage.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
         m_oId = null;
@@ -91,9 +82,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
         m_jImage.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
         Object[] resource = (Object[]) value;
@@ -125,9 +113,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
         m_jImage.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
         Object[] resource = (Object[]) value;
@@ -185,17 +170,11 @@ public final class ResourcesView extends JPanel implements EditorRecord {
         return resource;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }

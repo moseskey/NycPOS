@@ -23,9 +23,6 @@ import com.openbravo.data.user.DirtyListener;
 import com.openbravo.data.user.DirtyManager;
 import javax.swing.*;
 
-/**
- *
- */
 public class JLabelDirty extends JLabel {
 
     private static Icon m_IconModif = null;

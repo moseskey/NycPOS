@@ -24,9 +24,6 @@ import com.openbravo.data.loader.SentenceList;
 import com.openbravo.data.loader.TableDefinition;
 import java.util.*;
 
-/**
- *
- */
 public class ListProviderCreator implements ListProvider {
 
     private SentenceList sent;
@@ -41,16 +38,10 @@ public class ListProviderCreator implements ListProvider {
         params = null;
     }
 
-    /**
-     *
-     */
     public ListProviderCreator(SentenceList sent) {
         this(sent, null);
     }
 
-    /**
-     *
-     */
     public ListProviderCreator(TableDefinition table) {
         this(table.getListSentence(), null);
     }

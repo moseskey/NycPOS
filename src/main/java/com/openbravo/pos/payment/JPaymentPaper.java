@@ -30,9 +30,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
 
-/**
- *
- */
 public class JPaymentPaper extends javax.swing.JPanel implements JPaymentInterface {
 
     private JPaymentNotifier m_notifier;
@@ -70,9 +67,6 @@ public class JPaymentPaper extends javax.swing.JPanel implements JPaymentInterfa
 */
     }
 
-    /**
-     *
-     */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
 
@@ -84,17 +78,11 @@ public class JPaymentPaper extends javax.swing.JPanel implements JPaymentInterfa
         printState();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public PaymentInfo executePayment() {
 

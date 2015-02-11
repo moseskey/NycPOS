@@ -31,9 +31,6 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.TableColumn;
 
-/**
- *
- */
 public class JInventoryLines extends javax.swing.JPanel {
 
     private InventoryTableModel m_inventorylines;
@@ -73,24 +70,15 @@ public class JInventoryLines extends javax.swing.JPanel {
         m_tableinventory.setModel(m_inventorylines);
     }
 
-    /**
-     *
-     */
     public void clear() {
         m_inventorylines.clear();
     }
 
-    /**
-     *
-     */
     public void addLine(InventoryLine i) {
         m_inventorylines.addRow(i);
         setSelectedIndex(m_inventorylines.getRowCount() - 1);
     }
 
-    /**
-     *
-     */
     public void deleteLine(int index) {
         m_inventorylines.removeRow(index);
 
@@ -105,45 +93,27 @@ public class JInventoryLines extends javax.swing.JPanel {
         }
     }
 
-    /**
-     *
-     */
     public void setLine(int index, InventoryLine i) {
         m_inventorylines.setRow(index, i);
         setSelectedIndex(index);
     }
 
-    /**
-     *
-     */
     public InventoryLine getLine(int index) {
         return m_inventorylines.getRow(index);
     }
 
-    /**
-     *
-     */
     public List<InventoryLine> getLines() {
         return m_inventorylines.getLines();
     }
 
-    /**
-     *
-     */
     public int getCount() {
         return m_inventorylines.getRowCount();
     }
 
-    /**
-     *
-     */
     public int getSelectedRow() {
         return m_tableinventory.getSelectedRow();
     }
 
-    /**
-     *
-     */
     public void setSelectedIndex(int i){
 
         // Seleccionamos
@@ -154,9 +124,6 @@ public class JInventoryLines extends javax.swing.JPanel {
         m_tableinventory.scrollRectToVisible(oRect);
     }
 
-    /**
-     *
-     */
     public void goDown() {
 
         int i = m_tableinventory.getSelectionModel().getMaxSelectionIndex();
@@ -176,9 +143,6 @@ public class JInventoryLines extends javax.swing.JPanel {
         }
     }
 
-    /**
-     *
-     */
     public void goUp() {
         int i = m_tableinventory.getSelectionModel().getMinSelectionIndex();
         if (i < 0){

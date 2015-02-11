@@ -33,9 +33,6 @@ import com.openbravo.pos.forms.DataLogicSales;
 import com.openbravo.pos.panels.JPanelTable;
 import javax.swing.ListCellRenderer;
 
-/**
- *
- */
 public class JPanelPlaces extends JPanelTable {
 
     private TableDefinition tplaces;
@@ -45,9 +42,6 @@ public class JPanelPlaces extends JPanelTable {
     public JPanelPlaces() {
     }
 
-    /**
-     *
-     */
     @Override
     protected void init() {
         DataLogicSales dlSales = null;
@@ -64,49 +58,31 @@ public class JPanelPlaces extends JPanelTable {
         jeditor = new PlacesEditor(dlSales, dirty);
     }
 
-    /**
-     *
-     */
     @Override
     public ListProvider getListProvider() {
         return new ListProviderCreator(tplaces);
     }
 
-    /**
-     *
-     */
     @Override
     public SaveProvider getSaveProvider() {
         return new SaveProvider(tplaces);
     }
 
-    /**
-     *
-     */
     @Override
     public Vectorer getVectorer() {
         return tplaces.getVectorerBasic(new int[]{1});
     }
 
-    /**
-     *
-     */
     @Override
     public ListCellRenderer getListCellRenderer() {
         return new ListCellRendererBasic(tplaces.getRenderStringBasic(new int[]{1}));
     }
 
-    /**
-     *
-     */
     @Override
     public EditorRecord getEditor() {
         return jeditor;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.Tables");

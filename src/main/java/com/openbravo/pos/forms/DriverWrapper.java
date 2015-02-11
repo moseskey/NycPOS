@@ -23,16 +23,10 @@ import java.sql.*;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-/**
- *
- */
 public class DriverWrapper implements Driver {
 
     private Driver driver;
 
-    /**
-     *
-     */
     public DriverWrapper(Driver d) {
         driver = d;
     }

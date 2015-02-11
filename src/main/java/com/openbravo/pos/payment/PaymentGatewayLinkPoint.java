@@ -39,9 +39,6 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-/**
- *
- */
 public class PaymentGatewayLinkPoint implements PaymentGateway {
 
     private static final String SALE = "SALE";
@@ -58,9 +55,6 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
     private boolean m_bTestMode;
     private static String APPROVED = "APPROVED";
 
-    /**
-     *
-     */
     public PaymentGatewayLinkPoint(AppProperties props) {
 
 
@@ -75,16 +69,10 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
                 : "secure.linkpt.net";
     }
 
-    /**
-     *
-     */
     public PaymentGatewayLinkPoint() {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {
         String sReturned="";

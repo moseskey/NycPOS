@@ -37,9 +37,6 @@ public class AppConfig implements AppProperties {
     private Properties m_propsconfig;
     private File configfile;
 
-    /**
-     *
-     */
     public AppConfig(String[] args) {
         if (args.length == 0) {
             init(getDefaultConfig());
@@ -48,9 +45,6 @@ public class AppConfig implements AppProperties {
         }
     }
 
-    /**
-     *
-     */
     public AppConfig(File configfile) {
         init(configfile);
     }

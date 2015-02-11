@@ -32,9 +32,6 @@ import com.openbravo.pos.forms.DataLogicSystem;
 import com.openbravo.pos.panels.JPanelTable;
 import javax.swing.ListCellRenderer;
 
-/**
- *
- */
 public class ResourcesPanel extends JPanelTable {
 
     private TableDefinition tresources;
@@ -44,18 +41,12 @@ public class ResourcesPanel extends JPanelTable {
     public ResourcesPanel() {
     }
 
-    /**
-     *
-     */
     protected void init() {
         DataLogicAdmin dlAdmin = (DataLogicAdmin) app.getBean("com.openbravo.pos.admin.DataLogicAdmin");
         tresources = dlAdmin.getTableResources();
         jeditor = new ResourcesView(dirty);
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
         if (super.deactivate()) {
@@ -67,54 +58,33 @@ public class ResourcesPanel extends JPanelTable {
         }
     }
 
-    /**
-     *
-     */
     public ListProvider getListProvider() {
         return new ListProviderCreator(tresources);
     }
 
-    /**
-     *
-     */
     public SaveProvider getSaveProvider() {
         return new SaveProvider(tresources);
     }
 
-    /**
-     *
-     */
     @Override
     public Vectorer getVectorer() {
         return tresources.getVectorerBasic(new int[] {1});
     }
 
-    /**
-     *
-     */
     @Override
     public ComparatorCreator getComparatorCreator() {
         return tresources.getComparatorCreator(new int[] {1, 2});
     }
 
-    /**
-     *
-     */
     @Override
     public ListCellRenderer getListCellRenderer() {
         return new ListCellRendererBasic(tresources.getRenderStringBasic(new int[] {1}));
     }
 
-    /**
-     *
-     */
     public EditorRecord getEditor() {
         return jeditor;
     }
 
-    /**
-     *
-     */
     public String getTitle() {
         return AppLocal.getIntString("Menu.Resources");
     }

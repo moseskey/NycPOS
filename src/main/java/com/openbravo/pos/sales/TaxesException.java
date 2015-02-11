@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.sales;
 
-/**
- *
- */
 public class TaxesException extends Exception {
 
     /**
@@ -31,9 +28,6 @@ public class TaxesException extends Exception {
         super(t);
     }
 
-    /**
-     *
-     */
     public TaxesException(String msg, Throwable t) {
         super(msg, t);
     }

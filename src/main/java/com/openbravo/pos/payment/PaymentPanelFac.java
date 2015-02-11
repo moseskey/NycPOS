@@ -19,18 +19,12 @@
 
 package com.openbravo.pos.payment;
 
-/**
- *
- */
 public class PaymentPanelFac {
 
     /** Creates a new instance of PaymentPanelFac */
     private PaymentPanelFac() {
     }
 
-    /**
-     *
-     */
     public static PaymentPanel getPaymentPanel(String sReader, JPaymentNotifier notifier) {
 // JG 16 May 12 use switch
         switch (sReader) {

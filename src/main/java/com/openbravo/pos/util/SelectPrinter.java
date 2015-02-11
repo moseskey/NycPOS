@@ -26,9 +26,6 @@ import java.awt.Frame;
 import java.awt.Window;
 import javax.swing.SwingUtilities;
 
-/**
- *
- */
 public class SelectPrinter extends javax.swing.JDialog {
 
     private String printservice;
@@ -44,9 +41,6 @@ public class SelectPrinter extends javax.swing.JDialog {
         super(parent, modal);
     }
 
-    /**
-     *
-     */
     public static SelectPrinter getSelectPrinter(Component parent, String[] printers) {
 
         Window window = SwingUtilities.windowForComponent(parent);
@@ -80,16 +74,10 @@ public class SelectPrinter extends javax.swing.JDialog {
         printservice = null;
     }
 
-    /**
-     *
-     */
     public boolean isOK() {
         return ok;
     }
 
-    /**
-     *
-     */
     public String getPrintService() {
         return printservice;
     }

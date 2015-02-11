@@ -32,9 +32,6 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.forms.DataLogicSales;
 
 
-/**
- *
- */
 public class ProductFilterSales extends javax.swing.JPanel implements EditorCreator {
 
     private final SentenceList m_sentcat;
@@ -63,9 +60,6 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
         m_jStockUnits.addEditorKeys(jKeys);
     }
 
-    /**
-     *
-     */
     public void activate() {
 
         m_jtxtBarCode.reset();

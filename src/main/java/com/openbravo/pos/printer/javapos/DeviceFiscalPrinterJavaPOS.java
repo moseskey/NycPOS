@@ -26,9 +26,6 @@ import javax.swing.JComponent;
 import jpos.FiscalPrinter;
 import jpos.JposException;
 
-/**
- *
- */
 public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements DeviceFiscalPrinter  {
 
     private String m_sName;
@@ -59,25 +56,16 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
 
     }
 
-    /**
-     *
-     */
     @Override
     public String getFiscalName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getFiscalComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void beginReceipt() {
         try {
@@ -86,9 +74,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void endReceipt() {
         try {
@@ -97,9 +82,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void printLine(String sproduct, double dprice, double dunits, int taxinfo) {
         try {
@@ -108,9 +90,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void printMessage(String smessage) {
         try {
@@ -119,9 +98,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void printTotal(String sPayment, double dpaid) {
         try {
@@ -132,9 +108,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void printZReport() {
         try {
@@ -143,9 +116,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void printXReport() {
         try {

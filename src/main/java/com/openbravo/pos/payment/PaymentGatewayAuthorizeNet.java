@@ -53,9 +53,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 
-/**
- *
- */
 public class PaymentGatewayAuthorizeNet implements PaymentGateway {
 
     private static String ENDPOINTADDRESS;
@@ -83,16 +80,10 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
                 : "https://cardpresent.authorize.net/gateway/transact.dll";
     }
 
-    /**
-     *
-     */
     public PaymentGatewayAuthorizeNet() {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {
 

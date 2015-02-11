@@ -41,16 +41,10 @@ import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
 
-/**
- *
- */
 public class JTicketsBagTicket extends JTicketsBag {
 
     private DataLogicSystem m_dlSystem = null;
 
-    /**
-     *
-     */
     protected DataLogicCustomers dlCustomers = null;
 
     private final DataLogicSales m_dlSales;
@@ -103,9 +97,6 @@ public class JTicketsBagTicket extends JTicketsBag {
     }
     }
 
-    /**
-     *
-     */
     @Override
     public void activate() {
 
@@ -130,9 +121,6 @@ public class JTicketsBagTicket extends JTicketsBag {
         // postcondicion es que tenemos ticket activado aqui y ticket en el panel
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
 
@@ -143,9 +131,6 @@ public class JTicketsBagTicket extends JTicketsBag {
         // postcondicion es que no tenemos ticket activado ni ticket en el panel
     }
 
-    /**
-     *
-     */
     @Override
     public void deleteTicket() {
 
@@ -164,9 +149,6 @@ public class JTicketsBagTicket extends JTicketsBag {
         resetToTicket();
     }
 
-    /**
-     *
-     */
     public void canceleditionTicket() {
 
         m_ticketCopy = null;
@@ -180,17 +162,11 @@ public class JTicketsBagTicket extends JTicketsBag {
         m_panelticketedit.setActiveTicket(null, null);
     }
 
-    /**
-     *
-     */
     @Override
     protected JComponent getBagComponent() {
         return m_TicketsBagTicketBag;
     }
 
-    /**
-     *
-     */
     @Override
     protected JComponent getNullComponent() {
         return this;

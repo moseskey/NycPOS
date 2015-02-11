@@ -42,51 +42,30 @@ import java.util.Comparator;
 import java.util.List;
 import javax.swing.ListCellRenderer;
 
-/**
- *
- */
 public class Row {
 
     private Field[] fields;
 
-    /**
-     *
-     */
     public Row(Field... fields) {
         this.fields = fields;
     }
 
-    /**
-     *
-     */
     public Vectorer getVectorer() {
         return new RowVectorer();
     }
 
-    /**
-     *
-     */
     public IRenderString getRenderString() {
         return new RowRenderString();
     }
 
-    /**
-     *
-     */
     public ListCellRenderer getListCellRenderer() {
         return new ListCellRendererBasic(new RowRenderString());
     }
 
-    /**
-     *
-     */
     public ComparatorCreator getComparatorCreator() {
         return new RowComparatorCreator();
     }
 
-    /**
-     *
-     */
     public SentenceExec getExecSentence(Session s, String sql, final int... indexes) {
         return new PreparedSentence(s, sql,
             new SerializerWrite<Object[]>() {
@@ -100,44 +79,26 @@ public class Row {
         );
     }
 
-    /**
-     *
-     */
     public ListProvider getListProvider(Session s, Table t) {
         return new ListProviderCreator(getListSentence(s, t));
     }
 
-    /**
-     *
-     */
     public SaveProvider getSaveProvider(Session s, Table t) {
         return new SaveProvider(getUpdateSentence(s, t), getInsertSentence(s, t), getDeleteSentence(s, t));
     }
 
-    /**
-     *
-     */
     public SentenceList getListSentence(Session s, String sql, SerializerWrite sw) {
         return new PreparedSentence(s, sql, sw, new RowSerializerRead());
     }
 
-    /**
-     *
-     */
     public ListProvider getListProvider(Session s, String sql, FilterEditorCreator filter) {
         return new ListProviderCreator(getListSentence(s, sql, filter.getSerializerWrite()), filter);
     }
 
-    /**
-     *
-     */
     public SentenceList getListSentence(Session s, Table t) {
         return getListSentence(s, t.getListSQL(), null);
     }
 
-    /**
-     *
-     */
     public SentenceExec getInsertSentence(Session s, final Table t) {
         return new PreparedSentence(s,  t.getInsertSQL(),
             new SerializerWrite<Object[]>() {
@@ -151,9 +112,6 @@ public class Row {
         );
     }
 
-    /**
-     *
-     */
     public SentenceExec getDeleteSentence(Session s, final Table t) {
         return new PreparedSentence(s,  t.getDeleteSQL(),
             new SerializerWrite<Object[]>() {
@@ -170,9 +128,6 @@ public class Row {
         );
     }
 
-    /**
-     *
-     */
     public SentenceExec getUpdateSentence(Session s, final Table t) {
         return new PreparedSentence(s,  t.getUpdateSQL(),
             new SerializerWrite<Object[]>() {
@@ -194,9 +149,6 @@ public class Row {
         );
     }
 
-    /**
-     *
-     */
     public Datas[] getDatas() {
         Datas[] d = new Datas[fields.length];
         for (int i = 0; i < fields.length; i++) {
@@ -205,9 +157,6 @@ public class Row {
         return d;
     }
 
-    /**
-     *
-     */
     public SerializerRead getSerializerRead() {
         return new RowSerializerRead();
     }

@@ -21,9 +21,6 @@ package com.openbravo.data.gui;
 
 import javax.swing.Icon;
 
-/**
- *
- */
 public class NullIcon implements Icon {
 
     private int m_iWidth;

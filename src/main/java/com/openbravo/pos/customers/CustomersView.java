@@ -43,9 +43,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- */
 public final class CustomersView extends javax.swing.JPanel implements EditorRecord {
 
     private static final long serialVersionUID = 1L;

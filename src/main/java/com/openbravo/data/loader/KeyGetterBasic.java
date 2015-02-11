@@ -20,9 +20,6 @@
 
 package com.openbravo.data.loader;
 
-/**
- *
- */
 public class KeyGetterBasic implements IKeyGetter {
 
     private int [] m_aElems;
@@ -33,9 +30,6 @@ public class KeyGetterBasic implements IKeyGetter {
         m_aElems = aElems;
     }
 
-    /**
-     *
-     */
     public Object getKey(Object value) {
         if (value == null) {
             return null;

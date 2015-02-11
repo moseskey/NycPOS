@@ -4,14 +4,8 @@
  */
 package com.openbravo.pos.imports;
 
-/**
- *
- */
 public class JPanelCSV extends javax.swing.JPanel {
 
-    /**
-     *
-     */
     public JPanelCSV() {
         initComponents();
     }

@@ -21,9 +21,6 @@ package com.openbravo.data.gui;
 
 import java.util.*;
 
-/**
- *
- */
 public class JListData extends javax.swing.JDialog {
 
     private Object m_selected;
@@ -37,17 +34,11 @@ public class JListData extends javax.swing.JDialog {
         getRootPane().setDefaultButton(m_jOK);
     }
 
-    /**
-     *
-     */
     public Object showList(List data) {
 
         return showList(new MyListData(data));
     }
 
-    /**
-     *
-     */
     public Object showList(javax.swing.ListModel model) {
 
         m_jData.setModel(model);

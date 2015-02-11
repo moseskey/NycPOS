@@ -23,9 +23,6 @@ import java.awt.ComponentOrientation;
 import java.util.Enumeration;
 import java.util.Vector;
 
-/**
- *
- */
 public class JNumberKeys extends javax.swing.JPanel {
 
     private Vector m_Listeners = new Vector();
@@ -55,9 +52,6 @@ public class JNumberKeys extends javax.swing.JPanel {
         m_jEquals.addActionListener(new MyKeyNumberListener('='));
     }
 
-    /**
-     *
-     */
     public void setNumbersOnly(boolean value) {
         m_jEquals.setVisible(value);
         m_jMinus.setVisible(value);
@@ -92,39 +86,24 @@ public class JNumberKeys extends javax.swing.JPanel {
         // Nothing to change
     }
 
-    /**
-     *
-     */
     public void setMinusEnabled(boolean b) {
         minusenabled = b;
         m_jMinus.setEnabled(minusenabled && isEnabled());
     }
 
-    /**
-     *
-     */
     public boolean isMinusEnabled() {
         return minusenabled;
     }
 
-    /**
-     *
-     */
     public void setEqualsEnabled(boolean b) {
         equalsenabled = b;
         m_jEquals.setEnabled(equalsenabled && isEnabled());
     }
 
-    /**
-     *
-     */
     public boolean isEqualsEnabled() {
         return equalsenabled;
     }
 
-    /**
-     *
-     */
     public void dotIs00(boolean enabled) {
         if (enabled) {
             m_jKeyDot.setIcon(new javax.swing.ImageIcon(getClass()
@@ -132,23 +111,14 @@ public class JNumberKeys extends javax.swing.JPanel {
         }
     }
 
-    /**
-     *
-     */
     public boolean isNumbersOnly() {
         return m_jEquals.isVisible();
     }
 
-    /**
-     *
-     */
     public void addJNumberEventListener(JNumberEventListener listener) {
         m_Listeners.add(listener);
     }
 
-    /**
-     *
-     */
     public void removeJNumberEventListener(JNumberEventListener listener) {
         m_Listeners.remove(listener);
     }

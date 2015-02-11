@@ -21,9 +21,6 @@ package com.openbravo.pos.payment;
 
 import java.awt.*;
 
-/**
- *
- */
 public class JPaymentSelectReceipt extends JPaymentSelect {
 
     /** Creates new form JPaymentSelect
@@ -37,9 +34,6 @@ public class JPaymentSelectReceipt extends JPaymentSelect {
         super(parent, modal, o);
     }
 
-    /**
-     *
-     */
     public static JPaymentSelect getDialog(Component parent) {
 
         Window window = getWindow(parent);
@@ -51,9 +45,6 @@ public class JPaymentSelectReceipt extends JPaymentSelect {
         }
     }
 
-    /**
-     *
-     */
     @Override
     protected void addTabs() {
 
@@ -68,9 +59,6 @@ public class JPaymentSelectReceipt extends JPaymentSelect {
         setHeaderVisible(true);
     }
 
-    /**
-     *
-     */
     @Override
     protected void setStatusPanel(boolean isPositive, boolean isComplete) {
 
@@ -78,9 +66,6 @@ public class JPaymentSelectReceipt extends JPaymentSelect {
         setOKEnabled(isComplete);
     }
 
-    /**
-     *
-     */
     @Override
     protected PaymentInfo getDefaultPayment(double total) {
         return new PaymentInfoCash_original(total, total);

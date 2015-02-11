@@ -30,9 +30,6 @@ import java.awt.event.ActionListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-/**
- *
- */
 public class JPanelTicketSales extends JPanelTicket {
 
     private CatalogSelector m_cat;
@@ -41,26 +38,17 @@ public class JPanelTicketSales extends JPanelTicket {
     public JPanelTicketSales() {
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
         super.init(app);
         m_ticketlines.addListSelectionListener(new CatalogSelectionListener());
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return null;
     }
 
-    /**
-     *
-     */
     @Override
     protected Component getSouthComponent() {
         m_cat = new JCatalog(dlSales,
@@ -77,17 +65,11 @@ public class JPanelTicketSales extends JPanelTicket {
         return m_cat.getComponent();
     }
 
-    /**
-     *
-     */
     @Override
     protected void resetSouthComponent() {
         m_cat.showCatalogPanel(null);
     }
 
-    /**
-     *
-     */
     @Override
     protected JTicketsBag getJTicketsBag() {
         return JTicketsBag.createTicketsBag(m_App.getProperties().getProperty("machine.ticketsbag"), m_App, this);

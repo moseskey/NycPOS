@@ -40,9 +40,6 @@ import javax.swing.*;
 import org.jdesktop.swingx.JXTaskPane;
 import org.jdesktop.swingx.JXTaskPaneContainer;
 
-/**
- *
- */
 public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
     private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.JPrincipalApp");
@@ -141,9 +138,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
                 : menu_open);
     }
 
-    /**
-     *
-     */
     public class ScriptMenu {
 //        private JTaskPane taskPane = new JTaskPane();
         private final JXTaskPaneContainer taskPane;
@@ -153,9 +147,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
             taskPane.applyComponentOrientation(getComponentOrientation());
         }
 
-        /**
-         *
-         */
         public ScriptGroup addGroup(String key) {
 
             ScriptGroup group = new ScriptGroup(key);
@@ -165,17 +156,11 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
 //        public JTaskPane getTaskPane() {
 
-        /**
-         *
-         */
                 public JXTaskPaneContainer getTaskPane() {
             return taskPane;
         }
     }
 
-    /**
-     *
-     */
     public class ScriptGroup {
 //        private JTaskPaneGroup taskGroup;
         private final JXTaskPane taskGroup;
@@ -190,23 +175,14 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
             taskGroup.setVisible(false); // Only groups with sons are visible.
         }
 
-        /**
-         *
-         */
         public void addPanel(String icon, String key, String classname) {
             addAction(new MenuPanelAction(m_appview, icon, key, classname));
         }
 
-        /**
-         *
-         */
         public void addExecution(String icon, String key, String classname) {
             addAction(new MenuExecAction(m_appview, icon, key, classname));
         }
 
-        /**
-         *
-         */
         public ScriptSubmenu addSubmenu(String icon, String key, String classname) {
             ScriptSubmenu submenu = new ScriptSubmenu(key);
             m_aPreparedViews.put(classname, new JPanelMenu(submenu.getMenuDefinition()));
@@ -214,16 +190,10 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
             return submenu;
         }
 
-        /**
-         *
-         */
         public void addChangePasswordAction() {
             addAction(new ChangePasswordAction("/images/password.png", "Menu.ChangePassword"));
         }
 
-        /**
-         *
-         */
         public void addExitAction() {
             addAction(new ExitAction("/images/logout.png", "Menu.Exit"));
         }
@@ -247,17 +217,11 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
 //        public JTaskPaneGroup getTaskGroup() {
 
-        /**
-         *
-         */
                 public JXTaskPane getTaskGroup() {
             return taskGroup;
         }
     }
 
-    /**
-     *
-     */
     public class ScriptSubmenu {
         private final MenuDefinition menudef;
 
@@ -265,30 +229,18 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
             menudef = new MenuDefinition(key);
         }
 
-        /**
-         *
-         */
         public void addTitle(String key) {
             menudef.addMenuTitle(key);
         }
 
-        /**
-         *
-         */
         public void addPanel(String icon, String key, String classname) {
             menudef.addMenuItem(new MenuPanelAction(m_appview, icon, key, classname));
         }
 
-        /**
-         *
-         */
         public void addExecution(String icon, String key, String classname) {
             menudef.addMenuItem(new MenuExecAction(m_appview, icon, key, classname));
         }
 
-        /**
-         *
-         */
         public ScriptSubmenu addSubmenu(String icon, String key, String classname) {
             ScriptSubmenu submenu = new ScriptSubmenu(key);
             m_aPreparedViews.put(classname, new JPanelMenu(submenu.getMenuDefinition()));
@@ -296,23 +248,14 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
             return submenu;
         }
 
-        /**
-         *
-         */
         public void addChangePasswordAction() {
             menudef.addMenuItem(new ChangePasswordAction("/images/password.png", "Menu.ChangePassword"));
         }
 
-        /**
-         *
-         */
         public void addExitAction() {
             menudef.addMenuItem(new ExitAction("/images/logout.png", "Menu.Exit"));
         }
 
-        /**
-         *
-         */
         public MenuDefinition getMenuDefinition() {
             return menudef;
         }
@@ -325,16 +268,10 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
         revalidate();
     }
 
-    /**
-     *
-     */
     public JComponent getNotificator() {
         return m_principalnotificator;
     }
 
-    /**
-     *
-     */
     public void activate() {
 
         setMenuVisible(getBounds().width > 800);
@@ -346,9 +283,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
         }
     }
 
-    /**
-     *
-     */
     public boolean deactivate() {
         if (m_jLastView == null) {
             return true;
@@ -375,9 +309,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
         }
     }
 
-    /**
-     *
-     */
     public void exitToLogin() {
         m_appview.closeAppView();
         //m_appview.showLogin();
@@ -415,17 +346,11 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
         cl.show(m_jPanelContainer, sView);
     }
 
-    /**
-     *
-     */
     @Override
     public AppUser getUser() {
         return m_appuser;
     }
 
-    /**
-     *
-     */
     @Override
     public void showTask(String sTaskClass) {
 
@@ -483,9 +408,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
         m_appview.waitCursorEnd();
     }
 
-    /**
-     *
-     */
     @Override
     public void executeTask(String sTaskClass) {
 

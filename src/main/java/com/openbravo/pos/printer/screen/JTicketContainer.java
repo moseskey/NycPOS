@@ -35,9 +35,6 @@ import java.awt.Rectangle;
 // import javax.swing.border.*;
 // import javax.swing.event.*;
 
-/**
- *
- */
 class JTicketContainer extends javax.swing.JPanel {
 
     protected int H_GAP = 8;

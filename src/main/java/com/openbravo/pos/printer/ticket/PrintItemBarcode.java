@@ -29,34 +29,16 @@ import org.krysalis.barcode4j.impl.code128.Code128Bean;
 import org.krysalis.barcode4j.impl.upcean.EAN13Bean;
 import org.krysalis.barcode4j.output.java2d.Java2DCanvasProvider;
 
-/**
- *
- */
 public class PrintItemBarcode implements PrintItem {
 
-    /**
-     *
-     */
     protected AbstractBarcodeBean m_barcode;
 
-    /**
-     *
-     */
     protected String m_sCode;
 
-    /**
-     *
-     */
     protected int m_iWidth;
 
-    /**
-     *
-     */
     protected int m_iHeight;
 
-    /**
-     *
-     */
     protected double scale;
 
     /** Creates a new instance of PrinterItemBarcode
@@ -89,9 +71,6 @@ public class PrintItemBarcode implements PrintItem {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void draw(Graphics2D g, int x, int y, int width) {
 
@@ -115,9 +94,6 @@ public class PrintItemBarcode implements PrintItem {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public int getHeight() {
         return (int) (m_iHeight * scale) + 20;

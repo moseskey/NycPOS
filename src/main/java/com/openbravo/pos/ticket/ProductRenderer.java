@@ -25,10 +25,6 @@ import java.awt.*;
 import javax.swing.*;
 import com.openbravo.pos.forms.AppLocal;
 
-/**
- *
- *
- */
 public class ProductRenderer extends DefaultListCellRenderer {
 
     ThumbNailBuilder tnbprod;

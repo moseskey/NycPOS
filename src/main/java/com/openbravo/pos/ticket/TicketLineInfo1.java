@@ -30,9 +30,6 @@ import com.openbravo.pos.util.StringUtils;
 import java.io.*;
 import java.util.Properties;
 
-/**
- *
- */
 public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Serializable {
 
     private static final long serialVersionUID = 6608012948284450199L;
@@ -51,16 +48,10 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         init(productid, null, dMultiply, dPrice, tax, props);
     }
 
-    /**
-     *
-     */
     public TicketLineInfo1(String productid, double dMultiply, double dPrice, TaxInfo tax) {
         init(productid, null, dMultiply, dPrice, tax, new Properties());
     }
 
-    /**
-     *
-     */
     public TicketLineInfo1(String productid, String productname, String producttaxcategory, double dMultiply, double dPrice, TaxInfo tax) {
         Properties props = new Properties();
         props.setProperty("product.name", productname);
@@ -68,9 +59,6 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         init(productid, null, dMultiply, dPrice, tax, props);
     }
 
-    /**
-     *
-     */
     public TicketLineInfo1(String productname, String producttaxcategory, double dMultiply, double dPrice, TaxInfo tax) {
 
         Properties props = new Properties();
@@ -79,16 +67,10 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         init(null, null, dMultiply, dPrice, tax, props);
     }
 
-    /**
-     *
-     */
     public TicketLineInfo1() {
         init(null, null, 0.0, 0.0, null, new Properties());
     }
 
-    /**
-     *
-     */
     public TicketLineInfo1(ProductInfoExt product, double dMultiply, double dPrice, TaxInfo tax, Properties attributes) {
 
         String pid;
@@ -135,16 +117,10 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         init(pid, null, dMultiply, dPrice, tax, attributes);
     }
 
-    /**
-     *
-     */
     public TicketLineInfo1(ProductInfoExt oProduct, double dPrice, TaxInfo tax, Properties attributes) {
         this(oProduct, 1.0, dPrice, tax, attributes);
     }
 
-    /**
-     *
-     */
     public TicketLineInfo1(TicketLineInfo1 line) {
         init(line.productid, line.attsetinstid, line.multiply, line.price, line.tax, (Properties) line.attributes.clone());
     }
@@ -222,9 +198,6 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         }
     }
 
-    /**
-     *
-     */
     public TicketLineInfo1 copyTicketLine() {
         TicketLineInfo1 l = new TicketLineInfo1();
         // l.m_sTicket = null;
@@ -238,44 +211,26 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         return l;
     }
 
-    /**
-     *
-     */
     public int getTicketLine() {
         return m_iLine;
     }
 
-    /**
-     *
-     */
     public String getProductID() {
         return productid;
     }
 
-    /**
-     *
-     */
     public String getProductName() {
         return attributes.getProperty("product.name");
     }
 
-    /**
-     *
-     */
     public String getProductAttSetId() {
         return attributes.getProperty("product.attsetid");
     }
 
-    /**
-     *
-     */
     public String getProductAttSetInstDesc() {
         return attributes.getProperty("product.attsetdesc", "");
     }
 
-    /**
-     *
-     */
     public void setProductAttSetInstDesc(String value) {
         if (value == null) {
             attributes.remove(value);
@@ -284,237 +239,138 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         }
     }
 
-    /**
-     *
-     */
     public String getProductAttSetInstId() {
         return attsetinstid;
     }
 
-    /**
-     *
-     */
     public void setProductAttSetInstId(String value) {
         attsetinstid = value;
     }
 
-    /**
-     *
-     */
     public boolean isProductCom() {
         return "true".equals(attributes.getProperty("product.com"));
     }
 
-    /**
-     *
-     */
     public String getProductTaxCategoryID() {
         return (attributes.getProperty("product.taxcategoryid"));
     }
 
-    /**
-     *
-     */
     public void setProductTaxCategoryID(String taxID){
         attributes.setProperty("product.taxcategoryid",taxID);
     }
 
-    /**
-     *
-     */
     public String getProductCategoryID() {
         return (attributes.getProperty("product.categoryid"));
     }
 
-    /**
-     *
-     */
     public double getMultiply() {
         return multiply;
     }
 
-    /**
-     *
-     */
     public void setMultiply(double dValue) {
         multiply = dValue;
     }
 
-    /**
-     *
-     */
     public double getPrice() {
         return price;
     }
 
-    /**
-     *
-     */
     public void setPrice(double dValue) {
         price = dValue;
     }
 
-    /**
-     *
-     */
     public double getPriceTax() {
         return price * (1.0 + getTaxRate());
     }
 
-    /**
-     *
-     */
     public void setPriceTax(double dValue) {
         price = dValue / (1.0 + getTaxRate());
     }
 
-    /**
-     *
-     */
     public TaxInfo getTaxInfo() {
         return tax;
     }
 
-    /**
-     *
-     */
     public void setTaxInfo(TaxInfo value) {
         tax = value;
     }
 
-    /**
-     *
-     */
     public String getProperty(String key) {
         return attributes.getProperty(key);
     }
 
-    /**
-     *
-     */
     public String getProperty(String key, String defaultvalue) {
         return attributes.getProperty(key, defaultvalue);
     }
 
-    /**
-     *
-     */
     public void setProperty(String key, String value) {
         attributes.setProperty(key, value);
     }
 
-    /**
-     *
-     */
     public Properties getProperties() {
         return attributes;
     }
 
-    /**
-     *
-     */
     public double getTaxRate() {
         return tax == null ? 0.0 : tax.getRate();
     }
 
-    /**
-     *
-     */
     public double getSubValue() {
         return price * multiply;
     }
 
-    /**
-     *
-     */
     public double getTax() {
         return price * multiply * getTaxRate();
     }
 
-    /**
-     *
-     */
     public double getValue() {
         return price * multiply * (1.0 + getTaxRate());
     }
 
-    /**
-     *
-     */
     public String printName() {
         return StringUtils.encodeXML(attributes.getProperty("product.name"));
     }
 
-    /**
-     *
-     */
     public String printMultiply() {
         return Formats.DOUBLE.formatValue(multiply);
     }
 
-    /**
-     *
-     */
     public String printPrice() {
         return Formats.CURRENCY.formatValue(getPrice());
     }
 
-    /**
-     *
-     */
     public String printPriceTax() {
         return Formats.CURRENCY.formatValue(getPriceTax());
     }
 
-    /**
-     *
-     */
     public String printTax() {
         return Formats.CURRENCY.formatValue(getTax());
     }
 
-    /**
-     *
-     */
     public String printTaxRate() {
         return Formats.PERCENT.formatValue(getTaxRate());
     }
 
-    /**
-     *
-     */
     public String printSubValue() {
         return Formats.CURRENCY.formatValue(getSubValue());
     }
 
-    /**
-     *
-     */
     public String printValue() {
         return Formats.CURRENCY.formatValue(getValue());
     }
 // ADDED JG 20.12.10 - Kitchen Print
 
-    /**
-     *
-     */
     public boolean isProductKitchen() {
 	return "true".equals(attributes.getProperty("product.kitchen"));
 }
 // ***
 // ADDED JG 25.06.11 - Is Service
 
-    /**
-     *
-     */
     public boolean isProductService() {
 	return "true".equals(attributes.getProperty("product.service"));
 }
 // Added JDL 19.12.12 - Variable price product
 
-    /**
-     *
-     */
     public boolean isProductVprice() {
 	return "true".equals(attributes.getProperty("product.vprice"));
 //
@@ -523,9 +379,6 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
 
 // Added JDL 09.02.13 for Chris
 
-    /**
-     *
-     */
     public boolean isProductVerpatrib() {
 	return "true".equals(attributes.getProperty("product.verpatrib"));
 //
@@ -534,9 +387,6 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
 
 // Added JDL 09.04.12 - Variable price product
 
-    /**
-     *
-     */
     public String printTextTip() {
 	return attributes.getProperty("product.texttip");
 //
@@ -545,9 +395,6 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
 
 // Added JDL 09.02.13
 
-    /**
-     *
-     */
     public boolean isProductWarranty() {
 	return "true".equals(attributes.getProperty("product.warranty"));
 //

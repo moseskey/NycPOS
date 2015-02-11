@@ -30,17 +30,11 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- *
- */
 public class AttributeUsePanel extends JPanelTable2 {
 
     private AttributeUseEditor editor;
     private AttributeSetFilter filter;
 
-    /**
-     *
-     */
     @Override
     protected void init() {
 
@@ -86,17 +80,11 @@ public class AttributeUsePanel extends JPanelTable2 {
         reload();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getFilter(){
         return filter.getComponent();
     }
 
-    /**
-     *
-     */
     @Override
     public EditorRecord getEditor() {
         return editor;
@@ -110,9 +98,6 @@ public class AttributeUsePanel extends JPanelTable2 {
         bd.actionLoad();
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.AttributeUse");

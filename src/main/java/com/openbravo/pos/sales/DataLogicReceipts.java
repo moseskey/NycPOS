@@ -32,9 +32,6 @@ import com.openbravo.pos.forms.BeanFactoryDataSingle;
 import com.openbravo.pos.ticket.TicketInfo;
 import java.util.List;
 
-/**
- *
- */
 public class DataLogicReceipts extends BeanFactoryDataSingle {
 
     private Session s;
@@ -43,9 +40,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
     public DataLogicReceipts() {
     }
 
-    /**
-     *
-     */
     @Override
     public void init(Session s){
         this.s = s;

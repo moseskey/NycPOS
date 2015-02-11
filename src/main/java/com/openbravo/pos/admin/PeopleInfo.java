@@ -34,9 +34,6 @@ public class PeopleInfo implements SerializableRead, IKeyed {
     private static final long serialVersionUID = 9110127845966L;
     private String m_sID;
 
-    /**
-     *
-     */
     protected String m_sName;
 
     /** Creates a new instance of RoleInfo */
@@ -45,9 +42,6 @@ public class PeopleInfo implements SerializableRead, IKeyed {
         m_sName = null;
     }
 
-    /**
-     *
-     */
     public Object getKey() {
         return m_sID;
     }
@@ -61,30 +55,18 @@ public class PeopleInfo implements SerializableRead, IKeyed {
         m_sName = dr.getString(2);
     }
 
-    /**
-     *
-     */
     public void setID(String sID) {
         m_sID = sID;
     }
 
-    /**
-     *
-     */
     public String getID() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void setName(String sValue) {
         m_sName = sValue;
     }

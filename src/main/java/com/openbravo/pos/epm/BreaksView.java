@@ -29,9 +29,6 @@ import java.awt.Component;
 import java.util.List;
 import java.util.UUID;
 
-/**
- *
- */
 public final class BreaksView extends javax.swing.JPanel implements EditorRecord {
 
     private Object m_oId;
@@ -57,9 +54,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
         a.add(0, null);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_oId = null;
@@ -71,9 +65,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
         m_jVisible.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
         m_oId = null;
@@ -85,9 +76,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
         m_jVisible.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
         Object[] breaks = (Object[]) value;
@@ -100,9 +88,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
         m_jVisible.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
         Object[] breaks = (Object[]) value;
@@ -115,16 +100,10 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
         m_jVisible.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

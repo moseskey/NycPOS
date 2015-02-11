@@ -275,9 +275,6 @@ public class JRPrinterAWT300 implements Printable
 		}
 	}
 
-    /**
-     *
-     */
     public static long getImageSize(JasperPrint jasperPrint, float zoom)
 	{
 		int width = (int) (jasperPrint.getPageWidth() * zoom) + 1;

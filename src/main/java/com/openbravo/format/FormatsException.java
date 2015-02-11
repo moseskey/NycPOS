@@ -19,9 +19,6 @@
 
 package com.openbravo.format;
 
-/**
- *
- */
 public class FormatsException extends java.lang.Exception {
 
     /**

@@ -34,9 +34,6 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import org.pushingpixels.substance.api.SubstanceLookAndFeel;
 import org.pushingpixels.substance.api.SubstanceSkin;
-/**
- *
- */
 public class JdbUpdate extends javax.swing.JFrame {
 
     private JPaneldbUpdate config;

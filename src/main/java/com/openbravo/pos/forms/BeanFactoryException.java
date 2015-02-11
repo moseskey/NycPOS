@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.forms;
 
-/**
- *
- */
 public class BeanFactoryException extends java.lang.RuntimeException {
 
     /**
@@ -39,9 +36,6 @@ public class BeanFactoryException extends java.lang.RuntimeException {
         super(msg);
     }
 
-    /**
-     *
-     */
     public BeanFactoryException(Throwable e) {
         super(e);
     }

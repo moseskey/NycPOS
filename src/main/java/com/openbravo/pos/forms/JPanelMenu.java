@@ -24,9 +24,6 @@ import java.awt.Component;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public class JPanelMenu extends JPanel implements JPanelView {
 
     private MenuDefinition m_menu;
@@ -42,17 +39,11 @@ public class JPanelMenu extends JPanel implements JPanelView {
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return m_menu.getTitle();
@@ -75,17 +66,11 @@ public class JPanelMenu extends JPanel implements JPanelView {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
         return true;
     }
 
-    /**
-     *
-     */
     public void addTitle(Component title) {
 
         currententrypanel = null;
@@ -98,9 +83,6 @@ public class JPanelMenu extends JPanel implements JPanelView {
         menucontainer.add(titlepanel);
     }
 
-    /**
-     *
-     */
     public void addEntry(Component entry) {
 
         if (currententrypanel == null) {

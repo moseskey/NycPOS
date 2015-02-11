@@ -23,9 +23,6 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import javax.swing.tree.TreeNode;
 
-/**
- *
- */
 public class SQLTable implements TreeNode {
 
     private SQLDatabase m_db;
@@ -41,16 +38,10 @@ public class SQLTable implements TreeNode {
         m_aColumns = new ArrayList();
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void addColumn(String name) {
         SQLColumn c = new SQLColumn(this, name);
         m_aColumns.add(c);

@@ -27,9 +27,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileFilter;
 
-/**
- *
- */
 public class ConfigPaymentPanelLinkPoint extends javax.swing.JPanel implements PaymentConfiguration {
 
     private static File m_fCurrentDirectory = null;
@@ -39,17 +36,11 @@ public class ConfigPaymentPanelLinkPoint extends javax.swing.JPanel implements P
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public JPanel getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
         String sCommerceID = config.getProperty("payment.commerceid");
@@ -64,9 +55,6 @@ public class ConfigPaymentPanelLinkPoint extends javax.swing.JPanel implements P
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
         AltEncrypter cypher = new AltEncrypter("cypherkey");

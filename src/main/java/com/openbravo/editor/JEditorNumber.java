@@ -27,9 +27,6 @@ import com.openbravo.pos.forms.AppLocal;
 import java.awt.Toolkit;
 import java.io.File;
 
-/**
- *
- */
 public abstract class JEditorNumber extends JEditorAbstract {
 
     // Variable numerica
@@ -58,14 +55,8 @@ public abstract class JEditorNumber extends JEditorAbstract {
         reset();
     }
 
-    /**
-     *
-     */
     protected abstract Formats getFormat();
 
-    /**
-     *
-     */
     public void reset() {
 
         String sOldText = getText();
@@ -79,9 +70,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
         firePropertyChange("Text", sOldText, getText());
     }
 
-    /**
-     *
-     */
     public void setDoubleValue(Double dvalue) {
 
         String sOldText = getText();
@@ -104,9 +92,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
         firePropertyChange("Text", sOldText, getText());
     }
 
-    /**
-     *
-     */
     public Double getDoubleValue() {
         String text = getText();
         if (text == null || text.equals("")) {
@@ -122,9 +107,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
         }
     }
 
-    /**
-     *
-     */
     public void setValueInteger(int ivalue) {
 
         String sOldText = getText();
@@ -163,32 +145,20 @@ public abstract class JEditorNumber extends JEditorAbstract {
         return sNumber;
     }
 
-    /**
-     *
-     */
     @Override
     protected String getEditMode() {
         return "-1.23";
     }
 
-    /**
-     *
-     */
     public String getText() {
         return (m_bNegative ? "-" : "") + m_sNumber;
     }
 
-    /**
-     *
-     */
     @Override
     protected int getAlignment() {
         return javax.swing.SwingConstants.RIGHT;
     }
 
-    /**
-     *
-     */
     @Override
     protected String getTextEdit() {
         return getText();
@@ -203,17 +173,11 @@ public abstract class JEditorNumber extends JEditorAbstract {
         return m_fmt.formatValue(getDoubleValue());
     }
 
-    /**
-     *
-     */
     @Override
     protected void typeCharInternal(char cTrans) {
         transChar(cTrans);
     }
 
-    /**
-     *
-     */
     @Override
     protected void transCharInternal(char cTrans) {
 

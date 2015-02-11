@@ -23,25 +23,16 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-/**
- *
- */
 public class PrinterWritterFile extends PrinterWritter {
 
     private String m_sFilePrinter;
     private OutputStream m_out;
 
-    /**
-     *
-     */
     public PrinterWritterFile(String sFilePrinter) {
         m_sFilePrinter = sFilePrinter;
         m_out = null;
     }
 
-    /**
-     *
-     */
     @Override
     protected void internalWrite(byte[] data) {
         try {
@@ -54,9 +45,6 @@ public class PrinterWritterFile extends PrinterWritter {
         }
     }
 
-    /**
-     *
-     */
     @Override
     protected void internalFlush() {
         try {
@@ -70,9 +58,6 @@ public class PrinterWritterFile extends PrinterWritter {
         }
     }
 
-    /**
-     *
-     */
     @Override
     protected void internalClose() {
         try {

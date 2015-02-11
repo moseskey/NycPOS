@@ -23,9 +23,6 @@ package com.openbravo.pos.panels;
 import java.util.Enumeration;
 import javax.swing.tree.TreeNode;
 
-/**
- *
- */
 public class SQLColumn implements TreeNode {
 
     private SQLTable m_table;

@@ -32,9 +32,6 @@ import java.awt.image.BufferedImage;
 import java.util.UUID;
 import javax.swing.*;
 
-/**
- *
- */
 public class PeopleView extends JPanel implements EditorRecord {
 
     private Object m_oId;
@@ -64,9 +61,6 @@ public class PeopleView extends JPanel implements EditorRecord {
         writeValueEOF();
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_oId = null;
@@ -86,9 +80,6 @@ public class PeopleView extends JPanel implements EditorRecord {
         jButton3.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
         m_oId = null;
@@ -108,9 +99,6 @@ public class PeopleView extends JPanel implements EditorRecord {
         jButton3.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
         Object[] people = (Object[]) value;
@@ -132,9 +120,6 @@ public class PeopleView extends JPanel implements EditorRecord {
         jButton3.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
         Object[] people = (Object[]) value;
@@ -173,9 +158,6 @@ public class PeopleView extends JPanel implements EditorRecord {
         return people;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
@@ -191,9 +173,6 @@ public class PeopleView extends JPanel implements EditorRecord {
         m_jRole.setModel(m_RoleModel);
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }

@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.reports;
 
-/**
- *
- */
 public interface ReportFields {
 
     /**

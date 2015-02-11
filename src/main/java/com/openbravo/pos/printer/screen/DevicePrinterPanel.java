@@ -28,9 +28,6 @@ import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import javax.swing.JComponent;
 
-/**
- *
- */
 public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrinter {
 
     private final String m_sName;
@@ -55,40 +52,25 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
         m_props = props;
     }
 
-    /**
-     *
-     */
     @Override
     public String getPrinterName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     @Override
     public void printLogo(){
     }
 
-    /**
-     *
-     */
     @Override
     public String getPrinterDescription() {
         return null;
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getPrinterComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void reset() {
         m_ticketcurrent = null;
@@ -98,9 +80,6 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     // INTERFAZ PRINTER 2
 
-    /**
-     *
-     */
         @Override
     public void beginReceipt() {
 //JG July 2014 - Thank you Ron Isaacson        m_ticketcurrent = new BasicTicket();
@@ -108,49 +87,31 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     }
 
-    /**
-     *
-     */
     @Override
     public void printImage(BufferedImage image) {
         m_ticketcurrent.printImage(image);
     }
 
-    /**
-     *
-     */
     @Override
     public void printBarCode(String type, String position, String code) {
         m_ticketcurrent.printBarCode(type, position, code);
     }
 
-    /**
-     *
-     */
     @Override
     public void beginLine(int iTextSize) {
         m_ticketcurrent.beginLine(iTextSize);
     }
 
-    /**
-     *
-     */
     @Override
     public void printText(int iStyle, String sText) {
         m_ticketcurrent.printText(iStyle, sText);
     }
 
-    /**
-     *
-     */
     @Override
     public void endLine() {
         m_ticketcurrent.endLine();
     }
 
-    /**
-     *
-     */
     @Override
     public void endReceipt() {
 //JG July 2014 - Thank you Ron Isaacson        m_jTicketContainer.addTicket(new JTicket(m_ticketcurrent));
@@ -158,9 +119,6 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
         m_ticketcurrent = null;
     }
 
-    /**
-     *
-     */
     @Override
     public void openDrawer() {
         // Una simulacion

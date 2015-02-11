@@ -21,9 +21,6 @@ package com.openbravo.data.loader;
 
 import java.util.Comparator;
 
-/**
- *
- */
 public class ComparatorCreatorBasic implements ComparatorCreator {
 
     private String[] m_sHeaders;
@@ -39,9 +36,6 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
         m_iAvailableIndexes = iAvailableIndexes;
     }
 
-    /**
-     *
-     */
     public ComparatorCreatorBasic(String[] sHeaders, Datas[] aDatas) {
         m_sHeaders = sHeaders;
         m_aDatas = aDatas;
@@ -51,9 +45,6 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
         }
     }
 
-    /**
-     *
-     */
     public String[] getHeaders() {
 
         String[] sTempHeaders = new String[m_iAvailableIndexes.length];
@@ -64,16 +55,10 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
         return sTempHeaders;
     }
 
-    /**
-     *
-     */
     public Comparator createComparator(int[] aiOrderBy) {
         return new ComparatorBasic(aiOrderBy);
     }
 
-    /**
-     *
-     */
     public class ComparatorBasic implements Comparator {
 
         private int[] m_aiOrderBy;

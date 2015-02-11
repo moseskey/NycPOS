@@ -42,9 +42,6 @@ import java.util.List;
 import java.util.UUID;
 import javax.swing.SwingUtilities;
 
-/**
- *
- */
 public class JProductAttEdit extends javax.swing.JDialog {
 
     private SentenceFind attsetSent;
@@ -124,9 +121,6 @@ public class JProductAttEdit extends javax.swing.JDialog {
         getRootPane().setDefaultButton(m_jButtonOK);
     }
 
-    /**
-     *
-     */
     public static JProductAttEdit getAttributesEditor(Component parent, Session s) {
 
         Window window = SwingUtilities.getWindowAncestor(parent);
@@ -198,23 +192,14 @@ public class JProductAttEdit extends javax.swing.JDialog {
         }
     }
 
-    /**
-     *
-     */
     public boolean isOK() {
         return ok;
     }
 
-    /**
-     *
-     */
     public String getAttributeSetInst() {
         return attInstanceId;
     }
 
-    /**
-     *
-     */
     public String getAttributeSetInstDescription() {
         return attInstanceDescription;
     }

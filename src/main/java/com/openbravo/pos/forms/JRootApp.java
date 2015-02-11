@@ -55,9 +55,6 @@ import javax.swing.*;
 
 
 
-/**
- *
- */
 public class JRootApp extends JPanel implements AppView {
 
     private AppProperties m_props;
@@ -135,9 +132,6 @@ public class JRootApp extends JPanel implements AppView {
         jScrollPane1.getVerticalScrollBar().setPreferredSize(new Dimension(30, 30));
     }
 
-    /**
-     *
-     */
     public boolean initApp(AppProperties props) {
 
         m_props = props;
@@ -319,9 +313,6 @@ public class JRootApp extends JPanel implements AppView {
         }
     }
 
-    /**
-     *
-     */
     public void tryToClose() {
 
         if (closeAppView()) {
@@ -340,81 +331,51 @@ public class JRootApp extends JPanel implements AppView {
 
     // Interfaz de aplicacion
 
-    /**
-     *
-     */
         @Override
     public DeviceTicket getDeviceTicket(){
         return m_TP;
     }
 
-    /**
-     *
-     */
     @Override
     public DeviceScale getDeviceScale() {
         return m_Scale;
     }
 
-    /**
-     *
-     */
     @Override
     public DeviceScanner getDeviceScanner() {
         return m_Scanner;
     }
 
-    /**
-     *
-     */
     @Override
     public Session getSession() {
         return session;
     }
 
-    /**
-     *
-     */
     @Override
     public String getInventoryLocation() {
         return m_sInventoryLocation;
     }
 
-    /**
-     *
-     */
     @Override
     public String getActiveCashIndex() {
         return m_sActiveCashIndex;
     }
 
-    /**
-     *
-     */
     @Override
     public int getActiveCashSequence() {
         return m_iActiveCashSequence;
     }
 
-    /**
-     *
-     */
     @Override
     public Date getActiveCashDateStart() {
         return m_dActiveCashDateStart;
     }
 
-    /**
-     *
-     */
     @Override
     public Date getActiveCashDateEnd(){
         return m_dActiveCashDateEnd;
     }
 
-    /**
-     *
-     */
     @Override
     public void setActiveCash(String sIndex, int iSeq, Date dStart, Date dEnd) {
         m_sActiveCashIndex = sIndex;
@@ -426,9 +387,6 @@ public class JRootApp extends JPanel implements AppView {
         m_dlSystem.setResourceAsProperties(m_props.getHost() + "/properties", m_propsdb);
     }
 
-    /**
-     *
-     */
     @Override
     public AppProperties getProperties() {
         return m_props;
@@ -516,25 +474,16 @@ public class JRootApp extends JPanel implements AppView {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void waitCursorBegin() {
         setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
     }
 
-    /**
-     *
-     */
     @Override
     public void waitCursorEnd(){
         setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
     }
 
-    /**
-     *
-     */
     @Override
     public AppUserView getAppUserView() {
         return m_principalapp;
@@ -652,17 +601,11 @@ public class JRootApp extends JPanel implements AppView {
         }
     }
 
-    /**
-     *
-     */
     public void exitToLogin() {
         closeAppView();
         showLogin();
     }
 
-    /**
-     *
-     */
     public boolean closeAppView() {
 
         if (m_principalapp == null) {

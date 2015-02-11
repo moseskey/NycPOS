@@ -49,9 +49,6 @@ import java.util.Properties;
 import java.util.regex.Matcher;
 import javax.swing.*;
 
-/**
- *
- */
 public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     private DirtyManager dirty = new DirtyManager();
@@ -84,9 +81,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
         this(oApp.getProperties());
     }
 
-    /**
-     *
-     */
     public JPaneldbMigrate(AppProperties props) {
 
         initComponents();
@@ -117,9 +111,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     }
 
-    /**
-     *
-     */
     @SuppressWarnings("empty-statement")
     public Boolean createMigratedb() {
 
@@ -173,9 +164,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
         return (true);
     }
 
-    /**
-     *
-     */
     public Boolean addFKeys() {
         if ("".equals(eScript3)) {
             return (false);
@@ -196,25 +184,16 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.Configuration");
     }
 
-    /**
-     *
-     */
     public Boolean getSeconddbDetails() {
 
         String db_user2 = jtxtDbUser.getText();
@@ -273,9 +252,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
         return (true);

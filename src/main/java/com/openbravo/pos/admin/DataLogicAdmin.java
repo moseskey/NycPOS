@@ -24,9 +24,6 @@ import com.openbravo.format.Formats;
 import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.forms.BeanFactoryDataSingle;
 
-/**
- *
- */
 public class DataLogicAdmin extends BeanFactoryDataSingle {
 
     private Session s;
@@ -39,9 +36,6 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
     public DataLogicAdmin() {
     }
 
-    /**
-     *
-     */
     @Override
     public void init(Session s){
         this.s = s;
@@ -74,9 +68,6 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
         );
     }
 
-    /**
-     *
-     */
     public final SentenceList getRolesList() {
         return new StaticSentence(s
             , "SELECT ID, NAME FROM ROLES ORDER BY NAME"
@@ -84,30 +75,18 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
             , new SerializerReadClass(RoleInfo.class));
     }
 
-    /**
-     *
-     */
     public final TableDefinition getTablePeople() {
         return m_tpeople;
     }
 
-    /**
-     *
-     */
     public final TableDefinition getTableRoles() {
         return m_troles;
     }
 
-    /**
-     *
-     */
     public final TableDefinition getTableResources() {
         return m_tresources;
     }
 
-    /**
-     *
-     */
     public final SentenceList getPeopleList() {
         return new StaticSentence(s
                 , "SELECT ID, NAME FROM PEOPLE ORDER BY NAME"

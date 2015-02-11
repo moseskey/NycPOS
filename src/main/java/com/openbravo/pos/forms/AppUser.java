@@ -38,9 +38,6 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-/**
- *
- */
 public class AppUser {
 
     private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.AppUser");
@@ -73,72 +70,42 @@ public class AppUser {
         m_apermissions = null;
     }
 
-    /**
-     *
-     */
     public Icon getIcon() {
         return m_Icon;
     }
 
-    /**
-     *
-     */
     public String getId() {
         return m_sId;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void setPassword(String sValue) {
         m_sPassword = sValue;
     }
 
-    /**
-     *
-     */
     public String getPassword() {
         return m_sPassword;
     }
 
-    /**
-     *
-     */
     public String getRole() {
         return m_sRole;
     }
 
-    /**
-     *
-     */
     public String getCard() {
         return m_sCard;
     }
 
-    /**
-     *
-     */
     public boolean authenticate() {
         return m_sPassword == null || m_sPassword.equals("") || m_sPassword.startsWith("empty:");
     }
 
-    /**
-     *
-     */
     public boolean authenticate(String sPwd) {
         return Hashcypher.authenticate(sPwd, m_sPassword);
     }
 
-    /**
-     *
-     */
     public void fillPermissions(DataLogicSystem dlSystem) {
 
         // JG 16 May use diamond inference
@@ -168,17 +135,11 @@ public class AppUser {
 
     }
 
-    /**
-     *
-     */
     public boolean hasPermission(String classname) {
 
         return (m_apermissions == null) ? false : m_apermissions.contains(classname);
     }
 
-    /**
-     *
-     */
     public UserInfo getUserInfo() {
         return new UserInfo(m_sId, m_sName);
     }

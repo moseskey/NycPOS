@@ -24,17 +24,11 @@ import javax.print.DocFlavor;
 import javax.print.PrintService;
 import javax.print.PrintServiceLookup;
 
-/**
- *
- */
 public class ReportUtils {
 
     private ReportUtils() {
     }
 
-    /**
-     *
-     */
     public static PrintService getPrintService(String printername) {
 
         // Initalize print service
@@ -60,9 +54,6 @@ public class ReportUtils {
         }
     }
 
-    /**
-     *
-     */
     public static String[] getPrintNames() {
         PrintService[] pservices =
                 PrintServiceLookup.lookupPrintServices(DocFlavor.SERVICE_FORMATTED.PRINTABLE , null);

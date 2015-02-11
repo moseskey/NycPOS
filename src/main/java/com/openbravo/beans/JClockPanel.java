@@ -11,9 +11,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- *
- */
 public class JClockPanel extends javax.swing.JPanel {
 
     private static Calendar m_calendar = new GregorianCalendar(); // solo de ayuda...
@@ -27,9 +24,6 @@ public class JClockPanel extends javax.swing.JPanel {
         this(true);
     }
 
-    /**
-     *
-     */
     public JClockPanel(boolean bSeconds) {
 
         initComponents();
@@ -39,24 +33,15 @@ public class JClockPanel extends javax.swing.JPanel {
         m_lPeriod = 0L;
     }
 
-    /**
-     *
-     */
     public void setSecondsVisible(boolean bValue) {
         m_bSeconds = bValue;
         repaint();
     }
 
-    /**
-     *
-     */
     public boolean isSecondsVisible() {
         return m_bSeconds;
     }
 
-    /**
-     *
-     */
     public void setPeriod(long period) {
         if (period >= 0L) {
             m_lPeriod = period;
@@ -64,24 +49,15 @@ public class JClockPanel extends javax.swing.JPanel {
         }
     }
 
-    /**
-     *
-     */
     public long getPeriod() {
         return m_lPeriod;
     }
 
-    /**
-     *
-     */
     public void setTime(Date dDate){
         m_date = dDate;
         repaint();
     }
 
-    /**
-     *
-     */
     public Date getTime() {
         return m_date;
     }

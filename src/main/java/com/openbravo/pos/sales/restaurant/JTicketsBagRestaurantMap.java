@@ -35,14 +35,8 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
-/**
- *
- */
 public class JTicketsBagRestaurantMap extends JTicketsBag {
 
-    /**
-     *
-     */
     public static void newticket() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -197,9 +191,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         add(m_jreservations, "res");
     }
 
-    /**
-     *
-     */
     @Override
     public void activate() {
 
@@ -218,9 +209,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         // postcondicion es que tenemos ticket activado aqui y ticket en el panel
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
 
@@ -256,32 +244,20 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         // postcondicion es que no tenemos ticket activado
     }
 
-    /**
-     *
-     */
     @Override
     protected JComponent getBagComponent() {
         return m_restaurantmap;
     }
 
-    /**
-     *
-     */
     @Override
     protected JComponent getNullComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     public TicketInfo getActiveTicket() {
         return m_panelticket.getActiveTicket();
     }
 
-    /**
-     *
-     */
     public void moveTicket() {
 
         // guardamos el ticket
@@ -304,9 +280,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         m_panelticket.setActiveTicket(null, null);
     }
 
-    /**
-     *
-     */
     public boolean viewTables(CustomerInfo c) {
         // deberiamos comprobar si estamos en reservations o en tables...
         if (m_jreservations.deactivate()) {
@@ -322,16 +295,10 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         }
     }
 
-    /**
-     *
-     */
     public boolean viewTables() {
         return viewTables(null);
     }
 
-    /**
-     *
-     */
     public void newTicket() {
 
         // guardamos el ticket
@@ -350,9 +317,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         m_panelticket.setActiveTicket(null, null);
     }
 
-    /**
-     *
-     */
     public String getTable(){
         String id =null;
         if (m_PlaceCurrent != null) {
@@ -361,9 +325,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         return(id);
     }
 
-    /**
-     *
-     */
     public String getTableName(){
         String tableName =null;
         if (m_PlaceCurrent != null) {
@@ -372,9 +333,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         return(tableName);
     }
 
-    /**
-     *
-     */
     @Override
     public void deleteTicket() {
 
@@ -398,9 +356,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
 // Added JG 03.07.2011 - TODO - Change Server Dialog here
 
-    /**
-     *
-     */
             public void changeServer() {
 
         if (m_ServerCurrent != null) {
@@ -416,9 +371,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         }
     }
 
-    /**
-     *
-     */
     public void loadTickets() {
 
         Set<String> atickets = new HashSet<>();
@@ -731,9 +683,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         }
     }
 
-    /**
-     *
-     */
     public void setButtonTextBags(String btnText){
       m_PlaceClipboard.setButtonText(btnText);
   }

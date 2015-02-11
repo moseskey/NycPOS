@@ -22,9 +22,6 @@ package com.openbravo.beans;
 import java.awt.*;
 import javax.swing.*;
 
-/**
- *
- */
 public class JPasswordDialog extends javax.swing.JDialog {
 
     // private static ResourceBundle m_Intl;
@@ -80,23 +77,14 @@ public class JPasswordDialog extends javax.swing.JDialog {
         }
     }
 
-    /**
-     *
-     */
     public static String showEditPassword(Component parent, String title) {
         return showEditPassword(parent, title, null, null);
     }
 
-    /**
-     *
-     */
     public static String showEditPassword(Component parent, String title, String message) {
         return showEditPassword(parent, title, message, null);
     }
 
-    /**
-     *
-     */
     public static String showEditPassword(Component parent, String title, String message, Icon icon) {
 
         Window window = getWindow(parent);

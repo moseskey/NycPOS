@@ -26,9 +26,6 @@ import java.awt.Insets;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-/**
- *
- */
 public class JCatalogTab extends javax.swing.JPanel {
 
     private JFlowPanel flowpanel;
@@ -53,9 +50,6 @@ public class JCatalogTab extends javax.swing.JPanel {
     }
 // ADDED JDL 09.04.13 TEXTTIP FUNCTION
 
-    /**
-     *
-     */
         public void addButton(Icon ico, ActionListener al, String textTip) {
         JButton btn = new JButton();
         btn.applyComponentOrientation(getComponentOrientation());

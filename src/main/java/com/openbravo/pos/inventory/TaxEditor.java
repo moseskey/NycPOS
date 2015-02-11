@@ -35,9 +35,6 @@ import java.util.List;
 import java.util.UUID;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public class TaxEditor extends JPanel implements EditorRecord {
 
     private Object m_oId;
@@ -97,9 +94,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
 
@@ -118,9 +112,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
         m_jTaxParent.setModel(taxparentmodel);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_oId = null;
@@ -141,9 +132,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
         jOrder.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
         m_oId = UUID.randomUUID().toString();
@@ -164,9 +152,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
         jOrder.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
 
@@ -189,9 +174,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
         jOrder.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
 
@@ -235,9 +217,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
         return tax;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

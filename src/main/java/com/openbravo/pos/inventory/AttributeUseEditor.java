@@ -33,9 +33,6 @@ import com.openbravo.pos.forms.AppView;
 import java.awt.Component;
 import java.util.UUID;
 
-/**
- *
- */
 public class AttributeUseEditor extends javax.swing.JPanel implements EditorRecord {
 
     private SentenceList attributesent;
@@ -66,9 +63,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
         jAttribute.addActionListener(dirty);
     }
 
-    /**
-     *
-     */
     public void setInsertId(String insertid) {
 
         this.insertid = insertid;
@@ -84,16 +78,10 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
         jAttribute.setModel(attributemodel);
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
 
@@ -106,9 +94,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
         jLineno.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
 
@@ -121,9 +106,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
         jLineno.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
 
@@ -138,9 +120,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
         jLineno.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
 
@@ -155,9 +134,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
         jLineno.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

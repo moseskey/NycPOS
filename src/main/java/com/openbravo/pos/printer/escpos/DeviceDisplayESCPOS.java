@@ -21,9 +21,6 @@ package com.openbravo.pos.printer.escpos;
 
 import com.openbravo.pos.printer.DeviceTicket;
 
-/**
- *
- */
 public class DeviceDisplayESCPOS extends DeviceDisplaySerial {
 
     private UnicodeTranslator trans;
@@ -35,9 +32,6 @@ public class DeviceDisplayESCPOS extends DeviceDisplaySerial {
         init(display);
     }
 
-    /**
-     *
-     */
     @Override
     public void initVisor() {
         display.init(ESCPOS.INIT);
@@ -57,9 +51,6 @@ public class DeviceDisplayESCPOS extends DeviceDisplaySerial {
 //        display.flush();
 //    }
 
-    /**
-     *
-     */
 
     @Override
     public void repaintLines() {

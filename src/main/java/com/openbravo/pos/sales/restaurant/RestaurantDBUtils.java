@@ -18,9 +18,6 @@ import java.sql.Statement;
 
 
 
-/**
- *
- */
 
 
 public class RestaurantDBUtils {
@@ -32,14 +29,8 @@ public class RestaurantDBUtils {
     private ResultSet rs;
     private AppView m_App;
 
-    /**
-     *
-     */
     protected DataLogicSystem dlSystem;
 
-    /**
-     *
-     */
     public RestaurantDBUtils(AppView oApp) {
         m_App=oApp;
 
@@ -55,9 +46,6 @@ public class RestaurantDBUtils {
 
     }
 
-    /**
-     *
-     */
     public void moveCustomer(String newTable, String ticketID){
       String oldTable=getTableDetails(ticketID);
         if (countTicketIdInTable(ticketID)>1){
@@ -79,9 +67,6 @@ public class RestaurantDBUtils {
         }
   }
 
-    /**
-     *
-     */
     public void setCustomerNameInTable(String custName, String tableName){
         try{
             SQL = "UPDATE PLACES SET CUSTOMER=? WHERE NAME=?";
@@ -93,9 +78,6 @@ public class RestaurantDBUtils {
             }
     }
 
-    /**
-     *
-     */
     public void setCustomerNameInTableById(String custName, String tableID){
         try{
             SQL = "UPDATE PLACES SET CUSTOMER=? WHERE ID=?";
@@ -107,9 +89,6 @@ public class RestaurantDBUtils {
             }
     }
 
-    /**
-     *
-     */
     public void setCustomerNameInTableByTicketId(String custName, String ticketID){
         try{
             SQL = "UPDATE PLACES SET CUSTOMER=? WHERE TICKETID=?";
@@ -121,9 +100,6 @@ public class RestaurantDBUtils {
             }
 }
 
-    /**
-     *
-     */
     public String getCustomerNameInTable(String tableName){
        try{
             SQL = "SELECT CUSTOMER FROM PLACES WHERE NAME='"+ tableName + "'";
@@ -138,9 +114,6 @@ public class RestaurantDBUtils {
        return "";
   }
 
-    /**
-     *
-     */
     public String getCustomerNameInTableById(String tableId){
        try{
             SQL = "SELECT CUSTOMER FROM PLACES WHERE ID='"+ tableId + "'";
@@ -155,9 +128,6 @@ public class RestaurantDBUtils {
        return "";
   }
 
-    /**
-     *
-     */
     public void clearCustomerNameInTable(String tableName){
         try{
             SQL = "UPDATE PLACES SET CUSTOMER=null WHERE NAME=?";
@@ -168,9 +138,6 @@ public class RestaurantDBUtils {
             }
     }
 
-    /**
-     *
-     */
     public void clearCustomerNameInTableById(String tableID){
         try{
             SQL = "UPDATE PLACES SET CUSTOMER=null WHERE ID=?";
@@ -181,9 +148,6 @@ public class RestaurantDBUtils {
             }
     }
 
-    /**
-     *
-     */
     public void setWaiterNameInTable(String waiterName, String tableName){
         try{
             SQL = "UPDATE PLACES SET WAITER=? WHERE NAME=?";
@@ -195,9 +159,6 @@ public class RestaurantDBUtils {
             }
     }
 
-    /**
-     *
-     */
     public void setWaiterNameInTableById(String waiterName, String tableID){
         try{
             SQL = "UPDATE PLACES SET WAITER=? WHERE ID=?";
@@ -209,9 +170,6 @@ public class RestaurantDBUtils {
             }
     }
 
-    /**
-     *
-     */
     public String getWaiterNameInTable(String tableName){
        try{
             SQL = "SELECT WAITER FROM PLACES WHERE NAME='"+ tableName + "'";
@@ -226,9 +184,6 @@ public class RestaurantDBUtils {
        return "";
   }
 
-    /**
-     *
-     */
     public String getWaiterNameInTableById(String tableID){
        try{
             SQL = "SELECT WAITER FROM PLACES WHERE ID='"+ tableID + "'";
@@ -243,9 +198,6 @@ public class RestaurantDBUtils {
        return "";
   }
 
-    /**
-     *
-     */
     public void clearWaiterNameInTable(String tableName){
         try{
             SQL = "UPDATE PLACES SET WAITER=null WHERE NAME=?";
@@ -256,9 +208,6 @@ public class RestaurantDBUtils {
             }
        }
 
-    /**
-     *
-     */
     public void clearWaiterNameInTableById(String tableID){
         try{
             SQL = "UPDATE PLACES SET WAITER=null WHERE ID=?";
@@ -269,9 +218,6 @@ public class RestaurantDBUtils {
             }
        }
 
-    /**
-     *
-     */
     public String getTicketIdInTable(String ID){
        try{
             SQL = "SELECT TICKETID FROM PLACES WHERE ID='"+ ID + "'";
@@ -286,9 +232,6 @@ public class RestaurantDBUtils {
        return "";
   }
 
-    /**
-     *
-     */
     public void setTicketIdInTable(String TicketID, String tableName){
         try{
             SQL = "UPDATE PLACES SET TICKETID=? WHERE NAME=?";
@@ -300,9 +243,6 @@ public class RestaurantDBUtils {
             }
     }
 
-    /**
-     *
-     */
     public void clearTicketIdInTable(String tableName){
         try{
             SQL = "UPDATE PLACES SET TICKETID=null WHERE NAME=?";
@@ -313,9 +253,6 @@ public class RestaurantDBUtils {
             }
        }
 
-    /**
-     *
-     */
     public void clearTicketIdInTableById(String tableID){
         try{
             SQL = "UPDATE PLACES SET TICKETID=null WHERE ID=?";
@@ -326,9 +263,6 @@ public class RestaurantDBUtils {
             }
        }
 
-    /**
-     *
-     */
     public Integer countTicketIdInTable(String ticketID){
       try{
             SQL = "SELECT COUNT(*) AS RECORDCOUNT FROM PLACES WHERE TICKETID='"+ ticketID + "'";
@@ -344,9 +278,6 @@ public class RestaurantDBUtils {
      return 0;
  }
 
-    /**
-     *
-     */
     public String getTableDetails (String ticketID){
        try{
             SQL = "SELECT NAME FROM PLACES WHERE TICKETID='"+ ticketID + "'";
@@ -361,9 +292,6 @@ public class RestaurantDBUtils {
        return "";
    }
 
-    /**
-     *
-     */
     public void setTableMovedFlag (String tableID){
         try{
             SQL = "UPDATE PLACES SET TABLEMOVED='true' WHERE ID=?";
@@ -374,9 +302,6 @@ public class RestaurantDBUtils {
             }
        }
 
-    /**
-     *
-     */
     public String getTableMovedName (String ticketID){
        try{
             SQL = "SELECT NAME FROM PLACES WHERE TICKETID='"+ ticketID + "' AND TABLEMOVED ='true'";
@@ -391,9 +316,6 @@ public class RestaurantDBUtils {
        return null;
        }
 
-    /**
-     *
-     */
     public Boolean getTableMovedFlag (String ticketID){
        try{
             SQL = "SELECT TABLEMOVED FROM PLACES WHERE TICKETID='"+ ticketID + "'";
@@ -407,9 +329,6 @@ public class RestaurantDBUtils {
        return (false);
        }
 
-    /**
-     *
-     */
     public void clearTableMovedFlag (String tableID){
         try{
             SQL = "UPDATE PLACES SET TABLEMOVED='false' WHERE NAME=?";

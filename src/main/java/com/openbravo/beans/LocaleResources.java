@@ -25,9 +25,6 @@ import java.util.List;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-/**
- *
- */
 public class LocaleResources {
 
     private List<ResourceBundle> m_resources;
@@ -53,18 +50,12 @@ public class LocaleResources {
 //        return ResourceBundle.getBundle(bundlename, Locale.getDefault(), m_localeloader);
 //    }
 
-    /**
-     *
-     */
 
     public void addBundleName(String bundlename) {
 //        m_resources.add(getBundle(bundlename));
         m_resources.add(ResourceBundle.getBundle("locales/" + bundlename));
     }
 
-    /**
-     *
-     */
     public String getString(String sKey) {
 
         if (sKey == null) {
@@ -83,9 +74,6 @@ public class LocaleResources {
         }
     }
 
-    /**
-     *
-     */
     public String getString(String sKey, Object ... sValues) {
 
         if (sKey == null) {

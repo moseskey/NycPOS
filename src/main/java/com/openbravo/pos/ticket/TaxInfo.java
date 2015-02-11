@@ -22,9 +22,6 @@ package com.openbravo.pos.ticket;
 import com.openbravo.data.loader.IKeyed;
 import java.io.Serializable;
 
-/**
- *
- */
 public class TaxInfo implements Serializable, IKeyed {
 
     private static final long serialVersionUID = -2705212098856473043L;
@@ -52,128 +49,74 @@ public class TaxInfo implements Serializable, IKeyed {
         this.order = order;
     }
 
-    /**
-     *
-     */
     public Object getKey() {
         return id;
     }
 
-    /**
-     *
-     */
     public void setID(String value) {
         id = value;
     }
 
-    /**
-     *
-     */
     public String getId() {
         return id;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     *
-     */
     public void setName(String value) {
         name = value;
     }
 
-    /**
-     *
-     */
     public String getTaxCategoryID() {
         return taxcategoryid;
     }
 
-    /**
-     *
-     */
     public void setTaxCategoryID(String value) {
         taxcategoryid = value;
     }
 
-    /**
-     *
-     */
     public String getTaxCustCategoryID() {
         return taxcustcategoryid;
     }
 
-    /**
-     *
-     */
     public void setTaxCustCategoryID(String value) {
         taxcustcategoryid = value;
     }
 
-    /**
-     *
-     */
     public String getParentID() {
         return parentid;
     }
 
-    /**
-     *
-     */
     public void setParentID(String value) {
         parentid = value;
     }
 
-    /**
-     *
-     */
     public double getRate() {
         return rate;
     }
 
-    /**
-     *
-     */
     public void setRate(double value) {
         rate = value;
     }
 
-    /**
-     *
-     */
     public boolean isCascade() {
         return cascade;
     }
 
-    /**
-     *
-     */
     public void setCascade(boolean value) {
         cascade = value;
     }
 
-    /**
-     *
-     */
     public Integer getOrder() {
         return order;
     }
 
-    /**
-     *
-     */
     public Integer getApplicationOrder() {
         return order == null ? Integer.MAX_VALUE : order.intValue();
     }
 
-    /**
-     *
-     */
     public void setOrder(Integer value) {
         order = value;
     }

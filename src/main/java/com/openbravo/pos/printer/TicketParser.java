@@ -43,9 +43,6 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-/**
- *
- */
 public class TicketParser extends DefaultHandler {
 
     private static SAXParser m_sp = null;

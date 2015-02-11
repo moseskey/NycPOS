@@ -34,9 +34,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public class Floor implements SerializableRead {
 
     private static final long serialVersionUID = 8694154682897L;
@@ -70,30 +67,18 @@ public class Floor implements SerializableRead {
         m_icon = new ImageIcon(tnbcat.getThumbNail(img));
     }
 
-    /**
-     *
-     */
     public String getID() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public Icon getIcon() {
         return m_icon;
     }
 
-    /**
-     *
-     */
     public Container getContainer() {
         return m_container;
     }

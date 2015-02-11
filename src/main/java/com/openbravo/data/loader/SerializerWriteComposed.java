@@ -24,9 +24,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- *
- */
 public class SerializerWriteComposed implements SerializerWrite {
 
     private List<SerializerWrite> serwrites = new ArrayList<SerializerWrite>();
@@ -35,9 +32,6 @@ public class SerializerWriteComposed implements SerializerWrite {
     public SerializerWriteComposed() {
     }
 
-    /**
-     *
-     */
     public void add(SerializerWrite sw) {
         serwrites.add(sw);
     }

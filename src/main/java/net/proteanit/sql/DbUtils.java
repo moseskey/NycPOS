@@ -5,14 +5,8 @@ import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
-/**
- *
- */
 public class DbUtils {
 
-    /**
-     *
-     */
     public static TableModel resultSetToTableModel(ResultSet rs) {
          try {
              ResultSetMetaData metaData = rs.getMetaData();

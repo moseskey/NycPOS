@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.payment;
 
-/**
- *
- */
 public class PaymentInfoFree extends PaymentInfo {
 
     private double m_dTotal;
@@ -34,65 +31,41 @@ public class PaymentInfoFree extends PaymentInfo {
         m_dTotal = dTotal;
     }
 
-    /**
-     *
-     */
     @Override
     public PaymentInfo copyPayment(){
         return new PaymentInfoFree(m_dTotal);
     }
 
-    /**
-     *
-     */
     @Override
     public String getTransactionID(){
         return "no ID";
     }
 
-    /**
-     *
-     */
     @Override
     public String getName() {
         return "free";
     }
 
-    /**
-     *
-     */
     @Override
     public double getTotal() {
         return m_dTotal;
     }
 
-    /**
-     *
-     */
     @Override
     public double getPaid() {
         return (0.0);
     }
 
-    /**
-     *
-     */
     @Override
     public double getChange(){
        return (0.00);
    }
 
-    /**
-     *
-     */
     @Override
     public double getTendered() {
        return m_dTendered;
    }
 
-    /**
-     *
-     */
     @Override
     public String getCardName() {
        return m_dCardName;

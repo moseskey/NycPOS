@@ -36,9 +36,6 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- */
 public class DeviceTicket {
 
     private static final Logger logger = Logger.getLogger("com.openbravo.pos.printer.DeviceTicket");
@@ -71,9 +68,6 @@ public class DeviceTicket {
         m_deviceprinterslist.add(p);
     }
 
-    /**
-     *
-     */
     public DeviceTicket(Component parent, AppProperties props) {
 
         PrinterWritterPool pws = new PrinterWritterPool();

@@ -21,9 +21,6 @@ package com.openbravo.data.loader;
 
 import com.openbravo.format.Formats;
 
-/**
- *
- */
 public class TableDefinition {
 
     private Session m_s;
@@ -56,9 +53,6 @@ public class TableDefinition {
         this.idinx = idinx;
     }
 
-    /**
-     *
-     */
     public TableDefinition(
             Session s,
             String tablename,
@@ -67,44 +61,26 @@ public class TableDefinition {
         this(s, tablename, fieldname, fieldname, fielddata, fieldformat, idinx);
     }
 
-    /**
-     *
-     */
     public String getTableName() {
         return tablename;
     }
 
-    /**
-     *
-     */
     public String[] getFields() {
         return fieldname;
     }
 
-    /**
-     *
-     */
     public Vectorer getVectorerBasic(int[] aiFields) {
         return new VectorerBasic(fieldtran, fieldformat, aiFields);
     }
 
-    /**
-     *
-     */
     public IRenderString getRenderStringBasic(int[] aiFields) {
         return new RenderStringBasic(fieldformat, aiFields);
     }
 
-    /**
-     *
-     */
     public ComparatorCreator getComparatorCreator(int [] aiOrders) {
         return new ComparatorCreatorBasic(fieldtran, fielddata, aiOrders);
     }
 
-    /**
-     *
-     */
     public IKeyGetter getKeyGetterBasic() {
         if (idinx.length == 1) {
             return new KeyGetterFirst(idinx);
@@ -113,30 +89,18 @@ public class TableDefinition {
         }
     }
 
-    /**
-     *
-     */
     public SerializerRead getSerializerReadBasic() {
         return new SerializerReadBasic(fielddata);
     }
 
-    /**
-     *
-     */
     public SerializerWrite getSerializerInsertBasic(int[] fieldindx) {
         return new SerializerWriteBasicExt(fielddata, fieldindx);
     }
 
-    /**
-     *
-     */
     public SerializerWrite getSerializerDeleteBasic() {
         return new SerializerWriteBasicExt(fielddata, idinx);
     }
 
-    /**
-     *
-     */
     public SerializerWrite getSerializerUpdateBasic(int[] fieldindx) {
 
         int[] aindex = new int[fieldindx.length + idinx.length];
@@ -151,23 +115,14 @@ public class TableDefinition {
         return new SerializerWriteBasicExt(fielddata, aindex);
     }
 
-    /**
-     *
-     */
     public SentenceList getListSentence() {
         return getListSentence(getSerializerReadBasic());
     }
 
-    /**
-     *
-     */
     public SentenceList getListSentence(SerializerRead sr) {
         return new PreparedSentence(m_s, getListSQL(), null,  sr);
     }
 
-    /**
-     *
-     */
     public String getListSQL() {
 
         StringBuilder sent = new StringBuilder();
@@ -186,23 +141,14 @@ public class TableDefinition {
         return sent.toString();
     }
 
-    /**
-     *
-     */
     public SentenceExec getDeleteSentence() {
         return getDeleteSentence(getSerializerDeleteBasic());
     }
 
-    /**
-     *
-     */
     public SentenceExec getDeleteSentence(SerializerWrite sw) {
         return new PreparedSentence(m_s, getDeleteSQL(), sw, null);
     }
 
-    /**
-     *
-     */
     public String getDeleteSQL() {
 
         StringBuilder sent = new StringBuilder();
@@ -218,16 +164,10 @@ public class TableDefinition {
         return sent.toString();
     }
 
-    /**
-     *
-     */
     public SentenceExec getInsertSentence() {
         return getInsertSentence(getAllFields());
     }
 
-    /**
-     *
-     */
     public SentenceExec getInsertSentence(int[] fieldindx) {
         return new PreparedSentence(m_s, getInsertSQL(fieldindx), getSerializerInsertBasic(fieldindx), null);
     }
@@ -266,16 +206,10 @@ public class TableDefinition {
         return fieldindx;
     }
 
-    /**
-     *
-     */
     public SentenceExec getUpdateSentence() {
         return getUpdateSentence(getAllFields());
     }
 
-    /**
-     *
-     */
     public SentenceExec getUpdateSentence(int[] fieldindx) {
         return new PreparedSentence(m_s, getUpdateSQL(fieldindx), getSerializerUpdateBasic(fieldindx), null);
     }

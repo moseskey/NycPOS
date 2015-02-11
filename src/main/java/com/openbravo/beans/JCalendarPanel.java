@@ -8,9 +8,6 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-/**
- *
- */
 public class JCalendarPanel extends javax.swing.JPanel {
 
     // private static ResourceBundle m_Intl;
@@ -36,9 +33,6 @@ public class JCalendarPanel extends javax.swing.JPanel {
         this(new Date());
     }
 
-    /**
-     *
-     */
     public JCalendarPanel(Date dDate) {
 
         super();
@@ -60,9 +54,6 @@ public class JCalendarPanel extends javax.swing.JPanel {
         renderDay();
     }
 
-    /**
-     *
-     */
     public void setDate(Date dNewDate) {
 
         // cambiamos la fecha
@@ -77,9 +68,6 @@ public class JCalendarPanel extends javax.swing.JPanel {
         firePropertyChange("Date", dOldDate, dNewDate);
     }
 
-    /**
-     *
-     */
     public Date getDate() {
         return m_date;
     }

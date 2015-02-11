@@ -40,9 +40,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.logging.Logger;
 
-/**
- *
- */
 public class DataLogicSales extends BeanFactoryDataSingle {
 
     protected Session s;
@@ -142,17 +139,11 @@ public class DataLogicSales extends BeanFactoryDataSingle {
                 );
     }
 
-    /**
-     *
-     */
     @Override
     public void init(Session s){
         this.s = s;
     }
 
-    /**
-     *
-     */
     public final Row getProductsRow() {
         return productsRow;
     }
@@ -430,9 +421,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
         }
 
-    /**
-     *
-     */
     public final SentenceList getPromoTypeList() {
             return new StaticSentence(s
                 , "SELECT ID, "
@@ -443,9 +431,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
                 , new SerializerReadClass(PromoTypeInfo.class));
         }
 
-    /**
-     *
-     */
     public final SentenceList getCatName(String id) {
             return new StaticSentence(s
                 , "SELECT "
@@ -653,9 +638,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     //Tickets and Receipt list
 
-    /**
-     *
-     */
         public SentenceList getTicketsList() {
          return new StaticSentence(s
             , new QBFBuilder(
@@ -693,9 +675,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     //User list
 
-    /**
-     *
-     */
         public final SentenceList getUserList() {
         return new StaticSentence(s
             , "SELECT "
@@ -714,9 +693,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     // Listados para combo
 
-    /**
-     *
-     */
         public final SentenceList getTaxList() {
         return new StaticSentence(s
             , "SELECT "
@@ -747,9 +723,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
 // JG 3 Oct 2013 - Add Catalogue Status (temp holder for eCommerce links)
 
-    /**
-     *
-     */
         public final SentenceList getCategoriesList() {
         return new StaticSentence(s
             , "SELECT "
@@ -764,9 +737,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
             , CategoryInfo.getSerializerRead());
     }
 
-    /**
-     *
-     */
     public final SentenceList getTaxCustCategoriesList() {
         return new StaticSentence(s
             , "SELECT "
@@ -806,9 +776,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
                 CustomerTransaction.getSerializerRead()).list();
     }
 
-    /**
-     *
-     */
     public final SentenceList getTaxCategoriesList() {
         return new StaticSentence(s
             , "SELECT "
@@ -823,9 +790,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
             }});
     }
 
-    /**
-     *
-     */
     public final SentenceList getAttributeSetList() {
         return new StaticSentence(s
             , "SELECT "
@@ -840,9 +804,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
             }});
     }
 
-    /**
-     *
-     */
     public final SentenceList getLocationsList() {
         return new StaticSentence(s
             , "SELECT "
@@ -854,9 +815,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
             , new SerializerReadClass(LocationInfo.class));
     }
 
-    /**
-     *
-     */
     public final SentenceList getFloorsList() {
         return new StaticSentence(s
             , "SELECT ID, NAME FROM FLOORS ORDER BY NAME"
@@ -1275,9 +1233,6 @@ public Object transact() throws BasicException {
 // ADDED JDL 10.04.2013 TEXTTIP text
 // ADDED JDL 25.05.13 Warranty flag
 
-    /**
-     *
-     */
     public final SentenceList getProductCatQBF() {
  	return new StaticSentence(s
 		, new QBFBuilder(
@@ -1314,9 +1269,6 @@ public Object transact() throws BasicException {
 // ADDED JDL 10.04.2013 TEXTTIP text
 // ADDED JDL 25.05.13 Warranty flag
 
-    /**
-     *
-     */
 
     public final SentenceExec getProductCatInsert() {
 	return new SentenceExecTransaction(s) {
@@ -1355,9 +1307,6 @@ public Object transact() throws BasicException {
 		}
 	};
 }
-    /**
-     *
-     */
     public final SentenceExec getProductCatUpdate() {
 	return new SentenceExecTransaction(s) {
             @Override
@@ -1402,9 +1351,6 @@ public Object transact() throws BasicException {
 	};
 }
 
-    /**
-     *
-     */
     public final SentenceExec getProductCatDelete() {
         return new SentenceExecTransaction(s) {
             @Override
@@ -1420,9 +1366,6 @@ public Object transact() throws BasicException {
         };
     }
 
-    /**
-     *
-     */
     public final SentenceExec getDebtUpdate() {
 
         return new PreparedSentence(s
@@ -1430,9 +1373,6 @@ public Object transact() throws BasicException {
                 , SerializerWriteParams.INSTANCE);
     }
 
-    /**
-     *
-     */
     public final SentenceExec getStockDiaryInsert() {
         return new SentenceExecTransaction(s) {
             @Override
@@ -1457,9 +1397,6 @@ public Object transact() throws BasicException {
         };
     }
 
-    /**
-     *
-     */
     public final SentenceExec getStockDiaryDelete() {
         return new SentenceExecTransaction(s) {
             @Override
@@ -1484,9 +1421,6 @@ public Object transact() throws BasicException {
         };
     }
 
-    /**
-     *
-     */
     public final SentenceExec getPaymentMovementInsert() {
         return new SentenceExecTransaction(s) {
 // ADDED JG 03.07.11 Payment Notes
@@ -1503,9 +1437,6 @@ public Object transact() throws BasicException {
         };
     }
 
-    /**
-     *
-     */
     public final SentenceExec getPaymentMovementDelete() {
         return new SentenceExecTransaction(s) {
             @Override
@@ -1538,18 +1469,12 @@ public Object transact() throws BasicException {
         return d == null ? 0.0 : d;
     }
 
-    /**
-     *
-     */
     public final SentenceExec getCatalogCategoryAdd() {
         return new StaticSentence(s
                 , "INSERT INTO PRODUCTS_CAT(PRODUCT, CATORDER) SELECT ID, " + s.DB.INTEGER_NULL() + " FROM PRODUCTS WHERE CATEGORY = ?"
                 , SerializerWriteString.INSTANCE);
     }
 
-    /**
-     *
-     */
     public final SentenceExec getCatalogCategoryDel() {
         return new StaticSentence(s
                 , "DELETE FROM PRODUCTS_CAT WHERE PRODUCT = ANY (SELECT ID FROM PRODUCTS WHERE CATEGORY = ?)"
@@ -1558,9 +1483,6 @@ public Object transact() throws BasicException {
 
 // JG 3 Oct 2013 - Add Catalgue Status (temp holder for eCommerce links)
 
-    /**
-     *
-     */
         public final TableDefinition getTableCategories() {
         return new TableDefinition(s,
             "CATEGORIES"
@@ -1572,9 +1494,6 @@ public Object transact() throws BasicException {
         );
     }
 
-    /**
-     *
-     */
     public final TableDefinition getTableTaxes() {
         return new TableDefinition(s,
             "TAXES"
@@ -1586,9 +1505,6 @@ public Object transact() throws BasicException {
         );
     }
 
-    /**
-     *
-     */
     public final TableDefinition getTableTaxCustCategories() {
         return new TableDefinition(s,
             "TAXCUSTCATEGORIES"
@@ -1600,9 +1516,6 @@ public Object transact() throws BasicException {
         );
     }
 
-    /**
-     *
-     */
     public final TableDefinition getTableTaxCategories() {
         return new TableDefinition(s,
             "TAXCATEGORIES"
@@ -1614,9 +1527,6 @@ public Object transact() throws BasicException {
         );
     }
 
-    /**
-     *
-     */
     public final TableDefinition getTableLocations() {
         return new TableDefinition(s,
             "LOCATIONS"
@@ -1628,9 +1538,6 @@ public Object transact() throws BasicException {
         );
     }
 
-    /**
-     *
-     */
     protected static class CustomerExtRead implements SerializerRead {
 
         /**

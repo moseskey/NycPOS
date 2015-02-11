@@ -28,9 +28,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-/**
- *
- */
 public class JPanelTicketEdits extends JPanelTicket {
 
     private JTicketCatalogLines m_catandlines;
@@ -39,9 +36,6 @@ public class JPanelTicketEdits extends JPanelTicket {
     public JPanelTicketEdits() {
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return null;
@@ -57,17 +51,11 @@ public class JPanelTicketEdits extends JPanelTicket {
         m_catandlines.loadCatalog();
     }
 
-    /**
-     *
-     */
     public void showCatalog() {
         m_jbtnconfig.setVisible(true);
         m_catandlines.showCatalog();
     }
 
-    /**
-     *
-     */
     public void showRefundLines(List aRefundLines) {
         // anado las lineas de refund
         // m_reflines.setLines(aRefundLines);
@@ -75,17 +63,11 @@ public class JPanelTicketEdits extends JPanelTicket {
         m_catandlines.showRefundLines(aRefundLines);
     }
 
-    /**
-     *
-     */
     @Override
     protected JTicketsBag getJTicketsBag() {
         return new JTicketsBagTicket(m_App, this);
     }
 
-    /**
-     *
-     */
     @Override
     protected Component getSouthComponent() {
 
@@ -101,9 +83,6 @@ public class JPanelTicketEdits extends JPanelTicket {
         return m_catandlines;
     }
 
-    /**
-     *
-     */
     @Override
     protected void resetSouthComponent() {
     }

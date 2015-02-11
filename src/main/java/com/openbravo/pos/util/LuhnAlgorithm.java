@@ -19,18 +19,12 @@
 
 package com.openbravo.pos.util;
 
-/**
- *
- */
 public class LuhnAlgorithm {
 
     /** Creates a new instance of LuhnAlgorithm */
     private LuhnAlgorithm() {
     }
 
-    /**
-     *
-     */
     public static boolean checkCC(String cardNumber){
         int sum = 0;
 

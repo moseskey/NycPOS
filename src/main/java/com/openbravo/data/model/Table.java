@@ -19,39 +19,24 @@
 
 package com.openbravo.data.model;
 
-/**
- *
- */
 public class Table {
 
     private String name;
     private Column[] columns;
 
-    /**
-     *
-     */
     public Table(String name, Column... columns) {
         this.name = name;
         this.columns = columns;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     *
-     */
     public Column[] getColumns() {
         return columns;
     }
 
-    /**
-     *
-     */
     public String getListSQL() {
         StringBuilder sent = new StringBuilder();
         sent.append("select ");
@@ -69,9 +54,6 @@ public class Table {
         return sent.toString();
     }
 
-    /**
-     *
-     */
     public String getInsertSQL() {
 
         StringBuilder sent = new StringBuilder();
@@ -97,9 +79,6 @@ public class Table {
         return sent.toString();
     }
 
-    /**
-     *
-     */
     public String getUpdateSQL() {
 
         StringBuilder values = new StringBuilder();
@@ -126,9 +105,6 @@ public class Table {
         return "update " + name + " set " + values + filter;
     }
 
-    /**
-     *
-     */
     public String getDeleteSQL() {
 
         StringBuilder filter = new StringBuilder();

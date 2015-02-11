@@ -29,9 +29,6 @@ import java.util.List;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public class JPanelPrinter extends JPanel implements JPanelView {
 
     /** Creates new form JPrinter
@@ -59,17 +56,11 @@ public class JPanelPrinter extends JPanel implements JPanelView {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.Printer");
@@ -83,9 +74,6 @@ public class JPanelPrinter extends JPanel implements JPanelView {
     public void activate() throws BasicException {
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
         return true;

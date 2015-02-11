@@ -31,9 +31,6 @@ import javax.swing.JFrame;
 import javax.swing.*;
 import java.awt.event.*;
 
-/**
- *
- */
 public class JCustomerFinder extends javax.swing.JDialog implements EditorCreator {
 
     private CustomerInfo selectedCustomer;
@@ -52,9 +49,6 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         super(parent, modal);
     }
 
-    /**
-     *
-     */
     public static JCustomerFinder getCustomerFinder(Component parent, DataLogicCustomers dlCustomers) {
         Window window = getWindow(parent);
 
@@ -69,9 +63,6 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         return myMsg;
     }
 
-    /**
-     *
-     */
     public CustomerInfo getSelectedCustomer() {
         return selectedCustomer;
     }
@@ -107,9 +98,6 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         selectedCustomer = null;
     }
 
-    /**
-     *
-     */
     public void search(CustomerInfo customer) {
 
         if (customer == null || customer.getName() == null || customer.getName().equals("")) {

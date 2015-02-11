@@ -37,9 +37,6 @@ import com.openbravo.pos.customers.DataLogicCustomers;
 import com.openbravo.pos.customers.JCustomerFinder;
 import com.openbravo.pos.customers.CustomerInfo;
 
-/**
- *
- */
 public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements EditorRecord {
 
     private JTicketsBagRestaurantMap m_restaurantmap;
@@ -130,23 +127,14 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         }
     }
 
-    /**
-     *
-     */
     public void activate() {
         reload(DateUtils.getTodayHours(new Date()));
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }
 
-    /**
-     *
-     */
     public boolean deactivate() {
         try {
             return m_bd.actionClosingForm(this);
@@ -157,9 +145,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_sID = null;
@@ -178,9 +163,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         m_jbtnReceive.setEnabled(false);
     }
 
-    /**
-     *
-     */
     public void writeValueInsert() {
         m_sID = null;
         m_dCreated = null;
@@ -201,9 +183,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         txtCustomer.activate();
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
         Object[] res = (Object[]) value;
@@ -228,9 +207,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         m_jbtnReceive.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
         Object[] res = (Object[]) value;
@@ -280,9 +256,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         return res;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

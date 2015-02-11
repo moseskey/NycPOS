@@ -34,31 +34,16 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- *
- */
 public final class TicketInfo implements SerializableRead, Externalizable {
 
     private static final long serialVersionUID = 2765650092387265178L;
 
-    /**
-     *
-     */
     public static final int RECEIPT_NORMAL = 0;
 
-    /**
-     *
-     */
     public static final int RECEIPT_REFUND = 1;
 
-    /**
-     *
-     */
     public static final int RECEIPT_PAYMENT = 2;
 
-    /**
-     *
-     */
     public static final int RECEIPT_NOSALE = 3;
 
     private static final DateFormat m_dateformat = new SimpleDateFormat("hh:mm");
@@ -167,9 +152,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     }
 
-    /**
-     *
-     */
     public TicketInfo copyTicket() {
         TicketInfo t = new TicketInfo();
 
@@ -197,59 +179,35 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         return t;
     }
 
-    /**
-     *
-     */
     public String getId() {
         return m_sId;
     }
 
-    /**
-     *
-     */
     public int getTicketType() {
         return tickettype;
     }
 
-    /**
-     *
-     */
     public void setTicketType(int tickettype) {
         this.tickettype = tickettype;
     }
 
-    /**
-     *
-     */
     public int getTicketId() {
         return m_iTicketId;
     }
 
-    /**
-     *
-     */
     public void setTicketId(int iTicketId) {
         m_iTicketId = iTicketId;
     // refreshLines();
     }
 
-    /**
-     *
-     */
     public void setPickupId(int iTicketId) {
         m_iPickupId = iTicketId;
     }
 
-    /**
-     *
-     */
     public int getPickupId() {
         return m_iPickupId;
     }
 
-    /**
-     *
-     */
     public String getName(Object info) {
 // JG Aug 2014 - Add User info
         StringBuilder name = new StringBuilder();
@@ -276,58 +234,34 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         return name.toString();
     }
 
-    /**
-     *
-     */
     public String getName() {
         return getName(null);
     }
 
-    /**
-     *
-     */
     public java.util.Date getDate() {
         return m_dDate;
     }
 
-    /**
-     *
-     */
     public void setDate(java.util.Date dDate) {
         m_dDate = dDate;
     }
 
-    /**
-     *
-     */
     public UserInfo getUser() {
         return m_User;
     }
 
-    /**
-     *
-     */
     public void setUser(UserInfo value) {
         m_User = value;
     }
 
-    /**
-     *
-     */
     public CustomerInfoExt getCustomer() {
         return m_Customer;
     }
 
-    /**
-     *
-     */
     public void setCustomer(CustomerInfoExt value) {
         m_Customer = value;
     }
 
-    /**
-     *
-     */
     public String getCustomerId() {
         if (m_Customer == null) {
             return null;
@@ -336,18 +270,12 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         }
     }
 
-    /**
-     *
-     */
     public String getTransactionID(){
         return (getPayments().size()>0)
             ? ( getPayments().get(getPayments().size()-1) ).getTransactionID()
             : StringUtils.getCardNumber(); //random transaction ID
     }
 
-    /**
-     *
-     */
     public String getReturnMessage(){
         return ( (getPayments().get(getPayments().size()-1)) instanceof PaymentInfoMagcard )
             ? ((PaymentInfoMagcard)(getPayments().get(getPayments().size()-1))).getReturnMessage()
@@ -355,83 +283,50 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     }
 
-    /**
-     *
-     */
     public void setActiveCash(String value) {
         m_sActiveCash = value;
     }
 
-    /**
-     *
-     */
     public String getActiveCash() {
         return m_sActiveCash;
     }
 
-    /**
-     *
-     */
     public String getProperty(String key) {
         return attributes.getProperty(key);
     }
 
-    /**
-     *
-     */
     public String getProperty(String key, String defaultvalue) {
         return attributes.getProperty(key, defaultvalue);
     }
 
-    /**
-     *
-     */
     public void setProperty(String key, String value) {
         attributes.setProperty(key, value);
     }
 
-    /**
-     *
-     */
     public Properties getProperties() {
         return attributes;
     }
 
-    /**
-     *
-     */
     public TicketLineInfo getLine(int index) {
         return m_aLines.get(index);
     }
 
-    /**
-     *
-     */
     public void addLine(TicketLineInfo oLine) {
 
         oLine.setTicket(m_sId, m_aLines.size());
         m_aLines.add(oLine);
     }
 
-    /**
-     *
-     */
     public void insertLine(int index, TicketLineInfo oLine) {
         m_aLines.add(index, oLine);
         refreshLines();
     }
 
-    /**
-     *
-     */
     public void setLine(int index, TicketLineInfo oLine) {
         oLine.setTicket(m_sId, index);
         m_aLines.set(index, oLine);
     }
 
-    /**
-     *
-     */
     public void removeLine(int index) {
         m_aLines.remove(index);
         refreshLines();
@@ -443,16 +338,10 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         }
     }
 
-    /**
-     *
-     */
     public int getLinesCount() {
         return m_aLines.size();
     }
 
-    /**
-     *
-     */
     public double getArticlesCount() {
         double dArticles = 0.0;
         TicketLineInfo oLine;
@@ -465,9 +354,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         return dArticles;
     }
 
-    /**
-     *
-     */
     public double getSubTotal() {
         double sum = 0.0;
         for (TicketLineInfo line : m_aLines) {
@@ -476,9 +362,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         return sum;
     }
 
-    /**
-     *
-     */
     public double getTax() {
 
         double sum = 0.0;
@@ -494,16 +377,10 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         return sum;
     }
 
-    /**
-     *
-     */
     public double getTotal() {
         return getSubTotal() + getTax();
     }
 
-    /**
-     *
-     */
     public double getTotalPaid() {
         double sum = 0.0;
         for (PaymentInfo p : payments) {
@@ -514,79 +391,46 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         return sum;
           }
 
-    /**
-     *
-     */
     public double getTendered() {
         return getTotalPaid();
     }
 
-    /**
-     *
-     */
     public List<TicketLineInfo> getLines() {
         return m_aLines;
     }
 
-    /**
-     *
-     */
     public void setLines(List<TicketLineInfo> l) {
         m_aLines = l;
     }
 
-    /**
-     *
-     */
     public List<PaymentInfo> getPayments() {
         return payments;
     }
 
-    /**
-     *
-     */
     public void setPayments(List<PaymentInfo> l) {
         payments = l;
     }
 
-    /**
-     *
-     */
     public void resetPayments() {
         payments = new ArrayList<>(); // JG June 2102 diamond inference
     }
 
-    /**
-     *
-     */
     public List<TicketTaxInfo> getTaxes() {
         return taxes;
     }
 
-    /**
-     *
-     */
     public boolean hasTaxesCalculated() {
         return taxes != null;
     }
 
-    /**
-     *
-     */
     public void setTaxes(List<TicketTaxInfo> l) {
         taxes = l;
     }
 
-    /**
-     *
-     */
     public void resetTaxes() {
         taxes = null;
     }
 
-    /**
-     *
-     */
     public TicketTaxInfo getTaxLine(TaxInfo tax) {
 
         for (TicketTaxInfo taxline : taxes) {
@@ -598,9 +442,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         return new TicketTaxInfo(tax);
     }
 
-    /**
-     *
-     */
     public TicketTaxInfo[] getTaxLines() {
 
         Map<String, TicketTaxInfo> m = new HashMap<>(); // JG June 2102 diamond inference
@@ -622,9 +463,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         return avalues.toArray(new TicketTaxInfo[avalues.size()]);
     }
 
-    /**
-     *
-     */
     public String printId() {
 // We need acces to the config file
       AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")), AppLocal.APP_ID + ".properties"));
@@ -655,25 +493,16 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         }
     }
 
-    /**
-     *
-     */
     public String printDate() {
         return Formats.TIMESTAMP.formatValue(m_dDate);
     }
 
-    /**
-     *
-     */
     public String printUser() {
         return m_User == null ? "" : m_User.getName();
 
     }
     /**
      * JG July 2014
-     */
-    /**
-     *
      */
     public String getHost() {
         return m_sHost;
@@ -687,95 +516,56 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
 // Added JDL 28.05.13 for loyalty card functions
 
-    /**
-     *
-     */
         public void clearCardNumber(){
         loyaltyCardNumber=null;
     }
 
-    /**
-     *
-     */
     public void setLoyaltyCardNumber(String cardNumber){
         loyaltyCardNumber=cardNumber;
     }
 
-    /**
-     *
-     */
     public String getLoyaltyCardNumber(){
         return (loyaltyCardNumber);
     }
 // Loyalty card functions added
 
-    /**
-     *
-     */
     public String printCustomer() {
         return m_Customer == null ? "" : m_Customer.getName();
     }
 
-    /**
-     *
-     */
     public String printArticlesCount() {
         return Formats.DOUBLE.formatValue(getArticlesCount());
     }
 
-    /**
-     *
-     */
     public String printSubTotal() {
         return Formats.CURRENCY.formatValue(getSubTotal());
     }
 
-    /**
-     *
-     */
     public String printTax() {
         return Formats.CURRENCY.formatValue(getTax());
     }
 
-    /**
-     *
-     */
     public String printTotal() {
         return Formats.CURRENCY.formatValue(getTotal());
     }
 
-    /**
-     *
-     */
     public String printTotalPaid() {
         return Formats.CURRENCY.formatValue(getTotalPaid());
     }
 
-    /**
-     *
-     */
     public String printTendered() {
         return Formats.CURRENCY.formatValue(getTendered());
     }
 
-    /**
-     *
-     */
     public String VoucherReturned(){
         return Formats.CURRENCY.formatValue(getTotalPaid()- getTotal());
     }
 //Added JDl 03.07.13
 
-    /**
-     *
-     */
     public boolean getOldTicket() {
 	return (oldTicket);
 }
 
-    /**
-     *
-     */
     public void setOldTicket(Boolean otState) {
 	oldTicket = otState;
 }

@@ -31,24 +31,12 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-/**
- *
- */
 public class JTimePanel extends javax.swing.JPanel {
 
-    /**
-     *
-     */
     public final static int BUTTONS_ALL = 3;
 
-    /**
-     *
-     */
     public final static int BUTTONS_HOUR = 1;
 
-    /**
-     *
-     */
     public final static int BUTTONS_MINUTE = 2;
 
     private DateFormat fmtTime = DateFormat.getTimeInstance(DateFormat.SHORT);
@@ -69,16 +57,10 @@ public class JTimePanel extends javax.swing.JPanel {
         this(null, BUTTONS_ALL);
     }
 
-    /**
-     *
-     */
     public JTimePanel(Date dDate) {
         this(dDate, BUTTONS_ALL);
     }
 
-    /**
-     *
-     */
     public JTimePanel(Date dDate, int iButtons) {
         super();
 
@@ -138,16 +120,10 @@ public class JTimePanel extends javax.swing.JPanel {
         renderTime();
     }
 
-    /**
-     *
-     */
     public void setDateMidNight() {
         setDate(new GregorianCalendar(1900, 0, 0, 0, 0).getTime());
     }
 
-    /**
-     *
-     */
     public void setDate(Date dNewDate) {
 
         Date dOldDate = m_jclock.getTime();
@@ -163,16 +139,10 @@ public class JTimePanel extends javax.swing.JPanel {
         return dDate == null || (m_dMaxDate == null || m_dMaxDate.compareTo(dDate) > 0) && (m_dMinDate == null || m_dMinDate.compareTo(dDate) <= 0);
     }
 
-    /**
-     *
-     */
     public Date getDate() {
         return m_jclock.getTime();
     }
 
-    /**
-     *
-     */
     public void setCheckDates(Date dMinDate, Date dMaxDate) {
 
         m_dMinDate = dMinDate;
@@ -188,9 +158,6 @@ public class JTimePanel extends javax.swing.JPanel {
         renderTime();
     }
 
-    /**
-     *
-     */
     public void setPeriod(long period) {
         m_jclock.setPeriod(period);
         renderTime();

@@ -30,9 +30,6 @@ import java.util.UUID;
 import javax.swing.JPanel;
 
 
-/**
- *
- */
 public final class FloorsEditor extends JPanel implements EditorRecord {
 
 //    private DirtyManager m_Dirty = new DirtyManager();
@@ -49,9 +46,6 @@ public final class FloorsEditor extends JPanel implements EditorRecord {
         writeValueEOF();
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
 
@@ -63,9 +57,6 @@ public final class FloorsEditor extends JPanel implements EditorRecord {
         m_jImage.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
 
@@ -77,9 +68,6 @@ public final class FloorsEditor extends JPanel implements EditorRecord {
         m_jImage.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
 
@@ -92,9 +80,6 @@ public final class FloorsEditor extends JPanel implements EditorRecord {
         m_jImage.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
 
@@ -122,17 +107,11 @@ public final class FloorsEditor extends JPanel implements EditorRecord {
         return floor;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }

@@ -4,26 +4,17 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- *
- */
 public class DateUtils {
 
     /** Creates a new instance of DateUtils */
     private DateUtils() {
     }
 
-    /**
-     *
-     */
     public static Date getToday() {
         // el dia de hoy sin horas ni nada.
         return getToday(new Date());
     }
 
-    /**
-     *
-     */
     public static Date getToday(Date d) {
         // el dia de hoy sin horas ni nada.
         GregorianCalendar ddate = new GregorianCalendar();
@@ -32,17 +23,11 @@ public class DateUtils {
         return ddateday.getTime();
     }
 
-    /**
-     *
-     */
     public static Date getTodayMinutes() {
         // el dia de hoy sin horas ni nada.
         return getTodayMinutes(new Date());
     }
 
-    /**
-     *
-     */
     public static Date getTodayMinutes(Date d) {
         // el dia de hoy sin horas ni nada.
         GregorianCalendar ddate = new GregorianCalendar();
@@ -52,9 +37,6 @@ public class DateUtils {
         return ddateday.getTime();
     }
 
-    /**
-     *
-     */
     public static Date getTodayHours(Date d) {
         // el dia ajustado a las horeas
         Calendar ddate = Calendar.getInstance();
@@ -68,9 +50,6 @@ public class DateUtils {
         return dNow.getTime();
     }
 
-    /**
-     *
-     */
     public static Date getDate(Date day, Date hour) {
 
         // Calculamos el dia actual con la hora escogida.

@@ -24,29 +24,14 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public class PrintItemLine implements PrintItem {
 
-    /**
-     *
-     */
     protected Font font;
 
-    /**
-     *
-     */
     protected int fontheight;
 
-    /**
-     *
-     */
     protected int textsize;
 
-    /**
-     *
-     */
     protected List<StyledText> m_atext;
 
     /** Creates a new instance of PrinterItemLine
@@ -60,16 +45,10 @@ public class PrintItemLine implements PrintItem {
         m_atext = new ArrayList<>();
     }
 
-    /**
-     *
-     */
     public void addText(int style, String text) {
         m_atext.add(new StyledText(style, text));
     }
 
-    /**
-     *
-     */
     @Override
     public void draw(Graphics2D g, int x, int y, int width) {
 
@@ -83,35 +62,20 @@ public class PrintItemLine implements PrintItem {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public int getHeight() {
         return fontheight * MyPrinterState.getLineMult(textsize);
     }
 
-    /**
-     *
-     */
     protected static class StyledText {
 
-        /**
-         *
-         */
         public StyledText(int style, String text) {
             this.style = style;
             this.text = text;
         }
 
-        /**
-         *
-         */
         public int style;
 
-        /**
-         *
-         */
         public String text;
     }
 }

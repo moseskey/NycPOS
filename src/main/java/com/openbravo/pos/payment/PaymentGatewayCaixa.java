@@ -36,9 +36,6 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-/**
- *
- */
 public class PaymentGatewayCaixa implements PaymentGateway {
 
     private static String ENDPOINTADDRESS;
@@ -54,9 +51,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
     private boolean bSha;
     private boolean m_bTestMode;
 
-    /**
-     *
-     */
     public PaymentGatewayCaixa (AppProperties props) {
         AltEncrypter cypher = new AltEncrypter("cypherkey");
         this.sCommerceSign = cypher.decrypt(props.getProperty("payment.commercesign").substring(6));
@@ -78,9 +72,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 
     }
 
-    /**
-     *
-     */
     public PaymentGatewayCaixa(){
 
     }
@@ -92,9 +83,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
         return nf.format( Math.abs(r.nextInt()) + (Math.abs(System.currentTimeMillis()) % 1000000) );
     }
 
-    /**
-     *
-     */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {
         //merchantCode = "999008881";
@@ -271,9 +259,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 
     }
 
-    /**
-     *
-     */
     public String getSHA1(String input){
         byte[] output = null;
         try {
@@ -286,9 +271,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
         return StringUtils.byte2hex(output);
     }
 
-    /**
-     *
-     */
     public class LaCaixaParser extends DefaultHandler {
 
     private SAXParser m_sp = null;
@@ -297,16 +279,10 @@ public class PaymentGatewayCaixa implements PaymentGateway {
     private InputStream is;
     private String result;
 
-        /**
-         *
-         */
         public LaCaixaParser(String in) {
         is = new ByteArrayInputStream(in.getBytes());
     }
 
-        /**
-         *
-         */
         public Map splitXML(){
         try {
             if (m_sp == null) {
@@ -409,9 +385,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
         }
     }
 
-        /**
-         *
-         */
         public String getResult(){
         return this.result;
     }

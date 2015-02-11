@@ -68,33 +68,21 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
         dp.setString(4, CustomerName);
     }
 
-    /**
-     *
-     */
     public String getId() {
         return id;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return name;
     }
 
 // JG Aug 2014 - Add User info
 
-    /**
-     *
-     */
         public String getAppUser() {
         return UserName;
     }
 // JG Aug 2014 - Add Customer info
 
-    /**
-     *
-     */
         public String getCustomerName() {
         return CustomerName;
     }

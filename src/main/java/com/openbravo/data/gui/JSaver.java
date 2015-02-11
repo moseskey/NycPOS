@@ -26,14 +26,8 @@ import com.openbravo.data.loader.LocalRes;
 import com.openbravo.data.user.BrowsableEditableData;
 import com.openbravo.data.user.StateListener;
 
-/**
- *
- */
 public class JSaver extends JPanel implements StateListener {
 
-    /**
-     *
-     */
     protected BrowsableEditableData m_bd;
 
     /** Creates new form JSaver
@@ -48,9 +42,6 @@ public class JSaver extends JPanel implements StateListener {
         m_bd.addStateListener(this);
     }
 
-    /**
-     *
-     */
     @Override
     public void updateState(int iState) {
         switch  (iState) {

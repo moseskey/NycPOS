@@ -21,9 +21,6 @@ package com.openbravo.pos.payment;
 
 import java.awt.*;
 
-/**
- *
- */
 public class JPaymentSelectRefund extends JPaymentSelect {
 
     /** Creates new form JPaymentSelect
@@ -37,9 +34,6 @@ public class JPaymentSelectRefund extends JPaymentSelect {
         super(parent, modal, o);
     }
 
-    /**
-     *
-     */
     public static JPaymentSelect getDialog(Component parent) {
 
         Window window = getWindow(parent);
@@ -51,9 +45,6 @@ public class JPaymentSelectRefund extends JPaymentSelect {
         }
     }
 
-    /**
-     *
-     */
     @Override
     protected void addTabs() {
 
@@ -64,9 +55,6 @@ public class JPaymentSelectRefund extends JPaymentSelect {
         setHeaderVisible(false);
     }
 
-    /**
-     *
-     */
     @Override
     protected void setStatusPanel(boolean isPositive, boolean isComplete) {
 
@@ -74,9 +62,6 @@ public class JPaymentSelectRefund extends JPaymentSelect {
         setOKEnabled(isComplete);
     }
 
-    /**
-     *
-     */
     @Override
     protected PaymentInfo getDefaultPayment(double total) {
         return new PaymentInfoTicket(total, "cashrefund");

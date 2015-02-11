@@ -26,9 +26,6 @@ import com.openbravo.data.user.DirtyManager;
 import com.openbravo.data.user.EditorRecord;
 import com.openbravo.pos.forms.AppView;
 
-/**
- *
- */
 public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord {
 
     private Object m_oId;
@@ -54,9 +51,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
         writeValueEOF();
     }
 
-    /**
-     *
-     */
     public void writeValueEOF() {
         m_oId = null;
         m_jCIF.setText(null);
@@ -85,9 +79,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
         m_jNotes.setEnabled(false);
     }
 
-    /**
-     *
-     */
     public void writeValueInsert() {
         m_oId = null;
         m_jCIF.setText(null);
@@ -116,9 +107,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
         m_jNotes.setEnabled(true);
     }
 
-    /**
-     *
-     */
     public void writeValueDelete(Object value) {
         Object[] thirdparty = (Object[]) value;
         m_oId = thirdparty[0];
@@ -148,9 +136,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
         m_jNotes.setEnabled(false);
     }
 
-    /**
-     *
-     */
     public void writeValueEdit(Object value) {
         Object[] thirdparty = (Object[]) value;
         m_oId = thirdparty[0];
@@ -204,16 +189,10 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
         return thirdparty;
     }
 
-    /**
-     *
-     */
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     public void refresh() {
     }
 

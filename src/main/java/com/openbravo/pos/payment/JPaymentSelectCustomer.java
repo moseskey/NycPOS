@@ -21,9 +21,6 @@ package com.openbravo.pos.payment;
 
 import java.awt.*;
 
-/**
- *
- */
 public class JPaymentSelectCustomer extends JPaymentSelect {
 
     /** Creates new form JPaymentSelect
@@ -37,9 +34,6 @@ public class JPaymentSelectCustomer extends JPaymentSelect {
         super(parent, modal, o);
     }
 
-    /**
-     *
-     */
     public static JPaymentSelect getDialog(Component parent) {
 
         Window window = getWindow(parent);
@@ -51,9 +45,6 @@ public class JPaymentSelectCustomer extends JPaymentSelect {
         }
     }
 
-    /**
-     *
-     */
     @Override
     protected void addTabs() {
 // Bank Payment Receipt - Thanks Steve Clough! August 2011
@@ -65,9 +56,6 @@ public class JPaymentSelectCustomer extends JPaymentSelect {
         setHeaderVisible(true);
     }
 
-    /**
-     *
-     */
     @Override
     protected void setStatusPanel(boolean isPositive, boolean isComplete) {
 
@@ -75,9 +63,6 @@ public class JPaymentSelectCustomer extends JPaymentSelect {
         setOKEnabled(isPositive);
     }
 
-    /**
-     *
-     */
     @Override
     protected PaymentInfo getDefaultPayment(double total) {
         return new PaymentInfoCash_original(total, total);

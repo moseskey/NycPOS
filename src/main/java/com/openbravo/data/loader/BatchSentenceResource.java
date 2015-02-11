@@ -25,9 +25,6 @@ import java.io.Reader;
 import com.openbravo.basic.BasicException;
 import java.io.UnsupportedEncodingException;
 
-/**
- *
- */
 public class BatchSentenceResource extends BatchSentence {
 
     private String m_sResScript;

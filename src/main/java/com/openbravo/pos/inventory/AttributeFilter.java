@@ -29,9 +29,6 @@ import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-/**
- *
- */
 public class AttributeFilter extends javax.swing.JPanel implements ReportEditorCreator {
 
     private SentenceList attsent;
@@ -42,9 +39,6 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
 
@@ -70,32 +64,20 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
         jAttr.setModel(attmodel);
     }
 
-    /**
-     *
-     */
     @Override
     public SerializerWrite getSerializerWrite() {
         return SerializerWriteString.INSTANCE;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     public void addActionListener(ActionListener l) {
         jAttr.addActionListener(l);
     }
 
-    /**
-     *
-     */
     public void removeActionListener(ActionListener l) {
         jAttr.removeActionListener(l);
     }

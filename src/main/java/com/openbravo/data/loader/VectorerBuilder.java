@@ -22,9 +22,6 @@ package com.openbravo.data.loader;
 import java.util.*;
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public abstract class VectorerBuilder implements Vectorer {
 
     /** Creates a new instance of VectorerBuilder */

@@ -30,9 +30,6 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import javax.swing.*;
 
-/**
- *
- */
 public class JPanelCSVCleardb extends JPanel implements JPanelView {
 
     private Connection con;
@@ -40,17 +37,11 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
     private String SQL;
     private AppConfig config;
 
-    /**
-     *
-     */
     public JPanelCSVCleardb(AppView oApp) {
         this(oApp.getProperties());
 
     }
 
-    /**
-     *
-     */
     public JPanelCSVCleardb(AppProperties props) {
 
         initComponents();
@@ -65,17 +56,11 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
 
         }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.CSVReset");
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
@@ -106,9 +91,6 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
 
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {        try{
             stmt.close();

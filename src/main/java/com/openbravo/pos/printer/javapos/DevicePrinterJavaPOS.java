@@ -33,9 +33,6 @@ import jpos.JposException;
 import jpos.POSPrinter;
 import jpos.POSPrinterConst;
 
-/**
- *
- */
 public class DevicePrinterJavaPOS  implements DevicePrinter {
 
     private static final String JPOS_SIZE0 = "\u001b|1C";
@@ -85,40 +82,25 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public String getPrinterName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     @Override
     public String getPrinterDescription() {
         return null;
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getPrinterComponent() {
         return null;
     }
 
-    /**
-     *
-     */
     @Override
     public void reset() {
     }
 
-    /**
-     *
-     */
     @Override
     public void beginReceipt() {
         try {
@@ -127,9 +109,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void printImage(BufferedImage image) {
         try {
@@ -147,16 +126,10 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void printLogo(){
     }
 
-    /**
-     *
-     */
     @Override
     public void printBarCode(String type, String position, String code) {
         try {
@@ -171,9 +144,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void beginLine(int iTextSize) {
         m_sline = new StringBuilder();
@@ -190,9 +160,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void printText(int iStyle, String sText) {
 
@@ -205,9 +172,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
         m_sline.append(sText);
     }
 
-    /**
-     *
-     */
     @Override
     public void endLine() {
 
@@ -219,9 +183,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
         m_sline = null;
     }
 
-    /**
-     *
-     */
     @Override
     public void endReceipt() {
         try {
@@ -234,9 +195,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void openDrawer() {
 

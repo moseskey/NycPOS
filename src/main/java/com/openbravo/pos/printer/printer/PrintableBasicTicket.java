@@ -27,9 +27,6 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 
-/**
- *
- */
 public class PrintableBasicTicket implements Printable {
 
     private int imageable_width;
@@ -39,9 +36,6 @@ public class PrintableBasicTicket implements Printable {
 
     private BasicTicket ticket;
 
-    /**
-     *
-     */
     public PrintableBasicTicket(BasicTicket ticket, int imageable_x, int imageable_y, int imageable_width, int imageable_height) {
         this.ticket = ticket;
         this.imageable_x = imageable_x;

@@ -48,9 +48,6 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
     public PriceImportPanel() {
     }
 
-    /**
-     *
-     */
     @Override
     protected void init() {
         m_dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -72,25 +69,16 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
         jeditor = new ProductsEditor(m_dlSales, dirty);
     }
 
-    /**
-     *
-     */
     @Override
     public EditorRecord getEditor() {
         return jeditor;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getFilter() {
         return jproductfilter.getComponent();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getToolbarExtras() {
 
@@ -112,9 +100,6 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
         JDlgUploadProducts.showMessage(this, app.getDeviceScanner(), bd);
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.StockImport");
@@ -133,9 +118,6 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
         super.activate();
     }
 
-    /**
-     *
-     */
     @Override
     public void updateValue(Object value) {
     }

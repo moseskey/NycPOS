@@ -22,9 +22,6 @@ package com.openbravo.data.loader;
 import java.util.*;
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class NormalBuilder implements ISQLBuilderStatic {
 
     private String m_sSentence;

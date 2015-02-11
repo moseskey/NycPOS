@@ -31,9 +31,6 @@ import java.awt.Component;
 import java.util.UUID;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public final class PlacesEditor extends JPanel implements EditorRecord {
 
     private SentenceList m_sentfloor;
@@ -67,16 +64,10 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
         m_jFloor.setModel(m_FloorModel);
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
 
@@ -92,9 +83,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
         m_jY.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
 
@@ -110,9 +98,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
         m_jY.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
 
@@ -130,9 +115,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
         m_jY.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
 
@@ -165,9 +147,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
         return place;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

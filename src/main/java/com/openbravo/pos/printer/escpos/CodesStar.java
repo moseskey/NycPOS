@@ -23,16 +23,10 @@ import com.openbravo.pos.printer.DevicePrinter;
 import com.openbravo.pos.printer.DeviceTicket;
 import java.awt.image.BufferedImage;
 
-/**
- *
- */
 public class CodesStar extends Codes {
 
     // set line interspacing to 4mm
 
-    /**
-     *
-     */
         public static final byte[] INITSEQUENCE = {0x1B, 0x7A, 0x01};
 
     private static final byte[] CHAR_SIZE_0 = {0x1B, 0x69, 0x00, 0x00};
@@ -59,99 +53,51 @@ public class CodesStar extends Codes {
     public CodesStar() {
     }
 
-    /**
-     *
-     */
     @Override
     public byte[] getInitSequence() { return INITSEQUENCE; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getSize0() { return CHAR_SIZE_0; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getSize1() { return CHAR_SIZE_1; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getSize2() { return CHAR_SIZE_2; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getSize3() { return CHAR_SIZE_3; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getBoldSet() { return BOLD_SET; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getBoldReset() { return BOLD_RESET; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getUnderlineSet() { return UNDERLINE_SET; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getUnderlineReset() { return UNDERLINE_RESET; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getOpenDrawer() { return OPEN_DRAWER; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getCutReceipt() { return PARTIAL_CUT; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getNewLine() { return NEW_LINE; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getImageHeader() { return IMAGE_HEADER; }
 
-    /**
-     *
-     */
     @Override
     public int getImageWidth() { return 192; }
 
-    /**
-     *
-     */
     @Override
     public byte[] getImageLogo(){ return IMAGE_LOGO; }
 
-    /**
-     *
-     */
     @Override
     public byte[] transImage(BufferedImage image) {
 
@@ -206,9 +152,6 @@ public class CodesStar extends Codes {
         return bData;
     }
 
-    /**
-     *
-     */
     @Override
     public void printBarcode(PrinterWritter out, String type, String position, String code) {
 

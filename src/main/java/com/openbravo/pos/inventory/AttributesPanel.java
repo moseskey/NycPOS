@@ -26,9 +26,6 @@ import com.openbravo.format.Formats;
 import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.panels.JPanelTable2;
 
-/**
- *
- */
 public class AttributesPanel extends JPanelTable2 {
 
     private EditorRecord editor;
@@ -37,9 +34,6 @@ public class AttributesPanel extends JPanelTable2 {
     public AttributesPanel() {
     }
 
-    /**
-     *
-     */
     @Override
     protected void init() {
 
@@ -59,17 +53,11 @@ public class AttributesPanel extends JPanelTable2 {
         editor = new AttributesEditor(dirty);
     }
 
-    /**
-     *
-     */
     @Override
     public EditorRecord getEditor() {
         return editor;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.Attributes");

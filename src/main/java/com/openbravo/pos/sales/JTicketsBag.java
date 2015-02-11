@@ -27,24 +27,12 @@ import com.openbravo.pos.sales.simple.JTicketsBagSimple;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public abstract class JTicketsBag extends JPanel {
 
-    /**
-     *
-     */
     protected AppView m_App;
 
-    /**
-     *
-     */
     protected DataLogicSales m_dlSales;
 
-    /**
-     *
-     */
     protected TicketsEditor m_panelticket;
 
     /** Creates new form JTicketsBag
@@ -55,34 +43,16 @@ public abstract class JTicketsBag extends JPanel {
         m_dlSales = (DataLogicSales) m_App.getBean("com.openbravo.pos.forms.DataLogicSales");
     }
 
-    /**
-     *
-     */
     public abstract void activate();
 
-    /**
-     *
-     */
     public abstract boolean deactivate();
 
-    /**
-     *
-     */
     public abstract void deleteTicket();
 
-    /**
-     *
-     */
     protected abstract JComponent getBagComponent();
 
-    /**
-     *
-     */
     protected abstract JComponent getNullComponent();
 
-    /**
-     *
-     */
     public static JTicketsBag createTicketsBag(String sName, AppView app, TicketsEditor panelticket) {
         switch (sName) {
             case "standard":

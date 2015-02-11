@@ -43,9 +43,6 @@ public class LocationInfo implements SerializableRead, IKeyed {
         m_sAddress = null;
     }
 
-    /**
-     *
-     */
     public Object getKey() {
         return m_sID;
     }
@@ -60,44 +57,26 @@ public class LocationInfo implements SerializableRead, IKeyed {
         m_sAddress = dr.getString(3);
     }
 
-    /**
-     *
-     */
     public void setID(String sID) {
         m_sID = sID;
     }
 
-    /**
-     *
-     */
     public String getID() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void setName(String sName) {
         m_sName = sName;
     }
 
-    /**
-     *
-     */
     public String getAddress() {
         return m_sAddress;
     }
 
-    /**
-     *
-     */
     public void setAddress(String sAddress) {
         m_sAddress = sAddress;
     }

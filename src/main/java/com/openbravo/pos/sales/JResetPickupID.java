@@ -37,16 +37,10 @@ import org.pushingpixels.substance.api.SubstanceSkin;
 import com.openbravo.pos.sales.JResetPickupID;
 
 
-/**
- *
- */
 public class JResetPickupID extends javax.swing.JFrame {
 
     private JPanelResetPickupId config;
 
-    /**
-     *
-     */
     public JResetPickupID(AppProperties props) {
 
         initComponents();

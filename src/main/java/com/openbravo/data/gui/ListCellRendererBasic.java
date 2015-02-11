@@ -23,9 +23,6 @@ import com.openbravo.data.loader.IRenderString;
 import java.awt.*;
 import javax.swing.*;
 
-/**
- *
- */
 public class ListCellRendererBasic extends DefaultListCellRenderer {
 
     private IRenderString m_renderer;

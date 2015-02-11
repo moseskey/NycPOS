@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.scanpal2;
 
-/**
- *
- */
 public interface DeviceScanner {
 
     /**
@@ -30,9 +27,6 @@ public interface DeviceScanner {
      */
     public void connectDevice() throws DeviceScannerException;
 
-    /**
-     *
-     */
     public void disconnectDevice();
 
     /**

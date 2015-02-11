@@ -32,46 +32,28 @@ public class TaxCategoryInfo implements Serializable, IKeyed {
     private String m_sID;
     private String m_sName;
 
-    /**
-     *
-     */
     public TaxCategoryInfo(String sID, String sName) {
         m_sID = sID;
         m_sName = sName;
     }
 
-    /**
-     *
-     */
     @Override
     public Object getKey() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public void setID(String sID) {
         m_sID = sID;
     }
 
-    /**
-     *
-     */
     public String getID() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void setName(String sName) {
         m_sName = sName;
     }

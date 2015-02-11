@@ -17,9 +17,6 @@ import javax.xml.rpc.ServiceException;
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
 
-/**
- *
- */
 public class PaymentGatewayPayPoint implements PaymentGateway {
 
     private static final String ENDPOINTADDRESS = "https://www.secpay.com/java-bin/soap";
@@ -52,16 +49,10 @@ public class PaymentGatewayPayPoint implements PaymentGateway {
             : Currency.getInstance(Locale.getDefault()).getCurrencyCode();
     }
 
-    /**
-     *
-     */
     public PaymentGatewayPayPoint(){
 
     }
 
-    /**
-     *
-     */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {
         //test -> login: secpay / pass: secpay

@@ -24,16 +24,10 @@ import com.openbravo.pos.forms.AppLocal;
 import java.awt.Component;
 import javax.swing.ImageIcon;
 
-/**
- *
- */
 public class ScaleDialog implements Scale {
 
     private Component parent;
 
-    /**
-     *
-     */
     public ScaleDialog(Component parent) {
         this.parent = parent;
     }

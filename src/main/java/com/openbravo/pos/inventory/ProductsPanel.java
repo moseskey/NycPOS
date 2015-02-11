@@ -47,9 +47,6 @@ public class ProductsPanel extends JPanelTable2 implements EditorListener {
     public ProductsPanel() {
     }
 
-    /**
-     *
-     */
     @Override
     protected void init() {
         m_dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -137,9 +134,6 @@ public class ProductsPanel extends JPanelTable2 implements EditorListener {
         super.activate();
     }
 
-    /**
-     *
-     */
     @Override
     public void updateValue(Object value) {
     }

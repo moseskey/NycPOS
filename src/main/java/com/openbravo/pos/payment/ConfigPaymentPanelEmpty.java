@@ -22,9 +22,6 @@ package com.openbravo.pos.payment;
 import com.openbravo.pos.forms.AppConfig;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public class ConfigPaymentPanelEmpty extends javax.swing.JPanel implements PaymentConfiguration {
 
     /** Creates new form ConfigPaymentPanelGeneric */
@@ -32,25 +29,16 @@ public class ConfigPaymentPanelEmpty extends javax.swing.JPanel implements Payme
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public JPanel getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
 

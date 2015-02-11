@@ -29,9 +29,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-/**
- *
- */
 public class PaymentGatewayPGNET implements PaymentGateway {
 
     private static String ENDPOINTADDRESS;
@@ -43,9 +40,6 @@ public class PaymentGatewayPGNET implements PaymentGateway {
     private String m_sCommercePassword;
     private boolean m_bTestMode;
 
-    /**
-     *
-     */
     public PaymentGatewayPGNET(AppProperties props) {
         // Grab some configuration variables
         m_sCommerceID = props.getProperty("payment.commerceid");
@@ -60,16 +54,10 @@ public class PaymentGatewayPGNET implements PaymentGateway {
                 : "https://www.paymentsgateway.net/cgi-bin/postauth.pl";
     }
 
-    /**
-     *
-     */
     public PaymentGatewayPGNET(){
 
     }
 
-    /**
-     *
-     */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {
 

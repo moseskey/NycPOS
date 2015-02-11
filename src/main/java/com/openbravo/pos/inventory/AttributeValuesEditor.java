@@ -27,9 +27,6 @@ import com.openbravo.pos.forms.AppLocal;
 import java.awt.Component;
 import java.util.UUID;
 
-/**
- *
- */
 public class AttributeValuesEditor extends javax.swing.JPanel implements EditorRecord {
 
     private Object id;
@@ -46,24 +43,15 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
         jValue.getDocument().addDocumentListener(dirty);
     }
 
-    /**
-     *
-     */
     public void setInsertId(String insertid) {
 
         this.insertid = insertid;
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
 
@@ -74,9 +62,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
         jValue.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
 
@@ -87,9 +72,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
         jValue.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
 
@@ -102,9 +84,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
         jValue.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
 
@@ -117,9 +96,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
         jValue.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

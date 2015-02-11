@@ -24,23 +24,14 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- */
 public class StaticSentence extends JDBCSentence {
 
     private static final Logger logger = Logger.getLogger("com.openbravo.data.loader.StaticSentence");
 
     private ISQLBuilderStatic m_sentence;
 
-    /**
-     *
-     */
     protected SerializerWrite m_SerWrite = null;
 
-    /**
-     *
-     */
     protected SerializerRead m_SerRead = null;
 
     // Estado

@@ -50,9 +50,6 @@ import javax.swing.table.TableColumnModel;
 // import org.joda.time.format.DateTimeFormatter;
 
 
-/**
- *
- */
 public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryApp {
 
     private AppView m_App;
@@ -120,25 +117,16 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         }
     }
 
-    /**
-     *
-     */
     @Override
     public Object getBean() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.CloseTPV");
@@ -153,9 +141,6 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         loadData();
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
         // se me debe permitir cancelar el deactivate

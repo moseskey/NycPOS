@@ -35,9 +35,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
     private double m_dAmount;
     private String m_sUnit;
 
-    /**
-     *
-     */
     public MaterialProdInfo() {
         m_sID = null;
         m_sName = null;
@@ -46,9 +43,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
         m_sUnit = null;
     }
 
-    /**
-     *
-     */
     public MaterialProdInfo(ProductInfoExt p) {
         m_sID = p.getID();
         m_sName = p.getName();
@@ -69,79 +63,46 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
         m_sUnit = dr.getString(5);
     }
 
-    /**
-     *
-     */
     public void setID (String id) {
         m_sID = id;
     }
 
-    /**
-     *
-     */
     public String getID() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public void setName (String name) {
         m_sName = name;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void setPriceBuy (double price) {
         m_dPriceBuy = price;
     }
 
-    /**
-     *
-     */
     public double getPriceBuy() {
         return m_dPriceBuy;
     }
 
-    /**
-     *
-     */
     public void setAmount (double amount) {
         m_dAmount = amount;
     }
 
-    /**
-     *
-     */
     public double getAmount() {
         return m_dAmount;
     }
 
-    /**
-     *
-     */
     public void setUnit (String unit) {
         m_sUnit = unit;
     }
 
-    /**
-     *
-     */
     public String getUnit() {
         return m_sUnit;
     }
 
-    /**
-     *
-     */
     @Override
     public Object getKey() {
         return m_sID;

@@ -22,9 +22,6 @@ package com.openbravo.pos.payment;
 import com.openbravo.pos.forms.AppLocal;
 import javax.swing.JComponent;
 
-/**
- *
- */
 public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPanel {
 
     private JPaymentNotifier m_notifier;
@@ -55,17 +52,11 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
         }
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent(){
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void activate(String sTransaction, double dTotal) {
 
@@ -100,9 +91,6 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
         }
     }
 
-    /**
-     *
-     */
     @Override
     public PaymentInfoMagcard getPaymentInfoMagcard() {
 

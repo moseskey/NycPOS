@@ -29,9 +29,6 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.forms.AppView;
 import java.awt.Component;
 
-/**
- *
- */
 public final class JParamsText extends javax.swing.JPanel implements ReportEditorCreator {
 
     private Datas datasvalue;
@@ -46,9 +43,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
         setType(Formats.STRING);
     }
 
-    /**
-     *
-     */
     public JParamsText(String label) {
 
         initComponents();
@@ -57,9 +51,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
         setType(Formats.STRING);
     }
 
-    /**
-     *
-     */
     public JParamsText(String label, Formats format) {
 
         initComponents();
@@ -68,9 +59,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
         setType(format);
     }
 
-    /**
-     *
-     */
     public JParamsText(String label, Formats format, Datas data) {
 
         initComponents();
@@ -79,25 +67,16 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
         setType(format, data);
     }
 
-    /**
-     *
-     */
     public void setLabel(String label) {
         lblField.setText(label);
     }
 
-    /**
-     *
-     */
     public void setType(Formats format, Datas data) {
         formatsvalue = format;
         datasvalue = data;
         setDefaultCompare();
     }
 
-    /**
-     *
-     */
     public void setType(Formats format) {
 
         if (Formats.INT == format) {
@@ -113,9 +92,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
         }
     }
 
-    /**
-     *
-     */
     public void setCompare(QBFCompareEnum compare) {
         comparevalue = compare;
     }
@@ -134,9 +110,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
     }
@@ -150,17 +123,11 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
         txtField.setText(null);
     }
 
-    /**
-     *
-     */
     @Override
     public SerializerWrite getSerializerWrite() {
         return new SerializerWriteBasic(new Datas[] {Datas.OBJECT, datasvalue});
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

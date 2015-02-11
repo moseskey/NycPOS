@@ -23,9 +23,6 @@ import com.openbravo.format.Formats;
 import com.openbravo.pos.ticket.ProductInfoExt;
 import com.openbravo.pos.util.StringUtils;
 
-/**
- *
- */
 public class InventoryLine {
 
     private double m_dMultiply;
@@ -50,9 +47,6 @@ public class InventoryLine {
         attsetinstdesc = null;
     }
 
-    /**
-     *
-     */
     public InventoryLine(ProductInfoExt oProduct, double dpor, double dprice) {
         m_sProdID = oProduct.getID();
         m_sProdName = oProduct.getName();
@@ -63,109 +57,64 @@ public class InventoryLine {
         attsetinstdesc = null;
     }
 
-    /**
-     *
-     */
     public String getProductID() {
         return m_sProdID;
     }
 
-    /**
-     *
-     */
     public String getProductName() {
         return m_sProdName;
     }
 
-    /**
-     *
-     */
     public void setProductName(String sValue) {
         if (m_sProdID == null) {
             m_sProdName = sValue;
         }
     }
 
-    /**
-     *
-     */
     public double getMultiply() {
         return m_dMultiply;
     }
 
-    /**
-     *
-     */
     public void setMultiply(double dValue) {
         m_dMultiply = dValue;
     }
 
-    /**
-     *
-     */
     public double getPrice() {
         return m_dPrice;
     }
 
-    /**
-     *
-     */
     public void setPrice(double dValue) {
         m_dPrice = dValue;
     }
 
-    /**
-     *
-     */
     public double getSubValue() {
         return m_dMultiply * m_dPrice;
     }
 
-    /**
-     *
-     */
     public String getProductAttSetInstId() {
         return attsetinstid;
     }
 
-    /**
-     *
-     */
     public void setProductAttSetInstId(String value) {
         attsetinstid = value;
     }
 
-    /**
-     *
-     */
     public String getProductAttSetId() {
         return attsetid;
     }
 
-    /**
-     *
-     */
     public String getProductAttSetInstDesc() {
         return attsetinstdesc;
     }
 
-    /**
-     *
-     */
     public void setProductAttSetInstDesc(String value) {
         attsetinstdesc = value;
     }
 
-    /**
-     *
-     */
     public String printName() {
         return StringUtils.encodeXML(m_sProdName);
     }
 
-    /**
-     *
-     */
     public String printPrice() {
         if (m_dMultiply == 1.0) {
             return "";
@@ -174,16 +123,10 @@ public class InventoryLine {
         }
     }
 
-    /**
-     *
-     */
     public String printMultiply() {
         return Formats.DOUBLE.formatValue(m_dMultiply);
     }
 
-    /**
-     *
-     */
     public String printSubValue() {
         return Formats.CURRENCY.formatValue(getSubValue());
     }

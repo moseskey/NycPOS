@@ -30,9 +30,6 @@ import java.awt.event.ActionEvent;
 import java.util.Date;
 import javax.swing.*;
 
-/**
- *
- */
 public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanelView, BeanFactoryApp {
 
     private AppView app;
@@ -109,9 +106,6 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
         }
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.CheckInCheckOut");
@@ -152,25 +146,16 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
         }
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
         return true;
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public Object getBean() {
         return this;

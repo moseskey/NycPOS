@@ -23,9 +23,6 @@ package com.openbravo.data.loader;
 import java.io.Reader;
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class BatchSentenceScript extends BatchSentence {
 
     private String m_sScript;

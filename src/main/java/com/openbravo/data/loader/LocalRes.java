@@ -22,9 +22,6 @@ package com.openbravo.data.loader;
 import java.util.MissingResourceException;
 import com.openbravo.beans.LocaleResources;
 
-/**
- *
- */
 public class LocalRes {
 
     // private static ResourceBundle m_Intl;
@@ -39,9 +36,6 @@ public class LocalRes {
     private LocalRes() {
     }
 
-    /**
-     *
-     */
     public static String getIntString(String sKey) {
         return m_resources.getString(sKey);
     }

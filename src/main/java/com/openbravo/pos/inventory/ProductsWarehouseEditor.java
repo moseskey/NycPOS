@@ -27,34 +27,16 @@ import com.openbravo.format.Formats;
 import com.openbravo.pos.forms.AppLocal;
 import java.awt.Component;
 
-/**
- *
- */
 public class ProductsWarehouseEditor extends javax.swing.JPanel implements EditorRecord {
 
-    /**
-     *
-     */
     public Object id;
 
-    /**
-     *
-     */
     public Object prodid;
 
-    /**
-     *
-     */
     public Object prodref;
 
-    /**
-     *
-     */
     public Object prodname;
 
-    /**
-     *
-     */
     public Object location;
 
     /** Creates new form ProductsWarehouseEditor
@@ -66,9 +48,6 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
         m_jMaximum.getDocument().addDocumentListener(dirty);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_jTitle.setText(AppLocal.getIntString("label.recordeof"));
@@ -84,9 +63,6 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
         m_jMaximum.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
         m_jTitle.setText(AppLocal.getIntString("label.recordnew"));
@@ -102,9 +78,6 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
         m_jMaximum.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
         Object[] myprod = (Object[]) value;
@@ -121,9 +94,6 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
         m_jMaximum.setEnabled(true);
      }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
         Object[] myprod = (Object[]) value;
@@ -158,17 +128,11 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
         };
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }

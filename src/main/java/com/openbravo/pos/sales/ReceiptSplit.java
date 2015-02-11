@@ -31,9 +31,6 @@ import java.awt.Frame;
 import java.awt.Window;
 import javax.swing.JFrame;
 
-/**
- *
- */
 public class ReceiptSplit extends javax.swing.JDialog {
 
     private boolean accepted;
@@ -65,9 +62,6 @@ public class ReceiptSplit extends javax.swing.JDialog {
         jPanel3.add(receipttwo, BorderLayout.CENTER);
     }
 
-    /**
-     *
-     */
     public static ReceiptSplit getDialog(Component parent, String ticketline, DataLogicSales dlSales, DataLogicCustomers dlCustomers, TaxesLogic taxeslogic) {
 
         Window window = getWindow(parent);
@@ -85,9 +79,6 @@ public class ReceiptSplit extends javax.swing.JDialog {
         return myreceiptsplit;
     }
 
-    /**
-     *
-     */
     protected static Window getWindow(Component parent) {
         if (parent == null) {
             return new JFrame();
@@ -98,9 +89,6 @@ public class ReceiptSplit extends javax.swing.JDialog {
         }
     }
 
-    /**
-     *
-     */
     public boolean showDialog(TicketInfo ticket, TicketInfo ticket2, Object ticketext) {
 
         receiptone.setTicket(ticket, ticketext);

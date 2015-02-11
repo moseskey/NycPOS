@@ -19,26 +19,17 @@
 
 package com.openbravo.pos.printer.escpos;
 
-/**
- *
- */
 public class UnicodeTranslatorStar extends UnicodeTranslator {
 
     /** Creates a UnicodeTranslatorStar instance of UnicodeTranslatorInt */
     public UnicodeTranslatorStar() {
     }
 
-    /**
-     *
-     */
     @Override
     public byte[] getCodeTable() {
         return new byte[] {0x1B, 0x1D, 0x74, 0x01}; // Select code page 437
     }
 
-    /**
-     *
-     */
     @Override
     public byte transChar(char sChar) {
         if ((sChar >= 0x0000) && (sChar < 0x0080)) {

@@ -30,9 +30,6 @@ public abstract class SentenceExecTransaction implements SentenceExec {
 
     private Session m_s;
 
-    /**
-     *
-     */
     public SentenceExecTransaction(Session s) {
         m_s = s;
     }

@@ -74,9 +74,6 @@ import net.sf.jasperreports.engine.data.JRMapArrayDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
-/**
- *
- */
 public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFactoryApp, TicketsEditor {
 
     // Variable numerica
@@ -92,22 +89,13 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
     private final static int NUMBER_PORINT = 6;
     private final static int NUMBER_PORDEC = 7;
 
-    /**
-     *
-     */
     protected JTicketLines m_ticketlines;
 
     // private Template m_tempLine;
     private TicketParser m_TTP;
 
-    /**
-     *
-     */
     protected TicketInfo m_oTicket;
 
-    /**
-     *
-     */
     protected Object m_oTicketExt;
 
     // Estas tres variables forman el estado...
@@ -128,29 +116,14 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     private TaxesLogic taxeslogic;
 
-    /**
-     *
-     */
     protected JPanelButtons m_jbtnconfig;
 
-    /**
-     *
-     */
     protected AppView m_App;
 
-    /**
-     *
-     */
     protected DataLogicSystem dlSystem;
 
-    /**
-     *
-     */
     protected DataLogicSales dlSales;
 
-    /**
-     *
-     */
     protected DataLogicCustomers dlCustomers;
 
     private JPaymentSelect paymentdialogreceipt;
@@ -167,9 +140,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
     private Integer delay = 0;
     private final String m_sCurrentTicket = null;
 
-    /**
-     *
-     */
     protected TicketsEditor m_panelticket;
     private DataLogicReceipts dlReceipts = null;
 // added 16.05.13 JDL customer name on table
@@ -259,17 +229,11 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     }
 
-    /**
-     *
-     */
     @Override
     public Object getBean() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
@@ -400,24 +364,12 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         return m_ticketsbag.deactivate();
     }
 
-    /**
-     *
-     */
     protected abstract JTicketsBag getJTicketsBag();
 
-    /**
-     *
-     */
     protected abstract Component getSouthComponent();
 
-    /**
-     *
-     */
     protected abstract void resetSouthComponent();
 
-    /**
-     *
-     */
     @SuppressWarnings("empty-statement")
     @Override
     public void setActiveTicket(TicketInfo oTicket, Object oTicketExt) {
@@ -490,9 +442,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         refreshTicket();
     }
 
-    /**
-     *
-     */
     @Override
     public TicketInfo getActiveTicket() {
         return m_oTicket;
@@ -614,9 +563,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
             }
         }
 
-    /**
-     *
-     */
     protected void addTicketLine(TicketLineInfo oLine) {
         if (executeEventAndRefresh("ticket.addline", new ScriptArg("line", oLine)) == null) {
             if (oLine.isProductCom()) {
@@ -854,9 +800,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     }
 
-    /**
-     *
-     */
     protected void buttonTransition(ProductInfoExt prod) {
     // precondicion: prod != null
          if (m_iNumberStatusInput == NUMBERZERO && m_iNumberStatusPor == NUMBERZERO) {
@@ -1419,9 +1362,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         return false;
     }
 
-    /**
-     *
-     */
     public String getPickupString(TicketInfo pTicket){
     if (pTicket == null){
 //        return("");
@@ -1553,9 +1493,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         }
     }
 
-    /**
-     *
-     */
     public void evalScriptAndRefresh(String resource, ScriptArg... args) {
 
         if (resource == null) {
@@ -1570,9 +1507,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         }
     }
 
-    /**
-     *
-     */
     public void printTicket(String resource) {
         printTicket(resource, m_oTicket, m_oTicketExt);
     }
@@ -1604,16 +1538,10 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         }
     }
 
-    /**
-     *
-     */
     public String getResourceAsXML(String sresourcename) {
         return dlSystem.getResourceAsXML(sresourcename);
     }
 
-    /**
-     *
-     */
     public BufferedImage getResourceAsImage(String sresourcename) {
         return dlSystem.getResourceAsImage(sresourcename);
     }
@@ -1627,31 +1555,19 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         }
     }
 
-    /**
-     *
-     */
     public static class ScriptArg {
         private final String key;
         private final Object value;
 
-        /**
-         *
-         */
         public ScriptArg(String key, Object value) {
             this.key = key;
             this.value = value;
         }
 
-        /**
-         *
-         */
         public String getKey() {
             return key;
         }
 
-        /**
-         *
-         */
         public Object getValue() {
             return value;
         }
@@ -1673,9 +1589,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         return (jPrice.length()<= 2)? jPrice : (new StringBuffer(jPrice).insert(jPrice.length()-2,".").toString());
     }
 
-    /**
-     *
-     */
     public class ScriptObject {
 
         private final TicketInfo ticket;
@@ -1688,9 +1601,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
             this.ticketext = ticketext;
         }
 
-        /**
-         *
-         */
         public double getInputValue() {
             if (m_iNumberStatusInput == NUMBERVALID && m_iNumberStatusPor == NUMBERZERO) {
                 return JPanelTicket.this.getInputValue();
@@ -1699,30 +1609,18 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
             }
         }
 
-        /**
-         *
-         */
         public int getSelectedIndex() {
             return selectedindex;
         }
 
-        /**
-         *
-         */
         public void setSelectedIndex(int i) {
             selectedindex = i;
         }
 
-        /**
-         *
-         */
         public void printReport(String resourcefile) {
             JPanelTicket.this.printReport(resourcefile, ticket, ticketext);
         }
 
-        /**
-         *
-         */
         public void printTicket(String sresourcename) {
             JPanelTicket.this.printTicket(sresourcename, ticket, ticketext);
         }

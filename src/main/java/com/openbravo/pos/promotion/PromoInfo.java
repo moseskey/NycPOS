@@ -8,8 +8,6 @@ import com.openbravo.data.loader.SerializerRead;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- */
 public class PromoInfo implements SerializableRead, IKeyed {
 
     private static final long serialVersionUID = 8906929819402L;
@@ -30,9 +28,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     private List<PromoInfo> promos = new ArrayList<PromoInfo>();
 
-    /**
-     *
-     */
     public PromoInfo(String sID,String sName,Integer iStartHour,Integer iEndHour, String sArticle,
      String sArticleCategory,Integer iType,Double bdAmount,Integer iMinQuantity,Integer iMaxQuantity,
      Integer iStepQuantity,Integer iStepAmount,String sArticleBonus,String sArticleBonusDescription) {
@@ -53,9 +48,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
                 this.m_sArticleBonusDescription = sArticleBonusDescription;
     }
 
-    /**
-     *
-     */
     public static SerializerRead getSerializerRead() {
         return new SerializerRead() { public Object readValues(DataRead dr) throws BasicException {
 
@@ -80,9 +72,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
         }};
     }
 
-    /**
-     *
-     */
     public PromoInfo() {
         m_sID = null;
         m_sName = null;
@@ -100,9 +89,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
         m_sArticleBonusDescription = null;
     }
 
-    /**
-     *
-     */
     public Object getKey() {
         return m_sID;
     }
@@ -128,171 +114,99 @@ public class PromoInfo implements SerializableRead, IKeyed {
         m_sArticleBonusDescription = dr.getString(14);
     }
 
-    /**
-     *
-     */
     public void setID(String sID) {
         m_sID = sID;
     }
 
-    /**
-     *
-     */
     public String getID() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void setName(String sName) {
         m_sName = sName;
     }
 
-    /**
-     *
-     */
     public Integer getStartHour() {
         return m_iStartHour;
     }
 
-    /**
-     *
-     */
     public void setStartHour(Integer iStartHour) {
         iStartHour = m_iStartHour;
     }
 
-    /**
-     *
-     */
     public Integer getEndHour() {
         return m_iEndHour;
     }
 
-    /**
-     *
-     */
     public void setEndHour(Integer iEndHour) {
         iEndHour = m_iEndHour;
     }
 
-    /**
-     *
-     */
     public String getArticle() {
         return m_sArticle;
     }
 
-    /**
-     *
-     */
     public void setArticle(String sArticle) {
         m_sArticle = sArticle;
     }
 
-    /**
-     *
-     */
     public String getArticleCategory() {
 
         return m_sArticleCategory;
     }
 
-    /**
-     *
-     */
     public void setArticleCategory(String sArticleCategory) {
         m_sArticleCategory = sArticleCategory;
     }
 
-    /**
-     *
-     */
     public Integer getType() {
         return m_iType;
     }
 
-    /**
-     *
-     */
     public void setType(Integer iType) {
         iType = m_iType;
     }
 
-    /**
-     *
-     */
     public Double getAmount() {
         return m_bdAmount;
     }
 
-    /**
-     *
-     */
     public void setAmount(Double bdAmount) {
         bdAmount = m_bdAmount;
     }
 
-    /**
-     *
-     */
     public Integer getMinQuantity() {
         return m_iMinQuantity;
     }
 
-    /**
-     *
-     */
     public void setMinQuantity(Integer iMinQuantity) {
         iMinQuantity = m_iMinQuantity;
     }
 
-    /**
-     *
-     */
     public Integer getMaxQuantity() {
         return m_iMaxQuantity;
     }
 
-    /**
-     *
-     */
     public void setMaxQuantity(Integer iMaxQuantity) {
         iMaxQuantity = m_iMaxQuantity;
     }
 
-    /**
-     *
-     */
     public Integer getStepQuantity() {
         return m_iStepQuantity;
     }
 
-    /**
-     *
-     */
     public void setStepQuantity(Integer iStepQuantity) {
         iStepQuantity = m_iStepQuantity;
     }
 
-    /**
-     *
-     */
     public Integer getStepAmount() {
         return m_iStepAmount;
     }
 
-    /**
-     *
-     */
     public void setStepAmount(Integer iStepAmount) {
         iStepAmount = m_iStepAmount;
     }
@@ -301,37 +215,22 @@ public class PromoInfo implements SerializableRead, IKeyed {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public String getArticleBonus() {
         return m_sArticleBonus;
     }
 
-    /**
-     *
-     */
     public void setArticleBonus(String sArticleBonus) {
         m_sArticleBonus = sArticleBonus;
     }
 
-    /**
-     *
-     */
     public String getArticleBonusDescription() {
         return m_sArticleBonusDescription;
     }
 
-    /**
-     *
-     */
     public void setArticleBonusDescription(String sArticleBonusDescription) {
         m_sArticleBonusDescription = sArticleBonusDescription;
     }
 
-    /**
-     *
-     */
     public void setPromos(List<PromoInfo> l) {
         promos = l;
     }

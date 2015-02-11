@@ -32,17 +32,11 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- *
- */
 public class AuxiliarPanel extends JPanelTable2 {
 
     private AuxiliarEditor editor;
     private AuxiliarFilter filter;
 
-    /**
-     *
-     */
     @Override
     protected void init() {
 
@@ -86,25 +80,16 @@ public class AuxiliarPanel extends JPanelTable2 {
         reload(filter);
     }
 
-    /**
-     *
-     */
     @Override
     public Component getFilter(){
         return filter.getComponent();
     }
 
-    /**
-     *
-     */
     @Override
     public EditorRecord getEditor() {
         return editor;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.Auxiliar");

@@ -25,17 +25,11 @@ import com.openbravo.pos.scripting.ScriptFactory;
 import com.openbravo.pos.util.StringUtils;
 import java.io.IOException;
 
-/**
- *
- */
 public class BeanFactoryScript implements BeanFactoryApp {
 
     private BeanFactory bean = null;
     private String script;
 
-    /**
-     *
-     */
     public BeanFactoryScript(String script) {
         this.script = script;
     }
@@ -68,9 +62,6 @@ public class BeanFactoryScript implements BeanFactoryApp {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public Object getBean() {
         return bean.getBean();

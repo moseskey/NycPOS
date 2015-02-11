@@ -27,9 +27,6 @@ import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public class JParamsComposed extends javax.swing.JPanel implements ReportEditorCreator {
 
 // JG 16 May 12 use diamond inference
@@ -40,9 +37,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
         for (ReportEditorCreator qbff : editors) {
@@ -61,9 +55,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
         }
     }
 
-    /**
-     *
-     */
     @Override
     public SerializerWrite getSerializerWrite() {
 
@@ -76,9 +67,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
         return sw;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
@@ -100,17 +88,11 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
         return value;
     }
 
-    /**
-     *
-     */
     public void addEditor(ReportEditorCreator c) {
         editors.add(c);
         add(c.getComponent());
     }
 
-    /**
-     *
-     */
     public boolean isEmpty() {
 
         return editors.isEmpty();

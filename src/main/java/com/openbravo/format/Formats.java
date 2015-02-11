@@ -23,69 +23,30 @@ import java.text.*;
 import java.util.Date;
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public abstract class Formats {
 
-    /**
-     *
-     */
     public final static Formats NULL = new FormatsNULL();
 
-    /**
-     *
-     */
     public final static Formats INT = new FormatsINT();
 
-    /**
-     *
-     */
     public final static Formats STRING = new FormatsSTRING();
 
-    /**
-     *
-     */
     public final static Formats DOUBLE = new FormatsDOUBLE();
 
-    /**
-     *
-     */
     public final static Formats CURRENCY = new FormatsCURRENCY();
 
-    /**
-     *
-     */
     public final static Formats PERCENT = new FormatsPERCENT();
 
-    /**
-     *
-     */
     public final static Formats BOOLEAN = new FormatsBOOLEAN();
 
-    /**
-     *
-     */
     public final static Formats TIMESTAMP = new FormatsTIMESTAMP();
 
-    /**
-     *
-     */
     public final static Formats DATE = new FormatsDATE();
 
-    /**
-     *
-     */
     public final static Formats TIME = new FormatsTIME();
 
-    /**
-     *
-     */
     public final static Formats BYTEA = new FormatsBYTEA();
 
-    /**
-     *
-     */
     public final static Formats HOURMIN = new FormatsHOURMIN();
 /** Added; Thanks  TSirwani 3 Mar 11 */
     public final static Formats SIMPLEDATE = new FormatsSIMPLEDATE();
@@ -104,17 +65,11 @@ public abstract class Formats {
     protected Formats() {
     }
 
-    /**
-     *
-     */
     public static int getCurrencyDecimals() {
 
         return m_currencyformat.getMaximumFractionDigits();
     }
 
-    /**
-     *
-     */
     public String formatValue(Object value) {
         if (value == null) {
             return "";
@@ -147,9 +102,6 @@ public abstract class Formats {
         return parseValue(value, null);
     }
 
-    /**
-     *
-     */
     public static void setIntegerPattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
             m_integerformat = NumberFormat.getIntegerInstance();
@@ -158,9 +110,6 @@ public abstract class Formats {
         }
     }
 
-    /**
-     *
-     */
     public static void setDoublePattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
             m_doubleformat = NumberFormat.getNumberInstance();
@@ -169,9 +118,6 @@ public abstract class Formats {
         }
     }
 
-    /**
-     *
-     */
     public static void setCurrencyPattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
             m_currencyformat = NumberFormat.getCurrencyInstance();
@@ -180,9 +126,6 @@ public abstract class Formats {
         }
     }
 
-    /**
-     *
-     */
     public static void setPercentPattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
             m_percentformat = new DecimalFormat("#,##0.##%");
@@ -191,9 +134,6 @@ public abstract class Formats {
         }
     }
 
-    /**
-     *
-     */
     public static void setDatePattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
             m_dateformat = DateFormat.getDateInstance();
@@ -202,9 +142,6 @@ public abstract class Formats {
         }
     }
 
-    /**
-     *
-     */
     public static void setTimePattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
             m_timeformat = DateFormat.getTimeInstance();
@@ -213,9 +150,6 @@ public abstract class Formats {
         }
     }
 
-    /**
-     *
-     */
     public static void setDateTimePattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
             m_datetimeformat = DateFormat.getDateTimeInstance();
@@ -224,9 +158,6 @@ public abstract class Formats {
         }
     }
 
-    /**
-     *
-     */
     protected abstract String formatValueInt(Object value);
 
     /**
@@ -235,9 +166,6 @@ public abstract class Formats {
      */
     protected abstract Object parseValueInt(String value) throws ParseException;
 
-    /**
-     *
-     */
     public abstract int getAlignment();
 
     private static final class FormatsNULL extends Formats {

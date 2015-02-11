@@ -20,22 +20,13 @@
 
 package com.openbravo.pos.printer;
 
-/**
- *
- */
 public class CurtainAnimator extends BaseAnimator {
 
-    /**
-     *
-     */
     public CurtainAnimator(String line1, String line2) {
         baseLine1 = DeviceTicket.alignLeft(line1, 20);
         baseLine2 = DeviceTicket.alignLeft(line2, 20);
     }
 
-    /**
-     *
-     */
     @Override
     public void setTiming(int i) {
 

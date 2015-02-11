@@ -24,9 +24,6 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.util.AltEncrypter;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public class ConfigPaymentPanelGeneric extends javax.swing.JPanel implements PaymentConfiguration {
 
     /** Creates new form ConfigPaymentPanelGeneric */
@@ -34,17 +31,11 @@ public class ConfigPaymentPanelGeneric extends javax.swing.JPanel implements Pay
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public JPanel getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
         String sCommerceID = config.getProperty("payment.commerceid");
@@ -57,9 +48,6 @@ public class ConfigPaymentPanelGeneric extends javax.swing.JPanel implements Pay
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
         config.setProperty("payment.commerceid", jtxtCommerceID.getText());

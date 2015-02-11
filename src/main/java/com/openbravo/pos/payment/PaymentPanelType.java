@@ -25,9 +25,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import javax.swing.JComponent;
 
-/**
- *
- */
 public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel {
 
     private double m_dTotal;
@@ -53,17 +50,11 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
 
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent(){
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void activate(String sTransaction, double dTotal) {
 
@@ -84,9 +75,6 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
         m_jExpirationDate.setText(null);
     }
 
-    /**
-     *
-     */
     @Override
     public PaymentInfoMagcard getPaymentInfoMagcard() {
 

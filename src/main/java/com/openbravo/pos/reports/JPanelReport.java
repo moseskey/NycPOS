@@ -43,30 +43,18 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
-/**
- *
- */
 public abstract class JPanelReport extends JPanel implements JPanelView, BeanFactoryApp   {
 
     private JRViewer300 reportviewer = null;
     private JasperReport jr = null;
     private EditorCreator editor = null;
 
-    /**
-     *
-     */
     protected AppView m_App;
     private Session s;
     private Connection con;
 
-    /**
-     *
-     */
     protected SentenceList taxsent;
 
-    /**
-     *
-     */
     protected TaxesLogic taxeslogic;
 
     /** Creates new form JPanelReport */
@@ -117,44 +105,23 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
         }
     }
 
-    /**
-     *
-     */
     @Override
     public Object getBean() {
         return this;
     }
 
-    /**
-     *
-     */
     protected abstract String getReport();
 
-    /**
-     *
-     */
     protected abstract String getResourceBundle();
 
-    /**
-     *
-     */
     protected abstract BaseSentence getSentence();
 
-    /**
-     *
-     */
     protected abstract ReportFields getReportFields();
 
-    /**
-     *
-     */
     protected EditorCreator getEditorCreator() {
         return null;
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
@@ -171,9 +138,6 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
         taxeslogic = new TaxesLogic(taxsent.list());
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
 
@@ -181,16 +145,10 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
         return true;
     }
 
-    /**
-     *
-     */
     protected void setVisibleButtonFilter(boolean value) {
         jToggleFilter.setVisible(value);
     }
 
-    /**
-     *
-     */
     protected void setVisibleFilter(boolean value) {
         jToggleFilter.setSelected(value);
         jToggleFilterActionPerformed(null);

@@ -22,9 +22,6 @@ package com.openbravo.pos.config;
 import java.util.Comparator;
 import java.util.Locale;
 
-/**
- *
- */
 public class LocaleComparator implements Comparator<Locale> {
 
     /** Creates a new instance of LocaleComparator */

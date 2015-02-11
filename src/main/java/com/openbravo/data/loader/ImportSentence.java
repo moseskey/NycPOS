@@ -21,9 +21,6 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class ImportSentence extends BaseSentence {
 
     /** Creates a new instance of ImportSentence */

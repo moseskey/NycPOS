@@ -14,9 +14,6 @@ public class JRolesTree extends javax.swing.JPanel {
 
     private Object m_oId;
 
-    /**
-     *
-     */
     public JRolesTree(DirtyManager dirty) {
         initComponents();
 
@@ -27,27 +24,18 @@ public class JRolesTree extends javax.swing.JPanel {
 
     }
 
-    /**
-     *
-     */
     public void writeValueEOF() {
         m_oId = null;
         m_jName.setText(null);
         m_jName.setEnabled(false);
     }
 
-    /**
-     *
-     */
     public void writeValueInsert() {
         m_oId = null;
         m_jName.setText(null);
         m_jName.setEnabled(true);
     }
 
-    /**
-     *
-     */
     public void writeValueDelete(Object value) {
 
         Object[] role = (Object[]) value;
@@ -56,9 +44,6 @@ public class JRolesTree extends javax.swing.JPanel {
         m_jName.setEnabled(false);
     }
 
-    /**
-     *
-     */
     public void writeValueEdit(Object value) {
 
         Object[] role = (Object[]) value;
@@ -79,16 +64,10 @@ public class JRolesTree extends javax.swing.JPanel {
         return role;
     }
 
-    /**
-     *
-     */
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     public void refresh() {
     }
 

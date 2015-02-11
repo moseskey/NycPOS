@@ -30,9 +30,6 @@ import com.openbravo.data.loader.SerializableRead;
 import com.openbravo.basic.BasicException;
 import java.awt.Insets;
 
-/**
- *
- */
 public class Place implements SerializableRead, java.io.Serializable {
 
     private static final long serialVersionUID = 8652254694281L;
@@ -86,64 +83,31 @@ public class Place implements SerializableRead, java.io.Serializable {
 
     }
 
-    /**
-     *
-     */
     public String getId() { return m_sId; }
 
-    /**
-     *
-     */
     public String getName() { return m_sName; }
 
-    /**
-     *
-     */
     public int getX() { return m_ix; }
 
-    /**
-     *
-     */
     public int getY() { return m_iy; }
 
-    /**
-     *
-     */
     public String getFloor() { return m_sfloor; }
 
-    /**
-     *
-     */
     public JButton getButton() { return m_btn; }
 
-    /**
-     *
-     */
     public String getCustomer(){ return m_customer; }
 
-    /**
-     *
-     */
     public String getWaiter(){ return m_waiter;}
 
-    /**
-     *
-     */
     public boolean hasPeople() {
         return m_bPeople;
     }
 
-    /**
-     *
-     */
     public void setPeople(boolean bValue) {
         m_bPeople = bValue;
         m_btn.setIcon(bValue ? ICO_OCU : ICO_FRE);
     }
 
-    /**
-     *
-     */
     public void setButtonBounds() {
         Dimension d = m_btn.getPreferredSize();
         m_btn.setPreferredSize(new Dimension(d.width +30,d.height + 15));
@@ -151,9 +115,6 @@ public class Place implements SerializableRead, java.io.Serializable {
         m_btn.setBounds(m_ix - d.width / 2, m_iy - d.height / 2, d.width, d.height);
     }
 
-    /**
-     *
-     */
     public void setButtonText(String btnText){
         m_btn.setText(btnText);
     }

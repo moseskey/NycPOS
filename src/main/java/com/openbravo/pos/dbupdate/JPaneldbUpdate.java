@@ -32,9 +32,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.*;
 
-/**
- *
- */
 public class JPaneldbUpdate extends JPanel implements JPanelView {
 
 
@@ -53,9 +50,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
         this(oApp.getProperties());
     }
 
-    /**
-     *
-     */
     public JPaneldbUpdate(AppProperties props) {
 
         initComponents();
@@ -80,9 +74,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
     }
 
-    /**
-     *
-     */
     public void performUpdate(String sScript){
         switch (sdbmanager) {
             case "HSQL Database Engine":
@@ -124,17 +115,11 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
                     }
    }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.Configuration");
@@ -170,9 +155,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
     return(true);

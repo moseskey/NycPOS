@@ -30,9 +30,6 @@ import com.openbravo.format.Formats;
 import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.forms.DataLogicSales;
 
-/**
- *
- */
 public class MaterialFilter extends javax.swing.JPanel implements EditorCreator {
 
     private SentenceList m_sentprods;

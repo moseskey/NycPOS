@@ -30,9 +30,6 @@ import com.openbravo.pos.forms.AppView;
 import com.openbravo.pos.inventory.MovementReason;
 import java.awt.Component;
 
-/**
- *
- */
 public class JParamsReason extends javax.swing.JPanel implements ReportEditorCreator {
 
     private ComboBoxValModel m_ReasonModel;
@@ -55,9 +52,6 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
         // m_jreason.setSelectedItem(null);
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
     }
@@ -70,17 +64,11 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
     public void activate() throws BasicException {
     }
 
-    /**
-     *
-     */
     @Override
     public SerializerWrite getSerializerWrite() {
         return new SerializerWriteBasic(new Datas[] {Datas.OBJECT, Datas.INT});
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

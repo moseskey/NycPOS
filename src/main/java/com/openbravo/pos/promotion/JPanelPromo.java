@@ -14,8 +14,6 @@ import com.openbravo.data.user.ListProviderCreator;
 import com.openbravo.pos.forms.DataLogicSales;
 import com.openbravo.pos.panels.*;
 
-/**
- */
 public class JPanelPromo extends JPanelTable {
 
     private TableDefinition tpromo;
@@ -25,9 +23,6 @@ public class JPanelPromo extends JPanelTable {
     public JPanelPromo() {
     }
 
-    /**
-     *
-     */
     protected void init() {
         DataLogicSales dlSales = null;
         dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -49,46 +44,28 @@ public class JPanelPromo extends JPanelTable {
         jeditor = new PromoEditor(app, dlSales, dirty);
     }
 
-    /**
-     *
-     */
     public ListProvider getListProvider() {
         return new ListProviderCreator(tpromo);
     }
 
-    /**
-     *
-     */
     public SaveProvider getSaveProvider() {
         return new SaveProvider(tpromo);
     }
 
-    /**
-     *
-     */
     @Override
     public Vectorer getVectorer() {
         return tpromo.getVectorerBasic(new int[]{1});
     }
 
-    /**
-     *
-     */
     @Override
     public ListCellRenderer getListCellRenderer() {
         return new ListCellRendererBasic(tpromo.getRenderStringBasic(new int[]{1}));
     }
 
-    /**
-     *
-     */
     public EditorRecord getEditor() {
         return jeditor;
     }
 
-    /**
-     *
-     */
     public String getTitle() {
         return AppLocal.getIntString("Menu.Promo");
     }

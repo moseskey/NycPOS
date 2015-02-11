@@ -21,9 +21,6 @@ package com.openbravo.data.user;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class EditorCreatorComposed implements EditorCreator{
 
     private EditorCreator[] m_editors;

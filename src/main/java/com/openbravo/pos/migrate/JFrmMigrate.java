@@ -30,9 +30,6 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-/**
- *
- */
 public class JFrmMigrate extends javax.swing.JFrame {
 
     private JPaneldbMigrate config;

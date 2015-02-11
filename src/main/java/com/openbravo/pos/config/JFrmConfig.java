@@ -33,9 +33,6 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.forms.AppProperties;
 import com.openbravo.pos.forms.JRootFrame;
 
-/**
- *
- */
 public class JFrmConfig extends javax.swing.JFrame {
 
     private final JPanelConfiguration config;

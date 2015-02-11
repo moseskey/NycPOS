@@ -4,9 +4,6 @@
  */
 package com.openbravo.pos.util;
 
-/**
- *
- */
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -16,14 +13,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
-/**
- *
- */
 public class URLTest {
 
-    /**
-     *
-     */
     public static void main(String[] argv) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override

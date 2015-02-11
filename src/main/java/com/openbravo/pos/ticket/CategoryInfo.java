@@ -49,67 +49,40 @@ public class CategoryInfo implements IKeyed {
         m_bCatShowName = catshowname;
     }
 
-    /**
-     *
-     */
     @Override
     public Object getKey() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public void setID(String sID) {
         m_sID = sID;
     }
 
-    /**
-     *
-     */
     public String getID() {
         return m_sID;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void setName(String sName) {
         m_sName = sName;
     }
 // ADDED JDL 13.04.13 *************
 
-    /**
-     *
-     */
         public String getTextTip() {
         return m_sTextTip;
     }
 
-    /**
-     *
-     */
     public void setTextTip(String sName) {
         m_sTextTip = sName;
     }
 
-    /**
-     *
-     */
     public Boolean getCatShowName() {
         return m_bCatShowName;
     }
 
-    /**
-     *
-     */
     public void setCatShowName(Boolean bcatshowname) {
         m_bCatShowName = bcatshowname;
     }
@@ -120,17 +93,11 @@ public class CategoryInfo implements IKeyed {
 
     // *******************************
 
-    /**
-     *
-     */
 
     public BufferedImage getImage() {
         return m_Image;
     }
 
-    /**
-     *
-     */
     public void setImage(BufferedImage img) {
         m_Image = img;
     }
@@ -140,9 +107,6 @@ public class CategoryInfo implements IKeyed {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public static SerializerRead getSerializerRead() {
         return new SerializerRead() {@Override
  public Object readValues(DataRead dr) throws BasicException {

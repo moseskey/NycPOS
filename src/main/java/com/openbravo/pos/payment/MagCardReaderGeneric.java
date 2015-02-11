@@ -24,9 +24,6 @@ import com.openbravo.pos.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public final class MagCardReaderGeneric implements MagCardReader {
 
     private String m_sHolderName;
@@ -57,17 +54,11 @@ public final class MagCardReaderGeneric implements MagCardReader {
         reset();
     }
 
-    /**
-     *
-     */
     @Override
     public String getReaderName() {
         return "Generic magnetic card reader";
     }
 
-    /**
-     *
-     */
     @Override
     public void reset() {
         m_aTrack1 = null;
@@ -82,9 +73,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
         m_iAutomState = READING_STARTSENTINEL1;
     }
 
-    /**
-     *
-     */
     @Override
     public void appendChar(char c) {
         // Mastercard
@@ -208,57 +196,36 @@ public final class MagCardReaderGeneric implements MagCardReader {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public boolean isComplete() {
         return m_sCardNumber != null;
     }
 
-    /**
-     *
-     */
     @Override
     public String getHolderName() {
         return m_sHolderName;
     }
 
-    /**
-     *
-     */
     @Override
     public String getCardNumber() {
         return m_sCardNumber;
     }
 
-    /**
-     *
-     */
     @Override
     public String getExpirationDate() {
         return m_sExpirationDate;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTrack1() {
         return track1 == null ? null : track1.toString();
     }
 
-    /**
-     *
-     */
     @Override
     public String getTrack2() {
         return track2 == null ? null : track2.toString();
     }
 
-    /**
-     *
-     */
     @Override
     public String getTrack3() {
         return track3 == null ? null : track3.toString();

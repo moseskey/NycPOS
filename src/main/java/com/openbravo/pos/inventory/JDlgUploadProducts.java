@@ -31,9 +31,6 @@ import java.awt.Window;
 import javax.swing.JFrame;
 import javax.swing.ListModel;
 
-/**
- *
- */
 public class JDlgUploadProducts extends javax.swing.JDialog {
 
     // private AppView m_App;
@@ -74,9 +71,6 @@ public class JDlgUploadProducts extends javax.swing.JDialog {
         }
     }
 
-    /**
-     *
-     */
     public static void showMessage(Component parent, DeviceScanner scanner, BrowsableEditableData bd) {
 
         Window window = getWindow(parent);

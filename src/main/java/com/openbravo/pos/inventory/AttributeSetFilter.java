@@ -29,9 +29,6 @@ import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-/**
- *
- */
 public class AttributeSetFilter extends javax.swing.JPanel implements ReportEditorCreator {
 
     private SentenceList attusesent;
@@ -42,9 +39,6 @@ public class AttributeSetFilter extends javax.swing.JPanel implements ReportEdit
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
 
@@ -70,32 +64,20 @@ public class AttributeSetFilter extends javax.swing.JPanel implements ReportEdit
         jAttrSet.setModel(attusemodel);
     }
 
-    /**
-     *
-     */
     @Override
     public SerializerWrite getSerializerWrite() {
         return SerializerWriteString.INSTANCE;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     public void addActionListener(ActionListener l) {
         jAttrSet.addActionListener(l);
     }
 
-    /**
-     *
-     */
     public void removeActionListener(ActionListener l) {
         jAttrSet.removeActionListener(l);
     }

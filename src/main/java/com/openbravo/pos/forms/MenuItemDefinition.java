@@ -24,23 +24,14 @@ import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
-/**
- *
- */
 public class MenuItemDefinition implements MenuElement {
 
     private Action act;
 
-    /**
-     *
-     */
     public MenuItemDefinition(Action act) {
         this.act = act;
     }
 
-    /**
-     *
-     */
     @Override
     public void addComponent(JPanelMenu menu) {
 

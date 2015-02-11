@@ -21,9 +21,6 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class SerializerReadClass implements SerializerRead {
 
     private final Class m_clazz;

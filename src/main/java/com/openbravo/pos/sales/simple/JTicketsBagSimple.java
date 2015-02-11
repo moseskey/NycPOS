@@ -24,9 +24,6 @@ import javax.swing.*;
 import com.openbravo.pos.sales.*;
 import com.openbravo.pos.ticket.TicketInfo;
 
-/**
- *
- */
 public class JTicketsBagSimple extends JTicketsBag {
 
     /** Creates new form JTicketsBagSimple
@@ -38,9 +35,6 @@ public class JTicketsBagSimple extends JTicketsBag {
         initComponents();
     }
 
-    /**
-     *
-     */
     public void activate() {
 
         m_panelticket.setActiveTicket(new TicketInfo(), null);
@@ -50,31 +44,19 @@ public class JTicketsBagSimple extends JTicketsBag {
 
     }
 
-    /**
-     *
-     */
     public boolean deactivate() {
         m_panelticket.setActiveTicket(null, null);
         return true;
     }
 
-    /**
-     *
-     */
     public void deleteTicket() {
         m_panelticket.setActiveTicket(new TicketInfo(), null);
     }
 
-    /**
-     *
-     */
     protected JComponent getBagComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     protected JComponent getNullComponent() {
         return new JPanel();
     }

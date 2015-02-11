@@ -24,9 +24,6 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.util.AltEncrypter;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public class ConfigPaymentPanelCaixa extends javax.swing.JPanel implements PaymentConfiguration {
 
     /** Creates new form ConfigPaymentPanelCaixa */
@@ -34,17 +31,11 @@ public class ConfigPaymentPanelCaixa extends javax.swing.JPanel implements Payme
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public JPanel getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
 
@@ -63,9 +54,6 @@ public class ConfigPaymentPanelCaixa extends javax.swing.JPanel implements Payme
 
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
         config.setProperty("payment.commerceid", comboValue(jtxtCommerceCode.getText()));

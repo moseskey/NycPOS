@@ -35,9 +35,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.UUID;
 
-/**
- *
- */
 public class ProductsWarehousePanel extends JPanelTable2 {
 
     private JParamsLocation m_paramslocation;
@@ -47,9 +44,6 @@ public class ProductsWarehousePanel extends JPanelTable2 {
     public ProductsWarehousePanel() {
     }
 
-    /**
-     *
-     */
     @Override
     protected void init() {
 
@@ -105,17 +99,11 @@ public class ProductsWarehousePanel extends JPanelTable2 {
         jeditor = new ProductsWarehouseEditor(dirty);
     }
 
-    /**
-     *
-     */
     @Override
     public Component getFilter() {
         return m_paramslocation.getComponent();
     }
 
-    /**
-     *
-     */
     @Override
     public EditorRecord getEditor() {
         return jeditor;
@@ -132,9 +120,6 @@ public class ProductsWarehousePanel extends JPanelTable2 {
         super.activate();
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.ProductsWarehouse");

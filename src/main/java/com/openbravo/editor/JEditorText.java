@@ -24,54 +24,24 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public abstract class JEditorText extends JEditorAbstract {
 
-    /**
-     *
-     */
     protected String m_svalue;
 
-    /**
-     *
-     */
     public static final int MODE_Abc1 = 0;
 
-    /**
-     *
-     */
     public static final int MODE_abc1 = 1;
 
-    /**
-     *
-     */
     public static final int MODE_ABC1 = 2;
 
-    /**
-     *
-     */
     public static final int MODE_123 = 3;
 
-    /**
-     *
-     */
     public int m_iMode;
 
-    /**
-     *
-     */
     protected int m_iTicks;
 
-    /**
-     *
-     */
     protected char m_cLastChar;
 
-    /**
-     *
-     */
     protected long m_lcount;
 
     private Timer m_jtimer;
@@ -110,14 +80,8 @@ public abstract class JEditorText extends JEditorAbstract {
         m_jtimer.start();
     }
 
-    /**
-     *
-     */
     protected abstract int getStartMode();
 
-    /**
-     *
-     */
     public final void reset() {
 
         String sOldText = getText();
@@ -133,9 +97,6 @@ public abstract class JEditorText extends JEditorAbstract {
         firePropertyChange("Text", sOldText, getText());
     }
 
-    /**
-     *
-     */
     public final void setText(String sText) {
 
         String sOldText = getText();
@@ -149,9 +110,6 @@ public abstract class JEditorText extends JEditorAbstract {
         firePropertyChange("Text", sOldText, getText());
     }
 
-    /**
-     *
-     */
     public final void setEditModeEnum(int iMode) {
 
         m_iMode = iMode;
@@ -161,9 +119,6 @@ public abstract class JEditorText extends JEditorAbstract {
         reprintText();
     }
 
-    /**
-     *
-     */
     public final String getText() {
         if (m_cLastChar == '\u0000') {
             return m_svalue;
@@ -172,16 +127,10 @@ public abstract class JEditorText extends JEditorAbstract {
         }
     }
 
-    /**
-     *
-     */
     protected final int getAlignment() {
         return javax.swing.SwingConstants.LEFT;
     }
 
-    /**
-     *
-     */
     protected final String getEditMode() {
         switch (m_iMode) {
         case MODE_Abc1: return "Abc1";
@@ -192,9 +141,6 @@ public abstract class JEditorText extends JEditorAbstract {
         }
     }
 
-    /**
-     *
-     */
     protected String getTextEdit() {
 
         StringBuilder s = new StringBuilder();
@@ -222,9 +168,6 @@ public abstract class JEditorText extends JEditorAbstract {
                 : "<html>" + m_svalue;
     }
 
-    /**
-     *
-     */
     protected void typeCharInternal(char c) {
 
         String sOldText = getText();
@@ -262,9 +205,6 @@ public abstract class JEditorText extends JEditorAbstract {
         firePropertyChange("Text", sOldText, getText());
     }
 
-    /**
-     *
-     */
     protected void transCharInternal(char c) {
 
         String sOldText = getText();
@@ -322,9 +262,6 @@ public abstract class JEditorText extends JEditorAbstract {
         }
     }
 
-    /**
-     *
-     */
     protected char getKeyChar() {
 
         char[] clist = null;

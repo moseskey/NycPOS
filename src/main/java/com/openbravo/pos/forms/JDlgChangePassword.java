@@ -28,9 +28,6 @@ import java.awt.Frame;
 import java.awt.Window;
 import javax.swing.JFrame;
 
-/**
- *
- */
 public class JDlgChangePassword extends javax.swing.JDialog {
 
     private String m_sOldPassword;
@@ -71,9 +68,6 @@ public class JDlgChangePassword extends javax.swing.JDialog {
         }
     }
 
-    /**
-     *
-     */
     public static String showMessage(Component parent, String sOldPassword) {
 
         Window window = getWindow(parent);

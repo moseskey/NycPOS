@@ -25,9 +25,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JList;
 
-/**
- *
- */
 public class CustomerRenderer extends DefaultListCellRenderer {
 
     private Icon icocustomer;

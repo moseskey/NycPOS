@@ -29,9 +29,6 @@ import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 
-/**
- *
- */
 public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreator {
 
     private EmployeeInfo selectedEmployee;
@@ -47,9 +44,6 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
         super(parent, modal);
     }
 
-    /**
-     *
-     */
     public static JEmployeeFinder getEmployeeFinder(Component parent, DataLogicPresenceManagement dlPresenceManagement) {
         Window window = getWindow(parent);
         JEmployeeFinder myMsg;
@@ -63,9 +57,6 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
         return myMsg;
     }
 
-    /**
-     *
-     */
     public EmployeeInfo getSelectedEmployee() {
         return selectedEmployee;
     }
@@ -81,9 +72,6 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
         selectedEmployee = null;
     }
 
-    /**
-     *
-     */
     public void search(EmployeeInfo employee) {
         if (employee == null || employee.getName() == null || employee.getName().equals("")) {
             m_jtxtName.reset();
@@ -98,9 +86,6 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
         jListEmployees.setModel(new MyListData(new ArrayList()));
     }
 
-    /**
-     *
-     */
     public void executeSearch() {
         try {
             jListEmployees.setModel(new MyListData(lpr.loadData()));

@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.payment;
 
-/**
- *
- */
 public final class MagCardReaderIntelligent implements MagCardReader {
 
     private String m_sHolderName;
@@ -41,17 +38,11 @@ public final class MagCardReaderIntelligent implements MagCardReader {
         reset();
     }
 
-    /**
-     *
-     */
     @Override
     public String getReaderName() {
         return "Basic magnetic card reader";
     }
 
-    /**
-     *
-     */
     @Override
     public void reset() {
         m_sHolderName = null;
@@ -61,9 +52,6 @@ public final class MagCardReaderIntelligent implements MagCardReader {
         m_iAutomState = READING_HOLDER;
     }
 
-    /**
-     *
-     */
     @Override
     public void appendChar(char c) {
 
@@ -117,57 +105,36 @@ public final class MagCardReaderIntelligent implements MagCardReader {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public boolean isComplete() {
         return m_iAutomState == READING_FINISHED;
     }
 
-    /**
-     *
-     */
     @Override
     public String getHolderName() {
         return m_sHolderName;
     }
 
-    /**
-     *
-     */
     @Override
     public String getCardNumber() {
         return m_sCardNumber;
     }
 
-    /**
-     *
-     */
     @Override
     public String getExpirationDate() {
         return m_sExpirationDate;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTrack1() {
         return null;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTrack2() {
         return null;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTrack3() {
         return null;

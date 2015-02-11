@@ -30,9 +30,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-/**
- *
- */
 public class PaymentGatewayPlanetauthorize implements PaymentGateway {
 
     private static final String ENDPOINTADDRESS = "https://secure.planetauthorizegateway.com/api/transact.php";
@@ -43,9 +40,6 @@ public class PaymentGatewayPlanetauthorize implements PaymentGateway {
     private String m_sCommercePassword;
     private boolean m_bTestMode;
 
-    /**
-     *
-     */
     public PaymentGatewayPlanetauthorize (AppProperties props) {
         m_sCommerceID = props.getProperty("payment.commerceid");
 
@@ -55,16 +49,10 @@ public class PaymentGatewayPlanetauthorize implements PaymentGateway {
         m_bTestMode = Boolean.valueOf(props.getProperty("payment.testmode")).booleanValue();
     }
 
-    /**
-     *
-     */
     public PaymentGatewayPlanetauthorize() {
 
     }
 
-    /**
-     *
-     */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {
         StringBuilder sb = new StringBuilder();

@@ -21,9 +21,6 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class SimpleBuilder implements ISQLBuilderStatic {
 
     private String m_sSentence;

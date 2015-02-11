@@ -27,14 +27,8 @@ import javax.swing.event.EventListenerList;
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
 
-/**
- *
- */
 public class BrowsableData implements ListModel {
 
-    /**
-     *
-     */
     protected EventListenerList listeners = new EventListenerList();
     private boolean m_bIsAdjusting;
 
@@ -56,16 +50,10 @@ public class BrowsableData implements ListModel {
         m_aData = new ArrayList();
     }
 
-    /**
-     *
-     */
     public BrowsableData(ListProvider dataprov, SaveProvider saveprov) {
         this(dataprov, saveprov, null);
     }
 
-    /**
-     *
-     */
     public BrowsableData(ListProvider dataprov) {
         this(dataprov, null, null);
     }
@@ -86,16 +74,10 @@ public class BrowsableData implements ListModel {
         return m_aData.size();
     }
 
-    /**
-     *
-     */
     public final boolean isAdjusting() {
         return m_bIsAdjusting;
     }
 
-    /**
-     *
-     */
     protected void fireDataIntervalAdded(int index0, int index1) {
         m_bIsAdjusting = true;
         EventListener[] l = listeners.getListeners(ListDataListener.class);
@@ -109,9 +91,6 @@ public class BrowsableData implements ListModel {
         m_bIsAdjusting = false;
     }
 
-    /**
-     *
-     */
     protected void fireDataContentsChanged(int index0, int index1) {
         m_bIsAdjusting = true;
         EventListener[] l = listeners.getListeners(ListDataListener.class);
@@ -125,9 +104,6 @@ public class BrowsableData implements ListModel {
         m_bIsAdjusting = false;
     }
 
-    /**
-     *
-     */
     protected void fireDataIntervalRemoved(int index0, int index1) {
         m_bIsAdjusting = true;
         EventListener[] l = listeners.getListeners(ListDataListener.class);
@@ -171,9 +147,6 @@ public class BrowsableData implements ListModel {
         putNewData(null);
     }
 
-    /**
-     *
-     */
     public void loadList(List l) {
         putNewData(l);
     }
@@ -188,30 +161,18 @@ public class BrowsableData implements ListModel {
         putNewData(m_aData);
     }
 
-    /**
-     *
-     */
     public final boolean canLoadData() {
         return m_dataprov != null;
     }
 
-    /**
-     *
-     */
     public boolean canInsertData() {
         return m_saveprov != null && m_saveprov.canInsert();
     }
 
-    /**
-     *
-     */
     public boolean canDeleteData() {
         return m_saveprov != null && m_saveprov.canDelete();
     }
 
-    /**
-     *
-     */
     public boolean canUpdateData() {
         return m_saveprov != null && m_saveprov.canUpdate();
     }

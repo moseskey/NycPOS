@@ -21,18 +21,12 @@ package com.openbravo.pos.payment;
 
 import com.openbravo.pos.forms.AppProperties;
 
-/**
- *
- */
 public class PaymentGatewayFac {
 
     /** Creates a new instance of PaymentGatewayFac */
     private PaymentGatewayFac() {
     }
 
-    /**
-     *
-     */
     public static PaymentGateway getPaymentGateway(AppProperties props) {
 
         String sReader = props.getProperty("payment.gateway");

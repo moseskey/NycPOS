@@ -23,9 +23,6 @@ import com.openbravo.data.gui.ComboBoxValModel;
 import java.awt.Component;
 import java.util.List;
 
-/**
- *
- */
 public class JProductAttListItem extends javax.swing.JPanel implements JProductAttEditI {
 
     private String attid;
@@ -47,9 +44,6 @@ public class JProductAttListItem extends javax.swing.JPanel implements JProductA
         jValues.setSelectedItem(value);
     }
 
-    /**
-     *
-     */
     public void assignSelection() {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -58,23 +52,14 @@ public class JProductAttListItem extends javax.swing.JPanel implements JProductA
         });
     }
 
-    /**
-     *
-     */
     public String getAttribute() {
         return attid;
     }
 
-    /**
-     *
-     */
     public String getValue() {
         return (String) jValues.getSelectedItem();
     }
 
-    /**
-     *
-     */
     public Component getComponent() {
         return this;
     }

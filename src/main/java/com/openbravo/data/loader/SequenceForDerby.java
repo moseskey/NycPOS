@@ -21,9 +21,6 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class SequenceForDerby extends BaseSentence {
 
     private BaseSentence sent1;

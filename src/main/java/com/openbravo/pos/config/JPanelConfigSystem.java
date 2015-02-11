@@ -26,9 +26,6 @@ import com.openbravo.pos.util.DirectoryEvent;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 
-/**
- *
- */
 public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfig {
 
     private DirtyManager dirty = new DirtyManager();
@@ -56,25 +53,16 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
 
     }
 
-    /**
-     *
-     */
     @Override
     public boolean hasChanged() {
         return dirty.isDirty();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getConfigComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
 
@@ -131,9 +119,6 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
         dirty.setDirty(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
 

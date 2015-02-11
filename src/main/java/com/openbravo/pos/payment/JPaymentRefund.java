@@ -23,9 +23,6 @@ import com.openbravo.pos.customers.CustomerInfoExt;
 import com.openbravo.pos.forms.AppLocal;
 import java.awt.Component;
 
-/**
- *
- */
 public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterface {
 
     private final JPaymentNotifier m_notifier;
@@ -43,9 +40,6 @@ public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterf
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
         m_dTotal = dTotal;
@@ -53,17 +47,11 @@ public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterf
         m_notifier.setStatus(true, true);
     }
 
-    /**
-     *
-     */
     @Override
     public PaymentInfo executePayment() {
         return new PaymentInfoTicket(m_dTotal, m_sName);
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

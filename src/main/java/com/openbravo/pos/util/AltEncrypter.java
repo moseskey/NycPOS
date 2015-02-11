@@ -23,9 +23,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.*;
 import javax.crypto.*;
 
-/**
- *
- */
 public class AltEncrypter {
 
     private Cipher cipherDecrypt;
@@ -55,9 +52,6 @@ public class AltEncrypter {
         }
     }
 
-    /**
-     *
-     */
     public String encrypt(String str) {
         try {
             return StringUtils.byte2hex(cipherEncrypt.doFinal(str.getBytes("UTF8")));
@@ -69,9 +63,6 @@ public class AltEncrypter {
         return null;
     }
 
-    /**
-     *
-     */
     public String decrypt(String str) {
         try {
             return new String(cipherDecrypt.doFinal(StringUtils.hex2byte(str)), "UTF8");

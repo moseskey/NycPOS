@@ -23,48 +23,24 @@ import com.openbravo.data.loader.LocalRes;
 import java.awt.*;
 import javax.swing.*;
 
-/**
- *
- */
 public class MessageInf {
 
     // SIGNAL_WORD'S
 
-    /**
-     *
-     */
         public final static int SGN_DANGER = 0xFF000000; // Death or serious injury will occur
 
-    /**
-     *
-     */
     public final static int SGN_WARNING = 0xFE000000; // Death or serious injury may occur
 
-    /**
-     *
-     */
     public final static int SGN_CAUTION = 0xFD000000; // Minor or moderate injury may occur
 
-    /**
-     *
-     */
     public final static int SGN_NOTICE = 0xFC000000; // Damage to property may occur
 
-    /**
-     *
-     */
     public final static int SGN_IMPORTANT = 0xFA000000; // Operating or maintenance instructions or additional information
 
-    /**
-     *
-     */
     public final static int SGN_SUCCESS = 0xFB000000;
 
     // ERROR_CLASS'ES
 
-    /**
-     *
-     */
         public final static int CLS_GENERIC = 0x00000000;
 
     // ERROR_CODE'S
@@ -100,30 +76,18 @@ public class MessageInf {
         this(SGN_WARNING, e.getLocalizedMessage(), e);
     }
 
-    /**
-     *
-     */
     public void show(Component parent) {
         JMessageDialog.showMessage(parent, this);
     }
 
-    /**
-     *
-     */
     public Object getCause() {
         return m_eCause;
     }
 
-    /**
-     *
-     */
     public int getSignalWord() {
         return m_iMsgNumber & 0xFF000000;
     }
 
-    /**
-     *
-     */
     public Icon getSignalWordIcon() {
         int iSignalWord = getSignalWord();
         if (iSignalWord == SGN_DANGER) {
@@ -143,9 +107,6 @@ public class MessageInf {
         }
     }
 
-    /**
-     *
-     */
     public String getErrorCodeMsg() {
 
         StringBuilder sb = new StringBuilder();
@@ -184,9 +145,6 @@ public class MessageInf {
         return new String(aStr);
     }
 
-    /**
-     *
-     */
     public String getMessageMsg() {
 
         StringBuilder sb = new StringBuilder();

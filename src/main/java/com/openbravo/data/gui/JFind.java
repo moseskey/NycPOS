@@ -25,9 +25,6 @@ import com.openbravo.data.loader.Vectorer;
 import java.awt.*;
 import javax.swing.*;
 
-/**
- *
- */
 public class JFind extends JDialog {
 
     private FindInfo m_FindInfo;

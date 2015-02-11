@@ -24,19 +24,10 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.border.MatteBorder;
 
-/**
- *
- */
 public class MenuTitleDefinition implements MenuElement {
 
-    /**
-     *
-     */
     public String KeyText;
 
-    /**
-     *
-     */
     @Override
     public void addComponent(JPanelMenu menu) {
 

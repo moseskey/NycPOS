@@ -25,9 +25,6 @@ import com.openbravo.data.loader.TableDefinition;
 import com.openbravo.format.Formats;
 import com.openbravo.pos.forms.BeanFactoryDataSingle;
 
-/**
- *
- */
 public class DataLogicThirdParties extends BeanFactoryDataSingle {
 
     private TableDefinition m_tthirdparties;
@@ -36,9 +33,6 @@ public class DataLogicThirdParties extends BeanFactoryDataSingle {
     public DataLogicThirdParties() {
     }
 
-    /**
-     *
-     */
     public void init(Session s){
 
         m_tthirdparties = new TableDefinition(s,
@@ -51,9 +45,6 @@ public class DataLogicThirdParties extends BeanFactoryDataSingle {
 
     }
 
-    /**
-     *
-     */
     public final TableDefinition getTableThirdParties() {
         return m_tthirdparties;
     }

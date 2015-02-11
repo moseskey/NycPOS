@@ -25,9 +25,6 @@ import com.openbravo.data.user.BrowsableData;
 import com.openbravo.format.Formats;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- */
 public class StockModel extends AbstractTableModel {
 
     private BrowsableData m_bd;

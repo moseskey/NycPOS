@@ -21,9 +21,6 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class QBFBuilder implements ISQLBuilderStatic {
 
     private final String m_sSentNullFilter;   // la sentencia que se devuelve cuando el filtro es vacio
@@ -51,9 +48,6 @@ public class QBFBuilder implements ISQLBuilderStatic {
 //        m_asFindFields = asFindFields;
 //    }
 
-    /**
-     *
-     */
         public QBFBuilder(String sSentence, String[] asFindFields) {
         int iPos = sSentence.indexOf("?(QBF_FILTER)");
         if (iPos < 0) {

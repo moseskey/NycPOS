@@ -21,9 +21,6 @@ package com.openbravo.data.gui;
 
 import javax.swing.Icon;
 
-/**
- *
- */
 public class CompoundIcon implements Icon {
 
     private Icon m_icon1;

@@ -44,9 +44,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.event.EventListenerList;
 
-/**
- *
- */
 public class OrderCustomerList extends JPanel implements TicketSelector {
 
     /**
@@ -88,9 +85,6 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
@@ -216,9 +210,6 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
         });
     }
 
-    /**
-     *
-     */
     @Override
     public void setComponentEnabled(boolean value) {
         jPanelCustomers.setEnabled(value);
@@ -232,17 +223,11 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
         this.setEnabled(value);
     }
 
-    /**
-     *
-     */
     @Override
     public void addActionListener(ActionListener l) {
         listeners.add(ActionListener.class, l);
     }
 
-    /**
-     *
-     */
     @Override
     public void removeActionListener(ActionListener l) {
         listeners.remove(ActionListener.class, l);

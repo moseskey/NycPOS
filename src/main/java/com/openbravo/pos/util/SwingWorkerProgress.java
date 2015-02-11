@@ -4,9 +4,6 @@
  */
 package com.openbravo.pos.util;
 
-/**
- *
- */
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
@@ -25,21 +22,12 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.EmptyBorder;
 
-/**
- *
- */
 public class SwingWorkerProgress {
 
-    /**
-     *
-     */
     public static void main(String[] args) {
         SwingWorkerProgress swingWorkerProgress = new SwingWorkerProgress();
     }
 
-    /**
-     *
-     */
     public SwingWorkerProgress() {
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -60,17 +48,11 @@ public class SwingWorkerProgress {
         });
     }
 
-    /**
-     *
-     */
     public class TestPane extends JPanel {
 
         private JProgressBar pbProgress;
         private JButton start;
 
-        /**
-         *
-         */
         public TestPane() {
 
             setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -120,9 +102,6 @@ public class SwingWorkerProgress {
         }
     }
 
-    /**
-     *
-     */
     public class ProgressWorker extends SwingWorker<Object, Object> {
 
         @Override

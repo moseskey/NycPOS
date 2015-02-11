@@ -22,14 +22,8 @@ package com.openbravo.data.loader;
 import com.openbravo.basic.BasicException;
 import java.util.Date;
 
-/**
- *
- */
 public abstract class DataParams implements DataWrite {
 
-    /**
-     *
-     */
     protected DataWrite dw;
 
     /**
@@ -90,16 +84,10 @@ public abstract class DataParams implements DataWrite {
         dw.setObject(paramIndex, value);
     }
 
-    /**
-     *
-     */
     public DataWrite getDataWrite() {
         return dw;
     }
 
-    /**
-     *
-     */
     public void setDataWrite(DataWrite dw) {
         this.dw = dw;
     }

@@ -26,9 +26,6 @@ import java.awt.Component;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-/**
- *
- */
 public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterface {
 
     private final JPaymentNotifier notifier;
@@ -50,9 +47,6 @@ public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterfac
 
     }
 
-    /**
-     *
-     */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
 
@@ -94,17 +88,11 @@ public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterfac
 
     }
 
-    /**
-     *
-     */
     @Override
     public PaymentInfo executePayment() {
         return new PaymentInfoTicket(m_dPaid, "debt");
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

@@ -23,93 +23,42 @@ import com.openbravo.pos.printer.DevicePrinter;
 import com.openbravo.pos.printer.DeviceTicket;
 import java.awt.image.BufferedImage;
 
-/**
- *
- */
 public abstract class Codes {
 
     /** Creates a new instance of Codes */
     public Codes() {
     }
 
-    /**
-     *
-     */
     public abstract byte[] getInitSequence();
 
-    /**
-     *
-     */
     public abstract byte[] getSize0();
 
-    /**
-     *
-     */
     public abstract byte[] getSize1();
 
-    /**
-     *
-     */
     public abstract byte[] getSize2();
 
-    /**
-     *
-     */
     public abstract byte[] getSize3();
 
-    /**
-     *
-     */
     public abstract byte[] getBoldSet();
 
-    /**
-     *
-     */
     public abstract byte[] getBoldReset();
 
-    /**
-     *
-     */
     public abstract byte[] getUnderlineSet();
 
-    /**
-     *
-     */
     public abstract byte[] getUnderlineReset();
 
-    /**
-     *
-     */
     public abstract byte[] getOpenDrawer();
 
-    /**
-     *
-     */
     public abstract byte[] getCutReceipt();
 
-    /**
-     *
-     */
     public abstract byte[] getNewLine();
 
-    /**
-     *
-     */
     public abstract byte[] getImageHeader();
 
-    /**
-     *
-     */
     public abstract int getImageWidth();
 
-    /**
-     *
-     */
     public abstract byte[] getImageLogo();
 
-    /**
-     *
-     */
     public void printBarcode(PrinterWritter out, String type, String position, String code) {
 
         if (DevicePrinter.BARCODE_EAN13.equals(type)) {
@@ -131,9 +80,6 @@ public abstract class Codes {
         }
     }
 
-    /**
-     *
-     */
     public byte[] transImage(BufferedImage image) {
 
             CenteredImage centeredimage = new CenteredImage(image, getImageWidth());
@@ -177,39 +123,24 @@ public abstract class Codes {
         return bData;
     }
 
-    /**
-     *
-     */
     protected class CenteredImage {
 
         private BufferedImage image;
         private int width;
 
-        /**
-         *
-         */
         public CenteredImage(BufferedImage image, int width) {
             this.image = image;
             this.width = width;
         }
 
-        /**
-         *
-         */
         public int getHeight() {
             return image.getHeight();
         }
 
-        /**
-         *
-         */
         public int getWidth() {
             return width;
         }
 
-        /**
-         *
-         */
         public boolean isBlack(int x, int y) {
 
             int centeredx = x + (image.getWidth() - width) / 2;

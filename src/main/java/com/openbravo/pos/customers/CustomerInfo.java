@@ -93,9 +93,6 @@ public class CustomerInfo implements Serializable {
         return taxid;
     }
 
-    /**
-     *
-     */
     public void setTaxid(String taxid) {
         this.taxid = taxid;
     }
@@ -108,9 +105,6 @@ public class CustomerInfo implements Serializable {
         return searchkey;
     }
 
-    /**
-     *
-     */
     public void setSearchkey(String searchkey) {
         this.searchkey = searchkey;
     }
@@ -123,9 +117,6 @@ public class CustomerInfo implements Serializable {
         return name;
     }
 
-    /**
-     *
-     */
     public void setName(String name) {
         this.name = name;
     }
@@ -138,9 +129,6 @@ public class CustomerInfo implements Serializable {
         return postal;
     }
 
-    /**
-     *
-     */
     public void setPostal(String postal) {
         this.postal = postal;
     }
@@ -153,9 +141,6 @@ public class CustomerInfo implements Serializable {
         return phone;
     }
 
-    /**
-     *
-     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -168,23 +153,14 @@ public class CustomerInfo implements Serializable {
         return email;
     }
 
-    /**
-     *
-     */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    /**
-     *
-     */
     public String printTaxid() {
         return StringUtils.encodeXML(taxid);
     }
 
-    /**
-     *
-     */
     public String printName() {
         return StringUtils.encodeXML(name);
     }

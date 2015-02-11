@@ -30,9 +30,6 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import com.openbravo.pos.util.OSValidator;
 
-/**
- *
- */
 public class JRootFrame extends javax.swing.JFrame implements AppMessage {
 
     // Gestor de que haya solo una instancia corriendo en cada maquina.
@@ -49,9 +46,6 @@ public class JRootFrame extends javax.swing.JFrame implements AppMessage {
         initComponents();
     }
 
-    /**
-     *
-     */
     public void initFrame(AppProperties props) {
 
         m_OS = new OSValidator();

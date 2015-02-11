@@ -28,9 +28,6 @@ import javax.swing.JOptionPane;
 import com.openbravo.beans.JPasswordDialog;
 import com.openbravo.pos.forms.AppLocal;
 
-/**
- *
- */
 public class Hashcypher {
 
 
@@ -38,9 +35,6 @@ public class Hashcypher {
     public Hashcypher() {
     }
 
-    /**
-     *
-     */
     public static boolean authenticate(String sPassword, String sHashPassword) {
         if (sHashPassword == null || sHashPassword.equals("") || sHashPassword.startsWith("empty:")) {
             return sPassword == null || sPassword.equals("");
@@ -53,9 +47,6 @@ public class Hashcypher {
         }
     }
 
-    /**
-     *
-     */
     public static String hashString(String sPassword) {
 
         if (sPassword == null || sPassword.equals("")) {
@@ -74,9 +65,6 @@ public class Hashcypher {
         }
     }
 
-    /**
-     *
-     */
     public static String changePassword(Component parent) {
         // Show the changePassword dialogs but do not check the old password
 
@@ -101,9 +89,6 @@ public class Hashcypher {
         return null;
     }
 
-    /**
-     *
-     */
     public static String changePassword(Component parent, String sOldPassword) {
 
         String sPassword = JPasswordDialog.showEditPassword(parent,

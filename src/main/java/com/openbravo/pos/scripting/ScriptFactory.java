@@ -26,19 +26,10 @@ package com.openbravo.pos.scripting;
  */
 public class ScriptFactory {
 
-    /**
-     *
-     */
     public static final String VELOCITY = "velocity";
 
-    /**
-     *
-     */
     public static final String BEANSHELL = "beanshell";
 
-    /**
-     *
-     */
     public static final String RHINO = "rhino";
 
     /** Creates a new instance of ScriptFactory */

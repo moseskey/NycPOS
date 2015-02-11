@@ -45,9 +45,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-/**
- *
- */
 public class JTicketsBagRestaurant extends javax.swing.JPanel {
 
     private final AppView m_App;
@@ -92,9 +89,6 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
 
     }
 
-    /**
-     *
-     */
     public void activate() {
 
         // Authorization
@@ -102,9 +96,6 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
 
     }
 
-    /**
-     *
-     */
     public void printTicket(String resource) {
         printTicket(resource, ticket, m_restaurant.getTable());
     }

@@ -31,9 +31,6 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.forms.AppView;
 import com.openbravo.pos.ticket.TicketLineInfo;
 
-/**
- *
- */
 public class JProductLineEdit extends javax.swing.JDialog {
 
     private TicketLineInfo returnLine;

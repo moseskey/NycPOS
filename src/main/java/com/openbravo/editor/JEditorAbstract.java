@@ -24,9 +24,6 @@ import java.awt.Color;
 import java.awt.Component;
 import javax.swing.border.Border;
 
-/**
- *
- */
 public abstract class JEditorAbstract extends javax.swing.JPanel implements EditorComponent {
 
     private EditorKeys editorkeys;
@@ -45,24 +42,12 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
         m_jText.setBorder(m_borderinactive);
     }
 
-    /**
-     *
-     */
     protected abstract int getMode();
 
-    /**
-     *
-     */
     protected abstract int getAlignment();
 
-    /**
-     *
-     */
     protected abstract String getEditMode();
 
-    /**
-     *
-     */
     protected abstract String getTextEdit();
 
     /**
@@ -71,19 +56,10 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
      */
     protected abstract String getTextFormat() throws BasicException;
 
-    /**
-     *
-     */
     protected abstract void typeCharInternal(char c);
 
-    /**
-     *
-     */
     protected abstract void transCharInternal(char c);
 
-    /**
-     *
-     */
     @Override
     public void typeChar(char c) {
         typeCharInternal(c);
@@ -91,9 +67,6 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
         firePropertyChange("Edition", null, null);
     }
 
-    /**
-     *
-     */
     @Override
     public void transChar(char c) {
         transCharInternal(c);
@@ -101,33 +74,21 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
         firePropertyChange("Edition", null, null);
     }
 
-    /**
-     *
-     */
     @Override
     public void addEditorKeys(EditorKeys ed) {
         editorkeys = ed;
     }
 
-    /**
-     *
-     */
     @Override
     public void deactivate() {
         setActive(false);
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     public void activate() {
         if (isEnabled()) {
             editorkeys.setActive(this, getMode());
@@ -141,9 +102,6 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
         reprintText();
     }
 
-    /**
-     *
-     */
     protected void reprintText() {
 
         m_jText.setHorizontalAlignment(getAlignment());

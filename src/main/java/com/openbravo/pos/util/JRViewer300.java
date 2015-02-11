@@ -99,14 +99,8 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 	 */
 	protected static final int TYPE_FILE_NAME = 1;
 
-    /**
-     *
-     */
     protected static final int TYPE_INPUT_STREAM = 2;
 
-    /**
-     *
-     */
     protected static final int TYPE_OBJECT = 3;
 
 	/**
@@ -114,47 +108,23 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 	 */
 	public static final int REPORT_RESOLUTION = 72;
 
-    /**
-     *
-     */
     protected float MIN_ZOOM = 0.5f;
 
-    /**
-     *
-     */
     protected float MAX_ZOOM = 10f;
 
-    /**
-     *
-     */
     protected int zooms[] = {50, 75, 100, 125, 150, 175, 200, 250, 400, 800};
 
-    /**
-     *
-     */
     protected int defaultZoomIndex = 2;
 
-    /**
-     *
-     */
     protected int type = TYPE_FILE_NAME;
 
-    /**
-     *
-     */
     protected boolean isXML = false;
 
-    /**
-     *
-     */
     protected String reportFileName = null;
 	JasperPrint jasperPrint = null;
 	private int pageIndex = 0;
 	private boolean pageError;
 
-    /**
-     *
-     */
     protected float zoom = 0f;
 
 	private JRGraphics2DExporter exporter = null;
@@ -187,9 +157,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 			}
 		};
 
-    /**
-     *
-     */
     protected KeyListener keyNavigationListener =
 		new KeyListener() {
         @Override
@@ -207,19 +174,10 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 			}
 		};
 
-    /**
-     *
-     */
     protected List saveContributors = new ArrayList();
 
-    /**
-     *
-     */
     protected File lastFolder = null;
 
-    /**
-     *
-     */
     protected JRSaveContributor lastSaveContributor = null;
 
 	/** Creates new form JRViewer300
@@ -335,9 +293,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		addHyperlinkListener(this);
 	}
 
-    /**
-     *
-     */
     public void loadJasperPrint(JasperPrint jrPrint) {
 
 		loadReport(jrPrint);
@@ -628,9 +583,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		}
 	}
 
-    /**
-     *
-     */
     protected boolean isOnlyHyperlinkListener()
 	{
 		int listenerCount;
@@ -1245,9 +1197,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		}
 	}//GEN-LAST:event_btnReloadActionPerformed
 
-    /**
-     *
-     */
     protected void forceRefresh()
 	{
 		zoom = 0;//force pageRefresh()
@@ -1321,9 +1270,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		hyperlinkClicked(element);
 	}
 
-    /**
-     *
-     */
     protected void hyperlinkClicked(JRPrintHyperlink hyperlink)
 	{
 		try
@@ -1525,9 +1471,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		}
 	}
 
-    /**
-     *
-     */
     protected void setPageImage()
 	{
 		Image image;
@@ -1553,9 +1496,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		lblPage.setIcon(imageIcon);
 	}
 
-    /**
-     *
-     */
     protected Image getPageErrorImage()
 	{
 		Image image = new BufferedImage(
@@ -1574,9 +1514,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		return image;
 	}
 
-    /**
-     *
-     */
     protected void createHyperlinks()
 	{
 		java.util.List pages = jasperPrint.getPages();
@@ -1584,9 +1521,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		createHyperlinks(page.getElements(), 0, 0);
 	}
 
-    /**
-     *
-     */
     protected void createHyperlinks(List elements, int offsetX, int offsetY)
 	{
 		if(elements != null && elements.size() > 0)
@@ -1673,21 +1607,12 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		}
 	}
 
-    /**
-     *
-     */
     protected class ImageMapPanel extends JPanel implements MouseListener, MouseMotionListener
 	{
 		private static final long serialVersionUID = JRConstants.SERIAL_VERSION_UID;
 
-            /**
-             *
-             */
             protected final List imageAreaHyperlinks;
 
-            /**
-             *
-             */
             public ImageMapPanel(Rectangle renderingArea, JRImageMapRenderer imageMap)
 		{
 			try
@@ -1742,17 +1667,11 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 			}
 		}
 
-            /**
-             *
-             */
             protected JRPrintImageAreaHyperlink getImageMapArea(MouseEvent e)
 		{
 			return getImageMapArea((int) (e.getX() / realZoom), (int) (e.getY() / realZoom));
 		}
 
-            /**
-             *
-             */
             protected JRPrintImageAreaHyperlink getImageMapArea(int x, int y)
 		{
 			JRPrintImageAreaHyperlink image = null;
@@ -1805,9 +1724,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		}
 	}
 
-    /**
-     *
-     */
     protected String getHyperlinkTooltip(JRPrintHyperlink hyperlink)
 	{
 		String toolTip;
@@ -1819,9 +1735,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		return toolTip;
 	}
 
-    /**
-     *
-     */
     protected String getFallbackTooltip(JRPrintHyperlink hyperlink)
 	{
 		String toolTip = null;
@@ -1975,9 +1888,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	}
 
-    /**
-     *
-     */
     public void setFitPageZoomRatio()
 	{
 		setRealZoomRatio(((float)pnlInScroll.getVisibleRect().getHeight() - 20f) / jasperPrint.getPageHeight());
@@ -2041,9 +1951,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	}
 
-    /**
-     *
-     */
     protected void paintPageError(Graphics2D grx)
 	{
 		AffineTransform origTransform = grx.getTransform();
@@ -2063,18 +1970,12 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 		}
 	}
 
-    /**
-     *
-     */
     protected void drawPageError(Graphics grx)
 	{
 		grx.setColor(Color.white);
 		grx.fillRect(0, 0, jasperPrint.getPageWidth() + 1, jasperPrint.getPageHeight() + 1);
 	}
 
-    /**
-     *
-     */
     protected void keyNavigate(KeyEvent evt)
 	{
 		boolean refresh = true;

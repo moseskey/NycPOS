@@ -39,9 +39,6 @@ import java.util.List;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
-/**
- *
- */
 public class CustomersPayment extends javax.swing.JPanel implements JPanelView, BeanFactoryApp {
 
     private AppView app;
@@ -80,17 +77,11 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         ttp = new TicketParser(app.getDeviceTicket(), dlsystem);
     }
 
-    /**
-     *
-     */
     @Override
     public Object getBean() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.CustomersPayment");
@@ -112,9 +103,6 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         editorcard.activate();
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
         if (dirty.isDirty()) {
@@ -130,9 +118,6 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         }
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;

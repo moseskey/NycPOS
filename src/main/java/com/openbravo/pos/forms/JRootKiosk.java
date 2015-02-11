@@ -30,9 +30,6 @@ import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import javax.swing.JFrame;
 
-/**
- *
- */
 public class JRootKiosk extends javax.swing.JFrame implements AppMessage {
 
     private InstanceManager m_instmanager = null;
@@ -50,9 +47,6 @@ public class JRootKiosk extends javax.swing.JFrame implements AppMessage {
         initComponents();
     }
 
-    /**
-     *
-     */
     public void initFrame(AppProperties props) {
 
         m_OS = new OSValidator();

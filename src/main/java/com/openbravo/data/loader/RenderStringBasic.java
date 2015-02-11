@@ -21,9 +21,6 @@ package com.openbravo.data.loader;
 
 import com.openbravo.format.Formats;
 
-/**
- *
- */
 public class RenderStringBasic implements IRenderString {
 
     private Formats[] m_aFormats;
@@ -36,9 +33,6 @@ public class RenderStringBasic implements IRenderString {
         m_aiIndex = aiIndex;
     }
 
-    /**
-     *
-     */
     public String getRenderString(Object value) {
 
         if (value == null) {

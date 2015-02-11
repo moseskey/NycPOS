@@ -28,9 +28,6 @@ import com.openbravo.pos.forms.AppConfig;
 import com.openbravo.pos.forms.AppLocal;
 import java.io.*;
 
-/**
- *
- */
 public class CompanyDetails {
     private String db_url;
     private String db_user;
@@ -38,9 +35,6 @@ public class CompanyDetails {
     private File m_config;
     private Session session;
 
-    /**
-     *
-     */
     public CompanyDetails() {
 
        AppConfig config = new AppConfig(m_config);
@@ -49,9 +43,6 @@ public class CompanyDetails {
 
 }
 
-    /**
-     *
-     */
     public void loadProperties(AppConfig config) {
 
         db_url=(config.getProperty("db.url"));
@@ -62,9 +53,6 @@ public class CompanyDetails {
 
 }
 
-    /**
-     *
-     */
     public String getUser() {
         return db_user;
     }

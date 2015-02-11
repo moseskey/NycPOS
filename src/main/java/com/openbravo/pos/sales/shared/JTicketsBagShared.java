@@ -35,9 +35,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-/**
- *
- */
 public class JTicketsBagShared extends JTicketsBag {
 
     private String m_sCurrentTicket = null;
@@ -55,9 +52,6 @@ public class JTicketsBagShared extends JTicketsBag {
         initComponents();
     }
 
-    /**
-     *
-     */
     @Override
     public void activate() {
 
@@ -70,9 +64,6 @@ public class JTicketsBagShared extends JTicketsBag {
 
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
 
@@ -87,26 +78,17 @@ public class JTicketsBagShared extends JTicketsBag {
         // postcondicion es que no tenemos ticket activado ni ticket en el panel
     }
 
-    /**
-     *
-     */
     @Override
     public void deleteTicket() {
         m_sCurrentTicket = null;
         selectValidTicket();
     }
 
-    /**
-     *
-     */
     @Override
     protected JComponent getBagComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     protected JComponent getNullComponent() {
         return new JPanel();

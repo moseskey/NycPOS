@@ -31,42 +31,21 @@ import java.util.*;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-/**
- *
- */
 public class DataLogicSystem extends BeanFactoryDataSingle {
 
-    /**
-     *
-     */
     protected String m_sInitScript;
     private SentenceFind m_version;
     private SentenceExec m_dummy;
     private String m_dbVersion;
 
-    /**
-     *
-     */
     protected SentenceList m_peoplevisible;
 
-    /**
-     *
-     */
     protected SentenceFind m_peoplebycard;
 
-    /**
-     *
-     */
     protected SerializerRead peopleread;
 
-    /**
-     *
-     */
     protected SentenceList m_permissionlist;
 
-    /**
-     *
-     */
     protected SerializerRead productIdRead;
 
 
@@ -100,9 +79,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
     public DataLogicSystem() {
     }
 
-    /**
-     *
-     */
     @Override
     public void init(Session s){
 
@@ -302,9 +278,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         return m_sInitScript;
     }
 
-    /**
-     *
-     */
     public String getDBVersion(){
         return m_dbVersion;
     }
@@ -358,9 +331,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         return (AppUser) m_peoplebycard.find(card);
     }
 
-    /**
-     *
-     */
     public final String findRolePermissions(String sRole) {
 
         try {
@@ -378,9 +348,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         m_changepassword.exec(userdata);
     }
 
-    /**
-     *
-     */
     public final void resetResourcesCache() {
 // JG 16 May use multicatch
         resourcescache = new HashMap<>();
@@ -406,9 +373,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         return resource;
     }
 
-    /**
-     *
-     */
     public final void setResource(String name, int type, byte[] data) {
 
         Object[] value = new Object[] {UUID.randomUUID().toString(), name, type, data};
@@ -421,37 +385,22 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         }
     }
 
-    /**
-     *
-     */
     public final void setResourceAsBinary(String sName, byte[] data) {
         setResource(sName, 2, data);
     }
 
-    /**
-     *
-     */
     public final byte[] getResourceAsBinary(String sName) {
         return getResource(sName);
     }
 
-    /**
-     *
-     */
     public final String getResourceAsText(String sName) {
         return Formats.BYTEA.formatValue(getResource(sName));
     }
 
-    /**
-     *
-     */
     public final String getResourceAsXML(String sName) {
         return Formats.BYTEA.formatValue(getResource(sName));
     }
 
-    /**
-     *
-     */
     public final BufferedImage getResourceAsImage(String sName) {
         try {
             byte[] img = getResource(sName); // , ".png"
@@ -461,9 +410,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         }
     }
 
-    /**
-     *
-     */
     public final void setResourceAsProperties(String sName, Properties p) {
         if (p == null) {
             setResource(sName, 0, null); // texto
@@ -477,9 +423,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         }
     }
 
-    /**
-     *
-     */
     public final Properties getResourceAsProperties(String sName) {
 
         Properties p = new Properties();
@@ -534,9 +477,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         m_updatepermissions.exec(permissions);
     }
 
-    /**
-     *
-     */
     public final void execLineRemoved(Object[] line) {
         try {
             m_lineremoved.exec(line);

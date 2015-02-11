@@ -22,9 +22,6 @@ package com.openbravo.data.gui;
 import com.openbravo.data.loader.LocalRes;
 import java.awt.*;
 import javax.swing.*;
-/**
- *
- */
 public class JMessageDialog extends javax.swing.JDialog {
 
     /** Creates new form JMessageDialog */
@@ -46,9 +43,6 @@ public class JMessageDialog extends javax.swing.JDialog {
         }
     }
 
-    /**
-     *
-     */
     public static void showMessage(Component parent, MessageInf inf) {
 
         Window window = getWindow(parent);

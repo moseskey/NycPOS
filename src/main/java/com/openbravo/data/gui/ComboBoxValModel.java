@@ -24,9 +24,6 @@ import com.openbravo.data.loader.KeyGetterBuilder;
 import java.util.*;
 import javax.swing.*;
 
-/**
- *
- */
 public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel {
 
     private List m_aData;
@@ -41,59 +38,35 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
         m_selected = null;
     }
 
-    /**
-     *
-     */
     public ComboBoxValModel(List aData) {
         this(aData, KeyGetterBuilder.INSTANCE);
     }
 
-    /**
-     *
-     */
     public ComboBoxValModel(IKeyGetter keygetter) {
         this(new ArrayList(), keygetter);
     }
 
-    /**
-     *
-     */
     public ComboBoxValModel() {
         this(new ArrayList(), KeyGetterBuilder.INSTANCE);
     }
 
-    /**
-     *
-     */
     public void add(Object c) {
         m_aData.add(c);
     }
 
-    /**
-     *
-     */
     public void del(Object c) {
         m_aData.remove(c);
     }
 
-    /**
-     *
-     */
     public void add(int index, Object c) {
         m_aData.add(index, c);
     }
 
-    /**
-     *
-     */
     public void refresh(List aData) {
         m_aData = aData;
         m_selected = null;
     }
 
-    /**
-     *
-     */
     public Object getSelectedKey() {
         if (m_selected == null) {
             return null;
@@ -102,9 +75,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
         }
     }
 
-    /**
-     *
-     */
     public String getSelectedText() {
         if (m_selected == null) {
             return null;
@@ -113,23 +83,14 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
         }
     }
 
-    /**
-     *
-     */
     public void setSelectedKey(Object aKey) {
         setSelectedItem(getElementByKey(aKey));
     }
 
-    /**
-     *
-     */
     public void setSelectedFirst() {
         m_selected = (m_aData.isEmpty()) ? null : m_aData.get(0);
     }
 
-    /**
-     *
-     */
     public Object getElementByKey(Object aKey) {
         if (aKey != null) {
             Iterator it = m_aData.iterator();

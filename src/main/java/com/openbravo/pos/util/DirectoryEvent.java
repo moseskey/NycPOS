@@ -27,8 +27,6 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.text.JTextComponent;
 import com.openbravo.pos.forms.AppLocal;
 
-/**
- */
 public class DirectoryEvent implements ActionListener {
     private JTextComponent m_jTxtField;
     private JFileChooser m_fc;

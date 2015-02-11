@@ -39,9 +39,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 
-/**
- *
- */
 public class JImageEditor extends javax.swing.JPanel {
 
     private Dimension m_maxsize;
@@ -63,16 +60,10 @@ public class JImageEditor extends javax.swing.JPanel {
         privateSetEnabled(isEnabled());
     }
 
-    /**
-     *
-     */
     public void setMaxDimensions(Dimension size) {
         m_maxsize = size;
     }
 
-    /**
-     *
-     */
     public Dimension getMaxDimensions() {
         return m_maxsize;
     }
@@ -93,9 +84,6 @@ public class JImageEditor extends javax.swing.JPanel {
         m_jScr.setEnabled(value && (m_Img != null));
     }
 
-    /**
-     *
-     */
     public void setImage(BufferedImage img) {
         BufferedImage oldimg = m_Img;
         m_Img = img;
@@ -112,23 +100,14 @@ public class JImageEditor extends javax.swing.JPanel {
         firePropertyChange("image", oldimg, m_Img);
     }
 
-    /**
-     *
-     */
     public BufferedImage getImage() {
         return m_Img;
     }
 
-    /**
-     *
-     */
     public double getZoom() {
         return m_icon.getZoom();
     }
 
-    /**
-     *
-     */
     public void setZoom(double zoom) {
         double oldzoom = m_icon.getZoom();
         m_icon.setZoom(zoom);
@@ -142,25 +121,16 @@ public class JImageEditor extends javax.swing.JPanel {
         firePropertyChange("zoom", oldzoom, zoom);
     }
 
-    /**
-     *
-     */
     public void incZoom() {
         double zoom = m_icon.getZoom();
         setZoom(zoom > 4.0 ? 8.0 : zoom * 2.0);
     }
 
-    /**
-     *
-     */
     public void decZoom() {
         double zoom = m_icon.getZoom();
         setZoom(zoom < 0.5 ? 0.25 : zoom / 2.0);
     }
 
-    /**
-     *
-     */
     public void doLoad() {
         JFileChooser fc = new JFileChooser(m_fCurrentDirectory);
 

@@ -25,9 +25,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-/**
- *
- */
 public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener {
 
     private CommPortIdentifier m_PortIdPrinter;
@@ -104,9 +101,6 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
         }
     }
 
-    /**
-     *
-     */
     public void disconnectDevice() {
 
         try {
@@ -324,9 +318,6 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
         }
     }
 
-    /**
-     *
-     */
     public void serialEvent(SerialPortEvent e) {
 
 	// Determine type of event.

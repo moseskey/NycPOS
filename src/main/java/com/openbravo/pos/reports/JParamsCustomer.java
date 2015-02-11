@@ -33,9 +33,6 @@ import java.awt.Component;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-/**
- *
- */
 public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorCreator {
 
     private DataLogicCustomers dlCustomers;
@@ -62,9 +59,6 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
         });
     }
 
-    /**
-     *
-     */
     @Override
     public void init(AppView app) {
         dlCustomers = (DataLogicCustomers) app.getBean("com.openbravo.pos.customers.DataLogicCustomers");
@@ -81,17 +75,11 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
         jTextField1.setText(null);
     }
 
-    /**
-     *
-     */
     @Override
     public SerializerWrite getSerializerWrite() {
         return new SerializerWriteBasic(new Datas[] {Datas.OBJECT, Datas.STRING, Datas.OBJECT, Datas.STRING});
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

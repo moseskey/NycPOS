@@ -27,9 +27,6 @@ import com.openbravo.pos.forms.AppLocal;
 import java.awt.Component;
 import java.util.UUID;
 
-/**
- *
- */
 public final class RolesView extends javax.swing.JPanel implements EditorRecord {
 
     private Object m_oId;
@@ -45,9 +42,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
         writeValueEOF();
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_oId = null;
@@ -57,9 +51,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
         m_jText.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
         m_oId = null;
@@ -69,9 +60,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
         m_jText.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
 
@@ -84,9 +72,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
         m_jText.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
 
@@ -113,17 +98,11 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
         return role;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }

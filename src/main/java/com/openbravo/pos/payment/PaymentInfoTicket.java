@@ -24,9 +24,6 @@ import com.openbravo.data.loader.DataRead;
 import com.openbravo.data.loader.SerializableRead;
 import com.openbravo.format.Formats;
 
-/**
- *
- */
 public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  {
 
     private static final long serialVersionUID = 8865238639097L;
@@ -44,18 +41,12 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
         m_dTicket = dTicket;
     }
 
-    /**
-     *
-     */
     public PaymentInfoTicket(double dTicket, String sName, String transactionID) {
         m_sName = sName;
         m_dTicket = dTicket;
         m_transactionID = transactionID;
     }
 
-    /**
-     *
-     */
     public PaymentInfoTicket() {
         m_sName = null;
         m_dTicket = 0.0;
@@ -77,73 +68,46 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
         m_dCardName = dr.getString(5);
      }
 
-    /**
-     *
-     */
     @Override
     public PaymentInfo copyPayment(){
         return new PaymentInfoTicket(m_dTicket, m_sName);
     }
 
-    /**
-     *
-     */
     @Override
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     @Override
     public double getTotal() {
         return m_dTicket;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTransactionID(){
         return m_transactionID;
     }
 
-    /**
-     *
-     */
     @Override
     public double getPaid() {
         return (0.0);
     }
 
-    /**
-     *
-     */
     @Override
     public double getChange(){
        return m_dTendered - m_dTicket;
    }
 
-    /**
-     *
-     */
     @Override
     public double getTendered() {
         return (0.0);
     }
 
-    /**
-     *
-     */
     @Override
     public String getCardName() {
        return m_dCardName;
    }
 
-    /**
-     *
-     */
 
     public String printPaid() {
         return Formats.CURRENCY.formatValue(m_dTicket);
@@ -151,24 +115,15 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     // Especificas
 
-    /**
-     *
-     */
         public String printPaperTotal() {
         // En una devolucion hay que cambiar el signo al total
         return Formats.CURRENCY.formatValue(-m_dTicket);
     }
 
-    /**
-     *
-     */
     public String printChange() {
         return Formats.CURRENCY.formatValue(m_dTendered - m_dTicket);
     }
 
-    /**
-     *
-     */
     public String printTendered() {
         return Formats.CURRENCY.formatValue(m_dTendered);
     }

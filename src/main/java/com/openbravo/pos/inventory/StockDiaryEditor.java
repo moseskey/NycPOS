@@ -44,9 +44,6 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.UUID;
 
-/**
- *
- */
 public final class StockDiaryEditor extends javax.swing.JPanel implements EditorRecord {
 
     private final CatalogSelector m_cat;
@@ -121,16 +118,10 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         m_jLocation.setModel(m_LocationsModel); // para que lo refresque
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_sID = null;
@@ -167,9 +158,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         m_cat.setComponentEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
         m_sID = UUID.randomUUID().toString();
@@ -207,9 +195,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         m_cat.setComponentEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
         Object[] diary = (Object[]) value;
@@ -247,9 +232,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         m_cat.setComponentEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
         Object[] diary = (Object[]) value;
@@ -313,9 +295,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         };
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

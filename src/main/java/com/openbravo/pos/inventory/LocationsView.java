@@ -27,9 +27,6 @@ import com.openbravo.pos.forms.AppLocal;
 import java.awt.Component;
 import java.util.UUID;
 
-/**
- *
- */
 public final class LocationsView extends javax.swing.JPanel implements EditorRecord {
 
     // private DirtyManager m_Dirty = new DirtyManager();
@@ -46,9 +43,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
         writeValueEOF();
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
 
@@ -60,9 +54,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
         m_jAddress.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
 
@@ -74,9 +65,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
         m_jAddress.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
 
@@ -89,9 +77,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
         m_jAddress.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
 
@@ -117,17 +102,11 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
         return location;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }

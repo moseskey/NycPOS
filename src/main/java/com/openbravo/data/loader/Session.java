@@ -37,9 +37,6 @@ public final class Session {
     private Connection m_c;
     private boolean m_bInTransaction;
 
-    /**
-     *
-     */
     public final SessionDB DB;
 
     /** Creates a new instance of Session
@@ -74,9 +71,6 @@ public final class Session {
         m_bInTransaction = false;
     }
 
-    /**
-     *
-     */
     public void close() {
 
         if (m_c != null) {
@@ -150,9 +144,6 @@ public final class Session {
         }
     }
 
-    /**
-     *
-     */
     public boolean isTransaction() {
         return m_bInTransaction;
     }

@@ -41,9 +41,6 @@ import org.pushingpixels.substance.api.skin.SkinInfo;
 // import org.jvnet.substance.api.SubstanceSkin;
 // import org.jvnet.substance.skin.SkinInfo;
 
-/**
- *
- */
 
 public class JPanelConfigPeripheral extends javax.swing.JPanel implements PanelConfig {
 
@@ -419,25 +416,16 @@ public class JPanelConfigPeripheral extends javax.swing.JPanel implements PanelC
         }
     }
 
-    /**
-     *
-     */
     @Override
     public boolean hasChanged() {
         return dirty.isDirty();
     }
 
-    /**
-     *
-     */
     @Override
     public Component getConfigComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void loadProperties(AppConfig config) {
 
@@ -644,9 +632,6 @@ public class JPanelConfigPeripheral extends javax.swing.JPanel implements PanelC
         dirty.setDirty(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void saveProperties(AppConfig config) {
 

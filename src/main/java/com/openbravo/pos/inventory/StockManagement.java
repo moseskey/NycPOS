@@ -51,9 +51,6 @@ import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- */
 public class StockManagement extends JPanel implements JPanelView {
 
     private final AppView m_App;
@@ -121,17 +118,11 @@ public class StockManagement extends JPanel implements JPanelView {
         jPanel5.add(m_invlines, BorderLayout.CENTER);
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.StockMovement");
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
@@ -161,9 +152,6 @@ public class StockManagement extends JPanel implements JPanelView {
         });
     }
 
-    /**
-     *
-     */
     public void stateToInsert() {
         // Inicializamos las cajas de texto
         m_jdate.setText(Formats.TIMESTAMP.formatValue(DateUtils.getTodayMinutes()));
@@ -174,9 +162,6 @@ public class StockManagement extends JPanel implements JPanelView {
         m_jcodebar.setText(null);
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
 

@@ -31,14 +31,8 @@ import java.awt.Insets;
 import java.io.Serializable;
 import com.openbravo.format.Formats;
 
-/**
- *
- */
 public class JCalendarItemRenderer extends javax.swing.JPanel implements ListCellRenderer, Serializable {
 
-    /**
-     *
-     */
     protected static Border noFocusBorder;
 
     private boolean m_bDone = false;

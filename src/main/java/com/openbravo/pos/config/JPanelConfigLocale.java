@@ -29,9 +29,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/**
- *
- */
 public class JPanelConfigLocale extends javax.swing.JPanel implements PanelConfig {
 
     private DirtyManager dirty = new DirtyManager();
@@ -94,23 +91,14 @@ public class JPanelConfigLocale extends javax.swing.JPanel implements PanelConfi
         }
     }
 
-    /**
-     *
-     */
     public boolean hasChanged() {
         return dirty.isDirty();
     }
 
-    /**
-     *
-     */
     public Component getConfigComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     public void loadProperties(AppConfig config) {
 
         String slang = config.getProperty("user.language");
@@ -141,9 +129,6 @@ public class JPanelConfigLocale extends javax.swing.JPanel implements PanelConfi
         dirty.setDirty(false);
     }
 
-    /**
-     *
-     */
     public void saveProperties(AppConfig config) {
 
         Locale l = ((LocaleInfo) jcboLocale.getSelectedItem()).getLocale();

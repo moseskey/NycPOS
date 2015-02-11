@@ -23,9 +23,6 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-/**
- *
- */
 public class DataWriteUtils {
 
     private static DateFormat tsf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
@@ -34,9 +31,6 @@ public class DataWriteUtils {
     public DataWriteUtils() {
     }
 
-    /**
-     *
-     */
     public static String getSQLValue(Object obj) {
         if (obj == null) {
             return "NULL";
@@ -55,9 +49,6 @@ public class DataWriteUtils {
         }
     }
 
-    /**
-     *
-     */
     public static String getSQLValue(Integer iValue) {
         if (iValue == null) {
             return "NULL";
@@ -66,9 +57,6 @@ public class DataWriteUtils {
         }
     }
 
-    /**
-     *
-     */
     public static String getSQLValue(Double dValue) {
         if (dValue == null) {
             return "NULL";
@@ -77,9 +65,6 @@ public class DataWriteUtils {
         }
     }
 
-    /**
-     *
-     */
     public static String getSQLValue(Boolean bValue) {
         if (bValue == null) {
             return "NULL";
@@ -88,9 +73,6 @@ public class DataWriteUtils {
         }
     }
 
-    /**
-     *
-     */
     public static String getSQLValue(String sValue) {
         if (sValue == null) {
             return "NULL";
@@ -99,9 +81,6 @@ public class DataWriteUtils {
         }
     }
 
-    /**
-     *
-     */
     public static String getSQLValue(Date dValue) {
         if (dValue == null) {
             return "NULL";
@@ -110,9 +89,6 @@ public class DataWriteUtils {
         }
     }
 
-    /**
-     *
-     */
     public static String getEscaped(String sValue) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < sValue.length(); i++) {

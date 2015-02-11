@@ -27,9 +27,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
-/**
- *
- */
 public class JPanelConfiguration extends JPanel implements JPanelView {
 
     private List<PanelConfig> m_panelconfig;
@@ -49,9 +46,6 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
     }
 
-    /**
-     *
-     */
     public JPanelConfiguration(AppProperties props) {
 
 
@@ -137,17 +131,11 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public JComponent getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.Configuration");
@@ -162,9 +150,6 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
         loadProperties();
     }
 
-    /**
-     *
-     */
     @Override
     public boolean deactivate() {
 

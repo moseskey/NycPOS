@@ -19,9 +19,6 @@
 
 package com.openbravo.pos.ticket;
 
-/**
- *
- */
 public class ProviderInfo {
 
     private int m_iProviderID;
@@ -33,30 +30,18 @@ public class ProviderInfo {
         m_sName = "";
     }
 
-    /**
-     *
-     */
     public int getProviderID() {
         return m_iProviderID;
     }
 
-    /**
-     *
-     */
     public void setProviderID(int iProviderID) {
         m_iProviderID = iProviderID;
     }
 
-    /**
-     *
-     */
     public String getName() {
         return m_sName;
     }
 
-    /**
-     *
-     */
     public void setName(String sName) {
         m_sName = sName;
     }

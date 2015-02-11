@@ -25,8 +25,6 @@ import com.openbravo.format.Formats;
 import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.forms.BeanFactoryDataSingle;
 
-/**
- */
 public class DataLogicCustomers extends BeanFactoryDataSingle {
 
     /**
@@ -46,9 +44,6 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
         Datas.BOOLEAN,
         Datas.STRING};
 
-    /**
-     *
-     */
     @Override
     public void init(Session s){
 // JG 03 Oct - Added Customer Image

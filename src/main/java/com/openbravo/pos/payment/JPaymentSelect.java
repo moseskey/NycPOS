@@ -30,9 +30,6 @@ import java.util.List;
 import java.util.Map;
 import javax.swing.JFrame;
 
-/**
- *
- */
 public abstract class JPaymentSelect extends javax.swing.JDialog
                             implements JPaymentNotifier {
 
@@ -71,39 +68,24 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         this.applyComponentOrientation(o);
     }
 
-    /**
-     *
-     */
     public void init(AppView app) {
         this.app = app;
         dlSystem = (DataLogicSystem) app.getBean("com.openbravo.pos.forms.DataLogicSystem");
         printselected = true;
     }
 
-    /**
-     *
-     */
     public void setPrintSelected(boolean value) {
         printselected = value;
     }
 
-    /**
-     *
-     */
     public boolean isPrintSelected() {
         return printselected;
     }
 
-    /**
-     *
-     */
     public List<PaymentInfo> getSelectedPayments() {
         return m_aPaymentInfo.getPayments();
     }
 
-    /**
-     *
-     */
     public boolean showDialog(double total, CustomerInfoExt customerext) {
 
         m_aPaymentInfo = new PaymentInfoList();
@@ -139,38 +121,20 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         return accepted;
     }
 
-    /**
-     *
-     */
     protected abstract void addTabs();
 
-    /**
-     *
-     */
     protected abstract void setStatusPanel(boolean isPositive, boolean isComplete);
 
-    /**
-     *
-     */
     protected abstract PaymentInfo getDefaultPayment(double total);
 
-    /**
-     *
-     */
     protected void setOKEnabled(boolean value) {
         m_jButtonOK.setEnabled(value);
     }
 
-    /**
-     *
-     */
     protected void setAddEnabled(boolean value) {
         m_jButtonAdd.setEnabled(value);
     }
 
-    /**
-     *
-     */
     protected void addTabPayment(JPaymentCreator jpay) {
         if (app.getAppUserView().getUser().hasPermission(jpay.getKey())) {
 
@@ -188,389 +152,206 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         }
     }
 
-    /**
-     *
-     */
     public interface JPaymentCreator {
 
-        /**
-         *
-         */
         public JPaymentInterface createJPayment();
 
-        /**
-         *
-         */
         public String getKey();
 
-        /**
-         *
-         */
         public String getLabelKey();
 
-        /**
-         *
-         */
         public String getIconKey();
     }
 
-    /**
-     *
-     */
     public class JPaymentCashCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
         public JPaymentInterface createJPayment() {
             return new JPaymentCashPos(JPaymentSelect.this, dlSystem);
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "payment.cash"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.cash"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/cash.png"; }
     }
 
-    /**
-     *
-     */
     public class JPaymentChequeCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
         public JPaymentInterface createJPayment() {
             return new JPaymentCheque(JPaymentSelect.this);
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "payment.cheque"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.cheque"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/cheque.png"; }
     }
 
-    /**
-     *
-     */
     public class JPaymentPaperCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
         public JPaymentInterface createJPayment() {
             return new JPaymentPaper(JPaymentSelect.this, "paperin");
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "payment.paper"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.paper"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/voucher.png"; }
     }
 
-    /**
-     *
-     */
     public class JPaymentMagcardCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
         public JPaymentInterface createJPayment() {
             return new JPaymentMagcard(app, JPaymentSelect.this);
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "payment.magcard"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.magcard"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/ccard.png"; }
     }
 
-    /**
-     *
-     */
     public class JPaymentFreeCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
         public JPaymentInterface createJPayment() {
             return new JPaymentFree(JPaymentSelect.this);
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "payment.free"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.free"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/wallet.png"; }
     }
 
-    /**
-     *
-     */
     public class JPaymentDebtCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
         public JPaymentInterface createJPayment() {
             return new JPaymentDebt(JPaymentSelect.this);
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "payment.debt"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.debt"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/customer.png"; }
     }
 
-    /**
-     *
-     */
     public class JPaymentCashRefundCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
         public JPaymentInterface createJPayment() {
             return new JPaymentRefund(JPaymentSelect.this, "cashrefund");
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "refund.cash"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.cashrefund"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/cash.png"; }
     }
 
-    /**
-     *
-     */
     public class JPaymentChequeRefundCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
         public JPaymentInterface createJPayment() {
             return new JPaymentRefund(JPaymentSelect.this, "chequerefund");
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "refund.cheque"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.chequerefund"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/cheque.png"; }
     }
 
-    /**
-     *
-     */
     public class JPaymentPaperRefundCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
         public JPaymentInterface createJPayment() {
             return new JPaymentRefund(JPaymentSelect.this, "paperout");
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "refund.paper"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.paper"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/voucher.png"; }
     }
 
-    /**
-     *
-     */
     public class JPaymentMagcardRefundCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
        public JPaymentInterface createJPayment() {
             return new JPaymentMagcard(app, JPaymentSelect.this);
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "refund.magcard"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.magcard"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/ccard.png"; }
     }
 
 // * Bank Payment receipt - Thanks Steve Clough! August 2011
 
-    /**
-     *
-     */
             public class JPaymentBankCreator implements JPaymentCreator {
 
-        /**
-         *
-         */
         @Override
         public JPaymentInterface createJPayment() {
             return new JPaymentBank(JPaymentSelect.this);
         }
 
-        /**
-         *
-         */
         @Override
         public String getKey() { return "payment.bank"; }
 
-        /**
-         *
-         */
         @Override
         public String getLabelKey() { return "tab.bank"; }
 
-        /**
-         *
-         */
         @Override
         public String getIconKey() { return "/images/bank.png"; }
     }
 
-    /**
-     *
-     */
     protected void setHeaderVisible(boolean value) {
         jPanel6.setVisible(value);
     }
@@ -583,9 +364,6 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).activate(customerext, m_dTotal - m_aPaymentInfo.getTotal(), m_sTransactionID);
     }
 
-    /**
-     *
-     */
     protected static Window getWindow(Component parent) {
         if (parent == null) {
             return new JFrame();
@@ -596,18 +374,12 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void setStatus(boolean isPositive, boolean isComplete) {
 
         setStatusPanel(isPositive, isComplete);
     }
 
-    /**
-     *
-     */
     public void setTransactionID(String tID){
         this.m_sTransactionID = tID;
     }

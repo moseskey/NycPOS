@@ -29,19 +29,10 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- *
- */
 public abstract class BatchSentence extends BaseSentence {
 
-    /**
-     *
-     */
     protected Session m_s;
 
-    /**
-     *
-     */
     protected HashMap<String, String> m_parameters;
 
     /** Creates a new instance of BatchSentence
@@ -51,9 +42,6 @@ public abstract class BatchSentence extends BaseSentence {
         m_parameters = new HashMap<>();
     }
 
-    /**
-     *
-     */
     public void putParameter(String name, String replacement) {
         m_parameters.put(name, replacement);
     }
@@ -64,17 +52,11 @@ public abstract class BatchSentence extends BaseSentence {
      */
     protected abstract Reader getReader() throws BasicException;
 
-    /**
-     *
-     */
     public class ExceptionsResultSet implements DataResultSet {
 
         List l;
         int m_iIndex;
 
-        /**
-         *
-         */
         public ExceptionsResultSet(List l) {
             this.l = l;
             m_iIndex = -1;
@@ -186,9 +168,6 @@ public abstract class BatchSentence extends BaseSentence {
         public void close() throws BasicException {
         }
 
-        /**
-         *
-         */
         @Override
         public int updateCount() {
             return 0;

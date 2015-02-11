@@ -25,9 +25,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 
-/**
- *
- */
 public class ThumbNailBuilder {
 
     private Image m_imgdefault;
@@ -40,17 +37,11 @@ public class ThumbNailBuilder {
         init(width, height, null);
     }
 
-    /**
-     *
-     */
     public ThumbNailBuilder(int width, int height, Image imgdef) {
         init(width, height, imgdef);
 
     }
 
-    /**
-     *
-     */
     public ThumbNailBuilder(int width, int height, String img) {
 
         Image defimg;
@@ -71,9 +62,6 @@ public class ThumbNailBuilder {
         }
     }
 
-    /**
-     *
-     */
     public Image getThumbNail(Image img) {
 
         if (img == null) {
@@ -83,9 +71,6 @@ public class ThumbNailBuilder {
         }
     }
 
-    /**
-     *
-     */
     public Image getThumbNailText(Image img, String text) {
 
         img = getThumbNail(img);

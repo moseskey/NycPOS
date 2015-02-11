@@ -28,14 +28,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-/**
- *
- */
 public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
-    /**
-     *
-     */
     protected Session s;
 
     private SentenceExec m_checkin;
@@ -61,15 +55,9 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
     private TableDefinition tbreaks;
     private TableDefinition tleaves;
 
-    /**
-     *
-     */
     public DataLogicPresenceManagement() {
     }
 
-    /**
-     *
-     */
     @Override
     public void init(Session s){
 
@@ -171,9 +159,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
             , SerializerReadString.INSTANCE);
     }
 
-    /**
-     *
-     */
     public final SentenceList getBreaksList() {
         return new StaticSentence(s
             , "SELECT ID, NAME FROM BREAKS ORDER BY NAME"
@@ -184,9 +169,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
             }});
     }
 
-    /**
-     *
-     */
     public final SentenceList getLeavesList() {
         return new StaticSentence(s
             , "SELECT ID, PPLID, NAME, STARTDATE, ENDDATE, NOTES FROM LEAVES ORDER BY NAME"
@@ -347,9 +329,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
     // EmployeeList list
     // Changed ='4' to !='0' --it lists all the users except admin who doesn´t clock in
 
-    /**
-     *
-     */
         public SentenceList getEmployeeList() {
         return new StaticSentence(s
             , new QBFBuilder("SELECT ID, NAME FROM PEOPLE WHERE ROLE != '0' AND VISIBLE = " + s.DB.TRUE() + " AND ?(QBF_FILTER) ORDER BY NAME", new String[] {"NAME"})
@@ -395,9 +374,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
                 , new EmployeeExtRead()).find(id);
     }
 
-    /**
-     *
-     */
     protected static class EmployeeExtRead implements SerializerRead {
 
         /**

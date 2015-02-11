@@ -26,9 +26,6 @@ import javax.swing.event.EventListenerList;
 import com.openbravo.basic.BasicException;
 import com.openbravo.data.loader.LocalRes;
 
-/**
- *
- */
 public class BrowsableEditableData {
 
     /**

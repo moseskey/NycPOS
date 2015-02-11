@@ -31,9 +31,6 @@ import java.util.Date;
 import java.util.UUID;
 
 
-/**
- *
- */
 public final class PaymentsEditor extends javax.swing.JPanel implements EditorRecord {
 
     private ComboBoxValModel m_ReasonModel;
@@ -68,9 +65,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
         writeValueEOF();
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
         m_sId = null;
@@ -85,9 +79,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
 
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
 
@@ -104,9 +95,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
         m_jNotes.setText(m_sNotes);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
         Object[] payment = (Object[]) value;
@@ -121,9 +109,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
         m_jNotes.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
         Object[] payment = (Object[]) value;
@@ -162,17 +147,11 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
         return payment;
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }

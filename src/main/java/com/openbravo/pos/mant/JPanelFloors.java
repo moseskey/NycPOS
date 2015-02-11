@@ -32,9 +32,6 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.panels.JPanelTable;
 import javax.swing.ListCellRenderer;
 
-/**
- *
- */
 public class JPanelFloors extends JPanelTable {
 
     private TableDefinition tfloors;
@@ -44,9 +41,6 @@ public class JPanelFloors extends JPanelTable {
     public JPanelFloors() {
     }
 
-    /**
-     *
-     */
     @Override
     protected void init() {
         tfloors = new TableDefinition(app.getSession(),
@@ -60,49 +54,31 @@ public class JPanelFloors extends JPanelTable {
         jeditor = new FloorsEditor(dirty);
     }
 
-    /**
-     *
-     */
     @Override
     public ListProvider getListProvider() {
         return new ListProviderCreator(tfloors);
     }
 
-    /**
-     *
-     */
     @Override
     public Vectorer getVectorer() {
         return tfloors.getVectorerBasic(new int[]{1});
     }
 
-    /**
-     *
-     */
     @Override
     public ListCellRenderer getListCellRenderer() {
         return new ListCellRendererBasic(tfloors.getRenderStringBasic(new int[]{1}));
     }
 
-    /**
-     *
-     */
     @Override
     public SaveProvider getSaveProvider() {
         return new SaveProvider(tfloors);
     }
 
-    /**
-     *
-     */
     @Override
     public EditorRecord getEditor() {
         return jeditor;
     }
 
-    /**
-     *
-     */
     @Override
     public String getTitle() {
         return AppLocal.getIntString("Menu.Floors");

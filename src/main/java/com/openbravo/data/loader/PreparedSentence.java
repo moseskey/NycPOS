@@ -24,31 +24,19 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- */
 public class PreparedSentence extends JDBCSentence {
 
     private static final Logger logger = Logger.getLogger("com.openbravo.data.loader.PreparedSentence");
 
     private String m_sentence;
 
-    /**
-     *
-     */
     protected SerializerWrite m_SerWrite = null;
 
-    /**
-     *
-     */
     protected SerializerRead m_SerRead = null;
 
     // Estado
     private PreparedStatement m_Stmt;
 
-    /**
-     *
-     */
     public PreparedSentence(Session s, String sentence, SerializerWrite serwrite, SerializerRead serread) {
         super(s);
         m_sentence = sentence;
@@ -57,16 +45,10 @@ public class PreparedSentence extends JDBCSentence {
         m_Stmt = null;
     }
 
-    /**
-     *
-     */
     public PreparedSentence(Session s, String sentence, SerializerWrite serwrite) {
         this(s, sentence, serwrite, null);
     }
 
-    /**
-     *
-     */
     public PreparedSentence(Session s, String sentence) {
         this(s, sentence, null, null);
     }

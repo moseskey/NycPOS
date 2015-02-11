@@ -21,14 +21,8 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 
-/**
- *
- */
 public class SerializerWriteBuilder implements SerializerWrite<SerializableWrite> {
 
-    /**
-     *
-     */
     public static final SerializerWrite INSTANCE = new SerializerWriteBuilder();
 
     /** Creates a new instance of SerializerWriteBuilder */

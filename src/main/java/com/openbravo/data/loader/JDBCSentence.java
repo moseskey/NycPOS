@@ -22,17 +22,11 @@ package com.openbravo.data.loader;
 import com.openbravo.basic.BasicException;
 import java.sql.*;
 
-/**
- *
- */
 public abstract class JDBCSentence extends BaseSentence {
 
     // Conexion
     // protected Connection m_c;
 
-    /**
-     *
-     */
         protected Session m_s;
 
     /** Creates a new instance of BaseSentence
@@ -42,18 +36,12 @@ public abstract class JDBCSentence extends BaseSentence {
         m_s = s;
     }
 
-    /**
-     *
-     */
     protected static final class JDBCDataResultSet implements DataResultSet {
 
         private ResultSet m_rs;
         private SerializerRead m_serread;
 //        private int m_iColumnCount;
 
-            /**
-             *
-             */
             public JDBCDataResultSet(ResultSet rs, SerializerRead serread) {
             m_rs = rs;
             m_serread = serread;

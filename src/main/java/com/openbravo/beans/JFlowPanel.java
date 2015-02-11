@@ -9,53 +9,32 @@ import javax.swing.JViewport;
 import javax.swing.Scrollable;
 import javax.swing.SwingConstants;
 
-/**
- *
- */
 public class JFlowPanel extends JPanel implements Scrollable {
 
     private int hgap = 5;
     private int vgap  = 5;
 
-    /**
-     *
-     */
     public JFlowPanel() {
         this(5, 5);
     }
 
-    /**
-     *
-     */
     public JFlowPanel(int hgap, int vgap) {
         this.hgap = hgap;
         this.vgap = vgap;
     }
 
-    /**
-     *
-     */
     public void setHorizontalGap(int iValue) {
         hgap = iValue;
     }
 
-    /**
-     *
-     */
     public int getHorizontalGap() {
         return hgap;
     }
 
-    /**
-     *
-     */
     public void setVerticalGap(int iValue) {
         vgap = iValue;
     }
 
-    /**
-     *
-     */
     public int getVerticalGap(int iValue) {
         return vgap;
     }

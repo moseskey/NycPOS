@@ -22,18 +22,12 @@ package com.openbravo.pos.scanpal2;
 import com.openbravo.pos.forms.AppProperties;
 import com.openbravo.pos.util.StringParser;
 
-/**
- *
- */
 public class DeviceScannerFactory {
 
     /** Creates a new instance of DeviceScannerFactory */
     private DeviceScannerFactory() {
     }
 
-    /**
-     *
-     */
     public static DeviceScanner createInstance(AppProperties props) {
 
         StringParser sd = new StringParser(props.getProperty("machine.scanner"));

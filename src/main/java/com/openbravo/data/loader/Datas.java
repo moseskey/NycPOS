@@ -23,60 +23,27 @@ import com.openbravo.basic.BasicException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-/**
- *
- */
 public abstract class Datas {
 
-    /**
-     *
-     */
     public final static Datas INT = new DatasINT();
 
-    /**
-     *
-     */
     public final static Datas STRING = new DatasSTRING();
 
-    /**
-     *
-     */
     public final static Datas DOUBLE = new DatasDOUBLE();
 
-    /**
-     *
-     */
     public final static Datas BOOLEAN = new DatasBOOLEAN();
 
-    /**
-     *
-     */
     public final static Datas TIMESTAMP = new DatasTIMESTAMP();
 
-    /**
-     *
-     */
     public final static Datas BYTES = new DatasBYTES();
 
-    /**
-     *
-     */
     public final static Datas IMAGE = new DatasIMAGE();
     //public final static Datas INPUTSTREAM = new DatasINPUTSTREAM();
 
-    /**
-     *
-     */
         public final static Datas OBJECT = new DatasOBJECT();
 
-    /**
-     *
-     */
     public final static Datas SERIALIZABLE = new DatasSERIALIZABLE();
 
-    /**
-     *
-     */
     public final static Datas NULL = new DatasNULL();
 
     private static DateFormat tsf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
@@ -97,24 +64,12 @@ public abstract class Datas {
      */
     public abstract void setValue(DataWrite dw, int i, Object value) throws BasicException;
 
-    /**
-     *
-     */
     public abstract Class getClassValue();
 
-    /**
-     *
-     */
     protected abstract String toStringAbstract(Object value);
 
-    /**
-     *
-     */
     protected abstract int compareAbstract(Object o1, Object o2);
 
-    /**
-     *
-     */
     public String toString(Object value) {
         if (value == null) {
             return "null";
@@ -123,9 +78,6 @@ public abstract class Datas {
         }
     }
 
-    /**
-     *
-     */
     public int compare(Object o1, Object o2) {
         if (o1 == null) {
             if (o2 == null) {

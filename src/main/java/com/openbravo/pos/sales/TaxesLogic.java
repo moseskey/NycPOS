@@ -32,18 +32,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- *
- */
 public class TaxesLogic {
 
     private List<TaxInfo> taxlist;
 
     private Map<String, TaxesLogicElement> taxtrees;
 
-    /**
-     *
-     */
     public TaxesLogic(List<TaxInfo> taxlist) {
         this.taxlist = taxlist;
 
@@ -196,23 +190,14 @@ public class TaxesLogic {
         return null;
     }
 
-    /**
-     *
-     */
     public double getTaxRate(String tcid) {
         return getTaxRate(tcid, null);
     }
 
-    /**
-     *
-     */
     public double getTaxRate(TaxCategoryInfo tc) {
         return getTaxRate(tc, null);
     }
 
-    /**
-     *
-     */
     public double getTaxRate(TaxCategoryInfo tc, CustomerInfoExt customer) {
 
         if (tc == null) {
@@ -222,9 +207,6 @@ public class TaxesLogic {
         }
     }
 
-    /**
-     *
-     */
     public double getTaxRate(String tcid, CustomerInfoExt customer) {
 
         if (tcid == null) {
@@ -239,30 +221,18 @@ public class TaxesLogic {
         }
     }
 
-    /**
-     *
-     */
     public TaxInfo getTaxInfo(String tcid) {
         return getTaxInfo(tcid, null);
     }
 
-    /**
-     *
-     */
     public TaxInfo getTaxInfo(TaxCategoryInfo tc) {
         return getTaxInfo(tc.getID(), null);
     }
 
-    /**
-     *
-     */
     public TaxInfo getTaxInfo(TaxCategoryInfo tc, CustomerInfoExt customer) {
         return getTaxInfo(tc.getID(), customer);
     }
 
-    /**
-     *
-     */
     public TaxInfo getTaxInfo(String tcid, CustomerInfoExt customer) {
 
 

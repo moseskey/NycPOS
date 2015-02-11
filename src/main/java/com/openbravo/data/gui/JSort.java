@@ -26,9 +26,6 @@ import com.openbravo.basic.BasicException;
 import com.openbravo.data.loader.ComparatorCreator;
 import com.openbravo.data.loader.LocalRes;
 
-/**
- *
- */
 public class JSort extends JDialog {
 
     private ComparatorCreator m_cc;

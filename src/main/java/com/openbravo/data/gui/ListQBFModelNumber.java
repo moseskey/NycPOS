@@ -23,9 +23,6 @@ package com.openbravo.data.gui;
 import com.openbravo.data.loader.QBFCompareEnum;
 import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;
-/**
- *
- */
 public class ListQBFModelNumber extends AbstractListModel implements ComboBoxModel {
 
 private Object[] m_items;
@@ -42,9 +39,6 @@ private Object m_sel;
 
 //    m_items = new Object[] {
 
-    /**
-     *
-     */
         public static ListQBFModelNumber getMandatoryString() {
         return new ListQBFModelNumber(
               QBFCompareEnum.COMP_NONE,
@@ -60,9 +54,6 @@ private Object m_sel;
         );
     }
 
-    /**
-     *
-     */
     public static ListQBFModelNumber getMandatoryNumber() {
         return new ListQBFModelNumber(
             QBFCompareEnum.COMP_NONE,
@@ -75,9 +66,6 @@ private Object m_sel;
         );
     }
 
-    /**
-     *
-     */
     public static ListQBFModelNumber getNonMandatoryString() {
         return new ListQBFModelNumber(
             QBFCompareEnum.COMP_NONE,
@@ -96,9 +84,6 @@ private Object m_sel;
         );
     }
 
-    /**
-     *
-     */
     public static ListQBFModelNumber getNonMandatoryNumber() {
         return new ListQBFModelNumber(
             QBFCompareEnum.COMP_NONE,
@@ -113,9 +98,6 @@ private Object m_sel;
         );
       }
 
-    /**
-     *
-     */
     public static ListQBFModelNumber getOverrideMandatoryNumber() {
         return new ListQBFModelNumber(
 //            QBFCompareEnum.COMP_NONE,

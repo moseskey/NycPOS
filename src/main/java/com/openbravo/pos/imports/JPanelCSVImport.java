@@ -74,9 +74,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
     private DataLogicSales m_dlSales;
     private DataLogicSystem m_dlSystem;
 
-    /**
-     *
-     */
     protected SaveProvider spr;
     private String productReference;
     private String productBarcode;
@@ -580,9 +577,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
         return (true);
     }
 
-    /**
-     *
-     */
     public void createProduct(String pType) {
 // create a new product and save it using DalaLogicSales
         Object[] myprod = new Object[25];
@@ -623,9 +617,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
         }
     }
 
-    /**
-     *
-     */
     public void createCSVEntry(String csvError, Double PreviousBuy, Double previousSell) {
 // create a new csv entry and save it using DataLogicSystem
         Object[] myprod = new Object[11];
@@ -647,9 +638,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
         }
     }
 
-    /**
-     *
-     */
     public String getRecord() {
         // Get record type using using DataLogicSystem
         Object[] myprod = new Object[3];

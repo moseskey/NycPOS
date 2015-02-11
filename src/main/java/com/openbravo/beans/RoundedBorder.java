@@ -23,38 +23,20 @@ import java.awt.*;
 import javax.swing.border.AbstractBorder;
 import javax.swing.border.Border;
 
-/**
- *
- */
 public class RoundedBorder extends AbstractBorder {
 
     private static Border blackLine;
     private static Border grayLine;
     private static Border gradientBorder;
 
-    /**
-     *
-     */
     protected Color colorBorder;
 
-    /**
-     *
-     */
     protected Color colorgradient;
 
-    /**
-     *
-     */
     protected int roundedRadius;
 
-    /**
-     *
-     */
     protected float thickness;
 
-    /**
-     *
-     */
     protected boolean filled;
 
     private float ftop;
@@ -62,9 +44,6 @@ public class RoundedBorder extends AbstractBorder {
     private float ftopinset;
     private float fbottominset;
 
-    /**
-     *
-     */
     public static Border createBlackLineBorder() {
         if (blackLine == null) {
             blackLine = new RoundedBorder(Color.BLACK);
@@ -72,9 +51,6 @@ public class RoundedBorder extends AbstractBorder {
         return blackLine;
     }
 
-    /**
-     *
-     */
     public static Border createGrayLineBorder() {
         if (grayLine == null) {
             grayLine = new RoundedBorder(Color.GRAY);
@@ -82,9 +58,6 @@ public class RoundedBorder extends AbstractBorder {
         return grayLine;
     }
 
-    /**
-     *
-     */
     public static Border createGradientBorder() {
         if (gradientBorder == null) {
             gradientBorder = new RoundedBorder(Color.GRAY, 0f, 8, false, false);
@@ -92,37 +65,22 @@ public class RoundedBorder extends AbstractBorder {
         return gradientBorder;
     }
 
-    /**
-     *
-     */
     public RoundedBorder(Color colorBorder) {
         this(colorBorder, Color.WHITE, 1f, 0, true, true);
     }
 
-    /**
-     *
-     */
     public RoundedBorder(Color colorBorder, float thickness) {
         this(colorBorder, Color.WHITE, thickness, 0, true, true);
     }
 
-    /**
-     *
-     */
     public RoundedBorder(Color colorBorder, float thickness, int roundedRadius) {
         this(colorBorder, Color.WHITE, thickness, roundedRadius, true, true);
     }
 
-    /**
-     *
-     */
     public RoundedBorder(Color colorBorder, float thickness, int roundedRadius, boolean btopborder, boolean bbottomborder) {
         this(colorBorder, Color.WHITE, thickness, roundedRadius, btopborder, bbottomborder);
     }
 
-    /**
-     *
-     */
     public RoundedBorder(Color colorBorder, Color colorgradient, float thickness, int roundedRadius, boolean btopborder, boolean bbottomborder) {
 
         this.colorBorder = colorBorder;
@@ -216,23 +174,14 @@ public class RoundedBorder extends AbstractBorder {
         return insets;
     }
 
-    /**
-     *
-     */
     public Color getLineColor() {
         return colorBorder;
     }
 
-    /**
-     *
-     */
     public float getThickness() {
         return thickness;
     }
 
-    /**
-     *
-     */
     public boolean isFilled() {
         return filled;
     }

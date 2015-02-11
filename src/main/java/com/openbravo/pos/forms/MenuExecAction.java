@@ -24,9 +24,6 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.ImageIcon;
 
-/**
- *
- */
 public class MenuExecAction extends AbstractAction {
 
     private final AppView m_App;

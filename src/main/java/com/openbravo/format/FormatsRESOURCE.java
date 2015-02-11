@@ -23,9 +23,6 @@ import java.text.ParseException;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-/**
- *
- */
 public class FormatsRESOURCE extends Formats {
 
     private ResourceBundle m_rb;
@@ -38,9 +35,6 @@ public class FormatsRESOURCE extends Formats {
         m_sPrefix = sPrefix;
     }
 
-    /**
-     *
-     */
     @Override
     protected String formatValueInt(Object value) {
         try {
@@ -59,9 +53,6 @@ public class FormatsRESOURCE extends Formats {
         return value;
     }
 
-    /**
-     *
-     */
     @Override
     public int getAlignment() {
         return javax.swing.SwingConstants.LEFT;

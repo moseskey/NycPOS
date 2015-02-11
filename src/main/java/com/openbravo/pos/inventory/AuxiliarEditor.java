@@ -33,9 +33,6 @@ import java.awt.Component;
 import java.awt.Toolkit;
 import java.util.UUID;
 
-/**
- *
- */
 public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
 
     private DataLogicSales m_dlSales;
@@ -58,9 +55,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         m_jProduct.getDocument().addDocumentListener(dirty);
     }
 
-    /**
-     *
-     */
     public void setInsertProduct(ProductInfoExt prod) {
 
         if (prod == null) {
@@ -70,16 +64,10 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void refresh() {
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEOF() {
 
@@ -99,9 +87,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         m_jSearch.setEnabled(false);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueInsert() {
 
@@ -121,9 +106,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         m_jSearch.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueEdit(Object value) {
         Object[] obj = (Object[]) value;
@@ -144,9 +126,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         m_jSearch.setEnabled(true);
     }
 
-    /**
-     *
-     */
     @Override
     public void writeValueDelete(Object value) {
         Object[] obj = (Object[]) value;
@@ -184,9 +163,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         };
     }
 
-    /**
-     *
-     */
     @Override
     public Component getComponent() {
         return this;

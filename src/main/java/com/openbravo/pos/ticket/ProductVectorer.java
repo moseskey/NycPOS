@@ -23,9 +23,6 @@ import com.openbravo.format.Formats;
 import com.openbravo.data.loader.Vectorer;
 import com.openbravo.basic.BasicException;
 import com.openbravo.pos.forms.AppLocal;
-/**
- *
- */
 public class ProductVectorer implements Vectorer {
 
     private static String[] m_sHeaders = {

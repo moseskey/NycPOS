@@ -24,29 +24,14 @@ import com.openbravo.data.loader.Vectorer;
 import com.openbravo.data.user.Finder;
 import java.util.regex.*;
 
-/**
- *
- */
 public class FindInfo implements Finder {
 
-    /**
-     *
-     */
     public static final int MATCH_STARTFIELD = 0;
 
-    /**
-     *
-     */
     public static final int MATCH_WHOLEFIELD = 1;
 
-    /**
-     *
-     */
     public static final int MATCH_ANYPARTFIELD = 2;
 
-    /**
-     *
-     */
     public static final int MATCH_REGEXP = 3;
 
     private String m_sTextCompare;
@@ -85,37 +70,22 @@ public class FindInfo implements Finder {
         this(vec,  "", 0, true, MATCH_ANYPARTFIELD);
     }
 
-    /**
-     *
-     */
     public Vectorer getVectorer() {
         return m_vec;
     }
 
-    /**
-     *
-     */
     public String getText() {
         return m_sText;
     }
 
-    /**
-     *
-     */
     public int getField() {
         return m_iField;
     }
 
-    /**
-     *
-     */
     public boolean isMatchCase() {
         return m_bMatchCase;
     }
 
-    /**
-     *
-     */
     public int getMatch() {
         return m_iMatch;
     }
