@@ -1,39 +1,3 @@
-//    uniCenta oPOS  - Touch Friendly Point Of Sale
-//    Copyright (c) 2009-2014 uniCenta
-//    http://www.unicenta.com
-//
-//    This file is part of uniCenta oPOS
-//
-//    uniCenta oPOS is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation, either version 3 of the License, or
-//    (at your option) any later version.
-//
-//   uniCenta oPOS is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//
-//    You should have received a copy of the GNU General Public License
-//    along with uniCenta oPOS.  If not, see <http://www.gnu.org/licenses/>.
-/**
- * <p>Title: AIM Java Version 1.4.1_02-b06</p>
- * <p>Description: Advanced Integration Method</p>
- * <p>Copyright: Copyright (c) 2003</p>
- * <p>Company: Authorize.Net</p>
- * @version 3.1
- */
-
-/**
- *  Based on sample code and snippets provided by:
- *  Patrick Phelan, phelan@choicelogic.com
- *  Roedy Green, Canadian Mind Products
- *  Authorize.net - //github.com/AuthorizeNet
- */
-
-// Modifications by Adrian Romero & Mikel Irurita
-// Modifications by Jack Gerrard uniCenta
-
 package com.openbravo.pos.payment;
 
 import com.openbravo.data.loader.LocalRes;

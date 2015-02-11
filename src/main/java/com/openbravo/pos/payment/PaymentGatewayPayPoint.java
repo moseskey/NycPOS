@@ -1,5 +1,3 @@
-// Modifications by Adrian Romero
-
 package com.openbravo.pos.payment;
 
 import com.openbravo.pos.forms.AppLocal;

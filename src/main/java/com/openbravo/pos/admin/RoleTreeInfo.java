@@ -1,4 +1,3 @@
-
 package com.openbravo.pos.admin;
 
 import com.openbravo.basic.BasicException;

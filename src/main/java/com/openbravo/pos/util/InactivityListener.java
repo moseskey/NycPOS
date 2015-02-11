@@ -1,11 +1,3 @@
-/*
- *
- *  KEY_EVENTS
- *  MOUSE_EVENTS - which includes mouse motion events
- *  USER_EVENTS - includes KEY_EVENTS and MOUSE_EVENT (this is the default)
- *
- */
-
 package com.openbravo.pos.util;
 
 import java.awt.*;

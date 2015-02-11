@@ -1,6 +1,3 @@
-/*
- * John L changes
- */
 package com.openbravo.pos.forms;
 
 import java.util.HashMap;

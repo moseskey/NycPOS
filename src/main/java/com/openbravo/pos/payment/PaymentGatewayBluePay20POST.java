@@ -1,19 +1,3 @@
-/**
- * <p>Title: AIM Java Version 1.4.1_02-b06</p>
- * <p>Description: Advanced Integration Method</p>
- * <p>Copyright: Copyright (c) 2013</p>
- * <p>Company: BluePay</p>
- * @version 1.0
- */
-
-/**
- *  Based on sample code and snipptes provided by:
- *  Patrick Phelan, phelan@choicelogic.com
- *  Roedy Green, Canadian Mind Products
- */
-
-// Modifications by Adrian Romero & Mikel Irurita and further modified for blue pay by walter wojcik
-
 package com.openbravo.pos.payment;
 
 import com.openbravo.pos.forms.AppLocal;
