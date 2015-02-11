@@ -23,7 +23,6 @@ import com.openbravo.pos.panels.ComboItemLocal;
 
 /**
  *
- * @author adrianromero
  */
 public class MovementReason extends ComboItemLocal {
 
@@ -75,7 +74,6 @@ public class MovementReason extends ComboItemLocal {
 
     /**
      *
-     * @return
      */
     public boolean isInput() {
         return m_iKey > 0;
@@ -83,8 +81,6 @@ public class MovementReason extends ComboItemLocal {
 
     /**
      *
-     * @param d
-     * @return
      */
     public Double samesignum(Double d) {
 
@@ -100,9 +96,6 @@ public class MovementReason extends ComboItemLocal {
 
     /**
      *
-     * @param dBuyPrice
-     * @param dSellPrice
-     * @return
      */
     public Double getPrice(Double dBuyPrice, Double dSellPrice) {
 

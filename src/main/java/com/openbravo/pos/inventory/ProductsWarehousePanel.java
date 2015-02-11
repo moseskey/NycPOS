@@ -37,7 +37,6 @@ import java.util.UUID;
 
 /**
  *
- * @author adrianromero
  */
 public class ProductsWarehousePanel extends JPanelTable2 {
 
@@ -108,7 +107,6 @@ public class ProductsWarehousePanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getFilter() {
@@ -117,7 +115,6 @@ public class ProductsWarehousePanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -137,7 +134,6 @@ public class ProductsWarehousePanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {

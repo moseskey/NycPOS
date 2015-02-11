@@ -25,7 +25,6 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author adrianromero
  */
 public interface CatalogSelector {
 
@@ -37,31 +36,26 @@ public interface CatalogSelector {
 
     /**
      *
-     * @param id
      */
     public void showCatalogPanel(String id);
 
     /**
      *
-     * @param value
      */
     public void setComponentEnabled(boolean value);
 
     /**
      *
-     * @return
      */
     public Component getComponent();
 
     /**
      *
-     * @param l
      */
     public void addActionListener(ActionListener l);
 
     /**
      *
-     * @param l
      */
     public void removeActionListener(ActionListener l);
 }

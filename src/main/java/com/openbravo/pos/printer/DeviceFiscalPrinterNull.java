@@ -23,7 +23,6 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DeviceFiscalPrinterNull implements DeviceFiscalPrinter {
 
@@ -33,14 +32,12 @@ public class DeviceFiscalPrinterNull implements DeviceFiscalPrinter {
 
     /**
      *
-     * @param desc
      */
     public DeviceFiscalPrinterNull(String desc) {
     }
 
     /**
      *
-     * @return
      */
     @Override
     public String getFiscalName() {
@@ -49,7 +46,6 @@ public class DeviceFiscalPrinterNull implements DeviceFiscalPrinter {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getFiscalComponent() {
@@ -72,10 +68,6 @@ public class DeviceFiscalPrinterNull implements DeviceFiscalPrinter {
 
     /**
      *
-     * @param sproduct
-     * @param dprice
-     * @param dunits
-     * @param taxinfo
      */
     @Override
     public void printLine(String sproduct, double dprice, double dunits, int taxinfo) {
@@ -83,7 +75,6 @@ public class DeviceFiscalPrinterNull implements DeviceFiscalPrinter {
 
     /**
      *
-     * @param smessage
      */
     @Override
     public void printMessage(String smessage) {
@@ -91,8 +82,6 @@ public class DeviceFiscalPrinterNull implements DeviceFiscalPrinter {
 
     /**
      *
-     * @param sPayment
-     * @param dpaid
      */
     @Override
     public void printTotal(String sPayment, double dpaid) {

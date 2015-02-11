@@ -29,7 +29,6 @@ import net.sf.jasperreports.engine.JRField;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JRDataSourceBasic implements JRDataSource {
 
@@ -40,9 +39,6 @@ public class JRDataSourceBasic implements JRDataSource {
     private ReportFields m_fields = null;
 
     /** Creates a new instance of JRDataSourceBasic
-     * @param sent
-     * @param fields
-     * @param params
      * @throws com.openbravo.basic.BasicException */
     public JRDataSourceBasic(BaseSentence sent, ReportFields fields, Object params) throws BasicException  {
 
@@ -53,8 +49,6 @@ public class JRDataSourceBasic implements JRDataSource {
 
     /**
      *
-     * @param jrField
-     * @return
      * @throws JRException
      */
     @Override
@@ -69,7 +63,6 @@ public class JRDataSourceBasic implements JRDataSource {
 
     /**
      *
-     * @return
      * @throws JRException
      */
     @Override

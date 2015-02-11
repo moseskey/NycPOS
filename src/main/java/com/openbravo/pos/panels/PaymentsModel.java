@@ -33,7 +33,6 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @authors adrianromero, jackgerrard, janarnagel
  *
  */
 public class PaymentsModel {
@@ -81,7 +80,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public static PaymentsModel emptyInstance() {
 
@@ -123,8 +121,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @param app
-     * @return
      * @throws BasicException
      */
     public static PaymentsModel loadInstance(AppView app) throws BasicException {
@@ -320,7 +316,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public int getPayments() {
         return m_iPayments;
@@ -328,7 +323,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public double getTotal() {
         return m_dPaymentsTotal;
@@ -336,7 +330,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String getHost() {
         return m_sHost;
@@ -344,7 +337,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public int getSequence() {
         return m_iSeq;
@@ -352,7 +344,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public Date getDateStart() {
         return m_dDateStart;
@@ -360,7 +351,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @param dValue
      */
     public void setDateEnd(Date dValue) {
         m_dDateEnd = dValue;
@@ -368,7 +358,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public Date getDateEnd() {
         return m_dDateEnd;
@@ -376,7 +365,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String getDateStartDerby(){
         SimpleDateFormat ndf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -385,7 +373,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printHost() {
 //        return m_sHost;
@@ -394,7 +381,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printSequence() {
         return Formats.INT.formatValue(m_iSeq);
@@ -402,7 +388,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printDateStart() {
         return Formats.TIMESTAMP.formatValue(m_dDateStart);
@@ -410,7 +395,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printDateEnd() {
         return Formats.TIMESTAMP.formatValue(m_dDateEnd);
@@ -418,7 +402,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printPayments() {
         return Formats.INT.formatValue(m_iPayments);
@@ -426,7 +409,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printPaymentsTotal() {
         return Formats.CURRENCY.formatValue(m_dPaymentsTotal);
@@ -434,7 +416,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public List<PaymentsLine> getPaymentLines() {
         return m_lpayments;
@@ -442,7 +423,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public int getSales() {
         return m_iSales == null ? 0 : m_iSales;
@@ -450,7 +430,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printSales() {
         return Formats.INT.formatValue(m_iSales);
@@ -458,7 +437,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printSalesBase() {
         return Formats.CURRENCY.formatValue(m_dSalesBase);
@@ -466,7 +444,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printSalesTaxes() {
         return Formats.CURRENCY.formatValue(m_dSalesTaxes);
@@ -474,7 +451,6 @@ public class PaymentsModel {
 
      /**
      *
-     * @return
      */
     public String printSalesTotal() {
         return Formats.CURRENCY.formatValue((m_dSalesBase == null || m_dSalesTaxes == null)
@@ -484,7 +460,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public List<SalesLine> getSaleLines() {
         return m_lsales;
@@ -494,7 +469,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
         public double getCategorySalesRows() {
         return m_iCategorySalesRows;
@@ -502,7 +476,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printCategorySalesRows() {
         return Formats.INT.formatValue(m_iCategorySalesRows);
@@ -510,7 +483,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public double getCategorySalesTotalUnits() {
         return m_dCategorySalesTotalUnits;
@@ -518,7 +490,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printCategorySalesTotalUnits() {
         return Formats.DOUBLE.formatValue(m_dCategorySalesTotalUnits);
@@ -526,7 +497,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public double getCategorySalesTotal() {
         return m_dCategorySalesTotal;
@@ -534,7 +504,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printCategorySalesTotal() {
         return Formats.CURRENCY.formatValue(m_dCategorySalesTotal);
@@ -542,7 +511,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public List<CategorySalesLine> getCategorySalesLines() {
         return m_lcategorysales;
@@ -553,7 +521,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
         public double getProductSalesRows() {
         return m_iProductSalesRows;
@@ -561,7 +528,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printProductSalesRows() {
         return Formats.INT.formatValue(m_iProductSalesRows);
@@ -569,7 +535,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public double getProductSalesTotalUnits() {
         return m_dProductSalesTotalUnits;
@@ -577,7 +542,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printProductSalesTotalUnits() {
         return Formats.DOUBLE.formatValue(m_dProductSalesTotalUnits);
@@ -585,7 +549,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public double getProductSalesTotal() {
         return m_dProductSalesTotal;
@@ -593,7 +556,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public String printProductSalesTotal() {
         return Formats.CURRENCY.formatValue(m_dProductSalesTotal);
@@ -601,7 +563,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public List<ProductSalesLine> getProductSalesLines() {
         return m_lproductsales;
@@ -612,7 +573,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
         public List<RemovedProductLines> getRemovedProductLines() {
         return m_lremovedlines;
@@ -621,7 +581,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public AbstractTableModel getPaymentsModel() {
         return new AbstractTableModel() {
@@ -663,7 +622,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @param dr
          * @throws BasicException
          */
         @Override
@@ -675,7 +633,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printCategoryName() {
             return m_CategoryName;
@@ -683,7 +640,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printCategoryUnits() {
             return Formats.DOUBLE.formatValue(m_CategoryUnits);
@@ -691,7 +647,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public Double getCategoryUnits() {
             return m_CategoryUnits;
@@ -699,7 +654,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printCategorySum() {
             return Formats.CURRENCY.formatValue(m_CategorySum);
@@ -707,7 +661,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public Double getCategorySum() {
             return m_CategorySum;
@@ -728,7 +681,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @param dr
          * @throws BasicException
          */
         @Override
@@ -741,7 +693,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printWorkerName() {
             return StringUtils.encodeXML(m_Name);
@@ -749,7 +700,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printTicketId() {
             return StringUtils.encodeXML(m_TicketId);
@@ -757,7 +707,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printProductName() {
             return StringUtils.encodeXML(m_ProductName);
@@ -765,7 +714,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printTotalUnits() {
             return Formats.DOUBLE.formatValue(m_TotalUnits);
@@ -790,7 +738,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @param dr
          * @throws BasicException
          */
         @Override
@@ -806,7 +753,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printProductName() {
             return StringUtils.encodeXML(m_ProductName);
@@ -814,7 +760,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printProductUnits() {
             return Formats.DOUBLE.formatValue(m_ProductUnits);
@@ -822,7 +767,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public Double getProductUnits() {
             return m_ProductUnits;
@@ -830,7 +774,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printProductPrice() {
             return Formats.CURRENCY.formatValue(m_ProductPrice);
@@ -838,7 +781,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public Double getProductPrice() {
             return m_ProductPrice;
@@ -846,7 +788,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printTaxRate() {
             return Formats.PERCENT.formatValue(m_TaxRate);
@@ -854,7 +795,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public Double getTaxRate() {
             return m_TaxRate;
@@ -862,7 +802,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printProductPriceTax() {
             return Formats.CURRENCY.formatValue(m_ProductPriceTax);
@@ -870,7 +809,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printProductSubValue() {
             return Formats.CURRENCY.formatValue(m_ProductPriceTax*m_ProductUnits);
@@ -878,7 +816,6 @@ public class PaymentsModel {
 
         /**
          * JG 4 Jun 2014
-         * @return
          */
         public String printProductPriceNet() {
             return Formats.CURRENCY.formatValue(m_ProductPrice*m_ProductUnits);
@@ -898,7 +835,6 @@ public class PaymentsModel {
         private Double m_SalesTaxGross;          //JG June 2014
         /**
          *
-         * @param dr
          * @throws BasicException
          */
         @Override
@@ -911,7 +847,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printTaxName() {
             return m_SalesTaxName;
@@ -919,7 +854,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printTaxes() {
             return Formats.CURRENCY.formatValue(m_SalesTaxes);
@@ -927,7 +861,6 @@ public class PaymentsModel {
 
         /**
          * JG June 2014
-         * @return
          */
         public String printTaxNet() {
             return Formats.CURRENCY.formatValue(m_SalesTaxNet);
@@ -935,7 +868,6 @@ public class PaymentsModel {
 
         /**
          * JG June 2014
-         * @return
          */
         public String printTaxGross() {
             return Formats.CURRENCY.formatValue(m_SalesTaxes + m_SalesTaxNet);
@@ -944,7 +876,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String getTaxName() {
             return m_SalesTaxName;
@@ -952,7 +883,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public Double getTaxes() {
             return m_SalesTaxes;
@@ -960,7 +890,6 @@ public class PaymentsModel {
 
         /**
          * JG June 2014
-         * @return
          */
         public Double getTaxNet() {
             return m_SalesTaxNet;
@@ -968,7 +897,6 @@ public class PaymentsModel {
 
         /**
          * JG June 2014
-         * @return
          */
         public Double getTaxGross() {
             return m_SalesTaxGross;
@@ -980,7 +908,6 @@ public class PaymentsModel {
 
     /**
      *
-     * @return
      */
     public AbstractTableModel getSalesModel() {
         return new AbstractTableModel() {
@@ -1021,7 +948,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @param dr
          * @throws BasicException
          */
         @Override
@@ -1033,7 +959,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printType() {
             return AppLocal.getIntString("transpayment." + m_PaymentType);
@@ -1041,7 +966,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String getType() {
             return m_PaymentType;
@@ -1049,7 +973,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printValue() {
             return Formats.CURRENCY.formatValue(m_PaymentValue);
@@ -1057,7 +980,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public Double getValue() {
             return m_PaymentValue;
@@ -1065,7 +987,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String printReason() {
             return s_PaymentReason;
@@ -1073,7 +994,6 @@ public class PaymentsModel {
 
         /**
          *
-         * @return
          */
         public String getReason() {
             return s_PaymentReason;

@@ -43,7 +43,6 @@ import javax.swing.event.ListSelectionListener;
 
 /**
  *
- * @author adrianromero
  */
 public class JCatalog extends JPanel implements ListSelectionListener, CatalogSelector {
 
@@ -82,11 +81,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     /**
      *
-     * @param dlSales
-     * @param pricevisible
-     * @param taxesincluded
-     * @param width
-     * @param height
      */
     public JCatalog(DataLogicSales dlSales, boolean pricevisible, boolean taxesincluded, int width, int height) {
 
@@ -109,7 +103,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -118,7 +111,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     /**
      *
-     * @param id
      */
     @Override
     public void showCatalogPanel(String id) {
@@ -171,7 +163,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     /**
      *
-     * @param value
      */
     @Override
     public void setComponentEnabled(boolean value) {
@@ -195,7 +186,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     /**
      *
-     * @param l
      */
     @Override
     public void addActionListener(ActionListener l) {
@@ -204,7 +194,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     /**
      *
-     * @param l
      */
     @Override
     public void removeActionListener(ActionListener l) {
@@ -226,7 +215,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     /**
      *
-     * @param prod
      */
     protected void fireSelectedProduct(ProductInfoExt prod) {
         EventListener[] l = listeners.getListeners(ActionListener.class);

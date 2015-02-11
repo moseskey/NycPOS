@@ -24,7 +24,6 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author adrian
  */
 public class Field {
 
@@ -38,12 +37,6 @@ public class Field {
 
     /**
      *
-     * @param label
-     * @param data
-     * @param format
-     * @param title
-     * @param searchable
-     * @param comparable
      */
     public Field(String label, Datas data, Formats format, boolean title, boolean searchable, boolean comparable) {
         this.label = label;
@@ -56,9 +49,6 @@ public class Field {
 
     /**
      *
-     * @param label
-     * @param data
-     * @param format
      */
     public Field(String label, Datas data, Formats format) {
         this(label, data, format, false, false, false);
@@ -66,7 +56,6 @@ public class Field {
 
     /**
      *
-     * @return
      */
     public String getLabel() {
         return label;
@@ -74,7 +63,6 @@ public class Field {
 
     /**
      *
-     * @return
      */
     public Formats getFormat() {
         return format;
@@ -82,7 +70,6 @@ public class Field {
 
     /**
      *
-     * @return
      */
     public Datas getData() {
         return data;
@@ -90,7 +77,6 @@ public class Field {
 
     /**
      *
-     * @return
      */
     public boolean isSearchable() {
         return searchable;
@@ -98,7 +84,6 @@ public class Field {
 
     /**
      *
-     * @return
      */
     public boolean isComparable() {
         return comparable;
@@ -106,7 +91,6 @@ public class Field {
 
     /**
      *
-     * @return
      */
     public boolean isTitle() {
         return title;

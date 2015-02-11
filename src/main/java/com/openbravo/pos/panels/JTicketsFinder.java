@@ -46,7 +46,6 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author  Mikel irurita
  */
 public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator {
 
@@ -69,10 +68,6 @@ public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator
 
     /**
      *
-     * @param parent
-     * @param dlSales
-     * @param dlCustomers
-     * @return
      */
     public static JTicketsFinder getReceiptFinder(Component parent, DataLogicSales dlSales, DataLogicCustomers dlCustomers) {
         Window window = getWindow(parent);
@@ -90,7 +85,6 @@ public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator
 
     /**
      *
-     * @return
      */
     public FindTicketsInfo getSelectedCustomer() {
         return selectedTicket;
@@ -185,7 +179,6 @@ public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

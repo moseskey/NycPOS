@@ -8,7 +8,6 @@ import javax.swing.Timer;
  * Swing utilities methods. Based on code from:
  * http://www.aurelienribon.com/blog/2012/07/tutorial-beautifying-the-dialogs-in-swing-applications/
  *
- * @author Harald Barsnes
  */
 public class SwingUtils {
 

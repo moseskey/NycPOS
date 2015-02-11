@@ -30,7 +30,6 @@ import com.openbravo.pos.forms.AppLocal;
 
 /**
  *
- * @author JG uniCenta
  */
 public class Hashcypher {
 
@@ -41,9 +40,6 @@ public class Hashcypher {
 
     /**
      *
-     * @param sPassword
-     * @param sHashPassword
-     * @return
      */
     public static boolean authenticate(String sPassword, String sHashPassword) {
         if (sHashPassword == null || sHashPassword.equals("") || sHashPassword.startsWith("empty:")) {
@@ -59,8 +55,6 @@ public class Hashcypher {
 
     /**
      *
-     * @param sPassword
-     * @return
      */
     public static String hashString(String sPassword) {
 
@@ -82,8 +76,6 @@ public class Hashcypher {
 
     /**
      *
-     * @param parent
-     * @return
      */
     public static String changePassword(Component parent) {
         // Show the changePassword dialogs but do not check the old password
@@ -111,9 +103,6 @@ public class Hashcypher {
 
     /**
      *
-     * @param parent
-     * @param sOldPassword
-     * @return
      */
     public static String changePassword(Component parent, String sOldPassword) {
 

@@ -30,7 +30,6 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author adrianromero
  */
 public class JDlgChangePassword extends javax.swing.JDialog {
 
@@ -74,9 +73,6 @@ public class JDlgChangePassword extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param sOldPassword
-     * @return
      */
     public static String showMessage(Component parent, String sOldPassword) {
 

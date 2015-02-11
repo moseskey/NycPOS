@@ -3,7 +3,6 @@
  * <p>Description: Advanced Integration Method</p>
  * <p>Copyright: Copyright (c) 2013</p>
  * <p>Company: BluePay</p>
- * @author BluePay
  * @version 3.1
  */
 
@@ -35,7 +34,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentGatewayBluePayAUTHNETEMU implements PaymentGateway {
 
@@ -70,7 +68,6 @@ public class PaymentGatewayBluePayAUTHNETEMU implements PaymentGateway {
 
     /**
      *
-     * @param payinfo
      */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {

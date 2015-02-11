@@ -26,7 +26,6 @@ import com.openbravo.data.loader.SerializableRead;
 
 /**
  *
- * @author adrianromero
  * Created on 27 de febrero de 2007, 23:27
  *
  */
@@ -48,7 +47,6 @@ public class RoleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {
@@ -57,7 +55,6 @@ public class RoleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -68,7 +65,6 @@ public class RoleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sID
      */
     public void setID(String sID) {
         m_sID = sID;
@@ -76,7 +72,6 @@ public class RoleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -84,7 +79,6 @@ public class RoleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -92,7 +86,6 @@ public class RoleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sValue
      */
     public void setName(String sValue) {
         m_sName = sValue;

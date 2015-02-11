@@ -21,7 +21,6 @@ package com.openbravo.data.user;
 
 /**
  *
- * @author adrianromero
  * Created on 22 de marzo de 2007, 0:01
  *
  */
@@ -38,8 +37,6 @@ public class DocumentLoaderBasic implements DocumentLoader {
 
     /**
      *
-     * @param key
-     * @return
      */
     public Object getValue(Object key) {
         return key;
@@ -47,8 +44,6 @@ public class DocumentLoaderBasic implements DocumentLoader {
 
     /**
      *
-     * @param value
-     * @return
      */
     public Object getKey(Object value) {
         return value;

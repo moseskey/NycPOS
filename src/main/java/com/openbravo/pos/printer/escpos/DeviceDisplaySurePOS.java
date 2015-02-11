@@ -23,7 +23,6 @@ import com.openbravo.pos.printer.DeviceTicket;
 
 /**
  *
- * @author adrianromero
  */
 public class DeviceDisplaySurePOS extends DeviceDisplaySerial {
 
@@ -31,7 +30,6 @@ public class DeviceDisplaySurePOS extends DeviceDisplaySerial {
 
     /**
      *
-     * @param display
      */
     public DeviceDisplaySurePOS(PrinterWritter display) {
         trans = new UnicodeTranslatorSurePOS();

@@ -26,7 +26,6 @@ import javax.print.PrintServiceLookup;
 
 /**
  *
- * @author adrianromero
  */
 public class ReportUtils {
 
@@ -35,8 +34,6 @@ public class ReportUtils {
 
     /**
      *
-     * @param printername
-     * @return
      */
     public static PrintService getPrintService(String printername) {
 
@@ -65,7 +62,6 @@ public class ReportUtils {
 
     /**
      *
-     * @return
      */
     public static String[] getPrintNames() {
         PrintService[] pservices =

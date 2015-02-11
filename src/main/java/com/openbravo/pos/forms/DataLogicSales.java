@@ -42,7 +42,6 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author adrianromero
  */
 public class DataLogicSales extends BeanFactoryDataSingle {
 
@@ -145,7 +144,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param s
      */
     @Override
     public void init(Session s){
@@ -154,7 +152,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final Row getProductsRow() {
         return productsRow;
@@ -171,8 +168,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param id
-     * @return
      * @throws BasicException
      */
     public final ProductInfoExt getProductInfo(String id) throws BasicException {
@@ -207,8 +202,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sCode
-     * @return
      * @throws BasicException
      */
     public final ProductInfoExt getProductInfoByCode(String sCode) throws BasicException {
@@ -243,8 +236,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sReference
-     * @return
      * @throws BasicException
      */
     public final ProductInfoExt getProductInfoByReference(String sReference) throws BasicException {
@@ -275,7 +266,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
         public final List<CategoryInfo> getRootCategories() throws BasicException {
@@ -295,8 +285,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
         /**
      *
-     * @param category
-     * @return
      * @throws BasicException
      */
     public final List<CategoryInfo> getSubcategories(String category) throws BasicException  {
@@ -323,8 +311,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 // JG uniCenta June 2014 includes StockUnits
     /**
      *
-     * @param category
-     * @return
      * @throws BasicException
      */
     public List<ProductInfoExt> getProductCatalog(String category) throws BasicException  {
@@ -366,8 +352,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param id
-     * @return
      * @throws BasicException
      */
     public List<ProductInfoExt> getProductComments(String id) throws BasicException {
@@ -404,7 +388,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
         public List<PromoInfo> getCurrentPromos() throws BasicException {
@@ -437,7 +420,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public PromoInfo[] getPromos() throws BasicException{
@@ -450,7 +432,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final SentenceList getPromoTypeList() {
             return new StaticSentence(s
@@ -464,8 +445,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param id
-     * @return
      */
     public final SentenceList getCatName(String id) {
             return new StaticSentence(s
@@ -479,8 +458,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param id
-     * @return
      * @throws BasicException
      */
     public final CategoryInfo getCategoryInfo(String id) throws BasicException {
@@ -678,7 +655,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
         public SentenceList getTicketsList() {
          return new StaticSentence(s
@@ -719,7 +695,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
         public final SentenceList getUserList() {
         return new StaticSentence(s
@@ -741,7 +716,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
         public final SentenceList getTaxList() {
         return new StaticSentence(s
@@ -775,7 +749,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
         public final SentenceList getCategoriesList() {
         return new StaticSentence(s
@@ -793,7 +766,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final SentenceList getTaxCustCategoriesList() {
         return new StaticSentence(s
@@ -814,7 +786,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
         @SuppressWarnings("unchecked")
@@ -837,7 +808,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final SentenceList getTaxCategoriesList() {
         return new StaticSentence(s
@@ -855,7 +825,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final SentenceList getAttributeSetList() {
         return new StaticSentence(s
@@ -873,7 +842,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final SentenceList getLocationsList() {
         return new StaticSentence(s
@@ -888,7 +856,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final SentenceList getFloorsList() {
         return new StaticSentence(s
@@ -899,8 +866,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param card
-     * @return
      * @throws BasicException
      */
     public CustomerInfoExt findCustomerExt(String card) throws BasicException {
@@ -939,8 +904,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param id
-     * @return
      * @throws BasicException
      */
     public CustomerInfoExt loadCustomerExt(String id) throws BasicException {
@@ -977,8 +940,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param id
-     * @return
      * @throws BasicException
      */
     public final boolean isCashActive(String id) throws BasicException {
@@ -992,9 +953,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param tickettype
-     * @param ticketid
-     * @return
      * @throws BasicException
      */
     public final TicketInfo loadTicket(final int tickettype, final int ticketid) throws BasicException {
@@ -1045,8 +1003,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param ticket
-     * @param location
      * @throws BasicException
      */
     public final void saveTicket(final TicketInfo ticket, final String location) throws BasicException {
@@ -1213,8 +1169,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @param ticket
-     * @param location
      * @throws BasicException
      */
     public final void deleteTicket(final TicketInfo ticket, final String location) throws BasicException {
@@ -1284,7 +1238,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final Integer getNextPickupIndex() throws BasicException {
@@ -1293,7 +1246,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final Integer getNextTicketIndex() throws BasicException {
@@ -1302,7 +1254,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final Integer getNextTicketRefundIndex() throws BasicException {
@@ -1311,7 +1262,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final Integer getNextTicketPaymentIndex() throws BasicException {
@@ -1327,7 +1277,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final SentenceList getProductCatQBF() {
  	return new StaticSentence(s
@@ -1367,7 +1316,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
 
     public final SentenceExec getProductCatInsert() {
@@ -1409,7 +1357,6 @@ public Object transact() throws BasicException {
 }
     /**
      *
-     * @return
      */
     public final SentenceExec getProductCatUpdate() {
 	return new SentenceExecTransaction(s) {
@@ -1457,7 +1404,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final SentenceExec getProductCatDelete() {
         return new SentenceExecTransaction(s) {
@@ -1476,7 +1422,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final SentenceExec getDebtUpdate() {
 
@@ -1487,7 +1432,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final SentenceExec getStockDiaryInsert() {
         return new SentenceExecTransaction(s) {
@@ -1515,7 +1459,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final SentenceExec getStockDiaryDelete() {
         return new SentenceExecTransaction(s) {
@@ -1543,7 +1486,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final SentenceExec getPaymentMovementInsert() {
         return new SentenceExecTransaction(s) {
@@ -1563,7 +1505,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final SentenceExec getPaymentMovementDelete() {
         return new SentenceExecTransaction(s) {
@@ -1581,10 +1522,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @param warehouse
-     * @param id
-     * @param attsetinstid
-     * @return
      * @throws BasicException
      */
     public final double findProductStock(String warehouse, String id, String attsetinstid) throws BasicException {
@@ -1603,7 +1540,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final SentenceExec getCatalogCategoryAdd() {
         return new StaticSentence(s
@@ -1613,7 +1549,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final SentenceExec getCatalogCategoryDel() {
         return new StaticSentence(s
@@ -1625,7 +1560,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
         public final TableDefinition getTableCategories() {
         return new TableDefinition(s,
@@ -1640,7 +1574,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final TableDefinition getTableTaxes() {
         return new TableDefinition(s,
@@ -1655,7 +1588,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final TableDefinition getTableTaxCustCategories() {
         return new TableDefinition(s,
@@ -1670,7 +1602,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final TableDefinition getTableTaxCategories() {
         return new TableDefinition(s,
@@ -1685,7 +1616,6 @@ public Object transact() throws BasicException {
 
     /**
      *
-     * @return
      */
     public final TableDefinition getTableLocations() {
         return new TableDefinition(s,
@@ -1705,8 +1635,6 @@ public Object transact() throws BasicException {
 
         /**
          *
-         * @param dr
-         * @return
          * @throws BasicException
          */
         @Override

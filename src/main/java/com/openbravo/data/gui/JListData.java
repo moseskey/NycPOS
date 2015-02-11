@@ -23,7 +23,6 @@ import java.util.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JListData extends javax.swing.JDialog {
 
@@ -40,8 +39,6 @@ public class JListData extends javax.swing.JDialog {
 
     /**
      *
-     * @param data
-     * @return
      */
     public Object showList(List data) {
 
@@ -50,8 +47,6 @@ public class JListData extends javax.swing.JDialog {
 
     /**
      *
-     * @param model
-     * @return
      */
     public Object showList(javax.swing.ListModel model) {
 

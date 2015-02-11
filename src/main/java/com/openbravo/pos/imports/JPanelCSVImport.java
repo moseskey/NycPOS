@@ -48,8 +48,6 @@ import org.apache.commons.lang.StringUtils;
  * Graphical User Interface and code for importing data from a CSV file allowing
  * adding or updating many products quickly and easily.
  *
- * @author John L - Version 1.0
- * @author Walter Wojcik - Version 2.0+
  * @version 2.0 - Added functionality to remember the last folder opened and
  * importing categories from CVS.
  * @version 2.1 complete re-write of the core code, to make use of the core
@@ -476,7 +474,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
 
     /**
      * Returns this object
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -576,7 +573,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
     /**
      * Deactivates and resets all form fields.
      *
-     * @return
      */
     @Override
     public boolean deactivate() {
@@ -586,7 +582,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
 
     /**
      *
-     * @param pType
      */
     public void createProduct(String pType) {
 // create a new product and save it using DalaLogicSales
@@ -630,9 +625,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
 
     /**
      *
-     * @param csvError
-     * @param PreviousBuy
-     * @param previousSell
      */
     public void createCSVEntry(String csvError, Double PreviousBuy, Double previousSell) {
 // create a new csv entry and save it using DataLogicSystem
@@ -657,7 +649,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     public String getRecord() {
         // Get record type using using DataLogicSystem

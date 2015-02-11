@@ -38,7 +38,6 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DeviceTicket {
 
@@ -74,8 +73,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param parent
-     * @param props
      */
     public DeviceTicket(Component parent, AppProperties props) {
 
@@ -266,7 +263,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param key
      * @return Device printer
      */
         public DevicePrinter getDevicePrinter(String key) {
@@ -284,8 +280,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param iSize
-     * @param cWhiteChar
      * @return Spacing string length
      */
         public static String getWhiteString(int iSize, char cWhiteChar) {
@@ -299,7 +293,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param iSize
      * @return Space sizing
      */
     public static String getWhiteString(int iSize) {
@@ -309,8 +302,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param sLine
-     * @param iSize
      * @return Barcode bar inter-spacing
      */
     public static String alignBarCode(String sLine, int iSize) {
@@ -324,8 +315,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param sLine
-     * @param iSize
      * @return Reduce spacing
      */
     public static String alignLeft(String sLine, int iSize) {
@@ -339,8 +328,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param sLine
-     * @param iSize
      * @return Add spacing
      */
     public static String alignRight(String sLine, int iSize) {
@@ -354,8 +341,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param sLine
-     * @param iSize
      * @return Adjusts Left/Right spacing
      */
     public static String alignCenter(String sLine, int iSize) {
@@ -369,7 +354,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param sLine
      * @return Equalise Left/Right spacing
      */
     public static String alignCenter(String sLine) {
@@ -380,7 +364,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param sCad
      * @return Convert number to string
      */
         public static byte[] transNumber(String sCad) {
@@ -398,7 +381,6 @@ public class DeviceTicket {
 
     /**
      *
-     * @param sChar
      * @return Convert hex to character
      */
     public static byte transNumberChar(char sChar) {

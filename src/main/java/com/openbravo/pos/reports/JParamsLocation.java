@@ -31,7 +31,6 @@ import java.util.List;
 
 /**
  *
- * @author adrianromero
  */
 public class JParamsLocation extends javax.swing.JPanel implements ReportEditorCreator {
 
@@ -45,7 +44,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @param app
      */
     @Override
     public void init(AppView app) {
@@ -72,7 +70,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      */
     @Override
     public SerializerWrite getSerializerWrite() {
@@ -81,7 +78,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -90,7 +86,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @param a
      */
     protected void addFirst(List a) {
         // do nothing
@@ -98,7 +93,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @param l
      */
     public void addActionListener(ActionListener l) {
         m_jLocation.addActionListener(l);
@@ -106,7 +100,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @param l
      */
     public void removeActionListener(ActionListener l) {
         m_jLocation.removeActionListener(l);
@@ -114,7 +107,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

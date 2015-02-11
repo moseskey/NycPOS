@@ -28,7 +28,6 @@ import com.openbravo.data.user.StateListener;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JSaver extends JPanel implements StateListener {
 
@@ -51,7 +50,6 @@ public class JSaver extends JPanel implements StateListener {
 
     /**
      *
-     * @param iState
      */
     @Override
     public void updateState(int iState) {

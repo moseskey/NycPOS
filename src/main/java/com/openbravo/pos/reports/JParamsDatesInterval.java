@@ -33,7 +33,6 @@ import java.util.Date;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEditorCreator {
 
@@ -44,7 +43,6 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
 
     /**
      *
-     * @param d
      */
     public void setStartDate(Date d) {
         jTxtStartDate.setText(Formats.TIMESTAMP.formatValue(d));
@@ -52,7 +50,6 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
 
     /**
      *
-     * @param d
      */
     public void setEndDate(Date d) {
         jTxtEndDate.setText(Formats.TIMESTAMP.formatValue(d));
@@ -60,7 +57,6 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
 
     /**
      *
-     * @param app
      */
     @Override
     public void init(AppView app) {
@@ -76,7 +72,6 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
 
     /**
      *
-     * @return
      */
     @Override
     public SerializerWrite getSerializerWrite() {
@@ -85,7 +80,6 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -94,7 +88,6 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

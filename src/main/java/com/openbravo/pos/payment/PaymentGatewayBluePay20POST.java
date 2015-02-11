@@ -3,7 +3,6 @@
  * <p>Description: Advanced Integration Method</p>
  * <p>Copyright: Copyright (c) 2013</p>
  * <p>Company: BluePay</p>
- * @author Walter Wojcik
  * @version 1.0
  */
 
@@ -32,7 +31,6 @@ import javax.net.ssl.HttpsURLConnection;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentGatewayBluePay20POST implements PaymentGateway {
 
@@ -71,7 +69,6 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
 
     /**
      *
-     * @param payinfo
      */
     @Override
     public void execute(PaymentInfoMagcard payinfo)

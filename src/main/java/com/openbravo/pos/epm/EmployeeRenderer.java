@@ -27,7 +27,6 @@ import javax.swing.JList;
 
 /**
  *
- * @author Ali Safdar & Aneeqa Baber
  */
 public class EmployeeRenderer extends DefaultListCellRenderer {
 

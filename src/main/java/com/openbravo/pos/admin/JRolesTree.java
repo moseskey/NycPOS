@@ -16,7 +16,6 @@ public class JRolesTree extends javax.swing.JPanel {
 
     /**
      *
-     * @param dirty
      */
     public JRolesTree(DirtyManager dirty) {
         initComponents();
@@ -48,7 +47,6 @@ public class JRolesTree extends javax.swing.JPanel {
 
     /**
      *
-     * @param value
      */
     public void writeValueDelete(Object value) {
 
@@ -60,7 +58,6 @@ public class JRolesTree extends javax.swing.JPanel {
 
     /**
      *
-     * @param value
      */
     public void writeValueEdit(Object value) {
 
@@ -72,7 +69,6 @@ public class JRolesTree extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public Object createValue() throws BasicException {
@@ -85,7 +81,6 @@ public class JRolesTree extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public Component getComponent() {
         return this;

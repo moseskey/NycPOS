@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author  adrian
  */
 public class QBFBuilder implements ISQLBuilderStatic {
 
@@ -54,8 +53,6 @@ public class QBFBuilder implements ISQLBuilderStatic {
 
     /**
      *
-     * @param sSentence
-     * @param asFindFields
      */
         public QBFBuilder(String sSentence, String[] asFindFields) {
         int iPos = sSentence.indexOf("?(QBF_FILTER)");
@@ -73,9 +70,6 @@ public class QBFBuilder implements ISQLBuilderStatic {
 
     /**
      *
-     * @param sw
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override

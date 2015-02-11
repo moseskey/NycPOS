@@ -26,7 +26,6 @@ import com.openbravo.data.user.BrowsableEditableData;
 
 /**
  *
- * @author HS uniCenta
  */
 public class CustomerInfoGlobal {
 
@@ -42,7 +41,6 @@ public class CustomerInfoGlobal {
 
     /**
      *
-     * @return
      */
         public static CustomerInfoGlobal getInstance() {
         if (INSTANCE == null) {
@@ -54,7 +52,6 @@ public class CustomerInfoGlobal {
 
     /**
      *
-     * @return
      */
     public CustomerInfoExt getCustomerInfoExt() {
         return customerInfoExt;
@@ -62,7 +59,6 @@ public class CustomerInfoGlobal {
 
     /**
      *
-     * @param customerInfoExt
      */
     public void setCustomerInfoExt(CustomerInfoExt customerInfoExt) {
         this.customerInfoExt = customerInfoExt;
@@ -70,7 +66,6 @@ public class CustomerInfoGlobal {
 
     /**
      *
-     * @return
      */
     public BrowsableEditableData getEditableData() {
         return editableData;
@@ -78,7 +73,6 @@ public class CustomerInfoGlobal {
 
     /**
      *
-     * @param editableData
      */
     public void setEditableData(BrowsableEditableData editableData) {
         this.editableData = editableData;

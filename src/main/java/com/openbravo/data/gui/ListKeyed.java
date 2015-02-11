@@ -25,14 +25,11 @@ import java.util.List;
 
 /**
  *
- * @author adrianromero
- * @param <K>
  */
 public class ListKeyed<K extends IKeyed> extends ArrayList<K> {
 
     /**
      *
-     * @param list
      */
     public ListKeyed(List<K> list) {
         this.addAll(list);
@@ -40,8 +37,6 @@ public class ListKeyed<K extends IKeyed> extends ArrayList<K> {
 
     /**
      *
-     * @param key
-     * @return
      */
     public K get(Object key) {
 

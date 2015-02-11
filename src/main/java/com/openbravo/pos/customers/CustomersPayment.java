@@ -41,7 +41,6 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author  adrianromero
  */
 public class CustomersPayment extends javax.swing.JPanel implements JPanelView, BeanFactoryApp {
 
@@ -69,7 +68,6 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -84,7 +82,6 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
 
     /**
      *
-     * @return
      */
     @Override
     public Object getBean() {
@@ -93,7 +90,6 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -118,7 +114,6 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {
@@ -137,7 +132,6 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {

@@ -33,7 +33,6 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author  adrianromero
  */
 public class ReceiptSplit extends javax.swing.JDialog {
 
@@ -68,12 +67,6 @@ public class ReceiptSplit extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param ticketline
-     * @param dlSales
-     * @param dlCustomers
-     * @param taxeslogic
-     * @return
      */
     public static ReceiptSplit getDialog(Component parent, String ticketline, DataLogicSales dlSales, DataLogicCustomers dlCustomers, TaxesLogic taxeslogic) {
 
@@ -94,8 +87,6 @@ public class ReceiptSplit extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @return
      */
     protected static Window getWindow(Component parent) {
         if (parent == null) {
@@ -109,10 +100,6 @@ public class ReceiptSplit extends javax.swing.JDialog {
 
     /**
      *
-     * @param ticket
-     * @param ticket2
-     * @param ticketext
-     * @return
      */
     public boolean showDialog(TicketInfo ticket, TicketInfo ticket2, Object ticketext) {
 

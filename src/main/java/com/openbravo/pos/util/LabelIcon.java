@@ -28,7 +28,6 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author adrianromero
  */
 public class LabelIcon extends JLabel implements Icon {
 
@@ -37,8 +36,6 @@ public class LabelIcon extends JLabel implements Icon {
 
     /**
      *
-     * @param width
-     * @param height
      */
     public LabelIcon(int width, int height) {
         iconwidth = width;
@@ -47,9 +44,6 @@ public class LabelIcon extends JLabel implements Icon {
 
     /**
      *
-     * @param mywidth
-     * @param myheight
-     * @return
      */
     public BufferedImage getImage(int mywidth, int myheight) {
 

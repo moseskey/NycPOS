@@ -25,7 +25,6 @@ import java.util.List;
 
 /**
  *
- * @author adrianromero
  */
 public class TaxesLogicElement {
 
@@ -34,7 +33,6 @@ public class TaxesLogicElement {
 
     /**
      *
-     * @param tax
      */
     public TaxesLogicElement(TaxInfo tax) {
         this.tax = tax;
@@ -44,7 +42,6 @@ public class TaxesLogicElement {
 
     /**
      *
-     * @return
      */
     public TaxInfo getTax() {
         return tax;
@@ -52,7 +49,6 @@ public class TaxesLogicElement {
 
     /**
      *
-     * @return
      */
     public List<TaxesLogicElement> getSons() {
         return taxsons;

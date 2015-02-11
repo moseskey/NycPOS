@@ -25,7 +25,6 @@ import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;
 /**
  *
- * @author  adrian
  */
 public class ListQBFModelNumber extends AbstractListModel implements ComboBoxModel {
 
@@ -45,7 +44,6 @@ private Object m_sel;
 
     /**
      *
-     * @return
      */
         public static ListQBFModelNumber getMandatoryString() {
         return new ListQBFModelNumber(
@@ -64,7 +62,6 @@ private Object m_sel;
 
     /**
      *
-     * @return
      */
     public static ListQBFModelNumber getMandatoryNumber() {
         return new ListQBFModelNumber(
@@ -80,7 +77,6 @@ private Object m_sel;
 
     /**
      *
-     * @return
      */
     public static ListQBFModelNumber getNonMandatoryString() {
         return new ListQBFModelNumber(
@@ -102,7 +98,6 @@ private Object m_sel;
 
     /**
      *
-     * @return
      */
     public static ListQBFModelNumber getNonMandatoryNumber() {
         return new ListQBFModelNumber(
@@ -120,7 +115,6 @@ private Object m_sel;
 
     /**
      *
-     * @return
      */
     public static ListQBFModelNumber getOverrideMandatoryNumber() {
         return new ListQBFModelNumber(

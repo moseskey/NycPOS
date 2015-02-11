@@ -25,7 +25,6 @@ import com.openbravo.pos.printer.DeviceDisplayBase;
 import com.openbravo.pos.printer.DeviceDisplayImpl;
 /**
  *
- * @author adrianromero
  */
 public abstract class DeviceDisplaySerial implements DeviceDisplay, DeviceDisplayImpl {
 
@@ -50,7 +49,6 @@ public abstract class DeviceDisplaySerial implements DeviceDisplay, DeviceDispla
 
     /**
      *
-     * @param display
      */
     protected void init(PrinterWritter display) {
         m_sName = AppLocal.getIntString("Printer.Serial");
@@ -60,7 +58,6 @@ public abstract class DeviceDisplaySerial implements DeviceDisplay, DeviceDispla
 
     /**
      *
-     * @return
      */
     @Override
     public String getDisplayName() {
@@ -69,7 +66,6 @@ public abstract class DeviceDisplaySerial implements DeviceDisplay, DeviceDispla
 
     /**
      *
-     * @return
      */
     @Override
     public String getDisplayDescription() {
@@ -78,7 +74,6 @@ public abstract class DeviceDisplaySerial implements DeviceDisplay, DeviceDispla
 
     /**
      *
-     * @return
      */
     @Override
     public javax.swing.JComponent getDisplayComponent() {
@@ -87,9 +82,6 @@ public abstract class DeviceDisplaySerial implements DeviceDisplay, DeviceDispla
 
     /**
      *
-     * @param animation
-     * @param sLine1
-     * @param sLine2
      */
     @Override
     public void writeVisor(int animation, String sLine1, String sLine2) {
@@ -98,8 +90,6 @@ public abstract class DeviceDisplaySerial implements DeviceDisplay, DeviceDispla
 
     /**
      *
-     * @param sLine1
-     * @param sLine2
      */
     @Override
     public void writeVisor(String sLine1, String sLine2) {

@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author adrian
  */
 public class BasicSentenceEnum implements SentenceEnum {
 
@@ -47,7 +46,6 @@ public class BasicSentenceEnum implements SentenceEnum {
 
     /**
      *
-     * @param params
      * @throws BasicException
      */
     public void load(Object params) throws BasicException {
@@ -56,7 +54,6 @@ public class BasicSentenceEnum implements SentenceEnum {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public Object getCurrent() throws BasicException {
@@ -69,7 +66,6 @@ public class BasicSentenceEnum implements SentenceEnum {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public boolean next() throws BasicException {

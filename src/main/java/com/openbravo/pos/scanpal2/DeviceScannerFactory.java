@@ -24,7 +24,6 @@ import com.openbravo.pos.util.StringParser;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DeviceScannerFactory {
 
@@ -34,8 +33,6 @@ public class DeviceScannerFactory {
 
     /**
      *
-     * @param props
-     * @return
      */
     public static DeviceScanner createInstance(AppProperties props) {
 

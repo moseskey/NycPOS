@@ -33,7 +33,6 @@ import javax.swing.table.TableColumn;
 
 /**
  *
- * @author adrianromero
  */
 public class JInventoryLines extends javax.swing.JPanel {
 
@@ -83,7 +82,6 @@ public class JInventoryLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param i
      */
     public void addLine(InventoryLine i) {
         m_inventorylines.addRow(i);
@@ -92,7 +90,6 @@ public class JInventoryLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param index
      */
     public void deleteLine(int index) {
         m_inventorylines.removeRow(index);
@@ -110,8 +107,6 @@ public class JInventoryLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param index
-     * @param i
      */
     public void setLine(int index, InventoryLine i) {
         m_inventorylines.setRow(index, i);
@@ -120,8 +115,6 @@ public class JInventoryLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param index
-     * @return
      */
     public InventoryLine getLine(int index) {
         return m_inventorylines.getRow(index);
@@ -129,7 +122,6 @@ public class JInventoryLines extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public List<InventoryLine> getLines() {
         return m_inventorylines.getLines();
@@ -137,7 +129,6 @@ public class JInventoryLines extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public int getCount() {
         return m_inventorylines.getRowCount();
@@ -145,7 +136,6 @@ public class JInventoryLines extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public int getSelectedRow() {
         return m_tableinventory.getSelectedRow();
@@ -153,7 +143,6 @@ public class JInventoryLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param i
      */
     public void setSelectedIndex(int i){
 

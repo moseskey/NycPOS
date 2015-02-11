@@ -23,7 +23,6 @@ import java.awt.Component;
 
 /**
  *
- * @author JG uniCenta
  */
 public interface EditorRecord extends EditorCreator {
 
@@ -39,13 +38,11 @@ public interface EditorRecord extends EditorCreator {
 
     /**
      *
-     * @param value
      */
     public void writeValueEdit(Object value); // not null por definicion.
 
     /**
      *
-     * @param value
      */
     public void writeValueDelete(Object value); // not null por definicion.
 
@@ -56,7 +53,6 @@ public interface EditorRecord extends EditorCreator {
 
     /**
      *
-     * @return
      */
     public Component getComponent();
 }

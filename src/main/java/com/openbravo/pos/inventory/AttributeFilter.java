@@ -31,7 +31,6 @@ import java.util.List;
 
 /**
  *
- * @author adrianromero
  */
 public class AttributeFilter extends javax.swing.JPanel implements ReportEditorCreator {
 
@@ -45,7 +44,6 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @param app
      */
     @Override
     public void init(AppView app) {
@@ -74,7 +72,6 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      */
     @Override
     public SerializerWrite getSerializerWrite() {
@@ -83,7 +80,6 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -92,7 +88,6 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @param l
      */
     public void addActionListener(ActionListener l) {
         jAttr.addActionListener(l);
@@ -100,7 +95,6 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @param l
      */
     public void removeActionListener(ActionListener l) {
         jAttr.removeActionListener(l);
@@ -108,7 +102,6 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

@@ -25,7 +25,6 @@ import java.util.Vector;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JNumberKeys extends javax.swing.JPanel {
 
@@ -58,7 +57,6 @@ public class JNumberKeys extends javax.swing.JPanel {
 
     /**
      *
-     * @param value
      */
     public void setNumbersOnly(boolean value) {
         m_jEquals.setVisible(value);
@@ -96,7 +94,6 @@ public class JNumberKeys extends javax.swing.JPanel {
 
     /**
      *
-     * @param b
      */
     public void setMinusEnabled(boolean b) {
         minusenabled = b;
@@ -105,7 +102,6 @@ public class JNumberKeys extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public boolean isMinusEnabled() {
         return minusenabled;
@@ -113,7 +109,6 @@ public class JNumberKeys extends javax.swing.JPanel {
 
     /**
      *
-     * @param b
      */
     public void setEqualsEnabled(boolean b) {
         equalsenabled = b;
@@ -122,7 +117,6 @@ public class JNumberKeys extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public boolean isEqualsEnabled() {
         return equalsenabled;
@@ -130,7 +124,6 @@ public class JNumberKeys extends javax.swing.JPanel {
 
     /**
      *
-     * @param enabled
      */
     public void dotIs00(boolean enabled) {
         if (enabled) {
@@ -141,7 +134,6 @@ public class JNumberKeys extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public boolean isNumbersOnly() {
         return m_jEquals.isVisible();
@@ -149,7 +141,6 @@ public class JNumberKeys extends javax.swing.JPanel {
 
     /**
      *
-     * @param listener
      */
     public void addJNumberEventListener(JNumberEventListener listener) {
         m_Listeners.add(listener);
@@ -157,7 +148,6 @@ public class JNumberKeys extends javax.swing.JPanel {
 
     /**
      *
-     * @param listener
      */
     public void removeJNumberEventListener(JNumberEventListener listener) {
         m_Listeners.remove(listener);

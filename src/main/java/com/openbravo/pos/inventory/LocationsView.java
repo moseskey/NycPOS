@@ -29,7 +29,6 @@ import java.util.UUID;
 
 /**
  *
- * @author adrianromero
  */
 public final class LocationsView extends javax.swing.JPanel implements EditorRecord {
 
@@ -77,7 +76,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -93,7 +91,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -109,7 +106,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -123,7 +119,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

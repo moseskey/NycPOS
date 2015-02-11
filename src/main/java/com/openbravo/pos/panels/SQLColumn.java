@@ -25,7 +25,6 @@ import javax.swing.tree.TreeNode;
 
 /**
  *
- * @author adrianromero
  */
 public class SQLColumn implements TreeNode {
 
@@ -33,7 +32,6 @@ public class SQLColumn implements TreeNode {
     private String m_sName;
 
     /** Creates a new instance of SQLColumn
-     * @param t
      * @param name */
     public SQLColumn(SQLTable t, String name) {
         m_table = t;

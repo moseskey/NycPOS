@@ -35,7 +35,6 @@ import java.util.UUID;
 
 /**
  *
- * @author jaroslawwozniak
  */
 public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
 
@@ -49,7 +48,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
     private Object insertproduct;
 
     /** Creates new form AuxiliarEditor
-     * @param app
      * @param dirty */
     public AuxiliarEditor(AppView app, DirtyManager dirty) {
 
@@ -62,7 +60,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
 
     /**
      *
-     * @param prod
      */
     public void setInsertProduct(ProductInfoExt prod) {
 
@@ -126,7 +123,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -150,7 +146,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -175,7 +170,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -192,7 +186,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

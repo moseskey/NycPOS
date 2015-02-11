@@ -26,7 +26,6 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author adrianromero
  */
 public class MenuPanelAction extends AbstractAction {
 
@@ -34,9 +33,6 @@ public class MenuPanelAction extends AbstractAction {
     private final String m_sMyView;
 
     /** Creates a new instance of MenuPanelAction
-     * @param app
-     * @param icon
-     * @param keytext
      * @param sMyView */
     public MenuPanelAction(AppView app, String icon, String keytext, String sMyView) {
         putValue(Action.SMALL_ICON, new ImageIcon(JPrincipalApp.class.getResource(icon)));

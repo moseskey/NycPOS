@@ -21,20 +21,16 @@ package com.openbravo.pos.printer.escpos;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class UnicodeTranslator {
 
     /**
      *
-     * @return
      */
     public abstract byte[] getCodeTable();
 
     /**
      *
-     * @param sCad
-     * @return
      */
     public final byte[] transString(String sCad) {
 
@@ -51,8 +47,6 @@ public abstract class UnicodeTranslator {
 
     /**
      *
-     * @param sChar
-     * @return
      */
     public abstract byte transChar(char sChar);
 

@@ -23,7 +23,6 @@ import com.openbravo.data.loader.IKeyed;
 
 /**
  *
- * @author  adrianromero
  */
 public class AttributeInfo implements IKeyed {
 
@@ -31,7 +30,6 @@ public class AttributeInfo implements IKeyed {
     private String name;
 
     /** Creates new CategoryInfo
-     * @param id
      * @param name */
     public AttributeInfo(String id, String name) {
         this.id = id;
@@ -40,7 +38,6 @@ public class AttributeInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {
@@ -49,7 +46,6 @@ public class AttributeInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getId() {
         return id;

@@ -26,7 +26,6 @@ import javax.swing.tree.TreeNode;
 
 /**
  *
- * @author adrianromero
  */
 public class SQLDatabase implements TreeNode {
 
@@ -48,7 +47,6 @@ public class SQLDatabase implements TreeNode {
 
     /**
      *
-     * @param sTable
      */
     public void addTable(String sTable) {
         SQLTable t = new SQLTable(this, sTable);
@@ -58,8 +56,6 @@ public class SQLDatabase implements TreeNode {
 
     /**
      *
-     * @param sTable
-     * @return
      */
     public SQLTable getTable(String sTable) {
         return (SQLTable) m_mTables.get(sTable);

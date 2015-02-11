@@ -41,7 +41,6 @@ import javax.swing.filechooser.FileFilter;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JImageEditor extends javax.swing.JPanel {
 
@@ -66,7 +65,6 @@ public class JImageEditor extends javax.swing.JPanel {
 
     /**
      *
-     * @param size
      */
     public void setMaxDimensions(Dimension size) {
         m_maxsize = size;
@@ -74,7 +72,6 @@ public class JImageEditor extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public Dimension getMaxDimensions() {
         return m_maxsize;
@@ -98,7 +95,6 @@ public class JImageEditor extends javax.swing.JPanel {
 
     /**
      *
-     * @param img
      */
     public void setImage(BufferedImage img) {
         BufferedImage oldimg = m_Img;
@@ -118,7 +114,6 @@ public class JImageEditor extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public BufferedImage getImage() {
         return m_Img;
@@ -126,7 +121,6 @@ public class JImageEditor extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public double getZoom() {
         return m_icon.getZoom();
@@ -134,7 +128,6 @@ public class JImageEditor extends javax.swing.JPanel {
 
     /**
      *
-     * @param zoom
      */
     public void setZoom(double zoom) {
         double oldzoom = m_icon.getZoom();

@@ -23,7 +23,6 @@ import com.openbravo.pos.forms.AppLocal;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DeviceDisplayNull implements DeviceDisplay {
 
@@ -44,7 +43,6 @@ public class DeviceDisplayNull implements DeviceDisplay {
 
     /**
      *
-     * @return
      */
     @Override
     public String getDisplayName() {
@@ -53,7 +51,6 @@ public class DeviceDisplayNull implements DeviceDisplay {
 
     /**
      *
-     * @return
      */
     @Override
     public String getDisplayDescription() {
@@ -62,7 +59,6 @@ public class DeviceDisplayNull implements DeviceDisplay {
 
     /**
      *
-     * @return
      */
     @Override
     public javax.swing.JComponent getDisplayComponent() {
@@ -78,8 +74,6 @@ public class DeviceDisplayNull implements DeviceDisplay {
 
     /**
      *
-     * @param sLine1
-     * @param sLine2
      */
     @Override
     public void writeVisor(String sLine1, String sLine2) {
@@ -87,9 +81,6 @@ public class DeviceDisplayNull implements DeviceDisplay {
 
     /**
      *
-     * @param animation
-     * @param sLine1
-     * @param sLine2
      */
     @Override
     public void writeVisor(int animation, String sLine1, String sLine2) {

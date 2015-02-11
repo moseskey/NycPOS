@@ -45,7 +45,6 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -59,7 +58,6 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
 
     /**
      *
-     * @param dp
      * @throws BasicException
      */
     @Override
@@ -72,7 +70,6 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
 
     /**
      *
-     * @return
      */
     public String getId() {
         return id;
@@ -80,7 +77,6 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return name;
@@ -90,7 +86,6 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
 
     /**
      *
-     * @return
      */
         public String getAppUser() {
         return UserName;
@@ -99,7 +94,6 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
 
     /**
      *
-     * @return
      */
         public String getCustomerName() {
         return CustomerName;

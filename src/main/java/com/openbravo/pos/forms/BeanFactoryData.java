@@ -21,7 +21,6 @@ package com.openbravo.pos.forms;
 
 /**
  *
- * @author adrianromero
  */
 public class BeanFactoryData implements BeanFactoryApp {
 
@@ -33,7 +32,6 @@ public class BeanFactoryData implements BeanFactoryApp {
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -55,7 +53,6 @@ public class BeanFactoryData implements BeanFactoryApp {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getBean() {

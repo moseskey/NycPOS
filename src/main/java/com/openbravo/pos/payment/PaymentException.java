@@ -21,7 +21,6 @@ package com.openbravo.pos.payment;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentException extends java.lang.Exception {
 

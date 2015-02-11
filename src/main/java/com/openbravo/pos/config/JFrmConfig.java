@@ -35,7 +35,6 @@ import com.openbravo.pos.forms.JRootFrame;
 
 /**
  *
- * @author adrianromero
  */
 public class JFrmConfig extends javax.swing.JFrame {
 

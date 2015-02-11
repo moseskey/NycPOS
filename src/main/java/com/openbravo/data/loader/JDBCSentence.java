@@ -24,7 +24,6 @@ import java.sql.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class JDBCSentence extends BaseSentence {
 
@@ -54,8 +53,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @param rs
-             * @param serread
              */
             public JDBCDataResultSet(ResultSet rs, SerializerRead serread) {
             m_rs = rs;
@@ -65,8 +62,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @param columnIndex
-             * @return
              * @throws BasicException
              */
             public Integer getInt(int columnIndex) throws BasicException {
@@ -80,8 +75,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @param columnIndex
-             * @return
              * @throws BasicException
              */
             public String getString(int columnIndex) throws BasicException {
@@ -94,8 +87,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @param columnIndex
-             * @return
              * @throws BasicException
              */
             public Double getDouble(int columnIndex) throws BasicException {
@@ -109,8 +100,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @param columnIndex
-             * @return
              * @throws BasicException
              */
             public Boolean getBoolean(int columnIndex) throws BasicException {
@@ -124,8 +113,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @param columnIndex
-             * @return
              * @throws BasicException
              */
             public java.util.Date getTimestamp(int columnIndex) throws BasicException {
@@ -139,8 +126,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @param columnIndex
-             * @return
              * @throws BasicException
              */
             public byte[] getBytes(int columnIndex) throws BasicException {
@@ -153,8 +138,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @param columnIndex
-             * @return
              * @throws BasicException
              */
             public Object getObject(int columnIndex) throws BasicException {
@@ -167,7 +150,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @return
              * @throws BasicException
              */
             public DataField[] getDataField() throws BasicException {
@@ -188,7 +170,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @return
              * @throws BasicException
              */
             @Override
@@ -198,7 +179,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @return
              * @throws BasicException
              */
             @Override
@@ -225,7 +205,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
             /**
              *
-             * @return
              * @throws BasicException
              */
             @Override

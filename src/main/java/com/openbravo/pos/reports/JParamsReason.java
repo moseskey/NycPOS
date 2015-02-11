@@ -32,7 +32,6 @@ import java.awt.Component;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JParamsReason extends javax.swing.JPanel implements ReportEditorCreator {
 
@@ -58,7 +57,6 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
 
     /**
      *
-     * @param app
      */
     @Override
     public void init(AppView app) {
@@ -74,7 +72,6 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
 
     /**
      *
-     * @return
      */
     @Override
     public SerializerWrite getSerializerWrite() {
@@ -83,7 +80,6 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -92,7 +88,6 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

@@ -23,7 +23,6 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author JG uniCenta
  */
 public class TicketTaxInfo {
 
@@ -43,7 +42,6 @@ public class TicketTaxInfo {
 
     /**
      *
-     * @return
      */
     public TaxInfo getTaxInfo() {
         return tax;
@@ -51,7 +49,6 @@ public class TicketTaxInfo {
 
     /**
      *
-     * @param dValue
      */
     public void add(double dValue) {
         subtotal += dValue;
@@ -60,7 +57,6 @@ public class TicketTaxInfo {
 
     /**
      *
-     * @return
      */
     public double getSubTotal() {
         return subtotal;
@@ -68,7 +64,6 @@ public class TicketTaxInfo {
 
     /**
      *
-     * @return
      */
     public double getTax() {
         return taxtotal;
@@ -76,7 +71,6 @@ public class TicketTaxInfo {
 
     /**
      *
-     * @return
      */
     public double getTotal() {
         return subtotal + taxtotal;
@@ -84,7 +78,6 @@ public class TicketTaxInfo {
 
     /**
      *
-     * @return
      */
     public String printSubTotal() {
         return Formats.CURRENCY.formatValue(new Double(getSubTotal()));
@@ -92,7 +85,6 @@ public class TicketTaxInfo {
 
     /**
      *
-     * @return
      */
     public String printTax() {
         return Formats.CURRENCY.formatValue(new Double(getTax()));
@@ -100,7 +92,6 @@ public class TicketTaxInfo {
 
     /**
      *
-     * @return
      */
     public String printTotal() {
         return Formats.CURRENCY.formatValue(new Double(getTotal()));

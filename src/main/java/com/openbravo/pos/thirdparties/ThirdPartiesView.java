@@ -28,14 +28,12 @@ import com.openbravo.pos.forms.AppView;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord {
 
     private Object m_oId;
 
     /** Creates new form ThirdPartiesView
-     * @param app
      * @param dirty */
     public ThirdPartiesView(AppView app, DirtyManager dirty) {
         initComponents();
@@ -120,7 +118,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @param value
      */
     public void writeValueDelete(Object value) {
         Object[] thirdparty = (Object[]) value;
@@ -153,7 +150,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @param value
      */
     public void writeValueEdit(Object value) {
         Object[] thirdparty = (Object[]) value;
@@ -186,7 +182,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public Object createValue() throws BasicException {
@@ -211,7 +206,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @return
      */
     public Component getComponent() {
         return this;

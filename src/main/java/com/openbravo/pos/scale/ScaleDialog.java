@@ -26,7 +26,6 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author adrian
  */
 public class ScaleDialog implements Scale {
 
@@ -34,7 +33,6 @@ public class ScaleDialog implements Scale {
 
     /**
      *
-     * @param parent
      */
     public ScaleDialog(Component parent) {
         this.parent = parent;
@@ -42,7 +40,6 @@ public class ScaleDialog implements Scale {
 
     /**
      *
-     * @return
      * @throws ScaleException
      */
     @Override

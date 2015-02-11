@@ -25,7 +25,6 @@ import com.openbravo.basic.BasicException;
 import com.openbravo.pos.forms.AppLocal;
 /**
  *
- * @author  adrian
  */
 public class ProductVectorer implements Vectorer {
 
@@ -43,7 +42,6 @@ public class ProductVectorer implements Vectorer {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public String[] getHeaders() throws BasicException {
@@ -52,8 +50,6 @@ public class ProductVectorer implements Vectorer {
 
     /**
      *
-     * @param obj
-     * @return
      * @throws BasicException
      */
     public String[] getValues(Object obj) throws BasicException {

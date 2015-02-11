@@ -33,7 +33,6 @@ import com.openbravo.pos.ticket.TicketLineInfo;
 
 /**
  *
- * @author adrianromero
  */
 public class JProductLineEdit extends javax.swing.JDialog {
 
@@ -183,10 +182,6 @@ public class JProductLineEdit extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param app
-     * @param oLine
-     * @return
      * @throws BasicException
      */
     public static TicketLineInfo showMessage(Component parent, AppView app, TicketLineInfo oLine) throws BasicException {

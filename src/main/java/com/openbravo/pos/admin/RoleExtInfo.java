@@ -24,7 +24,6 @@ import com.openbravo.data.loader.DataRead;
 
 /**
  *
- * @author adrianromero
  * Created on 27 de febrero de 2007, 23:46
  *
  */
@@ -43,7 +42,6 @@ public class RoleExtInfo extends RoleInfo {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -56,7 +54,6 @@ public class RoleExtInfo extends RoleInfo {
 
     /**
      *
-     * @return
      */
         public static String[] getHeaders() {
         return new String[] {"Name"};
@@ -64,7 +61,6 @@ public class RoleExtInfo extends RoleInfo {
 
     /**
      *
-     * @return
      */
     public String[] toStringArray() {
         return new String[] {m_sName};
@@ -72,7 +68,6 @@ public class RoleExtInfo extends RoleInfo {
 
     /**
      *
-     * @return
      */
     public Comparable[] toComparableArray() {
         return new Comparable[] {m_sName};

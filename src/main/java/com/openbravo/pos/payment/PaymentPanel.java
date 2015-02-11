@@ -23,26 +23,21 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author JG uniCenta
  */
 public interface PaymentPanel {
 
     /**
      *
-     * @param sTransaction
-     * @param dTotal
      */
     public void activate(String sTransaction, double dTotal);
 
     /**
      *
-     * @return
      */
     public JComponent getComponent();
 
     /**
      *
-     * @return
      */
     public PaymentInfoMagcard getPaymentInfoMagcard();
 }

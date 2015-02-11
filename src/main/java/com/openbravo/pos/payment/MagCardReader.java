@@ -21,13 +21,11 @@ package com.openbravo.pos.payment;
 
 /**
  *
- * @author JG uniCenta
  */
 public interface MagCardReader {
 
     /**
      *
-     * @return
      */
     public String getReaderName();
 
@@ -38,49 +36,41 @@ public interface MagCardReader {
 
     /**
      *
-     * @param c
      */
     public void appendChar(char c);
 
     /**
      *
-     * @return
      */
     public boolean isComplete();
 
     /**
      *
-     * @return
      */
     public String getHolderName();
 
     /**
      *
-     * @return
      */
     public String getCardNumber();
 
     /**
      *
-     * @return
      */
     public String getExpirationDate();
 
     /**
      *
-     * @return
      */
     public String getTrack1();
 
     /**
      *
-     * @return
      */
     public String getTrack2();
 
     /**
      *
-     * @return
      */
     public String getTrack3();
 }

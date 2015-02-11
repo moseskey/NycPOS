@@ -25,7 +25,6 @@ import java.text.SimpleDateFormat;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class Datas {
 
@@ -88,47 +87,33 @@ public abstract class Datas {
 
     /**
      *
-     * @param dr
-     * @param i
-     * @return
      * @throws BasicException
      */
     public abstract Object getValue(DataRead dr, int i) throws BasicException;
 
     /**
      *
-     * @param dw
-     * @param i
-     * @param value
      * @throws BasicException
      */
     public abstract void setValue(DataWrite dw, int i, Object value) throws BasicException;
 
     /**
      *
-     * @return
      */
     public abstract Class getClassValue();
 
     /**
      *
-     * @param value
-     * @return
      */
     protected abstract String toStringAbstract(Object value);
 
     /**
      *
-     * @param o1
-     * @param o2
-     * @return
      */
     protected abstract int compareAbstract(Object o1, Object o2);
 
     /**
      *
-     * @param value
-     * @return
      */
     public String toString(Object value) {
         if (value == null) {
@@ -140,9 +125,6 @@ public abstract class Datas {
 
     /**
      *
-     * @param o1
-     * @param o2
-     * @return
      */
     public int compare(Object o1, Object o2) {
         if (o1 == null) {

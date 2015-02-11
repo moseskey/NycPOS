@@ -21,7 +21,6 @@ package com.openbravo.pos.forms;
 
 /**
  *
- * @author adrianromero
  */
 public abstract class BeanFactoryCache implements BeanFactoryApp {
 
@@ -29,15 +28,12 @@ public abstract class BeanFactoryCache implements BeanFactoryApp {
 
     /**
      *
-     * @param app
-     * @return
      * @throws BeanFactoryException
      */
     public abstract Object constructBean(AppView app) throws BeanFactoryException;
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -47,7 +43,6 @@ public abstract class BeanFactoryCache implements BeanFactoryApp {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getBean() {

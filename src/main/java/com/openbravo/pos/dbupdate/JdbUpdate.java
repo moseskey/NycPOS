@@ -36,7 +36,6 @@ import org.pushingpixels.substance.api.SubstanceLookAndFeel;
 import org.pushingpixels.substance.api.SubstanceSkin;
 /**
  *
- * @author adrianromero
  */
 public class JdbUpdate extends javax.swing.JFrame {
 

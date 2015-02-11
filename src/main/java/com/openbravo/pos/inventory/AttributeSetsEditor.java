@@ -29,7 +29,6 @@ import java.util.UUID;
 
 /**
  *
- * @author  adrianromero
  */
 public final class AttributeSetsEditor extends javax.swing.JPanel implements EditorRecord {
 
@@ -67,7 +66,6 @@ public final class AttributeSetsEditor extends javax.swing.JPanel implements Edi
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -80,7 +78,6 @@ public final class AttributeSetsEditor extends javax.swing.JPanel implements Edi
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -93,7 +90,6 @@ public final class AttributeSetsEditor extends javax.swing.JPanel implements Edi
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -109,7 +105,6 @@ public final class AttributeSetsEditor extends javax.swing.JPanel implements Edi
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

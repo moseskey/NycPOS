@@ -29,7 +29,6 @@ import java.util.Properties;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ImageUtils {
 
@@ -55,8 +54,6 @@ public class ImageUtils {
 
     /**
      *
-     * @param file
-     * @return
      */
     public static byte[] getBytesFromResource(String file) {
 
@@ -80,8 +77,6 @@ public class ImageUtils {
 
     /**
      *
-     * @param file
-     * @return
      */
     public static BufferedImage readImageFromResource(String file) {
         return readImage(getBytesFromResource(file));
@@ -89,8 +84,6 @@ public class ImageUtils {
 
     /**
      *
-     * @param url
-     * @return
      */
     public static BufferedImage readImage(String url) {
         try {
@@ -102,8 +95,6 @@ public class ImageUtils {
 
     /**
      *
-     * @param url
-     * @return
      */
     public static BufferedImage readImage(URL url) {
 
@@ -127,8 +118,6 @@ public class ImageUtils {
 
     /**
      *
-     * @param b
-     * @return
      */
     public static BufferedImage readImage(byte[] b) {
         if (b == null) {
@@ -144,8 +133,6 @@ public class ImageUtils {
 
     /**
      *
-     * @param img
-     * @return
      */
     public static byte[] writeImage(BufferedImage img) {
         if (img == null) {
@@ -165,8 +152,6 @@ public class ImageUtils {
 
     /**
      *
-     * @param b
-     * @return
      */
     public static Object readSerializable(byte[] b) {
         if (b == null) {
@@ -189,8 +174,6 @@ public class ImageUtils {
 
     /**
      *
-     * @param o
-     * @return
      */
     public static byte[] writeSerializable(Object o) {
 
@@ -213,8 +196,6 @@ public class ImageUtils {
 
     /**
      *
-     * @param b
-     * @return
      */
     public static Properties readProperties(byte b[]) {
         Properties prop = new Properties();
@@ -229,8 +210,6 @@ public class ImageUtils {
 
     /**
      *
-     * @param binput
-     * @return
      */
     public static String bytes2hex(byte[] binput) {
 

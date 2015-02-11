@@ -21,7 +21,6 @@ package com.openbravo.pos.scripting;
 
 /**
  *
- * @author adrianromero
  * Created on 5 de marzo de 2007, 19:56
  *
  */
@@ -48,8 +47,6 @@ public class ScriptFactory {
 
     /**
      *
-     * @param name
-     * @return
      * @throws ScriptException
      */
     public static ScriptEngine getScriptEngine(String name) throws ScriptException {

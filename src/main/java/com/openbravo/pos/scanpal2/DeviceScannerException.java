@@ -22,7 +22,6 @@ package com.openbravo.pos.scanpal2;
 
 /**
  *
- * @author adrianromero
  */
 public class DeviceScannerException extends java.lang.Exception {
 
@@ -43,8 +42,6 @@ public class DeviceScannerException extends java.lang.Exception {
 
     /**
      *
-     * @param msg
-     * @param cause
      */
     public DeviceScannerException(String msg, Throwable cause) {
         super(msg, cause);
@@ -52,7 +49,6 @@ public class DeviceScannerException extends java.lang.Exception {
 
     /**
      *
-     * @param cause
      */
     public DeviceScannerException(Throwable cause) {
         super(cause);

@@ -28,7 +28,6 @@ import javax.swing.text.JTextComponent;
 import com.openbravo.pos.forms.AppLocal;
 
 /**
- * @author JG uniCenta
  */
 public class DirectoryEvent implements ActionListener {
     private JTextComponent m_jTxtField;
@@ -36,7 +35,6 @@ public class DirectoryEvent implements ActionListener {
 
     /**
      * Creates a new instance of DirectoryChooser
-     * @param TxtField
      */
     public DirectoryEvent(JTextComponent TxtField) {
         m_jTxtField = TxtField;

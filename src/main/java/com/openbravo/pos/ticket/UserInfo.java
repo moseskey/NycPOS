@@ -22,7 +22,6 @@ import java.io.Serializable;
 
 /**
  *
- * @author adrianromero
  */
 public class UserInfo implements Serializable {
 
@@ -31,7 +30,6 @@ public class UserInfo implements Serializable {
     private final String m_sName;
 
     /** Creates a new instance of UserInfoBasic
-     * @param id
      * @param name */
     public UserInfo(String id, String name) {
         m_sId = id;
@@ -40,7 +38,6 @@ public class UserInfo implements Serializable {
 
     /**
      *
-     * @return
      */
     public String getId() {
         return m_sId;
@@ -48,7 +45,6 @@ public class UserInfo implements Serializable {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;

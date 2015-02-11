@@ -29,7 +29,6 @@ import java.awt.print.PrinterException;
 
 /**
  *
- * @author adrianromero
  */
 public class PrintableBasicTicket implements Printable {
 
@@ -42,11 +41,6 @@ public class PrintableBasicTicket implements Printable {
 
     /**
      *
-     * @param ticket
-     * @param imageable_x
-     * @param imageable_y
-     * @param imageable_width
-     * @param imageable_height
      */
     public PrintableBasicTicket(BasicTicket ticket, int imageable_x, int imageable_y, int imageable_width, int imageable_height) {
         this.ticket = ticket;

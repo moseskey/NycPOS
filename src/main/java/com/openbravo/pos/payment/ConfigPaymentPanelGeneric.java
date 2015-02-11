@@ -26,7 +26,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author  Mikel Irurita
  */
 public class ConfigPaymentPanelGeneric extends javax.swing.JPanel implements PaymentConfiguration {
 
@@ -37,7 +36,6 @@ public class ConfigPaymentPanelGeneric extends javax.swing.JPanel implements Pay
 
     /**
      *
-     * @return
      */
     @Override
     public JPanel getComponent() {
@@ -46,7 +44,6 @@ public class ConfigPaymentPanelGeneric extends javax.swing.JPanel implements Pay
 
     /**
      *
-     * @param config
      */
     @Override
     public void loadProperties(AppConfig config) {
@@ -62,7 +59,6 @@ public class ConfigPaymentPanelGeneric extends javax.swing.JPanel implements Pay
 
     /**
      *
-     * @param config
      */
     @Override
     public void saveProperties(AppConfig config) {

@@ -32,7 +32,6 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author adrianromero
  */
 public class JProductFinder extends javax.swing.JDialog {
 
@@ -111,9 +110,6 @@ public class JProductFinder extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param dlSales
-     * @return
      */
     public static ProductInfoExt showMessage(Component parent, DataLogicSales dlSales) {
         return showMessage(parent, dlSales, PRODUCT_ALL);
@@ -121,10 +117,6 @@ public class JProductFinder extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param dlSales
-     * @param productsType
-     * @return
      */
     public static ProductInfoExt showMessage(Component parent, DataLogicSales dlSales, int productsType) {
 

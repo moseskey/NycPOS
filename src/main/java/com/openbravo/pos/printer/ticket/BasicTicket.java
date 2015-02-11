@@ -52,25 +52,21 @@ public abstract class BasicTicket implements PrintItem {
 
     /**
      *
-     * @return
      */
     protected abstract Font getBaseFont();
 
     /**
      *
-     * @return
      */
     protected abstract int getFontHeight();
 
     /**
      *
-     * @return
      */
     protected abstract double getImageScale();
 
     /**
      *
-     * @return
      */
     @Override
        public int getHeight() {
@@ -79,10 +75,6 @@ public abstract class BasicTicket implements PrintItem {
 
     /**
      *
-     * @param g2d
-     * @param x
-     * @param y
-     * @param width
      */
     @Override
        public void draw(Graphics2D g2d, int x, int y, int width) {
@@ -96,7 +88,6 @@ public abstract class BasicTicket implements PrintItem {
 
     /**
      *
-     * @return
      */
     public java.util.List<PrintItem> getCommands() {
           return m_aCommands;
@@ -106,7 +97,6 @@ public abstract class BasicTicket implements PrintItem {
 
     /**
      *
-     * @param image
      */
            public void printImage(BufferedImage image) {
 
@@ -117,9 +107,6 @@ public abstract class BasicTicket implements PrintItem {
 
     /**
      *
-     * @param type
-     * @param position
-     * @param code
      */
     public void printBarCode(String type, String position, String code) {
 
@@ -130,7 +117,6 @@ public abstract class BasicTicket implements PrintItem {
 
     /**
      *
-     * @param iTextSize
      */
     public void beginLine(int iTextSize) {
            pil = new PrintItemLine(iTextSize, getBaseFont(), getFontHeight());
@@ -138,8 +124,6 @@ public abstract class BasicTicket implements PrintItem {
 
     /**
      *
-     * @param iStyle
-     * @param sText
      */
     public void printText(int iStyle, String sText) {
            if (pil != null) {

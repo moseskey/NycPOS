@@ -6,7 +6,6 @@ package com.openbravo.pos.util;
 
 /**
  *
- * @author JG uniCenta
  */
 import java.awt.Desktop;
 import java.io.IOException;
@@ -19,13 +18,11 @@ import javax.swing.event.HyperlinkListener;
 
 /**
  *
- * @author JG uniCenta
  */
 public class URLTest {
 
     /**
      *
-     * @param argv
      */
     public static void main(String[] argv) {
         SwingUtilities.invokeLater(new Runnable() {

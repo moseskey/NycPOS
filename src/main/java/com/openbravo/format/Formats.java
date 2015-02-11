@@ -25,7 +25,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class Formats {
 
@@ -107,7 +106,6 @@ public abstract class Formats {
 
     /**
      *
-     * @return
      */
     public static int getCurrencyDecimals() {
 
@@ -116,8 +114,6 @@ public abstract class Formats {
 
     /**
      *
-     * @param value
-     * @return
      */
     public String formatValue(Object value) {
         if (value == null) {
@@ -129,9 +125,6 @@ public abstract class Formats {
 
     /**
      *
-     * @param value
-     * @param defvalue
-     * @return
      * @throws BasicException
      */
     public Object parseValue(String value, Object defvalue) throws BasicException {
@@ -148,8 +141,6 @@ public abstract class Formats {
 
     /**
      *
-     * @param value
-     * @return
      * @throws BasicException
      */
     public Object parseValue(String value) throws BasicException {
@@ -158,7 +149,6 @@ public abstract class Formats {
 
     /**
      *
-     * @param pattern
      */
     public static void setIntegerPattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
@@ -170,7 +160,6 @@ public abstract class Formats {
 
     /**
      *
-     * @param pattern
      */
     public static void setDoublePattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
@@ -182,7 +171,6 @@ public abstract class Formats {
 
     /**
      *
-     * @param pattern
      */
     public static void setCurrencyPattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
@@ -194,7 +182,6 @@ public abstract class Formats {
 
     /**
      *
-     * @param pattern
      */
     public static void setPercentPattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
@@ -206,7 +193,6 @@ public abstract class Formats {
 
     /**
      *
-     * @param pattern
      */
     public static void setDatePattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
@@ -218,7 +204,6 @@ public abstract class Formats {
 
     /**
      *
-     * @param pattern
      */
     public static void setTimePattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
@@ -230,7 +215,6 @@ public abstract class Formats {
 
     /**
      *
-     * @param pattern
      */
     public static void setDateTimePattern(String pattern) {
         if (pattern == null || pattern.equals("")) {
@@ -242,22 +226,17 @@ public abstract class Formats {
 
     /**
      *
-     * @param value
-     * @return
      */
     protected abstract String formatValueInt(Object value);
 
     /**
      *
-     * @param value
-     * @return
      * @throws ParseException
      */
     protected abstract Object parseValueInt(String value) throws ParseException;
 
     /**
      *
-     * @return
      */
     public abstract int getAlignment();
 

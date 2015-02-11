@@ -29,7 +29,6 @@ import java.util.List;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JParamsComposed extends javax.swing.JPanel implements ReportEditorCreator {
 
@@ -43,7 +42,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @param app
      */
     @Override
     public void init(AppView app) {
@@ -65,7 +63,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      */
     @Override
     public SerializerWrite getSerializerWrite() {
@@ -81,7 +78,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -90,7 +86,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -107,7 +102,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @param c
      */
     public void addEditor(ReportEditorCreator c) {
         editors.add(c);
@@ -116,7 +110,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      */
     public boolean isEmpty() {
 

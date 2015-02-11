@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Aescart1
  */
 public class PromoInfo implements SerializableRead, IKeyed {
 
@@ -33,20 +32,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sID
-     * @param sName
-     * @param iStartHour
-     * @param iEndHour
-     * @param sArticle
-     * @param sArticleCategory
-     * @param iType
-     * @param bdAmount
-     * @param iMinQuantity
-     * @param iMaxQuantity
-     * @param iStepQuantity
-     * @param iStepAmount
-     * @param sArticleBonus
-     * @param sArticleBonusDescription
      */
     public PromoInfo(String sID,String sName,Integer iStartHour,Integer iEndHour, String sArticle,
      String sArticleCategory,Integer iType,Double bdAmount,Integer iMinQuantity,Integer iMaxQuantity,
@@ -70,7 +55,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public static SerializerRead getSerializerRead() {
         return new SerializerRead() { public Object readValues(DataRead dr) throws BasicException {
@@ -118,7 +102,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Object getKey() {
         return m_sID;
@@ -126,7 +109,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     public void readValues(DataRead dr) throws BasicException {
@@ -148,7 +130,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sID
      */
     public void setID(String sID) {
         m_sID = sID;
@@ -156,7 +137,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -164,7 +144,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -172,7 +151,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sName
      */
     public void setName(String sName) {
         m_sName = sName;
@@ -180,7 +158,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Integer getStartHour() {
         return m_iStartHour;
@@ -188,7 +165,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param iStartHour
      */
     public void setStartHour(Integer iStartHour) {
         iStartHour = m_iStartHour;
@@ -196,7 +172,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Integer getEndHour() {
         return m_iEndHour;
@@ -204,7 +179,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param iEndHour
      */
     public void setEndHour(Integer iEndHour) {
         iEndHour = m_iEndHour;
@@ -212,7 +186,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getArticle() {
         return m_sArticle;
@@ -220,7 +193,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sArticle
      */
     public void setArticle(String sArticle) {
         m_sArticle = sArticle;
@@ -228,7 +200,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getArticleCategory() {
 
@@ -237,7 +208,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sArticleCategory
      */
     public void setArticleCategory(String sArticleCategory) {
         m_sArticleCategory = sArticleCategory;
@@ -245,7 +215,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Integer getType() {
         return m_iType;
@@ -253,7 +222,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param iType
      */
     public void setType(Integer iType) {
         iType = m_iType;
@@ -261,7 +229,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Double getAmount() {
         return m_bdAmount;
@@ -269,7 +236,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param bdAmount
      */
     public void setAmount(Double bdAmount) {
         bdAmount = m_bdAmount;
@@ -277,7 +243,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Integer getMinQuantity() {
         return m_iMinQuantity;
@@ -285,7 +250,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param iMinQuantity
      */
     public void setMinQuantity(Integer iMinQuantity) {
         iMinQuantity = m_iMinQuantity;
@@ -293,7 +257,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Integer getMaxQuantity() {
         return m_iMaxQuantity;
@@ -301,7 +264,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param iMaxQuantity
      */
     public void setMaxQuantity(Integer iMaxQuantity) {
         iMaxQuantity = m_iMaxQuantity;
@@ -309,7 +271,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Integer getStepQuantity() {
         return m_iStepQuantity;
@@ -317,7 +278,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param iStepQuantity
      */
     public void setStepQuantity(Integer iStepQuantity) {
         iStepQuantity = m_iStepQuantity;
@@ -325,7 +285,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Integer getStepAmount() {
         return m_iStepAmount;
@@ -333,7 +292,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param iStepAmount
      */
     public void setStepAmount(Integer iStepAmount) {
         iStepAmount = m_iStepAmount;
@@ -345,7 +303,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getArticleBonus() {
         return m_sArticleBonus;
@@ -353,7 +310,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sArticleBonus
      */
     public void setArticleBonus(String sArticleBonus) {
         m_sArticleBonus = sArticleBonus;
@@ -361,7 +317,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getArticleBonusDescription() {
         return m_sArticleBonusDescription;
@@ -369,7 +324,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sArticleBonusDescription
      */
     public void setArticleBonusDescription(String sArticleBonusDescription) {
         m_sArticleBonusDescription = sArticleBonusDescription;
@@ -377,7 +331,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param l
      */
     public void setPromos(List<PromoInfo> l) {
         promos = l;

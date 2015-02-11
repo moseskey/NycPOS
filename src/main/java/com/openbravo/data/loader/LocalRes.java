@@ -24,7 +24,6 @@ import com.openbravo.beans.LocaleResources;
 
 /**
  *
- * @author JG uniCenta
  */
 public class LocalRes {
 
@@ -42,8 +41,6 @@ public class LocalRes {
 
     /**
      *
-     * @param sKey
-     * @return
      */
     public static String getIntString(String sKey) {
         return m_resources.getString(sKey);

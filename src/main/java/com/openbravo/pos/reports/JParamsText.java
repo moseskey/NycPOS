@@ -31,7 +31,6 @@ import java.awt.Component;
 
 /**
  *
- * @author  adrianromero
  */
 public final class JParamsText extends javax.swing.JPanel implements ReportEditorCreator {
 
@@ -49,7 +48,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @param label
      */
     public JParamsText(String label) {
 
@@ -61,8 +59,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @param label
-     * @param format
      */
     public JParamsText(String label, Formats format) {
 
@@ -74,9 +70,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @param label
-     * @param format
-     * @param data
      */
     public JParamsText(String label, Formats format, Datas data) {
 
@@ -88,7 +81,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @param label
      */
     public void setLabel(String label) {
         lblField.setText(label);
@@ -96,8 +88,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @param format
-     * @param data
      */
     public void setType(Formats format, Datas data) {
         formatsvalue = format;
@@ -107,7 +97,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @param format
      */
     public void setType(Formats format) {
 
@@ -126,7 +115,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @param compare
      */
     public void setCompare(QBFCompareEnum compare) {
         comparevalue = compare;
@@ -148,7 +136,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @param app
      */
     @Override
     public void init(AppView app) {
@@ -165,7 +152,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @return
      */
     @Override
     public SerializerWrite getSerializerWrite() {
@@ -174,7 +160,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -183,7 +168,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

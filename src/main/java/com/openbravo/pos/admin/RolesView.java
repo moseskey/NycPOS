@@ -29,7 +29,6 @@ import java.util.UUID;
 
 /**
  *
- * @author adrianromero
  */
 public final class RolesView extends javax.swing.JPanel implements EditorRecord {
 
@@ -72,7 +71,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -88,7 +86,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -104,7 +101,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -119,7 +115,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

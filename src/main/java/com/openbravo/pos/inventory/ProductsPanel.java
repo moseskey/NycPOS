@@ -33,7 +33,6 @@ import javax.swing.JButton;
 
 /**
  *
- * @author adrianromero
  * Created on 1 de marzo de 2007, 22:15
  *
  */
@@ -140,7 +139,6 @@ public class ProductsPanel extends JPanelTable2 implements EditorListener {
 
     /**
      *
-     * @param value
      */
     @Override
     public void updateValue(Object value) {

@@ -24,7 +24,6 @@ import java.util.LinkedList;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentInfoList {
 
@@ -38,7 +37,6 @@ public class PaymentInfoList {
 
     /**
      *
-     * @return
      */
     public double getTotal() {
 
@@ -54,7 +52,6 @@ public class PaymentInfoList {
 
     /**
      *
-     * @return
      */
     public boolean isEmpty() {
         return m_apayment.isEmpty();
@@ -62,7 +59,6 @@ public class PaymentInfoList {
 
     /**
      *
-     * @param p
      */
     public void add(PaymentInfo p) {
         m_apayment.addLast(p);
@@ -77,7 +73,6 @@ public class PaymentInfoList {
 
     /**
      *
-     * @return
      */
     public LinkedList<PaymentInfo> getPayments() {
         return m_apayment;

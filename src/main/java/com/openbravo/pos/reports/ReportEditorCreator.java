@@ -26,13 +26,11 @@ import java.awt.Component;
 
 /**
  *
- * @author adrianromero
  */
 public interface ReportEditorCreator extends FilterEditorCreator {
 
     /**
      *
-     * @param app
      */
     public void init(AppView app);
 
@@ -44,7 +42,6 @@ public interface ReportEditorCreator extends FilterEditorCreator {
 
     /**
      *
-     * @return
      */
     public Component getComponent();
 }

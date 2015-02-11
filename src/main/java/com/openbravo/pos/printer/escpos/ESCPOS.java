@@ -21,7 +21,6 @@ package com.openbravo.pos.printer.escpos;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ESCPOS {
 

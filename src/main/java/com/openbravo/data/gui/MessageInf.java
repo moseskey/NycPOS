@@ -25,7 +25,6 @@ import javax.swing.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class MessageInf {
 
@@ -80,8 +79,6 @@ public class MessageInf {
     private Object m_eCause;
 
     /** Creates a new instance of MessageInf
-     * @param iSignalWord
-     * @param sHazard
      * @param e */
     public MessageInf(int iSignalWord, String sHazard, Object e) {
 //        m_iMsgNumber = iSignalWord | CLS_GENERIC;
@@ -92,7 +89,6 @@ public class MessageInf {
         m_eCause = e;
     }
     /** Creates a new instance of MessageInf
-     * @param iSignalWord
      * @param sHazard */
     public MessageInf(int iSignalWord, String sHazard) {
         this (iSignalWord, sHazard, null);
@@ -106,7 +102,6 @@ public class MessageInf {
 
     /**
      *
-     * @param parent
      */
     public void show(Component parent) {
         JMessageDialog.showMessage(parent, this);
@@ -114,7 +109,6 @@ public class MessageInf {
 
     /**
      *
-     * @return
      */
     public Object getCause() {
         return m_eCause;
@@ -122,7 +116,6 @@ public class MessageInf {
 
     /**
      *
-     * @return
      */
     public int getSignalWord() {
         return m_iMsgNumber & 0xFF000000;
@@ -130,7 +123,6 @@ public class MessageInf {
 
     /**
      *
-     * @return
      */
     public Icon getSignalWordIcon() {
         int iSignalWord = getSignalWord();
@@ -153,7 +145,6 @@ public class MessageInf {
 
     /**
      *
-     * @return
      */
     public String getErrorCodeMsg() {
 
@@ -195,7 +186,6 @@ public class MessageInf {
 
     /**
      *
-     * @return
      */
     public String getMessageMsg() {
 

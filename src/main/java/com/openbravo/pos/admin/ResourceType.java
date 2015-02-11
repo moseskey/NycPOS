@@ -23,7 +23,6 @@ import com.openbravo.pos.panels.ComboItemLocal;
 
 /**
  *
- * @author adrianromero
  * Created on February 12, 2007, 11:50 PM
  *
  */

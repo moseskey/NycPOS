@@ -26,7 +26,6 @@ import java.util.List;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PrintItemLine implements PrintItem {
 
@@ -51,8 +50,6 @@ public class PrintItemLine implements PrintItem {
     protected List<StyledText> m_atext;
 
     /** Creates a new instance of PrinterItemLine
-     * @param textsize
-     * @param font
      * @param fontheight */
     public PrintItemLine(int textsize, Font font, int fontheight) {
         this.textsize = textsize;
@@ -65,8 +62,6 @@ public class PrintItemLine implements PrintItem {
 
     /**
      *
-     * @param style
-     * @param text
      */
     public void addText(int style, String text) {
         m_atext.add(new StyledText(style, text));
@@ -74,10 +69,6 @@ public class PrintItemLine implements PrintItem {
 
     /**
      *
-     * @param g
-     * @param x
-     * @param y
-     * @param width
      */
     @Override
     public void draw(Graphics2D g, int x, int y, int width) {
@@ -94,7 +85,6 @@ public class PrintItemLine implements PrintItem {
 
     /**
      *
-     * @return
      */
     @Override
     public int getHeight() {
@@ -108,8 +98,6 @@ public class PrintItemLine implements PrintItem {
 
         /**
          *
-         * @param style
-         * @param text
          */
         public StyledText(int style, String text) {
             this.style = style;

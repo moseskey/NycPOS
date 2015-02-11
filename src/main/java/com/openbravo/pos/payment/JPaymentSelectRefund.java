@@ -23,20 +23,15 @@ import java.awt.*;
 
 /**
  *
- * @author adrianromero
  */
 public class JPaymentSelectRefund extends JPaymentSelect {
 
     /** Creates new form JPaymentSelect
-     * @param parent
-     * @param modal
      * @param o */
     protected JPaymentSelectRefund(java.awt.Frame parent, boolean modal, ComponentOrientation o) {
         super(parent, modal, o);
     }
     /** Creates new form JPaymentSelect
-     * @param parent
-     * @param modal
      * @param o */
     protected JPaymentSelectRefund(java.awt.Dialog parent, boolean modal, ComponentOrientation o) {
         super(parent, modal, o);
@@ -44,8 +39,6 @@ public class JPaymentSelectRefund extends JPaymentSelect {
 
     /**
      *
-     * @param parent
-     * @return
      */
     public static JPaymentSelect getDialog(Component parent) {
 
@@ -73,8 +66,6 @@ public class JPaymentSelectRefund extends JPaymentSelect {
 
     /**
      *
-     * @param isPositive
-     * @param isComplete
      */
     @Override
     protected void setStatusPanel(boolean isPositive, boolean isComplete) {
@@ -85,8 +76,6 @@ public class JPaymentSelectRefund extends JPaymentSelect {
 
     /**
      *
-     * @param total
-     * @return
      */
     @Override
     protected PaymentInfo getDefaultPayment(double total) {

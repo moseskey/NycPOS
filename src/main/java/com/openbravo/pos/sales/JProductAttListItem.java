@@ -25,7 +25,6 @@ import java.util.List;
 
 /**
  *
- * @author adrian
  */
 public class JProductAttListItem extends javax.swing.JPanel implements JProductAttEditI {
 
@@ -33,9 +32,6 @@ public class JProductAttListItem extends javax.swing.JPanel implements JProductA
     private ComboBoxValModel model;
 
     /** Creates new form JProductAttListItem
-     * @param attid
-     * @param label
-     * @param value
      * @param values */
     public JProductAttListItem(String attid, String label, String value, List<String> values) {
 
@@ -64,7 +60,6 @@ public class JProductAttListItem extends javax.swing.JPanel implements JProductA
 
     /**
      *
-     * @return
      */
     public String getAttribute() {
         return attid;
@@ -72,7 +67,6 @@ public class JProductAttListItem extends javax.swing.JPanel implements JProductA
 
     /**
      *
-     * @return
      */
     public String getValue() {
         return (String) jValues.getSelectedItem();
@@ -80,7 +74,6 @@ public class JProductAttListItem extends javax.swing.JPanel implements JProductA
 
     /**
      *
-     * @return
      */
     public Component getComponent() {
         return this;

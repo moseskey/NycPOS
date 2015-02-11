@@ -35,7 +35,6 @@ import jpos.POSPrinterConst;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DevicePrinterJavaPOS  implements DevicePrinter {
 
@@ -56,8 +55,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
     private StringBuilder m_sline;
 
     /** Creates a new instance of DevicePrinterJavaPOS
-     * @param sDevicePrinterName
-     * @param sDeviceDrawerName
      * @throws com.openbravo.pos.printer.TicketPrinterException */
     public DevicePrinterJavaPOS(String sDevicePrinterName, String sDeviceDrawerName) throws TicketPrinterException {
 
@@ -90,7 +87,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
 
     /**
      *
-     * @return
      */
     @Override
     public String getPrinterName() {
@@ -99,7 +95,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
 
     /**
      *
-     * @return
      */
     @Override
     public String getPrinterDescription() {
@@ -108,7 +103,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getPrinterComponent() {
@@ -135,7 +129,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
 
     /**
      *
-     * @param image
      */
     @Override
     public void printImage(BufferedImage image) {
@@ -163,9 +156,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
 
     /**
      *
-     * @param type
-     * @param position
-     * @param code
      */
     @Override
     public void printBarCode(String type, String position, String code) {
@@ -183,7 +173,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
 
     /**
      *
-     * @param iTextSize
      */
     @Override
     public void beginLine(int iTextSize) {
@@ -203,8 +192,6 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
 
     /**
      *
-     * @param iStyle
-     * @param sText
      */
     @Override
     public void printText(int iStyle, String sText) {

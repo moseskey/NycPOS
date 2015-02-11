@@ -25,7 +25,6 @@ import java.util.List;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class BaseSentence implements SentenceList, SentenceFind, SentenceExec {
 
@@ -33,15 +32,12 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
         public abstract DataResultSet openExec(Object params) throws BasicException;
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public abstract DataResultSet moreResults() throws BasicException;
@@ -56,7 +52,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @return
      * @throws BasicException
      */
         @Override
@@ -66,8 +61,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override
@@ -77,8 +70,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override
@@ -95,7 +86,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -105,8 +95,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override
@@ -116,8 +104,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override
@@ -132,9 +118,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param offset
-     * @param length
-     * @return
      * @throws BasicException
      */
     @Override
@@ -144,10 +127,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param params
-     * @param offset
-     * @param length
-     * @return
      * @throws BasicException
      */
     @Override
@@ -162,7 +141,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -172,8 +150,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override
@@ -183,8 +159,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override
@@ -201,8 +175,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param SRS
-     * @return
      * @throws BasicException
      */
         public final List fetchAll(DataResultSet SRS) throws BasicException {
@@ -221,10 +193,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param SRS
-     * @param offset
-     * @param length
-     * @return
      * @throws BasicException
      */
         public final List fetchPage(DataResultSet SRS, int offset, int length) throws BasicException {
@@ -255,8 +223,6 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     /**
      *
-     * @param SRS
-     * @return
      * @throws BasicException
      */
     public final Object fetchOne(DataResultSet SRS) throws BasicException {

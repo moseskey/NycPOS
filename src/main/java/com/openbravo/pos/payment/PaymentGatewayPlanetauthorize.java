@@ -32,7 +32,6 @@ import java.util.StringTokenizer;
 
 /**
  *
- * @author Mikel Irurita
  */
 public class PaymentGatewayPlanetauthorize implements PaymentGateway {
 
@@ -46,7 +45,6 @@ public class PaymentGatewayPlanetauthorize implements PaymentGateway {
 
     /**
      *
-     * @param props
      */
     public PaymentGatewayPlanetauthorize (AppProperties props) {
         m_sCommerceID = props.getProperty("payment.commerceid");
@@ -66,7 +64,6 @@ public class PaymentGatewayPlanetauthorize implements PaymentGateway {
 
     /**
      *
-     * @param payinfo
      */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {

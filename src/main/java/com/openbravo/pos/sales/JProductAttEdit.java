@@ -44,7 +44,6 @@ import javax.swing.SwingUtilities;
 
 /**
  *
- * @author adrianromero
  */
 public class JProductAttEdit extends javax.swing.JDialog {
 
@@ -127,9 +126,6 @@ public class JProductAttEdit extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param s
-     * @return
      */
     public static JProductAttEdit getAttributesEditor(Component parent, Session s) {
 
@@ -148,8 +144,6 @@ public class JProductAttEdit extends javax.swing.JDialog {
 
     /**
      *
-     * @param attsetid
-     * @param attsetinstid
      * @throws BasicException
      */
     public void editAttributes(String attsetid, String attsetinstid) throws BasicException {
@@ -206,7 +200,6 @@ public class JProductAttEdit extends javax.swing.JDialog {
 
     /**
      *
-     * @return
      */
     public boolean isOK() {
         return ok;
@@ -214,7 +207,6 @@ public class JProductAttEdit extends javax.swing.JDialog {
 
     /**
      *
-     * @return
      */
     public String getAttributeSetInst() {
         return attInstanceId;
@@ -222,7 +214,6 @@ public class JProductAttEdit extends javax.swing.JDialog {
 
     /**
      *
-     * @return
      */
     public String getAttributeSetInstDescription() {
         return attInstanceDescription;

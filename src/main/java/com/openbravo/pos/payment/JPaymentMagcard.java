@@ -28,7 +28,6 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author  adrianromero
  */
 public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInterface {
 
@@ -38,7 +37,6 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
     private String transaction;
 
     /** Creates new form JPaymentMagcard
-     * @param app
      * @param notifier */
     public JPaymentMagcard(AppView app, JPaymentNotifier notifier) {
 
@@ -61,9 +59,6 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
 
     /**
      *
-     * @param customerext
-     * @param dTotal
-     * @param transID
      */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
@@ -81,7 +76,6 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
 
     /**
      *
-     * @return
      */
 // JG July 2014
     @Override
@@ -117,7 +111,6 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -126,7 +119,6 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
 
     /**
      *
-     * @param transid
      */
     public void setTransaction(String transid){
         transaction = transid;

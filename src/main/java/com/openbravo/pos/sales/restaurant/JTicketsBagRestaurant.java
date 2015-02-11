@@ -47,7 +47,6 @@ import javax.swing.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JTicketsBagRestaurant extends javax.swing.JPanel {
 
@@ -73,7 +72,6 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
 
 
     /** Creates new form JTicketsBagRestaurantMap
-     * @param app
      * @param restaurant */
     public JTicketsBagRestaurant(AppView app, JTicketsBagRestaurantMap restaurant) {
         super();
@@ -106,7 +104,6 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
 
     /**
      *
-     * @param resource
      */
     public void printTicket(String resource) {
         printTicket(resource, ticket, m_restaurant.getTable());

@@ -23,7 +23,6 @@ import java.text.ParseException;
 
 /**
  *
- * @author JG uniCenta
  */
 public class FormatsValidate extends Formats {
 
@@ -31,7 +30,6 @@ public class FormatsValidate extends Formats {
     private FormatsConstrain[] m_aConstrains;
 
     /** Creates a new instance of FormatsValidate
-     * @param fmt
      * @param constrains */
     public FormatsValidate(Formats fmt, FormatsConstrain[] constrains) {
         m_fmt = fmt;
@@ -43,7 +41,6 @@ public class FormatsValidate extends Formats {
         this(fmt, new FormatsConstrain[0]);
     }
     /** Creates a new instance of FormatsValidate
-     * @param fmt
      * @param constrain */
     public FormatsValidate(Formats fmt, FormatsConstrain constrain) {
         this(fmt, new FormatsConstrain[]{constrain});
@@ -51,8 +48,6 @@ public class FormatsValidate extends Formats {
 
     /**
      *
-     * @param value
-     * @return
      */
     @Override
     protected String formatValueInt(Object value) {
@@ -61,8 +56,6 @@ public class FormatsValidate extends Formats {
 
     /**
      *
-     * @param value
-     * @return
      * @throws ParseException
      */
     @Override
@@ -78,7 +71,6 @@ public class FormatsValidate extends Formats {
 
     /**
      *
-     * @return
      */
     @Override
     public int getAlignment() {

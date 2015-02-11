@@ -30,7 +30,6 @@ import java.util.List;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPanelTicketEdits extends JPanelTicket {
 
@@ -42,7 +41,6 @@ public class JPanelTicketEdits extends JPanelTicket {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -69,7 +67,6 @@ public class JPanelTicketEdits extends JPanelTicket {
 
     /**
      *
-     * @param aRefundLines
      */
     public void showRefundLines(List aRefundLines) {
         // anado las lineas de refund
@@ -80,7 +77,6 @@ public class JPanelTicketEdits extends JPanelTicket {
 
     /**
      *
-     * @return
      */
     @Override
     protected JTicketsBag getJTicketsBag() {
@@ -89,7 +85,6 @@ public class JPanelTicketEdits extends JPanelTicket {
 
     /**
      *
-     * @return
      */
     @Override
     protected Component getSouthComponent() {

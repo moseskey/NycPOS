@@ -51,7 +51,6 @@ import javax.swing.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPaneldbMigrate extends JPanel implements JPanelView {
 
@@ -80,7 +79,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     /**
      * Creates new form JPaneldbMigrate
-     * @param oApp
      */
     public JPaneldbMigrate(AppView oApp) {
         this(oApp.getProperties());
@@ -88,7 +86,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     /**
      *
-     * @param props
      */
     public JPaneldbMigrate(AppProperties props) {
 
@@ -122,7 +119,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @SuppressWarnings("empty-statement")
     public Boolean createMigratedb() {
@@ -179,7 +175,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     public Boolean addFKeys() {
         if ("".equals(eScript3)) {
@@ -203,7 +198,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -212,7 +206,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -221,7 +214,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     public Boolean getSeconddbDetails() {
 
@@ -283,7 +275,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {

@@ -28,7 +28,6 @@ import com.openbravo.data.loader.LocalRes;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JSort extends JDialog {
 
@@ -91,9 +90,6 @@ public class JSort extends JDialog {
 
     /**
      *
-     * @param parent
-     * @param cc
-     * @return
      * @throws BasicException
      */
     public static Comparator showMessage(Component parent, ComparatorCreator cc) throws BasicException {

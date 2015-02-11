@@ -21,28 +21,16 @@ package com.openbravo.pos.payment;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentInfoMagcardRefund extends PaymentInfoMagcard {
 
     /** Creates a new instance of PaymentInfoMagcardRefund
-     * @param sHolderName
-     * @param track3
-     * @param sExpirationDate
-     * @param sCardNumber
-     * @param track2
-     * @param track1
-     * @param dTotal
      * @param sTransactionID */
     public PaymentInfoMagcardRefund(String sHolderName, String sCardNumber, String sExpirationDate, String track1, String track2, String track3, String sTransactionID, double dTotal) {
        super(sHolderName, sCardNumber, sExpirationDate, track1, track2, track3, sTransactionID, dTotal);
     }
 
     /** Creates a new instance of PaymentInfoMagcard
-     * @param sHolderName
-     * @param sCardNumber
-     * @param sExpirationDate
-     * @param dTotal
      * @param sTransactionID */
     public PaymentInfoMagcardRefund(String sHolderName, String sCardNumber, String sExpirationDate, String sTransactionID, double dTotal) {
         super(sHolderName, sCardNumber, sExpirationDate, sTransactionID, dTotal);
@@ -50,7 +38,6 @@ public class PaymentInfoMagcardRefund extends PaymentInfoMagcard {
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo copyPayment(){
@@ -62,7 +49,6 @@ public class PaymentInfoMagcardRefund extends PaymentInfoMagcard {
 
     /**
      *
-     * @return
      */
     @Override
     public String getName() {

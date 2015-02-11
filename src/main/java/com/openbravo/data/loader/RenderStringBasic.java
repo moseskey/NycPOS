@@ -23,7 +23,6 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author  adrian
  */
 public class RenderStringBasic implements IRenderString {
 
@@ -31,7 +30,6 @@ public class RenderStringBasic implements IRenderString {
     private int[] m_aiIndex;
 
     /** Creates a new instance of StringnizerBasic
-     * @param fmts
      * @param aiIndex */
     public RenderStringBasic(Formats[] fmts, int[] aiIndex) {
         m_aFormats = fmts;
@@ -40,8 +38,6 @@ public class RenderStringBasic implements IRenderString {
 
     /**
      *
-     * @param value
-     * @return
      */
     public String getRenderString(Object value) {
 

@@ -27,7 +27,6 @@ import com.openbravo.data.loader.JDBCSentence.JDBCDataResultSet;
 
 /**
  *
- * @author JG uniCenta
  */
 public class MetaSentence extends JDBCSentence {
 
@@ -44,9 +43,6 @@ public class MetaSentence extends JDBCSentence {
     protected SerializerWrite m_SerWrite = null;
 
     /** Creates a new instance of MetaDataSentence
-     * @param s
-     * @param sSentence
-     * @param serwrite
      * @param serread */
     public MetaSentence(Session s, String sSentence, SerializerWrite serwrite, SerializerRead serread) {
         super(s);
@@ -57,9 +53,6 @@ public class MetaSentence extends JDBCSentence {
 
     /**
      *
-     * @param s
-     * @param sSentence
-     * @param serread
      */
     public MetaSentence(Session s, String sSentence, SerializerRead serread) {
         this(s, sSentence, null, serread);
@@ -114,8 +107,6 @@ public class MetaSentence extends JDBCSentence {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     public DataResultSet openExec(Object params) throws BasicException {
@@ -204,7 +195,6 @@ public class MetaSentence extends JDBCSentence {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public DataResultSet moreResults() throws BasicException {

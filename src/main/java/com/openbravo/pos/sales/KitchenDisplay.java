@@ -17,7 +17,6 @@ import java.util.Date;
 
 /**
  *
- * @author Administrator
  */
 public class KitchenDisplay {
     private Session s;
@@ -35,7 +34,6 @@ public class KitchenDisplay {
 
     /**
      *
-     * @param oApp
      */
     public KitchenDisplay(AppView oApp) {
         m_App=oApp;
@@ -52,12 +50,6 @@ public class KitchenDisplay {
 
     /**
      *
-     * @param ID
-     * @param table
-     * @param pickupID
-     * @param product
-     * @param multiply
-     * @param attributes
      */
     public void addRecord(String ID, String table, String pickupID, String product, String multiply, String attributes){
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");

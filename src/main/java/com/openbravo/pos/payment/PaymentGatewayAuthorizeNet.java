@@ -21,7 +21,6 @@
  * <p>Description: Advanced Integration Method</p>
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: Authorize.Net</p>
- * @author Authorize.Net
  * @version 3.1
  */
 
@@ -56,7 +55,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentGatewayAuthorizeNet implements PaymentGateway {
 
@@ -94,7 +92,6 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
 
     /**
      *
-     * @param payinfo
      */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {

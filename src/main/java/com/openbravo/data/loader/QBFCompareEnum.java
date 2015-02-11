@@ -21,7 +21,6 @@ package com.openbravo.data.loader;
 
 /**
  *
- * @author  adrian
  */
 public abstract class QBFCompareEnum {
 
@@ -110,7 +109,6 @@ public abstract class QBFCompareEnum {
 
     /**
      *
-     * @return
      */
     public int getCompareInt() {
         return m_iValue;
@@ -121,9 +119,6 @@ public abstract class QBFCompareEnum {
 
     /**
      *
-     * @param sField
-     * @param sSQLValue
-     * @return
      */
     public abstract String getExpression(String sField, String sSQLValue);
 }

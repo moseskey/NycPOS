@@ -26,7 +26,6 @@ import javax.swing.border.Border;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class JEditorAbstract extends javax.swing.JPanel implements EditorComponent {
 
@@ -48,50 +47,42 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
 
     /**
      *
-     * @return
      */
     protected abstract int getMode();
 
     /**
      *
-     * @return
      */
     protected abstract int getAlignment();
 
     /**
      *
-     * @return
      */
     protected abstract String getEditMode();
 
     /**
      *
-     * @return
      */
     protected abstract String getTextEdit();
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     protected abstract String getTextFormat() throws BasicException;
 
     /**
      *
-     * @param c
      */
     protected abstract void typeCharInternal(char c);
 
     /**
      *
-     * @param c
      */
     protected abstract void transCharInternal(char c);
 
     /**
      *
-     * @param c
      */
     @Override
     public void typeChar(char c) {
@@ -102,7 +93,6 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
 
     /**
      *
-     * @param c
      */
     @Override
     public void transChar(char c) {
@@ -113,7 +103,6 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
 
     /**
      *
-     * @param ed
      */
     @Override
     public void addEditorKeys(EditorKeys ed) {
@@ -130,7 +119,6 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

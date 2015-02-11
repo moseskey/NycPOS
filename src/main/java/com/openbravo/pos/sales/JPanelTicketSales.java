@@ -32,7 +32,6 @@ import javax.swing.event.ListSelectionListener;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPanelTicketSales extends JPanelTicket {
 
@@ -44,7 +43,6 @@ public class JPanelTicketSales extends JPanelTicket {
 
     /**
      *
-     * @param app
      */
     @Override
     public void init(AppView app) {
@@ -54,7 +52,6 @@ public class JPanelTicketSales extends JPanelTicket {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -63,7 +60,6 @@ public class JPanelTicketSales extends JPanelTicket {
 
     /**
      *
-     * @return
      */
     @Override
     protected Component getSouthComponent() {
@@ -91,7 +87,6 @@ public class JPanelTicketSales extends JPanelTicket {
 
     /**
      *
-     * @return
      */
     @Override
     protected JTicketsBag getJTicketsBag() {

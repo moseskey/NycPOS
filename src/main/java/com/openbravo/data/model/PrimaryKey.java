@@ -21,13 +21,11 @@ package com.openbravo.data.model;
 
 /**
  *
- * @author adrian
  */
 public class PrimaryKey extends Column {
 
     /**
      *
-     * @param name
      */
     public PrimaryKey(String name) {
         super(name);
@@ -35,7 +33,6 @@ public class PrimaryKey extends Column {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean isPK() {

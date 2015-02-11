@@ -22,7 +22,6 @@ package com.openbravo.pos.payment;
 
 /**
  *
- * @author adrian
  */
 public interface JPaymentNotifier {
 
@@ -31,8 +30,6 @@ public interface JPaymentNotifier {
 
     /**
      *
-     * @param isPositive
-     * @param isComplete
      */
         public void setStatus(boolean isPositive, boolean isComplete);
 }

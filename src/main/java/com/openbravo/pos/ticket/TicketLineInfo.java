@@ -32,7 +32,6 @@ import java.util.Properties;
 
 /**
  *
- * @author adrianromero
  */
 public class TicketLineInfo implements SerializableWrite, SerializableRead, Serializable {
 
@@ -47,10 +46,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
     private String attsetinstid;
 
     /** Creates new TicketLineInfo
-     * @param productid
-     * @param dMultiply
-     * @param dPrice
-     * @param tax
      * @param props */
     public TicketLineInfo(String productid, double dMultiply, double dPrice, TaxInfo tax, Properties props) {
         init(productid, null, dMultiply, dPrice, tax, props);
@@ -58,10 +53,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param productid
-     * @param dMultiply
-     * @param dPrice
-     * @param tax
      */
     public TicketLineInfo(String productid, double dMultiply, double dPrice, TaxInfo tax) {
         init(productid, null, dMultiply, dPrice, tax, new Properties());
@@ -69,12 +60,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param productid
-     * @param productname
-     * @param producttaxcategory
-     * @param dMultiply
-     * @param dPrice
-     * @param tax
      */
     public TicketLineInfo(String productid, String productname, String producttaxcategory, double dMultiply, double dPrice, TaxInfo tax) {
         Properties props = new Properties();
@@ -85,11 +70,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param productname
-     * @param producttaxcategory
-     * @param dMultiply
-     * @param dPrice
-     * @param tax
      */
     public TicketLineInfo(String productname, String producttaxcategory, double dMultiply, double dPrice, TaxInfo tax) {
 
@@ -108,11 +88,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param product
-     * @param dMultiply
-     * @param dPrice
-     * @param tax
-     * @param attributes
      */
     public TicketLineInfo(ProductInfoExt product, double dMultiply, double dPrice, TaxInfo tax, Properties attributes) {
 
@@ -164,10 +139,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param oProduct
-     * @param dPrice
-     * @param tax
-     * @param attributes
      */
     public TicketLineInfo(ProductInfoExt oProduct, double dPrice, TaxInfo tax, Properties attributes) {
         this(oProduct, 1.0, dPrice, tax, attributes);
@@ -175,7 +146,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param line
      */
     public TicketLineInfo(TicketLineInfo line) {
         init(line.productid, line.attsetinstid, line.multiply, line.price, line.tax, (Properties) line.attributes.clone());
@@ -201,7 +171,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param dp
      * @throws BasicException
      */
     @Override
@@ -226,7 +195,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -258,7 +226,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public TicketLineInfo copyTicketLine() {
         TicketLineInfo l = new TicketLineInfo();
@@ -275,7 +242,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public int getTicketLine() {
         return m_iLine;
@@ -283,7 +249,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String getProductID() {
 // System.out.println(productid);
@@ -292,7 +257,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
     }
         /**
      *
-     * @param value
      */
     public void setProductID(String value) {
 //        if (value == null) {
@@ -308,7 +272,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String getProductName() {
         return attributes.getProperty("product.name");
@@ -316,7 +279,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String getProductAttSetId() {
         return attributes.getProperty("product.attsetid");
@@ -324,7 +286,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String getProductAttSetInstDesc() {
         return attributes.getProperty("product.attsetdesc", "");
@@ -332,7 +293,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param value
      */
     public void setProductAttSetInstDesc(String value) {
         if (value == null) {
@@ -344,7 +304,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String getProductAttSetInstId() {
         return attsetinstid;
@@ -352,7 +311,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param value
      */
     public void setProductAttSetInstId(String value) {
         attsetinstid = value;
@@ -360,7 +318,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public boolean isProductCom() {
         return "true".equals(attributes.getProperty("product.com"));
@@ -368,7 +325,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String getProductTaxCategoryID() {
         return (attributes.getProperty("product.taxcategoryid"));
@@ -376,7 +332,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param taxID
      */
     public void setProductTaxCategoryID(String taxID){
         attributes.setProperty("product.taxcategoryid",taxID);
@@ -384,7 +339,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String getProductCategoryID() {
         return (attributes.getProperty("product.categoryid"));
@@ -392,7 +346,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public double getMultiply() {
         return multiply;
@@ -400,7 +353,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param dValue
      */
     public void setMultiply(double dValue) {
         multiply = dValue;
@@ -408,7 +360,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public double getPrice() {
         return price;
@@ -416,7 +367,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param dValue
      */
     public void setPrice(double dValue) {
         price = dValue;
@@ -424,7 +374,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public double getPriceTax() {
         return price * (1.0 + getTaxRate());
@@ -432,7 +381,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param dValue
      */
     public void setPriceTax(double dValue) {
         price = dValue / (1.0 + getTaxRate());
@@ -440,7 +388,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public TaxInfo getTaxInfo() {
         return tax;
@@ -448,7 +395,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param value
      */
     public void setTaxInfo(TaxInfo value) {
         tax = value;
@@ -456,8 +402,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param key
-     * @return
      */
     public String getProperty(String key) {
         return attributes.getProperty(key);
@@ -465,9 +409,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param key
-     * @param defaultvalue
-     * @return
      */
     public String getProperty(String key, String defaultvalue) {
         return attributes.getProperty(key, defaultvalue);
@@ -475,8 +416,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @param key
-     * @param value
      */
     public void setProperty(String key, String value) {
         attributes.setProperty(key, value);
@@ -484,7 +423,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public Properties getProperties() {
         return attributes;
@@ -492,7 +430,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public double getTaxRate() {
         return tax == null ? 0.0 : tax.getRate();
@@ -500,7 +437,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public double getSubValue() {
         return price * multiply;
@@ -508,7 +444,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public double getTax() {
         return price * multiply * getTaxRate();
@@ -516,7 +451,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public double getValue() {
         return price * multiply * (1.0 + getTaxRate());
@@ -524,7 +458,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String printName() {
         return StringUtils.encodeXML(attributes.getProperty("product.name"));
@@ -532,7 +465,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String printMultiply() {
         return Formats.DOUBLE.formatValue(multiply);
@@ -540,7 +472,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String printPrice() {
         return Formats.CURRENCY.formatValue(getPrice());
@@ -548,7 +479,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String printPriceTax() {
         return Formats.CURRENCY.formatValue(getPriceTax());
@@ -556,7 +486,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String printTax() {
         return Formats.CURRENCY.formatValue(getTax());
@@ -564,7 +493,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String printTaxRate() {
         return Formats.PERCENT.formatValue(getTaxRate());
@@ -572,7 +500,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String printSubValue() {
         return Formats.CURRENCY.formatValue(getSubValue());
@@ -580,7 +507,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String printValue() {
         return Formats.CURRENCY.formatValue(getValue());
@@ -589,7 +515,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public boolean isProductKitchen() {
 	return "true".equals(attributes.getProperty("product.kitchen"));
@@ -599,7 +524,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public boolean isProductService() {
 	return "true".equals(attributes.getProperty("product.service"));
@@ -608,7 +532,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public boolean isProductVprice() {
 	return "true".equals(attributes.getProperty("product.vprice"));
@@ -620,7 +543,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public boolean isProductVerpatrib() {
 	return "true".equals(attributes.getProperty("product.verpatrib"));
@@ -632,7 +554,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public String printTextTip() {
 	return attributes.getProperty("product.texttip");
@@ -644,7 +565,6 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
 
     /**
      *
-     * @return
      */
     public boolean isProductWarranty() {
 	return "true".equals(attributes.getProperty("product.warranty"));

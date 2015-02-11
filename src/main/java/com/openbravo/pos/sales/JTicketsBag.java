@@ -29,7 +29,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class JTicketsBag extends JPanel {
 
@@ -49,7 +48,6 @@ public abstract class JTicketsBag extends JPanel {
     protected TicketsEditor m_panelticket;
 
     /** Creates new form JTicketsBag
-     * @param oApp
      * @param panelticket */
     public JTicketsBag(AppView oApp, TicketsEditor panelticket) {
         m_App = oApp;
@@ -64,7 +62,6 @@ public abstract class JTicketsBag extends JPanel {
 
     /**
      *
-     * @return
      */
     public abstract boolean deactivate();
 
@@ -75,22 +72,16 @@ public abstract class JTicketsBag extends JPanel {
 
     /**
      *
-     * @return
      */
     protected abstract JComponent getBagComponent();
 
     /**
      *
-     * @return
      */
     protected abstract JComponent getNullComponent();
 
     /**
      *
-     * @param sName
-     * @param app
-     * @param panelticket
-     * @return
      */
     public static JTicketsBag createTicketsBag(String sName, AppView app, TicketsEditor panelticket) {
         switch (sName) {

@@ -26,7 +26,6 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  {
 
@@ -39,7 +38,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
     private String m_dCardName =null;
 
     /** Creates a new instance of PaymentInfoCash
-     * @param dTicket
      * @param sName */
     public PaymentInfoTicket(double dTicket, String sName) {
         m_sName = sName;
@@ -48,9 +46,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @param dTicket
-     * @param sName
-     * @param transactionID
      */
     public PaymentInfoTicket(double dTicket, String sName, String transactionID) {
         m_sName = sName;
@@ -70,7 +65,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -85,7 +79,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo copyPayment(){
@@ -94,7 +87,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
     @Override
     public String getName() {
@@ -103,7 +95,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
     @Override
     public double getTotal() {
@@ -112,7 +103,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
     @Override
     public String getTransactionID(){
@@ -121,7 +111,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
     @Override
     public double getPaid() {
@@ -130,7 +119,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
     @Override
     public double getChange(){
@@ -139,7 +127,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
     @Override
     public double getTendered() {
@@ -148,7 +135,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
     @Override
     public String getCardName() {
@@ -157,7 +143,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
 
     public String printPaid() {
@@ -168,7 +153,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
         public String printPaperTotal() {
         // En una devolucion hay que cambiar el signo al total
@@ -177,7 +161,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
     public String printChange() {
         return Formats.CURRENCY.formatValue(m_dTendered - m_dTicket);
@@ -185,7 +168,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     /**
      *
-     * @return
      */
     public String printTendered() {
         return Formats.CURRENCY.formatValue(m_dTendered);

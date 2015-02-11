@@ -29,7 +29,6 @@ import javax.swing.filechooser.FileFilter;
 
 /**
  *
- * @author  Mikel Irurita
  */
 public class ConfigPaymentPanelLinkPoint extends javax.swing.JPanel implements PaymentConfiguration {
 
@@ -42,7 +41,6 @@ public class ConfigPaymentPanelLinkPoint extends javax.swing.JPanel implements P
 
     /**
      *
-     * @return
      */
     @Override
     public JPanel getComponent() {
@@ -51,7 +49,6 @@ public class ConfigPaymentPanelLinkPoint extends javax.swing.JPanel implements P
 
     /**
      *
-     * @param config
      */
     @Override
     public void loadProperties(AppConfig config) {
@@ -69,7 +66,6 @@ public class ConfigPaymentPanelLinkPoint extends javax.swing.JPanel implements P
 
     /**
      *
-     * @param config
      */
     @Override
     public void saveProperties(AppConfig config) {

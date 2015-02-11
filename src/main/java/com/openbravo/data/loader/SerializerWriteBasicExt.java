@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public class SerializerWriteBasicExt implements SerializerWrite<Object[]> {
 
@@ -31,7 +30,6 @@ public class SerializerWriteBasicExt implements SerializerWrite<Object[]> {
     private int[] m_index;
 
     /** Creates a new instance of SerializerWriteBasic
-     * @param classes
      * @param index */
     public SerializerWriteBasicExt(Datas[] classes, int[] index) {
         m_classes = classes;
@@ -40,8 +38,6 @@ public class SerializerWriteBasicExt implements SerializerWrite<Object[]> {
 
     /**
      *
-     * @param dp
-     * @param obj
      * @throws BasicException
      */
     @Override

@@ -39,7 +39,6 @@ import com.openbravo.pos.sales.JResetPickupID;
 
 /**
  *
- * @author adrianromero
  */
 public class JResetPickupID extends javax.swing.JFrame {
 
@@ -47,7 +46,6 @@ public class JResetPickupID extends javax.swing.JFrame {
 
     /**
      *
-     * @param props
      */
     public JResetPickupID(AppProperties props) {
 

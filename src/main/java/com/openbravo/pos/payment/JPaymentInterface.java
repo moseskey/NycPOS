@@ -24,27 +24,21 @@ import java.awt.Component;
 
 /**
  *
- * @author Adrian
  */
 public interface JPaymentInterface {
 
     /**
      *
-     * @param customerext
-     * @param dTotal
-     * @param transactionID
      */
     public void activate(CustomerInfoExt customerext, double dTotal, String transactionID);
 
     /**
      *
-     * @return
      */
     public PaymentInfo executePayment();
 
     /**
      *
-     * @return
      */
     public Component getComponent();
 }

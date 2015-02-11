@@ -45,7 +45,6 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author  adrianromero
  */
 public final class CustomersView extends javax.swing.JPanel implements EditorRecord {
 
@@ -61,7 +60,6 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
     private DataLogicSales dlSales;
 
     /** Creates new form CustomersView
-     * @param app
      * @param dirty */
     public CustomersView(AppView app, DirtyManager dirty) {
         try {
@@ -267,7 +265,6 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
 
     /**
      * Delete from object
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -343,7 +340,6 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
 
     /**
      * Edit object
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -421,7 +417,6 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
 
     /**
      * Create object
-     * @return
      * @throws BasicException
      */
     @Override

@@ -37,7 +37,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author JG uniCenta
  */
 public class TaxEditor extends JPanel implements EditorRecord {
 
@@ -53,7 +52,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
     private ComboBoxValModel taxparentmodel;
 
     /** Creates new form taxEditor
-     * @param app
      * @param dirty */
     public TaxEditor(AppView app, DirtyManager dirty) {
 
@@ -168,7 +166,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -194,7 +191,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -220,7 +216,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -242,7 +237,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

@@ -30,7 +30,6 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrinter {
 
@@ -58,7 +57,6 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     /**
      *
-     * @return
      */
     @Override
     public String getPrinterName() {
@@ -74,7 +72,6 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     /**
      *
-     * @return
      */
     @Override
     public String getPrinterDescription() {
@@ -83,7 +80,6 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getPrinterComponent() {
@@ -114,7 +110,6 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     /**
      *
-     * @param image
      */
     @Override
     public void printImage(BufferedImage image) {
@@ -123,9 +118,6 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     /**
      *
-     * @param type
-     * @param position
-     * @param code
      */
     @Override
     public void printBarCode(String type, String position, String code) {
@@ -134,7 +126,6 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     /**
      *
-     * @param iTextSize
      */
     @Override
     public void beginLine(int iTextSize) {
@@ -143,8 +134,6 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     /**
      *
-     * @param iStyle
-     * @param sText
      */
     @Override
     public void printText(int iStyle, String sText) {

@@ -23,7 +23,6 @@ import java.text.ParseException;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class FormatsConstrain {
 
@@ -31,8 +30,6 @@ public abstract class FormatsConstrain {
 
     /**
      *
-     * @param value
-     * @return
      * @throws ParseException
      */
 

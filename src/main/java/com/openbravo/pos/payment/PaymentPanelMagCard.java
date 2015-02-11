@@ -24,7 +24,6 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPanel {
 
@@ -37,7 +36,6 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
     private double m_dTotal;
 
     /** Creates new form JMagCardReader
-     * @param cardreader
      * @param notifier */
     // public PaymentPanelMagCard(String sReader, JPaymentNotifier notifier) {
     public PaymentPanelMagCard(MagCardReader cardreader, JPaymentNotifier notifier) {
@@ -59,7 +57,6 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent(){
@@ -68,8 +65,6 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
 
     /**
      *
-     * @param sTransaction
-     * @param dTotal
      */
     @Override
     public void activate(String sTransaction, double dTotal) {
@@ -107,7 +102,6 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfoMagcard getPaymentInfoMagcard() {

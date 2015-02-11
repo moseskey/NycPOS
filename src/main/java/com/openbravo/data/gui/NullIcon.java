@@ -23,7 +23,6 @@ import javax.swing.Icon;
 
 /**
  *
- * @author  adrian
  */
 public class NullIcon implements Icon {
 
@@ -31,7 +30,6 @@ public class NullIcon implements Icon {
     private int m_iHeight;
 
     /** Creates a new instance of NullIcon
-     * @param width
      * @param height */
     public NullIcon(int width, int height) {
         m_iWidth = width;

@@ -21,7 +21,6 @@ package com.openbravo.data.model;
 
 /**
  *
- * @author adrian
  */
 public class Column {
 
@@ -29,7 +28,6 @@ public class Column {
 
     /**
      *
-     * @param name
      */
     public Column(String name) {
         this.name = name;
@@ -37,7 +35,6 @@ public class Column {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return name;
@@ -45,7 +42,6 @@ public class Column {
 
     /**
      *
-     * @return
      */
     public boolean isPK() {
         return false;

@@ -32,7 +32,6 @@ import java.awt.Insets;
 
 /**
  *
- * @author JG uniCenta
  */
 public class Place implements SerializableRead, java.io.Serializable {
 
@@ -59,7 +58,6 @@ public class Place implements SerializableRead, java.io.Serializable {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -90,55 +88,46 @@ public class Place implements SerializableRead, java.io.Serializable {
 
     /**
      *
-     * @return
      */
     public String getId() { return m_sId; }
 
     /**
      *
-     * @return
      */
     public String getName() { return m_sName; }
 
     /**
      *
-     * @return
      */
     public int getX() { return m_ix; }
 
     /**
      *
-     * @return
      */
     public int getY() { return m_iy; }
 
     /**
      *
-     * @return
      */
     public String getFloor() { return m_sfloor; }
 
     /**
      *
-     * @return
      */
     public JButton getButton() { return m_btn; }
 
     /**
      *
-     * @return
      */
     public String getCustomer(){ return m_customer; }
 
     /**
      *
-     * @return
      */
     public String getWaiter(){ return m_waiter;}
 
     /**
      *
-     * @return
      */
     public boolean hasPeople() {
         return m_bPeople;
@@ -146,7 +135,6 @@ public class Place implements SerializableRead, java.io.Serializable {
 
     /**
      *
-     * @param bValue
      */
     public void setPeople(boolean bValue) {
         m_bPeople = bValue;
@@ -165,7 +153,6 @@ public class Place implements SerializableRead, java.io.Serializable {
 
     /**
      *
-     * @param btnText
      */
     public void setButtonText(String btnText){
         m_btn.setText(btnText);

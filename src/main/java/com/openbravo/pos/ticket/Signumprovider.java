@@ -23,7 +23,6 @@ import java.util.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class Signumprovider {
 
@@ -36,7 +35,6 @@ public class Signumprovider {
 
     /**
      *
-     * @param key
      */
     public void addPositive(Object key) {
         m_positives.add(key);
@@ -44,7 +42,6 @@ public class Signumprovider {
 
     /**
      *
-     * @param key
      */
     public void addNegative(Object key) {
         m_negatives.add(key);
@@ -52,9 +49,6 @@ public class Signumprovider {
 
     /**
      *
-     * @param key
-     * @param value
-     * @return
      */
     public Double correctSignum(Object key, Double value) {
         if (m_positives.contains(key)) {

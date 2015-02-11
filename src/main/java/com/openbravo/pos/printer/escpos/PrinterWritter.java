@@ -24,7 +24,6 @@ import java.util.concurrent.Executors;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class PrinterWritter {
 
@@ -41,7 +40,6 @@ public abstract class PrinterWritter {
 
     /**
      *
-     * @param data
      */
     protected abstract void internalWrite(byte[] data);
 
@@ -57,7 +55,6 @@ public abstract class PrinterWritter {
 
     /**
      *
-     * @param data
      */
     public void init(final byte[] data) {
         if (!initialized) {
@@ -68,7 +65,6 @@ public abstract class PrinterWritter {
 
     /**
      *
-     * @param sValue
      */
     public void write(String sValue) {
         write(sValue.getBytes());
@@ -76,7 +72,6 @@ public abstract class PrinterWritter {
 
     /**
      *
-     * @param data
      */
     public void write(final byte[] data) {
         exec.execute(new Runnable() {

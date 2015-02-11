@@ -33,7 +33,6 @@ import javax.swing.ListModel;
 
 /**
  *
- * @author adrianromero
  */
 public class JDlgUploadProducts extends javax.swing.JDialog {
 
@@ -77,9 +76,6 @@ public class JDlgUploadProducts extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param scanner
-     * @param bd
      */
     public static void showMessage(Component parent, DeviceScanner scanner, BrowsableEditableData bd) {
 

@@ -35,7 +35,6 @@ import javax.swing.ListCellRenderer;
 
 /**
  *
- * @author adrianromero
  */
 public class JPanelPlaces extends JPanelTable {
 
@@ -67,7 +66,6 @@ public class JPanelPlaces extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListProvider getListProvider() {
@@ -76,7 +74,6 @@ public class JPanelPlaces extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public SaveProvider getSaveProvider() {
@@ -85,7 +82,6 @@ public class JPanelPlaces extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public Vectorer getVectorer() {
@@ -94,7 +90,6 @@ public class JPanelPlaces extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListCellRenderer getListCellRenderer() {
@@ -103,7 +98,6 @@ public class JPanelPlaces extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -112,7 +106,6 @@ public class JPanelPlaces extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {

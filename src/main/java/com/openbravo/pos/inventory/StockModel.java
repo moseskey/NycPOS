@@ -27,7 +27,6 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author adrianromero
  */
 public class StockModel extends AbstractTableModel {
 
@@ -36,8 +35,6 @@ public class StockModel extends AbstractTableModel {
     private boolean[] m_bedit;
 
     /** Creates a new instance of StockModel
-     * @param bd
-     * @param f
      * @param bedit */
     public StockModel(BrowsableData bd, Formats[] f, boolean[] bedit) {
         m_bd = bd;

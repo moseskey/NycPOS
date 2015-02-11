@@ -26,7 +26,6 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DevicePrinterPlain implements DevicePrinter  {
 
@@ -39,7 +38,6 @@ public class DevicePrinterPlain implements DevicePrinter  {
 
     /**
      *
-     * @param CommOutputPrinter
      * @throws TicketPrinterException
      */
         public DevicePrinterPlain(PrinterWritter CommOutputPrinter) throws TicketPrinterException {
@@ -50,7 +48,6 @@ public class DevicePrinterPlain implements DevicePrinter  {
 
     /**
      *
-     * @return
      */
     @Override
     public String getPrinterName() {
@@ -59,7 +56,6 @@ public class DevicePrinterPlain implements DevicePrinter  {
 
     /**
      *
-     * @return
      */
     @Override
     public String getPrinterDescription() {
@@ -68,7 +64,6 @@ public class DevicePrinterPlain implements DevicePrinter  {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getPrinterComponent() {
@@ -91,7 +86,6 @@ public class DevicePrinterPlain implements DevicePrinter  {
 
     /**
      *
-     * @param image
      */
     @Override
     public void printImage(BufferedImage image) {
@@ -107,9 +101,6 @@ public class DevicePrinterPlain implements DevicePrinter  {
 
     /**
      *
-     * @param type
-     * @param position
-     * @param code
      */
     @Override
     public void printBarCode(String type, String position, String code) {
@@ -121,7 +112,6 @@ public class DevicePrinterPlain implements DevicePrinter  {
 
     /**
      *
-     * @param iTextSize
      */
     @Override
     public void beginLine(int iTextSize) {
@@ -129,8 +119,6 @@ public class DevicePrinterPlain implements DevicePrinter  {
 
     /**
      *
-     * @param iStyle
-     * @param sText
      */
     @Override
     public void printText(int iStyle, String sText) {

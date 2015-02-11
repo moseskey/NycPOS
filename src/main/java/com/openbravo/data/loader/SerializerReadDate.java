@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author James Bolongan
  */
 
 public class SerializerReadDate implements SerializerRead {
@@ -39,8 +38,6 @@ public class SerializerReadDate implements SerializerRead {
 
     /**
      *
-     * @param dr
-     * @return
      * @throws BasicException
      */
     @Override

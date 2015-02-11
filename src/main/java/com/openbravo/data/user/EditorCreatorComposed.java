@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public class EditorCreatorComposed implements EditorCreator{
 
@@ -37,7 +36,6 @@ public class EditorCreatorComposed implements EditorCreator{
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public Object createValue() throws BasicException {

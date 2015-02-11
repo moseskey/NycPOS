@@ -23,7 +23,6 @@ import com.openbravo.data.loader.IKeyed;
 
 /**
  *
- * @author  Ali Safdar & Aneeqa Baber
  */
 public class BreaksInfo implements IKeyed {
 
@@ -33,8 +32,6 @@ public class BreaksInfo implements IKeyed {
 
     /**
      *
-     * @param id
-     * @param name
      */
     public BreaksInfo(String id, String name) {
         m_sID = id;
@@ -43,7 +40,6 @@ public class BreaksInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {
@@ -52,7 +48,6 @@ public class BreaksInfo implements IKeyed {
 
     /**
      *
-     * @param sID
      */
     public void setID(String sID) {
         m_sID = sID;
@@ -60,7 +55,6 @@ public class BreaksInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -68,7 +62,6 @@ public class BreaksInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -76,7 +69,6 @@ public class BreaksInfo implements IKeyed {
 
     /**
      *
-     * @param sName
      */
     public void setName(String sName) {
         m_sName = sName;

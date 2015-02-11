@@ -27,7 +27,6 @@ import java.util.Date;
 
 /**
  *
- * @author  Mikel irurita
  */
 public class FindTicketsInfo implements SerializableRead {
 
@@ -45,7 +44,6 @@ public class FindTicketsInfo implements SerializableRead {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -75,7 +73,6 @@ public class FindTicketsInfo implements SerializableRead {
 
     /**
      *
-     * @return
      */
     public int getTicketId(){
         return this.ticketid;
@@ -83,7 +80,6 @@ public class FindTicketsInfo implements SerializableRead {
 
     /**
      *
-     * @return
      */
     public int getTicketType(){
         return this.tickettype;

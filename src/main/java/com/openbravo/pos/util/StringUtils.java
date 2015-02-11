@@ -29,7 +29,6 @@ import java.util.Random;
 
 /**
  *
- * @author JG uniCenta
  */
 public class StringUtils {
 
@@ -44,7 +43,6 @@ public class StringUtils {
 
     /**
      *
-     * @return
      */
     public static String getCardNumber() {
     return cardformat.format(Math.abs(System.currentTimeMillis()) % 1000000L)
@@ -53,8 +51,6 @@ public class StringUtils {
 
     /**
      *
-     * @param sValue
-     * @return
      */
     public static String encodeXML(String sValue) {
 
@@ -84,8 +80,6 @@ public class StringUtils {
 
     /**
      *
-     * @param binput
-     * @return
      */
     public static String byte2hex(byte[] binput) {
 
@@ -101,8 +95,6 @@ public class StringUtils {
 
     /**
      *
-     * @param sinput
-     * @return
      */
     public static byte [] hex2byte(String sinput) {
         int length = sinput.length();
@@ -125,8 +117,6 @@ public class StringUtils {
 
     /**
      *
-     * @param resource
-     * @return
      * @throws IOException
      */
     public static String readResource(String resource) throws IOException {
@@ -148,8 +138,6 @@ public class StringUtils {
 
     /**
      *
-     * @param sCardNumber
-     * @return
      */
     public static boolean isNumber(String sCardNumber){
 

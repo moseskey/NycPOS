@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public class SequenceForDerby extends BaseSentence {
 
@@ -32,7 +31,6 @@ public class SequenceForDerby extends BaseSentence {
     private BaseSentence sent3;
 
     /** Creates a new instance of SequenceForMySQL
-     * @param s
      * @param sSeqTable */
     public SequenceForDerby(Session s, String sSeqTable) {
 
@@ -46,8 +44,6 @@ public class SequenceForDerby extends BaseSentence {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
         @Override
@@ -59,7 +55,6 @@ public class SequenceForDerby extends BaseSentence {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

@@ -25,8 +25,6 @@ import java.util.Date;
 
 /**
  *
- * @author adrianromero
- * @author JG uniCenta
  */
 public class CustomerInfoExt extends CustomerInfo {
 
@@ -146,8 +144,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param amount
-     * @param d
      */
     public void updateCurDebt(Double amount, Date d) {
 
@@ -179,7 +175,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param firstname
      */
     public void setFirstname(String firstname) {
         this.firstname = firstname;
@@ -195,7 +190,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param lastname
      */
     public void setLastname(String lastname) {
         this.lastname = lastname;
@@ -212,7 +206,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param email
      */
     @Override
     public void setEmail(String email) {
@@ -230,7 +223,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param phone
      */
     @Override
     public void setPhone(String phone) {
@@ -247,7 +239,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param phone2
      */
     public void setPhone2(String phone2) {
         this.phone2 = phone2;
@@ -263,7 +254,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param fax
      */
     public void setFax(String fax) {
         this.fax = fax;
@@ -279,7 +269,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param address
      */
     public void setAddress(String address) {
         this.address = address;
@@ -295,7 +284,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param address2
      */
     public void setAddress2(String address2) {
         this.address2 = address2;
@@ -312,7 +300,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param postal
      */
     @Override
     public void setPostal(String postal) {
@@ -329,7 +316,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param city
      */
     public void setCity(String city) {
         this.city = city;
@@ -345,7 +331,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param region
      */
     public void setRegion(String region) {
         this.region = region;
@@ -361,7 +346,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param country
      */
     public void setCountry(String country) {
         this.country = country;
@@ -377,7 +361,6 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      *
-     * @param image
      */
     public void setImage(String image) {
         this.image = image;

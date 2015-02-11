@@ -25,14 +25,12 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author adrianromero
  */
 public class BatchSentenceScript extends BatchSentence {
 
     private String m_sScript;
 
     /** Creates a new instance of BatchSentenceScript
-     * @param s
      * @param script */
     public BatchSentenceScript(Session s, String script) {
         super(s);
@@ -41,7 +39,6 @@ public class BatchSentenceScript extends BatchSentence {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     protected Reader getReader() throws BasicException {

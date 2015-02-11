@@ -26,7 +26,6 @@ import java.util.List;
 
 /**
  *
- * @author JG uniCenta
  */
 public final class MagCardReaderGeneric implements MagCardReader {
 
@@ -60,7 +59,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
 
     /**
      *
-     * @return
      */
     @Override
     public String getReaderName() {
@@ -86,7 +84,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
 
     /**
      *
-     * @param c
      */
     @Override
     public void appendChar(char c) {
@@ -213,7 +210,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean isComplete() {
@@ -222,7 +218,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
 
     /**
      *
-     * @return
      */
     @Override
     public String getHolderName() {
@@ -231,7 +226,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
 
     /**
      *
-     * @return
      */
     @Override
     public String getCardNumber() {
@@ -240,7 +234,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
 
     /**
      *
-     * @return
      */
     @Override
     public String getExpirationDate() {
@@ -249,7 +242,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTrack1() {
@@ -258,7 +250,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTrack2() {
@@ -267,7 +258,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTrack3() {

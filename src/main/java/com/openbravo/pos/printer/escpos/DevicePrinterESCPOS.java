@@ -27,7 +27,6 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DevicePrinterESCPOS implements DevicePrinter  {
 
@@ -43,9 +42,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
 
     /**
      *
-     * @param CommOutputPrinter
-     * @param codes
-     * @param trans
      * @throws TicketPrinterException
      */
         public DevicePrinterESCPOS(PrinterWritter CommOutputPrinter, Codes codes, UnicodeTranslator trans) throws TicketPrinterException {
@@ -67,7 +63,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
 
     /**
      *
-     * @return
      */
     @Override
     public String getPrinterName() {
@@ -76,7 +71,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
 
     /**
      *
-     * @return
      */
     @Override
     public String getPrinterDescription() {
@@ -85,7 +79,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getPrinterComponent() {
@@ -108,7 +101,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
 
     /**
      *
-     * @param image
      */
     @Override
     public void printImage(BufferedImage image) {
@@ -128,9 +120,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
 
     /**
      *
-     * @param type
-     * @param position
-     * @param code
      */
     @Override
     public void printBarCode(String type, String position, String code) {
@@ -141,7 +130,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
 
     /**
      *
-     * @param iTextSize
      */
     @Override
     public void beginLine(int iTextSize) {
@@ -163,8 +151,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
 
     /**
      *
-     * @param iStyle
-     * @param sText
      */
     @Override
     public void printText(int iStyle, String sText) {

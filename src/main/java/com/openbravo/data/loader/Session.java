@@ -25,7 +25,6 @@ import java.sql.SQLException;
 
 /**
  *
- * @author adrianromero
  * Created on February 6, 2007, 4:06 PM
  *
  */
@@ -44,9 +43,6 @@ public final class Session {
     public final SessionDB DB;
 
     /** Creates a new instance of Session
-     * @param url
-     * @param user
-     * @param password
      * @throws java.sql.SQLException */
     public Session(String url, String user, String password) throws SQLException {
         m_surl = url;
@@ -101,7 +97,6 @@ public final class Session {
 
     /**
      *
-     * @return
      * @throws SQLException
      */
     public Connection getConnection() throws SQLException {
@@ -157,7 +152,6 @@ public final class Session {
 
     /**
      *
-     * @return
      */
     public boolean isTransaction() {
         return m_bInTransaction;
@@ -181,7 +175,6 @@ public final class Session {
 
     /**
      *
-     * @return
      * @throws SQLException
      */
     public String getURL() throws SQLException {

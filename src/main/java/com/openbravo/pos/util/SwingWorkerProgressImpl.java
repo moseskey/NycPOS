@@ -6,7 +6,6 @@ package com.openbravo.pos.util;
 
 /**
  *
- * @author JG uniCenta
  */
 public class SwingWorkerProgressImpl extends SwingWorkerProgress {
 

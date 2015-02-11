@@ -26,7 +26,6 @@ import javax.swing.SwingConstants;
 
 /**
  *
- * @author adrianromero
  */
 public class MenuItemDefinition implements MenuElement {
 
@@ -34,7 +33,6 @@ public class MenuItemDefinition implements MenuElement {
 
     /**
      *
-     * @param act
      */
     public MenuItemDefinition(Action act) {
         this.act = act;
@@ -42,7 +40,6 @@ public class MenuItemDefinition implements MenuElement {
 
     /**
      *
-     * @param menu
      */
     @Override
     public void addComponent(JPanelMenu menu) {

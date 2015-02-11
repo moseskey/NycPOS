@@ -46,7 +46,6 @@ import javax.swing.event.EventListenerList;
 
 /**
  *
- * @author JG uniCenta - outline/prep for uniCenta mobile + eCommerce connector
  */
 public class OrderCustomerList extends JPanel implements TicketSelector {
 
@@ -76,9 +75,6 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
 
     /**
      * Creates new form CustomersList
-     * @param dlCustomers
-     * @param app
-     * @param panelticket
      */
     public OrderCustomerList(DataLogicCustomers dlCustomers, AppView app, TicketsEditor panelticket) {
         this.application = app;
@@ -94,7 +90,6 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -223,7 +218,6 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
 
     /**
      *
-     * @param value
      */
     @Override
     public void setComponentEnabled(boolean value) {
@@ -240,7 +234,6 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
 
     /**
      *
-     * @param l
      */
     @Override
     public void addActionListener(ActionListener l) {
@@ -249,7 +242,6 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
 
     /**
      *
-     * @param l
      */
     @Override
     public void removeActionListener(ActionListener l) {

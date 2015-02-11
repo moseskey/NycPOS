@@ -22,14 +22,11 @@ package com.openbravo.pos.printer;
 
 /**
  *
- * @author adrianromero
  */
 public class FlyerAnimator extends BaseAnimator {
 
     /**
      *
-     * @param line1
-     * @param line2
      */
     public FlyerAnimator(String line1, String line2) {
         baseLine1 = DeviceTicket.alignLeft(line1, 20);
@@ -38,7 +35,6 @@ public class FlyerAnimator extends BaseAnimator {
 
     /**
      *
-     * @param i
      */
     @Override
     public void setTiming(int i) {

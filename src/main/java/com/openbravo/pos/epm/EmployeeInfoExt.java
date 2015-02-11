@@ -21,7 +21,6 @@ package com.openbravo.pos.epm;
 
 /**
  *
- * @author Ali Safadr & Aneeqa Baber
  */
 public class EmployeeInfoExt extends EmployeeInfo {
 
@@ -38,7 +37,6 @@ public class EmployeeInfoExt extends EmployeeInfo {
 
     /**
      *
-     * @return
      */
     public boolean isVisible() {
         return visible;
@@ -46,7 +44,6 @@ public class EmployeeInfoExt extends EmployeeInfo {
 
     /**
      *
-     * @param visible
      */
     public void setVisible(boolean visible) {
         this.visible = visible;

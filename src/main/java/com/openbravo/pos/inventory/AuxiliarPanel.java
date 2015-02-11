@@ -34,8 +34,6 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author jaroslawwozniak
- * @author adrianromero
  */
 public class AuxiliarPanel extends JPanelTable2 {
 
@@ -90,7 +88,6 @@ public class AuxiliarPanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getFilter(){
@@ -99,7 +96,6 @@ public class AuxiliarPanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -108,7 +104,6 @@ public class AuxiliarPanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {

@@ -26,7 +26,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class JEditorText extends JEditorAbstract {
 
@@ -113,7 +112,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     protected abstract int getStartMode();
 
@@ -137,7 +135,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @param sText
      */
     public final void setText(String sText) {
 
@@ -154,7 +151,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @param iMode
      */
     public final void setEditModeEnum(int iMode) {
 
@@ -167,7 +163,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     public final String getText() {
         if (m_cLastChar == '\u0000') {
@@ -179,7 +174,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     protected final int getAlignment() {
         return javax.swing.SwingConstants.LEFT;
@@ -187,7 +181,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     protected final String getEditMode() {
         switch (m_iMode) {
@@ -201,7 +194,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     protected String getTextEdit() {
 
@@ -222,7 +214,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     protected String getTextFormat() throws BasicException {
@@ -233,7 +224,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @param c
      */
     protected void typeCharInternal(char c) {
 
@@ -274,7 +264,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @param c
      */
     protected void transCharInternal(char c) {
 
@@ -335,7 +324,6 @@ public abstract class JEditorText extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     protected char getKeyChar() {
 

@@ -31,7 +31,6 @@ import javax.swing.SwingConstants;
 
 /**
  *
- * @author adrianromero
  */
 public class JProductsSelector extends javax.swing.JPanel {
 
@@ -50,10 +49,6 @@ public class JProductsSelector extends javax.swing.JPanel {
 
     /**
      *
-     * @param img
-     * @param display
-     * @param al
-     * @param textTip
      */
         public void addProduct(Image img, String display, ActionListener al,String textTip) {
         JButton btn = new JButton();

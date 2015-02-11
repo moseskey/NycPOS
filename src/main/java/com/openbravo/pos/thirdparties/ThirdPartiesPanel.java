@@ -33,7 +33,6 @@ import com.openbravo.data.user.ListProviderCreator;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ThirdPartiesPanel extends JPanelTable {
 
@@ -55,7 +54,6 @@ public class ThirdPartiesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public ListProvider getListProvider() {
         return new ListProviderCreator(tthirdparties);
@@ -63,7 +61,6 @@ public class ThirdPartiesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public SaveProvider getSaveProvider() {
         return new SaveProvider(tthirdparties);
@@ -71,7 +68,6 @@ public class ThirdPartiesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public Vectorer getVectorer() {
         return tthirdparties.getVectorerBasic(new int[]{1, 2, 3, 4});
@@ -79,7 +75,6 @@ public class ThirdPartiesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public ComparatorCreator getComparatorCreator() {
         return tthirdparties.getComparatorCreator(new int[] {1, 2, 3, 4});
@@ -87,7 +82,6 @@ public class ThirdPartiesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public ListCellRenderer getListCellRenderer() {
         return new ListCellRendererBasic(tthirdparties.getRenderStringBasic(new int[]{1, 2}));
@@ -95,7 +89,6 @@ public class ThirdPartiesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public EditorRecord getEditor() {
         return jeditor;
@@ -103,7 +96,6 @@ public class ThirdPartiesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public String getTitle() {
         return AppLocal.getIntString("Menu.ThirdPartiesManagement");

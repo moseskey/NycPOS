@@ -27,7 +27,6 @@ import java.io.OutputStream;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PrinterWritterRXTX extends PrinterWritter /* implements SerialPortEventListener */ {
 
@@ -38,7 +37,6 @@ public class PrinterWritterRXTX extends PrinterWritter /* implements SerialPortE
     private OutputStream m_out;
 
     /** Creates a new instance of PrinterWritterComm
-     * @param sPortPrinter
      * @throws com.openbravo.pos.printer.TicketPrinterException */
     public PrinterWritterRXTX(String sPortPrinter) throws TicketPrinterException {
         m_sPortPrinter = sPortPrinter;
@@ -47,7 +45,6 @@ public class PrinterWritterRXTX extends PrinterWritter /* implements SerialPortE
 
     /**
      *
-     * @param data
      */
     @Override
     protected void internalWrite(byte[] data) {

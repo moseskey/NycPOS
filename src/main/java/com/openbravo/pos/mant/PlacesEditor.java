@@ -33,7 +33,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author adrianromero
  */
 public final class PlacesEditor extends JPanel implements EditorRecord {
 
@@ -43,7 +42,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
     private String m_sID;
 
     /** Creates new form PlacesEditor
-     * @param dlSales
      * @param dirty */
     public PlacesEditor(DataLogicSales dlSales, DirtyManager dirty) {
         initComponents();
@@ -114,7 +112,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -135,7 +132,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -155,7 +151,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -172,7 +167,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

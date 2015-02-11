@@ -36,8 +36,6 @@ import java.util.Map;
 
 /**
  *
- * @author adrianromero
- * @author Mikel Irurita
  */
 public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConfig {
 
@@ -77,7 +75,6 @@ public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConf
 
     /**
      *
-     * @return
      */
     @Override
     public boolean hasChanged() {
@@ -86,7 +83,6 @@ public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConf
 
     /**
      *
-     * @return
      */
     @Override
     public Component getConfigComponent() {
@@ -95,7 +91,6 @@ public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConf
 
     /**
      *
-     * @param config
      */
     @Override
     public void loadProperties(AppConfig config) {
@@ -109,7 +104,6 @@ public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConf
 
     /**
      *
-     * @param config
      */
     @Override
     public void saveProperties(AppConfig config) {

@@ -37,8 +37,6 @@ import javax.swing.event.EventListenerList;
 
 /**
  *
- * @author jaroslawwozniak
- * @author adrianromero
  */
 public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCreator {
 
@@ -57,7 +55,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
 
     /**
      *
-     * @param app
      */
     @Override
     public void init(AppView app) {
@@ -78,7 +75,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
 
     /**
      *
-     * @return
      */
     @Override
     public SerializerWrite getSerializerWrite() {
@@ -87,7 +83,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
 
     /**
      *
-     * @param l
      */
     public void addActionListener(ActionListener l){
         listeners.add(ActionListener.class, l);
@@ -95,7 +90,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
 
     /**
      *
-     * @param l
      */
     public void removeActionListener(ActionListener l) {
         listeners.remove(ActionListener.class, l);
@@ -103,7 +97,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -112,7 +105,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -122,7 +114,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
 
     /**
      *
-     * @return
      */
     public ProductInfoExt getProductInfoExt() {
         return product;

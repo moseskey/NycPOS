@@ -34,7 +34,6 @@ import javax.swing.ListCellRenderer;
 
 /**
  *
- * @author adrianromero
  */
 public class TaxCustCategoriesPanel extends JPanelTable {
 
@@ -57,7 +56,6 @@ public class TaxCustCategoriesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListProvider getListProvider() {
@@ -66,7 +64,6 @@ public class TaxCustCategoriesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public SaveProvider getSaveProvider() {
@@ -75,7 +72,6 @@ public class TaxCustCategoriesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public Vectorer getVectorer() {
@@ -84,7 +80,6 @@ public class TaxCustCategoriesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ComparatorCreator getComparatorCreator() {
@@ -93,7 +88,6 @@ public class TaxCustCategoriesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListCellRenderer getListCellRenderer() {
@@ -102,7 +96,6 @@ public class TaxCustCategoriesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -111,7 +104,6 @@ public class TaxCustCategoriesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {

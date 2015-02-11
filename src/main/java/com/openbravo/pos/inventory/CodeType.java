@@ -23,7 +23,6 @@ import com.openbravo.data.loader.IKeyed;
 
 /**
  *
- * @author adrianromero
  */
 public class CodeType implements IKeyed {
 
@@ -54,7 +53,6 @@ public class CodeType implements IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {
@@ -63,7 +61,6 @@ public class CodeType implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getValue() {
         return m_sValue;

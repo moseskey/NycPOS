@@ -21,7 +21,6 @@ package com.openbravo.pos.printer;
 
 /**
  *
- * @author adrianromero
  */
 public abstract class BaseAnimator implements DisplayAnimator {
 
@@ -55,8 +54,6 @@ public abstract class BaseAnimator implements DisplayAnimator {
 
     /**
      *
-     * @param line1
-     * @param line2
      */
     public BaseAnimator(String line1, String line2) {
         baseLine1 = line1;
@@ -65,7 +62,6 @@ public abstract class BaseAnimator implements DisplayAnimator {
 
     /**
      *
-     * @return
      */
     @Override
     public String getLine1() {
@@ -74,7 +70,6 @@ public abstract class BaseAnimator implements DisplayAnimator {
 
     /**
      *
-     * @return
      */
     @Override
     public String getLine2() {

@@ -27,7 +27,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author  Mikel Irurita
  */
 public class ConfigPaymentPanelBluePay20POST extends javax.swing.JPanel implements PaymentConfiguration {
 
@@ -38,7 +37,6 @@ public class ConfigPaymentPanelBluePay20POST extends javax.swing.JPanel implemen
 
     /**
      *
-     * @return
      */
     @Override
     public JPanel getComponent() {
@@ -47,7 +45,6 @@ public class ConfigPaymentPanelBluePay20POST extends javax.swing.JPanel implemen
 
     /**
      *
-     * @param config
      */
     @Override
         public void loadProperties(AppConfig config) {
@@ -66,7 +63,6 @@ public class ConfigPaymentPanelBluePay20POST extends javax.swing.JPanel implemen
 
     /**
      *
-     * @param config
      */
     public void saveProperties(AppConfig config) {
         config.setProperty("payment.BluePay.accountID", comboValue(jtxtAccountID.getText()));

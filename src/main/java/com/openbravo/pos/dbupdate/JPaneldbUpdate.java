@@ -34,7 +34,6 @@ import javax.swing.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPaneldbUpdate extends JPanel implements JPanelView {
 
@@ -56,7 +55,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
     /**
      *
-     * @param props
      */
     public JPaneldbUpdate(AppProperties props) {
 
@@ -84,7 +82,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
     /**
      *
-     * @param sScript
      */
     public void performUpdate(String sScript){
         switch (sdbmanager) {
@@ -129,7 +126,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -138,7 +134,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -177,7 +172,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {

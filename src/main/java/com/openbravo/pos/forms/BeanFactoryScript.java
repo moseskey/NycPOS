@@ -27,7 +27,6 @@ import java.io.IOException;
 
 /**
  *
- * @author adrianromero
  */
 public class BeanFactoryScript implements BeanFactoryApp {
 
@@ -36,7 +35,6 @@ public class BeanFactoryScript implements BeanFactoryApp {
 
     /**
      *
-     * @param script
      */
     public BeanFactoryScript(String script) {
         this.script = script;
@@ -44,7 +42,6 @@ public class BeanFactoryScript implements BeanFactoryApp {
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -73,7 +70,6 @@ public class BeanFactoryScript implements BeanFactoryApp {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getBean() {

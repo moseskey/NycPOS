@@ -28,7 +28,6 @@ import java.awt.image.*;
 
 /**
  *
- * @author  Adrian
  * @version
  */
 public class CategoryInfo implements IKeyed {
@@ -41,10 +40,6 @@ public class CategoryInfo implements IKeyed {
     private Boolean m_bCatShowName;
 
     /** Creates new CategoryInfo
-     * @param id
-     * @param name
-     * @param image
-     * @param texttip
      * @param catshowname */
     public CategoryInfo(String id, String name, BufferedImage image, String texttip, Boolean catshowname) {
         m_sID = id;
@@ -56,7 +51,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {
@@ -65,7 +59,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @param sID
      */
     public void setID(String sID) {
         m_sID = sID;
@@ -73,7 +66,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -81,7 +73,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -89,7 +80,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @param sName
      */
     public void setName(String sName) {
         m_sName = sName;
@@ -98,7 +88,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
         public String getTextTip() {
         return m_sTextTip;
@@ -106,7 +95,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @param sName
      */
     public void setTextTip(String sName) {
         m_sTextTip = sName;
@@ -114,7 +102,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public Boolean getCatShowName() {
         return m_bCatShowName;
@@ -122,7 +109,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @param bcatshowname
      */
     public void setCatShowName(Boolean bcatshowname) {
         m_bCatShowName = bcatshowname;
@@ -136,7 +122,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
 
     public BufferedImage getImage() {
@@ -145,7 +130,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @param img
      */
     public void setImage(BufferedImage img) {
         m_Image = img;
@@ -158,7 +142,6 @@ public class CategoryInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public static SerializerRead getSerializerRead() {
         return new SerializerRead() {@Override

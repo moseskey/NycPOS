@@ -30,7 +30,6 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JTicketsBagSharedList extends javax.swing.JDialog {
 
@@ -47,8 +46,6 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
 
     /**
      *
-     * @param atickets
-     * @return
      */
     public String showTicketsList(java.util.List<SharedTicketInfo> atickets) {
 
@@ -64,8 +61,6 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
 
     /**
      *
-     * @param ticketsbagshared
-     * @return
      */
     public static JTicketsBagSharedList newJDialog(JTicketsBagShared ticketsbagshared) {
 

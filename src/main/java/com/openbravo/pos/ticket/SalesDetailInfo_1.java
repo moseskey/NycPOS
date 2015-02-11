@@ -28,7 +28,6 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author  Adrian
  * @version
  */
 public class SalesDetailInfo_1 implements IKeyed {
@@ -39,7 +38,6 @@ public class SalesDetailInfo_1 implements IKeyed {
 
     /**
      *
-     * @return
      */
     public int getLineNO() {
         return lineNO;
@@ -47,7 +45,6 @@ public class SalesDetailInfo_1 implements IKeyed {
 
     /**
      *
-     * @param lineNO
      */
     public void setLineNO(int lineNO) {
         this.lineNO = lineNO;
@@ -55,7 +52,6 @@ public class SalesDetailInfo_1 implements IKeyed {
 
     /**
      *
-     * @return
      */
     public double getPrice() {
         return price;
@@ -63,7 +59,6 @@ public class SalesDetailInfo_1 implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String printPrice() {
         return Formats.CURRENCY.formatValue(price);
@@ -71,7 +66,6 @@ public class SalesDetailInfo_1 implements IKeyed {
 
     /**
      *
-     * @param price
      */
     public void setPrice(double price) {
         this.price = price;
@@ -79,7 +73,6 @@ public class SalesDetailInfo_1 implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getProductName() {
         return productName;
@@ -87,7 +80,6 @@ public class SalesDetailInfo_1 implements IKeyed {
 
     /**
      *
-     * @param productName
      */
     public void setProductName(String productName) {
         this.productName = productName;
@@ -95,8 +87,6 @@ public class SalesDetailInfo_1 implements IKeyed {
     private double price;
 
     /** Creates new CategoryInfo
-     * @param lineNo
-     * @param productName
      * @param price */
     public SalesDetailInfo_1(int lineNo, String productName, double price) {
         this.lineNO = lineNo;
@@ -106,7 +96,6 @@ public class SalesDetailInfo_1 implements IKeyed {
 
     /**
      *
-     * @return
      */
     public static SerializerRead getSerializerRead() {
         return new SerializerRead() {@Override
@@ -117,7 +106,6 @@ public class SalesDetailInfo_1 implements IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {

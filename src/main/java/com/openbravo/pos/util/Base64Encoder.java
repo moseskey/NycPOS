@@ -24,14 +24,11 @@ import org.apache.commons.codec.binary.Base64;
 
 /**
  *
- * @author JG uniCenta
  */
 public class Base64Encoder {
 
     /**
      *
-     * @param base64
-     * @return
      */
     public static byte[] decode(String base64) {
 
@@ -44,8 +41,6 @@ public class Base64Encoder {
 
     /**
      *
-     * @param raw
-     * @return
      */
     public static String encode(byte[] raw) {
         try {
@@ -57,8 +52,6 @@ public class Base64Encoder {
 
     /**
      *
-     * @param raw
-     * @return
      */
     public static String encodeChunked(byte[] raw) {
         try {

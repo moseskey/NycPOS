@@ -46,7 +46,6 @@ import java.util.UUID;
 
 /**
  *
- * @author adrianromero
  */
 public final class StockDiaryEditor extends javax.swing.JPanel implements EditorRecord {
 
@@ -72,7 +71,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
     private final DataLogicSales m_dlSales;
 
     /** Creates new form StockDiaryEditor
-     * @param app
      * @param dirty */
     public StockDiaryEditor(AppView app, DirtyManager dirty) {
 
@@ -211,7 +209,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -252,7 +249,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -294,7 +290,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -320,7 +315,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

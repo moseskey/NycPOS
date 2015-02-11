@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author adrianromero
  * Created on February 6, 2007, 4:06 PM
  *
  */
@@ -33,7 +32,6 @@ public abstract class SentenceExecTransaction implements SentenceExec {
 
     /**
      *
-     * @param s
      */
     public SentenceExecTransaction(Session s) {
         m_s = s;
@@ -41,7 +39,6 @@ public abstract class SentenceExecTransaction implements SentenceExec {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final int exec() throws BasicException {
@@ -50,8 +47,6 @@ public abstract class SentenceExecTransaction implements SentenceExec {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override
@@ -61,8 +56,6 @@ public abstract class SentenceExecTransaction implements SentenceExec {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override
@@ -80,8 +73,6 @@ public abstract class SentenceExecTransaction implements SentenceExec {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     protected abstract int execInTransaction(Object params) throws BasicException;

@@ -21,7 +21,6 @@ package com.openbravo.pos.payment;
 
 /**
  *
- * @author adrianromero
  */
 public class MagCardReaderFac {
 
@@ -31,8 +30,6 @@ public class MagCardReaderFac {
 
     /**
      *
-     * @param sReader
-     * @return
      */
     public static MagCardReader getMagCardReader(String sReader) {
 // JG 16 May 12 use switch

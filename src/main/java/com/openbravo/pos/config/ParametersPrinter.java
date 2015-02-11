@@ -26,7 +26,6 @@ import java.awt.Component;
 
 /**
  *
- * @author adrian
  */
 public class ParametersPrinter extends javax.swing.JPanel implements ParametersConfig {
 
@@ -46,7 +45,6 @@ public class ParametersPrinter extends javax.swing.JPanel implements ParametersC
 
     /**
      *
-     * @return
      */
     public Component getComponent() {
         return this;
@@ -54,7 +52,6 @@ public class ParametersPrinter extends javax.swing.JPanel implements ParametersC
 
     /**
      *
-     * @param dirty
      */
     public void addDirtyManager(DirtyManager dirty) {
         jPrinters.addActionListener(dirty);
@@ -63,7 +60,6 @@ public class ParametersPrinter extends javax.swing.JPanel implements ParametersC
 
     /**
      *
-     * @param p
      */
     public void setParameters(StringParser p) {
         jPrinters.setSelectedItem(p.nextToken(','));
@@ -74,7 +70,6 @@ public class ParametersPrinter extends javax.swing.JPanel implements ParametersC
 
     /**
      *
-     * @return
      */
     public String getParameters() {
         return comboValue(jPrinters.getSelectedItem()) + "," + boolValue(jReceiptPrinter.isSelected());

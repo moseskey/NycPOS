@@ -28,7 +28,6 @@ import java.beans.PropertyChangeListener;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPaymentBank extends javax.swing.JPanel implements JPaymentInterface {
 
@@ -54,9 +53,6 @@ public class JPaymentBank extends javax.swing.JPanel implements JPaymentInterfac
 
     /**
      *
-     * @param customerext
-     * @param dTotal
-     * @param transID
      */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
@@ -73,7 +69,6 @@ public class JPaymentBank extends javax.swing.JPanel implements JPaymentInterfac
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo executePayment() {
@@ -82,7 +77,6 @@ public class JPaymentBank extends javax.swing.JPanel implements JPaymentInterfac
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

@@ -31,7 +31,6 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author JG uniCenta Gerrard 1 Nov 12
  * Used in Customer's transactions tab to display all this Customer's
  * ticketline values
  */
@@ -53,13 +52,6 @@ public class CustomerTransaction {
 
     /**
      *
-     * @param ticketId
-     * @param productName
-     * @param unit
-     * @param amount
-     * @param total
-     * @param transactionDate
-     * @param name
      */
     public CustomerTransaction(String ticketId, String productName, String unit, Double amount, Double total, Date transactionDate, String name) {
         this.ticketId = ticketId;
@@ -81,7 +73,6 @@ public class CustomerTransaction {
 
     /**
      *
-     * @param ticketId
      */
     public void setTicketId(String ticketId) {
         this.ticketId = ticketId;
@@ -97,7 +88,6 @@ public class CustomerTransaction {
 
     /**
      *
-     * @param amount
      */
     public void setAmount(Double amount) {
         this.amount = amount;
@@ -105,7 +95,6 @@ public class CustomerTransaction {
 
     /**
      *
-     * @param total
      */
     public void setTotal(Double  total) {
         this.total = total;
@@ -129,7 +118,6 @@ public class CustomerTransaction {
 
     /**
      *
-     * @param productName
      */
     public void setProductName(String productName) {
         this.productName = productName;
@@ -145,7 +133,6 @@ public class CustomerTransaction {
 
     /**
      *
-     * @param transactionDate
      */
     public void setTransactionDate(Date transactionDate) {
         this.transactionDate = transactionDate;
@@ -161,7 +148,6 @@ public class CustomerTransaction {
 
     /**
      *
-     * @param unit
      */
     public void setUnit(String unit) {
         this.unit = unit;
@@ -177,7 +163,6 @@ public class CustomerTransaction {
 
     /**
      *
-     * @param customerName
      */
     public void setCustomerName(String customerName) {
         this.customerName = customerName;

@@ -21,7 +21,6 @@ package com.openbravo.pos.scanpal2;
 
 /**
  *
- * @author JG uniCenta
  */
 public interface DeviceScanner {
 
@@ -44,7 +43,6 @@ public interface DeviceScanner {
 
     /**
      *
-     * @return
      * @throws DeviceScannerException
      */
     public ProductDownloaded recieveProduct() throws DeviceScannerException;
@@ -57,9 +55,6 @@ public interface DeviceScanner {
 
     /**
      *
-     * @param sName
-     * @param sCode
-     * @param dPrice
      * @throws DeviceScannerException
      */
     public void sendProduct(String sName, String sCode, Double dPrice) throws DeviceScannerException;

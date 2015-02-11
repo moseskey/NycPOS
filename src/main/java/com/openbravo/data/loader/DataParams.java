@@ -24,7 +24,6 @@ import java.util.Date;
 
 /**
  *
- * @author adrianromero
  */
 public abstract class DataParams implements DataWrite {
 
@@ -41,8 +40,6 @@ public abstract class DataParams implements DataWrite {
 
     /**
      *
-     * @param paramIndex
-     * @param iValue
      * @throws BasicException
      */
     public void setInt(int paramIndex, Integer iValue) throws BasicException {
@@ -55,8 +52,6 @@ public abstract class DataParams implements DataWrite {
 
     /**
      *
-     * @param paramIndex
-     * @param dValue
      * @throws BasicException
      */
     public void setDouble(int paramIndex, Double dValue) throws BasicException {
@@ -65,8 +60,6 @@ public abstract class DataParams implements DataWrite {
 
     /**
      *
-     * @param paramIndex
-     * @param bValue
      * @throws BasicException
      */
     public void setBoolean(int paramIndex, Boolean bValue) throws BasicException {
@@ -75,8 +68,6 @@ public abstract class DataParams implements DataWrite {
 
     /**
      *
-     * @param paramIndex
-     * @param dValue
      * @throws BasicException
      */
     public void setTimestamp(int paramIndex, Date dValue) throws BasicException {
@@ -85,8 +76,6 @@ public abstract class DataParams implements DataWrite {
 
     /**
      *
-     * @param paramIndex
-     * @param value
      * @throws BasicException
      */
     public void setBytes(int paramIndex, byte[] value) throws BasicException {
@@ -95,8 +84,6 @@ public abstract class DataParams implements DataWrite {
 
     /**
      *
-     * @param paramIndex
-     * @param value
      * @throws BasicException
      */
     public void setObject(int paramIndex, Object value) throws BasicException {
@@ -105,7 +92,6 @@ public abstract class DataParams implements DataWrite {
 
     /**
      *
-     * @return
      */
     public DataWrite getDataWrite() {
         return dw;
@@ -113,7 +99,6 @@ public abstract class DataParams implements DataWrite {
 
     /**
      *
-     * @param dw
      */
     public void setDataWrite(DataWrite dw) {
         this.dw = dw;

@@ -34,7 +34,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author adrianromero
  */
 public final class ResourcesView extends JPanel implements EditorRecord {
 
@@ -94,7 +93,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -129,7 +127,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -164,7 +161,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -191,7 +187,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

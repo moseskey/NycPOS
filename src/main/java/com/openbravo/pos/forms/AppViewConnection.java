@@ -32,7 +32,6 @@ import java.sql.SQLException;
 
 /**
  *
- * @author adrianromero
  */
 public class AppViewConnection {
 
@@ -42,8 +41,6 @@ public class AppViewConnection {
 
     /**
      *
-     * @param props
-     * @return
      * @throws BasicException
      */
     public static Session createSession(AppProperties props) throws BasicException {

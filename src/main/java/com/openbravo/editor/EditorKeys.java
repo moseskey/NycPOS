@@ -21,7 +21,6 @@ package com.openbravo.editor;
 
 /**
  *
- * @author JG uniCenta
  */
 public interface EditorKeys {
 
@@ -52,14 +51,11 @@ public interface EditorKeys {
 
     /**
      *
-     * @param e
-     * @param imode
      */
     public void setActive(EditorComponent e, int imode);
 
     /**
      *
-     * @param e
      */
     public void setInactive(EditorComponent e);
 }

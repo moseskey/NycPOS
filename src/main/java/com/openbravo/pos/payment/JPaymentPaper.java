@@ -32,7 +32,6 @@ import java.io.File;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPaymentPaper extends javax.swing.JPanel implements JPaymentInterface {
 
@@ -47,7 +46,6 @@ public class JPaymentPaper extends javax.swing.JPanel implements JPaymentInterfa
 
 
     /** Creates new form JPaymentTicket
-     * @param notifier
      * @param sPaper */
     public JPaymentPaper(JPaymentNotifier notifier, String sPaper) {
 
@@ -74,9 +72,6 @@ public class JPaymentPaper extends javax.swing.JPanel implements JPaymentInterfa
 
     /**
      *
-     * @param customerext
-     * @param dTotal
-     * @param transID
      */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
@@ -91,7 +86,6 @@ public class JPaymentPaper extends javax.swing.JPanel implements JPaymentInterfa
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -100,7 +94,6 @@ public class JPaymentPaper extends javax.swing.JPanel implements JPaymentInterfa
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo executePayment() {

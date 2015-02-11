@@ -24,7 +24,6 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author JG uniCenta
  */
 public interface DevicePrinter {
 
@@ -102,19 +101,16 @@ public interface DevicePrinter {
 
     /**
      *
-     * @return
      */
         public String getPrinterName();
 
     /**
      *
-     * @return
      */
     public String getPrinterDescription();
 
     /**
      *
-     * @return
      */
     public JComponent getPrinterComponent();
 
@@ -132,7 +128,6 @@ public interface DevicePrinter {
 
     /**
      *
-     * @param image
      */
     public void printImage(BufferedImage image);
 
@@ -143,22 +138,16 @@ public interface DevicePrinter {
 
     /**
      *
-     * @param type
-     * @param position
-     * @param code
      */
     public void printBarCode(String type, String position, String code);
 
     /**
      *
-     * @param iTextSize
      */
     public void beginLine(int iTextSize);
 
     /**
      *
-     * @param iStyle
-     * @param sText
      */
     public void printText(int iStyle, String sText);
 

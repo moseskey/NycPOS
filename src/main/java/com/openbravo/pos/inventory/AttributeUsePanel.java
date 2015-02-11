@@ -32,7 +32,6 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author adrianromero
  */
 public class AttributeUsePanel extends JPanelTable2 {
 
@@ -89,7 +88,6 @@ public class AttributeUsePanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getFilter(){
@@ -98,7 +96,6 @@ public class AttributeUsePanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -115,7 +112,6 @@ public class AttributeUsePanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {

@@ -25,7 +25,6 @@ import java.awt.geom.AffineTransform;
 
 /**
  *
- * @author JG uniCenta
  */
 public class MyPrinterState {
 
@@ -39,7 +38,6 @@ public class MyPrinterState {
 
     /**
      *
-     * @return
      */
     public int getLineMult() {
         return getLineMult(m_iSize);
@@ -47,8 +45,6 @@ public class MyPrinterState {
 
     /**
      *
-     * @param iSize
-     * @return
      */
     public static int getLineMult(int iSize) {
         switch (iSize) {
@@ -65,9 +61,6 @@ public class MyPrinterState {
 
     /**
      *
-     * @param baseFont
-     * @param iStyle
-     * @return
      */
     public Font getFont(Font baseFont, int iStyle) {
 

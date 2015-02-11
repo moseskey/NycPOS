@@ -32,7 +32,6 @@ import javax.swing.*;
 
 /**
  *
- * @author Ali Safdar & Aneeqa Baber
  */
 public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanelView, BeanFactoryApp {
 
@@ -48,7 +47,6 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -113,7 +111,6 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -157,7 +154,6 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {
@@ -166,7 +162,6 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -175,7 +170,6 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
 
     /**
      *
-     * @return
      */
     @Override
     public Object getBean() {

@@ -34,7 +34,6 @@ import javax.swing.JButton;
 
 /**
  *
- * @author adrianromero
  * Created on 1 de marzo de 2007, 22:15
  *
  */
@@ -75,7 +74,6 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -84,7 +82,6 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getFilter() {
@@ -93,7 +90,6 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getToolbarExtras() {
@@ -118,7 +114,6 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -140,7 +135,6 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
 
     /**
      *
-     * @param value
      */
     @Override
     public void updateValue(Object value) {

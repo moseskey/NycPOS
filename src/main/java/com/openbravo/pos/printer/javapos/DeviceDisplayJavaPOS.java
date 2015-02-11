@@ -29,7 +29,6 @@ import jpos.LineDisplayConst;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DeviceDisplayJavaPOS implements DeviceDisplay, DeviceDisplayImpl {
 
@@ -39,7 +38,6 @@ public class DeviceDisplayJavaPOS implements DeviceDisplay, DeviceDisplayImpl {
     private DeviceDisplayBase m_displaylines;
 
     /** Creates a new instance of DeviceDisplayJavaPOS
-     * @param sDeviceName
      * @throws com.openbravo.pos.printer.TicketPrinterException */
     public DeviceDisplayJavaPOS(String sDeviceName) throws TicketPrinterException {
         m_sName = sDeviceName;
@@ -58,7 +56,6 @@ public class DeviceDisplayJavaPOS implements DeviceDisplay, DeviceDisplayImpl {
 
     /**
      *
-     * @return
      */
     @Override
     public String getDisplayName() {
@@ -67,7 +64,6 @@ public class DeviceDisplayJavaPOS implements DeviceDisplay, DeviceDisplayImpl {
 
     /**
      *
-     * @return
      */
     @Override
     public String getDisplayDescription() {
@@ -76,7 +72,6 @@ public class DeviceDisplayJavaPOS implements DeviceDisplay, DeviceDisplayImpl {
 
     /**
      *
-     * @return
      */
     @Override
     public javax.swing.JComponent getDisplayComponent() {
@@ -85,9 +80,6 @@ public class DeviceDisplayJavaPOS implements DeviceDisplay, DeviceDisplayImpl {
 
     /**
      *
-     * @param animation
-     * @param sLine1
-     * @param sLine2
      */
     @Override
     public void writeVisor(int animation, String sLine1, String sLine2) {
@@ -96,8 +88,6 @@ public class DeviceDisplayJavaPOS implements DeviceDisplay, DeviceDisplayImpl {
 
     /**
      *
-     * @param sLine1
-     * @param sLine2
      */
     @Override
     public void writeVisor(String sLine1, String sLine2) {

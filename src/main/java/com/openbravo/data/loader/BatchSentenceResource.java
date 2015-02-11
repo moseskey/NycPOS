@@ -27,14 +27,12 @@ import java.io.UnsupportedEncodingException;
 
 /**
  *
- * @author adrianromero
  */
 public class BatchSentenceResource extends BatchSentence {
 
     private String m_sResScript;
 
     /** Creates a new instance of BatchSentenceResource
-     * @param s
      * @param resscript */
     public BatchSentenceResource(Session s, String resscript) {
         super(s);
@@ -43,7 +41,6 @@ public class BatchSentenceResource extends BatchSentence {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     protected Reader getReader() throws BasicException {

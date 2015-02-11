@@ -21,7 +21,6 @@ package com.openbravo.data.model;
 
 /**
  *
- * @author adrian
  */
 public class Table {
 
@@ -30,8 +29,6 @@ public class Table {
 
     /**
      *
-     * @param name
-     * @param columns
      */
     public Table(String name, Column... columns) {
         this.name = name;
@@ -40,7 +37,6 @@ public class Table {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return name;
@@ -48,7 +44,6 @@ public class Table {
 
     /**
      *
-     * @return
      */
     public Column[] getColumns() {
         return columns;
@@ -56,7 +51,6 @@ public class Table {
 
     /**
      *
-     * @return
      */
     public String getListSQL() {
         StringBuilder sent = new StringBuilder();
@@ -77,7 +71,6 @@ public class Table {
 
     /**
      *
-     * @return
      */
     public String getInsertSQL() {
 
@@ -106,7 +99,6 @@ public class Table {
 
     /**
      *
-     * @return
      */
     public String getUpdateSQL() {
 
@@ -136,7 +128,6 @@ public class Table {
 
     /**
      *
-     * @return
      */
     public String getDeleteSQL() {
 

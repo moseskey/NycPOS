@@ -26,7 +26,6 @@ import javax.swing.SpinnerNumberModel;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig {
 
@@ -59,7 +58,6 @@ public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig
 
     /**
      *
-     * @return
      */
     @Override
     public boolean hasChanged() {
@@ -68,7 +66,6 @@ public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig
 
     /**
      *
-     * @return
      */
     @Override
     public Component getConfigComponent() {
@@ -77,7 +74,6 @@ public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig
 
     /**
      *
-     * @param config
      */
     @Override
     public void loadProperties(AppConfig config) {
@@ -138,7 +134,6 @@ public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig
 
     /**
      *
-     * @param config
      */
     @Override
     public void saveProperties(AppConfig config) {

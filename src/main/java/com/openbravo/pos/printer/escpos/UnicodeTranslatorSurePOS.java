@@ -21,7 +21,6 @@ package com.openbravo.pos.printer.escpos;
 
 /**
  *
- * @author JG uniCenta
  */
 public class UnicodeTranslatorSurePOS extends UnicodeTranslator {
 
@@ -31,7 +30,6 @@ public class UnicodeTranslatorSurePOS extends UnicodeTranslator {
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getCodeTable() {
@@ -40,8 +38,6 @@ public class UnicodeTranslatorSurePOS extends UnicodeTranslator {
 
     /**
      *
-     * @param sChar
-     * @return
      */
     @Override
     public byte transChar(char sChar) {

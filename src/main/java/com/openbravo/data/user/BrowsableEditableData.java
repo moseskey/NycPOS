@@ -28,7 +28,6 @@ import com.openbravo.data.loader.LocalRes;
 
 /**
  *
- * @author JG uniCenta
  */
 public class BrowsableEditableData {
 
@@ -69,9 +68,6 @@ public class BrowsableEditableData {
 
     /**
      * Creates a new instance of BrowsableEditableData
-     * @param bd
-     * @param ed
-     * @param dirty
      */
     public BrowsableEditableData(BrowsableData bd, EditorRecord ed, DirtyManager dirty) {
         m_bd = bd;
@@ -90,11 +86,6 @@ public class BrowsableEditableData {
 
     /**
      * Check Ticket Dirty state
-     * @param dataprov
-     * @param saveprov
-     * @param c
-     * @param ed
-     * @param dirty
      */
     public BrowsableEditableData(ListProvider dataprov, SaveProvider saveprov, Comparator c, EditorRecord ed, DirtyManager dirty) {
         this(new BrowsableData(dataprov, saveprov, c), ed, dirty);
@@ -102,10 +93,6 @@ public class BrowsableEditableData {
 
     /**
      * Ticket Dirty state
-     * @param dataprov
-     * @param saveprov
-     * @param ed
-     * @param dirty
      */
     public BrowsableEditableData(ListProvider dataprov, SaveProvider saveprov, EditorRecord ed, DirtyManager dirty) {
         this(new BrowsableData(dataprov, saveprov, null), ed, dirty);
@@ -113,7 +100,6 @@ public class BrowsableEditableData {
 
     /**
      * Ticket data for list
-     * @return
      */
     public final ListModel getListModel() {
         return m_bd;
@@ -121,7 +107,6 @@ public class BrowsableEditableData {
 
     /**
      * Value Changes
-     * @return
      */
     public final boolean isAdjusting() {
         return m_bIsAdjusting || m_bd.isAdjusting();
@@ -133,7 +118,6 @@ public class BrowsableEditableData {
 
     /**
      * Return index
-     * @return
      */
     public final int getIndex() {
         return m_iIndex;
@@ -141,7 +125,6 @@ public class BrowsableEditableData {
 
     /**
      * Add to State listener
-     * @param l
      */
     public final void addStateListener(StateListener l) {
         listeners.add(StateListener.class, l);
@@ -149,7 +132,6 @@ public class BrowsableEditableData {
 
     /**
      * Delete from State listener
-     * @param l
      */
     public final void removeStateListener(StateListener l) {
         listeners.remove(StateListener.class, l);
@@ -157,7 +139,6 @@ public class BrowsableEditableData {
 
     /**
      * Edit State listener
-     * @param l
      */
     public final void addEditorListener(EditorListener l) {
         listeners.add(EditorListener.class, l);
@@ -165,7 +146,6 @@ public class BrowsableEditableData {
 
     /**
      * Delete from State listener
-     * @param l
      */
     public final void removeEditorListener(EditorListener l) {
         listeners.remove(EditorListener.class, l);
@@ -173,7 +153,6 @@ public class BrowsableEditableData {
 
     /**
      * Add to browse listener
-     * @param l
      */
     public final void addBrowseListener(BrowseListener l) {
         listeners.add(BrowseListener.class, l);
@@ -181,7 +160,6 @@ public class BrowsableEditableData {
 
     /**
      * Delete from browse listener
-     * @param l
      */
     public final void removeBrowseListener(BrowseListener l) {
         listeners.remove(BrowseListener.class, l);
@@ -189,7 +167,6 @@ public class BrowsableEditableData {
 
     /**
      * Return State
-     * @return
      */
     public int getState() {
         return m_iState;
@@ -240,7 +217,6 @@ public class BrowsableEditableData {
 
     /**
      * Data available
-     * @return
      */
     public boolean canLoadData() {
         return m_bd.canLoadData();
@@ -248,7 +224,6 @@ public class BrowsableEditableData {
 
     /**
      * Flag data editable
-     * @param value
      */
     public void setEditable(boolean value) {
         iseditable = value;
@@ -256,7 +231,6 @@ public class BrowsableEditableData {
 
     /**
      * Flag data can insert
-     * @return
      */
     public boolean canInsertData() {
         return iseditable && m_bd.canInsertData();
@@ -264,7 +238,6 @@ public class BrowsableEditableData {
 
     /**
      * Flag data can delete
-     * @return
      */
     public boolean canDeleteData() {
         return iseditable && m_bd.canDeleteData();
@@ -272,7 +245,6 @@ public class BrowsableEditableData {
 
     /**
      * Flag can update
-     * @return
      */
     public boolean canUpdateData() {
         return iseditable && m_bd.canUpdateData();
@@ -320,7 +292,6 @@ public class BrowsableEditableData {
 
     /**
      * Sort object data
-     * @param c
      * @throws BasicException
      */
     public void sort(Comparator c) throws BasicException {
@@ -331,7 +302,6 @@ public class BrowsableEditableData {
 
     /**
      * Move data to object
-     * @param i
      * @throws BasicException
      */
     public void moveTo(int i) throws BasicException {
@@ -387,8 +357,6 @@ public class BrowsableEditableData {
 
     /**
      * Step into data =value (Next)
-     * @param f
-     * @return
      * @throws BasicException
      */
     public final int findNext(Finder f) throws BasicException {
@@ -420,7 +388,6 @@ public class BrowsableEditableData {
 
     /**
      * Reinstantiate data
-     * @param c
      */
     public void actionReloadCurrent(Component c) {
         if (!m_Dirty.isDirty() ||
@@ -431,8 +398,6 @@ public class BrowsableEditableData {
 
     /**
      * Evaluate data before before commit
-     * @param c
-     * @return
      * @throws BasicException
      */
     public boolean actionClosingForm(Component c) throws BasicException {

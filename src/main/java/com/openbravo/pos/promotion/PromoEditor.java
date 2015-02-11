@@ -38,7 +38,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Escartin AurÃ(c)lien aurelien.escartin@gmail.com
  */
 public class PromoEditor extends JPanel implements EditorRecord {
 
@@ -53,8 +52,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
     private Session s;
 
     /** Creates new form PlacesEditor
-     * @param app
-     * @param dlSales
      * @param dirty */
     public PromoEditor(AppView app, DataLogicSales dlSales, DirtyManager dirty) {
         m_dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -212,7 +209,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -271,7 +267,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -466,7 +461,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -610,7 +604,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

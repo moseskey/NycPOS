@@ -23,13 +23,11 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class SentenceExecAdapter implements SentenceExec {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public int exec() throws BasicException {
@@ -38,8 +36,6 @@ public abstract class SentenceExecAdapter implements SentenceExec {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     public int exec(Object... params) throws BasicException {
@@ -48,8 +44,6 @@ public abstract class SentenceExecAdapter implements SentenceExec {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     public abstract int exec(Object params) throws BasicException;

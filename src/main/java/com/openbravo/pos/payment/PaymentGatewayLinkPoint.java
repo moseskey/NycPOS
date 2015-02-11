@@ -41,7 +41,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
- * @author Mikel Irurita
  */
 public class PaymentGatewayLinkPoint implements PaymentGateway {
 
@@ -61,7 +60,6 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
 
     /**
      *
-     * @param props
      */
     public PaymentGatewayLinkPoint(AppProperties props) {
 
@@ -86,7 +84,6 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
 
     /**
      *
-     * @param payinfo
      */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {

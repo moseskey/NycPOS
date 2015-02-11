@@ -24,7 +24,6 @@ import javax.swing.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPasswordDialog extends javax.swing.JDialog {
 
@@ -34,14 +33,12 @@ public class JPasswordDialog extends javax.swing.JDialog {
     private String m_sPassword;
 
     /** Creates new form JCalendarDialog
-     * @param parent
      * @param modal */
     public JPasswordDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         init();
     }
     /** Creates new form JCalendarDialog
-     * @param parent
      * @param modal */
     public JPasswordDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
@@ -85,9 +82,6 @@ public class JPasswordDialog extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param title
-     * @return
      */
     public static String showEditPassword(Component parent, String title) {
         return showEditPassword(parent, title, null, null);
@@ -95,10 +89,6 @@ public class JPasswordDialog extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param title
-     * @param message
-     * @return
      */
     public static String showEditPassword(Component parent, String title, String message) {
         return showEditPassword(parent, title, message, null);
@@ -106,11 +96,6 @@ public class JPasswordDialog extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param title
-     * @param message
-     * @param icon
-     * @return
      */
     public static String showEditPassword(Component parent, String title, String message, Icon icon) {
 

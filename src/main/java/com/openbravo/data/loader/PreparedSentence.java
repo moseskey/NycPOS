@@ -26,7 +26,6 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author  adrianromero
  */
 public class PreparedSentence extends JDBCSentence {
 
@@ -49,10 +48,6 @@ public class PreparedSentence extends JDBCSentence {
 
     /**
      *
-     * @param s
-     * @param sentence
-     * @param serwrite
-     * @param serread
      */
     public PreparedSentence(Session s, String sentence, SerializerWrite serwrite, SerializerRead serread) {
         super(s);
@@ -64,9 +59,6 @@ public class PreparedSentence extends JDBCSentence {
 
     /**
      *
-     * @param s
-     * @param sentence
-     * @param serwrite
      */
     public PreparedSentence(Session s, String sentence, SerializerWrite serwrite) {
         this(s, sentence, serwrite, null);
@@ -74,8 +66,6 @@ public class PreparedSentence extends JDBCSentence {
 
     /**
      *
-     * @param s
-     * @param sentence
      */
     public PreparedSentence(Session s, String sentence) {
         this(s, sentence, null, null);
@@ -162,8 +152,6 @@ public class PreparedSentence extends JDBCSentence {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override
@@ -201,7 +189,6 @@ public class PreparedSentence extends JDBCSentence {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

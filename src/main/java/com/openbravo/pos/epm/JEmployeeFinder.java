@@ -31,7 +31,6 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author  Ali Safdar & Aneeqa Baber
  */
 public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreator {
 
@@ -50,9 +49,6 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
 
     /**
      *
-     * @param parent
-     * @param dlPresenceManagement
-     * @return
      */
     public static JEmployeeFinder getEmployeeFinder(Component parent, DataLogicPresenceManagement dlPresenceManagement) {
         Window window = getWindow(parent);
@@ -69,7 +65,6 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
 
     /**
      *
-     * @return
      */
     public EmployeeInfo getSelectedEmployee() {
         return selectedEmployee;
@@ -88,7 +83,6 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
 
     /**
      *
-     * @param employee
      */
     public void search(EmployeeInfo employee) {
         if (employee == null || employee.getName() == null || employee.getName().equals("")) {
@@ -119,7 +113,6 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

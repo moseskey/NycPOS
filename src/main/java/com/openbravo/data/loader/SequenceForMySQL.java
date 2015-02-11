@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public class SequenceForMySQL extends BaseSentence {
 
@@ -31,7 +30,6 @@ public class SequenceForMySQL extends BaseSentence {
     private BaseSentence sent2;
 
     /** Creates a new instance of SequenceForMySQL
-     * @param s
      * @param sSeqTable */
     public SequenceForMySQL(Session s, String sSeqTable) {
 
@@ -43,8 +41,6 @@ public class SequenceForMySQL extends BaseSentence {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
         public DataResultSet openExec(Object params) throws BasicException {
@@ -54,7 +50,6 @@ public class SequenceForMySQL extends BaseSentence {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public DataResultSet moreResults() throws BasicException {

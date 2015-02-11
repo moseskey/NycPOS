@@ -28,7 +28,6 @@ import javax.swing.SwingUtilities;
 
 /**
  *
- * @author  adrian
  */
 public class JNumberDialog extends javax.swing.JDialog {
 
@@ -37,7 +36,6 @@ public class JNumberDialog extends javax.swing.JDialog {
     private Double m_value;
 
     /** Creates new form JNumberDialog
-     * @param parent
      * @param modal */
     public JNumberDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -45,7 +43,6 @@ public class JNumberDialog extends javax.swing.JDialog {
     }
 
     /** Creates new form JNumberDialog
-     * @param parent
      * @param modal */
     public JNumberDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
@@ -80,9 +77,6 @@ public class JNumberDialog extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param title
-     * @return
      */
     public static Double showEditNumber(Component parent, String title) {
         return showEditNumber(parent, title, null, null);
@@ -90,10 +84,6 @@ public class JNumberDialog extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param title
-     * @param message
-     * @return
      */
     public static Double showEditNumber(Component parent, String title, String message) {
         return showEditNumber(parent, title, message, null);
@@ -101,11 +91,6 @@ public class JNumberDialog extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param title
-     * @param message
-     * @param icon
-     * @return
      */
     public static Double showEditNumber(Component parent, String title, String message, Icon icon) {
 

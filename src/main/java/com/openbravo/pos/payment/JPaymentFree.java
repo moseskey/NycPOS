@@ -25,7 +25,6 @@ import java.awt.Component;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPaymentFree extends javax.swing.JPanel implements JPaymentInterface {
 
@@ -41,9 +40,6 @@ public class JPaymentFree extends javax.swing.JPanel implements JPaymentInterfac
 
     /**
      *
-     * @param customerext
-     * @param dTotal
-     * @param transID
      */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
@@ -57,7 +53,6 @@ public class JPaymentFree extends javax.swing.JPanel implements JPaymentInterfac
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo executePayment() {
@@ -66,7 +61,6 @@ public class JPaymentFree extends javax.swing.JPanel implements JPaymentInterfac
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

@@ -33,7 +33,6 @@ import javax.swing.ListCellRenderer;
 
 /**
  *
- * @author adrianromero
  */
 public class RolesPanel extends JPanelTable {
 
@@ -58,7 +57,6 @@ public class RolesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListProvider getListProvider() {
@@ -67,7 +65,6 @@ public class RolesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public SaveProvider getSaveProvider() {
@@ -76,7 +73,6 @@ public class RolesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public Vectorer getVectorer() {
@@ -85,7 +81,6 @@ public class RolesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ComparatorCreator getComparatorCreator() {
@@ -94,7 +89,6 @@ public class RolesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListCellRenderer getListCellRenderer() {
@@ -103,7 +97,6 @@ public class RolesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -112,7 +105,6 @@ public class RolesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {

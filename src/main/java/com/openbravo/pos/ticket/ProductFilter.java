@@ -37,7 +37,6 @@ import java.util.List;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ProductFilter extends javax.swing.JPanel implements ReportEditorCreator {
 
@@ -52,7 +51,6 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
 
     /**
      *
-     * @param app
      */
     @Override
     public void init(AppView app) {
@@ -86,7 +84,6 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
 
     /**
      *
-     * @return
      */
     @Override
     public SerializerWrite getSerializerWrite() {
@@ -96,7 +93,6 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -105,7 +101,6 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

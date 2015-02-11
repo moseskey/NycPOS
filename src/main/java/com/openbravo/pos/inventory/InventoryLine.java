@@ -25,7 +25,6 @@ import com.openbravo.pos.util.StringUtils;
 
 /**
  *
- * @author adrianromero
  */
 public class InventoryLine {
 
@@ -53,9 +52,6 @@ public class InventoryLine {
 
     /**
      *
-     * @param oProduct
-     * @param dpor
-     * @param dprice
      */
     public InventoryLine(ProductInfoExt oProduct, double dpor, double dprice) {
         m_sProdID = oProduct.getID();
@@ -69,7 +65,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public String getProductID() {
         return m_sProdID;
@@ -77,7 +72,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public String getProductName() {
         return m_sProdName;
@@ -85,7 +79,6 @@ public class InventoryLine {
 
     /**
      *
-     * @param sValue
      */
     public void setProductName(String sValue) {
         if (m_sProdID == null) {
@@ -95,7 +88,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public double getMultiply() {
         return m_dMultiply;
@@ -103,7 +95,6 @@ public class InventoryLine {
 
     /**
      *
-     * @param dValue
      */
     public void setMultiply(double dValue) {
         m_dMultiply = dValue;
@@ -111,7 +102,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public double getPrice() {
         return m_dPrice;
@@ -119,7 +109,6 @@ public class InventoryLine {
 
     /**
      *
-     * @param dValue
      */
     public void setPrice(double dValue) {
         m_dPrice = dValue;
@@ -127,7 +116,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public double getSubValue() {
         return m_dMultiply * m_dPrice;
@@ -135,7 +123,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public String getProductAttSetInstId() {
         return attsetinstid;
@@ -143,7 +130,6 @@ public class InventoryLine {
 
     /**
      *
-     * @param value
      */
     public void setProductAttSetInstId(String value) {
         attsetinstid = value;
@@ -151,7 +137,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public String getProductAttSetId() {
         return attsetid;
@@ -159,7 +144,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public String getProductAttSetInstDesc() {
         return attsetinstdesc;
@@ -167,7 +151,6 @@ public class InventoryLine {
 
     /**
      *
-     * @param value
      */
     public void setProductAttSetInstDesc(String value) {
         attsetinstdesc = value;
@@ -175,7 +158,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public String printName() {
         return StringUtils.encodeXML(m_sProdName);
@@ -183,7 +165,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public String printPrice() {
         if (m_dMultiply == 1.0) {
@@ -195,7 +176,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public String printMultiply() {
         return Formats.DOUBLE.formatValue(m_dMultiply);
@@ -203,7 +183,6 @@ public class InventoryLine {
 
     /**
      *
-     * @return
      */
     public String printSubValue() {
         return Formats.CURRENCY.formatValue(getSubValue());

@@ -27,7 +27,6 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author adrianromero
  */
 public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel {
 
@@ -56,7 +55,6 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent(){
@@ -65,8 +63,6 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
 
     /**
      *
-     * @param sTransaction
-     * @param dTotal
      */
     @Override
     public void activate(String sTransaction, double dTotal) {
@@ -90,7 +86,6 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfoMagcard getPaymentInfoMagcard() {

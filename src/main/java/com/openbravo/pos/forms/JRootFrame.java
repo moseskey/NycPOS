@@ -32,7 +32,6 @@ import com.openbravo.pos.util.OSValidator;
 
 /**
  *
- * @author  adrianromero
  */
 public class JRootFrame extends javax.swing.JFrame implements AppMessage {
 
@@ -52,7 +51,6 @@ public class JRootFrame extends javax.swing.JFrame implements AppMessage {
 
     /**
      *
-     * @param props
      */
     public void initFrame(AppProperties props) {
 

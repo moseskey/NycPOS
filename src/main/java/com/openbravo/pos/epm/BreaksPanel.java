@@ -34,7 +34,6 @@ import javax.swing.ListCellRenderer;
 
 /**
  *
- * @author Ali Safdar & Aneeqa Baber
  */
 public class BreaksPanel extends JPanelTable {
 
@@ -70,7 +69,6 @@ public class BreaksPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListProvider getListProvider() {
@@ -79,7 +77,6 @@ public class BreaksPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public SaveProvider getSaveProvider() {
@@ -88,7 +85,6 @@ public class BreaksPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public Vectorer getVectorer() {
@@ -97,7 +93,6 @@ public class BreaksPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ComparatorCreator getComparatorCreator() {
@@ -106,7 +101,6 @@ public class BreaksPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListCellRenderer getListCellRenderer() {
@@ -115,7 +109,6 @@ public class BreaksPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -124,7 +117,6 @@ public class BreaksPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {

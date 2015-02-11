@@ -29,7 +29,6 @@ import java.io.File;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class JEditorNumber extends JEditorAbstract {
 
@@ -61,7 +60,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     protected abstract Formats getFormat();
 
@@ -83,7 +81,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @param dvalue
      */
     public void setDoubleValue(Double dvalue) {
 
@@ -109,7 +106,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     public Double getDoubleValue() {
         String text = getText();
@@ -128,7 +124,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @param ivalue
      */
     public void setValueInteger(int ivalue) {
 
@@ -150,7 +145,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public int getValueInteger() throws BasicException {
@@ -171,7 +165,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     @Override
     protected String getEditMode() {
@@ -180,7 +173,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     public String getText() {
         return (m_bNegative ? "-" : "") + m_sNumber;
@@ -188,7 +180,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     @Override
     protected int getAlignment() {
@@ -197,7 +188,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @return
      */
     @Override
     protected String getTextEdit() {
@@ -206,7 +196,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -216,7 +205,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @param cTrans
      */
     @Override
     protected void typeCharInternal(char cTrans) {
@@ -225,7 +213,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     /**
      *
-     * @param cTrans
      */
     @Override
     protected void transCharInternal(char cTrans) {

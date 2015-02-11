@@ -25,7 +25,6 @@ import java.text.SimpleDateFormat;
 
 /**
  *
- * @author  adrian
  */
 public class DataWriteUtils {
 
@@ -37,8 +36,6 @@ public class DataWriteUtils {
 
     /**
      *
-     * @param obj
-     * @return
      */
     public static String getSQLValue(Object obj) {
         if (obj == null) {
@@ -60,8 +57,6 @@ public class DataWriteUtils {
 
     /**
      *
-     * @param iValue
-     * @return
      */
     public static String getSQLValue(Integer iValue) {
         if (iValue == null) {
@@ -73,8 +68,6 @@ public class DataWriteUtils {
 
     /**
      *
-     * @param dValue
-     * @return
      */
     public static String getSQLValue(Double dValue) {
         if (dValue == null) {
@@ -86,8 +79,6 @@ public class DataWriteUtils {
 
     /**
      *
-     * @param bValue
-     * @return
      */
     public static String getSQLValue(Boolean bValue) {
         if (bValue == null) {
@@ -99,8 +90,6 @@ public class DataWriteUtils {
 
     /**
      *
-     * @param sValue
-     * @return
      */
     public static String getSQLValue(String sValue) {
         if (sValue == null) {
@@ -112,8 +101,6 @@ public class DataWriteUtils {
 
     /**
      *
-     * @param dValue
-     * @return
      */
     public static String getSQLValue(Date dValue) {
         if (dValue == null) {
@@ -125,8 +112,6 @@ public class DataWriteUtils {
 
     /**
      *
-     * @param sValue
-     * @return
      */
     public static String getEscaped(String sValue) {
         StringBuilder sb = new StringBuilder();

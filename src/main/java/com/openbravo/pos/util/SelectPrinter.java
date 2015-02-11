@@ -28,7 +28,6 @@ import javax.swing.SwingUtilities;
 
 /**
  *
- * @author adrian
  */
 public class SelectPrinter extends javax.swing.JDialog {
 
@@ -47,9 +46,6 @@ public class SelectPrinter extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param printers
-     * @return
      */
     public static SelectPrinter getSelectPrinter(Component parent, String[] printers) {
 
@@ -86,7 +82,6 @@ public class SelectPrinter extends javax.swing.JDialog {
 
     /**
      *
-     * @return
      */
     public boolean isOK() {
         return ok;
@@ -94,7 +89,6 @@ public class SelectPrinter extends javax.swing.JDialog {
 
     /**
      *
-     * @return
      */
     public String getPrintService() {
         return printservice;

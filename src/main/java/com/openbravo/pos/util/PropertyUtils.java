@@ -6,7 +6,6 @@ package com.openbravo.pos.util;
 
 /**
 *
-* @author Xibergy Systems
 */
 
 import java.io.File;
@@ -53,8 +52,6 @@ public class PropertyUtils {
 
     /**
      *
-     * @param sKey
-     * @return
      */
     public String getProperty(String sKey) {
         return m_propsconfig.getProperty(sKey);
@@ -62,7 +59,6 @@ public class PropertyUtils {
 
     /**
      *
-     * @return
      */
     public String getDriverName() {
         return m_propsconfig.getProperty("db.driver");
@@ -70,7 +66,6 @@ public class PropertyUtils {
 
     /**
      *
-     * @return
      */
     public String getUrl() {
         return m_propsconfig.getProperty("db.URL");
@@ -78,7 +73,6 @@ public class PropertyUtils {
 
     /**
      *
-     * @return
      */
     public String getDBUser() {
         return m_propsconfig.getProperty("db.user");
@@ -86,7 +80,6 @@ public class PropertyUtils {
 
     /**
      *
-     * @return
      */
     public String getDBPassword() {
         String m_password = "[color=#FF0000]YourDBPassword[/color]";

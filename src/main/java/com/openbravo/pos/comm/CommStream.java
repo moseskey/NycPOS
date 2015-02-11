@@ -29,7 +29,6 @@ import java.io.OutputStream;
 
 /**
  *
- * @author adrianromero
  */
 public class CommStream {
 
@@ -97,7 +96,6 @@ public class CommStream {
 
     /**
      *
-     * @return
      */
     public String getPort() {
         return m_sPort;
@@ -105,7 +103,6 @@ public class CommStream {
 
     /**
      *
-     * @return
      */
     public InputStream getIn() {
         init();
@@ -114,7 +111,6 @@ public class CommStream {
 
     /**
      *
-     * @return
      */
     public OutputStream getOut() {
         init();

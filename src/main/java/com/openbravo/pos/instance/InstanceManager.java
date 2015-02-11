@@ -27,7 +27,6 @@ import java.rmi.server.UnicastRemoteObject;
 
 /**
  *
- * @author adrianromero
  */
 public class InstanceManager {
 
@@ -35,7 +34,6 @@ public class InstanceManager {
     private final AppMessage m_message;
 
     /** Creates a new instance of InstanceManager
-     * @param message
      * @throws java.rmi.RemoteException
      * @throws java.rmi.AlreadyBoundException */
     public InstanceManager(AppMessage message) throws RemoteException, AlreadyBoundException {

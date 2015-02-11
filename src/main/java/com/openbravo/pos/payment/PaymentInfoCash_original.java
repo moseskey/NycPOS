@@ -23,7 +23,6 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentInfoCash_original extends PaymentInfo {
 
@@ -33,7 +32,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
     private String m_dCardName =null;
 
     /** Creates a new instance of PaymentInfoCash
-     * @param dTotal
      * @param dPaid */
     public PaymentInfoCash_original(double dTotal, double dPaid) {
         m_dTotal = dTotal;
@@ -42,7 +40,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo copyPayment(){
@@ -51,7 +48,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTransactionID(){
@@ -60,7 +56,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public String getName() {
@@ -69,7 +64,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getTotal() {
@@ -78,7 +72,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getPaid() {
@@ -87,7 +80,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getTendered() {
@@ -96,7 +88,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getChange(){
@@ -105,7 +96,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
    public String getCardName() {
@@ -114,7 +104,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String printPaid() {
         return Formats.CURRENCY.formatValue(new Double(m_dPaid));
@@ -122,7 +111,6 @@ public class PaymentInfoCash_original extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String printChange() {
         return Formats.CURRENCY.formatValue(new Double(m_dPaid - m_dTotal));

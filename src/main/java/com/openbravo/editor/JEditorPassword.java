@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JEditorPassword extends JEditorText {
 
@@ -36,7 +35,6 @@ public class JEditorPassword extends JEditorText {
 
     /**
      *
-     * @return
      */
     protected final int getMode() {
         return EditorKeys.MODE_STRING;
@@ -44,7 +42,6 @@ public class JEditorPassword extends JEditorText {
 
     /**
      *
-     * @return
      */
     protected int getStartMode() {
         return MODE_Abc1;
@@ -52,7 +49,6 @@ public class JEditorPassword extends JEditorText {
 
     /**
      *
-     * @return
      */
     protected String getTextEdit() {
 
@@ -71,7 +67,6 @@ public class JEditorPassword extends JEditorText {
 
     /**
      *
-     * @return
      */
     public final String getPassword() {
 
@@ -82,7 +77,6 @@ public class JEditorPassword extends JEditorText {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     protected String getTextFormat() throws BasicException {

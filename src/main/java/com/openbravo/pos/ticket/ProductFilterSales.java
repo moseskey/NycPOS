@@ -34,7 +34,6 @@ import com.openbravo.pos.forms.DataLogicSales;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ProductFilterSales extends javax.swing.JPanel implements EditorCreator {
 
@@ -42,7 +41,6 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
     private ComboBoxValModel m_CategoryModel;
 
     /** Creates new form ProductFilterSales
-     * @param dlSales
      * @param jKeys */
     public ProductFilterSales(DataLogicSales dlSales, JEditorKeys jKeys) {
         initComponents();
@@ -92,7 +90,6 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

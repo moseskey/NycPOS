@@ -24,7 +24,6 @@ import java.util.Locale;
 
 /**
  *
- * @author adrianromero
  */
 public class LocaleComparator implements Comparator<Locale> {
 

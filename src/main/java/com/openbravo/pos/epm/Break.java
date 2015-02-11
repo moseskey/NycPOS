@@ -21,7 +21,6 @@ package com.openbravo.pos.epm;
 
 /**
  *
- * @author Ali Safdar & Aneeqa Baber
  */
 public class Break {
 
@@ -32,10 +31,6 @@ public class Break {
 
     /**
      *
-     * @param id
-     * @param name
-     * @param notes
-     * @param visible
      */
     public Break(String id, String name, String notes,  boolean visible) {
         m_sId = id;
@@ -46,7 +41,6 @@ public class Break {
 
     /**
      *
-     * @return
      */
     public String getId() {
         return m_sId;
@@ -54,7 +48,6 @@ public class Break {
 
     /**
      *
-     * @param Id
      */
     public void setId(String Id) {
         this.m_sId = Id;
@@ -62,7 +55,6 @@ public class Break {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -70,7 +62,6 @@ public class Break {
 
     /**
      *
-     * @param Name
      */
     public void setName(String Name) {
         this.m_sName = Name;
@@ -78,7 +69,6 @@ public class Break {
 
     /**
      *
-     * @return
      */
     public String getNotes() {
         return m_sNotes;
@@ -86,7 +76,6 @@ public class Break {
 
     /**
      *
-     * @param Notes
      */
     public void setNotes(String Notes) {
         this.m_sNotes = Notes;
@@ -94,7 +83,6 @@ public class Break {
 
     /**
      *
-     * @return
      */
     public boolean isVisible() {
         return m_sVisible;
@@ -102,7 +90,6 @@ public class Break {
 
     /**
      *
-     * @param Visible
      */
     public void setVisible(boolean Visible) {
         this.m_sVisible = Visible;

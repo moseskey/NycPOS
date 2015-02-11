@@ -34,7 +34,6 @@ import javax.swing.*;
 
 /**
  *
- * @author adrianromero
  */
 public class PeopleView extends JPanel implements EditorRecord {
 
@@ -47,7 +46,6 @@ public class PeopleView extends JPanel implements EditorRecord {
     private ComboBoxValModel m_RoleModel;
 
     /** Creates new form PeopleEditor
-     * @param dlAdmin
      * @param dirty */
     public PeopleView(DataLogicAdmin dlAdmin, DirtyManager dirty) {
         initComponents();
@@ -112,7 +110,6 @@ public class PeopleView extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -137,7 +134,6 @@ public class PeopleView extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -162,7 +158,6 @@ public class PeopleView extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -180,7 +175,6 @@ public class PeopleView extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

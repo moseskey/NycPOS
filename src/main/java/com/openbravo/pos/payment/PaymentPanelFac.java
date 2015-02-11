@@ -21,7 +21,6 @@ package com.openbravo.pos.payment;
 
 /**
  *
- * @author adrianromero
  */
 public class PaymentPanelFac {
 
@@ -31,9 +30,6 @@ public class PaymentPanelFac {
 
     /**
      *
-     * @param sReader
-     * @param notifier
-     * @return
      */
     public static PaymentPanel getPaymentPanel(String sReader, JPaymentNotifier notifier) {
 // JG 16 May 12 use switch

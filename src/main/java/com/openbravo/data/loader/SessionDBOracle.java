@@ -21,13 +21,11 @@ package com.openbravo.data.loader;
 
 /**
  *
- * @author adrianromero
  */
 public class SessionDBOracle implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String TRUE() {
         return "1";
@@ -35,7 +33,6 @@ public class SessionDBOracle implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String FALSE() {
         return "0";
@@ -43,7 +40,6 @@ public class SessionDBOracle implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String INTEGER_NULL() {
         return "CAST(NULL AS INTEGER)";
@@ -51,7 +47,6 @@ public class SessionDBOracle implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String CHAR_NULL() {
         return "CAST(NULL AS CHAR)";
@@ -59,7 +54,6 @@ public class SessionDBOracle implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return "Oracle";
@@ -67,9 +61,6 @@ public class SessionDBOracle implements SessionDB {
 
     /**
      *
-     * @param s
-     * @param sequence
-     * @return
      */
     public SentenceFind getSequenceSentence(Session s, String sequence) {
         return new StaticSentence(s, "SELECT " + sequence + ".NEXTVAL FROM DUAL", null, SerializerReadInteger.INSTANCE);
@@ -77,9 +68,6 @@ public class SessionDBOracle implements SessionDB {
 
     /**
      *
-     * @param s
-     * @param sequence
-     * @return
      */
     public SentenceFind resetSequenceSentence(Session s, String sequence) {
         return new StaticSentence(s, "SELECT " + sequence + ".NEXTVAL FROM DUAL", null, SerializerReadInteger.INSTANCE);

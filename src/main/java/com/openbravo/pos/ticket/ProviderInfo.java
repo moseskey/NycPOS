@@ -21,7 +21,6 @@ package com.openbravo.pos.ticket;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ProviderInfo {
 
@@ -36,7 +35,6 @@ public class ProviderInfo {
 
     /**
      *
-     * @return
      */
     public int getProviderID() {
         return m_iProviderID;
@@ -44,7 +42,6 @@ public class ProviderInfo {
 
     /**
      *
-     * @param iProviderID
      */
     public void setProviderID(int iProviderID) {
         m_iProviderID = iProviderID;
@@ -52,7 +49,6 @@ public class ProviderInfo {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -60,7 +56,6 @@ public class ProviderInfo {
 
     /**
      *
-     * @param sName
      */
     public void setName(String sName) {
         m_sName = sName;

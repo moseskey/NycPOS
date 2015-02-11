@@ -41,7 +41,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPanelResetPickupId extends JPanel implements JPanelView {
 
@@ -62,7 +61,6 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
 
     /**
      *
-     * @param props
      */
     public JPanelResetPickupId(AppProperties props) {
 
@@ -120,7 +118,6 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -129,7 +126,6 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -169,7 +165,6 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {

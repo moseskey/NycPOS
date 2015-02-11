@@ -32,8 +32,6 @@ import com.openbravo.pos.forms.DataLogicSales;
 
 /**
  *
- * @author  Luis Ig. Bacas Riveiro	lbacas@opensistemas.com
- * @author  Pablo J. Urbano Santos	purbano@opensistemas.com
  */
 public class MaterialFilter extends javax.swing.JPanel implements EditorCreator {
 
@@ -66,7 +64,6 @@ public class MaterialFilter extends javax.swing.JPanel implements EditorCreator 
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

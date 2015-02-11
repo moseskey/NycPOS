@@ -34,7 +34,6 @@ import javax.swing.ListCellRenderer;
 
 /**
  *
- * @author adrianromero
  */
 public abstract class JPanelTable extends JPanel implements JPanelView, BeanFactoryApp {
 
@@ -61,7 +60,6 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -76,7 +74,6 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     /**
      *
-     * @return
      */
     @Override
     public Object getBean() {
@@ -143,7 +140,6 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     /**
      *
-     * @return
      */
     public Component getToolbarExtras() {
         return null;
@@ -151,7 +147,6 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     /**
      *
-     * @return
      */
     public Component getFilter() {
         return null;
@@ -164,25 +159,21 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     /**
      *
-     * @return
      */
     public abstract EditorRecord getEditor();
 
     /**
      *
-     * @return
      */
     public abstract ListProvider getListProvider();
 
     /**
      *
-     * @return
      */
     public abstract SaveProvider getSaveProvider();
 
     /**
      *
-     * @return
      */
     public Vectorer getVectorer() {
         return null;
@@ -190,7 +181,6 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     /**
      *
-     * @return
      */
     public ComparatorCreator getComparatorCreator() {
         return null;
@@ -198,7 +188,6 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     /**
      *
-     * @return
      */
     public ListCellRenderer getListCellRenderer() {
         return null;
@@ -206,7 +195,6 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -231,7 +219,6 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {

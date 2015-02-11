@@ -8,7 +8,6 @@ import com.openbravo.data.loader.SerializableRead;
 
 /**
  *
- * @author Administrator
  */
 public class RoleTreeInfo implements SerializableRead, IKeyed {
 
@@ -30,7 +29,6 @@ public class RoleTreeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -43,7 +41,6 @@ public class RoleTreeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getParent() {
         return m_parentNode;
@@ -51,7 +48,6 @@ public class RoleTreeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getNode() {
         return m_treeNode;
@@ -59,7 +55,6 @@ public class RoleTreeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getRoleClass() {
         return m_class;
@@ -67,7 +62,6 @@ public class RoleTreeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getDescription() {
            return m_description;
@@ -75,7 +69,6 @@ public class RoleTreeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {

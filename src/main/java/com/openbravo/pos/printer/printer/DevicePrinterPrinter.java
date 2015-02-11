@@ -50,7 +50,6 @@ import javax.swing.JComponent;
  * <p>For normal printers number of pages must be calculated dynamically in the <br>
  * class PrintableTicket @see com.openbravo.pos.printer.printer.PrintableTicket
  *
- * @author jaroslawwozniak
  */
 public class DevicePrinterPrinter implements DevicePrinter {
 
@@ -91,13 +90,7 @@ public class DevicePrinterPrinter implements DevicePrinter {
     /**
      * Creates a new instance of DevicePrinterPrinter
      *
-     * @param parent
      * @param printername - name of printer that will be called in the system
-     * @param imageable_x
-     * @param imageable_y
-     * @param imageable_height
-     * @param imageable_width
-     * @param mediasizename
      */
     public DevicePrinterPrinter(Component parent, String printername, int imageable_x, int imageable_y, int imageable_width, int imageable_height, String mediasizename) {
 
@@ -188,9 +181,6 @@ public class DevicePrinterPrinter implements DevicePrinter {
 
     /**
      *
-     * @param type
-     * @param position
-     * @param code
      */
     @Override
     public void printBarCode(String type, String position, String code) {

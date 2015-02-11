@@ -24,8 +24,6 @@ import java.awt.geom.AffineTransform;
 
 /**
  *
- * @author jaroslawwozniak
- * @author adrianromero
 
  */
 public class BasicTicketForPrinter extends BasicTicket {
@@ -38,7 +36,6 @@ public class BasicTicketForPrinter extends BasicTicket {
 
     /**
      *
-     * @return
      */
     @Override
     protected Font getBaseFont() {
@@ -47,7 +44,6 @@ public class BasicTicketForPrinter extends BasicTicket {
 
     /**
      *
-     * @return
      */
     @Override
     protected int getFontHeight() {
@@ -56,7 +52,6 @@ public class BasicTicketForPrinter extends BasicTicket {
 
     /**
      *
-     * @return
      */
     @Override    protected double getImageScale() {
         return IMAGE_SCALE;

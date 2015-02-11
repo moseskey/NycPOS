@@ -27,7 +27,6 @@ import com.openbravo.pos.forms.DataLogicSales;
 
 /**
  *
- * @author adrianromero
  */
 public class JPanelPayments extends JPanelTable {
 
@@ -49,7 +48,6 @@ public class JPanelPayments extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListProvider getListProvider() {
@@ -58,7 +56,6 @@ public class JPanelPayments extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public SaveProvider getSaveProvider() {
@@ -69,7 +66,6 @@ public class JPanelPayments extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -78,7 +74,6 @@ public class JPanelPayments extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {

@@ -75,7 +75,6 @@ import net.sf.jasperreports.view.save.JRPrintSaveContributor;
 
 
 /**
- * @author Teodor Danciu (teodord@users.sourceforge.net)
  * @version $Id: JRViewer300.java 2160 2008-04-29 11:31:51Z lucianc $
  */
 public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlinkListener
@@ -224,8 +223,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
     protected JRSaveContributor lastSaveContributor = null;
 
 	/** Creates new form JRViewer300
-     * @param fileName
-     * @param isXML
      * @throws net.sf.jasperreports.engine.JRException */
 	public JRViewer300(String fileName, boolean isXML) throws JRException
 	{
@@ -234,8 +231,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/** Creates new form JRViewer300
-     * @param is
-     * @param isXML
      * @throws net.sf.jasperreports.engine.JRException */
 	public JRViewer300(InputStream is, boolean isXML) throws JRException
 	{
@@ -252,9 +247,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/** Creates new form JRViewer300
-     * @param fileName
-     * @param locale
-     * @param isXML
      * @throws net.sf.jasperreports.engine.JRException */
 	public JRViewer300(String fileName, boolean isXML, Locale locale) throws JRException
 	{
@@ -263,9 +255,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/** Creates new form JRViewer300
-     * @param is
-     * @param isXML
-     * @param locale
      * @throws net.sf.jasperreports.engine.JRException */
 	public JRViewer300(InputStream is, boolean isXML, Locale locale) throws JRException
 	{
@@ -274,7 +263,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/** Creates new form JRViewer300
-     * @param jrPrint
      * @param locale */
 	public JRViewer300(JasperPrint jrPrint, Locale locale)
 	{
@@ -283,10 +271,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/** Creates new form JRViewer300
-     * @param fileName
-     * @param isXML
-     * @param locale
-     * @param resBundle
      * @throws net.sf.jasperreports.engine.JRException */
 	public JRViewer300(String fileName, boolean isXML, Locale locale, ResourceBundle resBundle) throws JRException
 	{
@@ -309,10 +293,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/** Creates new form JRViewer300
-     * @param is
-     * @param isXML
-     * @param locale
-     * @param resBundle
      * @throws net.sf.jasperreports.engine.JRException */
 	public JRViewer300(InputStream is, boolean isXML, Locale locale, ResourceBundle resBundle) throws JRException
 	{
@@ -335,8 +315,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/** Creates new form JRViewer300
-     * @param jrPrint
-     * @param locale
      * @param resBundle */
 	public JRViewer300(JasperPrint jrPrint, Locale locale, ResourceBundle resBundle)
 	{
@@ -359,7 +337,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
     /**
      *
-     * @param jrPrint
      */
     public void loadJasperPrint(JasperPrint jrPrint) {
 
@@ -396,7 +373,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @param contributor
 	 */
 	public void addSaveContributor(JRSaveContributor contributor)
 	{
@@ -406,7 +382,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @param contributor
 	 */
 	public void removeSaveContributor(JRSaveContributor contributor)
 	{
@@ -416,7 +391,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @return
 	 */
 	public JRSaveContributor[] getSaveContributors()
 	{
@@ -426,7 +400,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Replaces the save contributors with the ones provided as parameter.
-     * @param saveContributors
 	 */
 	public void setSaveContributors(JRSaveContributor[] saveContributors)
 	{
@@ -440,7 +413,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @param listener
 	 */
 	public void addHyperlinkListener(JRHyperlinkListener listener)
 	{
@@ -450,7 +422,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @param listener
 	 */
 	public void removeHyperlinkListener(JRHyperlinkListener listener)
 	{
@@ -460,8 +431,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @return
-     * @return
 	 */
 	public JRHyperlinkListener[] getHyperlinkListeners()
 	{
@@ -471,9 +440,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @param locale
-     * @param resBundle
-     * @param resBundle
 	 */
 	protected void initResources(Locale locale, ResourceBundle resBundle)
 	{
@@ -495,10 +461,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @param key
-     * @param key
-     * @return
-     * @return
 	 */
 	protected String getBundleString(String key)
 	{
@@ -547,8 +509,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @param hyperlink
-     * @param hyperlink
 	 */
     @Override
 	public void gotoHyperlink(JRPrintHyperlink hyperlink)
@@ -670,7 +630,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
     /**
      *
-     * @return
      */
     protected boolean isOnlyHyperlinkListener()
 	{
@@ -1364,7 +1323,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
     /**
      *
-     * @param hyperlink
      */
     protected void hyperlinkClicked(JRPrintHyperlink hyperlink)
 	{
@@ -1385,8 +1343,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/**
-     * @return
-     * @return
 	*/
 	public int getPageIndex()
 	{
@@ -1436,10 +1392,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/**
-     * @param fileName
-     * @param fileName
-     * @param isXmlReport
-     * @param isXmlReport
      * @throws net.sf.jasperreports.engine.JRException
      * @throws JRException
 	*/
@@ -1463,9 +1415,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/**
-     * @param is
-     * @param is
-     * @param isXmlReport
      * @throws JRException
 	*/
 	protected void loadReport(InputStream is, boolean isXmlReport) throws JRException
@@ -1487,7 +1436,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/**
-     * @param jrPrint
 	*/
 	protected void loadReport(JasperPrint jrPrint)
 	{
@@ -1607,7 +1555,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
     /**
      *
-     * @return
      */
     protected Image getPageErrorImage()
 	{
@@ -1639,9 +1586,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
     /**
      *
-     * @param elements
-     * @param offsetX
-     * @param offsetY
      */
     protected void createHyperlinks(List elements, int offsetX, int offsetY)
 	{
@@ -1743,8 +1687,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
             /**
              *
-             * @param renderingArea
-             * @param imageMap
              */
             public ImageMapPanel(Rectangle renderingArea, JRImageMapRenderer imageMap)
 		{
@@ -1802,8 +1744,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
             /**
              *
-             * @param e
-             * @return
              */
             protected JRPrintImageAreaHyperlink getImageMapArea(MouseEvent e)
 		{
@@ -1812,9 +1752,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
             /**
              *
-             * @param x
-             * @param y
-             * @return
              */
             protected JRPrintImageAreaHyperlink getImageMapArea(int x, int y)
 		{
@@ -1870,8 +1807,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
     /**
      *
-     * @param hyperlink
-     * @return
      */
     protected String getHyperlinkTooltip(JRPrintHyperlink hyperlink)
 	{
@@ -1886,8 +1821,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
     /**
      *
-     * @param hyperlink
-     * @return
      */
     protected String getFallbackTooltip(JRPrintHyperlink hyperlink)
 	{
@@ -1995,7 +1928,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 
 	/**
-     * @param newZoom
 	*/
 	public void setZoomRatio(float newZoom)
 	{
@@ -2054,8 +1986,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @return
-     * @return
      * @throws net.sf.jasperreports.engine.JRException
      * @throws JRException
 	 */
@@ -2066,8 +1996,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 *
-     * @param grx
-     * @param grx
 	 */
 	protected void paintPage(Graphics2D grx)
 	{
@@ -2115,7 +2043,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
     /**
      *
-     * @param grx
      */
     protected void paintPageError(Graphics2D grx)
 	{
@@ -2138,7 +2065,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
     /**
      *
-     * @param grx
      */
     protected void drawPageError(Graphics grx)
 	{
@@ -2148,7 +2074,6 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
     /**
      *
-     * @param evt
      */
     protected void keyNavigate(KeyEvent evt)
 	{

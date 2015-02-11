@@ -22,7 +22,6 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentInfoCash extends PaymentInfo {
 
@@ -34,9 +33,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      * Creates a new instance of PaymentInfoCash
-     * @param dTotal
-     * @param dPaid
-     * @param dTendered
      */
     public PaymentInfoCash(double dTotal, double dPaid, double dTendered) {
         m_dTotal = dTotal;
@@ -46,10 +42,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      * Creates a new instance of PaymentInfoCash
-     * @param dTotal
-     * @param dPaid
-     * @param dTendered
-     * @param prePayAmount
      */
     public PaymentInfoCash(double dTotal, double dPaid, double dTendered, double prePayAmount) {
         this(dTotal, dTendered, dPaid);
@@ -58,7 +50,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo copyPayment() {
@@ -68,7 +59,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTransactionID() {
@@ -77,7 +67,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public String getName() {
@@ -86,7 +75,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getTotal() {
@@ -95,7 +83,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getPaid() {
@@ -104,7 +91,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getTendered() {
@@ -113,7 +99,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
    public double getChange(){
@@ -122,7 +107,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
 
@@ -132,7 +116,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public boolean hasPrePay() {
         return prePayAmount > 0;
@@ -140,7 +123,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public double getPrePaid() {
         return prePayAmount;
@@ -148,7 +130,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String printTendered() {
        return Formats.CURRENCY.formatValue(m_dTendered);
@@ -156,7 +137,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String printPaid() {
         return Formats.CURRENCY.formatValue(m_dPaid);
@@ -164,7 +144,6 @@ public class PaymentInfoCash extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String printChange() {
         return Formats.CURRENCY.formatValue(new Double(m_dPaid - m_dTotal));

@@ -26,7 +26,6 @@ import com.openbravo.pos.forms.BeanFactoryDataSingle;
 
 /**
  *
- * @author adrianromero
  */
 public class DataLogicAdmin extends BeanFactoryDataSingle {
 
@@ -42,7 +41,6 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param s
      */
     @Override
     public void init(Session s){
@@ -78,7 +76,6 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final SentenceList getRolesList() {
         return new StaticSentence(s
@@ -89,7 +86,6 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final TableDefinition getTablePeople() {
         return m_tpeople;
@@ -97,7 +93,6 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final TableDefinition getTableRoles() {
         return m_troles;
@@ -105,7 +100,6 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final TableDefinition getTableResources() {
         return m_tresources;
@@ -113,7 +107,6 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final SentenceList getPeopleList() {
         return new StaticSentence(s

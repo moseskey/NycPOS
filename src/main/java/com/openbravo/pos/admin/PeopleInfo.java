@@ -26,7 +26,6 @@ import com.openbravo.data.loader.SerializableRead;
 
 /**
  *
- * @author adrianromero
  * Created on 27 de febrero de 2007, 23:27
  *
  */
@@ -48,7 +47,6 @@ public class PeopleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Object getKey() {
         return m_sID;
@@ -56,7 +54,6 @@ public class PeopleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     public void readValues(DataRead dr) throws BasicException {
@@ -66,7 +63,6 @@ public class PeopleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sID
      */
     public void setID(String sID) {
         m_sID = sID;
@@ -74,7 +70,6 @@ public class PeopleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -82,7 +77,6 @@ public class PeopleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -90,7 +84,6 @@ public class PeopleInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sValue
      */
     public void setName(String sValue) {
         m_sName = sValue;

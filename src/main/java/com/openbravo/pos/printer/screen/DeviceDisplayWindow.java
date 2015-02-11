@@ -25,7 +25,6 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author  adrian
  */
 public class DeviceDisplayWindow extends javax.swing.JFrame implements DeviceDisplay {
 
@@ -46,7 +45,6 @@ public class DeviceDisplayWindow extends javax.swing.JFrame implements DeviceDis
 
     /**
      *
-     * @return
      */
     @Override
     public String getDisplayName() {
@@ -55,7 +53,6 @@ public class DeviceDisplayWindow extends javax.swing.JFrame implements DeviceDis
 
     /**
      *
-     * @return
      */
     @Override
     public String getDisplayDescription() {
@@ -64,7 +61,6 @@ public class DeviceDisplayWindow extends javax.swing.JFrame implements DeviceDis
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getDisplayComponent() {
@@ -73,9 +69,6 @@ public class DeviceDisplayWindow extends javax.swing.JFrame implements DeviceDis
 
     /**
      *
-     * @param animation
-     * @param sLine1
-     * @param sLine2
      */
     @Override
     public void writeVisor(int animation, String sLine1, String sLine2) {
@@ -84,8 +77,6 @@ public class DeviceDisplayWindow extends javax.swing.JFrame implements DeviceDis
 
     /**
      *
-     * @param sLine1
-     * @param sLine2
      */
     @Override
     public void writeVisor(String sLine1, String sLine2) {

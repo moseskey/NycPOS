@@ -25,7 +25,6 @@ import java.awt.Component;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterface {
 
@@ -35,7 +34,6 @@ public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterf
     private final String m_sName;
 
     /** Creates new form JPaymentChequeRefund
-     * @param notifier
      * @param sName */
     public JPaymentRefund(JPaymentNotifier notifier, String sName) {
 
@@ -47,9 +45,6 @@ public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterf
 
     /**
      *
-     * @param customerext
-     * @param dTotal
-     * @param transID
      */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
@@ -60,7 +55,6 @@ public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterf
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo executePayment() {
@@ -69,7 +63,6 @@ public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterf
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

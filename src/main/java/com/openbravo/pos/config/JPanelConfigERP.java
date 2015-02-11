@@ -27,7 +27,6 @@ import java.awt.Component;
 
 /**
  *
- * @author adrianromero
  */
 public class JPanelConfigERP extends javax.swing.JPanel implements PanelConfig {
 
@@ -47,7 +46,6 @@ public class JPanelConfigERP extends javax.swing.JPanel implements PanelConfig {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean hasChanged() {
@@ -56,7 +54,6 @@ public class JPanelConfigERP extends javax.swing.JPanel implements PanelConfig {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getConfigComponent() {
@@ -65,7 +62,6 @@ public class JPanelConfigERP extends javax.swing.JPanel implements PanelConfig {
 
     /**
      *
-     * @param config
      */
     @Override
     public void loadProperties(AppConfig config) {
@@ -90,7 +86,6 @@ public class JPanelConfigERP extends javax.swing.JPanel implements PanelConfig {
 
     /**
      *
-     * @param config
      */
     @Override
     public void saveProperties(AppConfig config) {

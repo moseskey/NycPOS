@@ -56,7 +56,6 @@ import java.util.List;
 
 /**
  *
- * @author adrianromero
  */
 public final class ProductsEditor extends JPanel implements EditorRecord {
 
@@ -86,7 +85,6 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 //    private Object m_Lineorder; - shuffle ticketlines into group (starters, mains etc)
 
     /** Creates new form JEditProduct
-     * @param dlSales
      * @param dirty */
     public ProductsEditor(DataLogicSales dlSales, DirtyManager dirty) {
         initComponents();
@@ -371,7 +369,6 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -462,7 +459,6 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {

@@ -27,7 +27,6 @@ import com.openbravo.pos.forms.BeanFactoryDataSingle;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DataLogicThirdParties extends BeanFactoryDataSingle {
 
@@ -39,7 +38,6 @@ public class DataLogicThirdParties extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param s
      */
     public void init(Session s){
 
@@ -55,7 +53,6 @@ public class DataLogicThirdParties extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final TableDefinition getTableThirdParties() {
         return m_tthirdparties;

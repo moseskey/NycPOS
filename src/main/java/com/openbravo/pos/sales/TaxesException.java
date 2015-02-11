@@ -21,13 +21,11 @@ package com.openbravo.pos.sales;
 
 /**
  *
- * @author adrianromero
  */
 public class TaxesException extends Exception {
 
     /**
      * Creates a new instance of <code>TaxesException</code> without detail message.
-     * @param t
      */
     public TaxesException(Throwable t) {
         super(t);
@@ -35,8 +33,6 @@ public class TaxesException extends Exception {
 
     /**
      *
-     * @param msg
-     * @param t
      */
     public TaxesException(String msg, Throwable t) {
         super(msg, t);

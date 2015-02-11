@@ -36,7 +36,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author JG uniCenta
  */
 public class Floor implements SerializableRead {
 
@@ -59,7 +58,6 @@ public class Floor implements SerializableRead {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -74,7 +72,6 @@ public class Floor implements SerializableRead {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -82,7 +79,6 @@ public class Floor implements SerializableRead {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -90,7 +86,6 @@ public class Floor implements SerializableRead {
 
     /**
      *
-     * @return
      */
     public Icon getIcon() {
         return m_icon;
@@ -98,7 +93,6 @@ public class Floor implements SerializableRead {
 
     /**
      *
-     * @return
      */
     public Container getContainer() {
         return m_container;

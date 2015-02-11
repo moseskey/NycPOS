@@ -36,7 +36,6 @@ import java.util.Calendar;
 
 /**
  *
- * @author Ali Safdar & Aneeqa Baber
  */
 public final class LeavesView extends javax.swing.JPanel implements EditorRecord {
 
@@ -48,7 +47,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
     private DataLogicPresenceManagement dlPresenceManagement;
 
     /** Creates new form LeavesView
-     * @param app
      * @param dirty */
     public LeavesView(AppView app, DirtyManager dirty) {
 
@@ -103,7 +101,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -122,7 +119,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -148,7 +144,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -157,7 +152,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

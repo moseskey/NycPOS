@@ -26,12 +26,10 @@ import com.openbravo.pos.ticket.TicketInfo;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JTicketsBagSimple extends JTicketsBag {
 
     /** Creates new form JTicketsBagSimple
-     * @param app
      * @param panelticket */
     public JTicketsBagSimple(AppView app, TicketsEditor panelticket) {
 
@@ -54,7 +52,6 @@ public class JTicketsBagSimple extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     public boolean deactivate() {
         m_panelticket.setActiveTicket(null, null);
@@ -70,7 +67,6 @@ public class JTicketsBagSimple extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     protected JComponent getBagComponent() {
         return this;
@@ -78,7 +74,6 @@ public class JTicketsBagSimple extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     protected JComponent getNullComponent() {
         return new JPanel();

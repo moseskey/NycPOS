@@ -23,7 +23,6 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author JG uniCenta
  */
 public class TableDefinition {
 
@@ -39,12 +38,6 @@ public class TableDefinition {
 
 
     /** Creates a new instance of TableDefinition
-     * @param s
-     * @param fieldformat
-     * @param tablename
-     * @param fieldname
-     * @param fieldtran
-     * @param idinx
      * @param fielddata */
     public TableDefinition(
             Session s,
@@ -65,12 +58,6 @@ public class TableDefinition {
 
     /**
      *
-     * @param s
-     * @param tablename
-     * @param fieldname
-     * @param fielddata
-     * @param fieldformat
-     * @param idinx
      */
     public TableDefinition(
             Session s,
@@ -82,7 +69,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public String getTableName() {
         return tablename;
@@ -90,7 +76,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public String[] getFields() {
         return fieldname;
@@ -98,8 +83,6 @@ public class TableDefinition {
 
     /**
      *
-     * @param aiFields
-     * @return
      */
     public Vectorer getVectorerBasic(int[] aiFields) {
         return new VectorerBasic(fieldtran, fieldformat, aiFields);
@@ -107,8 +90,6 @@ public class TableDefinition {
 
     /**
      *
-     * @param aiFields
-     * @return
      */
     public IRenderString getRenderStringBasic(int[] aiFields) {
         return new RenderStringBasic(fieldformat, aiFields);
@@ -116,8 +97,6 @@ public class TableDefinition {
 
     /**
      *
-     * @param aiOrders
-     * @return
      */
     public ComparatorCreator getComparatorCreator(int [] aiOrders) {
         return new ComparatorCreatorBasic(fieldtran, fielddata, aiOrders);
@@ -125,7 +104,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public IKeyGetter getKeyGetterBasic() {
         if (idinx.length == 1) {
@@ -137,7 +115,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public SerializerRead getSerializerReadBasic() {
         return new SerializerReadBasic(fielddata);
@@ -145,8 +122,6 @@ public class TableDefinition {
 
     /**
      *
-     * @param fieldindx
-     * @return
      */
     public SerializerWrite getSerializerInsertBasic(int[] fieldindx) {
         return new SerializerWriteBasicExt(fielddata, fieldindx);
@@ -154,7 +129,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public SerializerWrite getSerializerDeleteBasic() {
         return new SerializerWriteBasicExt(fielddata, idinx);
@@ -162,8 +136,6 @@ public class TableDefinition {
 
     /**
      *
-     * @param fieldindx
-     * @return
      */
     public SerializerWrite getSerializerUpdateBasic(int[] fieldindx) {
 
@@ -181,7 +153,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public SentenceList getListSentence() {
         return getListSentence(getSerializerReadBasic());
@@ -189,8 +160,6 @@ public class TableDefinition {
 
     /**
      *
-     * @param sr
-     * @return
      */
     public SentenceList getListSentence(SerializerRead sr) {
         return new PreparedSentence(m_s, getListSQL(), null,  sr);
@@ -198,7 +167,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public String getListSQL() {
 
@@ -220,7 +188,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public SentenceExec getDeleteSentence() {
         return getDeleteSentence(getSerializerDeleteBasic());
@@ -228,8 +195,6 @@ public class TableDefinition {
 
     /**
      *
-     * @param sw
-     * @return
      */
     public SentenceExec getDeleteSentence(SerializerWrite sw) {
         return new PreparedSentence(m_s, getDeleteSQL(), sw, null);
@@ -237,7 +202,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public String getDeleteSQL() {
 
@@ -256,7 +220,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public SentenceExec getInsertSentence() {
         return getInsertSentence(getAllFields());
@@ -264,8 +227,6 @@ public class TableDefinition {
 
     /**
      *
-     * @param fieldindx
-     * @return
      */
     public SentenceExec getInsertSentence(int[] fieldindx) {
         return new PreparedSentence(m_s, getInsertSQL(fieldindx), getSerializerInsertBasic(fieldindx), null);
@@ -307,7 +268,6 @@ public class TableDefinition {
 
     /**
      *
-     * @return
      */
     public SentenceExec getUpdateSentence() {
         return getUpdateSentence(getAllFields());
@@ -315,8 +275,6 @@ public class TableDefinition {
 
     /**
      *
-     * @param fieldindx
-     * @return
      */
     public SentenceExec getUpdateSentence(int[] fieldindx) {
         return new PreparedSentence(m_s, getUpdateSQL(fieldindx), getSerializerUpdateBasic(fieldindx), null);

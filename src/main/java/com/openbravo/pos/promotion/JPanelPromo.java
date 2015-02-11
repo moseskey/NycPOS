@@ -15,7 +15,6 @@ import com.openbravo.pos.forms.DataLogicSales;
 import com.openbravo.pos.panels.*;
 
 /**
- * @author Aurelien Escartin
  */
 public class JPanelPromo extends JPanelTable {
 
@@ -52,7 +51,6 @@ public class JPanelPromo extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public ListProvider getListProvider() {
         return new ListProviderCreator(tpromo);
@@ -60,7 +58,6 @@ public class JPanelPromo extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public SaveProvider getSaveProvider() {
         return new SaveProvider(tpromo);
@@ -68,7 +65,6 @@ public class JPanelPromo extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public Vectorer getVectorer() {
@@ -77,7 +73,6 @@ public class JPanelPromo extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListCellRenderer getListCellRenderer() {
@@ -86,7 +81,6 @@ public class JPanelPromo extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public EditorRecord getEditor() {
         return jeditor;
@@ -94,7 +88,6 @@ public class JPanelPromo extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public String getTitle() {
         return AppLocal.getIntString("Menu.Promo");

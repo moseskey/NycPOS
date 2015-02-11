@@ -26,7 +26,6 @@ import java.util.List;
 
 /**
  *
- * @author JG uniCenta
  */
 public class SerializerWriteComposed implements SerializerWrite {
 
@@ -38,7 +37,6 @@ public class SerializerWriteComposed implements SerializerWrite {
 
     /**
      *
-     * @param sw
      */
     public void add(SerializerWrite sw) {
         serwrites.add(sw);
@@ -46,8 +44,6 @@ public class SerializerWriteComposed implements SerializerWrite {
 
     /**
      *
-     * @param dp
-     * @param obj
      * @throws BasicException
      */
     public void writeValues(DataWrite dp, Object obj) throws BasicException {

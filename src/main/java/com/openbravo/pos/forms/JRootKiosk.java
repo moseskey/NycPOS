@@ -32,7 +32,6 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author  adrianromero
  */
 public class JRootKiosk extends javax.swing.JFrame implements AppMessage {
 
@@ -53,7 +52,6 @@ public class JRootKiosk extends javax.swing.JFrame implements AppMessage {
 
     /**
      *
-     * @param props
      */
     public void initFrame(AppProperties props) {
 

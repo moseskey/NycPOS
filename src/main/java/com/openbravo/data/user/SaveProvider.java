@@ -24,7 +24,6 @@ import com.openbravo.data.loader.SentenceExec;
 
 /**
  *
- * @author JG uniCenta
  */
 public class SaveProvider {
 
@@ -44,8 +43,6 @@ public class SaveProvider {
     protected SentenceExec m_sentdelete;
 
     /** Creates a new instance of SavePrSentence
-     * @param sentupdate
-     * @param sentdelete
      * @param sentinsert */
     public SaveProvider(SentenceExec sentupdate, SentenceExec sentinsert, SentenceExec sentdelete) {
         m_sentupdate = sentupdate;
@@ -55,7 +52,6 @@ public class SaveProvider {
 
     /**
      *
-     * @param table
      */
     public SaveProvider(TableDefinition table) {
         m_sentupdate = table.getUpdateSentence();
@@ -65,8 +61,6 @@ public class SaveProvider {
 
     /**
      *
-     * @param table
-     * @param fields
      */
     public SaveProvider(TableDefinition table, int[] fields) {
         m_sentupdate = table.getUpdateSentence(fields);
@@ -76,7 +70,6 @@ public class SaveProvider {
 
     /**
      *
-     * @return
      */
     public boolean canDelete() {
         return m_sentdelete != null;
@@ -84,8 +77,6 @@ public class SaveProvider {
 
     /**
      *
-     * @param value
-     * @return
      * @throws BasicException
      */
     public int deleteData(Object value) throws BasicException {
@@ -94,7 +85,6 @@ public class SaveProvider {
 
     /**
      *
-     * @return
      */
     public boolean canInsert() {
         return m_sentinsert != null;
@@ -102,8 +92,6 @@ public class SaveProvider {
 
     /**
      *
-     * @param value
-     * @return
      * @throws BasicException
      */
     public int insertData(Object value) throws BasicException {
@@ -112,7 +100,6 @@ public class SaveProvider {
 
     /**
      *
-     * @return
      */
     public boolean canUpdate() {
         return m_sentupdate != null;
@@ -120,8 +107,6 @@ public class SaveProvider {
 
     /**
      *
-     * @param value
-     * @return
      * @throws BasicException
      */
     public int updateData(Object value) throws BasicException {

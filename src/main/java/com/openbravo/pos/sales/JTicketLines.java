@@ -52,7 +52,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JTicketLines extends javax.swing.JPanel {
 
@@ -116,7 +115,6 @@ public class JTicketLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param l
      */
     public void addListSelectionListener(ListSelectionListener l) {
         m_jTicketTable.getSelectionModel().addListSelectionListener(l);
@@ -124,7 +122,6 @@ public class JTicketLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param l
      */
     public void removeListSelectionListener(ListSelectionListener l) {
         m_jTicketTable.getSelectionModel().removeListSelectionListener(l);
@@ -139,8 +136,6 @@ public class JTicketLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param index
-     * @param oLine
      */
     public void setTicketLine(int index, TicketLineInfo oLine){
 
@@ -149,7 +144,6 @@ public class JTicketLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param oLine
      */
     public void addTicketLine(TicketLineInfo oLine) {
 
@@ -161,8 +155,6 @@ public class JTicketLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param index
-     * @param oLine
      */
     public void insertTicketLine(int index, TicketLineInfo oLine) {
 
@@ -174,7 +166,6 @@ public class JTicketLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param i
      */
     public void removeTicketLine(int i){
 
@@ -193,7 +184,6 @@ public class JTicketLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param i
      */
     public void setSelectedIndex(int i){
 
@@ -207,7 +197,6 @@ public class JTicketLines extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public int getSelectedIndex() {
         return m_jTicketTable.getSelectionModel().getMinSelectionIndex(); // solo sera uno, luego no importa...
@@ -425,7 +414,6 @@ public class JTicketLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param state
      */
     public void setSendStatus(Boolean state){
         sendStatus = state;

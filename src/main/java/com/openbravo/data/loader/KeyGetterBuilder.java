@@ -21,7 +21,6 @@ package com.openbravo.data.loader;
 
 /**
  *
- * @author adrianromero
  * Created on 27 de febrero de 2007, 22:09
  *
  */
@@ -38,8 +37,6 @@ public class KeyGetterBuilder implements IKeyGetter {
 
     /**
      *
-     * @param value
-     * @return
      */
     public Object getKey(Object value) {
 

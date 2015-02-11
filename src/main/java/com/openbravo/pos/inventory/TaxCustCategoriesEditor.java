@@ -31,7 +31,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author JG uniCenta
  */
 public final class TaxCustCategoriesEditor extends JPanel implements EditorRecord {
 
@@ -69,7 +68,6 @@ public final class TaxCustCategoriesEditor extends JPanel implements EditorRecor
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -82,7 +80,6 @@ public final class TaxCustCategoriesEditor extends JPanel implements EditorRecor
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -95,7 +92,6 @@ public final class TaxCustCategoriesEditor extends JPanel implements EditorRecor
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -111,7 +107,6 @@ public final class TaxCustCategoriesEditor extends JPanel implements EditorRecor
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

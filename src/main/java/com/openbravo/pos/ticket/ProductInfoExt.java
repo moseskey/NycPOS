@@ -28,7 +28,6 @@ import java.util.Properties;
 
 /**
  *
- * @author adrianromero
  *
  */
 public class ProductInfoExt {
@@ -194,7 +193,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final String getID() {
         return m_ID;
@@ -202,7 +200,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param id
      */
     public final void setID(String id) {
         m_ID = id;
@@ -210,7 +207,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final String getReference() {
         return m_sRef;
@@ -218,7 +214,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param sRef
      */
     public final void setReference(String sRef) {
         m_sRef = sRef;
@@ -226,7 +221,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final String getCode() {
         return m_sCode;
@@ -234,7 +228,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param sCode
      */
     public final void setCode(String sCode) {
         m_sCode = sCode;
@@ -242,7 +235,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final String getName() {
         return m_sName;
@@ -250,7 +242,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param sName
      */
     public final void setName(String sName) {
         m_sName = sName;
@@ -260,7 +251,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
         public final String getDisplay() {
         return m_sDisplay;
@@ -268,7 +258,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param sDisplay
      */
     public final void setDisplay(String sDisplay) {
         m_sDisplay = sDisplay;
@@ -277,7 +266,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final boolean isCom() {
         return m_bCom;
@@ -285,7 +273,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param bValue
      */
     public final void setCom(boolean bValue) {
         m_bCom = bValue;
@@ -293,7 +280,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final boolean isScale() {
         return m_bScale;
@@ -301,7 +287,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param bValue
      */
     public final void setScale(boolean bValue) {
         m_bScale = bValue;
@@ -311,7 +296,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
         public final boolean isKitchen() {
         return m_bKitchen;
@@ -319,7 +303,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param bValue
      */
     public final void setKitchen(boolean bValue) {
         m_bKitchen = bValue;
@@ -330,7 +313,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
         public final boolean isService() {
         return m_bService;
@@ -338,7 +320,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param bValue
      */
     public final void setService(boolean bValue) {
         m_bService = bValue;
@@ -348,7 +329,6 @@ public class ProductInfoExt {
 // ADDED JDL 19.12.12 - Variable price product
     /**
      *
-     * @return
      */
         public final boolean isVprice() {
         return m_bVprice;
@@ -357,7 +337,6 @@ public class ProductInfoExt {
     // ADDED JDL 09.02.13 - for Chris
     /**
      *
-     * @return
      */
         public final boolean isVerpatrib() {
         return m_bVerpatrib;
@@ -365,7 +344,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final String getTextTip() {
         return m_sTextTip;
@@ -373,7 +351,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final boolean getWarranty() {
         return m_bWarranty;
@@ -381,7 +358,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param bValue
      */
     public final void setWarranty(boolean bValue) {
         m_bWarranty = bValue;
@@ -389,7 +365,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final String getCategoryID() {
         return categoryid;
@@ -397,7 +372,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param sCategoryID
      */
     public final void setCategoryID(String sCategoryID) {
         categoryid = sCategoryID;
@@ -405,7 +379,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final String getTaxCategoryID() {
         return taxcategoryid;
@@ -413,7 +386,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param value
      */
     public final void setTaxCategoryID(String value) {
         taxcategoryid = value;
@@ -421,7 +393,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final String getAttributeSetID() {
         return attributesetid;
@@ -429,7 +400,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param value
      */
     public final void setAttributeSetID(String value) {
         attributesetid = value;
@@ -437,7 +407,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final double getPriceBuy() {
         return m_dPriceBuy;
@@ -445,7 +414,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param dPrice
      */
     public final void setPriceBuy(double dPrice) {
         m_dPriceBuy = dPrice;
@@ -453,7 +421,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final double getPriceSell() {
         return m_dPriceSell;
@@ -461,7 +428,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param dPrice
      */
     public final void setPriceSell(double dPrice) {
         m_dPriceSell = dPrice;
@@ -470,7 +436,6 @@ public class ProductInfoExt {
     /**
      * JG 7 June 2014
      *
-     * @return
      */
     public final Double getStockUnits() {
         return m_dStockUnits;
@@ -482,7 +447,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final double getStockVolume() {
         return m_stockVolume;
@@ -490,7 +454,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param dStockVolume
      */
     public final void setStockVolume(double dStockVolume) {
         m_stockVolume = dStockVolume;
@@ -498,7 +461,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public final double getStockCost() {
         return m_stockCost;
@@ -506,7 +468,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param dPrice
      */
     public final void setStockCost(double dPrice) {
         m_stockCost = dPrice;
@@ -514,7 +475,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param value
      */
     public final void setTextTip(String value) {
         m_sTextTip = value;
@@ -522,8 +482,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param tax
-     * @return
      */
     public final double getPriceSellTax(TaxInfo tax) {
         return m_dPriceSell * (1.0 + tax.getRate());
@@ -531,7 +489,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public String printPriceSell() {
         return Formats.CURRENCY.formatValue(new Double(getPriceSell()));
@@ -539,8 +496,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param tax
-     * @return
      */
     public String printPriceSellTax(TaxInfo tax) {
         return Formats.CURRENCY.formatValue(new Double(getPriceSellTax(tax)));
@@ -548,7 +503,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public BufferedImage getImage() {
         return m_Image;
@@ -556,7 +510,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param img
      */
     public void setImage(BufferedImage img) {
         m_Image = img;
@@ -564,8 +517,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param key
-     * @return
      */
     public String getProperty(String key) {
         return attributes.getProperty(key);
@@ -573,9 +524,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param key
-     * @param defaultvalue
-     * @return
      */
     public String getProperty(String key, String defaultvalue) {
         return attributes.getProperty(key, defaultvalue);
@@ -583,8 +531,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @param key
-     * @param value
      */
     public void setProperty(String key, String value) {
         attributes.setProperty(key, value);
@@ -592,7 +538,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public Properties getProperties() {
         return attributes;
@@ -600,7 +545,6 @@ public class ProductInfoExt {
 
     /**
      *
-     * @return
      */
     public static SerializerRead getSerializerRead() {
         return new SerializerRead() {

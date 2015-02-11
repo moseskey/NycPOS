@@ -31,7 +31,6 @@ import java.util.UUID;
 
 /**
  *
- * @author Ali Safdar & Aneeqa Baber
  */
 public final class BreaksView extends javax.swing.JPanel implements EditorRecord {
 
@@ -40,7 +39,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
     private DirtyManager m_Dirty;
 
     /** Creates new form BreaksView
-     * @param app
      * @param dirty */
     public BreaksView(AppView app, DirtyManager dirty) {
 
@@ -89,7 +87,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -105,7 +102,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -128,7 +124,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -137,7 +132,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

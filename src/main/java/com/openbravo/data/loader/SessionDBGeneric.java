@@ -21,7 +21,6 @@ package com.openbravo.data.loader;
 
 /**
  *
- * @author adrianromero
  */
 public class SessionDBGeneric implements SessionDB {
 
@@ -29,7 +28,6 @@ public class SessionDBGeneric implements SessionDB {
 
     /**
      *
-     * @param name
      */
     public SessionDBGeneric(String name) {
         this.name = name;
@@ -37,7 +35,6 @@ public class SessionDBGeneric implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String TRUE() {
         return "TRUE";
@@ -45,7 +42,6 @@ public class SessionDBGeneric implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String FALSE() {
         return "FALSE";
@@ -53,7 +49,6 @@ public class SessionDBGeneric implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String INTEGER_NULL() {
         return "CAST(NULL AS INTEGER)";
@@ -61,7 +56,6 @@ public class SessionDBGeneric implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String CHAR_NULL() {
         return "CAST(NULL AS CHAR)";
@@ -69,7 +63,6 @@ public class SessionDBGeneric implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return name;
@@ -77,9 +70,6 @@ public class SessionDBGeneric implements SessionDB {
 
     /**
      *
-     * @param s
-     * @param sequence
-     * @return
      */
     public SentenceFind getSequenceSentence(Session s, String sequence) {
         return new StaticSentence(s, "SELECT NEXTVAL('" + sequence + "')", null, SerializerReadInteger.INSTANCE);
@@ -87,9 +77,6 @@ public class SessionDBGeneric implements SessionDB {
 
     /**
      *
-     * @param s
-     * @param sequence
-     * @return
      */
     public SentenceFind resetSequenceSentence(Session s, String sequence){
         return new StaticSentence(s, "ALTER SEQUENCE " + sequence + " RESTART WITH 0", null, SerializerReadInteger.INSTANCE);

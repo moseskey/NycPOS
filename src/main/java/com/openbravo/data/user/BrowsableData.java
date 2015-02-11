@@ -29,7 +29,6 @@ import javax.swing.event.ListDataListener;
 
 /**
  *
- * @author JG uniCenta
  */
 public class BrowsableData implements ListModel {
 
@@ -47,8 +46,6 @@ public class BrowsableData implements ListModel {
     private Comparator m_comparer;
 
     /** Creates a new instance of BrowsableData
-     * @param dataprov
-     * @param saveprov
      * @param c */
     public BrowsableData(ListProvider dataprov, SaveProvider saveprov, Comparator c) {
         m_dataprov = dataprov;
@@ -61,8 +58,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param dataprov
-     * @param saveprov
      */
     public BrowsableData(ListProvider dataprov, SaveProvider saveprov) {
         this(dataprov, saveprov, null);
@@ -70,7 +65,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param dataprov
      */
     public BrowsableData(ListProvider dataprov) {
         this(dataprov, null, null);
@@ -94,7 +88,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @return
      */
     public final boolean isAdjusting() {
         return m_bIsAdjusting;
@@ -102,8 +95,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param index0
-     * @param index1
      */
     protected void fireDataIntervalAdded(int index0, int index1) {
         m_bIsAdjusting = true;
@@ -120,8 +111,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param index0
-     * @param index1
      */
     protected void fireDataContentsChanged(int index0, int index1) {
         m_bIsAdjusting = true;
@@ -138,8 +127,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param index0
-     * @param index1
      */
     protected void fireDataIntervalRemoved(int index0, int index1) {
         m_bIsAdjusting = true;
@@ -186,7 +173,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param l
      */
     public void loadList(List l) {
         putNewData(l);
@@ -194,7 +180,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param c
      * @throws BasicException
      */
     public void sort(Comparator c) throws BasicException {
@@ -205,7 +190,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @return
      */
     public final boolean canLoadData() {
         return m_dataprov != null;
@@ -213,7 +197,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @return
      */
     public boolean canInsertData() {
         return m_saveprov != null && m_saveprov.canInsert();
@@ -221,7 +204,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @return
      */
     public boolean canDeleteData() {
         return m_saveprov != null && m_saveprov.canDelete();
@@ -229,7 +211,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @return
      */
     public boolean canUpdateData() {
         return m_saveprov != null && m_saveprov.canUpdate();
@@ -237,9 +218,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param index
-     * @param f
-     * @return
      * @throws BasicException
      */
     public final int findNext(int index, Finder f) throws BasicException {
@@ -267,8 +245,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param index
-     * @return
      * @throws BasicException
      */
     public final int removeRecord(int index) throws BasicException {
@@ -297,9 +273,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param index
-     * @param value
-     * @return
      * @throws BasicException
      */
     public final int updateRecord(int index, Object value) throws BasicException {
@@ -345,8 +318,6 @@ public class BrowsableData implements ListModel {
 
     /**
      *
-     * @param value
-     * @return
      * @throws BasicException
      */
     public final int insertRecord(Object value) throws BasicException {

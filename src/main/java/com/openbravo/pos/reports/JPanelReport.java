@@ -45,7 +45,6 @@ import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class JPanelReport extends JPanel implements JPanelView, BeanFactoryApp   {
 
@@ -78,7 +77,6 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -121,7 +119,6 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @return
      */
     @Override
     public Object getBean() {
@@ -130,31 +127,26 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @return
      */
     protected abstract String getReport();
 
     /**
      *
-     * @return
      */
     protected abstract String getResourceBundle();
 
     /**
      *
-     * @return
      */
     protected abstract BaseSentence getSentence();
 
     /**
      *
-     * @return
      */
     protected abstract ReportFields getReportFields();
 
     /**
      *
-     * @return
      */
     protected EditorCreator getEditorCreator() {
         return null;
@@ -162,7 +154,6 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -182,7 +173,6 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {
@@ -193,7 +183,6 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @param value
      */
     protected void setVisibleButtonFilter(boolean value) {
         jToggleFilter.setVisible(value);
@@ -201,7 +190,6 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @param value
      */
     protected void setVisibleFilter(boolean value) {
         jToggleFilter.setSelected(value);

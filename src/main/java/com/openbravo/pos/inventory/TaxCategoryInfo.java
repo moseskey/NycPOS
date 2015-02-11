@@ -24,7 +24,6 @@ import java.io.Serializable;
 
 /**
  *
- * @author  adrianromero
  * @version
  */
 public class TaxCategoryInfo implements Serializable, IKeyed {
@@ -35,8 +34,6 @@ public class TaxCategoryInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param sID
-     * @param sName
      */
     public TaxCategoryInfo(String sID, String sName) {
         m_sID = sID;
@@ -45,7 +42,6 @@ public class TaxCategoryInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {
@@ -54,7 +50,6 @@ public class TaxCategoryInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param sID
      */
     public void setID(String sID) {
         m_sID = sID;
@@ -62,7 +57,6 @@ public class TaxCategoryInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -70,7 +64,6 @@ public class TaxCategoryInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -78,7 +71,6 @@ public class TaxCategoryInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param sName
      */
     public void setName(String sName) {
         m_sName = sName;

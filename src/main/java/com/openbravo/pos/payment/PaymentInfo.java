@@ -24,61 +24,51 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class PaymentInfo {
 
     /**
      *
-     * @return
      */
     public abstract String getName();
 
     /**
      *
-     * @return
      */
     public abstract double getTotal();
 
     /**
      *
-     * @return
      */
     public abstract PaymentInfo copyPayment();
 
     /**
      *
-     * @return
      */
     public abstract String getTransactionID();
 
     /**
      *
-     * @return
      */
     public abstract double getPaid();
 
     /**
      *
-     * @return
      */
     public abstract double getChange();
 
     /**
      *
-     * @return
      */
     public abstract double getTendered();
 
     /**
      *
-     * @return
      */
     public abstract String getCardName();
 
     /**
      *
-     * @return
      */
     public String printTotal() {
         return Formats.CURRENCY.formatValue(getTotal());

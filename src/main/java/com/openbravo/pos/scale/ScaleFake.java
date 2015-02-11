@@ -21,7 +21,6 @@ package com.openbravo.pos.scale;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ScaleFake implements Scale {
 
@@ -31,7 +30,6 @@ public class ScaleFake implements Scale {
 
     /**
      *
-     * @return
      * @throws ScaleException
      */
     @Override

@@ -25,7 +25,6 @@ import javax.swing.border.Border;
 
 /**
  *
- * @author JG uniCenta
  */
 public class RoundedBorder extends AbstractBorder {
 
@@ -65,7 +64,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @return
      */
     public static Border createBlackLineBorder() {
         if (blackLine == null) {
@@ -76,7 +74,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @return
      */
     public static Border createGrayLineBorder() {
         if (grayLine == null) {
@@ -87,7 +84,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @return
      */
     public static Border createGradientBorder() {
         if (gradientBorder == null) {
@@ -98,7 +94,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @param colorBorder
      */
     public RoundedBorder(Color colorBorder) {
         this(colorBorder, Color.WHITE, 1f, 0, true, true);
@@ -106,8 +101,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @param colorBorder
-     * @param thickness
      */
     public RoundedBorder(Color colorBorder, float thickness) {
         this(colorBorder, Color.WHITE, thickness, 0, true, true);
@@ -115,9 +108,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @param colorBorder
-     * @param thickness
-     * @param roundedRadius
      */
     public RoundedBorder(Color colorBorder, float thickness, int roundedRadius) {
         this(colorBorder, Color.WHITE, thickness, roundedRadius, true, true);
@@ -125,11 +115,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @param colorBorder
-     * @param thickness
-     * @param roundedRadius
-     * @param btopborder
-     * @param bbottomborder
      */
     public RoundedBorder(Color colorBorder, float thickness, int roundedRadius, boolean btopborder, boolean bbottomborder) {
         this(colorBorder, Color.WHITE, thickness, roundedRadius, btopborder, bbottomborder);
@@ -137,12 +122,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @param colorBorder
-     * @param colorgradient
-     * @param thickness
-     * @param roundedRadius
-     * @param btopborder
-     * @param bbottomborder
      */
     public RoundedBorder(Color colorBorder, Color colorgradient, float thickness, int roundedRadius, boolean btopborder, boolean bbottomborder) {
 
@@ -239,7 +218,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @return
      */
     public Color getLineColor() {
         return colorBorder;
@@ -247,7 +225,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @return
      */
     public float getThickness() {
         return thickness;
@@ -255,7 +232,6 @@ public class RoundedBorder extends AbstractBorder {
 
     /**
      *
-     * @return
      */
     public boolean isFilled() {
         return filled;

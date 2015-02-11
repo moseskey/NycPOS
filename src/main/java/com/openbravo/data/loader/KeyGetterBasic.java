@@ -22,7 +22,6 @@ package com.openbravo.data.loader;
 
 /**
  *
- * @author  adrian
  */
 public class KeyGetterBasic implements IKeyGetter {
 
@@ -36,8 +35,6 @@ public class KeyGetterBasic implements IKeyGetter {
 
     /**
      *
-     * @param value
-     * @return
      */
     public Object getKey(Object value) {
         if (value == null) {

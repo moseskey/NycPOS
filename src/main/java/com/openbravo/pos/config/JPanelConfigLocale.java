@@ -31,7 +31,6 @@ import java.util.List;
 
 /**
  *
- * @author  adrianromero
  */
 public class JPanelConfigLocale extends javax.swing.JPanel implements PanelConfig {
 
@@ -97,7 +96,6 @@ public class JPanelConfigLocale extends javax.swing.JPanel implements PanelConfi
 
     /**
      *
-     * @return
      */
     public boolean hasChanged() {
         return dirty.isDirty();
@@ -105,7 +103,6 @@ public class JPanelConfigLocale extends javax.swing.JPanel implements PanelConfi
 
     /**
      *
-     * @return
      */
     public Component getConfigComponent() {
         return this;
@@ -113,7 +110,6 @@ public class JPanelConfigLocale extends javax.swing.JPanel implements PanelConfi
 
     /**
      *
-     * @param config
      */
     public void loadProperties(AppConfig config) {
 
@@ -147,7 +143,6 @@ public class JPanelConfigLocale extends javax.swing.JPanel implements PanelConfi
 
     /**
      *
-     * @param config
      */
     public void saveProperties(AppConfig config) {
 

@@ -33,7 +33,6 @@ import java.util.List;
 
 /**
  *
- * @author  adrian
  */
 public class SimpleReceipt extends javax.swing.JPanel {
 
@@ -57,9 +56,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
     private Object ticketext;
 
     /** Creates new form SimpleReceipt
-     * @param ticketline
-     * @param dlSales
-     * @param taxeslogic
      * @param dlCustomers */
     public SimpleReceipt(String ticketline, DataLogicSales dlSales, DataLogicCustomers dlCustomers, TaxesLogic taxeslogic) {
 
@@ -76,7 +72,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
     /**
      *
-     * @param value
      */
     public void setCustomerEnabled(boolean value) {
         btnCustomer.setEnabled(value);
@@ -84,8 +79,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
     /**
      *
-     * @param ticket
-     * @param ticketext
      */
     public void setTicket(TicketInfo ticket, Object ticketext) {
 
@@ -130,7 +123,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public TicketInfo getTicket()  {
         return ticket;
@@ -147,7 +139,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public TicketLineInfo[] getSelectedLines() {
 
@@ -179,7 +170,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public TicketLineInfo[] getSelectedLinesUnit() {
 
@@ -226,7 +216,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
     /**
      *
-     * @param lines
      */
     public void addSelectedLines(TicketLineInfo[] lines) {
 

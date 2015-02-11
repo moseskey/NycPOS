@@ -6,7 +6,6 @@ package com.openbravo.pos.imports;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPanelCSV extends javax.swing.JPanel {
 

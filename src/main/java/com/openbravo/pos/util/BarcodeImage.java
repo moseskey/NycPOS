@@ -27,15 +27,12 @@ import org.krysalis.barcode4j.output.java2d.Java2DCanvasProvider;
 
 /**
  *
- * @author adrian
  */
 public class BarcodeImage {
 
 
     /**
      *
-     * @param value
-     * @return
      */
 
     public static Image getBarcodeCodabar(String value) {
@@ -46,8 +43,6 @@ public class BarcodeImage {
 
     /**
      *
-     * @param value
-     * @return
      */
     public static Image getBarcodeCode39(String value) {
         AbstractBarcodeBean barcode = new Code39Bean();
@@ -57,8 +52,6 @@ public class BarcodeImage {
 
     /**
      *
-     * @param value
-     * @return
      */
     public static Image getBarcodeInterleaved2Of5(String value) {
         AbstractBarcodeBean barcode = new Interleaved2Of5Bean();
@@ -68,8 +61,6 @@ public class BarcodeImage {
 
     /**
      *
-     * @param value
-     * @return
      */
     public static Image getBarcodePOSTNET(String value) {
         AbstractBarcodeBean barcode = new POSTNETBean();
@@ -79,8 +70,6 @@ public class BarcodeImage {
 
     /**
      *
-     * @param value
-     * @return
      */
     public static Image getBarcodeUPCA(String value) {
         AbstractBarcodeBean barcode = new UPCABean();
@@ -90,8 +79,6 @@ public class BarcodeImage {
 
     /**
      *
-     * @param value
-     * @return
      */
     public static Image getBarcodeUPCE(String value) {
         AbstractBarcodeBean barcode = new UPCEBean();
@@ -101,8 +88,6 @@ public class BarcodeImage {
 
     /**
      *
-     * @param value
-     * @return
      */
     public static Image getBarcodeEAN13(String value) {
         AbstractBarcodeBean barcode = new EAN13Bean();
@@ -112,8 +97,6 @@ public class BarcodeImage {
 
     /**
      *
-     * @param value
-     * @return
      */
     public static Image getBarcodeEAN8(String value) {
         AbstractBarcodeBean barcode = new EAN8Bean();
@@ -123,8 +106,6 @@ public class BarcodeImage {
 
     /**
      *
-     * @param value
-     * @return
      */
     public static Image getBarcode128(String value) {
         AbstractBarcodeBean barcode = new Code128Bean();

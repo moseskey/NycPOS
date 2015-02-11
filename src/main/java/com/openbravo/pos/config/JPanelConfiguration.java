@@ -29,7 +29,6 @@ import java.util.List;
 import javax.swing.*;
 /**
  *
- * @author adrianromero
  */
 public class JPanelConfiguration extends JPanel implements JPanelView {
 
@@ -52,7 +51,6 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
     /**
      *
-     * @param props
      */
     public JPanelConfiguration(AppProperties props) {
 
@@ -141,7 +139,6 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -150,7 +147,6 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -168,7 +164,6 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {

@@ -24,7 +24,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public class NormalBuilder implements ISQLBuilderStatic {
 
@@ -38,9 +37,6 @@ public class NormalBuilder implements ISQLBuilderStatic {
 
     /**
      *
-     * @param sw
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override

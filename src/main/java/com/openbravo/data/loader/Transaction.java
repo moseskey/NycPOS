@@ -24,9 +24,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author adrianromero
  * Created on 26 de febrero de 2007, 21:50
- * @param <T>
  *
  */
 public abstract class Transaction<T> {
@@ -41,7 +39,6 @@ public abstract class Transaction<T> {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final T execute() throws BasicException {
@@ -67,7 +64,6 @@ public abstract class Transaction<T> {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     protected abstract T transact() throws BasicException;

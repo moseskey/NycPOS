@@ -21,7 +21,6 @@ package com.openbravo.pos.reports;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ReportException extends Exception {
 
@@ -33,7 +32,6 @@ public class ReportException extends Exception {
 
     /**
      *
-     * @param msg
      */
     public ReportException(String msg) {
         super(msg);
@@ -41,7 +39,6 @@ public class ReportException extends Exception {
 
     /**
      *
-     * @param e
      */
     public ReportException(Exception e) {
         super(e);

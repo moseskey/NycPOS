@@ -25,7 +25,6 @@ import java.util.Iterator;
 
 /**
  *
- * @author adrianromero
  */
 public class EnumerationIter implements Enumeration {
 
@@ -33,7 +32,6 @@ public class EnumerationIter implements Enumeration {
 
     /**
      *
-     * @param i
      */
     public EnumerationIter(Iterator i) {
         this.i = i;

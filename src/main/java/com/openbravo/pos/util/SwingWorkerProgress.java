@@ -6,7 +6,6 @@ package com.openbravo.pos.util;
 
 /**
  *
- * @author JG uniCenta
  */
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -28,13 +27,11 @@ import javax.swing.border.EmptyBorder;
 
 /**
  *
- * @author JG uniCenta
  */
 public class SwingWorkerProgress {
 
     /**
      *
-     * @param args
      */
     public static void main(String[] args) {
         SwingWorkerProgress swingWorkerProgress = new SwingWorkerProgress();

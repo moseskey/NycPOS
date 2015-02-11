@@ -42,7 +42,6 @@ import java.io.IOException;
 
 /**
  *
- * @author adrianromero
  */
 public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelConfig {
 
@@ -73,7 +72,6 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
 
     /**
      *
-     * @return
      */
     @Override
     public boolean hasChanged() {
@@ -82,7 +80,6 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
 
     /**
      *
-     * @return
      */
     @Override
     public Component getConfigComponent() {
@@ -91,7 +88,6 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
 
     /**
      *
-     * @param config
      */
     @Override
     public void loadProperties(AppConfig config) {
@@ -116,7 +112,6 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
 
     /**
      *
-     * @param config
      */
     @Override
     public void saveProperties(AppConfig config) {

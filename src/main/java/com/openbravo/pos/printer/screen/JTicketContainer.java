@@ -37,7 +37,6 @@ import java.awt.Rectangle;
 
 /**
  *
- * @author  Adrian
  */
 class JTicketContainer extends javax.swing.JPanel {
 

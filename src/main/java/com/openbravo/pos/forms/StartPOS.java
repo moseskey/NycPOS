@@ -40,7 +40,6 @@ import com.openbravo.pos.ticket.TicketInfo;
 
 /**
  *
- * @author adrianromero
  */
 public class StartPOS {
 
@@ -53,7 +52,6 @@ public class StartPOS {
 
     /**
      *
-     * @return
      */
     public static boolean registerApp() {
 
@@ -71,7 +69,6 @@ public class StartPOS {
 
     /**
      *
-     * @param args
      */
     public static void main (final String args[]) {
 

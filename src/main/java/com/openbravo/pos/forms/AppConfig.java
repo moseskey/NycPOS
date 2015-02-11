@@ -28,8 +28,6 @@ import java.util.logging.Logger;
 /**
  * Creation and Editing of stored settings
  * unicentaopos.properties
- * @author JG uniCenta
- * @author adrianromero
  */
 public class AppConfig implements AppProperties {
 
@@ -41,7 +39,6 @@ public class AppConfig implements AppProperties {
 
     /**
      *
-     * @param args
      */
     public AppConfig(String[] args) {
         if (args.length == 0) {
@@ -53,7 +50,6 @@ public class AppConfig implements AppProperties {
 
     /**
      *
-     * @param configfile
      */
     public AppConfig(File configfile) {
         init(configfile);
@@ -72,7 +68,6 @@ public class AppConfig implements AppProperties {
 
     /**
      *
-     * @param sKey
      * @return keypair from .properties filename
      */
     @Override
@@ -100,8 +95,6 @@ public class AppConfig implements AppProperties {
 
     /**
      * Update .properties resource keypair values
-     * @param sKey
-     * @param sValue
      */
     public void setProperty(String sKey, String sValue) {
         if (sValue == null) {

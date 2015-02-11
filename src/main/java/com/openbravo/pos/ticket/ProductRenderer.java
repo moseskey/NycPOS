@@ -27,7 +27,6 @@ import com.openbravo.pos.forms.AppLocal;
 
 /**
  *
- * @author adrianromero
  *
  */
 public class ProductRenderer extends DefaultListCellRenderer {

@@ -29,7 +29,6 @@ import java.util.UUID;
 
 /**
  *
- * @author adrian
  */
 public class AttributeValuesEditor extends javax.swing.JPanel implements EditorRecord {
 
@@ -49,7 +48,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
 
     /**
      *
-     * @param insertid
      */
     public void setInsertId(String insertid) {
 
@@ -91,7 +89,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -107,7 +104,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -123,7 +119,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -132,7 +127,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

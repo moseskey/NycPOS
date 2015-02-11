@@ -27,7 +27,6 @@ import com.openbravo.data.user.StateListener;
 
 /**
  *
- * @author  adrianromero
  */
 public class JCounter extends JPanel implements BrowseListener, StateListener  {
 
@@ -41,7 +40,6 @@ public class JCounter extends JPanel implements BrowseListener, StateListener  {
 
     /**
      *
-     * @param iState
      */
     public void updateState(int iState) {
         if (iState == BrowsableEditableData.ST_INSERT) {
@@ -52,8 +50,6 @@ public class JCounter extends JPanel implements BrowseListener, StateListener  {
 
     /**
      *
-     * @param iIndex
-     * @param iCounter
      */
     public void updateIndex(int iIndex, int iCounter) {
 

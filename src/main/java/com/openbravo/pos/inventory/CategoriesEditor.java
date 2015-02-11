@@ -40,7 +40,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author adrianromero
  */
 public final class CategoriesEditor extends JPanel implements EditorRecord {
 
@@ -53,7 +52,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
     private Object m_id;
 
     /** Creates new form JPanelCategories
-     * @param app
      * @param dirty */
     public CategoriesEditor(AppView app, DirtyManager dirty) {
 
@@ -145,7 +143,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -168,7 +165,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -191,7 +187,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -211,7 +206,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

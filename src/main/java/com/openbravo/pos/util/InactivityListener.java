@@ -14,7 +14,6 @@ import javax.swing.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class InactivityListener implements ActionListener, AWTEventListener
 {
@@ -45,8 +44,6 @@ public class InactivityListener implements ActionListener, AWTEventListener
 
     /**
      *
-     * @param action
-     * @param seconds
      */
     	public InactivityListener(Action action, int seconds)
 	{

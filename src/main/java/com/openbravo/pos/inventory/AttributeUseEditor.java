@@ -35,7 +35,6 @@ import java.util.UUID;
 
 /**
  *
- * @author adrianromero
  */
 public class AttributeUseEditor extends javax.swing.JPanel implements EditorRecord {
 
@@ -48,7 +47,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
     private Object insertid;
 
     /** Creates new form AttributeSetEditor
-     * @param app
      * @param dirty */
     public AttributeUseEditor(AppView app, DirtyManager dirty) {
 
@@ -70,7 +68,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
 
     /**
      *
-     * @param insertid
      */
     public void setInsertId(String insertid) {
 
@@ -126,7 +123,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -144,7 +140,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -162,7 +157,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -171,7 +165,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

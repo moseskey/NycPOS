@@ -1,22 +1,3 @@
-//    uniCenta oPOS  - Touch Friendly Point Of Sale
-//    Copyright (c) 2009-2014 uniCenta & previous Openbravo POS works
-//    http://www.unicenta.com
-//
-//    This file is part of uniCenta oPOS
-//
-//    uniCenta oPOS is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation, either version 3 of the License, or
-//    (at your option) any later version.
-//
-//   uniCenta oPOS is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//
-//    You should have received a copy of the GNU General Public License
-//    along with uniCenta oPOS.  If not, see <http://www.gnu.org/licenses/>.
-
 package com.openbravo.beans;
 
 import java.awt.Color;
@@ -32,7 +13,6 @@ import java.util.GregorianCalendar;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JClockPanel extends javax.swing.JPanel {
 
@@ -49,7 +29,6 @@ public class JClockPanel extends javax.swing.JPanel {
 
     /**
      *
-     * @param bSeconds
      */
     public JClockPanel(boolean bSeconds) {
 
@@ -62,7 +41,6 @@ public class JClockPanel extends javax.swing.JPanel {
 
     /**
      *
-     * @param bValue
      */
     public void setSecondsVisible(boolean bValue) {
         m_bSeconds = bValue;
@@ -71,7 +49,6 @@ public class JClockPanel extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public boolean isSecondsVisible() {
         return m_bSeconds;
@@ -79,7 +56,6 @@ public class JClockPanel extends javax.swing.JPanel {
 
     /**
      *
-     * @param period
      */
     public void setPeriod(long period) {
         if (period >= 0L) {
@@ -90,7 +66,6 @@ public class JClockPanel extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public long getPeriod() {
         return m_lPeriod;
@@ -98,7 +73,6 @@ public class JClockPanel extends javax.swing.JPanel {
 
     /**
      *
-     * @param dDate
      */
     public void setTime(Date dDate){
         m_date = dDate;
@@ -107,7 +81,6 @@ public class JClockPanel extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public Date getTime() {
         return m_date;

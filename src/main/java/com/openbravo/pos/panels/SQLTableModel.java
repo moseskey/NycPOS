@@ -30,7 +30,6 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author adrianromero
  */
 public class SQLTableModel extends AbstractTableModel {
 
@@ -99,7 +98,6 @@ public class SQLTableModel extends AbstractTableModel {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     public void addRow(DataRead dr) throws BasicException {
@@ -113,8 +111,6 @@ public class SQLTableModel extends AbstractTableModel {
 
     /**
      *
-     * @param row
-     * @return
      */
     public String getColumnString(int row) {
         Object [] rowvalues = (Object[]) m_aRows.get(row);

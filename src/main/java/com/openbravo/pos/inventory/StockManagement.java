@@ -53,7 +53,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author adrianromero
  */
 public class StockManagement extends JPanel implements JPanelView {
 
@@ -124,7 +123,6 @@ public class StockManagement extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -133,7 +131,6 @@ public class StockManagement extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -179,7 +176,6 @@ public class StockManagement extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {

@@ -26,7 +26,6 @@ import java.beans.*;
 
 /**
  *
- * @author  adrian
  */
 public class DirtyManager implements DocumentListener, ChangeListener, ActionListener, PropertyChangeListener {
 
@@ -44,7 +43,6 @@ public class DirtyManager implements DocumentListener, ChangeListener, ActionLis
 
     /**
      *
-     * @param l
      */
     public void addDirtyListener(DirtyListener l) {
         listeners.add(l);
@@ -52,7 +50,6 @@ public class DirtyManager implements DocumentListener, ChangeListener, ActionLis
 
     /**
      *
-     * @param l
      */
     public void removeDirtyListener(DirtyListener l) {
         listeners.remove(l);
@@ -72,7 +69,6 @@ public class DirtyManager implements DocumentListener, ChangeListener, ActionLis
 
     /**
      *
-     * @param bValue
      */
     public void setDirty(boolean bValue) {
 
@@ -84,7 +80,6 @@ public class DirtyManager implements DocumentListener, ChangeListener, ActionLis
 
     /**
      *
-     * @return
      */
     public boolean isDirty() {
         return m_bDirty;

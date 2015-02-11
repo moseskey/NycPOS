@@ -24,7 +24,6 @@ import java.io.Serializable;
 
 /**
  *
- * @author Ali Safdar & Aneeqa Baber
  */
 public class EmployeeInfo implements Serializable {
 
@@ -49,7 +48,6 @@ public class EmployeeInfo implements Serializable {
 
     /**
      *
-     * @return
      */
     public String getId() {
         return id;
@@ -57,7 +55,6 @@ public class EmployeeInfo implements Serializable {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return name;
@@ -65,7 +62,6 @@ public class EmployeeInfo implements Serializable {
 
     /**
      *
-     * @param name
      */
     public void setName(String name) {
         this.name = name;
@@ -73,7 +69,6 @@ public class EmployeeInfo implements Serializable {
 
     /**
      *
-     * @return
      */
     public String printName() {
         return StringUtils.encodeXML(name);

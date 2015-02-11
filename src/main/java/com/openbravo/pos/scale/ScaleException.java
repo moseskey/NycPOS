@@ -21,7 +21,6 @@ package com.openbravo.pos.scale;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ScaleException extends java.lang.Exception {
 

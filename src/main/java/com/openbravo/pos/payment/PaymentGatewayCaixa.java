@@ -38,7 +38,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
- * @author Mikel Irurita
  */
 public class PaymentGatewayCaixa implements PaymentGateway {
 
@@ -57,7 +56,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 
     /**
      *
-     * @param props
      */
     public PaymentGatewayCaixa (AppProperties props) {
         AltEncrypter cypher = new AltEncrypter("cypherkey");
@@ -96,7 +94,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 
     /**
      *
-     * @param payinfo
      */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {
@@ -276,8 +273,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 
     /**
      *
-     * @param input
-     * @return
      */
     public String getSHA1(String input){
         byte[] output = null;
@@ -304,7 +299,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 
         /**
          *
-         * @param in
          */
         public LaCaixaParser(String in) {
         is = new ByteArrayInputStream(in.getBytes());
@@ -312,7 +306,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 
         /**
          *
-         * @return
          */
         public Map splitXML(){
         try {
@@ -418,7 +411,6 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 
         /**
          *
-         * @return
          */
         public String getResult(){
         return this.result;

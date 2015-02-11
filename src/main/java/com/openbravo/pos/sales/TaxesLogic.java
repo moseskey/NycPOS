@@ -34,7 +34,6 @@ import java.util.Map;
 
 /**
  *
- * @author adrianromero
  */
 public class TaxesLogic {
 
@@ -44,7 +43,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param taxlist
      */
     public TaxesLogic(List<TaxInfo> taxlist) {
         this.taxlist = taxlist;
@@ -106,7 +104,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param ticket
      * @throws TaxesException
      */
     public void calculateTaxes(TicketInfo ticket) throws TaxesException {
@@ -123,8 +120,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param line
-     * @return
      * @throws TaxesException
      */
     public List<TicketTaxInfo> calculateTaxes(TicketLineInfo line) throws TaxesException {
@@ -203,8 +198,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param tcid
-     * @return
      */
     public double getTaxRate(String tcid) {
         return getTaxRate(tcid, null);
@@ -212,8 +205,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param tc
-     * @return
      */
     public double getTaxRate(TaxCategoryInfo tc) {
         return getTaxRate(tc, null);
@@ -221,9 +212,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param tc
-     * @param customer
-     * @return
      */
     public double getTaxRate(TaxCategoryInfo tc, CustomerInfoExt customer) {
 
@@ -236,9 +224,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param tcid
-     * @param customer
-     * @return
      */
     public double getTaxRate(String tcid, CustomerInfoExt customer) {
 
@@ -256,8 +241,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param tcid
-     * @return
      */
     public TaxInfo getTaxInfo(String tcid) {
         return getTaxInfo(tcid, null);
@@ -265,8 +248,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param tc
-     * @return
      */
     public TaxInfo getTaxInfo(TaxCategoryInfo tc) {
         return getTaxInfo(tc.getID(), null);
@@ -274,9 +255,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param tc
-     * @param customer
-     * @return
      */
     public TaxInfo getTaxInfo(TaxCategoryInfo tc, CustomerInfoExt customer) {
         return getTaxInfo(tc.getID(), customer);
@@ -284,9 +262,6 @@ public class TaxesLogic {
 
     /**
      *
-     * @param tcid
-     * @param customer
-     * @return
      */
     public TaxInfo getTaxInfo(String tcid, CustomerInfoExt customer) {
 

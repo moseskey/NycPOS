@@ -52,7 +52,6 @@ import net.sf.jasperreports.engine.export.JRGraphics2DExporter;
 import net.sf.jasperreports.engine.export.JRGraphics2DExporterParameter;
 import net.sf.jasperreports.engine.util.JRGraphEnvInitializer;
 /**
- * @author Teodor Danciu (teodord@users.sourceforge.net)
  * @version $Id: JRPrinterAWT.java 2123 2008-03-12 11:00:41Z teodord $
  */
 public class JRPrinterAWT300 implements Printable
@@ -68,8 +67,6 @@ public class JRPrinterAWT300 implements Printable
 
 	/**
 	 *
-     * @param jrPrint
-     * @param jrPrint
      * @throws net.sf.jasperreports.engine.JRException
      * @throws JRException
 	 */
@@ -83,14 +80,6 @@ public class JRPrinterAWT300 implements Printable
 
 	/**
 	 *
-     * @param jrPrint
-     * @param firstPageIndex
-     * @param lastPageIndex
-     * @param firstPageIndex
-     * @param lastPageIndex
-     * @param service
-     * @return
-     * @return
      * @throws JRException
 	 */
 	public static boolean printPages(
@@ -111,13 +100,6 @@ public class JRPrinterAWT300 implements Printable
 
 	/**
 	 *
-     * @param jrPrint
-     * @param pageIndex
-     * @param zoom
-     * @param jrPrint
-     * @param pageIndex
-     * @param zoom
-     * @return
      * @throws JRException
 	 */
 	public static Image printPageToImage(
@@ -295,9 +277,6 @@ public class JRPrinterAWT300 implements Printable
 
     /**
      *
-     * @param jasperPrint
-     * @param zoom
-     * @return
      */
     public static long getImageSize(JasperPrint jasperPrint, float zoom)
 	{

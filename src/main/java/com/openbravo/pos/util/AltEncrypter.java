@@ -25,7 +25,6 @@ import javax.crypto.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class AltEncrypter {
 
@@ -58,8 +57,6 @@ public class AltEncrypter {
 
     /**
      *
-     * @param str
-     * @return
      */
     public String encrypt(String str) {
         try {
@@ -74,8 +71,6 @@ public class AltEncrypter {
 
     /**
      *
-     * @param str
-     * @return
      */
     public String decrypt(String str) {
         try {

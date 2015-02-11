@@ -23,7 +23,6 @@ import com.openbravo.pos.forms.AppProperties;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentGatewayFac {
 
@@ -33,8 +32,6 @@ public class PaymentGatewayFac {
 
     /**
      *
-     * @param props
-     * @return
      */
     public static PaymentGateway getPaymentGateway(AppProperties props) {
 

@@ -29,7 +29,6 @@ import javax.swing.event.EventListenerList;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
@@ -56,7 +55,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
     /**
      *
-     * @return
      */
 
     public JCustomerFinder getCustomerFinder() {
@@ -65,7 +63,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
     /**
      *
-     * @param customerFinder
      */
     public void setCustomerFinder(JCustomerFinder customerFinder) {
         this.customerFinder = customerFinder;
@@ -104,7 +101,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
     /**
      *
-     * @param l
      */
     public void addActionListener(ActionListener l) {
         listeners.add(ActionListener.class, l);
@@ -112,7 +108,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
     /**
      *
-     * @param l
      */
     public void removeActionListener(ActionListener l) {
         listeners.remove(ActionListener.class, l);
@@ -150,7 +145,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
     /**
      *
-     * @param iMode
      */
     public void setMode(int iMode) {
         switch (iMode) {
@@ -201,8 +195,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
     /**
      *
-     * @param e
-     * @param iMode
      */
     public void setActive(EditorComponent e, int iMode) {
 
@@ -224,7 +216,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
     /**
      *
-     * @param e
      */
     public void setInactive(EditorComponent e) {
 
@@ -238,7 +229,6 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
     /**
      *
-     * @param enabled
      */
     public void dotIs00(boolean enabled) {
         if (enabled) {

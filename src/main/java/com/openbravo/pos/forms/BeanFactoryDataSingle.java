@@ -23,7 +23,6 @@ import com.openbravo.data.loader.Session;
 
 /**
  *
- * @author adrianromero
  */
 public abstract class BeanFactoryDataSingle implements BeanFactoryApp {
 
@@ -33,13 +32,11 @@ public abstract class BeanFactoryDataSingle implements BeanFactoryApp {
 
     /**
      *
-     * @param s
      */
     public abstract void init(Session s);
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -49,7 +46,6 @@ public abstract class BeanFactoryDataSingle implements BeanFactoryApp {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getBean() {

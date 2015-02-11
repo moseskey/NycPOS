@@ -27,8 +27,6 @@ import com.openbravo.pos.ticket.ProductInfoExt;
 
 /**
  * Clase para la gestion de los materiales de un producto (escandallo)
- * @author  Luis Ig. Bacas Riveiro	lbacas@opensistemas.com
- * @author  Pablo J. Urbano Santos	purbano@opensistemas.com
  */
 public class MaterialProdInfo implements SerializableRead, IKeyed {
     private String m_sID;
@@ -50,7 +48,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param p
      */
     public MaterialProdInfo(ProductInfoExt p) {
         m_sID = p.getID();
@@ -61,7 +58,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -75,7 +71,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param id
      */
     public void setID (String id) {
         m_sID = id;
@@ -83,7 +78,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -91,7 +85,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param name
      */
     public void setName (String name) {
         m_sName = name;
@@ -99,7 +92,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -107,7 +99,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param price
      */
     public void setPriceBuy (double price) {
         m_dPriceBuy = price;
@@ -115,7 +106,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public double getPriceBuy() {
         return m_dPriceBuy;
@@ -123,7 +113,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param amount
      */
     public void setAmount (double amount) {
         m_dAmount = amount;
@@ -131,7 +120,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public double getAmount() {
         return m_dAmount;
@@ -139,7 +127,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param unit
      */
     public void setUnit (String unit) {
         m_sUnit = unit;
@@ -147,7 +134,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getUnit() {
         return m_sUnit;
@@ -155,7 +141,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {

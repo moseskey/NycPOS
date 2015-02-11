@@ -76,7 +76,6 @@ import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
 /**
  *
- * @author adrianromero
  */
 public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFactoryApp, TicketsEditor {
 
@@ -194,7 +193,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -263,7 +261,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @return
      */
     @Override
     public Object getBean() {
@@ -272,7 +269,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -406,13 +402,11 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @return
      */
     protected abstract JTicketsBag getJTicketsBag();
 
     /**
      *
-     * @return
      */
     protected abstract Component getSouthComponent();
 
@@ -423,8 +417,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @param oTicket
-     * @param oTicketExt
      */
     @SuppressWarnings("empty-statement")
     @Override
@@ -500,7 +492,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @return
      */
     @Override
     public TicketInfo getActiveTicket() {
@@ -625,7 +616,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @param oLine
      */
     protected void addTicketLine(TicketLineInfo oLine) {
         if (executeEventAndRefresh("ticket.addline", new ScriptArg("line", oLine)) == null) {
@@ -866,7 +856,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @param prod
      */
     protected void buttonTransition(ProductInfoExt prod) {
     // precondicion: prod != null
@@ -1432,8 +1421,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     /**
      *
-     * @param pTicket
-     * @return
      */
     public String getPickupString(TicketInfo pTicket){
     if (pTicket == null){
@@ -1568,8 +1555,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
     /**
      *
-     * @param resource
-     * @param args
      */
     public void evalScriptAndRefresh(String resource, ScriptArg... args) {
 
@@ -1587,7 +1572,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
     /**
      *
-     * @param resource
      */
     public void printTicket(String resource) {
         printTicket(resource, m_oTicket, m_oTicketExt);
@@ -1622,8 +1606,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
     /**
      *
-     * @param sresourcename
-     * @return
      */
     public String getResourceAsXML(String sresourcename) {
         return dlSystem.getResourceAsXML(sresourcename);
@@ -1631,8 +1613,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
     /**
      *
-     * @param sresourcename
-     * @return
      */
     public BufferedImage getResourceAsImage(String sresourcename) {
         return dlSystem.getResourceAsImage(sresourcename);
@@ -1656,8 +1636,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         /**
          *
-         * @param key
-         * @param value
          */
         public ScriptArg(String key, Object value) {
             this.key = key;
@@ -1666,7 +1644,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         /**
          *
-         * @return
          */
         public String getKey() {
             return key;
@@ -1674,7 +1651,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         /**
          *
-         * @return
          */
         public Object getValue() {
             return value;
@@ -1714,7 +1690,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         /**
          *
-         * @return
          */
         public double getInputValue() {
             if (m_iNumberStatusInput == NUMBERVALID && m_iNumberStatusPor == NUMBERZERO) {
@@ -1726,7 +1701,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         /**
          *
-         * @return
          */
         public int getSelectedIndex() {
             return selectedindex;
@@ -1734,7 +1708,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         /**
          *
-         * @param i
          */
         public void setSelectedIndex(int i) {
             selectedindex = i;
@@ -1742,7 +1715,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         /**
          *
-         * @param resourcefile
          */
         public void printReport(String resourcefile) {
             JPanelTicket.this.printReport(resourcefile, ticket, ticketext);
@@ -1750,7 +1722,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         /**
          *
-         * @param sresourcename
          */
         public void printTicket(String sresourcename) {
             JPanelTicket.this.printTicket(sresourcename, ticket, ticketext);
@@ -1758,8 +1729,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         /**
          *
-         * @param code
-         * @param args
          * @return Script object and value
          * @throws ScriptException
          */

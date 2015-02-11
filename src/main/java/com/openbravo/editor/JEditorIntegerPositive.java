@@ -23,7 +23,6 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JEditorIntegerPositive extends JEditorNumber {
 
@@ -33,7 +32,6 @@ public class JEditorIntegerPositive extends JEditorNumber {
 
     /**
      *
-     * @return
      */
     protected Formats getFormat() {
         return Formats.INT;
@@ -41,7 +39,6 @@ public class JEditorIntegerPositive extends JEditorNumber {
 
     /**
      *
-     * @return
      */
     protected int getMode() {
         return EditorKeys.MODE_INTEGER_POSITIVE;

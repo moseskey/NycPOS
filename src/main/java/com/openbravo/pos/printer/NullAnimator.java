@@ -21,7 +21,6 @@ package com.openbravo.pos.printer;
 
 /**
  *
- * @author adrianromero
  */
 public class NullAnimator implements DisplayAnimator {
 
@@ -37,8 +36,6 @@ public class NullAnimator implements DisplayAnimator {
 
     /**
      *
-     * @param line1
-     * @param line2
      */
     public NullAnimator(String line1, String line2) {
         currentLine1 = DeviceTicket.alignLeft(line1, 20);
@@ -47,7 +44,6 @@ public class NullAnimator implements DisplayAnimator {
 
     /**
      *
-     * @param i
      */
     @Override
     public void setTiming(int i) {
@@ -55,7 +51,6 @@ public class NullAnimator implements DisplayAnimator {
 
     /**
      *
-     * @return
      */
     @Override
     public String getLine1() {
@@ -64,7 +59,6 @@ public class NullAnimator implements DisplayAnimator {
 
     /**
      *
-     * @return
      */
     @Override
     public String getLine2() {

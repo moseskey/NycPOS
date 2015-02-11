@@ -21,13 +21,11 @@ package com.openbravo.data.loader;
 
 /**
  *
- * @author adrianromero
  */
 public class SessionDBDerby implements SessionDB {
 
     /**
      *
-     * @return
      */
     @Override
     public String TRUE() {
@@ -36,7 +34,6 @@ public class SessionDBDerby implements SessionDB {
 
     /**
      *
-     * @return
      */
     @Override
     public String FALSE() {
@@ -45,7 +42,6 @@ public class SessionDBDerby implements SessionDB {
 
     /**
      *
-     * @return
      */
     @Override
     public String INTEGER_NULL() {
@@ -54,7 +50,6 @@ public class SessionDBDerby implements SessionDB {
 
     /**
      *
-     * @return
      */
     @Override
     public String CHAR_NULL() {
@@ -63,7 +58,6 @@ public class SessionDBDerby implements SessionDB {
 
     /**
      *
-     * @return
      */
     @Override
     public String getName() {
@@ -72,9 +66,6 @@ public class SessionDBDerby implements SessionDB {
 
     /**
      *
-     * @param s
-     * @param sequence
-     * @return
      */
     @Override
     public SentenceFind getSequenceSentence(Session s, String sequence) {
@@ -83,9 +74,6 @@ public class SessionDBDerby implements SessionDB {
 
     /**
      *
-     * @param s
-     * @param sequence
-     * @return
      */
     @Override
     public SentenceFind resetSequenceSentence(Session s, String sequence) {

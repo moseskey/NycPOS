@@ -45,7 +45,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
- * @author JG uniCenta
  */
 public class TicketParser extends DefaultHandler {
 
@@ -85,7 +84,6 @@ public class TicketParser extends DefaultHandler {
 
 
     /** Creates a new instance of TicketParser
-     * @param printer
      * @param system */
     public TicketParser(DeviceTicket printer, DataLogicSystem system) {
         m_printer = printer;
@@ -95,8 +93,6 @@ public class TicketParser extends DefaultHandler {
 
     /**
      *
-     * @param sIn
-     * @param ticket
      * @throws TicketPrinterException
      */
     public void printTicket(String sIn, TicketInfo ticket) throws TicketPrinterException {
@@ -118,7 +114,6 @@ public class TicketParser extends DefaultHandler {
 
     /**
      *
-     * @param sIn
      * @throws TicketPrinterException
      */
     public void printTicket(String sIn) throws TicketPrinterException {
@@ -127,7 +122,6 @@ public class TicketParser extends DefaultHandler {
 
     /**
      *
-     * @param in
      * @throws TicketPrinterException
      */
     public void printTicket(Reader in) throws TicketPrinterException  {

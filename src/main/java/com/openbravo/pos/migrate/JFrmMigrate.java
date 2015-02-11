@@ -32,7 +32,6 @@ import javax.imageio.ImageIO;
 
 /**
  *
- * @author adrianromero
  */
 public class JFrmMigrate extends javax.swing.JFrame {
 

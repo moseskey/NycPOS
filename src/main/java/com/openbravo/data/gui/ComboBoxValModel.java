@@ -26,7 +26,6 @@ import javax.swing.*;
 
 /**
  *
- * @author  adrian
  */
 public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel {
 
@@ -35,7 +34,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
     private Object m_selected;
 
     /** Creates a new instance of ComboBoxValModel
-     * @param aData
      * @param keygetter */
     public ComboBoxValModel(List aData, IKeyGetter keygetter) {
         m_aData = aData;
@@ -45,7 +43,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      *
-     * @param aData
      */
     public ComboBoxValModel(List aData) {
         this(aData, KeyGetterBuilder.INSTANCE);
@@ -53,7 +50,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      *
-     * @param keygetter
      */
     public ComboBoxValModel(IKeyGetter keygetter) {
         this(new ArrayList(), keygetter);
@@ -68,7 +64,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      *
-     * @param c
      */
     public void add(Object c) {
         m_aData.add(c);
@@ -76,7 +71,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      *
-     * @param c
      */
     public void del(Object c) {
         m_aData.remove(c);
@@ -84,8 +78,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      *
-     * @param index
-     * @param c
      */
     public void add(int index, Object c) {
         m_aData.add(index, c);
@@ -93,7 +85,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      *
-     * @param aData
      */
     public void refresh(List aData) {
         m_aData = aData;
@@ -102,7 +93,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      *
-     * @return
      */
     public Object getSelectedKey() {
         if (m_selected == null) {
@@ -114,7 +104,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      *
-     * @return
      */
     public String getSelectedText() {
         if (m_selected == null) {
@@ -126,7 +115,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      *
-     * @param aKey
      */
     public void setSelectedKey(Object aKey) {
         setSelectedItem(getElementByKey(aKey));
@@ -141,8 +129,6 @@ public class ComboBoxValModel extends AbstractListModel implements ComboBoxModel
 
     /**
      *
-     * @param aKey
-     * @return
      */
     public Object getElementByKey(Object aKey) {
         if (aKey != null) {

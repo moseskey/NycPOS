@@ -57,7 +57,6 @@ import javax.swing.*;
 
 /**
  *
- * @author adrianromero
  */
 public class JRootApp extends JPanel implements AppView {
 
@@ -138,8 +137,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @param props
-     * @return
      */
     public boolean initApp(AppProperties props) {
 
@@ -345,7 +342,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
         @Override
     public DeviceTicket getDeviceTicket(){
@@ -354,7 +350,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     @Override
     public DeviceScale getDeviceScale() {
@@ -363,7 +358,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     @Override
     public DeviceScanner getDeviceScanner() {
@@ -372,7 +366,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     @Override
     public Session getSession() {
@@ -381,7 +374,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     @Override
     public String getInventoryLocation() {
@@ -390,7 +382,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     @Override
     public String getActiveCashIndex() {
@@ -399,7 +390,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     @Override
     public int getActiveCashSequence() {
@@ -408,7 +398,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     @Override
     public Date getActiveCashDateStart() {
@@ -417,7 +406,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     @Override
     public Date getActiveCashDateEnd(){
@@ -426,10 +414,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @param sIndex
-     * @param iSeq
-     * @param dStart
-     * @param dEnd
      */
     @Override
     public void setActiveCash(String sIndex, int iSeq, Date dStart, Date dEnd) {
@@ -444,7 +428,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     @Override
     public AppProperties getProperties() {
@@ -453,8 +436,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @param beanfactory
-     * @return
      * @throws BeanFactoryException
      */
     @Override
@@ -553,7 +534,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     @Override
     public AppUserView getAppUserView() {
@@ -682,7 +662,6 @@ public class JRootApp extends JPanel implements AppView {
 
     /**
      *
-     * @return
      */
     public boolean closeAppView() {
 

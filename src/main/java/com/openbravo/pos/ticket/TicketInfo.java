@@ -36,7 +36,6 @@ import java.util.*;
 
 /**
  *
- * @author adrianromero
  */
 public final class TicketInfo implements SerializableRead, Externalizable {
 
@@ -143,7 +142,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -171,7 +169,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public TicketInfo copyTicket() {
         TicketInfo t = new TicketInfo();
@@ -202,7 +199,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String getId() {
         return m_sId;
@@ -210,7 +206,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public int getTicketType() {
         return tickettype;
@@ -218,7 +213,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param tickettype
      */
     public void setTicketType(int tickettype) {
         this.tickettype = tickettype;
@@ -226,7 +220,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public int getTicketId() {
         return m_iTicketId;
@@ -234,7 +227,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param iTicketId
      */
     public void setTicketId(int iTicketId) {
         m_iTicketId = iTicketId;
@@ -243,7 +235,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param iTicketId
      */
     public void setPickupId(int iTicketId) {
         m_iPickupId = iTicketId;
@@ -251,7 +242,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public int getPickupId() {
         return m_iPickupId;
@@ -259,8 +249,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param info
-     * @return
      */
     public String getName(Object info) {
 // JG Aug 2014 - Add User info
@@ -290,7 +278,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return getName(null);
@@ -298,7 +285,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public java.util.Date getDate() {
         return m_dDate;
@@ -306,7 +292,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param dDate
      */
     public void setDate(java.util.Date dDate) {
         m_dDate = dDate;
@@ -314,7 +299,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public UserInfo getUser() {
         return m_User;
@@ -322,7 +306,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param value
      */
     public void setUser(UserInfo value) {
         m_User = value;
@@ -330,7 +313,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public CustomerInfoExt getCustomer() {
         return m_Customer;
@@ -338,7 +320,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param value
      */
     public void setCustomer(CustomerInfoExt value) {
         m_Customer = value;
@@ -346,7 +327,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String getCustomerId() {
         if (m_Customer == null) {
@@ -358,7 +338,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String getTransactionID(){
         return (getPayments().size()>0)
@@ -368,7 +347,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String getReturnMessage(){
         return ( (getPayments().get(getPayments().size()-1)) instanceof PaymentInfoMagcard )
@@ -379,7 +357,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param value
      */
     public void setActiveCash(String value) {
         m_sActiveCash = value;
@@ -387,7 +364,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String getActiveCash() {
         return m_sActiveCash;
@@ -395,8 +371,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param key
-     * @return
      */
     public String getProperty(String key) {
         return attributes.getProperty(key);
@@ -404,9 +378,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param key
-     * @param defaultvalue
-     * @return
      */
     public String getProperty(String key, String defaultvalue) {
         return attributes.getProperty(key, defaultvalue);
@@ -414,8 +385,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param key
-     * @param value
      */
     public void setProperty(String key, String value) {
         attributes.setProperty(key, value);
@@ -423,7 +392,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public Properties getProperties() {
         return attributes;
@@ -431,8 +399,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param index
-     * @return
      */
     public TicketLineInfo getLine(int index) {
         return m_aLines.get(index);
@@ -440,7 +406,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param oLine
      */
     public void addLine(TicketLineInfo oLine) {
 
@@ -450,8 +415,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param index
-     * @param oLine
      */
     public void insertLine(int index, TicketLineInfo oLine) {
         m_aLines.add(index, oLine);
@@ -460,8 +423,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param index
-     * @param oLine
      */
     public void setLine(int index, TicketLineInfo oLine) {
         oLine.setTicket(m_sId, index);
@@ -470,7 +431,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param index
      */
     public void removeLine(int index) {
         m_aLines.remove(index);
@@ -485,7 +445,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public int getLinesCount() {
         return m_aLines.size();
@@ -493,7 +452,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public double getArticlesCount() {
         double dArticles = 0.0;
@@ -509,7 +467,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public double getSubTotal() {
         double sum = 0.0;
@@ -521,7 +478,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public double getTax() {
 
@@ -540,7 +496,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public double getTotal() {
         return getSubTotal() + getTax();
@@ -548,7 +503,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public double getTotalPaid() {
         double sum = 0.0;
@@ -562,7 +516,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public double getTendered() {
         return getTotalPaid();
@@ -570,7 +523,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public List<TicketLineInfo> getLines() {
         return m_aLines;
@@ -578,7 +530,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param l
      */
     public void setLines(List<TicketLineInfo> l) {
         m_aLines = l;
@@ -586,7 +537,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public List<PaymentInfo> getPayments() {
         return payments;
@@ -594,7 +544,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param l
      */
     public void setPayments(List<PaymentInfo> l) {
         payments = l;
@@ -609,7 +558,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public List<TicketTaxInfo> getTaxes() {
         return taxes;
@@ -617,7 +565,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public boolean hasTaxesCalculated() {
         return taxes != null;
@@ -625,7 +572,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param l
      */
     public void setTaxes(List<TicketTaxInfo> l) {
         taxes = l;
@@ -640,8 +586,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param tax
-     * @return
      */
     public TicketTaxInfo getTaxLine(TaxInfo tax) {
 
@@ -656,7 +600,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public TicketTaxInfo[] getTaxLines() {
 
@@ -681,7 +624,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String printId() {
 // We need acces to the config file
@@ -715,7 +657,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String printDate() {
         return Formats.TIMESTAMP.formatValue(m_dDate);
@@ -723,7 +664,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String printUser() {
         return m_User == null ? "" : m_User.getName();
@@ -731,11 +671,9 @@ public final class TicketInfo implements SerializableRead, Externalizable {
     }
     /**
      * JG July 2014
-     * @return
      */
     /**
      *
-     * @return
      */
     public String getHost() {
         return m_sHost;
@@ -758,7 +696,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param cardNumber
      */
     public void setLoyaltyCardNumber(String cardNumber){
         loyaltyCardNumber=cardNumber;
@@ -766,7 +703,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String getLoyaltyCardNumber(){
         return (loyaltyCardNumber);
@@ -775,7 +711,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String printCustomer() {
         return m_Customer == null ? "" : m_Customer.getName();
@@ -783,7 +718,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String printArticlesCount() {
         return Formats.DOUBLE.formatValue(getArticlesCount());
@@ -791,7 +725,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String printSubTotal() {
         return Formats.CURRENCY.formatValue(getSubTotal());
@@ -799,7 +732,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String printTax() {
         return Formats.CURRENCY.formatValue(getTax());
@@ -807,7 +739,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String printTotal() {
         return Formats.CURRENCY.formatValue(getTotal());
@@ -815,7 +746,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String printTotalPaid() {
         return Formats.CURRENCY.formatValue(getTotalPaid());
@@ -823,7 +753,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String printTendered() {
         return Formats.CURRENCY.formatValue(getTendered());
@@ -831,7 +760,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public String VoucherReturned(){
         return Formats.CURRENCY.formatValue(getTotalPaid()- getTotal());
@@ -840,7 +768,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @return
      */
     public boolean getOldTicket() {
 	return (oldTicket);
@@ -848,7 +775,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     /**
      *
-     * @param otState
      */
     public void setOldTicket(Boolean otState) {
 	oldTicket = otState;

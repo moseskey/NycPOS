@@ -43,7 +43,6 @@ import org.pushingpixels.substance.api.skin.SkinInfo;
 
 /**
  *
- * @author JG uniCenta
  */
 
 public class JPanelConfigPeripheral extends javax.swing.JPanel implements PanelConfig {
@@ -422,7 +421,6 @@ public class JPanelConfigPeripheral extends javax.swing.JPanel implements PanelC
 
     /**
      *
-     * @return
      */
     @Override
     public boolean hasChanged() {
@@ -431,7 +429,6 @@ public class JPanelConfigPeripheral extends javax.swing.JPanel implements PanelC
 
     /**
      *
-     * @return
      */
     @Override
     public Component getConfigComponent() {
@@ -440,7 +437,6 @@ public class JPanelConfigPeripheral extends javax.swing.JPanel implements PanelC
 
     /**
      *
-     * @param config
      */
     @Override
     public void loadProperties(AppConfig config) {
@@ -650,7 +646,6 @@ public class JPanelConfigPeripheral extends javax.swing.JPanel implements PanelC
 
     /**
      *
-     * @param config
      */
     @Override
     public void saveProperties(AppConfig config) {

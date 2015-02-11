@@ -29,7 +29,6 @@ import com.openbravo.pos.panels.JPanelTable;
 
 /**
  *
- * @author adrianromero
  */
 public class StockDiaryPanel extends JPanelTable {
 
@@ -51,7 +50,6 @@ public class StockDiaryPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListProvider getListProvider() {
@@ -60,7 +58,6 @@ public class StockDiaryPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public SaveProvider getSaveProvider() {
@@ -71,7 +68,6 @@ public class StockDiaryPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -80,7 +76,6 @@ public class StockDiaryPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {

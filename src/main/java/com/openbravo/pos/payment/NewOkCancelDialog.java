@@ -14,7 +14,6 @@ import javax.swing.KeyStroke;
 
 /**
  *
- * @author JG uniCenta
  */
 public class NewOkCancelDialog extends javax.swing.JDialog {
 
@@ -30,8 +29,6 @@ public class NewOkCancelDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form NewOkCancelDialog
-     * @param parent
-     * @param modal
      */
     public NewOkCancelDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);

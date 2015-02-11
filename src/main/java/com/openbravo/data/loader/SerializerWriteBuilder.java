@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public class SerializerWriteBuilder implements SerializerWrite<SerializableWrite> {
 
@@ -38,8 +37,6 @@ public class SerializerWriteBuilder implements SerializerWrite<SerializableWrite
 
     /**
      *
-     * @param dp
-     * @param obj
      * @throws BasicException
      */
     public void writeValues(DataWrite dp, SerializableWrite obj) throws BasicException {

@@ -33,7 +33,6 @@ import javax.swing.JButton;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JTimePanel extends javax.swing.JPanel {
 
@@ -72,7 +71,6 @@ public class JTimePanel extends javax.swing.JPanel {
 
     /**
      *
-     * @param dDate
      */
     public JTimePanel(Date dDate) {
         this(dDate, BUTTONS_ALL);
@@ -80,8 +78,6 @@ public class JTimePanel extends javax.swing.JPanel {
 
     /**
      *
-     * @param dDate
-     * @param iButtons
      */
     public JTimePanel(Date dDate, int iButtons) {
         super();
@@ -151,7 +147,6 @@ public class JTimePanel extends javax.swing.JPanel {
 
     /**
      *
-     * @param dNewDate
      */
     public void setDate(Date dNewDate) {
 
@@ -170,7 +165,6 @@ public class JTimePanel extends javax.swing.JPanel {
 
     /**
      *
-     * @return
      */
     public Date getDate() {
         return m_jclock.getTime();
@@ -178,8 +172,6 @@ public class JTimePanel extends javax.swing.JPanel {
 
     /**
      *
-     * @param dMinDate
-     * @param dMaxDate
      */
     public void setCheckDates(Date dMinDate, Date dMaxDate) {
 
@@ -198,7 +190,6 @@ public class JTimePanel extends javax.swing.JPanel {
 
     /**
      *
-     * @param period
      */
     public void setPeriod(long period) {
         m_jclock.setPeriod(period);

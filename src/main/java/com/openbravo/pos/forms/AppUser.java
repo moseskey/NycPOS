@@ -40,7 +40,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
- * @author adrianromero
  */
 public class AppUser {
 
@@ -63,11 +62,6 @@ public class AppUser {
     }
 
     /** Creates a new instance of AppUser
-     * @param id
-     * @param name
-     * @param card
-     * @param password
-     * @param icon
      * @param role */
     public AppUser(String id, String name, String password, String card, String role, Icon icon) {
         m_sId = id;
@@ -81,7 +75,6 @@ public class AppUser {
 
     /**
      *
-     * @return
      */
     public Icon getIcon() {
         return m_Icon;
@@ -89,7 +82,6 @@ public class AppUser {
 
     /**
      *
-     * @return
      */
     public String getId() {
         return m_sId;
@@ -97,7 +89,6 @@ public class AppUser {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -105,7 +96,6 @@ public class AppUser {
 
     /**
      *
-     * @param sValue
      */
     public void setPassword(String sValue) {
         m_sPassword = sValue;
@@ -113,7 +103,6 @@ public class AppUser {
 
     /**
      *
-     * @return
      */
     public String getPassword() {
         return m_sPassword;
@@ -121,7 +110,6 @@ public class AppUser {
 
     /**
      *
-     * @return
      */
     public String getRole() {
         return m_sRole;
@@ -129,7 +117,6 @@ public class AppUser {
 
     /**
      *
-     * @return
      */
     public String getCard() {
         return m_sCard;
@@ -137,7 +124,6 @@ public class AppUser {
 
     /**
      *
-     * @return
      */
     public boolean authenticate() {
         return m_sPassword == null || m_sPassword.equals("") || m_sPassword.startsWith("empty:");
@@ -145,8 +131,6 @@ public class AppUser {
 
     /**
      *
-     * @param sPwd
-     * @return
      */
     public boolean authenticate(String sPwd) {
         return Hashcypher.authenticate(sPwd, m_sPassword);
@@ -154,7 +138,6 @@ public class AppUser {
 
     /**
      *
-     * @param dlSystem
      */
     public void fillPermissions(DataLogicSystem dlSystem) {
 
@@ -187,8 +170,6 @@ public class AppUser {
 
     /**
      *
-     * @param classname
-     * @return
      */
     public boolean hasPermission(String classname) {
 
@@ -197,7 +178,6 @@ public class AppUser {
 
     /**
      *
-     * @return
      */
     public UserInfo getUserInfo() {
         return new UserInfo(m_sId, m_sName);

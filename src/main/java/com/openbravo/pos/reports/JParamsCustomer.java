@@ -35,7 +35,6 @@ import javax.swing.event.DocumentListener;
 
 /**
  *
- * @author  adrianromero
  */
 public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorCreator {
 
@@ -65,7 +64,6 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @param app
      */
     @Override
     public void init(AppView app) {
@@ -85,7 +83,6 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      */
     @Override
     public SerializerWrite getSerializerWrite() {
@@ -94,7 +91,6 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -103,7 +99,6 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

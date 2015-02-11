@@ -32,7 +32,6 @@ import javax.swing.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPanelCSVCleardb extends JPanel implements JPanelView {
 
@@ -43,7 +42,6 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
 
     /**
      *
-     * @param oApp
      */
     public JPanelCSVCleardb(AppView oApp) {
         this(oApp.getProperties());
@@ -52,7 +50,6 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
 
     /**
      *
-     * @param props
      */
     public JPanelCSVCleardb(AppProperties props) {
 
@@ -70,7 +67,6 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -79,7 +75,6 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -113,7 +108,6 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {        try{

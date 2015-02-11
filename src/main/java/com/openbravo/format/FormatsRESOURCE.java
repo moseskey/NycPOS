@@ -25,7 +25,6 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author JG uniCenta
  */
 public class FormatsRESOURCE extends Formats {
 
@@ -33,7 +32,6 @@ public class FormatsRESOURCE extends Formats {
     private String m_sPrefix;
 
     /** Creates a new instance of FormatsRESOURCE
-     * @param rb
      * @param sPrefix */
     public FormatsRESOURCE(ResourceBundle rb, String sPrefix) {
         m_rb = rb;
@@ -42,8 +40,6 @@ public class FormatsRESOURCE extends Formats {
 
     /**
      *
-     * @param value
-     * @return
      */
     @Override
     protected String formatValueInt(Object value) {
@@ -56,8 +52,6 @@ public class FormatsRESOURCE extends Formats {
 
     /**
      *
-     * @param value
-     * @return
      * @throws ParseException
      */
     @Override
@@ -67,7 +61,6 @@ public class FormatsRESOURCE extends Formats {
 
     /**
      *
-     * @return
      */
     @Override
     public int getAlignment() {

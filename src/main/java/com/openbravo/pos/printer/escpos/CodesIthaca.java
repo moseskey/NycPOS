@@ -21,7 +21,6 @@ package com.openbravo.pos.printer.escpos;
 
 /**
  *
- * @author JG uniCenta
  */
 public class CodesIthaca extends Codes {
 
@@ -64,105 +63,90 @@ public class CodesIthaca extends Codes {
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getInitSequence() { return INITSEQUENCE; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getSize0() { return CHAR_SIZE_0; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getSize1() { return CHAR_SIZE_1; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getSize2() { return CHAR_SIZE_2; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getSize3() { return CHAR_SIZE_3; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getBoldSet() { return BOLD_SET; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getBoldReset() { return BOLD_RESET; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getUnderlineSet() { return UNDERLINE_SET; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getUnderlineReset() { return UNDERLINE_RESET; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getOpenDrawer() { return OPEN_DRAWER; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getCutReceipt() { return PARTIAL_CUT; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getNewLine() { return NEW_LINE; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getImageHeader() { return IMAGE_HEADER; }
 
     /**
      *
-     * @return
      */
     @Override
     public int getImageWidth() { return 256; }
 
     /**
      *
-     * @return
      */
     @Override
     public byte[] getImageLogo(){ return IMAGE_LOGO; }

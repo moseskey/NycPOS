@@ -21,7 +21,6 @@ package com.openbravo.pos.payment;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentInfoFree extends PaymentInfo {
 
@@ -37,7 +36,6 @@ public class PaymentInfoFree extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo copyPayment(){
@@ -46,7 +44,6 @@ public class PaymentInfoFree extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTransactionID(){
@@ -55,7 +52,6 @@ public class PaymentInfoFree extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public String getName() {
@@ -64,7 +60,6 @@ public class PaymentInfoFree extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getTotal() {
@@ -73,7 +68,6 @@ public class PaymentInfoFree extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getPaid() {
@@ -82,7 +76,6 @@ public class PaymentInfoFree extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getChange(){
@@ -91,7 +84,6 @@ public class PaymentInfoFree extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getTendered() {
@@ -100,7 +92,6 @@ public class PaymentInfoFree extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public String getCardName() {

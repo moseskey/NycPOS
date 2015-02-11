@@ -25,12 +25,10 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author adrianromero
  */
 public class JPanelNull extends JPanel implements JPanelView {
 
     /** Creates new form JPanelNull
-     * @param oApp
      * @param o */
     public JPanelNull(AppView oApp, Object o) {
 
@@ -42,7 +40,6 @@ public class JPanelNull extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -51,7 +48,6 @@ public class JPanelNull extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -68,7 +64,6 @@ public class JPanelNull extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {

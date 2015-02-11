@@ -26,7 +26,6 @@ import javax.swing.border.MatteBorder;
 
 /**
  *
- * @author adrianromero
  */
 public class MenuTitleDefinition implements MenuElement {
 
@@ -37,7 +36,6 @@ public class MenuTitleDefinition implements MenuElement {
 
     /**
      *
-     * @param menu
      */
     @Override
     public void addComponent(JPanelMenu menu) {

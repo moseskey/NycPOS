@@ -33,7 +33,6 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author adrianromero
  */
 public class DataLogicSystem extends BeanFactoryDataSingle {
 
@@ -103,7 +102,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param s
      */
     @Override
     public void init(Session s){
@@ -299,7 +297,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public String getInitScript() {
         return m_sInitScript;
@@ -307,7 +304,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public String getDBVersion(){
         return m_dbVersion;
@@ -315,7 +311,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final String findVersion() throws BasicException {
@@ -324,7 +319,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final String getUser() throws BasicException {
@@ -342,7 +336,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final List listPeopleVisible() throws BasicException {
@@ -351,8 +344,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param role
-     * @return
      * @throws BasicException
      */
     public final List<String> getPermissions(String role)throws BasicException {
@@ -361,8 +352,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param card
-     * @return
      * @throws BasicException
      */
     public final AppUser findPeopleByCard(String card) throws BasicException {
@@ -371,8 +360,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sRole
-     * @return
      */
     public final String findRolePermissions(String sRole) {
 
@@ -385,7 +372,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param userdata
      * @throws BasicException
      */
     public final void execChangePassword(Object[] userdata) throws BasicException {
@@ -422,9 +408,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param name
-     * @param type
-     * @param data
      */
     public final void setResource(String name, int type, byte[] data) {
 
@@ -440,8 +423,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sName
-     * @param data
      */
     public final void setResourceAsBinary(String sName, byte[] data) {
         setResource(sName, 2, data);
@@ -449,8 +430,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sName
-     * @return
      */
     public final byte[] getResourceAsBinary(String sName) {
         return getResource(sName);
@@ -458,8 +437,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sName
-     * @return
      */
     public final String getResourceAsText(String sName) {
         return Formats.BYTEA.formatValue(getResource(sName));
@@ -467,8 +444,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sName
-     * @return
      */
     public final String getResourceAsXML(String sName) {
         return Formats.BYTEA.formatValue(getResource(sName));
@@ -476,8 +451,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sName
-     * @return
      */
     public final BufferedImage getResourceAsImage(String sName) {
         try {
@@ -490,8 +463,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sName
-     * @param p
      */
     public final void setResourceAsProperties(String sName, Properties p) {
         if (p == null) {
@@ -508,8 +479,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sName
-     * @return
      */
     public final Properties getResourceAsProperties(String sName) {
 
@@ -526,8 +495,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param host
-     * @return
      * @throws BasicException
      */
     public final int getSequenceCash(String host) throws BasicException {
@@ -537,8 +504,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param sActiveCashIndex
-     * @return
      * @throws BasicException
      */
     public final Object[] findActiveCash(String sActiveCashIndex) throws BasicException {
@@ -547,7 +512,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param cash
      * @throws BasicException
      */
     public final void execInsertCash(Object[] cash) throws BasicException {
@@ -556,7 +520,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param drawer
      * @throws BasicException
      */
     public final void execDrawerOpened(Object[] drawer) throws BasicException {
@@ -565,7 +528,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param permissions
      * @throws BasicException
      */
     public final void execUpdatePermissions(Object[] permissions) throws BasicException {
@@ -574,7 +536,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param line
      */
     public final void execLineRemoved(Object[] line) {
         try {
@@ -585,8 +546,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param iLocation
-     * @return
      * @throws BasicException
      */
     public final String findLocationName(String iLocation) throws BasicException {
@@ -595,7 +554,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param csv
      * @throws BasicException
      */
     public final void execAddCSVEntry(Object[] csv) throws BasicException {
@@ -607,8 +565,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param myProduct
-     * @return
      * @throws BasicException
      */
         public final String getProductRecordType(Object[] myProduct) throws BasicException {

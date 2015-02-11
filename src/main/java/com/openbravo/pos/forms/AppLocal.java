@@ -23,7 +23,6 @@ import com.openbravo.beans.LocaleResources;
 
 /**
  *
- * @author adrianromero
  */
 public class AppLocal {
 
@@ -56,8 +55,6 @@ public class AppLocal {
 
     /**
      *
-     * @param sKey
-     * @return
      */
     public static String getIntString(String sKey) {
         return m_resources.getString(sKey);
@@ -65,9 +62,6 @@ public class AppLocal {
 
     /**
      *
-     * @param sKey
-     * @param sValues
-     * @return
      */
     public static String getIntString(String sKey, Object ... sValues) {
         return m_resources.getString(sKey, sValues);

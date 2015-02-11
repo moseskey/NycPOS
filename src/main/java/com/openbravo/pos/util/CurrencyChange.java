@@ -23,7 +23,6 @@ import java.text.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public final class CurrencyChange {
 
@@ -37,8 +36,6 @@ public final class CurrencyChange {
 
     /**
      *
-     * @param dEuros
-     * @return
      */
     public static double changeEurosToPts(double dEuros) {
         return Math.rint(dEuros * EUROS_CHANGE);
@@ -46,8 +43,6 @@ public final class CurrencyChange {
 
     /**
      *
-     * @param dPts
-     * @return
      */
     public static double changePtsToEuros(double dPts) {
         return Math.rint(100.0 * dPts / EUROS_CHANGE) / 100.0;

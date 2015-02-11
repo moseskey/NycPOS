@@ -30,7 +30,6 @@ import java.util.List;
 
 /**
  *
- * @author adrianromero
  */
 public class PanelReportBean extends JPanelReport {
 
@@ -52,7 +51,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -80,7 +78,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @return
      */
     @Override
     protected EditorCreator getEditorCreator() {
@@ -90,7 +87,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @param title
      */
     public void setTitle(String title) {
         this.title = title;
@@ -98,7 +94,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @param titlekey
      */
     public void setTitleKey(String titlekey) {
         title = AppLocal.getIntString(titlekey);
@@ -106,7 +101,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @return
      */
     public String getTitle() {
         return title;
@@ -114,7 +108,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @param report
      */
     public void setReport(String report) {
         this.report = report;
@@ -122,7 +115,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @return
      */
     protected String getReport() {
         return report;
@@ -130,7 +122,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @param resourcebundle
      */
     public void setResourceBundle(String resourcebundle) {
         this.resourcebundle = resourcebundle;
@@ -138,7 +129,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @return
      */
     protected String getResourceBundle() {
         return resourcebundle == null
@@ -148,7 +138,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @param sentence
      */
     public void setSentence(String sentence) {
         this.sentence = sentence;
@@ -156,8 +145,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @param name
-     * @param data
      */
     public void addField(String name, Datas data) {
         fieldnames.add(name);
@@ -166,7 +153,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @param name
      */
     public void addParameter(String name) {
         paramnames.add(name);
@@ -174,7 +160,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @return
      */
     protected BaseSentence getSentence() {
         return new StaticSentence(m_App.getSession()
@@ -185,7 +170,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @return
      */
     protected ReportFields getReportFields() {
         return new ReportFieldsArray(fieldnames.toArray(new String[fieldnames.size()]));
@@ -193,7 +177,6 @@ public class PanelReportBean extends JPanelReport {
 
     /**
      *
-     * @param qbff
      */
     public void addQBFFilter(ReportEditorCreator qbff) {
         qbffilter.addEditor(qbff);

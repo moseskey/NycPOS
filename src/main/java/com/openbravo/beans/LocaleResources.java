@@ -27,7 +27,6 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author adrian
  */
 public class LocaleResources {
 
@@ -56,7 +55,6 @@ public class LocaleResources {
 
     /**
      *
-     * @param bundlename
      */
 
     public void addBundleName(String bundlename) {
@@ -66,8 +64,6 @@ public class LocaleResources {
 
     /**
      *
-     * @param sKey
-     * @return
      */
     public String getString(String sKey) {
 
@@ -89,9 +85,6 @@ public class LocaleResources {
 
     /**
      *
-     * @param sKey
-     * @param sValues
-     * @return
      */
     public String getString(String sKey, Object ... sValues) {
 

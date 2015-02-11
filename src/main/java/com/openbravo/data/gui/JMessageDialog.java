@@ -24,7 +24,6 @@ import java.awt.*;
 import javax.swing.*;
 /**
  *
- * @author  adrian
  */
 public class JMessageDialog extends javax.swing.JDialog {
 
@@ -49,8 +48,6 @@ public class JMessageDialog extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param inf
      */
     public static void showMessage(Component parent, MessageInf inf) {
 

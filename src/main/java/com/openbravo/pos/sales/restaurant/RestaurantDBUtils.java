@@ -20,7 +20,6 @@ import java.sql.Statement;
 
 /**
  *
- * @author JDL
  */
 
 
@@ -40,7 +39,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param oApp
      */
     public RestaurantDBUtils(AppView oApp) {
         m_App=oApp;
@@ -59,8 +57,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param newTable
-     * @param ticketID
      */
     public void moveCustomer(String newTable, String ticketID){
       String oldTable=getTableDetails(ticketID);
@@ -85,8 +81,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param custName
-     * @param tableName
      */
     public void setCustomerNameInTable(String custName, String tableName){
         try{
@@ -101,8 +95,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param custName
-     * @param tableID
      */
     public void setCustomerNameInTableById(String custName, String tableID){
         try{
@@ -117,8 +109,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param custName
-     * @param ticketID
      */
     public void setCustomerNameInTableByTicketId(String custName, String ticketID){
         try{
@@ -133,8 +123,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableName
-     * @return
      */
     public String getCustomerNameInTable(String tableName){
        try{
@@ -152,8 +140,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableId
-     * @return
      */
     public String getCustomerNameInTableById(String tableId){
        try{
@@ -171,7 +157,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableName
      */
     public void clearCustomerNameInTable(String tableName){
         try{
@@ -185,7 +170,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableID
      */
     public void clearCustomerNameInTableById(String tableID){
         try{
@@ -199,8 +183,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param waiterName
-     * @param tableName
      */
     public void setWaiterNameInTable(String waiterName, String tableName){
         try{
@@ -215,8 +197,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param waiterName
-     * @param tableID
      */
     public void setWaiterNameInTableById(String waiterName, String tableID){
         try{
@@ -231,8 +211,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableName
-     * @return
      */
     public String getWaiterNameInTable(String tableName){
        try{
@@ -250,8 +228,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableID
-     * @return
      */
     public String getWaiterNameInTableById(String tableID){
        try{
@@ -269,7 +245,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableName
      */
     public void clearWaiterNameInTable(String tableName){
         try{
@@ -283,7 +258,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableID
      */
     public void clearWaiterNameInTableById(String tableID){
         try{
@@ -297,8 +271,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param ID
-     * @return
      */
     public String getTicketIdInTable(String ID){
        try{
@@ -316,8 +288,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param TicketID
-     * @param tableName
      */
     public void setTicketIdInTable(String TicketID, String tableName){
         try{
@@ -332,7 +302,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableName
      */
     public void clearTicketIdInTable(String tableName){
         try{
@@ -346,7 +315,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableID
      */
     public void clearTicketIdInTableById(String tableID){
         try{
@@ -360,8 +328,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param ticketID
-     * @return
      */
     public Integer countTicketIdInTable(String ticketID){
       try{
@@ -380,8 +346,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param ticketID
-     * @return
      */
     public String getTableDetails (String ticketID){
        try{
@@ -399,7 +363,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableID
      */
     public void setTableMovedFlag (String tableID){
         try{
@@ -413,8 +376,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param ticketID
-     * @return
      */
     public String getTableMovedName (String ticketID){
        try{
@@ -432,8 +393,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param ticketID
-     * @return
      */
     public Boolean getTableMovedFlag (String ticketID){
        try{
@@ -450,7 +409,6 @@ public class RestaurantDBUtils {
 
     /**
      *
-     * @param tableID
      */
     public void clearTableMovedFlag (String tableID){
         try{

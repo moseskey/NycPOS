@@ -33,7 +33,6 @@ import java.util.UUID;
 
 /**
  *
- * @author adrianromero
  */
 public final class PaymentsEditor extends javax.swing.JPanel implements EditorRecord {
 
@@ -47,7 +46,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
     private String m_sNotes;
 
     /** Creates new form JPanelPayments
-     * @param oApp
      * @param dirty */
     public PaymentsEditor(AppView oApp, DirtyManager dirty) {
 
@@ -108,7 +106,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -126,7 +123,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -145,7 +141,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -169,7 +164,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

@@ -24,7 +24,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class VectorerBuilder implements Vectorer {
 
@@ -34,15 +33,12 @@ public abstract class VectorerBuilder implements Vectorer {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public abstract String[] getHeaders() throws BasicException;
 
     /**
      *
-     * @param obj
-     * @return
      * @throws BasicException
      */
     public String[] getValues(Object obj) throws BasicException {

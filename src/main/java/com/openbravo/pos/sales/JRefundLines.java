@@ -27,7 +27,6 @@ import java.util.List;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JRefundLines extends javax.swing.JPanel {
 
@@ -37,7 +36,6 @@ public class JRefundLines extends javax.swing.JPanel {
     private final JPanelTicketEdits m_jTicketEdit;
 
     /** Creates new form JRefundLines
-     * @param dlSystem
      * @param jTicketEdit */
 public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
 
@@ -52,7 +50,6 @@ public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
 
     /**
      *
-     * @param aRefundLines
      */
     public void setLines(List aRefundLines) {
 

@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author  adrian
  */
 public class SimpleBuilder implements ISQLBuilderStatic {
 
@@ -37,9 +36,6 @@ public class SimpleBuilder implements ISQLBuilderStatic {
 
     /**
      *
-     * @param sw
-     * @param params
-     * @return
      * @throws BasicException
      */
     public String getSQL(SerializerWrite sw, Object params) throws BasicException {

@@ -26,7 +26,6 @@ import java.rmi.registry.Registry;
 
 /**
  *
- * @author adrianromero
  */
 public class InstanceQuery {
 
@@ -43,7 +42,6 @@ public class InstanceQuery {
 
     /**
      *
-     * @return
      */
     public AppMessage getAppMessage() {
         return m_appstub;

@@ -6,7 +6,6 @@ package com.openbravo.pos.sales;
 
 /**
  *
- * @author Administrator
  */
 class TicketsBagRestaurantMap {
 

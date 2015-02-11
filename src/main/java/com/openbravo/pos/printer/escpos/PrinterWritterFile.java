@@ -25,7 +25,6 @@ import java.io.OutputStream;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PrinterWritterFile extends PrinterWritter {
 
@@ -34,7 +33,6 @@ public class PrinterWritterFile extends PrinterWritter {
 
     /**
      *
-     * @param sFilePrinter
      */
     public PrinterWritterFile(String sFilePrinter) {
         m_sFilePrinter = sFilePrinter;
@@ -43,7 +41,6 @@ public class PrinterWritterFile extends PrinterWritter {
 
     /**
      *
-     * @param data
      */
     @Override
     protected void internalWrite(byte[] data) {

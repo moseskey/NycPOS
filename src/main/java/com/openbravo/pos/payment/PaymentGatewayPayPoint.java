@@ -19,7 +19,6 @@ import org.apache.axis.client.Service;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentGatewayPayPoint implements PaymentGateway {
 
@@ -62,7 +61,6 @@ public class PaymentGatewayPayPoint implements PaymentGateway {
 
     /**
      *
-     * @param payinfo
      */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {

@@ -23,7 +23,6 @@ import com.openbravo.data.loader.IKeyed;
 
 /**
  *
- * @author  adrianromero
  * @version
  */
 public class TaxCustCategoryInfo implements IKeyed {
@@ -33,7 +32,6 @@ public class TaxCustCategoryInfo implements IKeyed {
     private String m_sName;
 
     /** Creates new CategoryInfo
-     * @param id
      * @param name */
     public TaxCustCategoryInfo(String id, String name) {
         m_sID = id;
@@ -42,7 +40,6 @@ public class TaxCustCategoryInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {
@@ -51,7 +48,6 @@ public class TaxCustCategoryInfo implements IKeyed {
 
     /**
      *
-     * @param sID
      */
     public void setID(String sID) {
         m_sID = sID;
@@ -59,7 +55,6 @@ public class TaxCustCategoryInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -67,7 +62,6 @@ public class TaxCustCategoryInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -75,7 +69,6 @@ public class TaxCustCategoryInfo implements IKeyed {
 
     /**
      *
-     * @param sName
      */
     public void setName(String sName) {
         m_sName = sName;

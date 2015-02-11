@@ -12,7 +12,6 @@ import com.openbravo.data.loader.SerializerRead;
 
 /**
  *
- * @author JA - based on A Escartin Barcode
  * 15 Dec 2013
  */
 public class ReturnInfo implements SerializableRead, IKeyed {
@@ -29,7 +28,6 @@ public class ReturnInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {
@@ -38,7 +36,6 @@ public class ReturnInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     @Override
@@ -48,7 +45,6 @@ public class ReturnInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param id
      */
     public void setId(Integer id) {
         idret = id;
@@ -56,7 +52,6 @@ public class ReturnInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Integer getId() {
         return idret;
@@ -64,7 +59,6 @@ public class ReturnInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public static SerializerRead getSerializerRead() {
         return new SerializerRead() {
@@ -78,7 +72,6 @@ public class ReturnInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param id
      */
     public ReturnInfo(Integer id) {
         this.idret = id;

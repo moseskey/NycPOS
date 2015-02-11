@@ -25,7 +25,6 @@ import com.openbravo.pos.forms.AppLocal;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ReportFieldsArray implements ReportFields {
 
@@ -44,9 +43,6 @@ public class ReportFieldsArray implements ReportFields {
 
     /**
      *
-     * @param record
-     * @param field
-     * @return
      * @throws ReportException
      */
     public Object getField(Object record, String field) throws ReportException {

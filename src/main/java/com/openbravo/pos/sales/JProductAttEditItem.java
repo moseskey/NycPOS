@@ -24,16 +24,12 @@ import java.awt.Component;
 
 /**
  *
- * @author adrian
  */
 public class JProductAttEditItem extends javax.swing.JPanel implements JProductAttEditI {
 
     private String attid;
 
     /** Creates new form JProductAttEditItem
-     * @param attid
-     * @param label
-     * @param value
      * @param keys */
     public JProductAttEditItem(String attid, String label, String value, JEditorKeys keys) {
 
@@ -56,7 +52,6 @@ public class JProductAttEditItem extends javax.swing.JPanel implements JProductA
 
     /**
      *
-     * @return
      */
     public String getAttribute() {
         return attid;
@@ -64,7 +59,6 @@ public class JProductAttEditItem extends javax.swing.JPanel implements JProductA
 
     /**
      *
-     * @return
      */
     public String getValue() {
         return jValue.getText();
@@ -72,7 +66,6 @@ public class JProductAttEditItem extends javax.swing.JPanel implements JProductA
 
     /**
      *
-     * @return
      */
     public Component getComponent() {
         return this;

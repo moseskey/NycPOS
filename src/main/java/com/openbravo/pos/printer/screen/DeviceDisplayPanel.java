@@ -29,7 +29,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author  adrianromero
  */
 public class DeviceDisplayPanel extends JPanel implements DeviceDisplay, DeviceDisplayImpl {
 
@@ -44,7 +43,6 @@ public class DeviceDisplayPanel extends JPanel implements DeviceDisplay, DeviceD
 
     /**
      *
-     * @param dZoom
      */
     public DeviceDisplayPanel(double dZoom) {
         initComponents();
@@ -59,7 +57,6 @@ public class DeviceDisplayPanel extends JPanel implements DeviceDisplay, DeviceD
 
     /**
      *
-     * @return
      */
     @Override
     public String getDisplayName() {
@@ -68,7 +65,6 @@ public class DeviceDisplayPanel extends JPanel implements DeviceDisplay, DeviceD
 
     /**
      *
-     * @return
      */
     @Override
     public String getDisplayDescription() {
@@ -77,7 +73,6 @@ public class DeviceDisplayPanel extends JPanel implements DeviceDisplay, DeviceD
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getDisplayComponent() {
@@ -86,9 +81,6 @@ public class DeviceDisplayPanel extends JPanel implements DeviceDisplay, DeviceD
 
     /**
      *
-     * @param animation
-     * @param sLine1
-     * @param sLine2
      */
     @Override
     public void writeVisor(int animation, String sLine1, String sLine2) {
@@ -98,8 +90,6 @@ public class DeviceDisplayPanel extends JPanel implements DeviceDisplay, DeviceD
 
     /**
      *
-     * @param sLine1
-     * @param sLine2
      */
     @Override
     public void writeVisor(String sLine1, String sLine2) {

@@ -21,7 +21,6 @@ package com.openbravo.pos.printer;
 
 /**
  *
- * @author adrianromero
  */
 public class ScrollAnimator extends BaseAnimator {
 
@@ -29,8 +28,6 @@ public class ScrollAnimator extends BaseAnimator {
 
     /**
      *
-     * @param line1
-     * @param line2
      */
     public ScrollAnimator(String line1, String line2) {
         msglength = Math.max(line1.length(), line2.length());
@@ -40,7 +37,6 @@ public class ScrollAnimator extends BaseAnimator {
 
     /**
      *
-     * @param i
      */
     @Override
     public void setTiming(int i) {

@@ -21,13 +21,11 @@ package com.openbravo.data.loader;
 
 /**
  *
- * @author adrianromero
  */
 public class SessionDBMySQL implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String TRUE() {
         return "TRUE";
@@ -35,7 +33,6 @@ public class SessionDBMySQL implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String FALSE() {
         return "FALSE";
@@ -43,7 +40,6 @@ public class SessionDBMySQL implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String INTEGER_NULL() {
         return "CAST(NULL AS UNSIGNED INTEGER)";
@@ -51,7 +47,6 @@ public class SessionDBMySQL implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String CHAR_NULL() {
         return "CAST(NULL AS CHAR)";
@@ -59,7 +54,6 @@ public class SessionDBMySQL implements SessionDB {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return "MySQL";
@@ -67,9 +61,6 @@ public class SessionDBMySQL implements SessionDB {
 
     /**
      *
-     * @param s
-     * @param sequence
-     * @return
      */
     public SentenceFind getSequenceSentence(Session s, String sequence) {
         return new SequenceForMySQL(s, sequence);
@@ -77,9 +68,6 @@ public class SessionDBMySQL implements SessionDB {
 
     /**
      *
-     * @param s
-     * @param sequence
-     * @return
      */
     public SentenceFind resetSequenceSentence(Session s, String sequence) {
         return new SequenceForMySQL(s, "UPDATE PICKUP_NUMBER SET ID=1");

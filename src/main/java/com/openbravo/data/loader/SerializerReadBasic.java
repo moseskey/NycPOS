@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author JG uniCenta
  */
 public class SerializerReadBasic implements SerializerRead {
 
@@ -37,8 +36,6 @@ public class SerializerReadBasic implements SerializerRead {
 
     /**
      *
-     * @param dr
-     * @return
      * @throws BasicException
      */
     public Object readValues(DataRead dr) throws BasicException {

@@ -52,7 +52,6 @@ import javax.swing.table.TableColumnModel;
 
 /**
  *
- * @author adrianromero
  */
 public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryApp {
 
@@ -81,7 +80,6 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
     /**
      *
-     * @param app
      * @throws BeanFactoryException
      */
     @Override
@@ -124,7 +122,6 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
     /**
      *
-     * @return
      */
     @Override
     public Object getBean() {
@@ -133,7 +130,6 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -142,7 +138,6 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -160,7 +155,6 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {

@@ -28,7 +28,6 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfig {
 
@@ -59,7 +58,6 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
 
     /**
      *
-     * @return
      */
     @Override
     public boolean hasChanged() {
@@ -68,7 +66,6 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
 
     /**
      *
-     * @return
      */
     @Override
     public Component getConfigComponent() {
@@ -77,7 +74,6 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
 
     /**
      *
-     * @param config
      */
     @Override
     public void loadProperties(AppConfig config) {
@@ -137,7 +133,6 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
 
     /**
      *
-     * @param config
      */
     @Override
     public void saveProperties(AppConfig config) {

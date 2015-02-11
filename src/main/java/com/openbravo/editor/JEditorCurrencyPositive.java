@@ -23,7 +23,6 @@ import com.openbravo.format.Formats;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JEditorCurrencyPositive extends JEditorNumber {
 
@@ -33,7 +32,6 @@ public class JEditorCurrencyPositive extends JEditorNumber {
 
     /**
      *
-     * @return
      */
     @Override
     protected Formats getFormat() {
@@ -43,7 +41,6 @@ public class JEditorCurrencyPositive extends JEditorNumber {
 
     /**
      *
-     * @return
      */
     @Override
     protected int getMode() {

@@ -21,7 +21,6 @@ package com.openbravo.editor;
 
 /**
  *
- * @author adrian
  */
 public class JEditorStringNumber extends JEditorText {
 
@@ -32,7 +31,6 @@ public class JEditorStringNumber extends JEditorText {
 
     /**
      *
-     * @return
      */
     protected int getMode() {
         return EditorKeys.MODE_INTEGER_POSITIVE;
@@ -40,7 +38,6 @@ public class JEditorStringNumber extends JEditorText {
 
     /**
      *
-     * @return
      */
     protected int getStartMode() {
         return MODE_123;

@@ -21,7 +21,6 @@ package com.openbravo.pos.util;
 
 /**
  *
- * @author JG uniCenta
  */
 public class StringParser {
 
@@ -39,8 +38,6 @@ public class StringParser {
 
     /**
      *
-     * @param c
-     * @return
      */
     public String nextToken(char c) {
 

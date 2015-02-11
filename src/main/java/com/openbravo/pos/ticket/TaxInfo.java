@@ -24,7 +24,6 @@ import java.io.Serializable;
 
 /**
  *
- * @author adrianromero
  */
 public class TaxInfo implements Serializable, IKeyed {
 
@@ -40,13 +39,6 @@ public class TaxInfo implements Serializable, IKeyed {
     private Integer order;
 
     /** Creates new TaxInfo
-     * @param id
-     * @param name
-     * @param taxcategoryid
-     * @param taxcustcategoryid
-     * @param rate
-     * @param cascade
-     * @param parentid
      * @param order */
     public TaxInfo(String id, String name, String taxcategoryid, String taxcustcategoryid, String parentid, double rate, boolean cascade, Integer order) {
         this.id = id;
@@ -62,7 +54,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public Object getKey() {
         return id;
@@ -70,7 +61,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param value
      */
     public void setID(String value) {
         id = value;
@@ -78,7 +68,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getId() {
         return id;
@@ -86,7 +75,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return name;
@@ -94,7 +82,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param value
      */
     public void setName(String value) {
         name = value;
@@ -102,7 +89,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getTaxCategoryID() {
         return taxcategoryid;
@@ -110,7 +96,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param value
      */
     public void setTaxCategoryID(String value) {
         taxcategoryid = value;
@@ -118,7 +103,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getTaxCustCategoryID() {
         return taxcustcategoryid;
@@ -126,7 +110,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param value
      */
     public void setTaxCustCategoryID(String value) {
         taxcustcategoryid = value;
@@ -134,7 +117,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getParentID() {
         return parentid;
@@ -142,7 +124,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param value
      */
     public void setParentID(String value) {
         parentid = value;
@@ -150,7 +131,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public double getRate() {
         return rate;
@@ -158,7 +138,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param value
      */
     public void setRate(double value) {
         rate = value;
@@ -166,7 +145,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public boolean isCascade() {
         return cascade;
@@ -174,7 +152,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param value
      */
     public void setCascade(boolean value) {
         cascade = value;
@@ -182,7 +159,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public Integer getOrder() {
         return order;
@@ -190,7 +166,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @return
      */
     public Integer getApplicationOrder() {
         return order == null ? Integer.MAX_VALUE : order.intValue();
@@ -198,7 +173,6 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      *
-     * @param value
      */
     public void setOrder(Integer value) {
         order = value;

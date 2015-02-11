@@ -25,7 +25,6 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author adrianromero
  */
 public class DriverWrapper implements Driver {
 
@@ -33,7 +32,6 @@ public class DriverWrapper implements Driver {
 
     /**
      *
-     * @param d
      */
     public DriverWrapper(Driver d) {
         driver = d;

@@ -23,7 +23,6 @@ import com.openbravo.basic.BasicException;
 
 /**
  *
- * @author  adrian
  */
 public class ImportSentence extends BaseSentence {
 
@@ -40,7 +39,6 @@ public class ImportSentence extends BaseSentence {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public DataResultSet moreResults() throws BasicException {
@@ -49,8 +47,6 @@ public class ImportSentence extends BaseSentence {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     public DataResultSet openExec(Object params) throws BasicException {

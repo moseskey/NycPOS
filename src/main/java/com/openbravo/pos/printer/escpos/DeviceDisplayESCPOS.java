@@ -23,14 +23,12 @@ import com.openbravo.pos.printer.DeviceTicket;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DeviceDisplayESCPOS extends DeviceDisplaySerial {
 
     private UnicodeTranslator trans;
 
     /** Creates a new instance of DeviceDisplayESCPOS
-     * @param display
      * @param trans */
     public DeviceDisplayESCPOS(PrinterWritter display, UnicodeTranslator trans) {
         this.trans = trans;

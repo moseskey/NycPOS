@@ -23,7 +23,6 @@ import java.util.Comparator;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ComparatorCreatorBasic implements ComparatorCreator {
 
@@ -32,8 +31,6 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
     private int[] m_iAvailableIndexes;
 
     /** Creates a new instance of ComparatorCreatorBasic
-     * @param sHeaders
-     * @param aDatas
      * @param iAvailableIndexes */
     public ComparatorCreatorBasic(String[] sHeaders, Datas[] aDatas, int[] iAvailableIndexes) {
 
@@ -44,8 +41,6 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
 
     /**
      *
-     * @param sHeaders
-     * @param aDatas
      */
     public ComparatorCreatorBasic(String[] sHeaders, Datas[] aDatas) {
         m_sHeaders = sHeaders;
@@ -58,7 +53,6 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
 
     /**
      *
-     * @return
      */
     public String[] getHeaders() {
 
@@ -72,8 +66,6 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
 
     /**
      *
-     * @param aiOrderBy
-     * @return
      */
     public Comparator createComparator(int[] aiOrderBy) {
         return new ComparatorBasic(aiOrderBy);

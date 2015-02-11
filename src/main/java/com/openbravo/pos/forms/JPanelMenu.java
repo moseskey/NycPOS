@@ -26,7 +26,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author adrianromero
  */
 public class JPanelMenu extends JPanel implements JPanelView {
 
@@ -45,7 +44,6 @@ public class JPanelMenu extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getComponent() {
@@ -54,7 +52,6 @@ public class JPanelMenu extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {
@@ -80,7 +77,6 @@ public class JPanelMenu extends JPanel implements JPanelView {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {
@@ -89,7 +85,6 @@ public class JPanelMenu extends JPanel implements JPanelView {
 
     /**
      *
-     * @param title
      */
     public void addTitle(Component title) {
 
@@ -105,7 +100,6 @@ public class JPanelMenu extends JPanel implements JPanelView {
 
     /**
      *
-     * @param entry
      */
     public void addEntry(Component entry) {
 

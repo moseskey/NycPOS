@@ -21,7 +21,6 @@ package com.openbravo.data.loader;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DataField {
 

@@ -24,7 +24,6 @@ import bsh.Interpreter;
 
 /**
  *
- * @author adrianromero
  * Created on 5 de marzo de 2007, 19:57
  *
  */

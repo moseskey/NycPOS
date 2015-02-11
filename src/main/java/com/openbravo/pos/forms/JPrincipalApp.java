@@ -42,7 +42,6 @@ import org.jdesktop.swingx.JXTaskPaneContainer;
 
 /**
  *
- * @author adrianromero
  */
 public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
@@ -68,7 +67,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
     private CustomerInfo customerInfo;
 
     /** Creates new form JPrincipalApp
-     * @param appview
      * @param appuser */
     public JPrincipalApp(JRootApp appview, AppUser appuser) {
 
@@ -157,8 +155,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @param key
-         * @return
          */
         public ScriptGroup addGroup(String key) {
 
@@ -171,7 +167,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @return
          */
                 public JXTaskPaneContainer getTaskPane() {
             return taskPane;
@@ -197,9 +192,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @param icon
-         * @param key
-         * @param classname
          */
         public void addPanel(String icon, String key, String classname) {
             addAction(new MenuPanelAction(m_appview, icon, key, classname));
@@ -207,9 +199,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @param icon
-         * @param key
-         * @param classname
          */
         public void addExecution(String icon, String key, String classname) {
             addAction(new MenuExecAction(m_appview, icon, key, classname));
@@ -217,10 +206,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @param icon
-         * @param key
-         * @param classname
-         * @return
          */
         public ScriptSubmenu addSubmenu(String icon, String key, String classname) {
             ScriptSubmenu submenu = new ScriptSubmenu(key);
@@ -264,7 +249,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @return
          */
                 public JXTaskPane getTaskGroup() {
             return taskGroup;
@@ -283,7 +267,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @param key
          */
         public void addTitle(String key) {
             menudef.addMenuTitle(key);
@@ -291,9 +274,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @param icon
-         * @param key
-         * @param classname
          */
         public void addPanel(String icon, String key, String classname) {
             menudef.addMenuItem(new MenuPanelAction(m_appview, icon, key, classname));
@@ -301,9 +281,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @param icon
-         * @param key
-         * @param classname
          */
         public void addExecution(String icon, String key, String classname) {
             menudef.addMenuItem(new MenuExecAction(m_appview, icon, key, classname));
@@ -311,10 +288,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @param icon
-         * @param key
-         * @param classname
-         * @return
          */
         public ScriptSubmenu addSubmenu(String icon, String key, String classname) {
             ScriptSubmenu submenu = new ScriptSubmenu(key);
@@ -339,7 +312,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         /**
          *
-         * @return
          */
         public MenuDefinition getMenuDefinition() {
             return menudef;
@@ -355,7 +327,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
     /**
      *
-     * @return
      */
     public JComponent getNotificator() {
         return m_principalnotificator;
@@ -377,7 +348,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
     /**
      *
-     * @return
      */
     public boolean deactivate() {
         if (m_jLastView == null) {
@@ -447,7 +417,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
     /**
      *
-     * @return
      */
     @Override
     public AppUser getUser() {
@@ -456,7 +425,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
     /**
      *
-     * @param sTaskClass
      */
     @Override
     public void showTask(String sTaskClass) {
@@ -517,7 +485,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
     /**
      *
-     * @param sTaskClass
      */
     @Override
     public void executeTask(String sTaskClass) {

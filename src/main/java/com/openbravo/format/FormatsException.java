@@ -21,7 +21,6 @@ package com.openbravo.format;
 
 /**
  *
- * @author JG uniCenta
  */
 public class FormatsException extends java.lang.Exception {
 

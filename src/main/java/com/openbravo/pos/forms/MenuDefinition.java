@@ -24,7 +24,6 @@ import javax.swing.Action;
 
 /**
  *
- * @author adrianromero
  */
 public class MenuDefinition {
 
@@ -41,7 +40,6 @@ public class MenuDefinition {
 
     /**
      *
-     * @return
      */
     public String getKey() {
         return m_sKey;
@@ -49,7 +47,6 @@ public class MenuDefinition {
 
     /**
      *
-     * @return
      */
     public String getTitle() {
         return AppLocal.getIntString(m_sKey);
@@ -57,7 +54,6 @@ public class MenuDefinition {
 
     /**
      *
-     * @param act
      */
     public void addMenuItem(Action act) {
         MenuItemDefinition menuitem = new MenuItemDefinition(act);
@@ -66,7 +62,6 @@ public class MenuDefinition {
 
     /**
      *
-     * @param keytext
      */
     public void addMenuTitle(String keytext) {
         MenuTitleDefinition menutitle = new MenuTitleDefinition();
@@ -76,8 +71,6 @@ public class MenuDefinition {
 
     /**
      *
-     * @param i
-     * @return
      */
     public MenuElement getMenuElement(int i) {
         return (MenuElement) m_aMenuElements.get(i);
@@ -85,7 +78,6 @@ public class MenuDefinition {
 
     /**
      *
-     * @return
      */
     public int countMenuElements() {
         return m_aMenuElements.size();

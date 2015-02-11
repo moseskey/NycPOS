@@ -37,7 +37,6 @@ import javax.swing.SwingUtilities;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JTicketsBagShared extends JTicketsBag {
 
@@ -46,7 +45,6 @@ public class JTicketsBagShared extends JTicketsBag {
 
 
     /** Creates new form JTicketsBagShared
-     * @param app
      * @param panelticket */
     public JTicketsBagShared(AppView app, TicketsEditor panelticket) {
 
@@ -74,7 +72,6 @@ public class JTicketsBagShared extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {
@@ -101,7 +98,6 @@ public class JTicketsBagShared extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     @Override
     protected JComponent getBagComponent() {
@@ -110,7 +106,6 @@ public class JTicketsBagShared extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     @Override
     protected JComponent getNullComponent() {

@@ -27,7 +27,6 @@ import javax.swing.JList;
 
 /**
  *
- * @author Mikel Irurita
  */
 public class FindTicketsRenderer extends DefaultListCellRenderer {
 

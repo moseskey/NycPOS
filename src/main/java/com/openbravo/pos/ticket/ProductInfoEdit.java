@@ -23,7 +23,6 @@ import java.awt.image.BufferedImage;
 
 /**
  *
- * @author adrianromero
  * Created on 21 de marzo de 2007, 21:28
  *
  */
@@ -125,7 +124,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final String getID() {
         return m_ID;
@@ -133,7 +131,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param id
      */
     public final void setID(String id) {
         m_ID = id;
@@ -141,7 +138,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final String getReference(){
         return m_sRef;
@@ -149,7 +145,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param sRef
      */
     public final void setReference(String sRef){
         m_sRef = sRef;
@@ -157,7 +152,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final String getCode(){
         return m_sCode;
@@ -165,7 +159,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param sCode
      */
     public final void setCode(String sCode){
         m_sCode = sCode;
@@ -173,7 +166,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final String getName() {
         return m_sName;
@@ -181,7 +173,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param sName
      */
     public final void setName(String sName){
         m_sName = sName;
@@ -189,7 +180,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final boolean isCom() {
         return m_bCom;
@@ -197,7 +187,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param bValue
      */
     public final void setCom(boolean bValue){
         m_bCom = bValue;
@@ -205,7 +194,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final boolean isScale() {
         return m_bScale;
@@ -213,7 +201,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param bValue
      */
     public final void setScale(boolean bValue){
         m_bScale = bValue;
@@ -221,7 +208,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final String getCategoryID() {
         return m_sCategoryID;
@@ -229,7 +215,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param sCategoryID
      */
     public final void setCategoryID(String sCategoryID) {
         m_sCategoryID = sCategoryID;
@@ -237,7 +222,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final String getTaxID() {
         return m_sTaxID;
@@ -245,7 +229,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param sTaxID
      */
     public final void setTaxID(String sTaxID) {
         m_sTaxID = sTaxID;
@@ -253,7 +236,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final String getAttributeUseID() {
         return attributeuseid;
@@ -261,7 +243,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param value
      */
     public final void setAttributeUseID(String value) {
         attributeuseid = value;
@@ -269,7 +250,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final double getPriceBuy(){
         return m_dPriceBuy;
@@ -277,7 +257,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param dPrice
      */
     public final void setPriceBuy(double dPrice) {
         m_dPriceBuy = dPrice;
@@ -285,7 +264,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public final double getPriceSell(){
         return m_dPriceSell;
@@ -293,7 +271,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param dPrice
      */
     public final void setPriceSell(double dPrice) {
         m_dPriceSell = dPrice;
@@ -301,7 +278,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @return
      */
     public BufferedImage getImage() {
         return m_Image;
@@ -309,7 +285,6 @@ public class ProductInfoEdit {
 
     /**
      *
-     * @param img
      */
     public void setImage(BufferedImage img) {
         m_Image = img;

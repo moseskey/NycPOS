@@ -32,7 +32,6 @@ import java.util.List;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JTicketCatalogLines extends javax.swing.JPanel {
 
@@ -40,11 +39,6 @@ public class JTicketCatalogLines extends javax.swing.JPanel {
     private CatalogSelector m_catalog;
 
     /** Creates new form JTicketCatalogLines
-     * @param app
-     * @param jTicketEdit
-     * @param pricevisible
-     * @param taxesincluded
-     * @param width
      * @param height */
     public JTicketCatalogLines(AppView app, JPanelTicketEdits jTicketEdit, boolean pricevisible, boolean taxesincluded, int width, int height) {
 
@@ -81,7 +75,6 @@ public class JTicketCatalogLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param l
      */
     public void addActionListener(ActionListener l) {
         m_catalog.addActionListener(l);
@@ -89,7 +82,6 @@ public class JTicketCatalogLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param l
      */
     public void removeActionListener(ActionListener l) {
         m_catalog.addActionListener(l);
@@ -97,7 +89,6 @@ public class JTicketCatalogLines extends javax.swing.JPanel {
 
     /**
      *
-     * @param aRefundLines
      */
     public void showRefundLines(List aRefundLines) {
         // anado las lineas de refund

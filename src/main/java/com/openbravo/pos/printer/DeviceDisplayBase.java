@@ -24,7 +24,6 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author adrianromero
  */
 public class DeviceDisplayBase {
 
@@ -68,9 +67,6 @@ public class DeviceDisplayBase {
 
     /**
      *
-     * @param animation
-     * @param sLine1
-     * @param sLine2
      */
     public void writeVisor(int animation, String sLine1, String sLine2) {
 
@@ -105,8 +101,6 @@ public class DeviceDisplayBase {
 
     /**
      *
-     * @param sLine1
-     * @param sLine2
      */
     public void writeVisor(String sLine1, String sLine2) {
         writeVisor(ANIMATION_NULL, sLine1, sLine2);
@@ -121,7 +115,6 @@ public class DeviceDisplayBase {
 
     /**
      *
-     * @return
      */
     public String getLine1() {
         return anim.getLine1();
@@ -129,7 +122,6 @@ public class DeviceDisplayBase {
 
     /**
      *
-     * @return
      */
     public String getLine2() {
         return anim.getLine2();

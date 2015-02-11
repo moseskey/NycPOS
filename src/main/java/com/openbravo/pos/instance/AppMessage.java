@@ -24,7 +24,6 @@ import java.rmi.RemoteException;
 
 /**
  *
- * @author adrianromero
  */
 public interface AppMessage extends Remote {
 

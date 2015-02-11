@@ -46,7 +46,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JPanelButtons extends javax.swing.JPanel {
 
@@ -62,7 +61,6 @@ public class JPanelButtons extends javax.swing.JPanel {
     private JPanelTicket panelticket;
 
     /** Creates new form JPanelButtons
-     * @param sConfigKey
      * @param panelticket */
     public JPanelButtons(String sConfigKey, JPanelTicket panelticket) {
         initComponents();
@@ -98,7 +96,6 @@ public class JPanelButtons extends javax.swing.JPanel {
 
     /**
      *
-     * @param user
      */
     public void setPermissions(AppUser user) {
         for (Component c : this.getComponents()) {
@@ -113,8 +110,6 @@ public class JPanelButtons extends javax.swing.JPanel {
 
     /**
      *
-     * @param key
-     * @return
      */
     public String getProperty(String key) {
         return props.getProperty(key);
@@ -122,9 +117,6 @@ public class JPanelButtons extends javax.swing.JPanel {
 
     /**
      *
-     * @param key
-     * @param defaultvalue
-     * @return
      */
     public String getProperty(String key, String defaultvalue) {
         return props.getProperty(key, defaultvalue);
@@ -132,8 +124,6 @@ public class JPanelButtons extends javax.swing.JPanel {
 
     /**
      *
-     * @param key
-     * @return
      */
     public String getEvent(String key) {
         return events.get(key);

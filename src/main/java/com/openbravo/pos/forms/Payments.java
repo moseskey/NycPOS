@@ -7,7 +7,6 @@ import java.util.HashMap;
 
 /**
  *
- * @author John L July 2013
  */
 public class Payments {
     private Double amount;
@@ -29,10 +28,6 @@ public class Payments {
 
     /**
      *
-     * @param pName
-     * @param pAmountPaid
-     * @param pTendered
-     * @param rtnMsg
      */
     public void addPayment (String pName, Double pAmountPaid, Double pTendered, String rtnMsg){
         if (paymentPaid.containsKey(pName)){
@@ -48,8 +43,6 @@ public class Payments {
 
     /**
      *
-     * @param pName
-     * @return
      */
     public Double getTendered (String pName){
     return(Double.parseDouble(paymentTendered.get(pName).toString()));
@@ -57,8 +50,6 @@ public class Payments {
 
     /**
      *
-     * @param pName
-     * @return
      */
     public Double getPaidAmount (String pName){
     return(Double.parseDouble(paymentPaid.get(pName).toString()));
@@ -66,7 +57,6 @@ public class Payments {
 
     /**
      *
-     * @return
      */
     public Integer getSize(){
     return (paymentPaid.size());
@@ -74,8 +64,6 @@ public class Payments {
 
     /**
      *
-     * @param pName
-     * @return
      */
     public String getRtnMessage(String pName){
     return (rtnMessage.get(pName).toString());
@@ -83,7 +71,6 @@ public class Payments {
 
     /**
      *
-     * @return
      */
     public String getFirstElement(){
     String rtnKey= paymentPaid.keySet().iterator().next().toString();
@@ -92,7 +79,6 @@ public class Payments {
 
     /**
      *
-     * @param pName
      */
     public void removeFirst (String pName){
    paymentPaid.remove(pName);

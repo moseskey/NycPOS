@@ -21,7 +21,6 @@ package com.openbravo.pos.payment;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentInfoMagcard extends PaymentInfo {
 
@@ -86,13 +85,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
     protected String m_dCardName =null;
 
     /** Creates a new instance of PaymentInfoMagcard
-     * @param sHolderName
-     * @param sCardNumber
-     * @param track3
-     * @param sExpirationDate
-     * @param track2
-     * @param track1
-     * @param sTransactionID
      * @param dTotal */
     public PaymentInfoMagcard(
             String sHolderName,
@@ -120,10 +112,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
     }
 
     /** Creates a new instance of PaymentInfoMagcard
-     * @param sHolderName
-     * @param sCardNumber
-     * @param sExpirationDate
-     * @param dTotal
      * @param sTransactionID */
     public PaymentInfoMagcard(
             String sHolderName,
@@ -136,7 +124,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo copyPayment(){
@@ -157,7 +144,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public String getName() {
@@ -166,7 +152,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getTotal() {
@@ -175,7 +160,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public boolean isPaymentOK() {
         return m_sAuthorization != null;
@@ -183,7 +167,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String getHolderName() {
         return m_sHolderName;
@@ -191,7 +174,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
   public String getCardName() {
@@ -200,7 +182,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String getCardNumber() {
         return m_sCardNumber;
@@ -208,7 +189,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String getExpirationDate() {
         return m_sExpirationDate;
@@ -216,7 +196,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTransactionID() {
@@ -225,8 +204,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @param sCardNumber
-     * @return
      */
     public String getCardType(String sCardNumber){
         String c = "UNKNOWN";
@@ -254,7 +231,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
      *    - start sentinel (SS)
      *    - end sentinel (ES)
      *    - LRC
-     * @param framingChar
      *    true: including framing characters
      *    false: excluding framing characters
      * @return tracks of the magnetic card
@@ -267,8 +243,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @param framingChar
-     * @return
      */
     public String getTrack2(boolean framingChar) {
         return (framingChar)
@@ -278,8 +252,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @param framingChar
-     * @return
      */
     public String getTrack3(boolean framingChar) {
         return (framingChar)
@@ -289,7 +261,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String getAuthorization() {
         return m_sAuthorization;
@@ -297,7 +268,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String getMessage() {
         return m_sErrorMessage;
@@ -305,8 +275,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @param sMessage
-     * @param moreInfo
      */
     public void paymentError(String sMessage, String moreInfo) {
         m_sAuthorization = null;
@@ -315,7 +283,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @param returnMessage
      */
     public void setReturnMessage(String returnMessage){
         m_sReturnMessage = returnMessage;
@@ -323,7 +290,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String getReturnMessage(){
         return m_sReturnMessage;
@@ -331,9 +297,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @param sAuthorization
-     * @param sTransactionId
-     * @param sReturnMessage
      */
     public void paymentOK(String sAuthorization, String sTransactionId, String sReturnMessage) {
         m_sAuthorization = sAuthorization;
@@ -344,7 +307,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String printCardNumber() {
         // hide start numbers
@@ -360,7 +322,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String printExpirationDate() {
         return m_sExpirationDate;
@@ -368,7 +329,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String printAuthorization() {
         return m_sAuthorization;
@@ -376,7 +336,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     public String printTransactionID() {
         return m_sTransactionID;
@@ -384,7 +343,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getPaid() {
@@ -393,7 +351,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getChange(){
@@ -402,7 +359,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     /**
      *
-     * @return
      */
     @Override
     public double getTendered() {

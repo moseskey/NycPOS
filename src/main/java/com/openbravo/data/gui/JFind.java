@@ -27,7 +27,6 @@ import javax.swing.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JFind extends JDialog {
 
@@ -89,9 +88,6 @@ public class JFind extends JDialog {
 
     /**
      *
-     * @param parent
-     * @param lastFindInfo
-     * @return
      * @throws BasicException
      */
     public static FindInfo showMessage(Component parent, FindInfo lastFindInfo) throws BasicException {

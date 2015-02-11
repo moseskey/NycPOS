@@ -44,7 +44,6 @@ import javax.swing.ListCellRenderer;
 
 /**
  *
- * @author adrian
  */
 public class Row {
 
@@ -52,7 +51,6 @@ public class Row {
 
     /**
      *
-     * @param fields
      */
     public Row(Field... fields) {
         this.fields = fields;
@@ -60,7 +58,6 @@ public class Row {
 
     /**
      *
-     * @return
      */
     public Vectorer getVectorer() {
         return new RowVectorer();
@@ -68,7 +65,6 @@ public class Row {
 
     /**
      *
-     * @return
      */
     public IRenderString getRenderString() {
         return new RowRenderString();
@@ -76,7 +72,6 @@ public class Row {
 
     /**
      *
-     * @return
      */
     public ListCellRenderer getListCellRenderer() {
         return new ListCellRendererBasic(new RowRenderString());
@@ -84,7 +79,6 @@ public class Row {
 
     /**
      *
-     * @return
      */
     public ComparatorCreator getComparatorCreator() {
         return new RowComparatorCreator();
@@ -92,10 +86,6 @@ public class Row {
 
     /**
      *
-     * @param s
-     * @param sql
-     * @param indexes
-     * @return
      */
     public SentenceExec getExecSentence(Session s, String sql, final int... indexes) {
         return new PreparedSentence(s, sql,
@@ -112,9 +102,6 @@ public class Row {
 
     /**
      *
-     * @param s
-     * @param t
-     * @return
      */
     public ListProvider getListProvider(Session s, Table t) {
         return new ListProviderCreator(getListSentence(s, t));
@@ -122,9 +109,6 @@ public class Row {
 
     /**
      *
-     * @param s
-     * @param t
-     * @return
      */
     public SaveProvider getSaveProvider(Session s, Table t) {
         return new SaveProvider(getUpdateSentence(s, t), getInsertSentence(s, t), getDeleteSentence(s, t));
@@ -132,10 +116,6 @@ public class Row {
 
     /**
      *
-     * @param s
-     * @param sql
-     * @param sw
-     * @return
      */
     public SentenceList getListSentence(Session s, String sql, SerializerWrite sw) {
         return new PreparedSentence(s, sql, sw, new RowSerializerRead());
@@ -143,10 +123,6 @@ public class Row {
 
     /**
      *
-     * @param s
-     * @param sql
-     * @param filter
-     * @return
      */
     public ListProvider getListProvider(Session s, String sql, FilterEditorCreator filter) {
         return new ListProviderCreator(getListSentence(s, sql, filter.getSerializerWrite()), filter);
@@ -154,9 +130,6 @@ public class Row {
 
     /**
      *
-     * @param s
-     * @param t
-     * @return
      */
     public SentenceList getListSentence(Session s, Table t) {
         return getListSentence(s, t.getListSQL(), null);
@@ -164,9 +137,6 @@ public class Row {
 
     /**
      *
-     * @param s
-     * @param t
-     * @return
      */
     public SentenceExec getInsertSentence(Session s, final Table t) {
         return new PreparedSentence(s,  t.getInsertSQL(),
@@ -183,9 +153,6 @@ public class Row {
 
     /**
      *
-     * @param s
-     * @param t
-     * @return
      */
     public SentenceExec getDeleteSentence(Session s, final Table t) {
         return new PreparedSentence(s,  t.getDeleteSQL(),
@@ -205,9 +172,6 @@ public class Row {
 
     /**
      *
-     * @param s
-     * @param t
-     * @return
      */
     public SentenceExec getUpdateSentence(Session s, final Table t) {
         return new PreparedSentence(s,  t.getUpdateSQL(),
@@ -232,7 +196,6 @@ public class Row {
 
     /**
      *
-     * @return
      */
     public Datas[] getDatas() {
         Datas[] d = new Datas[fields.length];
@@ -244,7 +207,6 @@ public class Row {
 
     /**
      *
-     * @return
      */
     public SerializerRead getSerializerRead() {
         return new RowSerializerRead();

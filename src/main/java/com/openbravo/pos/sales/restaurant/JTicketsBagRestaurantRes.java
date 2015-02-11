@@ -39,7 +39,6 @@ import com.openbravo.pos.customers.CustomerInfo;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements EditorRecord {
 
@@ -64,7 +63,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
     // private Date dinitdate = new GregorianCalendar(1900, 0, 0, 12, 0).getTime();
 
     /** Creates new form JPanelReservations
-     * @param oApp
      * @param restaurantmap */
     public JTicketsBagRestaurantRes(AppView oApp, JTicketsBagRestaurantMap restaurantmap) {
 
@@ -148,7 +146,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
 
     /**
      *
-     * @return
      */
     public boolean deactivate() {
         try {
@@ -206,7 +203,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -234,7 +230,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -264,7 +259,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -288,7 +282,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

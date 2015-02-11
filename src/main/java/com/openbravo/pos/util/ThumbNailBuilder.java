@@ -27,7 +27,6 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ThumbNailBuilder {
 
@@ -36,7 +35,6 @@ public class ThumbNailBuilder {
     private int m_height;
 
     /** Creates a new instance of ThumbNailBuilder
-     * @param width
      * @param height */
     public ThumbNailBuilder(int width, int height) {
         init(width, height, null);
@@ -44,9 +42,6 @@ public class ThumbNailBuilder {
 
     /**
      *
-     * @param width
-     * @param height
-     * @param imgdef
      */
     public ThumbNailBuilder(int width, int height, Image imgdef) {
         init(width, height, imgdef);
@@ -55,9 +50,6 @@ public class ThumbNailBuilder {
 
     /**
      *
-     * @param width
-     * @param height
-     * @param img
      */
     public ThumbNailBuilder(int width, int height, String img) {
 
@@ -81,8 +73,6 @@ public class ThumbNailBuilder {
 
     /**
      *
-     * @param img
-     * @return
      */
     public Image getThumbNail(Image img) {
 
@@ -95,9 +85,6 @@ public class ThumbNailBuilder {
 
     /**
      *
-     * @param img
-     * @param text
-     * @return
      */
     public Image getThumbNailText(Image img, String text) {
 

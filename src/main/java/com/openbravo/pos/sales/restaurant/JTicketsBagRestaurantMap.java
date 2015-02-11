@@ -37,7 +37,6 @@ import javax.swing.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JTicketsBagRestaurantMap extends JTicketsBag {
 
@@ -83,7 +82,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
     private String tableName;
 
     /** Creates new form JTicketsBagRestaurant
-     * @param app
      * @param panelticket */
 
     public JTicketsBagRestaurantMap(AppView app, TicketsEditor panelticket) {
@@ -222,7 +220,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {
@@ -261,7 +258,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     @Override
     protected JComponent getBagComponent() {
@@ -270,7 +266,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     @Override
     protected JComponent getNullComponent() {
@@ -279,7 +274,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     public TicketInfo getActiveTicket() {
         return m_panelticket.getActiveTicket();
@@ -312,8 +306,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     /**
      *
-     * @param c
-     * @return
      */
     public boolean viewTables(CustomerInfo c) {
         // deberiamos comprobar si estamos en reservations o en tables...
@@ -332,7 +324,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     public boolean viewTables() {
         return viewTables(null);
@@ -361,7 +352,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     public String getTable(){
         String id =null;
@@ -373,7 +363,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     public String getTableName(){
         String tableName =null;
@@ -744,7 +733,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     /**
      *
-     * @param btnText
      */
     public void setButtonTextBags(String btnText){
       m_PlaceClipboard.setButtonText(btnText);

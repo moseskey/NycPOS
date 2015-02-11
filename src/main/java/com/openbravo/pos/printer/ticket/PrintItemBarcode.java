@@ -31,7 +31,6 @@ import org.krysalis.barcode4j.output.java2d.Java2DCanvasProvider;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PrintItemBarcode implements PrintItem {
 
@@ -61,9 +60,6 @@ public class PrintItemBarcode implements PrintItem {
     protected double scale;
 
     /** Creates a new instance of PrinterItemBarcode
-     * @param type
-     * @param position
-     * @param code
      * @param scale */
     public PrintItemBarcode(String type, String position, String code, double scale) {
 
@@ -95,10 +91,6 @@ public class PrintItemBarcode implements PrintItem {
 
     /**
      *
-     * @param g
-     * @param x
-     * @param y
-     * @param width
      */
     @Override
     public void draw(Graphics2D g, int x, int y, int width) {
@@ -125,7 +117,6 @@ public class PrintItemBarcode implements PrintItem {
 
     /**
      *
-     * @return
      */
     @Override
     public int getHeight() {

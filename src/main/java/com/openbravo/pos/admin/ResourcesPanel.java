@@ -34,7 +34,6 @@ import javax.swing.ListCellRenderer;
 
 /**
  *
- * @author adrianromero
  */
 public class ResourcesPanel extends JPanelTable {
 
@@ -56,7 +55,6 @@ public class ResourcesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {
@@ -71,7 +69,6 @@ public class ResourcesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public ListProvider getListProvider() {
         return new ListProviderCreator(tresources);
@@ -79,7 +76,6 @@ public class ResourcesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public SaveProvider getSaveProvider() {
         return new SaveProvider(tresources);
@@ -87,7 +83,6 @@ public class ResourcesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public Vectorer getVectorer() {
@@ -96,7 +91,6 @@ public class ResourcesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ComparatorCreator getComparatorCreator() {
@@ -105,7 +99,6 @@ public class ResourcesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     @Override
     public ListCellRenderer getListCellRenderer() {
@@ -114,7 +107,6 @@ public class ResourcesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public EditorRecord getEditor() {
         return jeditor;
@@ -122,7 +114,6 @@ public class ResourcesPanel extends JPanelTable {
 
     /**
      *
-     * @return
      */
     public String getTitle() {
         return AppLocal.getIntString("Menu.Resources");

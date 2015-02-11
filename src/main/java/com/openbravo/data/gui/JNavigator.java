@@ -30,7 +30,6 @@ import com.openbravo.data.user.StateListener;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JNavigator extends javax.swing.JPanel implements BrowseListener, StateListener {
 
@@ -69,9 +68,6 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
     private javax.swing.JButton jbtnReload = null;
 
     /** Creates new form JNavigator
-     * @param bd
-     * @param vec
-     * @param cc
      * @param iButtons */
     public JNavigator(BrowsableEditableData bd, Vectorer vec, ComparatorCreator cc, int iButtons) {
 
@@ -210,7 +206,6 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
 
     /**
      *
-     * @param bd
      */
     public JNavigator(BrowsableEditableData bd) {
         this(bd, null, null, BUTTONS_ALL);
@@ -218,9 +213,6 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
 
     /**
      *
-     * @param bd
-     * @param vec
-     * @param cc
      */
     public JNavigator(BrowsableEditableData bd, Vectorer vec, ComparatorCreator cc) {
         this(bd, vec, cc, BUTTONS_ALL);
@@ -228,7 +220,6 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
 
     /**
      *
-     * @param iState
      */
     public void updateState(int iState) {
         if (iState == BrowsableEditableData.ST_INSERT || iState == BrowsableEditableData.ST_DELETE) {
@@ -243,8 +234,6 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
 
     /**
      *
-     * @param iIndex
-     * @param iCounter
      */
     public void updateIndex(int iIndex, int iCounter) {
 

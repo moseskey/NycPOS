@@ -23,7 +23,6 @@ import java.util.EventObject;
 
 /**
  *
- * @author adrianromero
  * @version
  */
 public class JNumberEvent extends EventObject {
@@ -32,8 +31,6 @@ public class JNumberEvent extends EventObject {
 
     /**
      *
-     * @param source
-     * @param cKey
      */
     public JNumberEvent(Object source, char cKey) {
         super(source);
@@ -42,7 +39,6 @@ public class JNumberEvent extends EventObject {
 
     /**
      *
-     * @return
      */
     public char getKey() {
         return m_cKey;

@@ -31,7 +31,6 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author JG uniCenta
  */
 public abstract class BatchSentence extends BaseSentence {
 
@@ -54,8 +53,6 @@ public abstract class BatchSentence extends BaseSentence {
 
     /**
      *
-     * @param name
-     * @param replacement
      */
     public void putParameter(String name, String replacement) {
         m_parameters.put(name, replacement);
@@ -63,7 +60,6 @@ public abstract class BatchSentence extends BaseSentence {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     protected abstract Reader getReader() throws BasicException;
@@ -78,7 +74,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @param l
          */
         public ExceptionsResultSet(List l) {
             this.l = l;
@@ -87,8 +82,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @param columnIndex
-         * @return
          * @throws BasicException
          */
         @Override
@@ -98,8 +91,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @param columnIndex
-         * @return
          * @throws BasicException
          */
         @Override
@@ -109,8 +100,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @param columnIndex
-         * @return
          * @throws BasicException
          */
         @Override
@@ -120,8 +109,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @param columnIndex
-         * @return
          * @throws BasicException
          */
         @Override
@@ -131,8 +118,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @param columnIndex
-         * @return
          * @throws BasicException
          */
         @Override
@@ -144,8 +129,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @param columnIndex
-         * @return
          * @throws BasicException
          */
                 @Override
@@ -155,8 +138,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @param columnIndex
-         * @return
          * @throws BasicException
          */
         @Override
@@ -168,7 +149,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @return
          * @throws BasicException
          */
                 @Override
@@ -178,7 +158,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @return
          * @throws BasicException
          */
         @Override
@@ -192,7 +171,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @return
          * @throws BasicException
          */
         @Override
@@ -210,7 +188,6 @@ public abstract class BatchSentence extends BaseSentence {
 
         /**
          *
-         * @return
          */
         @Override
         public int updateCount() {
@@ -228,7 +205,6 @@ public abstract class BatchSentence extends BaseSentence {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -238,8 +214,6 @@ public abstract class BatchSentence extends BaseSentence {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override

@@ -26,14 +26,12 @@ import java.awt.Component;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DeviceScale {
 
     private Scale m_scale;
 
     /** Creates a new instance of DeviceScale
-     * @param parent
      * @param props */
     public DeviceScale(Component parent, AppProperties props) {
         StringParser sd = new StringParser(props.getProperty("machine.scale"));
@@ -66,7 +64,6 @@ public class DeviceScale {
 
     /**
      *
-     * @return
      */
     public boolean existsScale() {
         return m_scale != null;
@@ -74,7 +71,6 @@ public class DeviceScale {
 
     /**
      *
-     * @return
      * @throws ScaleException
      */
     public Double readWeight() throws ScaleException {

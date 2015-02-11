@@ -33,7 +33,6 @@ import net.proteanit.sql.DbUtils;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JMooringDetails extends javax.swing.JDialog {
 
@@ -87,9 +86,6 @@ public class JMooringDetails extends javax.swing.JDialog {
 
     /**
      *
-     * @param parent
-     * @param s
-     * @return
      */
     public static JMooringDetails getMooringDetails(Component parent, Session s) {
         Window window = SwingUtilities.getWindowAncestor(parent);
@@ -109,7 +105,6 @@ public class JMooringDetails extends javax.swing.JDialog {
 
     /**
      *
-     * @return
      */
     public boolean isCreate() {
         return create;
@@ -117,7 +112,6 @@ public class JMooringDetails extends javax.swing.JDialog {
 
     /**
      *
-     * @return
      */
     public String getVesselName() {
         return vesselName;
@@ -125,7 +119,6 @@ public class JMooringDetails extends javax.swing.JDialog {
 
     /**
      *
-     * @return
      */
     public Integer getVesselSize() {
         return vesselSize;
@@ -133,7 +126,6 @@ public class JMooringDetails extends javax.swing.JDialog {
 
     /**
      *
-     * @return
      */
     public Integer getVesselDays() {
         return vesselDays;
@@ -141,7 +133,6 @@ public class JMooringDetails extends javax.swing.JDialog {
 
     /**
      *
-     * @return
      */
     public Boolean getVesselPower() {
         return vesselPower;

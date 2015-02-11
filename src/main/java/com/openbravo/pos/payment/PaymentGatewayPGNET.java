@@ -31,7 +31,6 @@ import java.util.StringTokenizer;
 
 /**
  *
- * @author Mikel Irurita
  */
 public class PaymentGatewayPGNET implements PaymentGateway {
 
@@ -46,7 +45,6 @@ public class PaymentGatewayPGNET implements PaymentGateway {
 
     /**
      *
-     * @param props
      */
     public PaymentGatewayPGNET(AppProperties props) {
         // Grab some configuration variables
@@ -71,7 +69,6 @@ public class PaymentGatewayPGNET implements PaymentGateway {
 
     /**
      *
-     * @param payinfo
      */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {

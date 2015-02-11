@@ -28,7 +28,6 @@ import jpos.JposException;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements DeviceFiscalPrinter  {
 
@@ -37,7 +36,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
     private FiscalPrinter m_fiscal;
 
     /** Creates new form DeviceFiscalPrinterJavaPOSPanel
-     * @param sDeviceFiscalPrinterName
      * @throws com.openbravo.pos.printer.TicketPrinterException */
     public DeviceFiscalPrinterJavaPOS(String sDeviceFiscalPrinterName) throws TicketPrinterException {
         m_sName = sDeviceFiscalPrinterName;
@@ -63,7 +61,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
 
     /**
      *
-     * @return
      */
     @Override
     public String getFiscalName() {
@@ -72,7 +69,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
 
     /**
      *
-     * @return
      */
     @Override
     public JComponent getFiscalComponent() {
@@ -103,10 +99,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
 
     /**
      *
-     * @param sproduct
-     * @param dprice
-     * @param dunits
-     * @param taxinfo
      */
     @Override
     public void printLine(String sproduct, double dprice, double dunits, int taxinfo) {
@@ -118,7 +110,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
 
     /**
      *
-     * @param smessage
      */
     @Override
     public void printMessage(String smessage) {
@@ -130,8 +121,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
 
     /**
      *
-     * @param sPayment
-     * @param dpaid
      */
     @Override
     public void printTotal(String sPayment, double dpaid) {

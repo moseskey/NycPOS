@@ -26,7 +26,6 @@ import java.util.regex.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class FindInfo implements Finder {
 
@@ -61,10 +60,6 @@ public class FindInfo implements Finder {
     private Vectorer m_vec;
 
     /** Creates a new instance of FindInfo
-     * @param vec
-     * @param sText
-     * @param iField
-     * @param iMatch
      * @param bMatchCase */
     public FindInfo(Vectorer vec, String sText, int iField, boolean bMatchCase, int iMatch) {
         m_vec = vec;
@@ -92,7 +87,6 @@ public class FindInfo implements Finder {
 
     /**
      *
-     * @return
      */
     public Vectorer getVectorer() {
         return m_vec;
@@ -100,7 +94,6 @@ public class FindInfo implements Finder {
 
     /**
      *
-     * @return
      */
     public String getText() {
         return m_sText;
@@ -108,7 +101,6 @@ public class FindInfo implements Finder {
 
     /**
      *
-     * @return
      */
     public int getField() {
         return m_iField;
@@ -116,7 +108,6 @@ public class FindInfo implements Finder {
 
     /**
      *
-     * @return
      */
     public boolean isMatchCase() {
         return m_bMatchCase;
@@ -124,7 +115,6 @@ public class FindInfo implements Finder {
 
     /**
      *
-     * @return
      */
     public int getMatch() {
         return m_iMatch;
@@ -132,8 +122,6 @@ public class FindInfo implements Finder {
 
     /**
      *
-     * @param obj
-     * @return
      * @throws BasicException
      */
     public boolean match(Object obj) throws BasicException {

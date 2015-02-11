@@ -26,7 +26,6 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author  adrianromero
  */
 public class StaticSentence extends JDBCSentence {
 
@@ -48,9 +47,6 @@ public class StaticSentence extends JDBCSentence {
     private Statement m_Stmt;
 
     /** Creates a new instance of StaticSentence
-     * @param s
-     * @param sentence
-     * @param serread
      * @param serwrite */
     public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite, SerializerRead serread) {
         super(s);
@@ -60,35 +56,26 @@ public class StaticSentence extends JDBCSentence {
         m_Stmt = null;
     }
     /** Creates a new instance of StaticSentence
-     * @param s
      * @param sentence */
     public StaticSentence(Session s, ISQLBuilderStatic sentence) {
         this(s, sentence, null, null);
     }
     /** Creates a new instance of StaticSentence
-     * @param s
-     * @param sentence
      * @param serwrite */
     public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite) {
         this(s, sentence, serwrite, null);
     }
     /** Creates a new instance of StaticSentence
-     * @param s
-     * @param sentence
-     * @param serread
      * @param serwrite */
     public StaticSentence(Session s, String sentence, SerializerWrite serwrite, SerializerRead serread) {
         this(s, new NormalBuilder(sentence), serwrite, serread);
     }
     /** Creates a new instance of StaticSentence
-     * @param s
-     * @param sentence
      * @param serwrite */
     public StaticSentence(Session s, String sentence, SerializerWrite serwrite) {
         this(s, new NormalBuilder(sentence), serwrite, null);
     }
     /** Creates a new instance of StaticSentence
-     * @param s
      * @param sentence */
     public StaticSentence(Session s, String sentence) {
         this(s, new NormalBuilder(sentence), null, null);
@@ -96,8 +83,6 @@ public class StaticSentence extends JDBCSentence {
 
     /**
      *
-     * @param params
-     * @return
      * @throws BasicException
      */
     @Override
@@ -149,7 +134,6 @@ public class StaticSentence extends JDBCSentence {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

@@ -43,7 +43,6 @@ import javax.swing.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JTicketsBagTicket extends JTicketsBag {
 
@@ -72,7 +71,6 @@ public class JTicketsBagTicket extends JTicketsBag {
     private final JPanelTicketEdits m_panelticketedit;
 
     /** Creates new form JTicketsBagTicket
-     * @param app
      * @param panelticket */
     public JTicketsBagTicket(AppView app, JPanelTicketEdits panelticket) {
 
@@ -134,7 +132,6 @@ public class JTicketsBagTicket extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     @Override
     public boolean deactivate() {
@@ -185,7 +182,6 @@ public class JTicketsBagTicket extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     @Override
     protected JComponent getBagComponent() {
@@ -194,7 +190,6 @@ public class JTicketsBagTicket extends JTicketsBag {
 
     /**
      *
-     * @return
      */
     @Override
     protected JComponent getNullComponent() {

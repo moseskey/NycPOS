@@ -28,7 +28,6 @@ import java.util.List;
 
 /**
  *
- * @author adrianromero
  */
 public class InventoryRecord {
 
@@ -39,10 +38,6 @@ public class InventoryRecord {
     private final String user;
 
     /** Creates a new instance of InventoryRecord
-     * @param d
-     * @param reason
-     * @param location
-     * @param invlines
      * @param currentUser */
     public InventoryRecord(Date d, MovementReason reason, LocationInfo location, String currentUser, List<InventoryLine> invlines) {
         m_dDate = d;
@@ -55,7 +50,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public Date getDate() {
         return m_dDate;
@@ -63,7 +57,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public String getUser() {
         return user;
@@ -71,7 +64,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public MovementReason getReason() {
         return m_reason;
@@ -79,7 +71,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public LocationInfo getLocation() {
         return m_locationOri;
@@ -87,7 +78,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public List<InventoryLine> getLines() {
         return m_invlines;
@@ -95,7 +85,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public boolean isInput() {
         return m_reason.isInput();
@@ -103,7 +92,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public double getSubTotal() {
         double dSuma = 0.0;
@@ -117,7 +105,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public String printDate() {
         return Formats.TIMESTAMP.formatValue(m_dDate);
@@ -125,7 +112,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public String printLocation() {
 //        return m_locationOri.toString();
@@ -134,7 +120,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public String printReason() {
 //        return m_reason.toString();
@@ -143,7 +128,6 @@ public class InventoryRecord {
 
     /**
      *
-     * @return
      */
     public String printSubTotal() {
         return Formats.CURRENCY.formatValue(getSubTotal());

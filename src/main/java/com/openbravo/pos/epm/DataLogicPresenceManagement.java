@@ -30,7 +30,6 @@ import java.util.UUID;
 
 /**
  *
- * @author Ali Safdar & Aneeqa Baber
  */
 public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
@@ -70,7 +69,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param s
      */
     @Override
     public void init(Session s){
@@ -175,7 +173,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final SentenceList getBreaksList() {
         return new StaticSentence(s
@@ -189,7 +186,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
     public final SentenceList getLeavesList() {
         return new StaticSentence(s
@@ -203,7 +199,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final List listBreaksVisible()throws BasicException {
@@ -212,7 +207,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param user
      * @throws BasicException
      */
     public final void CheckIn(String user) throws BasicException {
@@ -222,7 +216,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param user
      * @throws BasicException
      */
     public final void CheckOut(String user) throws BasicException {
@@ -232,8 +225,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param user
-     * @return
      * @throws BasicException
      */
     public final boolean IsCheckedIn(String user) throws BasicException {
@@ -247,8 +238,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param UserID
-     * @param BreakID
      * @throws BasicException
      */
     public final void StartBreak(String UserID,  String BreakID) throws BasicException {
@@ -259,7 +248,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param UserID
      * @throws BasicException
      */
     public final void EndBreak(String UserID) throws BasicException {
@@ -270,8 +258,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param user
-     * @return
      * @throws BasicException
      */
     public final boolean IsOnBreak(String user) throws BasicException {
@@ -286,8 +272,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param user
-     * @return
      * @throws BasicException
      */
     public final String GetShiftID(String user) throws BasicException {
@@ -296,8 +280,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param user
-     * @return
      * @throws BasicException
      */
     public final Date GetLastCheckIn(String user) throws BasicException {
@@ -306,8 +288,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param user
-     * @return
      * @throws BasicException
      */
     public final Date GetLastCheckOut(String user) throws BasicException {
@@ -316,8 +296,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param ShiftID
-     * @return
      * @throws BasicException
      */
     public final Date GetStartBreakTime(String ShiftID) throws BasicException {
@@ -326,8 +304,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param ShiftID
-     * @return
      * @throws BasicException
      */
     public final String GetLastBreakID(String ShiftID) throws BasicException {
@@ -336,8 +312,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param ShiftID
-     * @return
      * @throws BasicException
      */
     public final String GetLastBreakName(String ShiftID) throws BasicException {
@@ -347,8 +321,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param user
-     * @return
      * @throws BasicException
      */
     public final Object [] GetLastBreak(String user) throws BasicException {
@@ -360,8 +332,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param user
-     * @return
      * @throws BasicException
      */
     public final boolean IsOnLeave(String user) throws BasicException {
@@ -379,7 +349,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      */
         public SentenceList getEmployeeList() {
         return new StaticSentence(s
@@ -397,7 +366,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param user
      * @throws BasicException
      */
     public void BlockEmployee(String user) throws BasicException {
@@ -418,8 +386,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param id
-     * @return
      * @throws BasicException
      */
     public EmployeeInfoExt loadEmployeeExt(String id) throws BasicException {
@@ -436,8 +402,6 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
 
         /**
          *
-         * @param dr
-         * @return
          * @throws BasicException
          */
         @Override

@@ -30,7 +30,6 @@ import java.io.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class CompanyDetails {
     private String db_url;
@@ -52,7 +51,6 @@ public class CompanyDetails {
 
     /**
      *
-     * @param config
      */
     public void loadProperties(AppConfig config) {
 
@@ -66,7 +64,6 @@ public class CompanyDetails {
 
     /**
      *
-     * @return
      */
     public String getUser() {
         return db_user;

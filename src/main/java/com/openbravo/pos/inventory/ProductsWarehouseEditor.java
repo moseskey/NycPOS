@@ -29,7 +29,6 @@ import java.awt.Component;
 
 /**
  *
- * @author adrianromero
  */
 public class ProductsWarehouseEditor extends javax.swing.JPanel implements EditorRecord {
 
@@ -105,7 +104,6 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueEdit(Object value) {
@@ -125,7 +123,6 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
 
     /**
      *
-     * @param value
      */
     @Override
     public void writeValueDelete(Object value) {
@@ -145,7 +142,6 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -164,7 +160,6 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {

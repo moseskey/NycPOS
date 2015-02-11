@@ -28,7 +28,6 @@ import javax.swing.*;
 
 /**
  *
- * @author adrianromero
  */
 public class JCatalogTab extends javax.swing.JPanel {
 
@@ -56,9 +55,6 @@ public class JCatalogTab extends javax.swing.JPanel {
 
     /**
      *
-     * @param ico
-     * @param al
-     * @param textTip
      */
         public void addButton(Icon ico, ActionListener al, String textTip) {
         JButton btn = new JButton();

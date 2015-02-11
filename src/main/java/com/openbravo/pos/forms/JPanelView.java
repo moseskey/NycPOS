@@ -24,13 +24,11 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author adrianromero
  */
 public interface JPanelView {
 
     /**
      *
-     * @return
      */
     public abstract String getTitle();
 
@@ -42,13 +40,11 @@ public interface JPanelView {
 
     /**
      *
-     * @return
      */
     public abstract boolean deactivate();
 
     /**
      *
-     * @return
      */
     public abstract JComponent getComponent();
 }

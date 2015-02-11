@@ -21,7 +21,6 @@ package com.openbravo.pos.payment;
 
 /**
  *
- * @author JG uniCenta
  */
 public class PaymentGatewayExt implements PaymentGateway {
 
@@ -31,7 +30,6 @@ public class PaymentGatewayExt implements PaymentGateway {
 
     /**
      *
-     * @param payinfo
      */
     @Override
     public void execute(PaymentInfoMagcard payinfo) {

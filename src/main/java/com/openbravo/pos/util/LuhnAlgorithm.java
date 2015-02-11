@@ -21,7 +21,6 @@ package com.openbravo.pos.util;
 
 /**
  *
- * @author Mikel Irurita
  */
 public class LuhnAlgorithm {
 
@@ -31,8 +30,6 @@ public class LuhnAlgorithm {
 
     /**
      *
-     * @param cardNumber
-     * @return
      */
     public static boolean checkCC(String cardNumber){
         int sum = 0;

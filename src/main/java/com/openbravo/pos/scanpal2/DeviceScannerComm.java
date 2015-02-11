@@ -27,7 +27,6 @@ import java.util.StringTokenizer;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener {
 
@@ -140,7 +139,6 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
 
     /**
      *
-     * @return
      * @throws DeviceScannerException
      */
     public ProductDownloaded recieveProduct() throws DeviceScannerException {
@@ -185,9 +183,6 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
 
     /**
      *
-     * @param sName
-     * @param sCode
-     * @param dPrice
      * @throws DeviceScannerException
      */
     public void sendProduct(String sName, String sCode, Double dPrice) throws DeviceScannerException {
@@ -331,7 +326,6 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
 
     /**
      *
-     * @param e
      */
     public void serialEvent(SerialPortEvent e) {
 

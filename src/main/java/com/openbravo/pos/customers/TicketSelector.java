@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author JG uniCenta - outline/prep for uniCenta mobile + eCommerce connector
  */
 public interface TicketSelector {
 
@@ -22,25 +21,21 @@ public interface TicketSelector {
 
     /**
      *
-     * @param value
      */
     public void setComponentEnabled(boolean value);
 
     /**
      *
-     * @return
      */
     public Component getComponent();
 
     /**
      *
-     * @param l
      */
     public void addActionListener(ActionListener l);
 
     /**
      *
-     * @param l
      */
     public void removeActionListener(ActionListener l);
 }

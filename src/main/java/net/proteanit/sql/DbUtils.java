@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package net.proteanit.sql;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -11,14 +7,11 @@ import javax.swing.table.TableModel;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DbUtils {
 
     /**
      *
-     * @param rs
-     * @return
      */
     public static TableModel resultSetToTableModel(ResultSet rs) {
          try {

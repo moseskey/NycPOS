@@ -28,7 +28,6 @@ import com.openbravo.pos.panels.JPanelTable2;
 
 /**
  *
- * @author adrianromero
  */
 public class AttributeSetsPanel extends JPanelTable2 {
 
@@ -62,7 +61,6 @@ public class AttributeSetsPanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public EditorRecord getEditor() {
@@ -71,7 +69,6 @@ public class AttributeSetsPanel extends JPanelTable2 {
 
     /**
      *
-     * @return
      */
     @Override
     public String getTitle() {

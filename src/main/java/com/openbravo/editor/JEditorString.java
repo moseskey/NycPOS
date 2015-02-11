@@ -21,7 +21,6 @@ package com.openbravo.editor;
 
 /**
  *
- * @author JG uniCenta
  */
 public class JEditorString extends JEditorText {
 
@@ -32,7 +31,6 @@ public class JEditorString extends JEditorText {
 
     /**
      *
-     * @return
      */
     @Override
     protected final int getMode() {
@@ -41,7 +39,6 @@ public class JEditorString extends JEditorText {
 
     /**
      *
-     * @return
      */
     @Override
     protected int getStartMode() {

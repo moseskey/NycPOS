@@ -21,7 +21,6 @@ package com.openbravo.pos.scanpal2;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ProductDownloaded {
 
@@ -36,7 +35,6 @@ public class ProductDownloaded {
 
     /**
      *
-     * @param value
      */
     public void setCode(String value) {
         m_sCode = value;
@@ -44,7 +42,6 @@ public class ProductDownloaded {
 
     /**
      *
-     * @return
      */
     public String getCode() {
         return m_sCode;
@@ -52,7 +49,6 @@ public class ProductDownloaded {
 
     /**
      *
-     * @param value
      */
     public void setQuantity(double value) {
         m_dQuantity = value;
@@ -60,7 +56,6 @@ public class ProductDownloaded {
 
     /**
      *
-     * @return
      */
     public double getQuantity() {
         return m_dQuantity;

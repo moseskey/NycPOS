@@ -26,7 +26,6 @@ import java.util.*;
 
 /**
  *
- * @author JG uniCenta
  */
 public class ListProviderCreator implements ListProvider {
 
@@ -35,7 +34,6 @@ public class ListProviderCreator implements ListProvider {
     private Object params;
 
     /** Creates a new instance of ListProviderEditor
-     * @param sent
      * @param prov */
     public ListProviderCreator(SentenceList sent, EditorCreator prov) {
         this.sent = sent;
@@ -45,7 +43,6 @@ public class ListProviderCreator implements ListProvider {
 
     /**
      *
-     * @param sent
      */
     public ListProviderCreator(SentenceList sent) {
         this(sent, null);
@@ -53,7 +50,6 @@ public class ListProviderCreator implements ListProvider {
 
     /**
      *
-     * @param table
      */
     public ListProviderCreator(TableDefinition table) {
         this(table.getListSentence(), null);
@@ -91,7 +87,6 @@ public class ListProviderCreator implements ListProvider {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override
@@ -102,7 +97,6 @@ public class ListProviderCreator implements ListProvider {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     @Override

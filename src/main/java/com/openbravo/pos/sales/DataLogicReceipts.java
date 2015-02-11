@@ -34,7 +34,6 @@ import java.util.List;
 
 /**
  *
- * @author adrianromero
  */
 public class DataLogicReceipts extends BeanFactoryDataSingle {
 
@@ -46,7 +45,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param s
      */
     @Override
     public void init(Session s){
@@ -55,8 +53,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param Id
-     * @return
      * @throws BasicException
      */
     public final TicketInfo getSharedTicket(String Id) throws BasicException {
@@ -74,7 +70,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
 
     /**
      *
-     * @return
      * @throws BasicException
      */
     public final List<SharedTicketInfo> getSharedTicketList() throws BasicException {
@@ -89,9 +84,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param id
-     * @param ticket
-     * @param pickupid
      * @throws BasicException
      */
     public final void updateSharedTicket(final String id, final TicketInfo ticket, int pickupid) throws BasicException {
@@ -119,9 +111,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param id
-     * @param ticket
-     * @param pickupid
      * @throws BasicException
      */
     public final void insertSharedTicket(final String id, final TicketInfo ticket, int pickupid) throws BasicException {
@@ -151,7 +140,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param id
      * @throws BasicException
      */
     public final void deleteSharedTicket(final String id) throws BasicException {
@@ -163,8 +151,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param Id
-     * @return
      * @throws BasicException
      */
     public final Integer getPickupId(String Id) throws BasicException {

@@ -23,7 +23,6 @@ import com.openbravo.data.loader.IKeyed;
 
 /**
  *
- * @author  Ali Safdar & Aneeqa Baber
  */
 public class LeavesInfo implements IKeyed {
 
@@ -37,11 +36,6 @@ public class LeavesInfo implements IKeyed {
 
 
     /** Creates new LeavesInfo
-     * @param id
-     * @param name
-     * @param notes
-     * @param startdate
-     * @param employeeid
      * @param enddate */
     public LeavesInfo(String id, String name, String employeeid, String startdate, String enddate, String notes) {
         m_sID = id;
@@ -54,7 +48,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     @Override
     public Object getKey() {
@@ -63,7 +56,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @param sID
      */
     public void setID(String sID) {
         m_sID = sID;
@@ -71,7 +63,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -79,7 +70,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -87,7 +77,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @param sName
      */
     public void setName(String sName) {
         m_sName = sName;
@@ -100,7 +89,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getEmployeeID() {
         return m_sEmployeeID;
@@ -108,7 +96,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @param EmployeeID
      */
     public void setEmployeeID(String EmployeeID) {
         this.m_sEmployeeID = EmployeeID;
@@ -116,7 +103,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getStartDate() {
         return m_sStartDate;
@@ -124,7 +110,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @param StartDate
      */
     public void setStartDate(String StartDate) {
         this.m_sStartDate = StartDate;
@@ -132,7 +117,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getEndDate() {
         return m_sEndDate;
@@ -140,7 +124,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @param EndDate
      */
     public void setEndDate(String EndDate) {
         this.m_sEndDate = EndDate;
@@ -148,7 +131,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @return
      */
     public String getNotes() {
         return m_sNotes;
@@ -156,7 +138,6 @@ public class LeavesInfo implements IKeyed {
 
     /**
      *
-     * @param Notes
      */
     public void setNotes(String Notes) {
         this.m_sNotes = Notes;

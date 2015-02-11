@@ -7,7 +7,6 @@ import com.openbravo.data.loader.SerializableRead;
 
 /**
  *
- * @author aurelien escartin
  *
  */
 public class PromoTypeInfo implements SerializableRead, IKeyed {
@@ -24,7 +23,6 @@ public class PromoTypeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public Object getKey() {
         return m_sID;
@@ -32,7 +30,6 @@ public class PromoTypeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param dr
      * @throws BasicException
      */
     public void readValues(DataRead dr) throws BasicException {
@@ -42,7 +39,6 @@ public class PromoTypeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sID
      */
     public void setID(String sID) {
         m_sID = sID;
@@ -50,7 +46,6 @@ public class PromoTypeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getID() {
         return m_sID;
@@ -58,7 +53,6 @@ public class PromoTypeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @return
      */
     public String getName() {
         return m_sName;
@@ -66,7 +60,6 @@ public class PromoTypeInfo implements SerializableRead, IKeyed {
 
     /**
      *
-     * @param sName
      */
     public void setName(String sName) {
         m_sName = sName;

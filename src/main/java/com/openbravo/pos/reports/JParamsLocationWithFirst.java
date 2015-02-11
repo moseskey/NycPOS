@@ -23,7 +23,6 @@ import java.util.List;
 
 /**
  *
- * @author adrian
  */
 public class JParamsLocationWithFirst extends JParamsLocation {
 
@@ -34,7 +33,6 @@ public class JParamsLocationWithFirst extends JParamsLocation {
 
     /**
      *
-     * @param a
      */
     @Override
     protected void addFirst(List a) {

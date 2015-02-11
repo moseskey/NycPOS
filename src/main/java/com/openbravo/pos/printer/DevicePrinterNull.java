@@ -23,7 +23,6 @@ import com.openbravo.pos.forms.AppLocal;
 
 /**
  *
- * @author JG uniCenta
  */
 public class DevicePrinterNull implements DevicePrinter {
 
@@ -44,7 +43,6 @@ public class DevicePrinterNull implements DevicePrinter {
 
     /**
      *
-     * @return
      */
     @Override
     public String getPrinterName() {
@@ -53,7 +51,6 @@ public class DevicePrinterNull implements DevicePrinter {
 
     /**
      *
-     * @return
      */
     @Override
     public String getPrinterDescription() {
@@ -62,7 +59,6 @@ public class DevicePrinterNull implements DevicePrinter {
 
     /**
      *
-     * @return
      */
     @Override
     public javax.swing.JComponent getPrinterComponent() {
@@ -85,9 +81,6 @@ public class DevicePrinterNull implements DevicePrinter {
 
     /**
      *
-     * @param type
-     * @param position
-     * @param code
      */
     @Override
     public void printBarCode(String type, String position, String code) {
@@ -95,7 +88,6 @@ public class DevicePrinterNull implements DevicePrinter {
 
     /**
      *
-     * @param image
      */
     @Override
     public void printImage(java.awt.image.BufferedImage image) {
@@ -103,7 +95,6 @@ public class DevicePrinterNull implements DevicePrinter {
 
     /**
      *
-     * @param iTextSize
      */
     @Override
     public void beginLine(int iTextSize) {
@@ -111,8 +102,6 @@ public class DevicePrinterNull implements DevicePrinter {
 
     /**
      *
-     * @param iStyle
-     * @param sText
      */
     @Override
     public void printText(int iStyle, String sText) {

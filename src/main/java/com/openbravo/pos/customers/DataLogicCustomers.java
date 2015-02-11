@@ -26,8 +26,6 @@ import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.forms.BeanFactoryDataSingle;
 
 /**
- * @author JG uniCenta
- * @author adrianromero
  */
 public class DataLogicCustomers extends BeanFactoryDataSingle {
 
@@ -50,7 +48,6 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param s
      */
     @Override
     public void init(Session s){
@@ -198,8 +195,6 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
 
     /**
      *
-     * @param customer
-     * @return
      * @throws BasicException
      */
     public int updateCustomerExt(final CustomerInfoExt customer) throws BasicException {

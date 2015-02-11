@@ -42,7 +42,6 @@ import javax.swing.SwingConstants;
 
 /**
  *
- * @author adrianromero
  */
 public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInterface {
 
@@ -53,7 +52,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
     private final Boolean priceWith00;
 
     /** Creates new form JPaymentCash
-     * @param notifier
      * @param dlSystem */
     public JPaymentCashPos(JPaymentNotifier notifier, DataLogicSystem dlSystem) {
 
@@ -90,9 +88,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
     /**
      *
-     * @param customerext
-     * @param dTotal
-     * @param transID
      */
     @Override
     public void activate(CustomerInfoExt customerext, double dTotal, String transID) {
@@ -108,7 +103,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
     /**
      *
-     * @return
      */
     @Override
     public PaymentInfo executePayment() {
@@ -123,7 +117,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
     /**
      *
-     * @return
      */
     @Override
     public Component getComponent() {
@@ -168,7 +161,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
         /**
          *
-         * @param dlSystem
          */
         public ScriptPaymentCash(DataLogicSystem dlSystem) {
 //added 19.04.13 JDL
@@ -182,8 +174,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
         /**
          *
-         * @param image
-         * @param amount
          */
         public void addButton(String image, double amount) {
             JButton btn = new JButton();

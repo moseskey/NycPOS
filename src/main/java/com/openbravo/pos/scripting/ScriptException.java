@@ -21,7 +21,6 @@ package com.openbravo.pos.scripting;
 
 /**
  *
- * @author adrianromero
  */
 public class ScriptException extends java.lang.Exception {
 
@@ -42,8 +41,6 @@ public class ScriptException extends java.lang.Exception {
 
     /**
      *
-     * @param msg
-     * @param cause
      */
     public ScriptException(String msg, Throwable cause) {
         super(msg, cause);
