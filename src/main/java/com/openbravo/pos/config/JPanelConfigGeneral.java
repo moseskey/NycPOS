@@ -347,14 +347,14 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         jPanel1.add(jtxtStartupText);
         jtxtStartupText.setBounds(110, 60, 350, 30);
 
-        jbtnLogoName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileopen.png"))); // NOI18N
+        jbtnLogoName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fileopen.png"))); // NOI18N
         jbtnLogoName.setMaximumSize(new java.awt.Dimension(64, 32));
         jbtnLogoName.setMinimumSize(new java.awt.Dimension(64, 32));
         jbtnLogoName.setPreferredSize(new java.awt.Dimension(64, 32));
         jPanel1.add(jbtnLogoName);
         jbtnLogoName.setBounds(480, 20, 64, 32);
 
-        jbtnLogoText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileopen.png"))); // NOI18N
+        jbtnLogoText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fileopen.png"))); // NOI18N
         jbtnLogoText.setMaximumSize(new java.awt.Dimension(64, 32));
         jbtnLogoText.setMinimumSize(new java.awt.Dimension(64, 32));
         jbtnLogoText.setPreferredSize(new java.awt.Dimension(64, 32));

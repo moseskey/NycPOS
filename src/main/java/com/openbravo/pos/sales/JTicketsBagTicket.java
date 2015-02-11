@@ -318,7 +318,7 @@ public class JTicketsBagTicket extends JTicketsBag {
         m_jButtons.add(m_jTicketId);
 
         jButton2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search24.png"))); // NOI18N
         jButton2.setText(AppLocal.getIntString("button.print")); // NOI18N
         jButton2.setToolTipText("Search Tickets");
         jButton2.setFocusPainted(false);
@@ -336,7 +336,7 @@ public class JTicketsBagTicket extends JTicketsBag {
         m_jButtons.add(jButton2);
 
         m_jEdit.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        m_jEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_editline.png"))); // NOI18N
+        m_jEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_editline.png"))); // NOI18N
         m_jEdit.setText(AppLocal.getIntString("button.print")); // NOI18N
         m_jEdit.setToolTipText("Edit current Ticket");
         m_jEdit.setFocusPainted(false);
@@ -354,7 +354,7 @@ public class JTicketsBagTicket extends JTicketsBag {
         m_jButtons.add(m_jEdit);
 
         m_jRefund.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        m_jRefund.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/inbox.png"))); // NOI18N
+        m_jRefund.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inbox.png"))); // NOI18N
         m_jRefund.setText(AppLocal.getIntString("button.print")); // NOI18N
         m_jRefund.setToolTipText("Receipt Refund");
         m_jRefund.setFocusPainted(false);
@@ -372,7 +372,7 @@ public class JTicketsBagTicket extends JTicketsBag {
         m_jButtons.add(m_jRefund);
 
         m_jPrint.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        m_jPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24.png"))); // NOI18N
+        m_jPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer24.png"))); // NOI18N
         m_jPrint.setText(AppLocal.getIntString("button.print")); // NOI18N
         m_jPrint.setToolTipText("Reprint Receipt");
         m_jPrint.setFocusPainted(false);
@@ -415,7 +415,7 @@ public class JTicketsBagTicket extends JTicketsBag {
         jPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jPanel5.setLayout(new java.awt.GridBagLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ok.png"))); // NOI18N
         jButton1.setToolTipText("Enter Receipt and touch to Find by Number");
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);

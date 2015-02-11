@@ -860,7 +860,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
         jToolBar1.setFloatable(false);
 
-        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/filesave.png"))); // NOI18N
+        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/filesave.png"))); // NOI18N
         btnSave.setToolTipText(getBundleString("save"));
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -869,7 +869,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         });
         jToolBar1.add(btnSave);
 
-        btnPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/yast_printer.png"))); // NOI18N
+        btnPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/yast_printer.png"))); // NOI18N
         btnPrint.setToolTipText(getBundleString("print"));
         btnPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -878,7 +878,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         });
         jToolBar1.add(btnPrint);
 
-        btnReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
+        btnReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reload.png"))); // NOI18N
         btnReload.setToolTipText(getBundleString("reload"));
         btnReload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -888,7 +888,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         jToolBar1.add(btnReload);
         jToolBar1.add(jSeparator1);
 
-        btnActualSize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/mime.png"))); // NOI18N
+        btnActualSize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mime.png"))); // NOI18N
         btnActualSize.setToolTipText(getBundleString("actual.size"));
         btnActualSize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -897,7 +897,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         });
         jToolBar1.add(btnActualSize);
 
-        btnFitPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/mime2.png"))); // NOI18N
+        btnFitPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mime2.png"))); // NOI18N
         btnFitPage.setToolTipText(getBundleString("fit.page"));
         btnFitPage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -906,7 +906,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         });
         jToolBar1.add(btnFitPage);
 
-        btnFitWidth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/mime3.png"))); // NOI18N
+        btnFitWidth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mime3.png"))); // NOI18N
         btnFitWidth.setToolTipText(getBundleString("fit.width"));
         btnFitWidth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -916,7 +916,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         jToolBar1.add(btnFitWidth);
         jToolBar1.add(jSeparator2);
 
-        btnZoomIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/viewmag+.png"))); // NOI18N
+        btnZoomIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/viewmag+.png"))); // NOI18N
         btnZoomIn.setToolTipText(getBundleString("zoom.in"));
         btnZoomIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -942,7 +942,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         });
         jToolBar1.add(cmbZoom);
 
-        btnZoomOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/viewmag-.png"))); // NOI18N
+        btnZoomOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/viewmag-.png"))); // NOI18N
         btnZoomOut.setToolTipText(getBundleString("zoom.out"));
         btnZoomOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -952,7 +952,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         jToolBar1.add(btnZoomOut);
         jToolBar1.add(jSeparator3);
 
-        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2leftarrow.png"))); // NOI18N
+        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2leftarrow.png"))); // NOI18N
         btnFirst.setToolTipText(getBundleString("first.page"));
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -961,7 +961,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         });
         jToolBar1.add(btnFirst);
 
-        btnPrevious.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png"))); // NOI18N
+        btnPrevious.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1leftarrow.png"))); // NOI18N
         btnPrevious.setToolTipText(getBundleString("previous.page"));
         btnPrevious.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -981,7 +981,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         });
         jToolBar1.add(txtGoTo);
 
-        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png"))); // NOI18N
+        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1rightarrow.png"))); // NOI18N
         btnNext.setToolTipText(getBundleString("next.page"));
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -990,7 +990,7 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         });
         jToolBar1.add(btnNext);
 
-        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2rightarrow.png"))); // NOI18N
+        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2rightarrow.png"))); // NOI18N
         btnLast.setToolTipText(getBundleString("last.page"));
         btnLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

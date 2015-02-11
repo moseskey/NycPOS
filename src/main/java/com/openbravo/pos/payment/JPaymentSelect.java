@@ -270,7 +270,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/cash.png"; }
+        public String getIconKey() { return "/images/cash.png"; }
     }
 
     /**
@@ -306,7 +306,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/cheque.png"; }
+        public String getIconKey() { return "/images/cheque.png"; }
     }
 
     /**
@@ -342,7 +342,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/voucher.png"; }
+        public String getIconKey() { return "/images/voucher.png"; }
     }
 
     /**
@@ -378,7 +378,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/ccard.png"; }
+        public String getIconKey() { return "/images/ccard.png"; }
     }
 
     /**
@@ -414,7 +414,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/wallet.png"; }
+        public String getIconKey() { return "/images/wallet.png"; }
     }
 
     /**
@@ -450,7 +450,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/customer.png"; }
+        public String getIconKey() { return "/images/customer.png"; }
     }
 
     /**
@@ -486,7 +486,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/cash.png"; }
+        public String getIconKey() { return "/images/cash.png"; }
     }
 
     /**
@@ -522,7 +522,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/cheque.png"; }
+        public String getIconKey() { return "/images/cheque.png"; }
     }
 
     /**
@@ -558,7 +558,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/voucher.png"; }
+        public String getIconKey() { return "/images/voucher.png"; }
     }
 
     /**
@@ -594,7 +594,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/ccard.png"; }
+        public String getIconKey() { return "/images/ccard.png"; }
     }
 
 // * Bank Payment receipt - Thanks Steve Clough! August 2011
@@ -632,7 +632,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
          * @return
          */
         @Override
-        public String getIconKey() { return "/com/openbravo/images/bank.png"; }
+        public String getIconKey() { return "/images/bank.png"; }
     }
 
     /**
@@ -740,7 +740,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         m_jRemaininglEuros.setRequestFocusEnabled(false);
         jPanel6.add(m_jRemaininglEuros);
 
-        m_jButtonAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnplus.png"))); // NOI18N
+        m_jButtonAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btnplus.png"))); // NOI18N
         m_jButtonAdd.setToolTipText("Add Part Payment");
         m_jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -749,7 +749,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         });
         jPanel6.add(m_jButtonAdd);
 
-        m_jButtonRemove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnminus.png"))); // NOI18N
+        m_jButtonRemove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btnminus.png"))); // NOI18N
         m_jButtonRemove.setToolTipText("Delete Part Payment");
         m_jButtonRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -780,7 +780,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         jPanel5.setLayout(new java.awt.BorderLayout());
 
         m_jButtonCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
         m_jButtonCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         m_jButtonCancel.setFocusPainted(false);
         m_jButtonCancel.setFocusable(false);
@@ -794,7 +794,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         jPanel2.add(jPanel1);
 
         m_jButtonOK.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        m_jButtonOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+        m_jButtonOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ok.png"))); // NOI18N
         m_jButtonOK.setText(AppLocal.getIntString("Button.OK")); // NOI18N
         m_jButtonOK.setFocusPainted(false);
         m_jButtonOK.setFocusable(false);
@@ -811,14 +811,14 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
         jPanel5.add(jPanel2, java.awt.BorderLayout.LINE_END);
 
-        m_jButtonPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24_off.png"))); // NOI18N
+        m_jButtonPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer24_off.png"))); // NOI18N
         m_jButtonPrint.setSelected(true);
         m_jButtonPrint.setToolTipText("Print Receipt");
         m_jButtonPrint.setFocusPainted(false);
         m_jButtonPrint.setFocusable(false);
         m_jButtonPrint.setMargin(new java.awt.Insets(8, 16, 8, 16));
         m_jButtonPrint.setRequestFocusEnabled(false);
-        m_jButtonPrint.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24.png"))); // NOI18N
+        m_jButtonPrint.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer24.png"))); // NOI18N
         m_jButtonPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jButtonPrintActionPerformed(evt);

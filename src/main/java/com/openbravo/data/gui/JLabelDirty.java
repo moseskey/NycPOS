@@ -37,7 +37,7 @@ public class JLabelDirty extends JLabel {
     public JLabelDirty(DirtyManager dm) {
 
         if (m_IconModif == null) {
-            m_IconModif = new ImageIcon(getClass().getResource("/com/openbravo/images/edit.png"));
+            m_IconModif = new ImageIcon(getClass().getResource("/images/edit.png"));
         }
         if (m_IconNull == null) {
             m_IconNull = new NullIcon(16, 16);

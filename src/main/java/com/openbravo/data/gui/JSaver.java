@@ -94,7 +94,7 @@ public class JSaver extends JPanel implements StateListener {
 
         setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        jbtnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/editnew.png"))); // NOI18N
+        jbtnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editnew.png"))); // NOI18N
         jbtnNew.setToolTipText("Add New");
         jbtnNew.setFocusPainted(false);
         jbtnNew.setFocusable(false);
@@ -107,7 +107,7 @@ public class JSaver extends JPanel implements StateListener {
         });
         add(jbtnNew);
 
-        jbtnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_delete.png"))); // NOI18N
+        jbtnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_delete.png"))); // NOI18N
         jbtnDelete.setToolTipText("Delete");
         jbtnDelete.setFocusPainted(false);
         jbtnDelete.setFocusable(false);
@@ -121,7 +121,7 @@ public class JSaver extends JPanel implements StateListener {
         add(jbtnDelete);
         add(jSeparator1);
 
-        jbtnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/filesave.png"))); // NOI18N
+        jbtnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/filesave.png"))); // NOI18N
         jbtnSave.setToolTipText("Save");
         jbtnSave.setFocusPainted(false);
         jbtnSave.setFocusable(false);

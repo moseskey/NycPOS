@@ -414,7 +414,7 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         m_jToolbarContainer.setLayout(new java.awt.BorderLayout());
 
         m_jbtnTables.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jbtnTables.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/tables.png"))); // NOI18N
+        m_jbtnTables.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tables.png"))); // NOI18N
         m_jbtnTables.setText(AppLocal.getIntString("button.tables")); // NOI18N
         m_jbtnTables.setToolTipText("Go to Table Plan");
         m_jbtnTables.setFocusPainted(false);
@@ -428,7 +428,7 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         jPanel4.add(m_jbtnTables);
 
         m_jbtnReceive.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jbtnReceive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/receive.png"))); // NOI18N
+        m_jbtnReceive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/receive.png"))); // NOI18N
         m_jbtnReceive.setText(AppLocal.getIntString("button.receive")); // NOI18N
         m_jbtnReceive.setToolTipText("Receive pre-Booked Customer");
         m_jbtnReceive.setFocusPainted(false);
@@ -495,7 +495,7 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         jPanel1.add(txtCustomer);
         txtCustomer.setBounds(90, 160, 220, 25);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_add_sml.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customer_add_sml.png"))); // NOI18N
         jButton1.setToolTipText("Show Customers");
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);

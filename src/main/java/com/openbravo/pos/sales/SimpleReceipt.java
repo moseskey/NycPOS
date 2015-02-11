@@ -379,7 +379,7 @@ public class SimpleReceipt extends javax.swing.JPanel {
         m_jTicketId.setRequestFocusEnabled(false);
         m_jButtons.add(m_jTicketId);
 
-        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_sml.png"))); // NOI18N
+        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customer_sml.png"))); // NOI18N
         btnCustomer.setToolTipText("Show Customers");
         btnCustomer.setFocusPainted(false);
         btnCustomer.setFocusable(false);

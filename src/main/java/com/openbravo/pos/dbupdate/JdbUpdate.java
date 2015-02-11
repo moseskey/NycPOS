@@ -49,7 +49,7 @@ public class JdbUpdate extends javax.swing.JFrame {
         initComponents();
 
         try {
-            this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/com/openbravo/images/favicon.png")));
+            this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/images/favicon.png")));
         } catch (IOException e) {
         }
         setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION + " - " + AppLocal.getIntString("Menu.Update"));

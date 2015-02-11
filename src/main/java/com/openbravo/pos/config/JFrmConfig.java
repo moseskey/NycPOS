@@ -19,11 +19,6 @@
 
 package com.openbravo.pos.config;
 
-import com.openbravo.basic.BasicException;
-import com.openbravo.pos.forms.AppConfig;
-import com.openbravo.pos.forms.AppLocal;
-import com.openbravo.pos.forms.AppProperties;
-import com.openbravo.pos.forms.JRootFrame;
 import java.awt.BorderLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -31,6 +26,12 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+
+import com.openbravo.basic.BasicException;
+import com.openbravo.pos.forms.AppConfig;
+import com.openbravo.pos.forms.AppLocal;
+import com.openbravo.pos.forms.AppProperties;
+import com.openbravo.pos.forms.JRootFrame;
 
 /**
  *
@@ -47,9 +48,10 @@ public class JFrmConfig extends javax.swing.JFrame {
         initComponents();
 
         try {
-            this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/com/openbravo/images/favicon.png")));
+            this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/images/nycpos-icon-64.png")));
         } catch (IOException e) {
         }
+
         setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION + " - " + AppLocal.getIntString("Menu.Configuration"));
 
         addWindowListener(new MyFrameListener());

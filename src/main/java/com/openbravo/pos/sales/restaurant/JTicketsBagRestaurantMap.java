@@ -54,7 +54,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         }
     }
 
-//    private static final Icon ICO_OCU = new ImageIcon(JTicketsBag.class.getResource("/com/openbravo/images/edit_group.png"));
+//    private static final Icon ICO_OCU = new ImageIcon(JTicketsBag.class.getResource("/images/edit_group.png"));
 //    private static final Icon ICO_FRE = new NullIcon(22, 22);
 
     private java.util.List<Place> m_aplaces;
@@ -75,7 +75,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
     private DataLogicReceipts dlReceipts = null;
     private DataLogicSales dlSales = null;
     private final RestaurantDBUtils restDB;
-    private static final Icon ICO_OCU_SM = new ImageIcon(Place.class.getResource("/com/openbravo/images/edit_group_sm.png"));
+    private static final Icon ICO_OCU_SM = new ImageIcon(Place.class.getResource("/images/edit_group_sm.png"));
     private static final Icon ICO_WAITER = new NullIcon(1, 1);
     private static final Icon ICO_FRE = new NullIcon(22, 22);
     private String waiterDetails;
@@ -779,7 +779,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         m_jbtnReservations.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jbtnReservations.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+        m_jbtnReservations.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
         m_jbtnReservations.setText(AppLocal.getIntString("button.reservations")); // NOI18N
         m_jbtnReservations.setToolTipText("Open Reservations screen");
         m_jbtnReservations.setFocusPainted(false);
@@ -794,7 +794,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         jPanel2.add(m_jbtnReservations);
 
         m_jbtnRefresh.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jbtnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
+        m_jbtnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reload.png"))); // NOI18N
         m_jbtnRefresh.setText(AppLocal.getIntString("button.reloadticket")); // NOI18N
         m_jbtnRefresh.setToolTipText("Reload table information");
         m_jbtnRefresh.setFocusPainted(false);

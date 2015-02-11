@@ -198,7 +198,7 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
         jPanel1.setLayout(null);
 
         jReset.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
+        jReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reload.png"))); // NOI18N
         jReset.setText(AppLocal.getIntString("button.reset")); // NOI18N
         jReset.setFocusPainted(false);
         jReset.setFocusable(false);

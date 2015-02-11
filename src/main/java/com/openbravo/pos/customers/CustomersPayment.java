@@ -284,7 +284,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
 
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_sml.png"))); // NOI18N
+        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customer_sml.png"))); // NOI18N
         btnCustomer.setToolTipText("Customer Account");
         btnCustomer.setFocusPainted(false);
         btnCustomer.setFocusable(false);
@@ -297,7 +297,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         });
         jPanel6.add(btnCustomer);
 
-        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/filesave.png"))); // NOI18N
+        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/filesave.png"))); // NOI18N
         btnSave.setToolTipText("Save");
         btnSave.setFocusPainted(false);
         btnSave.setFocusable(false);
@@ -312,7 +312,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         jPanel6.add(jSeparator1);
 
         btnPay.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnPay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/pay.png"))); // NOI18N
+        btnPay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pay.png"))); // NOI18N
         btnPay.setText(AppLocal.getIntString("button.pay")); // NOI18N
         btnPay.setToolTipText("Pay Account");
         btnPay.setFocusPainted(false);
@@ -348,7 +348,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         jPanel5.setLayout(new java.awt.GridBagLayout());
         jPanel5.add(editorcard, new java.awt.GridBagConstraints());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ok.png"))); // NOI18N
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
         jButton1.setMargin(new java.awt.Insets(8, 14, 8, 14));

@@ -285,7 +285,7 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         add(m_jReference);
         m_jReference.setBounds(90, 11, 150, 25);
 
-        m_jEnter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+        m_jEnter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ok.png"))); // NOI18N
         m_jEnter1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jEnter1ActionPerformed(evt);
@@ -294,7 +294,7 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         add(m_jEnter1);
         m_jEnter1.setBounds(250, 11, 57, 33);
 
-        m_jEnter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/barcode.png"))); // NOI18N
+        m_jEnter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barcode.png"))); // NOI18N
         m_jEnter2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jEnter2ActionPerformed(evt);
@@ -303,7 +303,7 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         add(m_jEnter2);
         m_jEnter2.setBounds(557, 11, 55, 31);
 
-        m_jSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+        m_jSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search24.png"))); // NOI18N
         m_jSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jSearchActionPerformed(evt);

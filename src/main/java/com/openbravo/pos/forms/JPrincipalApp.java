@@ -99,11 +99,11 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 //        m_principalnotificator.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("TextField.shadow")), javax.swing.BorderFactory.createEmptyBorder(1, 5, 1, 5)));
 
         if (jButton1.getComponentOrientation().isLeftToRight()) {
-            menu_open = new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/menu-right.png"));
-            menu_close = new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/menu-left.png"));
+            menu_open = new javax.swing.ImageIcon(getClass().getResource("/images/menu-right.png"));
+            menu_close = new javax.swing.ImageIcon(getClass().getResource("/images/menu-left.png"));
         } else {
-            menu_open = new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/menu-left.png"));
-            menu_close = new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/menu-right.png"));
+            menu_open = new javax.swing.ImageIcon(getClass().getResource("/images/menu-left.png"));
+            menu_close = new javax.swing.ImageIcon(getClass().getResource("/images/menu-right.png"));
         }
         assignMenuButtonIcon();
 
@@ -233,14 +233,14 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
          *
          */
         public void addChangePasswordAction() {
-            addAction(new ChangePasswordAction("/com/openbravo/images/password.png", "Menu.ChangePassword"));
+            addAction(new ChangePasswordAction("/images/password.png", "Menu.ChangePassword"));
         }
 
         /**
          *
          */
         public void addExitAction() {
-            addAction(new ExitAction("/com/openbravo/images/logout.png", "Menu.Exit"));
+            addAction(new ExitAction("/images/logout.png", "Menu.Exit"));
         }
 
         private void addAction(Action act) {
@@ -327,14 +327,14 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
          *
          */
         public void addChangePasswordAction() {
-            menudef.addMenuItem(new ChangePasswordAction("/com/openbravo/images/password.png", "Menu.ChangePassword"));
+            menudef.addMenuItem(new ChangePasswordAction("/images/password.png", "Menu.ChangePassword"));
         }
 
         /**
          *
          */
         public void addExitAction() {
-            menudef.addMenuItem(new ExitAction("/com/openbravo/images/logout.png", "Menu.Exit"));
+            menudef.addMenuItem(new ExitAction("/images/logout.png", "Menu.Exit"));
         }
 
         /**

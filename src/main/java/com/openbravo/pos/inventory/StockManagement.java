@@ -466,7 +466,7 @@ public class StockManagement extends JPanel implements JPanelView {
         m_jdate.setPreferredSize(new java.awt.Dimension(90, 25));
         jPanel8.add(m_jdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 25));
 
-        m_jbtndate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+        m_jbtndate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
         m_jbtndate.setToolTipText("Open Calendar");
         m_jbtndate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -511,7 +511,7 @@ public class StockManagement extends JPanel implements JPanelView {
         jPanel5.setLayout(new java.awt.BorderLayout());
         jPanel8.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, -1, 150));
 
-        m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1uparrow.png"))); // NOI18N
+        m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1uparrow.png"))); // NOI18N
         m_jUp.setToolTipText("Scroll Up a Line");
         m_jUp.setFocusPainted(false);
         m_jUp.setFocusable(false);
@@ -524,7 +524,7 @@ public class StockManagement extends JPanel implements JPanelView {
         });
         jPanel8.add(m_jUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
 
-        m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1downarrow.png"))); // NOI18N
+        m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1downarrow.png"))); // NOI18N
         m_jDown.setToolTipText("Scroll Down a Line");
         m_jDown.setFocusPainted(false);
         m_jDown.setFocusable(false);
@@ -537,7 +537,7 @@ public class StockManagement extends JPanel implements JPanelView {
         });
         jPanel8.add(m_jDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
 
-        m_jDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/editdelete.png"))); // NOI18N
+        m_jDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editdelete.png"))); // NOI18N
         m_jDelete.setToolTipText("Remove Line");
         m_jDelete.setFocusPainted(false);
         m_jDelete.setFocusable(false);
@@ -550,7 +550,7 @@ public class StockManagement extends JPanel implements JPanelView {
         });
         jPanel8.add(m_jDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
 
-        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/attributes.png"))); // NOI18N
+        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/attributes.png"))); // NOI18N
         jEditAttributes.setToolTipText("Attrubutes");
         jEditAttributes.setFocusPainted(false);
         jEditAttributes.setFocusable(false);
@@ -625,7 +625,7 @@ public class StockManagement extends JPanel implements JPanelView {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/barcode.png"))); // NOI18N
+        m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barcode.png"))); // NOI18N
         m_jEnter.setFocusPainted(false);
         m_jEnter.setFocusable(false);
         m_jEnter.setRequestFocusEnabled(false);

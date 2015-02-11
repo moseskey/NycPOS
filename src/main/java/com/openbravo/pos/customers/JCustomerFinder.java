@@ -366,7 +366,7 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         m_jtxtPhone.setPreferredSize(new java.awt.Dimension(220, 25));
 
         jcmdReset.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
+        jcmdReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reload.png"))); // NOI18N
         jcmdReset.setText(bundle.getString("button.reset")); // NOI18N
         jcmdReset.setToolTipText("Clear Filter");
         jcmdReset.setActionCommand("Reset ");
@@ -380,7 +380,7 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         jcmdReset.getAccessibleContext().setAccessibleDescription("");
 
         jcmdExecute.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdExecute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+        jcmdExecute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ok.png"))); // NOI18N
         jcmdExecute.setText(AppLocal.getIntString("button.executefilter")); // NOI18N
         jcmdExecute.setToolTipText("Execute Filter");
         jcmdExecute.setFocusPainted(false);
@@ -486,7 +486,7 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         jPanel8.setLayout(new java.awt.BorderLayout());
 
         jcmdCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
         jcmdCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         jcmdCancel.setFocusPainted(false);
         jcmdCancel.setFocusable(false);
@@ -499,7 +499,7 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         });
         jPanel1.add(jcmdCancel);
 
-        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ok.png"))); // NOI18N
         jcmdOK.setText(AppLocal.getIntString("Button.OK")); // NOI18N
         jcmdOK.setEnabled(false);
         jcmdOK.setFocusPainted(false);

@@ -650,7 +650,7 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
         jcard.setEditable(false);
         jcard.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/encrypted.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/encrypted.png"))); // NOI18N
         jButton2.setToolTipText("Create Key");
         jButton2.setMaximumSize(new java.awt.Dimension(64, 32));
         jButton2.setMinimumSize(new java.awt.Dimension(64, 32));
@@ -661,7 +661,7 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileclose.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fileclose.png"))); // NOI18N
         jButton3.setToolTipText("Clear Key");
         jButton3.setMaximumSize(new java.awt.Dimension(64, 32));
         jButton3.setMinimumSize(new java.awt.Dimension(64, 32));

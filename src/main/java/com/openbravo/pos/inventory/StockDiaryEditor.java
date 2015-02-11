@@ -489,7 +489,7 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         m_jdate.setPreferredSize(new java.awt.Dimension(40, 20));
         jPanel1.add(m_jdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 25));
 
-        m_jbtndate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+        m_jbtndate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
         m_jbtndate.setToolTipText("Open Calendar");
         m_jbtndate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -519,7 +519,7 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         jproduct.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(jproduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 45, 200, 25));
 
-        jEditProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+        jEditProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search24.png"))); // NOI18N
         jEditProduct.setToolTipText("Search Product List");
         jEditProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -550,7 +550,7 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         });
         jPanel1.add(m_jcodebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 200, 25));
 
-        m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/barcode.png"))); // NOI18N
+        m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barcode.png"))); // NOI18N
         m_jEnter.setToolTipText("Get Barcode");
         m_jEnter.setFocusPainted(false);
         m_jEnter.setFocusable(false);
@@ -580,7 +580,7 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         });
         jPanel1.add(m_jreference, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 115, 200, 25));
 
-        m_jEnter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/products.png"))); // NOI18N
+        m_jEnter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/products.png"))); // NOI18N
         m_jEnter1.setToolTipText("Enter Product ID");
         m_jEnter1.setFocusPainted(false);
         m_jEnter1.setFocusable(false);
@@ -606,7 +606,7 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         jattributes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(jattributes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 115, 200, 25));
 
-        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/attributes.png"))); // NOI18N
+        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/attributes.png"))); // NOI18N
         jEditAttributes.setToolTipText("Product Attributes");
         jEditAttributes.setMaximumSize(new java.awt.Dimension(65, 33));
         jEditAttributes.setMinimumSize(new java.awt.Dimension(65, 33));

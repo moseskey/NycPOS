@@ -195,7 +195,7 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
 //                    }
                     if (image == null) {
                         try {
-                            InputStream is = getClass().getResourceAsStream("/com/openbravo/images/no_image.png");
+                            InputStream is = getClass().getResourceAsStream("/images/no_image.png");
                             if (is != null) {
                                 image = ImageIO.read(is);
                             }

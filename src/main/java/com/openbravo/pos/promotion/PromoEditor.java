@@ -1052,7 +1052,7 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
 
         m_jBonusProd.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        btnValidTo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+        btnValidTo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
         btnValidTo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnValidToActionPerformed(evt);
@@ -1061,7 +1061,7 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
 
         m_jEndDate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        btnValidFrom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+        btnValidFrom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
         btnValidFrom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnValidFromActionPerformed(evt);
@@ -1071,7 +1071,7 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
         m_jEndHour.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jEndHour.setPreferredSize(new java.awt.Dimension(110, 28));
 
-        m_jSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+        m_jSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search24.png"))); // NOI18N
         m_jSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jSearchActionPerformed(evt);
@@ -1080,7 +1080,7 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
 
         m_jMax.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        m_jSearch1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+        m_jSearch1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search24.png"))); // NOI18N
         m_jSearch1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jSearch1ActionPerformed(evt);

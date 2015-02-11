@@ -200,7 +200,7 @@ public class JTicketsBagShared extends JTicketsBag {
         setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setLayout(new java.awt.BorderLayout());
 
-        m_jNewTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_new.png"))); // NOI18N
+        m_jNewTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_new.png"))); // NOI18N
         m_jNewTicket.setToolTipText("New Sale");
         m_jNewTicket.setFocusPainted(false);
         m_jNewTicket.setFocusable(false);
@@ -216,7 +216,7 @@ public class JTicketsBagShared extends JTicketsBag {
         });
         jPanel1.add(m_jNewTicket);
 
-        m_jDelTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_delete.png"))); // NOI18N
+        m_jDelTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_delete.png"))); // NOI18N
         m_jDelTicket.setToolTipText("Cancel Sale");
         m_jDelTicket.setFocusPainted(false);
         m_jDelTicket.setFocusable(false);
@@ -233,7 +233,7 @@ public class JTicketsBagShared extends JTicketsBag {
         jPanel1.add(m_jDelTicket);
 
         m_jListTickets.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jListTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_pending.png"))); // NOI18N
+        m_jListTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_pending.png"))); // NOI18N
         m_jListTickets.setToolTipText("Layaways");
         m_jListTickets.setFocusPainted(false);
         m_jListTickets.setFocusable(false);

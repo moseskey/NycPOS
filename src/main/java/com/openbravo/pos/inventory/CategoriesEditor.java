@@ -263,7 +263,7 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         m_jImage.setBounds(200, 170, 250, 190);
 
         m_jCatalogAdd.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jCatalogAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/editnew.png"))); // NOI18N
+        m_jCatalogAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editnew.png"))); // NOI18N
         m_jCatalogAdd.setText(AppLocal.getIntString("button.catalogadd")); // NOI18N
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
         m_jCatalogAdd.setToolTipText(bundle.getString("button.catalogadd")); // NOI18N
@@ -278,7 +278,7 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         m_jCatalogAdd.setBounds(540, 40, 80, 30);
 
         m_jCatalogDelete.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jCatalogDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/editdelete.png"))); // NOI18N
+        m_jCatalogDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editdelete.png"))); // NOI18N
         m_jCatalogDelete.setText(AppLocal.getIntString("button.catalogdel")); // NOI18N
         m_jCatalogDelete.setToolTipText(bundle.getString("button.catalogdel")); // NOI18N
         m_jCatalogDelete.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);

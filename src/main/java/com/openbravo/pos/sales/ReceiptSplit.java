@@ -151,7 +151,7 @@ public class ReceiptSplit extends javax.swing.JDialog {
         jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         m_jButtonCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
         m_jButtonCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         m_jButtonCancel.setFocusPainted(false);
         m_jButtonCancel.setFocusable(false);
@@ -165,7 +165,7 @@ public class ReceiptSplit extends javax.swing.JDialog {
         jPanel2.add(m_jButtonCancel);
 
         m_jButtonOK.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jButtonOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+        m_jButtonOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ok.png"))); // NOI18N
         m_jButtonOK.setText(AppLocal.getIntString("Button.OK")); // NOI18N
         m_jButtonOK.setFocusPainted(false);
         m_jButtonOK.setFocusable(false);
@@ -189,7 +189,7 @@ public class ReceiptSplit extends javax.swing.JDialog {
         jPanel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.setLayout(new java.awt.GridBagLayout());
 
-        jBtnToRightAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2rightarrow.png"))); // NOI18N
+        jBtnToRightAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2rightarrow.png"))); // NOI18N
         jBtnToRightAll.setToolTipText("Split All Line Items");
         jBtnToRightAll.setFocusPainted(false);
         jBtnToRightAll.setFocusable(false);
@@ -204,7 +204,7 @@ public class ReceiptSplit extends javax.swing.JDialog {
         gridBagConstraints.gridy = 0;
         jPanel4.add(jBtnToRightAll, gridBagConstraints);
 
-        jBtnToRightOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png"))); // NOI18N
+        jBtnToRightOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1rightarrow.png"))); // NOI18N
         jBtnToRightOne.setToolTipText("Split only one of the Line Items");
         jBtnToRightOne.setFocusPainted(false);
         jBtnToRightOne.setFocusable(false);
@@ -220,7 +220,7 @@ public class ReceiptSplit extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
         jPanel4.add(jBtnToRightOne, gridBagConstraints);
 
-        jBtnToLeftOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png"))); // NOI18N
+        jBtnToLeftOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1leftarrow.png"))); // NOI18N
         jBtnToLeftOne.setToolTipText("Un-Split only one of the Line Items");
         jBtnToLeftOne.setFocusPainted(false);
         jBtnToLeftOne.setFocusable(false);
@@ -236,7 +236,7 @@ public class ReceiptSplit extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
         jPanel4.add(jBtnToLeftOne, gridBagConstraints);
 
-        jBtnToLeftAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2leftarrow.png"))); // NOI18N
+        jBtnToLeftAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2leftarrow.png"))); // NOI18N
         jBtnToLeftAll.setToolTipText("Un-Split All Line Items");
         jBtnToLeftAll.setFocusPainted(false);
         jBtnToLeftAll.setFocusable(false);

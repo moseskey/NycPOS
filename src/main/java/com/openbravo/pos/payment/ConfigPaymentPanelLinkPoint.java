@@ -159,7 +159,7 @@ public class ConfigPaymentPanelLinkPoint extends javax.swing.JPanel implements P
         jtxtCertificatePath.setPreferredSize(new java.awt.Dimension(300, 30));
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileopen.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fileopen.png"))); // NOI18N
         jButton1.setToolTipText("Open Folder");
         jButton1.setMaximumSize(new java.awt.Dimension(64, 40));
         jButton1.setMinimumSize(new java.awt.Dimension(64, 40));

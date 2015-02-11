@@ -145,7 +145,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(250, 50));
         setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        m_DelTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_delete.png"))); // NOI18N
+        m_DelTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_delete.png"))); // NOI18N
         m_DelTicket.setToolTipText("Delete Current Order");
         m_DelTicket.setFocusPainted(false);
         m_DelTicket.setFocusable(false);
@@ -161,7 +161,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         });
         add(m_DelTicket);
 
-        m_MoveTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/movetable.png"))); // NOI18N
+        m_MoveTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/movetable.png"))); // NOI18N
         m_MoveTable.setToolTipText("Move Table");
         m_MoveTable.setFocusPainted(false);
         m_MoveTable.setFocusable(false);
@@ -177,7 +177,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         });
         add(m_MoveTable);
 
-        m_TablePlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/tables.png"))); // NOI18N
+        m_TablePlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tables.png"))); // NOI18N
         m_TablePlan.setToolTipText("Go to Table Plan");
         m_TablePlan.setFocusPainted(false);
         m_TablePlan.setFocusable(false);
@@ -193,7 +193,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         });
         add(m_TablePlan);
 
-        m_KitchenPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24.png"))); // NOI18N
+        m_KitchenPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer24.png"))); // NOI18N
         m_KitchenPrint.setToolTipText("Send to Kichen Printer");
         m_KitchenPrint.setMargin(new java.awt.Insets(0, 4, 0, 4));
         m_KitchenPrint.setMaximumSize(new java.awt.Dimension(50, 40));

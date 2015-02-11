@@ -577,7 +577,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jPanelTop.setEnabled(false);
 
         m_jCloseCashTop.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jCloseCashTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/calculator.png"))); // NOI18N
+        m_jCloseCashTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calculator.png"))); // NOI18N
         m_jCloseCashTop.setText(AppLocal.getIntString("Button.CloseCash")); // NOI18N
         m_jCloseCashTop.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jCloseCashTop.setIconTextGap(2);
@@ -592,7 +592,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         });
 
         m_jPrintCashTop.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jPrintCashTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer.png"))); // NOI18N
+        m_jPrintCashTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer.png"))); // NOI18N
         m_jPrintCashTop.setText(AppLocal.getIntString("Button.PrintCash")); // NOI18N
         m_jPrintCashTop.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jPrintCashTop.setIconTextGap(2);
@@ -625,7 +625,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         );
 
         m_jCloseCash.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jCloseCash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/calculator.png"))); // NOI18N
+        m_jCloseCash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calculator.png"))); // NOI18N
         m_jCloseCash.setText(AppLocal.getIntString("Button.CloseCash")); // NOI18N
         m_jCloseCash.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jCloseCash.setIconTextGap(2);
@@ -640,7 +640,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         });
 
         m_jPrintCash.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jPrintCash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer.png"))); // NOI18N
+        m_jPrintCash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer.png"))); // NOI18N
         m_jPrintCash.setText(AppLocal.getIntString("Button.PrintCash")); // NOI18N
         m_jPrintCash.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jPrintCash.setIconTextGap(2);

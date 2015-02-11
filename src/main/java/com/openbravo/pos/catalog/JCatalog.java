@@ -502,7 +502,7 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
         jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5));
         jPanel3.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
 
-        m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1uparrow.png"))); // NOI18N
+        m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1uparrow.png"))); // NOI18N
         m_jUp.setFocusPainted(false);
         m_jUp.setFocusable(false);
         m_jUp.setMargin(new java.awt.Insets(8, 14, 8, 14));
@@ -514,7 +514,7 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
         });
         jPanel3.add(m_jUp);
 
-        m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1downarrow.png"))); // NOI18N
+        m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1downarrow.png"))); // NOI18N
         m_jDown.setFocusPainted(false);
         m_jDown.setFocusable(false);
         m_jDown.setMargin(new java.awt.Insets(8, 14, 8, 14));
@@ -546,7 +546,7 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
         jPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5));
         jPanel5.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
 
-        m_btnBack1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2uparrow.png"))); // NOI18N
+        m_btnBack1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2uparrow.png"))); // NOI18N
         m_btnBack1.setFocusPainted(false);
         m_btnBack1.setFocusable(false);
         m_btnBack1.setMargin(new java.awt.Insets(8, 14, 8, 14));

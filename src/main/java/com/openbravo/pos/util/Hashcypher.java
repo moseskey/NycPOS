@@ -91,12 +91,12 @@ public class Hashcypher {
         String sPassword = JPasswordDialog.showEditPassword(parent,
                 AppLocal.getIntString("Label.Password"),
                 AppLocal.getIntString("label.passwordnew"),
-                new ImageIcon(Hashcypher.class.getResource("/com/openbravo/images/password.png")));
+                new ImageIcon(Hashcypher.class.getResource("/images/password.png")));
         if (sPassword != null) {
             String sPassword2 = JPasswordDialog.showEditPassword(parent,
                     AppLocal.getIntString("Label.Password"),
                     AppLocal.getIntString("label.passwordrepeat"),
-                    new ImageIcon(Hashcypher.class.getResource("/com/openbravo/images/password.png")));
+                    new ImageIcon(Hashcypher.class.getResource("/images/password.png")));
             if (sPassword2 != null) {
                 if (sPassword.equals(sPassword2)) {
                     return  Hashcypher.hashString(sPassword);
@@ -120,7 +120,7 @@ public class Hashcypher {
         String sPassword = JPasswordDialog.showEditPassword(parent,
                 AppLocal.getIntString("Label.Password"),
                 AppLocal.getIntString("label.passwordold"),
-                new ImageIcon(Hashcypher.class.getResource("/com/openbravo/images/password.png")));
+                new ImageIcon(Hashcypher.class.getResource("/images/password.png")));
         if (sPassword != null) {
             if (Hashcypher.authenticate(sPassword, sOldPassword)) {
                 return changePassword(parent);

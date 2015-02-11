@@ -267,7 +267,7 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         m_Notes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_Notes.setText(AppLocal.getIntString("label.epm.notes")); // NOI18N
 
-        btnEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/user_sml.png"))); // NOI18N
+        btnEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_sml.png"))); // NOI18N
         btnEmployee.setFocusPainted(false);
         btnEmployee.setFocusable(false);
         btnEmployee.setMaximumSize(new java.awt.Dimension(57, 33));
@@ -280,7 +280,7 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
             }
         });
 
-        btnEndDate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+        btnEndDate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
         btnEndDate.setPreferredSize(new java.awt.Dimension(50, 33));
         btnEndDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,7 +288,7 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
             }
         });
 
-        btnStartDate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+        btnStartDate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
         btnStartDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStartDateActionPerformed(evt);

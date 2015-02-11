@@ -260,11 +260,11 @@ public class JCalendarPanel extends javax.swing.JPanel {
 
         ActionListener dateclick = new DateClick();
 
-        m_jBtnYearDec = new JButtonDate(new ImageIcon(getClass().getResource("/com/openbravo/images/2leftarrow.png")), dateclick);
-        m_jBtnMonthDec = new JButtonDate(new ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png")), dateclick);
+        m_jBtnYearDec = new JButtonDate(new ImageIcon(getClass().getResource("/images/2leftarrow.png")), dateclick);
+        m_jBtnMonthDec = new JButtonDate(new ImageIcon(getClass().getResource("/images/1leftarrow.png")), dateclick);
         m_jBtnToday = new JButtonDate(m_resources.getString("button.Today"), dateclick);
-        m_jBtnMonthInc = new JButtonDate(new ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png")), dateclick);
-        m_jBtnYearInc = new JButtonDate(new ImageIcon(getClass().getResource("/com/openbravo/images/2rightarrow.png")), dateclick);
+        m_jBtnMonthInc = new JButtonDate(new ImageIcon(getClass().getResource("/images/1rightarrow.png")), dateclick);
+        m_jBtnYearInc = new JButtonDate(new ImageIcon(getClass().getResource("/images/2rightarrow.png")), dateclick);
 
         m_jBtnToday.DateInf = new Date();
         m_jActions.add(m_jBtnYearDec);

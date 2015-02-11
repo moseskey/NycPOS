@@ -1867,7 +1867,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
 
         m_jOptions.setLayout(new java.awt.BorderLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_add_sml.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customer_add_sml.png"))); // NOI18N
         jButton1.setToolTipText("Go to Customers");
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
@@ -1882,7 +1882,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
             }
         });
 
-        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_sml.png"))); // NOI18N
+        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customer_sml.png"))); // NOI18N
         btnCustomer.setToolTipText("Find Customers");
         btnCustomer.setFocusPainted(false);
         btnCustomer.setFocusable(false);
@@ -1897,7 +1897,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
             }
         });
 
-        btnSplit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_split_sml.png"))); // NOI18N
+        btnSplit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_split_sml.png"))); // NOI18N
         btnSplit.setToolTipText("Split Sale");
         btnSplit.setFocusPainted(false);
         btnSplit.setFocusable(false);
@@ -1945,7 +1945,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         jPanel1.setMinimumSize(new java.awt.Dimension(235, 50));
 
         m_jbtnScale.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        m_jbtnScale.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/scale.png"))); // NOI18N
+        m_jbtnScale.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/scale.png"))); // NOI18N
         m_jbtnScale.setText(AppLocal.getIntString("button.scale")); // NOI18N
         m_jbtnScale.setToolTipText("Scale");
         m_jbtnScale.setFocusPainted(false);
@@ -1976,7 +1976,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         });
         jPanel1.add(jbtnMooring);
 
-        j_btnKitchenPrt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24.png"))); // NOI18N
+        j_btnKitchenPrt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer24.png"))); // NOI18N
         j_btnKitchenPrt.setText(bundle.getString("button.sendorder")); // NOI18N
         j_btnKitchenPrt.setToolTipText("Send to Kichen Printer");
         j_btnKitchenPrt.setMargin(new java.awt.Insets(0, 4, 0, 4));
@@ -2012,7 +2012,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5));
         jPanel2.setLayout(new java.awt.GridLayout(0, 1, 5, 5));
 
-        m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1uparrow.png"))); // NOI18N
+        m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1uparrow.png"))); // NOI18N
         m_jUp.setToolTipText("Scroll Up a Line");
         m_jUp.setFocusPainted(false);
         m_jUp.setFocusable(false);
@@ -2028,7 +2028,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         });
         jPanel2.add(m_jUp);
 
-        m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1downarrow.png"))); // NOI18N
+        m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1downarrow.png"))); // NOI18N
         m_jDown.setToolTipText("Scroll Down a Line");
         m_jDown.setFocusPainted(false);
         m_jDown.setFocusable(false);
@@ -2044,7 +2044,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         });
         jPanel2.add(m_jDown);
 
-        m_jDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/editdelete.png"))); // NOI18N
+        m_jDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editdelete.png"))); // NOI18N
         m_jDelete.setToolTipText("Remove Line");
         m_jDelete.setFocusPainted(false);
         m_jDelete.setFocusable(false);
@@ -2060,7 +2060,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         });
         jPanel2.add(m_jDelete);
 
-        m_jList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search32.png"))); // NOI18N
+        m_jList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search32.png"))); // NOI18N
         m_jList.setToolTipText("Product Search");
         m_jList.setFocusPainted(false);
         m_jList.setFocusable(false);
@@ -2076,7 +2076,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         });
         jPanel2.add(m_jList);
 
-        m_jEditLine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_editline.png"))); // NOI18N
+        m_jEditLine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_editline.png"))); // NOI18N
         m_jEditLine.setToolTipText("Edit Line");
         m_jEditLine.setFocusPainted(false);
         m_jEditLine.setFocusable(false);
@@ -2092,7 +2092,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         });
         jPanel2.add(m_jEditLine);
 
-        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/attributes.png"))); // NOI18N
+        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/attributes.png"))); // NOI18N
         jEditAttributes.setToolTipText("Choose Attributes");
         jEditAttributes.setFocusPainted(false);
         jEditAttributes.setFocusable(false);
@@ -2244,7 +2244,7 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 0);
         jPanel9.add(m_jPor, gridBagConstraints);
 
-        m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/barcode.png"))); // NOI18N
+        m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barcode.png"))); // NOI18N
         m_jEnter.setToolTipText("Get Barcode");
         m_jEnter.setFocusPainted(false);
         m_jEnter.setFocusable(false);

@@ -61,7 +61,7 @@ public class LocaleResources {
 
     public void addBundleName(String bundlename) {
 //        m_resources.add(getBundle(bundlename));
-        m_resources.add(ResourceBundle.getBundle(bundlename));
+        m_resources.add(ResourceBundle.getBundle("locales/" + bundlename));
     }
 
     /**

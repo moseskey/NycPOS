@@ -162,7 +162,7 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
         });
 
         jButtonCleardb.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButtonCleardb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_delete.png"))); // NOI18N
+        jButtonCleardb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_delete.png"))); // NOI18N
         jButtonCleardb.setText(bundle.getString("label.csvclearlog")); // NOI18N
         jButtonCleardb.setEnabled(false);
         jButtonCleardb.addActionListener(new java.awt.event.ActionListener() {

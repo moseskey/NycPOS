@@ -99,19 +99,19 @@ public class JTimePanel extends javax.swing.JPanel {
 
         if ((iButtons & BUTTONS_HOUR) > 0) {
             c = new GregorianCalendar(1900, 0, 0, 1, 0);
-            m_jbtnplushour = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/2rightarrow.png")), dateclick);
+            m_jbtnplushour = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/images/2rightarrow.png")), dateclick);
             m_jactions.add(m_jbtnplushour);
         }
 
         if ((iButtons & BUTTONS_MINUTE) > 0) {
             c = new GregorianCalendar(1900, 0, 0, 0, 15);
-            m_jbtnplusfifteen = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png")), dateclick);
+            m_jbtnplusfifteen = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/images/1rightarrow.png")), dateclick);
             m_jactions.add(m_jbtnplusfifteen);
         }
 
         if ((iButtons & BUTTONS_MINUTE) > 0) {
             c = new GregorianCalendar(1900, 0, 0, 0, 1);
-            m_jbtnplusminute = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png")), dateclick);
+            m_jbtnplusminute = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/images/1rightarrow.png")), dateclick);
             m_jactions.add(m_jbtnplusminute);
         }
 //        c = new GregorianCalendar(1900, 0, 0, 0, 0);
@@ -120,19 +120,19 @@ public class JTimePanel extends javax.swing.JPanel {
 
         if ((iButtons & BUTTONS_MINUTE) > 0) {
             c = new GregorianCalendar(1900, 0, 0, 0, 1);
-            m_jbtnminusminute = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png")), dateclick);
+            m_jbtnminusminute = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/images/1leftarrow.png")), dateclick);
             m_jactions.add(m_jbtnminusminute);
         }
 
         if ((iButtons & BUTTONS_MINUTE) > 0) {
             c = new GregorianCalendar(1900, 0, 0, 0, 15);
-            m_jbtnminusfifteen = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png")), dateclick);
+            m_jbtnminusfifteen = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/images/1leftarrow.png")), dateclick);
             m_jactions.add(m_jbtnminusfifteen);
         }
 
         if ((iButtons & BUTTONS_HOUR) > 0) {
             c = new GregorianCalendar(1900, 0, 0, 1, 0);
-            m_jbtnminushour = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/2leftarrow.png")), dateclick);
+            m_jbtnminushour = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/images/2leftarrow.png")), dateclick);
             m_jactions.add(m_jbtnminushour);
         }
 
