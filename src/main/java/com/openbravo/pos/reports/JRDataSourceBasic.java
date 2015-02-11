@@ -35,7 +35,8 @@ public class JRDataSourceBasic implements JRDataSource {
 
     private ReportFields m_fields = null;
 
-    /** Creates a new instance of JRDataSourceBasic
+    /**
+     * Creates a new instance of JRDataSourceBasic
      * @throws com.openbravo.basic.BasicException */
     public JRDataSourceBasic(BaseSentence sent, ReportFields fields, Object params) throws BasicException  {
 

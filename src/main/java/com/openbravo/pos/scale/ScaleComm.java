@@ -37,7 +37,8 @@ public class ScaleComm implements Scale, SerialPortEventListener {
     private double m_dWeightBuffer;
     private int m_iStatusScale;
 
-    /** Creates a new instance of ScaleComm
+    /**
+     * Creates a new instance of ScaleComm
      * @param sPortPrinter */
     public ScaleComm(String sPortPrinter) {
         m_sPortScale = sPortPrinter;

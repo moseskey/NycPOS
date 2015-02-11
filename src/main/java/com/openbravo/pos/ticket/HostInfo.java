@@ -19,7 +19,8 @@ public class HostInfo implements IKeyed {
     private String m_sHost;
     private String m_Hostsequence;
 
-    /** Creates new CategoryInfo
+    /**
+     * Creates new CategoryInfo
      * @param hostsequence */
     public HostInfo(String money, String host, String hostsequence) {
 

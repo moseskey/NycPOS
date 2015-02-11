@@ -31,7 +31,8 @@ public class ThumbNailBuilder {
     private int m_width;
     private int m_height;
 
-    /** Creates a new instance of ThumbNailBuilder
+    /**
+     * Creates a new instance of ThumbNailBuilder
      * @param height */
     public ThumbNailBuilder(int width, int height) {
         init(width, height, null);

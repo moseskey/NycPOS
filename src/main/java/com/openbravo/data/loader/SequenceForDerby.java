@@ -27,7 +27,8 @@ public class SequenceForDerby extends BaseSentence {
     private BaseSentence sent2;
     private BaseSentence sent3;
 
-    /** Creates a new instance of SequenceForMySQL
+    /**
+     * Creates a new instance of SequenceForMySQL
      * @param sSeqTable */
     public SequenceForDerby(Session s, String sSeqTable) {
 

@@ -48,7 +48,8 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
 
     private int m_iProductOrder;
 
-    /** Creates a new instance of ScanDeviceComm */
+    /**
+     * Creates a new instance of ScanDeviceComm */
     DeviceScannerComm(String sPort) {
         m_sPort = sPort;
 

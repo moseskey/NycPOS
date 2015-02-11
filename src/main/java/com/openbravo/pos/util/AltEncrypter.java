@@ -28,7 +28,8 @@ public class AltEncrypter {
     private Cipher cipherDecrypt;
     private Cipher cipherEncrypt;
 
-    /** Creates a new instance of Encrypter
+    /**
+     * Creates a new instance of Encrypter
      * @param passPhrase */
     public AltEncrypter(String passPhrase) {
 

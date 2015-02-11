@@ -68,7 +68,8 @@ public abstract class JEditorText extends JEditorAbstract {
     private static final char[] CHAR_ABC1_9 = {'W', 'X', 'Y', 'Z', '9'};
     private static final char[] CHAR_ABC1_0 = {' ', '0'};
 
-    /** Creates a new instance of JEditorString */
+    /**
+     * Creates a new instance of JEditorString */
     public JEditorText() {
         m_svalue = null;
 

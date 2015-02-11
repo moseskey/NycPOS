@@ -46,7 +46,8 @@ public class CustomerInfoExt extends CustomerInfo {
     protected String country;
     protected String image;
 
-    /** Creates a new instance of UserInfoBasic
+    /**
+     * Creates a new instance of UserInfoBasic
      * @param id */
     public CustomerInfoExt(String id) {
         super(id);

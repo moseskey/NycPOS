@@ -48,7 +48,8 @@ public abstract class Datas {
 
     private static DateFormat tsf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
-    /** Creates a new instance of Datas */
+    /**
+     * Creates a new instance of Datas */
     private Datas() {
     }
 

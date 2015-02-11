@@ -48,7 +48,8 @@ public class CodesTMU220 extends Codes {
     private static final byte[] NEW_LINE = {0x0D, 0x0A}; // Print and carriage return
 
     private static final byte[] IMAGE_LOGO = {0x1B, 0x1C, 0x70, 0x01, 0x00};
-    /** Creates a new instance of CodesTMU220 */
+    /**
+     * Creates a new instance of CodesTMU220 */
     public CodesTMU220() {
     }
 

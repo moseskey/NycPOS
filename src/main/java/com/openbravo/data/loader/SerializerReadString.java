@@ -25,7 +25,8 @@ public class SerializerReadString implements SerializerRead {
 
     public static final SerializerRead INSTANCE = new SerializerReadString();
 
-    /** Creates a new instance of SerializerReadImage */
+    /**
+     * Creates a new instance of SerializerReadImage */
     private SerializerReadString() {
     }
 

@@ -44,7 +44,8 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
 
     private DataLogicSales m_dlSales = null;
 
-    /** Creates a new instance of ProductsPanel2 */
+    /**
+     * Creates a new instance of ProductsPanel2 */
     public PriceImportPanel() {
     }
 

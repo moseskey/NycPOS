@@ -28,7 +28,8 @@ public class MenuDefinition {
 
     private ArrayList m_aMenuElements;
 
-    /** Creates a new instance of MenuDefinition
+    /**
+     * Creates a new instance of MenuDefinition
      * @param skey */
     public MenuDefinition(String skey) {
         m_sKey = skey;

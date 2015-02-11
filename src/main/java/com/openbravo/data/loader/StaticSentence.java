@@ -37,7 +37,8 @@ public class StaticSentence extends JDBCSentence {
     // Estado
     private Statement m_Stmt;
 
-    /** Creates a new instance of StaticSentence
+    /**
+     * Creates a new instance of StaticSentence
      * @param serwrite */
     public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite, SerializerRead serread) {
         super(s);
@@ -46,27 +47,32 @@ public class StaticSentence extends JDBCSentence {
         m_SerRead = serread;
         m_Stmt = null;
     }
-    /** Creates a new instance of StaticSentence
+    /**
+     * Creates a new instance of StaticSentence
      * @param sentence */
     public StaticSentence(Session s, ISQLBuilderStatic sentence) {
         this(s, sentence, null, null);
     }
-    /** Creates a new instance of StaticSentence
+    /**
+     * Creates a new instance of StaticSentence
      * @param serwrite */
     public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite) {
         this(s, sentence, serwrite, null);
     }
-    /** Creates a new instance of StaticSentence
+    /**
+     * Creates a new instance of StaticSentence
      * @param serwrite */
     public StaticSentence(Session s, String sentence, SerializerWrite serwrite, SerializerRead serread) {
         this(s, new NormalBuilder(sentence), serwrite, serread);
     }
-    /** Creates a new instance of StaticSentence
+    /**
+     * Creates a new instance of StaticSentence
      * @param serwrite */
     public StaticSentence(Session s, String sentence, SerializerWrite serwrite) {
         this(s, new NormalBuilder(sentence), serwrite, null);
     }
-    /** Creates a new instance of StaticSentence
+    /**
+     * Creates a new instance of StaticSentence
      * @param sentence */
     public StaticSentence(Session s, String sentence) {
         this(s, new NormalBuilder(sentence), null, null);

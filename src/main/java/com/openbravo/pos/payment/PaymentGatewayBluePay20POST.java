@@ -44,7 +44,8 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
     private String BP_Name1;
 
 
-    /** Creates a new instance of PaymentGatewayBluePay20POST
+    /**
+     * Creates a new instance of PaymentGatewayBluePay20POST
      * @param props */
     public PaymentGatewayBluePay20POST(AppProperties props) {
         // Grab some configuration variables

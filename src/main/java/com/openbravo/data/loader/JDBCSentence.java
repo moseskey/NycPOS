@@ -29,7 +29,8 @@ public abstract class JDBCSentence extends BaseSentence {
 
         protected Session m_s;
 
-    /** Creates a new instance of BaseSentence
+    /**
+     * Creates a new instance of BaseSentence
      * @param s */
     public JDBCSentence(Session s) {
         super();

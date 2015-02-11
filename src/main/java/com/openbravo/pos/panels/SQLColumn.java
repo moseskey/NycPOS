@@ -28,7 +28,8 @@ public class SQLColumn implements TreeNode {
     private SQLTable m_table;
     private String m_sName;
 
-    /** Creates a new instance of SQLColumn
+    /**
+     * Creates a new instance of SQLColumn
      * @param name */
     public SQLColumn(SQLTable t, String name) {
         m_table = t;

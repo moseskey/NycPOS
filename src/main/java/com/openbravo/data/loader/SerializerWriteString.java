@@ -25,7 +25,8 @@ public class SerializerWriteString implements SerializerWrite<String> {
 
     public static final SerializerWrite INSTANCE = new SerializerWriteString();
 
-    /** Creates a new instance of SerializerWriteString */
+    /**
+     * Creates a new instance of SerializerWriteString */
     private SerializerWriteString() {
     }
 

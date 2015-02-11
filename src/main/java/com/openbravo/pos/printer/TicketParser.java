@@ -80,7 +80,8 @@ public class TicketParser extends DefaultHandler {
     private String pickupId;
 
 
-    /** Creates a new instance of TicketParser
+    /**
+     * Creates a new instance of TicketParser
      * @param system */
     public TicketParser(DeviceTicket printer, DataLogicSystem system) {
         m_printer = printer;

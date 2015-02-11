@@ -28,7 +28,8 @@ public class TicketTaxInfo {
     private double subtotal;
     private double taxtotal;
 
-    /** Creates a new instance of TicketTaxInfo
+    /**
+     * Creates a new instance of TicketTaxInfo
      * @param tax */
     public TicketTaxInfo(TaxInfo tax) {
         this.tax = tax;

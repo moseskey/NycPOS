@@ -39,7 +39,8 @@ public class BrowsableData implements ListModel {
 
     private Comparator m_comparer;
 
-    /** Creates a new instance of BrowsableData
+    /**
+     * Creates a new instance of BrowsableData
      * @param c */
     public BrowsableData(ListProvider dataprov, SaveProvider saveprov, Comparator c) {
         m_dataprov = dataprov;

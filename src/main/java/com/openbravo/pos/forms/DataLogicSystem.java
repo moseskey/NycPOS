@@ -75,7 +75,8 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
     private String SQL;
     private Map<String, byte[]> resourcescache;
 
-    /** Creates a new instance of DataLogicSystem */
+    /**
+     * Creates a new instance of DataLogicSystem */
     public DataLogicSystem() {
     }
 

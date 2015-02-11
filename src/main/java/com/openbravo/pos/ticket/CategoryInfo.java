@@ -39,7 +39,8 @@ public class CategoryInfo implements IKeyed {
     private BufferedImage m_Image;
     private Boolean m_bCatShowName;
 
-    /** Creates new CategoryInfo
+    /**
+     * Creates new CategoryInfo
      * @param catshowname */
     public CategoryInfo(String id, String name, BufferedImage image, String texttip, Boolean catshowname) {
         m_sID = id;

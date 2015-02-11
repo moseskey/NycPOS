@@ -26,7 +26,8 @@ public class CompoundIcon implements Icon {
     private Icon m_icon1;
     private Icon m_icon2;
 
-    /** Creates a new instance of CompoundIcon
+    /**
+     * Creates a new instance of CompoundIcon
      * @param icon2 */
     public CompoundIcon(Icon icon1, Icon icon2) {
         m_icon1 = icon1;

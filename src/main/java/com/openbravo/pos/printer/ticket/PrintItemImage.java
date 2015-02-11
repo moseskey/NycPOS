@@ -28,7 +28,8 @@ public class PrintItemImage implements PrintItem {
 
     protected double scale;
 
-    /** Creates a new instance of PrintItemImage
+    /**
+     * Creates a new instance of PrintItemImage
      */
     public PrintItemImage(BufferedImage image, double scale) {
         this.image = image;

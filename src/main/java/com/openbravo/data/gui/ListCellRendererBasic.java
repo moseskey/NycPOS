@@ -27,7 +27,8 @@ public class ListCellRendererBasic extends DefaultListCellRenderer {
 
     private IRenderString m_renderer;
 
-    /** Creates a new instance of ListCellRendererBasic
+    /**
+     * Creates a new instance of ListCellRendererBasic
      * @param renderer */
     public ListCellRendererBasic(IRenderString renderer) {
         m_renderer = renderer;

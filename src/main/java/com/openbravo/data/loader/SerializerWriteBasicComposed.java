@@ -25,7 +25,8 @@ public class SerializerWriteBasicComposed implements SerializerWrite<Object[]> {
 
     private Datas[][] m_classes;
 
-    /** Creates a new instance of SerializerWriteComposed
+    /**
+     * Creates a new instance of SerializerWriteComposed
      * @param classes */
     public SerializerWriteBasicComposed(Datas[]... classes) {
          m_classes = classes;

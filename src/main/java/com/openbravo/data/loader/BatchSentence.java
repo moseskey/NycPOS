@@ -35,7 +35,8 @@ public abstract class BatchSentence extends BaseSentence {
 
     protected HashMap<String, String> m_parameters;
 
-    /** Creates a new instance of BatchSentence
+    /**
+     * Creates a new instance of BatchSentence
      * @param s */
     public BatchSentence(Session s) {
         m_s = s;

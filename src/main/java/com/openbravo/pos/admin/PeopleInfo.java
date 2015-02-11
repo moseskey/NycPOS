@@ -36,7 +36,8 @@ public class PeopleInfo implements SerializableRead, IKeyed {
 
     protected String m_sName;
 
-    /** Creates a new instance of RoleInfo */
+    /**
+     * Creates a new instance of RoleInfo */
     public PeopleInfo() {
         m_sID = null;
         m_sName = null;

@@ -31,7 +31,8 @@ class ScriptEngineBeanshell implements ScriptEngine {
 
     private Interpreter i;
 
-    /** Creates a new instance of ScriptEngineBeanshell */
+    /**
+     * Creates a new instance of ScriptEngineBeanshell */
     public ScriptEngineBeanshell() {
         i = new Interpreter();
     }

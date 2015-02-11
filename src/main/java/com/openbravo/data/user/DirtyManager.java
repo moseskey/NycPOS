@@ -30,7 +30,8 @@ public class DirtyManager implements DocumentListener, ChangeListener, ActionLis
 
     protected Vector listeners = new Vector();
 
-    /** Creates a new instance of DirtyManager */
+    /**
+     * Creates a new instance of DirtyManager */
     public DirtyManager() {
         m_bDirty = false;
     }

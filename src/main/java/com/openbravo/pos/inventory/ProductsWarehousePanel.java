@@ -40,7 +40,8 @@ public class ProductsWarehousePanel extends JPanelTable2 {
     private JParamsLocation m_paramslocation;
     private ProductsWarehouseEditor jeditor;
 
-    /** Creates a new instance of ProductsWarehousePanel */
+    /**
+     * Creates a new instance of ProductsWarehousePanel */
     public ProductsWarehousePanel() {
     }
 

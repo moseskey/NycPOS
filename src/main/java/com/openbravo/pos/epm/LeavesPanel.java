@@ -37,7 +37,8 @@ public class LeavesPanel extends JPanelTable {
     private TableDefinition tleaves;
     private LeavesView jeditor;
 
-    /** Creates a new instance of LeavesPanel */
+    /**
+     * Creates a new instance of LeavesPanel */
     public LeavesPanel() {
     }
 

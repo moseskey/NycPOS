@@ -48,7 +48,8 @@ public abstract class Formats {
     public final static Formats BYTEA = new FormatsBYTEA();
 
     public final static Formats HOURMIN = new FormatsHOURMIN();
-/** Added; Thanks  TSirwani 3 Mar 11 */
+/**
+ * Added; Thanks  TSirwani 3 Mar 11 */
     public final static Formats SIMPLEDATE = new FormatsSIMPLEDATE();
     private static NumberFormat m_integerformat = NumberFormat.getIntegerInstance();
     private static NumberFormat m_doubleformat = NumberFormat.getNumberInstance();
@@ -61,7 +62,8 @@ public abstract class Formats {
 
     private static final DateFormat m_hourminformat = new SimpleDateFormat("H:mm:ss");
     private static final DateFormat m_simpledate = new SimpleDateFormat("dd-MM-yyyy");
-    /** Creates a new instance of Formats */
+    /**
+     * Creates a new instance of Formats */
     protected Formats() {
     }
 
@@ -363,7 +365,8 @@ public abstract class Formats {
 
      }
 
-/** Added; Thanks  TSirwani 3 Mar 11 */
+/**
+ * Added; Thanks  TSirwani 3 Mar 11 */
          private static final class FormatsSIMPLEDATE extends Formats {
 
              @Override

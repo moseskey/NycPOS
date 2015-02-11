@@ -26,12 +26,14 @@ public class DevicePrinterNull implements DevicePrinter {
     private String m_sName;
     private String m_sDescription;
 
-    /** Creates a new instance of DevicePrinterNull */
+    /**
+     * Creates a new instance of DevicePrinterNull */
     public DevicePrinterNull() {
         this(null);
     }
 
-    /** Creates a new instance of DevicePrinterNull
+    /**
+     * Creates a new instance of DevicePrinterNull
      * @param desc */
     public DevicePrinterNull(String desc) {
         m_sName = AppLocal.getIntString("Printer.Null");

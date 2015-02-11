@@ -24,7 +24,8 @@ import com.openbravo.pos.util.StringParser;
 
 public class DeviceScannerFactory {
 
-    /** Creates a new instance of DeviceScannerFactory */
+    /**
+     * Creates a new instance of DeviceScannerFactory */
     private DeviceScannerFactory() {
     }
 

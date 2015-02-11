@@ -30,7 +30,8 @@ public class SQLDatabase implements TreeNode {
     private HashMap m_mTables;
     private String m_sName;
 
-    /** Creates a new instance of SQLDatabase
+    /**
+     * Creates a new instance of SQLDatabase
      * @param name */
     public SQLDatabase(String name) {
         m_sName = name;

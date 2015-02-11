@@ -78,7 +78,8 @@ public final class TicketInfo implements SerializableRead, Externalizable {
     }
 
 
-    /** Creates new TicketModel */
+    /**
+     * Creates new TicketModel */
     public TicketInfo() {
         m_sId = UUID.randomUUID().toString();
         tickettype = RECEIPT_NORMAL;

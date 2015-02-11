@@ -25,7 +25,8 @@ public class StringParser {
     private int maxPosition;
     private String str;
 
-    /** Creates a new instance of StringParser
+    /**
+     * Creates a new instance of StringParser
      * @param str */
     public StringParser(String str) {
         this.str = str;

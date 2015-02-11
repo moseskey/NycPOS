@@ -25,7 +25,8 @@ public class SerializerReadClass implements SerializerRead {
 
     private final Class m_clazz;
 
-    /** Creates a new instance of DefaultSerializerRead
+    /**
+     * Creates a new instance of DefaultSerializerRead
      * @param clazz */
     public SerializerReadClass(Class clazz) {
         m_clazz = clazz;

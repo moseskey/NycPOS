@@ -27,7 +27,8 @@ public class ReportFieldsArray implements ReportFields {
 
     private Map m_keys = null;
 
-    /** Creates a new instance of ReportFieldsArray
+    /**
+     * Creates a new instance of ReportFieldsArray
      * @param afields */
     public ReportFieldsArray(String[] afields) {
 

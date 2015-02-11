@@ -33,7 +33,8 @@ public class ProductVectorer implements Vectorer {
         AppLocal.getIntString("label.prodpricesell")
     };
 
-    /** Creates a new instance of ProductVectorer */
+    /**
+     * Creates a new instance of ProductVectorer */
     public ProductVectorer() {
     }
 

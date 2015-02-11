@@ -21,7 +21,8 @@ package com.openbravo.pos.printer.escpos;
 
 public class UnicodeTranslatorInt extends UnicodeTranslator {
 
-    /** Creates a new instance of UnicodeTranslatorInt */
+    /**
+     * Creates a new instance of UnicodeTranslatorInt */
     public UnicodeTranslatorInt() {
     }
 

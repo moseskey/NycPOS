@@ -25,7 +25,8 @@ public class SerializerReadDouble implements SerializerRead {
 
     public static final SerializerRead INSTANCE = new SerializerReadDouble();
 
-    /** Creates a new instance of SerializerReadInteger */
+    /**
+     * Creates a new instance of SerializerReadInteger */
     public SerializerReadDouble() {
     }
 

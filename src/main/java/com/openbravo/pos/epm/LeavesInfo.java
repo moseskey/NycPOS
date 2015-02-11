@@ -32,7 +32,8 @@ public class LeavesInfo implements IKeyed {
     private String m_sNotes;
 
 
-    /** Creates new LeavesInfo
+    /**
+     * Creates new LeavesInfo
      * @param enddate */
     public LeavesInfo(String id, String name, String employeeid, String startdate, String enddate, String notes) {
         m_sID = id;

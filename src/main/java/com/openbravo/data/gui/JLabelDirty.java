@@ -28,7 +28,8 @@ public class JLabelDirty extends JLabel {
     private static Icon m_IconModif = null;
     private static Icon m_IconNull = null;
 
-    /** Creates a new instance of JDirtyPicture
+    /**
+     * Creates a new instance of JDirtyPicture
      * @param dm */
     public JLabelDirty(DirtyManager dm) {
 

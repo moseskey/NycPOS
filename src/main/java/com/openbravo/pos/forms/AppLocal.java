@@ -37,7 +37,8 @@ public class AppLocal {
         m_resources.addBundleName("erp_messages");
     }
 
-    /** Creates a new instance of AppLocal */
+    /**
+     * Creates a new instance of AppLocal */
     private AppLocal() {
     }
 

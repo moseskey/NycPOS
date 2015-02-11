@@ -28,7 +28,8 @@ public class PaymentInfoCash_original extends PaymentInfo {
     private double m_dTendered;
     private String m_dCardName =null;
 
-    /** Creates a new instance of PaymentInfoCash
+    /**
+     * Creates a new instance of PaymentInfoCash
      * @param dPaid */
     public PaymentInfoCash_original(double dTotal, double dPaid) {
         m_dTotal = dTotal;

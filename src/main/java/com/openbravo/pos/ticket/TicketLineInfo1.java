@@ -42,7 +42,8 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
     private String productid;
     private String attsetinstid;
 
-    /** Creates new TicketLineInfo
+    /**
+     * Creates new TicketLineInfo
      * @param props */
     public TicketLineInfo1(String productid, double dMultiply, double dPrice, TaxInfo tax, Properties props) {
         init(productid, null, dMultiply, dPrice, tax, props);

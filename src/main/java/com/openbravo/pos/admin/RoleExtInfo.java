@@ -31,7 +31,8 @@ public class RoleExtInfo extends RoleInfo {
 
     protected byte[] m_aPermissions;
 
-    /** Creates a new instance of RoleExtInfo */
+    /**
+     * Creates a new instance of RoleExtInfo */
     public RoleExtInfo() {
         super();
         m_aPermissions = null;

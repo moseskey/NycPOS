@@ -30,7 +30,8 @@ public class LocaleResources {
     private List<ResourceBundle> m_resources;
 //    private ClassLoader m_localeloader;
 
-    /** Creates a new instance of LocaleResources */
+    /**
+     * Creates a new instance of LocaleResources */
     public LocaleResources() {
 //        m_resources = new LinkedList<ResourceBundle>();
         m_resources = new LinkedList<>();

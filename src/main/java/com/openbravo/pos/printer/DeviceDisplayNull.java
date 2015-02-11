@@ -26,12 +26,14 @@ public class DeviceDisplayNull implements DeviceDisplay {
     private String m_sName;
     private String m_sDescription;
 
-    /** Creates a new instance of DeviceDisplayNull */
+    /**
+     * Creates a new instance of DeviceDisplayNull */
     public DeviceDisplayNull() {
         this(null);
     }
 
-    /** Creates a new instance of DeviceDisplayNull
+    /**
+     * Creates a new instance of DeviceDisplayNull
      * @param desc */
     public DeviceDisplayNull(String desc) {
         m_sName = AppLocal.getIntString("Display.Null");

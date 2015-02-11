@@ -26,7 +26,8 @@ public class RenderStringBasic implements IRenderString {
     private Formats[] m_aFormats;
     private int[] m_aiIndex;
 
-    /** Creates a new instance of StringnizerBasic
+    /**
+     * Creates a new instance of StringnizerBasic
      * @param aiIndex */
     public RenderStringBasic(Formats[] fmts, int[] aiIndex) {
         m_aFormats = fmts;

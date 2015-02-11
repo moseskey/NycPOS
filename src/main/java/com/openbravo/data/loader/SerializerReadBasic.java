@@ -25,7 +25,8 @@ public class SerializerReadBasic implements SerializerRead {
 
     private Datas[] m_classes;
 
-    /** Creates a new instance of SerializerReadBasic
+    /**
+     * Creates a new instance of SerializerReadBasic
      * @param classes */
     public SerializerReadBasic(Datas[] classes) {
         m_classes = classes;

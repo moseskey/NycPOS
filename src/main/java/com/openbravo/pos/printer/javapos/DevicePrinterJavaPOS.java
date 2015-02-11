@@ -51,7 +51,8 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
 
     private StringBuilder m_sline;
 
-    /** Creates a new instance of DevicePrinterJavaPOS
+    /**
+     * Creates a new instance of DevicePrinterJavaPOS
      * @throws com.openbravo.pos.printer.TicketPrinterException */
     public DevicePrinterJavaPOS(String sDevicePrinterName, String sDeviceDrawerName) throws TicketPrinterException {
 

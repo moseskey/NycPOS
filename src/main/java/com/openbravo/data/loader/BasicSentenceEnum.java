@@ -26,7 +26,8 @@ public class BasicSentenceEnum implements SentenceEnum {
     BaseSentence sent;
     DataResultSet SRS;
 
-    /** Creates a new instance of AbstractSentenceEnum
+    /**
+     * Creates a new instance of AbstractSentenceEnum
      * @param sent */
     public BasicSentenceEnum(BaseSentence sent) {
         this.sent = sent;

@@ -64,7 +64,8 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
     private String m_sCommercePassword;
     private boolean m_bTestMode;
 
-    /** Creates a new instance of PaymentGatewayAuthorizeNet
+    /**
+     * Creates a new instance of PaymentGatewayAuthorizeNet
      * @param props */
     public PaymentGatewayAuthorizeNet(AppProperties props) {
         // Grab some configuration variables

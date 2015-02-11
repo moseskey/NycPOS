@@ -34,7 +34,8 @@ public class InventoryRecord {
     private final List<InventoryLine> m_invlines;
     private final String user;
 
-    /** Creates a new instance of InventoryRecord
+    /**
+     * Creates a new instance of InventoryRecord
      * @param currentUser */
     public InventoryRecord(Date d, MovementReason reason, LocationInfo location, String currentUser, List<InventoryLine> invlines) {
         m_dDate = d;

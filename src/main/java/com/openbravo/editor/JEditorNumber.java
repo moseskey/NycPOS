@@ -43,7 +43,8 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     private Boolean priceWith00;
 
-    /** Creates a new instance of JEditorNumber */
+    /**
+     * Creates a new instance of JEditorNumber */
     public JEditorNumber() {
         m_fmt = getFormat();
 

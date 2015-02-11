@@ -28,7 +28,8 @@ public class FormatsRESOURCE extends Formats {
     private ResourceBundle m_rb;
     private String m_sPrefix;
 
-    /** Creates a new instance of FormatsRESOURCE
+    /**
+     * Creates a new instance of FormatsRESOURCE
      * @param sPrefix */
     public FormatsRESOURCE(ResourceBundle rb, String sPrefix) {
         m_rb = rb;

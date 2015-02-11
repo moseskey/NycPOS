@@ -21,13 +21,15 @@ package com.openbravo.pos.payment;
 
 public class PaymentInfoMagcardRefund extends PaymentInfoMagcard {
 
-    /** Creates a new instance of PaymentInfoMagcardRefund
+    /**
+     * Creates a new instance of PaymentInfoMagcardRefund
      * @param sTransactionID */
     public PaymentInfoMagcardRefund(String sHolderName, String sCardNumber, String sExpirationDate, String track1, String track2, String track3, String sTransactionID, double dTotal) {
        super(sHolderName, sCardNumber, sExpirationDate, track1, track2, track3, sTransactionID, dTotal);
     }
 
-    /** Creates a new instance of PaymentInfoMagcard
+    /**
+     * Creates a new instance of PaymentInfoMagcard
      * @param sTransactionID */
     public PaymentInfoMagcardRefund(String sHolderName, String sCardNumber, String sExpirationDate, String sTransactionID, double dTotal) {
         super(sHolderName, sCardNumber, sExpirationDate, sTransactionID, dTotal);

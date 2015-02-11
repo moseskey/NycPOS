@@ -25,7 +25,8 @@ public class SerializerReadBuilder  implements SerializerRead {
 
     private SerializableBuilder m_sb;
 
-    /** Creates a new instance of SerializerReadBuilder
+    /**
+     * Creates a new instance of SerializerReadBuilder
      * @param sb */
     public SerializerReadBuilder(SerializableBuilder sb) {
         m_sb = sb;

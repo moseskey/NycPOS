@@ -30,7 +30,8 @@ public class SQLTable implements TreeNode {
 
     private ArrayList m_aColumns;
 
-    /** Creates a new instance of SQLTable
+    /**
+     * Creates a new instance of SQLTable
      * @param name */
     public SQLTable(SQLDatabase db, String name) {
         m_db = db;

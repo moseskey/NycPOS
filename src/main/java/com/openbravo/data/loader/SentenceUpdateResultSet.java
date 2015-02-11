@@ -25,7 +25,8 @@ public class SentenceUpdateResultSet implements DataResultSet {
 
     private int m_iUpdateCount;
 
-    /** Creates a new instance of UpdateResultSet
+    /**
+     * Creates a new instance of UpdateResultSet
      * @param iUpdateCount */
     public SentenceUpdateResultSet(int iUpdateCount) {
         m_iUpdateCount = iUpdateCount;

@@ -25,7 +25,8 @@ public class SerializerWriteBuilder implements SerializerWrite<SerializableWrite
 
     public static final SerializerWrite INSTANCE = new SerializerWriteBuilder();
 
-    /** Creates a new instance of SerializerWriteBuilder */
+    /**
+     * Creates a new instance of SerializerWriteBuilder */
     private SerializerWriteBuilder() {
     }
 

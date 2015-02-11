@@ -26,7 +26,8 @@ public class SequenceForMySQL extends BaseSentence {
     private BaseSentence sent1;
     private BaseSentence sent2;
 
-    /** Creates a new instance of SequenceForMySQL
+    /**
+     * Creates a new instance of SequenceForMySQL
      * @param sSeqTable */
     public SequenceForMySQL(Session s, String sSeqTable) {
 

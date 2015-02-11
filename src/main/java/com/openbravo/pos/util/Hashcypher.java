@@ -31,7 +31,8 @@ import com.openbravo.pos.forms.AppLocal;
 public class Hashcypher {
 
 
-    /** Creates a new instance of Hashcypher */
+    /**
+     * Creates a new instance of Hashcypher */
     public Hashcypher() {
     }
 

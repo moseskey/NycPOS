@@ -27,7 +27,8 @@ public class DataWriteUtils {
 
     private static DateFormat tsf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
-    /** Creates a new instance of DataWriteUtils */
+    /**
+     * Creates a new instance of DataWriteUtils */
     public DataWriteUtils() {
     }
 

@@ -45,7 +45,8 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     protected String m_dCardName =null;
 
-    /** Creates a new instance of PaymentInfoMagcard
+    /**
+     * Creates a new instance of PaymentInfoMagcard
      * @param dTotal */
     public PaymentInfoMagcard(
             String sHolderName,
@@ -72,7 +73,8 @@ public class PaymentInfoMagcard extends PaymentInfo {
         m_sReturnMessage = null;
     }
 
-    /** Creates a new instance of PaymentInfoMagcard
+    /**
+     * Creates a new instance of PaymentInfoMagcard
      * @param sTransactionID */
     public PaymentInfoMagcard(
             String sHolderName,

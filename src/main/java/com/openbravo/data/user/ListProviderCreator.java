@@ -30,7 +30,8 @@ public class ListProviderCreator implements ListProvider {
     private EditorCreator prov;
     private Object params;
 
-    /** Creates a new instance of ListProviderEditor
+    /**
+     * Creates a new instance of ListProviderEditor
      * @param prov */
     public ListProviderCreator(SentenceList sent, EditorCreator prov) {
         this.sent = sent;

@@ -24,7 +24,8 @@ import com.openbravo.basic.BasicException;
 
 public abstract class VectorerBuilder implements Vectorer {
 
-    /** Creates a new instance of VectorerBuilder */
+    /**
+     * Creates a new instance of VectorerBuilder */
     public VectorerBuilder() {
     }
 
@@ -49,7 +50,8 @@ public abstract class VectorerBuilder implements Vectorer {
 
         private ArrayList m_aParams;
 
-        /** Creates a new instance of MetaParameter */
+        /**
+         * Creates a new instance of MetaParameter */
         public SerializableToArray() {
             m_aParams = new ArrayList();
         }

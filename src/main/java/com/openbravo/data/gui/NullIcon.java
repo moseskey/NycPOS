@@ -26,7 +26,8 @@ public class NullIcon implements Icon {
     private int m_iWidth;
     private int m_iHeight;
 
-    /** Creates a new instance of NullIcon
+    /**
+     * Creates a new instance of NullIcon
      * @param height */
     public NullIcon(int width, int height) {
         m_iWidth = width;

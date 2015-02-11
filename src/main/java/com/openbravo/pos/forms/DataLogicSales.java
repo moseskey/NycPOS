@@ -65,7 +65,8 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 // JG 22 Oct 2013
     private String getCardName;
 
-    /** Creates a new instance of SentenceContainerGeneric */
+    /**
+     * Creates a new instance of SentenceContainerGeneric */
     public DataLogicSales() {
         stockdiaryDatas = new Datas[] {
             Datas.STRING,

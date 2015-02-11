@@ -26,7 +26,8 @@ public class SerializerWriteBasicExt implements SerializerWrite<Object[]> {
     private Datas[] m_classes;
     private int[] m_index;
 
-    /** Creates a new instance of SerializerWriteBasic
+    /**
+     * Creates a new instance of SerializerWriteBasic
      * @param index */
     public SerializerWriteBasicExt(Datas[] classes, int[] index) {
         m_classes = classes;

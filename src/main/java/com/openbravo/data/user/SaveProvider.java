@@ -30,7 +30,8 @@ public class SaveProvider {
 
     protected SentenceExec m_sentdelete;
 
-    /** Creates a new instance of SavePrSentence
+    /**
+     * Creates a new instance of SavePrSentence
      * @param sentinsert */
     public SaveProvider(SentenceExec sentupdate, SentenceExec sentinsert, SentenceExec sentdelete) {
         m_sentupdate = sentupdate;

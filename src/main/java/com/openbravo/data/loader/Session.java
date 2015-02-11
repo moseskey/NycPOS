@@ -39,7 +39,8 @@ public final class Session {
 
     public final SessionDB DB;
 
-    /** Creates a new instance of Session
+    /**
+     * Creates a new instance of Session
      * @throws java.sql.SQLException */
     public Session(String url, String user, String password) throws SQLException {
         m_surl = url;

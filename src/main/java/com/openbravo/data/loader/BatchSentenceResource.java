@@ -29,7 +29,8 @@ public class BatchSentenceResource extends BatchSentence {
 
     private String m_sResScript;
 
-    /** Creates a new instance of BatchSentenceResource
+    /**
+     * Creates a new instance of BatchSentenceResource
      * @param resscript */
     public BatchSentenceResource(Session s, String resscript) {
         super(s);

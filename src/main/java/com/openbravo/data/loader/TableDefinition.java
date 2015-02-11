@@ -34,7 +34,8 @@ public class TableDefinition {
     private int[] idinx;
 
 
-    /** Creates a new instance of TableDefinition
+    /**
+     * Creates a new instance of TableDefinition
      * @param fielddata */
     public TableDefinition(
             Session s,

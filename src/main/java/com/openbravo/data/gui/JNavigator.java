@@ -49,7 +49,8 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
     private javax.swing.JButton jbtnRefresh = null;
     private javax.swing.JButton jbtnReload = null;
 
-    /** Creates new form JNavigator
+    /**
+     * Creates new form JNavigator
      * @param iButtons */
     public JNavigator(BrowsableEditableData bd, Vectorer vec, ComparatorCreator cc, int iButtons) {
 

@@ -23,7 +23,8 @@ public class EmployeeInfoExt extends EmployeeInfo {
 
     protected boolean visible;
 
-    /** Creates a new instance of EmployeeInfoExt
+    /**
+     * Creates a new instance of EmployeeInfoExt
      * @param id */
     public EmployeeInfoExt(String id) {
         super(id);

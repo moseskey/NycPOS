@@ -25,7 +25,8 @@ public class EditorCreatorComposed implements EditorCreator{
 
     private EditorCreator[] m_editors;
 
-    /** Creates a new instance of EditorCreatorComposed
+    /**
+     * Creates a new instance of EditorCreatorComposed
      * @param editors */
     public EditorCreatorComposed(EditorCreator... editors) {
         m_editors = editors;

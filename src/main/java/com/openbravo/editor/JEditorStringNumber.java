@@ -21,7 +21,8 @@ package com.openbravo.editor;
 
 public class JEditorStringNumber extends JEditorText {
 
-    /** Creates a new instance of JEditorStringNumber */
+    /**
+     * Creates a new instance of JEditorStringNumber */
     public JEditorStringNumber() {
         super();
     }

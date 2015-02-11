@@ -28,7 +28,8 @@ public class ListQBFModelNumber extends AbstractListModel implements ComboBoxMod
 private Object[] m_items;
 private Object m_sel;
 
-/** Creates a new instance of ListQBFModelNumber
+/**
+ * Creates a new instance of ListQBFModelNumber
      * @param items */
 //    public ListQBFModelNumber() {
 //    private ListQBFModelNumber(Object... items) {

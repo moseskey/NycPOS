@@ -57,7 +57,8 @@ public class PreparedSentence extends JDBCSentence {
 
         private PreparedStatement m_ps;
 
-        /** Creates a new instance of SQLParameter */
+        /**
+         * Creates a new instance of SQLParameter */
         PreparedSentencePars(PreparedStatement ps) {
             m_ps = ps;
         }

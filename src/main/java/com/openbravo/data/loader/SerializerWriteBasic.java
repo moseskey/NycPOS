@@ -25,7 +25,8 @@ public class SerializerWriteBasic implements SerializerWrite<Object[]> {
 
     private Datas[] m_classes;
 
-    /** Creates a new instance of SerializerWriteBasic
+    /**
+     * Creates a new instance of SerializerWriteBasic
      * @param classes */
     public SerializerWriteBasic(Datas... classes) {
         m_classes = classes;

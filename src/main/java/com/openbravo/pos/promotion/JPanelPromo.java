@@ -19,7 +19,8 @@ public class JPanelPromo extends JPanelTable {
     private TableDefinition tpromo;
     private PromoEditor jeditor;
 
-    /** Creates a new instance of JPanelPlaces */
+    /**
+     * Creates a new instance of JPanelPlaces */
     public JPanelPromo() {
     }
 

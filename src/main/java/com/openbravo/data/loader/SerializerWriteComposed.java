@@ -28,7 +28,8 @@ public class SerializerWriteComposed implements SerializerWrite {
 
     private List<SerializerWrite> serwrites = new ArrayList<SerializerWrite>();
 
-    /** Creates a new instance of SerializerWriteComposed */
+    /**
+     * Creates a new instance of SerializerWriteComposed */
     public SerializerWriteComposed() {
     }
 

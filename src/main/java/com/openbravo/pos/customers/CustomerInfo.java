@@ -65,7 +65,8 @@ public class CustomerInfo implements Serializable {
      */
     protected String email;
 
-    /** Creates a new instance of UserInfoBasic
+    /**
+     * Creates a new instance of UserInfoBasic
      * @param id */
     public CustomerInfo(String id) {
         this.id = id;

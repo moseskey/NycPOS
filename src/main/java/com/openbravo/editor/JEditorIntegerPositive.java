@@ -23,7 +23,8 @@ import com.openbravo.format.Formats;
 
 public class JEditorIntegerPositive extends JEditorNumber {
 
-    /** Creates a new instance of JEditorIntegerPositive */
+    /**
+     * Creates a new instance of JEditorIntegerPositive */
     public JEditorIntegerPositive() {
     }
 

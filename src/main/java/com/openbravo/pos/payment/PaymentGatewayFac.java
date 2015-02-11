@@ -23,7 +23,8 @@ import com.openbravo.pos.forms.AppProperties;
 
 public class PaymentGatewayFac {
 
-    /** Creates a new instance of PaymentGatewayFac */
+    /**
+     * Creates a new instance of PaymentGatewayFac */
     private PaymentGatewayFac() {
     }
 

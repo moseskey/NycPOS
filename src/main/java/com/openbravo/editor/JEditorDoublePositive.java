@@ -23,7 +23,8 @@ import com.openbravo.format.Formats;
 
 public class JEditorDoublePositive extends JEditorNumber {
 
-    /** Creates a new instance of JEditorDoublePositive */
+    /**
+     * Creates a new instance of JEditorDoublePositive */
     public JEditorDoublePositive() {
     }
 

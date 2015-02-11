@@ -32,7 +32,8 @@ public class JPanelTicketEdits extends JPanelTicket {
 
     private JTicketCatalogLines m_catandlines;
 
-    /** Creates a new instance of JPanelTicketRefunds */
+    /**
+     * Creates a new instance of JPanelTicketRefunds */
     public JPanelTicketEdits() {
     }
 

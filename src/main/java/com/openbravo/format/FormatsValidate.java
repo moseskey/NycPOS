@@ -26,18 +26,21 @@ public class FormatsValidate extends Formats {
     private Formats m_fmt;
     private FormatsConstrain[] m_aConstrains;
 
-    /** Creates a new instance of FormatsValidate
+    /**
+     * Creates a new instance of FormatsValidate
      * @param constrains */
     public FormatsValidate(Formats fmt, FormatsConstrain[] constrains) {
         m_fmt = fmt;
         m_aConstrains = constrains;
     }
-    /** Creates a new instance of FormatsValidate
+    /**
+     * Creates a new instance of FormatsValidate
      * @param fmt */
     public FormatsValidate(Formats fmt) {
         this(fmt, new FormatsConstrain[0]);
     }
-    /** Creates a new instance of FormatsValidate
+    /**
+     * Creates a new instance of FormatsValidate
      * @param constrain */
     public FormatsValidate(Formats fmt, FormatsConstrain constrain) {
         this(fmt, new FormatsConstrain[]{constrain});

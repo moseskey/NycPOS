@@ -31,7 +31,8 @@ public abstract class Transaction<T> {
 
     private Session s;
 
-    /** Creates a new instance of Transaction
+    /**
+     * Creates a new instance of Transaction
      * @param s */
     public Transaction(Session s) {
         this.s = s;

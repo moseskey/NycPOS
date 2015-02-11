@@ -27,7 +27,8 @@ public class BatchSentenceScript extends BatchSentence {
 
     private String m_sScript;
 
-    /** Creates a new instance of BatchSentenceScript
+    /**
+     * Creates a new instance of BatchSentenceScript
      * @param script */
     public BatchSentenceScript(Session s, String script) {
         super(s);

@@ -31,7 +31,8 @@ public class StockModel extends AbstractTableModel {
     private Formats[] m_formats;
     private boolean[] m_bedit;
 
-    /** Creates a new instance of StockModel
+    /**
+     * Creates a new instance of StockModel
      * @param bedit */
     public StockModel(BrowsableData bd, Formats[] f, boolean[] bedit) {
         m_bd = bd;

@@ -28,7 +28,8 @@ public class DeviceScale {
 
     private Scale m_scale;
 
-    /** Creates a new instance of DeviceScale
+    /**
+     * Creates a new instance of DeviceScale
      * @param props */
     public DeviceScale(Component parent, AppProperties props) {
         StringParser sd = new StringParser(props.getProperty("machine.scale"));
