@@ -417,18 +417,21 @@ public class StockManagement extends JPanel implements JPanelView {
 
         jPanel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel8.setPreferredSize(new java.awt.Dimension(780, 270));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        //jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel8.setLayout(new java.awt.FlowLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setText(AppLocal.getIntString("label.stockdate")); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(40, 25));
         jLabel1.setMinimumSize(new java.awt.Dimension(40, 25));
         jLabel1.setPreferredSize(new java.awt.Dimension(90, 25));
-        jPanel8.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 10, -1, -1));
+        //jPanel8.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 10, -1, -1));
+		jPanel8.add(jLabel1);
 
         m_jdate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jdate.setPreferredSize(new java.awt.Dimension(90, 25));
-        jPanel8.add(m_jdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 25));
+        //jPanel8.add(m_jdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 25));
+		jPanel8.add(m_jdate);
 
         m_jbtndate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
         m_jbtndate.setToolTipText("Open Calendar");
@@ -437,14 +440,16 @@ public class StockManagement extends JPanel implements JPanelView {
                 m_jbtndateActionPerformed(evt);
             }
         });
-        jPanel8.add(m_jbtndate, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 8, 40, 30));
+        //jPanel8.add(m_jbtndate, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 8, 40, 30));
+		jPanel8.add(m_jbtndate);
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText(AppLocal.getIntString("label.stockreason")); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(40, 25));
         jLabel2.setMinimumSize(new java.awt.Dimension(40, 25));
         jLabel2.setPreferredSize(new java.awt.Dimension(90, 25));
-        jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, 90, -1));
+        //jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, 90, -1));
+		jPanel8.add(jLabel2);
 
         m_jreason.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         m_jreason.setPreferredSize(new java.awt.Dimension(90, 25));
@@ -453,27 +458,32 @@ public class StockManagement extends JPanel implements JPanelView {
                 m_jreasonActionPerformed(evt);
             }
         });
-        jPanel8.add(m_jreason, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 200, 25));
+        //jPanel8.add(m_jreason, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 200, 25));
+		jPanel8.add(m_jreason);
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel8.setText(AppLocal.getIntString("label.warehouse")); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(40, 25));
         jLabel8.setMinimumSize(new java.awt.Dimension(40, 25));
         jLabel8.setPreferredSize(new java.awt.Dimension(90, 25));
-        jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
+        //jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
+		jPanel8.add(jLabel8);
 
         m_jLocationDes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         m_jLocationDes.setPreferredSize(new java.awt.Dimension(90, 25));
-        jPanel8.add(m_jLocationDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 200, 25));
+        //jPanel8.add(m_jLocationDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 200, 25));
+		jPanel8.add(m_jLocationDes);
 
         m_jLocation.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         m_jLocation.setPreferredSize(new java.awt.Dimension(90, 25));
-        jPanel8.add(m_jLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 200, 25));
+        //jPanel8.add(m_jLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 200, 25));
+		jPanel8.add(m_jLocation);
 
         jPanel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel5.setPreferredSize(new java.awt.Dimension(400, 245));
         jPanel5.setLayout(new java.awt.BorderLayout());
-        jPanel8.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, -1, 150));
+        //jPanel8.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, -1, 150));
+		jPanel8.add(jPanel5);
 
         m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1uparrow.png"))); // NOI18N
         m_jUp.setToolTipText("Scroll Up a Line");
@@ -486,7 +496,8 @@ public class StockManagement extends JPanel implements JPanelView {
                 m_jUpActionPerformed(evt);
             }
         });
-        jPanel8.add(m_jUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
+        //jPanel8.add(m_jUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
+		jPanel8.add(m_jUp);
 
         m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1downarrow.png"))); // NOI18N
         m_jDown.setToolTipText("Scroll Down a Line");
@@ -499,7 +510,8 @@ public class StockManagement extends JPanel implements JPanelView {
                 m_jDownActionPerformed(evt);
             }
         });
-        jPanel8.add(m_jDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
+        //jPanel8.add(m_jDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
+		jPanel8.add(m_jDown);
 
         m_jDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editdelete.png"))); // NOI18N
         m_jDelete.setToolTipText("Remove Line");
@@ -512,7 +524,8 @@ public class StockManagement extends JPanel implements JPanelView {
                 m_jDeleteActionPerformed(evt);
             }
         });
-        jPanel8.add(m_jDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
+        //jPanel8.add(m_jDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
+		jPanel8.add(m_jDelete);
 
         jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/attributes.png"))); // NOI18N
         jEditAttributes.setToolTipText("Attrubutes");
@@ -528,7 +541,8 @@ public class StockManagement extends JPanel implements JPanelView {
                 jEditAttributesActionPerformed(evt);
             }
         });
-        jPanel8.add(jEditAttributes, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, -1, -1));
+        //jPanel8.add(jEditAttributes, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, -1, -1));
+		jPanel8.add(jEditAttributes);
 
         btnDownloadProducts.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnDownloadProducts.setText("ScanPal");
@@ -539,7 +553,8 @@ public class StockManagement extends JPanel implements JPanelView {
                 btnDownloadProductsActionPerformed(evt);
             }
         });
-        jPanel8.add(btnDownloadProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, -1, -1));
+        //jPanel8.add(btnDownloadProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, -1, -1));
+		jPanel8.add(btnDownloadProducts);
 
         jTextField1.setBackground(javax.swing.UIManager.getDefaults().getColor("Panel.background"));
         jTextField1.setForeground(javax.swing.UIManager.getDefaults().getColor("Panel.background"));
@@ -555,12 +570,14 @@ public class StockManagement extends JPanel implements JPanelView {
                 jTextField1KeyTyped(evt);
             }
         });
-        jPanel8.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
+        //jPanel8.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
+		jPanel8.add(jTextField1);
 
         jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.Y_AXIS));
         jPanel2.add(jPanel6);
 
-        jPanel8.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        //jPanel8.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+		jPanel8.add(jPanel2);
 
         jPanel1.setMinimumSize(new java.awt.Dimension(150, 250));
         jPanel1.setPreferredSize(new java.awt.Dimension(220, 250));
@@ -639,7 +656,8 @@ public class StockManagement extends JPanel implements JPanelView {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        jPanel8.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 240, 260));
+        //jPanel8.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 240, 260));
+		jPanel8.add(jPanel1);
 
         add(jPanel8, java.awt.BorderLayout.PAGE_START);
 

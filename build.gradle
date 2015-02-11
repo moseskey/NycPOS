@@ -25,11 +25,6 @@ mainClassName   = 'com.openbravo.pos.forms.StartPOS'
 repositories {
     mavenLocal()
     mavenCentral()
-
-    // FIXME -- 3rd-party repository for org.netbeans.external:AbsoluteLayout:RELEASE701
-    maven {
-        url 'http://bits.netbeans.org/maven2/'
-    }
 }
 
 dependencies {
@@ -51,9 +46,6 @@ dependencies {
     compile 'org.rxtx:rxtx:2.1.7'
     compile 'org.swinglabs:swing-layout:1.0.3'
     compile 'org.swinglabs.swingx:swingx-all:1.6.4'
-
-    // uses the 3rd-party maven repo listed above -- FIXME
-    compile 'org.netbeans.external:AbsoluteLayout:RELEASE701'
 
     // manually installed jars
     compile 'io.knq.beanshell2:bsh:2.1.8'
