@@ -253,7 +253,7 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         jScrollPane1.setViewportView(m_jLeaveNote);
 
         m_Name.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         m_Name.setText(bundle.getString("label.epm.employee")); // NOI18N
 
         m_StartDate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N

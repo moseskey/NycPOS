@@ -168,7 +168,7 @@ public class JMooringDetails extends javax.swing.JDialog {
 
         jbtnCreateTicket.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jbtnCreateTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ok.png"))); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jbtnCreateTicket.setText(bundle.getString("label.mooringcreatebtn")); // NOI18N
         jbtnCreateTicket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -141,7 +141,7 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
         setPreferredSize(new java.awt.Dimension(420, 240));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jLabel1.setText(bundle.getString("label.csvresetimport")); // NOI18N
 
         jMessageBox.setEditable(false);

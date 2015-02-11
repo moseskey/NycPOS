@@ -955,7 +955,7 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
                 .addContainerGap())
         );
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jTabbedPane1.addTab(bundle.getString("label.Transactions"), jPanel4); // NOI18N
 
         m_jImage.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N

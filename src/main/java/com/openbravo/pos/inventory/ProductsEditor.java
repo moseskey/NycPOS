@@ -1133,7 +1133,7 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jLabel19.setText(bundle.getString("label.margin")); // NOI18N
         jLabel19.setPreferredSize(new java.awt.Dimension(48, 15));
         jPanel1.add(jLabel19);

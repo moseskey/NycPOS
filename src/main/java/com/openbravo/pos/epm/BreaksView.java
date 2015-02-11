@@ -185,7 +185,7 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
         m_Name3.setText(AppLocal.getIntString("label.epm.notes")); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jLabel1.setText(bundle.getString("label.epm.employee")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

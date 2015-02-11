@@ -290,7 +290,7 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         jcboTicketsBag.setPreferredSize(new java.awt.Dimension(200, 30));
 
         jchkHideInfo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jchkHideInfo.setText(bundle.getString("label.Infopanel")); // NOI18N
         jchkHideInfo.setToolTipText("");
         jchkHideInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);

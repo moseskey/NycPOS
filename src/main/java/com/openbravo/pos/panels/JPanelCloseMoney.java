@@ -490,7 +490,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jLabel8.setText(bundle.getString("label.nocashsales")); // NOI18N
 
         m_jNoCashSales.setEditable(false);

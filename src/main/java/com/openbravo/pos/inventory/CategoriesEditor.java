@@ -265,7 +265,7 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         m_jCatalogAdd.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jCatalogAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editnew.png"))); // NOI18N
         m_jCatalogAdd.setText(AppLocal.getIntString("button.catalogadd")); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         m_jCatalogAdd.setToolTipText(bundle.getString("button.catalogadd")); // NOI18N
         m_jCatalogAdd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jCatalogAdd.setMargin(new java.awt.Insets(2, 4, 2, 14));

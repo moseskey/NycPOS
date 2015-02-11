@@ -348,7 +348,7 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         m_jtxtName.setPreferredSize(new java.awt.Dimension(220, 25));
 
         jLblPhone.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jLblPhone.setText(bundle.getString("label.phone")); // NOI18N
         jLblPhone.setMaximumSize(new java.awt.Dimension(120, 25));
         jLblPhone.setPreferredSize(new java.awt.Dimension(120, 25));

@@ -401,7 +401,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
         jButtonTest.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButtonTest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/database.png"))); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jButtonTest.setText(bundle.getString("Button.Test")); // NOI18N
         jButtonTest.setActionCommand(bundle.getString("Button.Test")); // NOI18N
         jButtonTest.addActionListener(new java.awt.event.ActionListener() {
