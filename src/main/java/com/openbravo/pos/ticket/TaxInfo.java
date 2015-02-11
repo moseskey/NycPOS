@@ -37,7 +37,8 @@ public class TaxInfo implements Serializable, IKeyed {
 
     /**
      * Creates new TaxInfo
-     * @param order */
+     * @param order
+     */
     public TaxInfo(String id, String name, String taxcategoryid, String taxcustcategoryid, String parentid, double rate, boolean cascade, Integer order) {
         this.id = id;
         this.name = name;

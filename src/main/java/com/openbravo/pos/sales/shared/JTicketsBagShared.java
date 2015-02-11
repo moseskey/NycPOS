@@ -43,7 +43,8 @@ public class JTicketsBagShared extends JTicketsBag {
 
     /**
      * Creates new form JTicketsBagShared
-     * @param panelticket */
+     * @param panelticket
+     */
     public JTicketsBagShared(AppView app, TicketsEditor panelticket) {
 
         super(app, panelticket);

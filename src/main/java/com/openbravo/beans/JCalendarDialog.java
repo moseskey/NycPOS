@@ -17,7 +17,8 @@ public class JCalendarDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form JCalendarDialog
-     * @param modal */
+     * @param modal
+     */
     public JCalendarDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
 
@@ -29,7 +30,8 @@ public class JCalendarDialog extends javax.swing.JDialog {
     }
     /**
      * Creates new form JCalendarDialog
-     * @param modal */
+     * @param modal
+     */
     public JCalendarDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
 

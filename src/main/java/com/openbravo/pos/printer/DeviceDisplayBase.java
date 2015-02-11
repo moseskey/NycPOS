@@ -41,7 +41,8 @@ public class DeviceDisplayBase {
 
     /**
      * Creates a new instance of DeviceDisplayBase
-     * @param impl */
+     * @param impl
+     */
     public DeviceDisplayBase(DeviceDisplayImpl impl) {
         this.impl = impl;
         anim = new NullAnimator("", "");

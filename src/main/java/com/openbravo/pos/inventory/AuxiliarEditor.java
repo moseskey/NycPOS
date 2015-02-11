@@ -46,7 +46,8 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
 
     /**
      * Creates new form AuxiliarEditor
-     * @param dirty */
+     * @param dirty
+     */
     public AuxiliarEditor(AppView app, DirtyManager dirty) {
 
         m_dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");

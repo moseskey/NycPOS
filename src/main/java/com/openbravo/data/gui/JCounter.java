@@ -29,7 +29,8 @@ public class JCounter extends JPanel implements BrowseListener, StateListener  {
 
     /**
      * Creates new form JCounter
-     * @param bd */
+     * @param bd
+     */
     public JCounter(BrowsableEditableData bd) {
         initComponents();
         bd.addBrowseListener(this);

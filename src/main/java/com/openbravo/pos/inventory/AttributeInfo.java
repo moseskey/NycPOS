@@ -28,7 +28,8 @@ public class AttributeInfo implements IKeyed {
 
     /**
      * Creates new CategoryInfo
-     * @param name */
+     * @param name
+     */
     public AttributeInfo(String id, String name) {
         this.id = id;
         this.name = name;

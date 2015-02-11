@@ -66,7 +66,8 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
 
         /**
          * Creates a new instance of ComparatorBasic
-         * @param aiOrderBy */
+         * @param aiOrderBy
+         */
         public ComparatorBasic(int[] aiOrderBy) {
             m_aiOrderBy = aiOrderBy;
         }

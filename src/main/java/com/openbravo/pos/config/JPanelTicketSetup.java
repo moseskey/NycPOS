@@ -43,7 +43,8 @@ public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig
         m_jReceiptPrintOff.addActionListener(dirty);
 
 /**
- * Added: JG 23 July 13 */
+ * Added: JG 23 July 13
+ */
         jchkSCOnOff.addActionListener(dirty);
         jchkSCRestaurant.addActionListener(dirty);
         jTextSCRate.getDocument().addDocumentListener(dirty);
@@ -94,7 +95,8 @@ public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig
         dirty.setDirty(false);
 
 /**
- * Added: JG 23 July 13 */
+ * Added: JG 23 July 13
+ */
         String SCCheck =(config.getProperty("till.SCRate"));
         if (SCCheck == null){
             config.setProperty("till.SCRate","0");
@@ -128,7 +130,8 @@ public class JPanelTicketSetup extends javax.swing.JPanel implements PanelConfig
         config.setProperty("till.receiptprintoff",Boolean.toString(m_jReceiptPrintOff.isSelected()));
 
 /**
- * Added: JG 23 July 13 */
+ * Added: JG 23 July 13
+ */
         config.setProperty("till.SCOnOff",Boolean.toString(jchkSCOnOff.isSelected()));
         config.setProperty("till.SCRate",jTextSCRate.getText());
         config.setProperty("till.SCRestaurant",Boolean.toString(jchkSCRestaurant.isSelected()));

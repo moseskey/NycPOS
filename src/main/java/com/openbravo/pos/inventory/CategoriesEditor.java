@@ -50,7 +50,8 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     /**
      * Creates new form JPanelCategories
-     * @param dirty */
+     * @param dirty
+     */
     public CategoriesEditor(AppView app, DirtyManager dirty) {
 
         DataLogicSales dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");

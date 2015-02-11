@@ -33,7 +33,8 @@ public class TaxCustCategoryInfo implements IKeyed {
 
     /**
      * Creates new CategoryInfo
-     * @param name */
+     * @param name
+     */
     public TaxCustCategoryInfo(String id, String name) {
         m_sID = id;
         m_sName = name;

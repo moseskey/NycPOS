@@ -30,7 +30,8 @@ public class JLabelDirty extends JLabel {
 
     /**
      * Creates a new instance of JDirtyPicture
-     * @param dm */
+     * @param dm
+     */
     public JLabelDirty(DirtyManager dm) {
 
         if (m_IconModif == null) {

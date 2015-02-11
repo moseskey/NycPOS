@@ -58,7 +58,8 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
 
     /**
      * Creates new form CustomersView
-     * @param dirty */
+     * @param dirty
+     */
     public CustomersView(AppView app, DirtyManager dirty) {
         try {
             dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");

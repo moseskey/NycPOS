@@ -38,7 +38,8 @@ public class JPaymentCheque extends javax.swing.JPanel implements JPaymentInterf
 
     /**
      * Creates new form JPaymentCash
-     * @param notifier */
+     * @param notifier
+     */
     public JPaymentCheque(JPaymentNotifier notifier) {
 
         m_notifier = notifier;

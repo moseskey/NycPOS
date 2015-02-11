@@ -25,7 +25,8 @@ public class EmployeeInfoExt extends EmployeeInfo {
 
     /**
      * Creates a new instance of EmployeeInfoExt
-     * @param id */
+     * @param id
+     */
     public EmployeeInfoExt(String id) {
         super(id);
     }

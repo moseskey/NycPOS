@@ -67,7 +67,8 @@ public class CustomerInfo implements Serializable {
 
     /**
      * Creates a new instance of UserInfoBasic
-     * @param id */
+     * @param id
+     */
     public CustomerInfo(String id) {
         this.id = id;
         this.searchkey = null;

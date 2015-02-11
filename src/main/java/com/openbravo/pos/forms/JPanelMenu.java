@@ -31,7 +31,8 @@ public class JPanelMenu extends JPanel implements JPanelView {
 
     /**
      * Creates new form JStockMenu
-     * @param menu */
+     * @param menu
+     */
     public JPanelMenu(MenuDefinition menu) {
 
         m_menu = menu;

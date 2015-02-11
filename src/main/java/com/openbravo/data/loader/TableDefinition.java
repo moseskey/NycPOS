@@ -36,7 +36,8 @@ public class TableDefinition {
 
     /**
      * Creates a new instance of TableDefinition
-     * @param fielddata */
+     * @param fielddata
+     */
     public TableDefinition(
             Session s,
             String tablename,

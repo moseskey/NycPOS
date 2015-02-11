@@ -101,7 +101,8 @@ public class JRootApp extends JPanel implements AppView {
     }
 
 /**
- * JG Added 3.07.2011 - Add clock to the title bar - T Sirwani*/
+ * JG Added 3.07.2011 - Add clock to the title bar - T Sirwani
+ */
     private class PrintTimeAction implements ActionListener {
 
     @Override
@@ -245,7 +246,8 @@ public class JRootApp extends JPanel implements AppView {
         m_Scanner = DeviceScannerFactory.createInstance(m_props);
 
         /**
-         * JG Added - Start timer for title bar clock*/
+         * JG Added - Start timer for title bar clock
+         */
         new javax.swing.Timer(250, new PrintTimeAction()).start();
 
         String sWareHouse;

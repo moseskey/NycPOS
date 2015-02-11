@@ -40,13 +40,15 @@ public class ReceiptSplit extends javax.swing.JDialog {
 
     /**
      * Creates new form ReceiptSplit
-     * @param parent */
+     * @param parent
+     */
     protected ReceiptSplit(java.awt.Frame parent) {
         super(parent, true);
     }
     /**
      * Creates new form ReceiptSplit
-     * @param parent */
+     * @param parent
+     */
     protected ReceiptSplit(java.awt.Dialog parent) {
         super(parent, true);
     }

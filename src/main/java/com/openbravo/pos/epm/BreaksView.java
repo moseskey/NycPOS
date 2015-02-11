@@ -37,7 +37,8 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
 
     /**
      * Creates new form BreaksView
-     * @param dirty */
+     * @param dirty
+     */
     public BreaksView(AppView app, DirtyManager dirty) {
 
         DataLogicPresenceManagement dlPresenceManagement = (DataLogicPresenceManagement) app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");

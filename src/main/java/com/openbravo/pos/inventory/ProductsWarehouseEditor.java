@@ -41,7 +41,8 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
 
     /**
      * Creates new form ProductsWarehouseEditor
-     * @param dirty */
+     * @param dirty
+     */
     public ProductsWarehouseEditor(DirtyManager dirty) {
         initComponents();
 

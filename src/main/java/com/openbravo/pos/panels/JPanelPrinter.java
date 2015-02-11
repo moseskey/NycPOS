@@ -33,7 +33,8 @@ public class JPanelPrinter extends JPanel implements JPanelView {
 
     /**
      * Creates new form JPrinter
-     * @param oApp */
+     * @param oApp
+     */
     public JPanelPrinter(AppView oApp) {
 
         initComponents();

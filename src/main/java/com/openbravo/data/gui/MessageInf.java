@@ -56,7 +56,8 @@ public class MessageInf {
 
     /**
      * Creates a new instance of MessageInf
-     * @param e */
+     * @param e
+     */
     public MessageInf(int iSignalWord, String sHazard, Object e) {
 //        m_iMsgNumber = iSignalWord | CLS_GENERIC;
         m_iMsgNumber = iSignalWord;
@@ -74,7 +75,8 @@ public class MessageInf {
 
     /**
      * Creates a new instance of MessageInf
-     * @param e */
+     * @param e
+     */
     public MessageInf(Throwable e) {
         this(SGN_WARNING, e.getLocalizedMessage(), e);
     }

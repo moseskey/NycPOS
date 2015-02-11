@@ -83,7 +83,8 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 
     /**
      * Creates new form JEditProduct
-     * @param dirty */
+     * @param dirty
+     */
     public ProductsEditor(DataLogicSales dlSales, DirtyManager dirty) {
         initComponents();
 

@@ -36,7 +36,8 @@ public class PrintItemLine implements PrintItem {
 
     /**
      * Creates a new instance of PrinterItemLine
-     * @param fontheight */
+     * @param fontheight
+     */
     public PrintItemLine(int textsize, Font font, int fontheight) {
         this.textsize = textsize;
         this.font = font;

@@ -37,7 +37,8 @@ public class JTicketCatalogLines extends javax.swing.JPanel {
 
     /**
      * Creates new form JTicketCatalogLines
-     * @param height */
+     * @param height
+     */
     public JTicketCatalogLines(AppView app, JPanelTicketEdits jTicketEdit, boolean pricevisible, boolean taxesincluded, int width, int height) {
 
         DataLogicSystem dlSystem = null;

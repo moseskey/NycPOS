@@ -48,7 +48,8 @@ public class CustomerInfoExt extends CustomerInfo {
 
     /**
      * Creates a new instance of UserInfoBasic
-     * @param id */
+     * @param id
+     */
     public CustomerInfoExt(String id) {
         super(id);
     }

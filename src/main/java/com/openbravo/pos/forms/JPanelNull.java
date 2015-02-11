@@ -27,7 +27,8 @@ public class JPanelNull extends JPanel implements JPanelView {
 
     /**
      * Creates new form JPanelNull
-     * @param o */
+     * @param o
+     */
     public JPanelNull(AppView oApp, Object o) {
 
         initComponents ();

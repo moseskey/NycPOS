@@ -27,7 +27,8 @@ public class JListData extends javax.swing.JDialog {
 
     /**
      * Creates new form JListData
-     * @param parent */
+     * @param parent
+     */
     public JListData(java.awt.Frame parent) {
         super(parent, true);
         initComponents();

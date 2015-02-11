@@ -25,13 +25,15 @@ public class JPaymentSelectReceipt extends JPaymentSelect {
 
     /**
      * Creates new form JPaymentSelect
-     * @param o */
+     * @param o
+     */
     protected JPaymentSelectReceipt(java.awt.Frame parent, boolean modal, ComponentOrientation o) {
         super(parent, modal, o);
     }
     /**
      * Creates new form JPaymentSelect
-     * @param modal */
+     * @param modal
+     */
     protected JPaymentSelectReceipt(java.awt.Dialog parent, boolean modal, ComponentOrientation o) {
         super(parent, modal, o);
     }

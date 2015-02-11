@@ -35,7 +35,8 @@ public class FormatsValidate extends Formats {
     }
     /**
      * Creates a new instance of FormatsValidate
-     * @param fmt */
+     * @param fmt
+     */
     public FormatsValidate(Formats fmt) {
         this(fmt, new FormatsConstrain[0]);
     }

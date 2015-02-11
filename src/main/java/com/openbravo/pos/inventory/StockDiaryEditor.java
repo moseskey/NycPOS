@@ -69,7 +69,8 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
 
     /**
      * Creates new form StockDiaryEditor
-     * @param dirty */
+     * @param dirty
+     */
     public StockDiaryEditor(AppView app, DirtyManager dirty) {
 
         m_App = app;

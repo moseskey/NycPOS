@@ -30,7 +30,8 @@ public class JPaymentFree extends javax.swing.JPanel implements JPaymentInterfac
 
     /**
      * Creates new form JPaymentFree
-     * @param notifier */
+     * @param notifier
+     */
     public JPaymentFree(JPaymentNotifier notifier) {
         m_notifier = notifier;
         initComponents();

@@ -30,7 +30,8 @@ public class PaymentPanelBasic extends javax.swing.JPanel implements PaymentPane
 
     /**
      * Creates new form PaymentPanelSimple
-     * @param notifier */
+     * @param notifier
+     */
     public PaymentPanelBasic(JPaymentNotifier notifier) {
 
         m_notifier = notifier;

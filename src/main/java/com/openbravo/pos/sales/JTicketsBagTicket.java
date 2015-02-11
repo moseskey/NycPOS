@@ -66,7 +66,8 @@ public class JTicketsBagTicket extends JTicketsBag {
 
     /**
      * Creates new form JTicketsBagTicket
-     * @param panelticket */
+     * @param panelticket
+     */
     public JTicketsBagTicket(AppView app, JPanelTicketEdits panelticket) {
 
         super(app, panelticket);

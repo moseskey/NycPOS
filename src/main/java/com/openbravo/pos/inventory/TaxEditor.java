@@ -50,7 +50,8 @@ public class TaxEditor extends JPanel implements EditorRecord {
 
     /**
      * Creates new form taxEditor
-     * @param dirty */
+     * @param dirty
+     */
     public TaxEditor(AppView app, DirtyManager dirty) {
 
         DataLogicSales dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");

@@ -67,7 +67,8 @@ public class FindInfo implements Finder {
 
     /**
      * Creates a new instance of FindInfo
-     * @param vec */
+     * @param vec
+     */
     public FindInfo(Vectorer vec) {
         this(vec,  "", 0, true, MATCH_ANYPARTFIELD);
     }

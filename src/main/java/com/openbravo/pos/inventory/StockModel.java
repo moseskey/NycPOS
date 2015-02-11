@@ -33,7 +33,8 @@ public class StockModel extends AbstractTableModel {
 
     /**
      * Creates a new instance of StockModel
-     * @param bedit */
+     * @param bedit
+     */
     public StockModel(BrowsableData bd, Formats[] f, boolean[] bedit) {
         m_bd = bd;
         m_formats = f;

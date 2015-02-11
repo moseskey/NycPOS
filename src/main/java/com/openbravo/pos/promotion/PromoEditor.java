@@ -50,7 +50,8 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
     /**
      * Creates new form PlacesEditor
-     * @param dirty */
+     * @param dirty
+     */
     public PromoEditor(AppView app, DataLogicSales dlSales, DirtyManager dirty) {
         m_dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
         initComponents();

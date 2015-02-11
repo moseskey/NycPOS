@@ -59,7 +59,8 @@ public class JPanelButtons extends javax.swing.JPanel {
 
     /**
      * Creates new form JPanelButtons
-     * @param panelticket */
+     * @param panelticket
+     */
     public JPanelButtons(String sConfigKey, JPanelTicket panelticket) {
         initComponents();
 

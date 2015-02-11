@@ -200,7 +200,8 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @param jrPrint */
+     * @param jrPrint
+     */
 	public JRViewer300(JasperPrint jrPrint)
 	{
 		this(jrPrint, null);
@@ -227,7 +228,8 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
 
 	/**
 	 * Creates new form JRViewer300
-     * @param locale */
+     * @param locale
+     */
 	public JRViewer300(JasperPrint jrPrint, Locale locale)
 	{
 		this(jrPrint, locale, null);

@@ -45,7 +45,8 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
 
     /**
      * Creates new form LeavesView
-     * @param dirty */
+     * @param dirty
+     */
     public LeavesView(AppView app, DirtyManager dirty) {
 
         dlPresenceManagement = (DataLogicPresenceManagement) app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");

@@ -60,7 +60,8 @@ public class AppUser {
 
     /**
      * Creates a new instance of AppUser
-     * @param role */
+     * @param role
+     */
     public AppUser(String id, String name, String password, String card, String role, Icon icon) {
         m_sId = id;
         m_sName = name;

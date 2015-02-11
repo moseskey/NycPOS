@@ -44,7 +44,8 @@ public class PeopleView extends JPanel implements EditorRecord {
 
     /**
      * Creates new form PeopleEditor
-     * @param dirty */
+     * @param dirty
+     */
     public PeopleView(DataLogicAdmin dlAdmin, DirtyManager dirty) {
         initComponents();
 

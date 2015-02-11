@@ -67,7 +67,8 @@ public class SalesDetailInfo implements IKeyed {
 
     /**
      * Creates new CategoryInfo
-     * @param price */
+     * @param price
+     */
     public SalesDetailInfo(int lineNo, String productName, double price) {
         this.lineNO = lineNo;
         this.productName = productName;

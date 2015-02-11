@@ -32,7 +32,8 @@ public class SQLTable implements TreeNode {
 
     /**
      * Creates a new instance of SQLTable
-     * @param name */
+     * @param name
+     */
     public SQLTable(SQLDatabase db, String name) {
         m_db = db;
         m_sName = name;

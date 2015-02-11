@@ -25,13 +25,15 @@ public class JPaymentSelectCustomer extends JPaymentSelect {
 
     /**
      * Creates new form JPaymentSelect
-     * @param o */
+     * @param o
+     */
     protected JPaymentSelectCustomer(java.awt.Frame parent, boolean modal, ComponentOrientation o) {
         super(parent, modal, o);
     }
     /**
      * Creates new form JPaymentSelect
-     * @param o */
+     * @param o
+     */
     protected JPaymentSelectCustomer(java.awt.Dialog parent, boolean modal, ComponentOrientation o) {
         super(parent, modal, o);
     }
