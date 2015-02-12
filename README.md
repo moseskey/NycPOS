@@ -18,6 +18,8 @@ ready for production use. We expect it will take 4-6 weeks of development time
 to get the code into a modern, stable state before it will be usable by
 non-developers.
 
+[![Build Status](https://travis-ci.org/KNQ/NycPOS.svg)](https://travis-ci.org/KNQ/NycPOS)
+
 ## Compiling and Running
 
 Currently (although much is still broken), NycPOS will compile and run via the
