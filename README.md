@@ -28,7 +28,8 @@ following:
     ./gradlew build run
 
 In order to compile, you will need to manually install some maven artifacts for
-some projects that the current code base depends on. These are
+some projects that the code base depends on, but that are not available in any
+maven repositories. These are
 [beanshell2](https://code.google.com/p/beanshell2/), and
 [javapos](http://www.javapos.com/). Please see
 `misc/manual-install-maven-artifacts.sh` in the source tree for an example of
