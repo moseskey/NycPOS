@@ -27,7 +27,8 @@ some projects that the current code base depends on. These are
 `misc/manual-install-maven-artifacts.sh` in the source tree for an example of
 how to manually register a maven artifact after you have downloaded the
 respective jars. Please check `build.gradle` for the correct maven group and
-artifact ids, as these are likely to rapidly change.
+artifact ids, as these are likely to change faster than the documentation will
+be updated.
 
 Additionally, you will need to extract images from the uniCenta 3.81 source
 tree and copy them into the `src/main/resources/images` and
