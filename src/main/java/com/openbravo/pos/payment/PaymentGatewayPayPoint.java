@@ -27,9 +27,6 @@ public class PaymentGatewayPayPoint implements PaymentGateway {
     private String m_sCurrency;
     private boolean m_bTestMode;
 
-    /**
-     * Creates a new instance of PaymentGatewaySECPay
-     */
     public PaymentGatewayPayPoint(AppProperties props) {
 
         // Propiedades del sistema

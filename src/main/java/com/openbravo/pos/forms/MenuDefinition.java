@@ -9,9 +9,6 @@ public class MenuDefinition {
 
     private ArrayList m_aMenuElements;
 
-    /**
-     * Creates a new instance of MenuDefinition
-     */
     public MenuDefinition(String skey) {
         m_sKey = skey;
         m_aMenuElements = new ArrayList();

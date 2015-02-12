@@ -25,9 +25,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
 
     private Object insertproduct;
 
-    /**
-     * Creates new form AuxiliarEditor
-     */
     public AuxiliarEditor(AppView app, DirtyManager dirty) {
 
         m_dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -129,10 +126,6 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         m_jSearch.setEnabled(false);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         return new Object[] {

@@ -4,9 +4,5 @@ import com.openbravo.basic.BasicException;
 
 public interface SerializerWrite<T> {
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void writeValues(DataWrite dp, T obj) throws BasicException;
 }

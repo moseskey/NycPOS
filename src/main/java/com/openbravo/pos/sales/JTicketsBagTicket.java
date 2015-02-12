@@ -45,9 +45,6 @@ public class JTicketsBagTicket extends JTicketsBag {
 
     private final JPanelTicketEdits m_panelticketedit;
 
-    /**
-     * Creates new form JTicketsBagTicket
-     */
     public JTicketsBagTicket(AppView app, JPanelTicketEdits panelticket) {
 
         super(app, panelticket);

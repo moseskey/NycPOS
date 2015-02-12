@@ -40,9 +40,6 @@ public class JTicketLines extends javax.swing.JPanel {
     private final TicketTableModel m_jTableModel;
     private Boolean sendStatus;
 
-    /**
-     * Creates new form JLinesTicket
-     */
     public JTicketLines(String ticketline) {
 
         initComponents();

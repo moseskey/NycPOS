@@ -41,16 +41,10 @@ public class JProductAttEdit extends javax.swing.JDialog {
 
     private boolean ok;
 
-    /**
-     * Creates new form JProductAttEdit
-     */
     private JProductAttEdit(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
 
-    /**
-     * Creates new form JProductAttEdit
-     */
     private JProductAttEdit(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }
@@ -121,10 +115,6 @@ public class JProductAttEdit extends javax.swing.JDialog {
         return myMsg;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void editAttributes(String attsetid, String attsetinstid) throws BasicException {
 
         if (attsetid == null) {

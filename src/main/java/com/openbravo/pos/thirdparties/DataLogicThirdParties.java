@@ -10,9 +10,6 @@ public class DataLogicThirdParties extends BeanFactoryDataSingle {
 
     private TableDefinition m_tthirdparties;
 
-    /**
-     * Creates a new instance of DataLogicAdmin
-     */
     public DataLogicThirdParties() {
     }
 

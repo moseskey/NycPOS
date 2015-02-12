@@ -14,9 +14,6 @@ import java.util.Date;
 
 public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEditorCreator {
 
-    /**
-     * Creates new form JParamsClosedPos
-     */
     public JParamsDatesInterval() {
         initComponents();
     }
@@ -33,10 +30,6 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
     public void init(AppView app) {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
     }
@@ -51,10 +44,6 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         Object startdate = Formats.TIMESTAMP.parseValue(jTxtStartDate.getText());

@@ -2,9 +2,6 @@ package com.openbravo.format;
 
 public class FormatsException extends java.lang.Exception {
 
-    /**
-     * Creates a new instance of <code>FormatsException</code> without detail message.
-     */
     public FormatsException() {
     }
 

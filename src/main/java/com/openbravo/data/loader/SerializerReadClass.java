@@ -6,17 +6,10 @@ public class SerializerReadClass implements SerializerRead {
 
     private final Class m_clazz;
 
-    /**
-     * Creates a new instance of DefaultSerializerRead
-     */
     public SerializerReadClass(Class clazz) {
         m_clazz = clazz;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object readValues(DataRead dr) throws BasicException {
         try {

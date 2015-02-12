@@ -38,9 +38,6 @@ public class PreparedSentence extends JDBCSentence {
 
         private PreparedStatement m_ps;
 
-        /**
-         * Creates a new instance of SQLParameter
-         */
         PreparedSentencePars(PreparedStatement ps) {
             m_ps = ps;
         }
@@ -115,10 +112,6 @@ public class PreparedSentence extends JDBCSentence {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public DataResultSet openExec(Object params) throws BasicException {
         // true -> un resultset
@@ -152,10 +145,6 @@ public class PreparedSentence extends JDBCSentence {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public final DataResultSet moreResults() throws BasicException {
         // true -> un resultset
@@ -179,10 +168,6 @@ public class PreparedSentence extends JDBCSentence {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public final void closeExec() throws BasicException {
 

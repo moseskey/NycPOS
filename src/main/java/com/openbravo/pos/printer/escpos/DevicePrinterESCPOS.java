@@ -18,10 +18,6 @@ public class DevicePrinterESCPOS implements DevicePrinter  {
 
     // Creates new TicketPrinter
 
-    /**
-     *
-     * @throws TicketPrinterException
-     */
         public DevicePrinterESCPOS(PrinterWritter CommOutputPrinter, Codes codes, UnicodeTranslator trans) throws TicketPrinterException {
 
         m_sName = AppLocal.getIntString("Printer.Serial");

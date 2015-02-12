@@ -12,9 +12,6 @@ public class ThumbNailBuilder {
     private int m_width;
     private int m_height;
 
-    /**
-     * Creates a new instance of ThumbNailBuilder
-     */
     public ThumbNailBuilder(int width, int height) {
         init(width, height, null);
     }
@@ -28,6 +25,7 @@ public class ThumbNailBuilder {
 
         Image defimg;
         try {
+            System.out.println(">>> " + getClass().getClassLoader().getResourceAsStream(img));
             init(width, height, ImageIO.read(getClass().getClassLoader().getResourceAsStream(img)));
         } catch (IOException fnfe) {
             init(width, height, null);

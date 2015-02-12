@@ -19,9 +19,6 @@ public class CustomersPanel extends JPanelTable {
     private TableDefinition tcustomers;
     private CustomersView jeditor;
 
-    /**
-     * Creates a new instance of CustomersPanel
-     */
     public CustomersPanel() {
         CustomerInfoGlobal.getInstance().setEditableData(bd);
     }
@@ -34,10 +31,6 @@ public class CustomersPanel extends JPanelTable {
 
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         jeditor.activate();

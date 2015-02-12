@@ -28,10 +28,6 @@ public class DeviceTicket {
     private Map<String, DevicePrinter> m_deviceprinters;
     private List<DevicePrinter> m_deviceprinterslist;
 
-/**
- *
- * Creates a new instance of DeviceTicket
- */
 //    public DeviceTicket() {
     public DeviceTicket(AppProperties props) {
         // Una impresora solo de pantalla.

@@ -24,9 +24,6 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
 
     private DataLogicSales m_dlSales = null;
 
-    /**
-     * Creates a new instance of ProductsPanel2
-     */
     public PriceImportPanel() {
     }
 
@@ -87,10 +84,6 @@ public class PriceImportPanel extends JPanelTable2 implements EditorListener {
         return AppLocal.getIntString("Menu.StockImport");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

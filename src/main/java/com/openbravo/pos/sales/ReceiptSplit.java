@@ -19,15 +19,9 @@ public class ReceiptSplit extends javax.swing.JDialog {
     SimpleReceipt receiptone;
     SimpleReceipt receipttwo;
 
-    /**
-     * Creates new form ReceiptSplit
-     */
     protected ReceiptSplit(java.awt.Frame parent) {
         super(parent, true);
     }
-    /**
-     * Creates new form ReceiptSplit
-     */
     protected ReceiptSplit(java.awt.Dialog parent) {
         super(parent, true);
     }

@@ -5,9 +5,6 @@ import java.util.Locale;
 
 public class LocaleComparator implements Comparator<Locale> {
 
-    /**
-     * Creates a new instance of LocaleComparator
-     */
     public LocaleComparator() {
     }
 

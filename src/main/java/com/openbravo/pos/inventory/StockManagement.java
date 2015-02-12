@@ -56,9 +56,6 @@ public class StockManagement extends JPanel implements JPanelView {
     private final String user;
 
 
-    /**
-     * Creates new form StockManagement
-     */
     public StockManagement(AppView app) {
 
         m_App = app;
@@ -110,10 +107,6 @@ public class StockManagement extends JPanel implements JPanelView {
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         m_cat.loadCatalog();

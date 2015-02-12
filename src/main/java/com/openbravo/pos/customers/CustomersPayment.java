@@ -32,9 +32,6 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
     private CustomerInfoExt customerext;
     private final DirtyManager dirty;
 
-    /**
-     * Creates new form CustomersPayment
-     */
     public CustomersPayment() {
 
         initComponents();
@@ -46,10 +43,6 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         txtNotes.addPropertyChangeListener("Text", dirty);
     }
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     @Override
     public void init(AppView app) throws BeanFactoryException {
 
@@ -70,10 +63,6 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         return AppLocal.getIntString("Menu.CustomersPayment");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

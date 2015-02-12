@@ -18,9 +18,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
     private Object m_oId;
     private ComboBoxValModel m_ResourceModel;
 
-    /**
-     * Creates new form ResourcesEditor
-     */
     public ResourcesView(DirtyManager dirty) {
         initComponents();
 
@@ -126,10 +123,6 @@ public final class ResourcesView extends JPanel implements EditorRecord {
         m_jImage.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         Object[] resource = new Object[4];

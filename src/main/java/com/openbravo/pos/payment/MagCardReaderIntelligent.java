@@ -14,9 +14,6 @@ public final class MagCardReaderIntelligent implements MagCardReader {
     private static final int READING_FINISHED = 3;
     private int m_iAutomState;
 
-    /**
-     * Creates a new instance of BasicMagCardReader
-     */
     public MagCardReaderIntelligent() {
         reset();
     }

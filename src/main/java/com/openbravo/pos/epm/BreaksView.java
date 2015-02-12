@@ -16,9 +16,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
     private SentenceList m_sentcat;
     private DirtyManager m_Dirty;
 
-    /**
-     * Creates new form BreaksView
-     */
     public BreaksView(AppView app, DirtyManager dirty) {
 
         DataLogicPresenceManagement dlPresenceManagement = (DataLogicPresenceManagement) app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");
@@ -91,10 +88,6 @@ public final class BreaksView extends javax.swing.JPanel implements EditorRecord
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         Object[] breaks = new Object[4];

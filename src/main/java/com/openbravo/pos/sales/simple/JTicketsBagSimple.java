@@ -7,9 +7,6 @@ import com.openbravo.pos.ticket.TicketInfo;
 
 public class JTicketsBagSimple extends JTicketsBag {
 
-    /**
-     * Creates new form JTicketsBagSimple
-     */
     public JTicketsBagSimple(AppView app, TicketsEditor panelticket) {
 
         super(app, panelticket);

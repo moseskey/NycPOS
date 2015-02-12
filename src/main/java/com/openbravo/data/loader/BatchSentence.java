@@ -16,9 +16,6 @@ public abstract class BatchSentence extends BaseSentence {
 
     protected HashMap<String, String> m_parameters;
 
-    /**
-     * Creates a new instance of BatchSentence
-     */
     public BatchSentence(Session s) {
         m_s = s;
         m_parameters = new HashMap<>();
@@ -28,10 +25,6 @@ public abstract class BatchSentence extends BaseSentence {
         m_parameters.put(name, replacement);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     protected abstract Reader getReader() throws BasicException;
 
     public class ExceptionsResultSet implements DataResultSet {
@@ -44,46 +37,26 @@ public abstract class BatchSentence extends BaseSentence {
             m_iIndex = -1;
         }
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public Integer getInt(int columnIndex) throws BasicException {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
         }
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public String getString(int columnIndex) throws BasicException {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
         }
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public Double getDouble(int columnIndex) throws BasicException {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
         }
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public Boolean getBoolean(int columnIndex) throws BasicException {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
         }
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public java.util.Date getTimestamp(int columnIndex) throws BasicException {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
@@ -91,19 +64,11 @@ public abstract class BatchSentence extends BaseSentence {
 
         //public java.io.InputStream getBinaryStream(int columnIndex) throws DataException;
 
-        /**
-         *
-         * @throws BasicException
-         */
                 @Override
         public byte[] getBytes(int columnIndex) throws BasicException {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
         }
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public Object getObject(int columnIndex) throws BasicException  {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
@@ -111,19 +76,11 @@ public abstract class BatchSentence extends BaseSentence {
 
     //    public int getColumnCount() throws DataException;
 
-        /**
-         *
-         * @throws BasicException
-         */
                 @Override
         public DataField[] getDataField() throws BasicException {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
         }
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public Object getCurrent() throws BasicException {
             if (m_iIndex < 0 || m_iIndex >= l.size()) {
@@ -133,19 +90,11 @@ public abstract class BatchSentence extends BaseSentence {
             }
         }
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public boolean next() throws BasicException {
             return ++m_iIndex < l.size();
         }
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public void close() throws BasicException {
         }
@@ -156,27 +105,15 @@ public abstract class BatchSentence extends BaseSentence {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public final void closeExec() throws BasicException {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public final DataResultSet moreResults() throws BasicException {
         return null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public DataResultSet openExec(Object params) throws BasicException {
 

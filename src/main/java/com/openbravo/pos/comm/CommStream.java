@@ -18,9 +18,6 @@ public class CommStream {
     private OutputStream m_out;
     private InputStream m_in;
 
-    /**
-     * Creates a new instance of CommPort
-     */
     public CommStream(String port) {
         m_sPort = port;
 
@@ -57,10 +54,6 @@ public class CommStream {
         }
     }
 
-    /**
-     *
-     * @throws IOException
-     */
     public void closeAll() throws IOException {
 
         if (m_out != null) {

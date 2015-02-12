@@ -12,9 +12,6 @@ public class JPanelTicketEdits extends JPanelTicket {
 
     private JTicketCatalogLines m_catandlines;
 
-    /**
-     * Creates a new instance of JPanelTicketRefunds
-     */
     public JPanelTicketEdits() {
     }
 
@@ -23,10 +20,6 @@ public class JPanelTicketEdits extends JPanelTicket {
         return null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         super.activate();

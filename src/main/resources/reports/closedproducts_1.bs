@@ -1,0 +1,49 @@
+report = new com.openbravo.pos.reports.PanelReportBean();
+
+report.setTitleKey("Menu.ClosedProducts");
+report.setReport("/reports/closedproducts_1");
+report.setResourceBundle("reports/closedproducts_messages");
+
+report.setSentence("SELECT " +
+            "CLOSEDCASH.HOST, " +
+            "CLOSEDCASH.DATESTART, " +
+            "CLOSEDCASH.DATEEND, " +
+            "taxes.NAME AS TAXNAME, " +
+            "products.REFERENCE, " +
+            "products.NAME, " +
+            "PRODUCTS.PRICESELL, " +
+            "Sum(ticketlines.UNITS) AS UNITS, " +
+            "Sum((TICKETLINES.PRICE+(TICKETLINES.PRICE*TAXES.RATE))*TICKETLINES.UNITS) AS TOTAL " +
+        "FROM (taxes INNER JOIN " +
+            "((products INNER JOIN " +
+            "(TICKETS INNER JOIN ticketlines ON TICKETS.ID = ticketlines.TICKET) " +
+            "ON products.ID = ticketlines.PRODUCT) " +
+            "INNER JOIN receipts ON TICKETS.ID = receipts.ID) " +
+            "ON taxes.ID = ticketlines.TAXID) INNER JOIN closedcash " +
+            "ON receipts.MONEY = closedcash.MONEY " +
+        "WHERE ?(QBF_FILTER) " +
+        "GROUP BY CLOSEDCASH.HOST, CLOSEDCASH.DATESTART, CLOSEDCASH.DATEEND, taxes.NAME, products.REFERENCE, products.NAME, PRODUCTS.PRICESELL " +
+        "ORDER BY CLOSEDCASH.HOST, taxes.NAME, products.NAME");
+
+report.addParameter("CLOSEDCASH.DATEEND");
+report.addParameter("CLOSEDCASH.DATEEND");
+
+paramdates = new com.openbravo.pos.reports.JParamsDatesInterval();
+
+paramdates.setStartDate(com.openbravo.beans.DateUtils.getToday());
+// JG - 8 Jan 14 paramdates.setEndDate(com.openbravo.beans.DateUtils.getToday());
+paramdates.setEndDate(com.openbravo.beans.DateUtils.getTodayMinutes());
+
+report.addQBFFilter(paramdates);
+
+report.addField("HOST", com.openbravo.data.loader.Datas.STRING);
+report.addField("DATESTART", com.openbravo.data.loader.Datas.TIMESTAMP);
+report.addField("DATEEND", com.openbravo.data.loader.Datas.TIMESTAMP);
+report.addField("TAXNAME", com.openbravo.data.loader.Datas.STRING);
+report.addField("REFERENCE", com.openbravo.data.loader.Datas.STRING);
+report.addField("NAME", com.openbravo.data.loader.Datas.STRING);
+report.addField("PRICE", com.openbravo.data.loader.Datas.DOUBLE);
+report.addField("UNITS", com.openbravo.data.loader.Datas.DOUBLE);
+report.addField("TOTAL", com.openbravo.data.loader.Datas.DOUBLE);
+
+report;

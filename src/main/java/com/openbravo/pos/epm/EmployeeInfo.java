@@ -11,9 +11,6 @@ public class EmployeeInfo implements Serializable {
 
     protected String name;
 
-    /**
-     * Creates a new instance of EmployeeInfo
-     */
     public EmployeeInfo(String id) {
         this.id = id;
         this.name = null;

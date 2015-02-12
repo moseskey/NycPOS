@@ -11,9 +11,6 @@ public class JCatalogTab extends javax.swing.JPanel {
 
     private JFlowPanel flowpanel;
 
-    /**
-     * Creates new form JCategoryProducts
-     */
     public JCatalogTab() {
         initComponents();
 

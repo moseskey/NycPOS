@@ -7,9 +7,6 @@ import javax.swing.JPanel;
 
 public class ConfigPaymentPanelBluePayAUTHNETEMU extends javax.swing.JPanel implements PaymentConfiguration {
 
-    /**
-     * Creates new form ConfigPaymentPanelBluePayAUTHNETEMU
-     */
     public ConfigPaymentPanelBluePayAUTHNETEMU() {
         initComponents();
     }

@@ -10,9 +10,6 @@ public class MenuPanelAction extends AbstractAction {
     private final AppView m_App;
     private final String m_sMyView;
 
-    /**
-     * Creates a new instance of MenuPanelAction
-     */
     public MenuPanelAction(AppView app, String icon, String keytext, String sMyView) {
         putValue(Action.SMALL_ICON, new ImageIcon(JPrincipalApp.class.getResource(icon)));
         putValue(Action.NAME, AppLocal.getIntString(keytext));

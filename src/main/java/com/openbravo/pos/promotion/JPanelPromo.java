@@ -19,9 +19,6 @@ public class JPanelPromo extends JPanelTable {
     private TableDefinition tpromo;
     private PromoEditor jeditor;
 
-    /**
-     * Creates a new instance of JPanelPlaces
-     */
     public JPanelPromo() {
     }
 
@@ -72,10 +69,6 @@ public class JPanelPromo extends JPanelTable {
         return AppLocal.getIntString("Menu.Promo");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         jeditor.activate(); // primero activo el editor

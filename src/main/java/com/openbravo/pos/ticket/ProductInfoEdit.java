@@ -39,9 +39,6 @@ public class ProductInfoEdit {
 
     protected Integer m_iCatalogOrder;
 
-    /**
-     * Creates a new instance of ProductInfoEdit
-     */
     public ProductInfoEdit() {
         m_ID = null;
         m_sRef = "0000";

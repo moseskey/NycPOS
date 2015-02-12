@@ -20,9 +20,6 @@ public class BrowsableData implements ListModel {
 
     private Comparator m_comparer;
 
-    /**
-     * Creates a new instance of BrowsableData
-     */
     public BrowsableData(ListProvider dataprov, SaveProvider saveprov, Comparator c) {
         m_dataprov = dataprov;
         m_saveprov = saveprov;
@@ -99,10 +96,6 @@ public class BrowsableData implements ListModel {
         m_bIsAdjusting = false;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void refreshData() throws BasicException {
 
         putNewData(m_dataprov == null
@@ -110,10 +103,6 @@ public class BrowsableData implements ListModel {
                 : m_dataprov.refreshData());
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void loadData() throws BasicException {
 
         putNewData(m_dataprov == null
@@ -121,10 +110,6 @@ public class BrowsableData implements ListModel {
                 : m_dataprov.loadData());
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void unloadData() throws BasicException {
         putNewData(null);
     }
@@ -133,10 +118,6 @@ public class BrowsableData implements ListModel {
         putNewData(l);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void sort(Comparator c) throws BasicException {
 
         Collections.sort(m_aData, c);
@@ -159,10 +140,6 @@ public class BrowsableData implements ListModel {
         return m_saveprov != null && m_saveprov.canUpdate();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final int findNext(int index, Finder f) throws BasicException {
         int i = index + 1;
 
@@ -186,10 +163,6 @@ public class BrowsableData implements ListModel {
         return -1;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final int removeRecord(int index) throws BasicException {
         if (canDeleteData() && index >= 0 && index < m_aData.size()) {
             if (m_saveprov.deleteData(getElementAt(index)) > 0) {
@@ -214,10 +187,6 @@ public class BrowsableData implements ListModel {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final int updateRecord(int index, Object value) throws BasicException {
 
         if (canUpdateData() && index >= 0 && index < m_aData.size()) {
@@ -259,10 +228,6 @@ public class BrowsableData implements ListModel {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final int insertRecord(Object value) throws BasicException {
 
         if (canInsertData() && m_saveprov.insertData(value) > 0) {

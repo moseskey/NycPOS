@@ -4,9 +4,6 @@ public class KeyGetterBasic implements IKeyGetter {
 
     private int [] m_aElems;
 
-    /**
-     * Creates a new instance of KeyGetterBasic
-     */
     public KeyGetterBasic(int[] aElems) {
         m_aElems = aElems;
     }

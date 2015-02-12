@@ -18,9 +18,6 @@ public class StaticSentence extends JDBCSentence {
     // Estado
     private Statement m_Stmt;
 
-    /**
-     * Creates a new instance of StaticSentence
-     */
     public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite, SerializerRead serread) {
         super(s);
         m_sentence = sentence;
@@ -28,41 +25,22 @@ public class StaticSentence extends JDBCSentence {
         m_SerRead = serread;
         m_Stmt = null;
     }
-    /**
-     * Creates a new instance of StaticSentence
-     */
     public StaticSentence(Session s, ISQLBuilderStatic sentence) {
         this(s, sentence, null, null);
     }
-    /**
-     * Creates a new instance of StaticSentence
-     */
     public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite) {
         this(s, sentence, serwrite, null);
     }
-    /**
-     * Creates a new instance of StaticSentence
-     */
     public StaticSentence(Session s, String sentence, SerializerWrite serwrite, SerializerRead serread) {
         this(s, new NormalBuilder(sentence), serwrite, serread);
     }
-    /**
-     * Creates a new instance of StaticSentence
-     */
     public StaticSentence(Session s, String sentence, SerializerWrite serwrite) {
         this(s, new NormalBuilder(sentence), serwrite, null);
     }
-    /**
-     * Creates a new instance of StaticSentence
-     */
     public StaticSentence(Session s, String sentence) {
         this(s, new NormalBuilder(sentence), null, null);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public DataResultSet openExec(Object params) throws BasicException {
         // true -> un resultset
@@ -92,10 +70,6 @@ public class StaticSentence extends JDBCSentence {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void closeExec() throws BasicException {
 
@@ -110,10 +84,6 @@ public class StaticSentence extends JDBCSentence {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public DataResultSet moreResults() throws BasicException {
 

@@ -20,10 +20,6 @@ public final class Session {
 
     public final SessionDB DB;
 
-    /**
-     * Creates a new instance of Session
-     * @throws java.sql.SQLException
-     */
     public Session(String url, String user, String password) throws SQLException {
         m_surl = url;
         m_sappuser = user;
@@ -37,10 +33,6 @@ public final class Session {
         DB = getDiff();
     }
 
-    /**
-     *
-     * @throws SQLException
-     */
     public void connect() throws SQLException {
 
         // primero cerramos si no estabamos cerrados
@@ -72,10 +64,6 @@ public final class Session {
         }
     }
 
-    /**
-     *
-     * @throws SQLException
-     */
     public Connection getConnection() throws SQLException {
 
         if (!m_bInTransaction) {
@@ -84,10 +72,6 @@ public final class Session {
         return m_c;
     }
 
-    /**
-     *
-     * @throws SQLException
-     */
     public void begin() throws SQLException {
 
         if (m_bInTransaction) {
@@ -99,10 +83,6 @@ public final class Session {
         }
     }
 
-    /**
-     *
-     * @throws SQLException
-     */
     public void commit() throws SQLException {
         if (m_bInTransaction) {
             m_bInTransaction = false; // lo primero salimos del estado
@@ -113,10 +93,6 @@ public final class Session {
         }
     }
 
-    /**
-     *
-     * @throws SQLException
-     */
     public void rollback() throws SQLException {
         if (m_bInTransaction) {
             m_bInTransaction = false; // lo primero salimos del estado
@@ -147,10 +123,6 @@ public final class Session {
         }
     }
 
-    /**
-     *
-     * @throws SQLException
-     */
     public String getURL() throws SQLException {
         return getConnection().getMetaData().getURL();
     }

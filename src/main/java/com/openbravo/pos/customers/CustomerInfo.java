@@ -46,9 +46,6 @@ public class CustomerInfo implements Serializable {
      */
     protected String email;
 
-    /**
-     * Creates a new instance of UserInfoBasic
-     */
     public CustomerInfo(String id) {
         this.id = id;
         this.searchkey = null;

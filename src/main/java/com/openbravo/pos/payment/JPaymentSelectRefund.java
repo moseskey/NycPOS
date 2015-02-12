@@ -4,15 +4,9 @@ import java.awt.*;
 
 public class JPaymentSelectRefund extends JPaymentSelect {
 
-    /**
-     * Creates new form JPaymentSelect
-     */
     protected JPaymentSelectRefund(java.awt.Frame parent, boolean modal, ComponentOrientation o) {
         super(parent, modal, o);
     }
-    /**
-     * Creates new form JPaymentSelect
-     */
     protected JPaymentSelectRefund(java.awt.Dialog parent, boolean modal, ComponentOrientation o) {
         super(parent, modal, o);
     }

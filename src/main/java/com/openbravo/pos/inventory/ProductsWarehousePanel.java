@@ -21,9 +21,6 @@ public class ProductsWarehousePanel extends JPanelTable2 {
     private JParamsLocation m_paramslocation;
     private ProductsWarehouseEditor jeditor;
 
-    /**
-     * Creates a new instance of ProductsWarehousePanel
-     */
     public ProductsWarehousePanel() {
     }
 
@@ -92,10 +89,6 @@ public class ProductsWarehousePanel extends JPanelTable2 {
         return jeditor;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

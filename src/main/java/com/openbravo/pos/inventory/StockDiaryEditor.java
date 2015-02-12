@@ -48,9 +48,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
     private final AppView m_App;
     private final DataLogicSales m_dlSales;
 
-    /**
-     * Creates new form StockDiaryEditor
-     */
     public StockDiaryEditor(AppView app, DirtyManager dirty) {
 
         m_App = app;
@@ -89,10 +86,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         writeValueEOF();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void activate() throws BasicException {
         m_cat.loadCatalog();
 
@@ -252,10 +245,6 @@ public final class StockDiaryEditor extends javax.swing.JPanel implements Editor
         m_cat.setComponentEnabled(false);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         return new Object[] {

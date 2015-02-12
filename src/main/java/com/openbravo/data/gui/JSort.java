@@ -66,10 +66,6 @@ public class JSort extends JDialog {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public static Comparator showMessage(Component parent, ComparatorCreator cc) throws BasicException {
 
         Window window = getWindow(parent);

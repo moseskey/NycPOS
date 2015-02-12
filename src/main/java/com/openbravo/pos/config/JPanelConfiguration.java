@@ -14,9 +14,6 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
     private AppConfig config;
 
-    /**
-     * Creates new form JPanelConfiguration
-     */
     public JPanelConfiguration(AppView oApp) {
         this(oApp.getProperties());
     // If config is being run from with application the hide Exit button
@@ -123,10 +120,6 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
         return AppLocal.getIntString("Menu.Configuration");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         loadProperties();

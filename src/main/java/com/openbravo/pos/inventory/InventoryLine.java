@@ -16,9 +16,6 @@ public class InventoryLine {
     private String attsetinstid;
     private String attsetinstdesc;
 
-    /**
-     * Creates a new instance of InventoryLine
-     */
     public InventoryLine(ProductInfoExt oProduct) {
         m_sProdID = oProduct.getID();
         m_sProdName = oProduct.getName();

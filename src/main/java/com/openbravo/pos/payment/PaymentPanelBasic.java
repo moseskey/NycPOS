@@ -9,9 +9,6 @@ public class PaymentPanelBasic extends javax.swing.JPanel implements PaymentPane
     private String m_sTransactionID;
     private JPaymentNotifier m_notifier;
 
-    /**
-     * Creates new form PaymentPanelSimple
-     */
     public PaymentPanelBasic(JPaymentNotifier notifier) {
 
         m_notifier = notifier;

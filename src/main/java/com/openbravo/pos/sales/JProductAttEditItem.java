@@ -7,9 +7,6 @@ public class JProductAttEditItem extends javax.swing.JPanel implements JProductA
 
     private String attid;
 
-    /**
-     * Creates new form JProductAttEditItem
-     */
     public JProductAttEditItem(String attid, String label, String value, JEditorKeys keys) {
 
         this.attid = attid;

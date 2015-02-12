@@ -51,9 +51,6 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
      */
     protected static final Logger LOGGER = Logger.getLogger("com.openbravo.pos.customers.CustomersList");
 
-    /**
-     * Creates new form CustomersList
-     */
     public OrderCustomerList(DataLogicCustomers dlCustomers, AppView app, TicketsEditor panelticket) {
         this.application = app;
         this.panelticket = panelticket;
@@ -71,19 +68,11 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void reloadCustomers() throws BasicException {
 //        synchroniseData();
         loadCustomers();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void loadCustomers() throws BasicException {
 

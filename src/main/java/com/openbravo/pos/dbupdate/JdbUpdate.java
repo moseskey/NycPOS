@@ -19,9 +19,6 @@ public class JdbUpdate extends javax.swing.JFrame {
 
     private JPaneldbUpdate config;
 
-    /**
-     * Creates new form JdbUpdate
-     */
     public JdbUpdate(AppProperties props) {
 
         initComponents();

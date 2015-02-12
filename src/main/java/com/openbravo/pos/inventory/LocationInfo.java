@@ -17,9 +17,6 @@ public class LocationInfo implements SerializableRead, IKeyed {
     private String m_sName;
     private String m_sAddress;
 
-    /**
-     * Creates a new instance of LocationInfo
-     */
     public LocationInfo() {
         m_sID = null;
         m_sName = null;
@@ -30,10 +27,6 @@ public class LocationInfo implements SerializableRead, IKeyed {
         return m_sID;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void readValues(DataRead dr) throws BasicException {
         m_sID = dr.getString(1);
         m_sName = dr.getString(2);

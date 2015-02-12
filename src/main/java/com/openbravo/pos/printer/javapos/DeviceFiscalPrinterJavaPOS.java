@@ -13,10 +13,6 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
 
     private FiscalPrinter m_fiscal;
 
-    /**
-     * Creates new form DeviceFiscalPrinterJavaPOSPanel
-     * @throws com.openbravo.pos.printer.TicketPrinterException
-     */
     public DeviceFiscalPrinterJavaPOS(String sDeviceFiscalPrinterName) throws TicketPrinterException {
         m_sName = sDeviceFiscalPrinterName;
 

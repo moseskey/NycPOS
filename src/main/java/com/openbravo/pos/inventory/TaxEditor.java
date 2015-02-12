@@ -29,9 +29,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
     private SentenceList taxparentsent;
     private ComboBoxValModel taxparentmodel;
 
-    /**
-     * Creates new form taxEditor
-     */
     public TaxEditor(AppView app, DirtyManager dirty) {
 
         DataLogicSales dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -58,10 +55,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
         writeValueEOF();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void activate() throws BasicException {
 
         List a = taxcatsent.list();
@@ -178,10 +171,6 @@ public class TaxEditor extends JPanel implements EditorRecord {
         jOrder.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

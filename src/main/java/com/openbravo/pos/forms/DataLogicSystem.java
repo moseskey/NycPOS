@@ -56,22 +56,19 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
     private String SQL;
     private Map<String, byte[]> resourcescache;
 
-    /**
-     * Creates a new instance of DataLogicSystem
-     */
     public DataLogicSystem() {
     }
 
     @Override
     public void init(Session s){
 
-        m_sInitScript = "/com/openbravo/pos/scripts/" + s.DB.getName();
+        m_sInitScript = "/sql/" + s.DB.getName();
         m_dbVersion = s.DB.getName();
 
         m_version = new PreparedSentence(s, "SELECT VERSION FROM APPLICATIONS WHERE ID = ?", SerializerWriteString.INSTANCE, SerializerReadString.INSTANCE);
         m_dummy = new StaticSentence(s, "SELECT * FROM PEOPLE WHERE 1 = 0");
 
-        final ThumbNailBuilder tnb = new ThumbNailBuilder(32, 32, "com/openbravo/images/sysadmin.png");
+        final ThumbNailBuilder tnb = new ThumbNailBuilder(32, 32, "/images/sysadmin.png");
         peopleread = new SerializerRead() {
             @Override
             public Object readValues(DataRead dr) throws BasicException {
@@ -265,51 +262,27 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         return m_dbVersion;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final String findVersion() throws BasicException {
         return (String) m_version.find(AppLocal.APP_ID);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final String getUser() throws BasicException {
         return ("");
 
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void execDummy() throws BasicException {
         m_dummy.exec();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final List listPeopleVisible() throws BasicException {
         return m_peoplevisible.list();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final List<String> getPermissions(String role)throws BasicException {
         return m_permissionlist.list(role);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final AppUser findPeopleByCard(String card) throws BasicException {
         return (AppUser) m_peoplebycard.find(card);
     }
@@ -323,10 +296,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void execChangePassword(Object[] userdata) throws BasicException {
         m_changepassword.exec(userdata);
     }
@@ -419,43 +388,23 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         return p;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final int getSequenceCash(String host) throws BasicException {
         Integer i = (Integer) m_sequencecash.find(host);
         return (i == null) ? 1 : i;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final Object[] findActiveCash(String sActiveCashIndex) throws BasicException {
         return (Object[]) m_activecash.find(sActiveCashIndex);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void execInsertCash(Object[] cash) throws BasicException {
         m_insertcash.exec(cash);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void execDrawerOpened(Object[] drawer) throws BasicException {
         m_draweropened.exec(drawer);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void execUpdatePermissions(Object[] permissions) throws BasicException {
         m_updatepermissions.exec(permissions);
     }
@@ -467,18 +416,10 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final String findLocationName(String iLocation) throws BasicException {
         return (String) m_locationfind.find(iLocation);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void execAddCSVEntry(Object[] csv) throws BasicException {
         m_insertCSVEntry.exec(csv);
 }
@@ -486,10 +427,6 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
    // This is used by CSVimport to detect what type of product insert we are looking at, or what error occured
 
-    /**
-     *
-     * @throws BasicException
-     */
         public final String getProductRecordType(Object[] myProduct) throws BasicException {
         // check if the product exist with all the details, if so return product ID
         if (m_getProductAllFields.find(myProduct) != null){

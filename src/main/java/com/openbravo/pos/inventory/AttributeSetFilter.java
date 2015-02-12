@@ -15,9 +15,6 @@ public class AttributeSetFilter extends javax.swing.JPanel implements ReportEdit
     private SentenceList attusesent;
     private ComboBoxValModel attusemodel;
 
-    /**
-     * Creates new form AttributeUseFilter
-     */
     public AttributeSetFilter() {
         initComponents();
     }
@@ -35,10 +32,6 @@ public class AttributeSetFilter extends javax.swing.JPanel implements ReportEdit
         attusemodel = new ComboBoxValModel();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         List a = attusesent.list();
@@ -65,10 +58,6 @@ public class AttributeSetFilter extends javax.swing.JPanel implements ReportEdit
         jAttrSet.removeActionListener(l);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         AttributeSetInfo attset = (AttributeSetInfo) attusemodel.getSelectedItem();

@@ -8,9 +8,6 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
     private Datas[] m_aDatas;
     private int[] m_iAvailableIndexes;
 
-    /**
-     * Creates a new instance of ComparatorCreatorBasic
-     */
     public ComparatorCreatorBasic(String[] sHeaders, Datas[] aDatas, int[] iAvailableIndexes) {
 
         m_sHeaders = sHeaders;
@@ -45,9 +42,6 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
 
         private int[] m_aiOrderBy;
 
-        /**
-         * Creates a new instance of ComparatorBasic
-         */
         public ComparatorBasic(int[] aiOrderBy) {
             m_aiOrderBy = aiOrderBy;
         }

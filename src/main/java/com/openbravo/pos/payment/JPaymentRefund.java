@@ -11,9 +11,6 @@ public class JPaymentRefund extends javax.swing.JPanel implements JPaymentInterf
 
     private final String m_sName;
 
-    /**
-     * Creates new form JPaymentChequeRefund
-     */
     public JPaymentRefund(JPaymentNotifier notifier, String sName) {
 
         m_notifier = notifier;

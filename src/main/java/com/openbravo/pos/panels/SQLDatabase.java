@@ -11,9 +11,6 @@ public class SQLDatabase implements TreeNode {
     private HashMap m_mTables;
     private String m_sName;
 
-    /**
-     * Creates a new instance of SQLDatabase
-     */
     public SQLDatabase(String name) {
         m_sName = name;
         m_aTables = new ArrayList();

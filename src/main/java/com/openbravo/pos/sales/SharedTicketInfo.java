@@ -20,16 +20,9 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
     private String UserName;
     private String CustomerName;
 
-    /**
-     * Creates a new instance of SharedTicketInfo
-     */
     public SharedTicketInfo() {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
         id = dr.getString(1);
@@ -39,10 +32,6 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
 
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void writeValues(DataWrite dp) throws BasicException {
         dp.setString(1, id);

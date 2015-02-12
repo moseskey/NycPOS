@@ -10,9 +10,6 @@ public class TableRendererBasic extends DefaultTableCellRenderer {
 
     private Formats[] m_aFormats;
 
-    /**
-     * Creates a new instance of TableRendererBasic
-     */
     public TableRendererBasic(Formats[] aFormats) {
         m_aFormats = aFormats;
     }

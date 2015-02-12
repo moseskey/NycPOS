@@ -48,10 +48,6 @@ public class JRolesTree extends javax.swing.JPanel {
         m_jName.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public Object createValue() throws BasicException {
 
         Object[] role = new Object[3];

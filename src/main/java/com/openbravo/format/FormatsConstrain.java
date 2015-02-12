@@ -6,10 +6,6 @@ public abstract class FormatsConstrain {
 
 //    public final static FormatsConstrain NOTNULL = new FormatsConstrainNOTNULL();
 
-    /**
-     *
-     * @throws ParseException
-     */
 
     public abstract Object check(Object value) throws ParseException;
 

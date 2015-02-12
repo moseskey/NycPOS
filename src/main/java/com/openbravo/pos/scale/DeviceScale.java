@@ -9,9 +9,6 @@ public class DeviceScale {
 
     private Scale m_scale;
 
-    /**
-     * Creates a new instance of DeviceScale
-     */
     public DeviceScale(Component parent, AppProperties props) {
         StringParser sd = new StringParser(props.getProperty("machine.scale"));
         String sScaleType = sd.nextToken(':');
@@ -45,10 +42,6 @@ public class DeviceScale {
         return m_scale != null;
     }
 
-    /**
-     *
-     * @throws ScaleException
-     */
     public Double readWeight() throws ScaleException {
 
         if (m_scale == null) {

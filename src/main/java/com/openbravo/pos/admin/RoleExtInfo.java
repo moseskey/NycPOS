@@ -12,18 +12,11 @@ public class RoleExtInfo extends RoleInfo {
 
     protected byte[] m_aPermissions;
 
-    /**
-     * Creates a new instance of RoleExtInfo
-     */
     public RoleExtInfo() {
         super();
         m_aPermissions = null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
         m_sName = dr.getString(1);

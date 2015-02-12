@@ -11,9 +11,6 @@ public class AttributesPanel extends JPanelTable2 {
 
     private EditorRecord editor;
 
-    /**
-     * Creates a new instance of JPanelCategories
-     */
     public AttributesPanel() {
     }
 

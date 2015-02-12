@@ -20,9 +20,6 @@ public class DeviceDisplayBase {
     private final javax.swing.Timer m_tTimeTimer;
     private int counter = 0;
 
-    /**
-     * Creates a new instance of DeviceDisplayBase
-     */
     public DeviceDisplayBase(DeviceDisplayImpl impl) {
         this.impl = impl;
         anim = new NullAnimator("", "");

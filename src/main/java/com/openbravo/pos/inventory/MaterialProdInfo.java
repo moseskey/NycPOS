@@ -31,10 +31,6 @@ public class MaterialProdInfo implements SerializableRead, IKeyed {
         m_dAmount = 1.0;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
         m_sID = dr.getString(1);

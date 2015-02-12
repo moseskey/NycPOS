@@ -6,10 +6,6 @@ import java.awt.event.ActionListener;
 
 public interface CatalogSelector {
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void loadCatalog() throws BasicException;
 
     public void showCatalogPanel(String id);

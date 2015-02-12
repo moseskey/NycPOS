@@ -44,10 +44,6 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
  // connect to the database

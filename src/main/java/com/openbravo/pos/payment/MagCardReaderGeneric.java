@@ -30,9 +30,6 @@ public final class MagCardReaderGeneric implements MagCardReader {
     private StringBuilder m_sField;
     private char m_cCardType;
 
-    /**
-     * Creates a new instance of GenericMagCardReader
-     */
     public MagCardReaderGeneric() {
         reset();
     }

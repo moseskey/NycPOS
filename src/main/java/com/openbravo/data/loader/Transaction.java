@@ -12,17 +12,10 @@ public abstract class Transaction<T> {
 
     private Session s;
 
-    /**
-     * Creates a new instance of Transaction
-     */
     public Transaction(Session s) {
         this.s = s;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final T execute() throws BasicException {
 
         if (s.isTransaction()) {
@@ -44,9 +37,5 @@ public abstract class Transaction<T> {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     protected abstract T transact() throws BasicException;
 }

@@ -18,9 +18,6 @@ class JTicket extends javax.swing.JPanel {
     private final BasicTicket basict;
     private final Map desktophints;
 
-    /**
-     * Creates new form JTicket
-     */
 //JG July 2014 - Thank you Ron Isaacson    public JTicket(BasicTicket t) {
     public JTicket(BasicTicket t, int columns) {
 

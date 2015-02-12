@@ -12,9 +12,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
 
     private Object m_oId;
 
-    /**
-     * Creates new form RolesEditor
-     */
     public RolesView(DirtyManager dirty) {
         initComponents();
 
@@ -66,10 +63,6 @@ public final class RolesView extends javax.swing.JPanel implements EditorRecord 
         m_jText.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

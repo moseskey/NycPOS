@@ -44,9 +44,6 @@ public abstract class Formats {
 
     private static final DateFormat m_hourminformat = new SimpleDateFormat("H:mm:ss");
     private static final DateFormat m_simpledate = new SimpleDateFormat("dd-MM-yyyy");
-    /**
-     * Creates a new instance of Formats
-     */
     protected Formats() {
     }
 
@@ -63,10 +60,6 @@ public abstract class Formats {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public Object parseValue(String value, Object defvalue) throws BasicException {
         if (value == null || "".equals(value)) {
             return defvalue;
@@ -79,10 +72,6 @@ public abstract class Formats {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public Object parseValue(String value) throws BasicException {
         return parseValue(value, null);
     }
@@ -145,10 +134,6 @@ public abstract class Formats {
 
     protected abstract String formatValueInt(Object value);
 
-    /**
-     *
-     * @throws ParseException
-     */
     protected abstract Object parseValueInt(String value) throws ParseException;
 
     public abstract int getAlignment();

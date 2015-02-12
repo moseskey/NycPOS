@@ -13,9 +13,6 @@ public final class TaxCategoriesEditor extends JPanel implements EditorRecord {
 
     private Object m_oId;
 
-    /**
-     * Creates new form taxEditor
-     */
     public TaxCategoriesEditor(DirtyManager dirty) {
         initComponents();
 
@@ -56,10 +53,6 @@ public final class TaxCategoriesEditor extends JPanel implements EditorRecord {
         m_jName.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

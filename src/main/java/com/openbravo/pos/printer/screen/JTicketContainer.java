@@ -21,9 +21,6 @@ class JTicketContainer extends javax.swing.JPanel {
     protected int H_GAP = 8;
     protected int V_GAP = 8;
 
-    /**
-     * Creates new form JTicketContainer
-     */
     public JTicketContainer() {
         initComponents();
         setLayout(null);

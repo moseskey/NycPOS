@@ -17,9 +17,6 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
     private BasicTicket m_ticketcurrent;
     private final AppProperties m_props;
 
-    /**
-     * Creates new form JPrinterScreen2
-     */
 //JG July 2014 - Thank you Ron Isaacson    public DevicePrinterPanel() {
     public DevicePrinterPanel(AppProperties props) {
         initComponents();

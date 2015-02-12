@@ -6,9 +6,6 @@ public class JEditorPassword extends JEditorText {
 
     private static final char ECHO_CHAR = '*';
 
-    /**
-     * Creates a new instance of JEditorPassword
-     */
     public JEditorPassword() {
         super();
     }
@@ -43,10 +40,6 @@ public class JEditorPassword extends JEditorText {
         return sPassword == null ? "" : sPassword;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     protected String getTextFormat() throws BasicException {
         return "<html>" + getEcho(m_svalue);
     }

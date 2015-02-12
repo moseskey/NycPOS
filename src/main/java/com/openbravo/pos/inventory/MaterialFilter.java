@@ -15,9 +15,6 @@ public class MaterialFilter extends javax.swing.JPanel implements EditorCreator 
     private SentenceList m_sentprods;
     private ComboBoxValModel m_ProdsModel;
 
-    /**
-     * Creates new form JQBFProduct
-     */
     public MaterialFilter(DataLogicSales dlSales) {
         initComponents();
 
@@ -29,10 +26,6 @@ public class MaterialFilter extends javax.swing.JPanel implements EditorCreator 
         m_jCboPriceBuy.setModel(new ListQBFModelNumber());
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void activate() throws BasicException {
         java.util.List prodlist = m_sentprods.list();
         prodlist.add(0, null);
@@ -40,10 +33,6 @@ public class MaterialFilter extends javax.swing.JPanel implements EditorCreator 
         m_jCboProduct.setModel(m_ProdsModel);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         return new Object[] {

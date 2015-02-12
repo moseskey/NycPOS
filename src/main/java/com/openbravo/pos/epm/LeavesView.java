@@ -24,9 +24,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
     private DirtyManager m_Dirty;
     private DataLogicPresenceManagement dlPresenceManagement;
 
-    /**
-     * Creates new form LeavesView
-     */
     public LeavesView(AppView app, DirtyManager dirty) {
 
         dlPresenceManagement = (DataLogicPresenceManagement) app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");
@@ -111,10 +108,6 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         Object[] leaves = new Object[6];

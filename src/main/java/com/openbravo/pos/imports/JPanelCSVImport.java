@@ -459,7 +459,6 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
 
     /**
      * Loads Tax and category data into their combo boxes.
-     * @throws com.openbravo.basic.BasicException
      */
     @Override
     public void activate() throws BasicException {

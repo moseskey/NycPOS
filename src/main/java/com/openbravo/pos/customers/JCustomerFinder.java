@@ -18,16 +18,10 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
     private ListProvider lpr;
     //  private JSplitButton splitButton;
 
-    /**
-     * Creates new form JCustomerFinder
-     */
     private JCustomerFinder(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
 
-    /**
-     * Creates new form JCustomerFinder
-     */
     private JCustomerFinder(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }
@@ -130,7 +124,6 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
     /**
      *
      * @return creates object for search method
-     * @throws BasicException
      */
     @Override
     public Object createValue() throws BasicException {

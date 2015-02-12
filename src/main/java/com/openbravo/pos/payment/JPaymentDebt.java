@@ -16,9 +16,6 @@ public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterfac
     private double m_dTotal;
 
 
-    /**
-     * Creates new form JPaymentDebt
-     */
     public JPaymentDebt(JPaymentNotifier notifier) {
 
         this.notifier = notifier;

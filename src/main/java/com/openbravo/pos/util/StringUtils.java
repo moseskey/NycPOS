@@ -15,9 +15,6 @@ public class StringUtils {
     private static final NumberFormat cardformat = new DecimalFormat("000000");
     private static final Random cardrandom = new Random();
 
-    /**
-     * Creates a new instance of StringUtils
-     */
     private StringUtils() {
     }
 
@@ -83,10 +80,6 @@ public class StringUtils {
         return out;
     }
 
-    /**
-     *
-     * @throws IOException
-     */
     public static String readResource(String resource) throws IOException {
 
         InputStream in = StringUtils.class.getResourceAsStream(resource);

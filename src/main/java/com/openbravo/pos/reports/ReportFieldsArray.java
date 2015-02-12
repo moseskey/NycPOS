@@ -8,9 +8,6 @@ public class ReportFieldsArray implements ReportFields {
 
     private Map m_keys = null;
 
-    /**
-     * Creates a new instance of ReportFieldsArray
-     */
     public ReportFieldsArray(String[] afields) {
 
         // Creo el mapa de claves
@@ -20,10 +17,6 @@ public class ReportFieldsArray implements ReportFields {
         }
     }
 
-    /**
-     *
-     * @throws ReportException
-     */
     public Object getField(Object record, String field) throws ReportException {
 
         Integer i = (Integer) m_keys.get(field);

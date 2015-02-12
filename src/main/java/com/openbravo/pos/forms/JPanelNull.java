@@ -6,9 +6,6 @@ import javax.swing.JPanel;
 
 public class JPanelNull extends JPanel implements JPanelView {
 
-    /**
-     * Creates new form JPanelNull
-     */
     public JPanelNull(AppView oApp, Object o) {
 
         initComponents ();
@@ -27,10 +24,6 @@ public class JPanelNull extends JPanel implements JPanelView {
         return null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
     }

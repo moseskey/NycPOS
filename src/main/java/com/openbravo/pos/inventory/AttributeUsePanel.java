@@ -47,10 +47,6 @@ public class AttributeUsePanel extends JPanelTable2 {
         editor = new AttributeUseEditor(app, dirty);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         filter.activate();

@@ -29,22 +29,11 @@ public abstract class Datas {
 
     private static DateFormat tsf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
-    /**
-     * Creates a new instance of Datas
-     */
     private Datas() {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public abstract Object getValue(DataRead dr, int i) throws BasicException;
 
-    /**
-     *
-     * @throws BasicException
-     */
     public abstract void setValue(DataWrite dw, int i, Object value) throws BasicException;
 
     public abstract Class getClassValue();

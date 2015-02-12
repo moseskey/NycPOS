@@ -6,17 +6,10 @@ public class EditorCreatorComposed implements EditorCreator{
 
     private EditorCreator[] m_editors;
 
-    /**
-     * Creates a new instance of EditorCreatorComposed
-     */
     public EditorCreatorComposed(EditorCreator... editors) {
         m_editors = editors;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public Object createValue() throws BasicException {
 
         Object[] value = new Object[m_editors.length];

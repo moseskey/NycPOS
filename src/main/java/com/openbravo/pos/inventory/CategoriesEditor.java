@@ -29,9 +29,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     private Object m_id;
 
-    /**
-     * Creates new form JPanelCategories
-     */
     public CategoriesEditor(AppView app, DirtyManager dirty) {
 
         DataLogicSales dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -149,10 +146,6 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
 
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

@@ -14,10 +14,6 @@ public class DevicePrinterPlain implements DevicePrinter  {
 
     // Creates new TicketPrinter
 
-    /**
-     *
-     * @throws TicketPrinterException
-     */
         public DevicePrinterPlain(PrinterWritter CommOutputPrinter) throws TicketPrinterException {
 
         out = CommOutputPrinter;

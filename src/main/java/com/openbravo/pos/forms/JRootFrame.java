@@ -21,9 +21,6 @@ public class JRootFrame extends javax.swing.JFrame implements AppMessage {
 
     private OSValidator m_OS;
 
-    /**
-     * Creates new form JRootFrame
-     */
     public JRootFrame() {
 
         initComponents();
@@ -66,10 +63,6 @@ public class JRootFrame extends javax.swing.JFrame implements AppMessage {
         }
     }
 
-    /**
-     *
-     * @throws RemoteException
-     */
     @Override
     public void restoreWindow() throws RemoteException {
         java.awt.EventQueue.invokeLater(new Runnable() {

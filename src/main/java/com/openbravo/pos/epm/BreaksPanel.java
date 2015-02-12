@@ -28,10 +28,6 @@ public class BreaksPanel extends JPanelTable {
         jeditor = new BreaksView(app, dirty);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

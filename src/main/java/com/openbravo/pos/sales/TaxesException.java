@@ -2,9 +2,6 @@ package com.openbravo.pos.sales;
 
 public class TaxesException extends Exception {
 
-    /**
-     * Creates a new instance of <code>TaxesException</code> without detail message.
-     */
     public TaxesException(Throwable t) {
         super(t);
     }

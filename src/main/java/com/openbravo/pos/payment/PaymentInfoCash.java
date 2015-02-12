@@ -10,18 +10,12 @@ public class PaymentInfoCash extends PaymentInfo {
     private double m_dTendered;
     private String m_dCardName =null;
 
-    /**
-     * Creates a new instance of PaymentInfoCash
-     */
     public PaymentInfoCash(double dTotal, double dPaid, double dTendered) {
         m_dTotal = dTotal;
         m_dPaid = dPaid;
         m_dTendered = dTendered;
     }
 
-    /**
-     * Creates a new instance of PaymentInfoCash
-     */
     public PaymentInfoCash(double dTotal, double dPaid, double dTendered, double prePayAmount) {
         this(dTotal, dTendered, dPaid);
         this.prePayAmount = prePayAmount;

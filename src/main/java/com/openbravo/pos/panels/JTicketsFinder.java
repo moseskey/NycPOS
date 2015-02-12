@@ -34,16 +34,10 @@ public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator
     private DataLogicCustomers dlCustomers;
     private FindTicketsInfo selectedTicket;
 
-    /**
-     * Creates new form JTicketsFinder
-     */
     private JTicketsFinder(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
 
-    /**
-     * Creates new form JTicketsFinder
-     */
     private JTicketsFinder(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }
@@ -150,10 +144,6 @@ public class JTicketsFinder extends javax.swing.JDialog implements EditorCreator
 
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

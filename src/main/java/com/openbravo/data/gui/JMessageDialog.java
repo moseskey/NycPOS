@@ -5,15 +5,9 @@ import java.awt.*;
 import javax.swing.*;
 public class JMessageDialog extends javax.swing.JDialog {
 
-    /**
-     * Creates new form JMessageDialog
-     */
     private JMessageDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
-    /**
-     * Creates new form JMessageDialog
-     */
     private JMessageDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }

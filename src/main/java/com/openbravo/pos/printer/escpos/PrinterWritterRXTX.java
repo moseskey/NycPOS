@@ -14,10 +14,6 @@ public class PrinterWritterRXTX extends PrinterWritter /* implements SerialPortE
     private String m_sPortPrinter;
     private OutputStream m_out;
 
-    /**
-     * Creates a new instance of PrinterWritterComm
-     * @throws com.openbravo.pos.printer.TicketPrinterException
-     */
     public PrinterWritterRXTX(String sPortPrinter) throws TicketPrinterException {
         m_sPortPrinter = sPortPrinter;
         m_out = null;

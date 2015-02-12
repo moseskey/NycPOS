@@ -19,9 +19,6 @@ public class TaxPanel extends JPanelTable {
     private TableDefinition ttaxes;
     private TaxEditor jeditor;
 
-    /**
-     * Creates a new instance of JPanelDuty
-     */
     public TaxPanel() {
     }
 
@@ -32,10 +29,6 @@ public class TaxPanel extends JPanelTable {
         jeditor = new TaxEditor(app, dirty);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

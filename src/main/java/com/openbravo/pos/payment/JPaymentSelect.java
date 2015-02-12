@@ -29,9 +29,6 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
     private String m_sTransactionID;
 
 
-    /**
-     * Creates new form JPaymentSelect
-     */
     protected JPaymentSelect(java.awt.Frame parent, boolean modal, ComponentOrientation o) {
         super(parent, modal);
         initComponents();
@@ -41,9 +38,6 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         getRootPane().setDefaultButton(m_jButtonOK);
 
     }
-    /**
-     * Creates new form JPaymentSelect
-     */
     protected JPaymentSelect(java.awt.Dialog parent, boolean modal, ComponentOrientation o) {
         super(parent, modal);
         initComponents();

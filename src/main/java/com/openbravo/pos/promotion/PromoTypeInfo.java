@@ -11,9 +11,6 @@ public class PromoTypeInfo implements SerializableRead, IKeyed {
     private String m_sID;
     private String m_sName;
 
-    /**
-     * Creates a new instance of FloorsInfo
-     */
     public PromoTypeInfo() {
         m_sID = null;
         m_sName = null;
@@ -23,10 +20,6 @@ public class PromoTypeInfo implements SerializableRead, IKeyed {
         return m_sID;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void readValues(DataRead dr) throws BasicException {
         m_sID = dr.getString(1);
         m_sName = dr.getString(2);

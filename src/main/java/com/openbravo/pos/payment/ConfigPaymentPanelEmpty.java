@@ -5,9 +5,6 @@ import javax.swing.JPanel;
 
 public class ConfigPaymentPanelEmpty extends javax.swing.JPanel implements PaymentConfiguration {
 
-    /**
-     * Creates new form ConfigPaymentPanelGeneric
-     */
     public ConfigPaymentPanelEmpty() {
         initComponents();
     }

@@ -9,9 +9,6 @@ public class AltEncrypter {
     private Cipher cipherDecrypt;
     private Cipher cipherEncrypt;
 
-    /**
-     * Creates a new instance of Encrypter
-     */
     public AltEncrypter(String passPhrase) {
 
         try {

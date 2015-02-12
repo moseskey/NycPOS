@@ -10,12 +10,9 @@ public class CustomerRenderer extends DefaultListCellRenderer {
 
     private Icon icocustomer;
 
-    /**
-     * Creates a new instance of CustomerRenderer
-     */
     public CustomerRenderer() {
 
-        icocustomer = new ImageIcon(getClass().getClassLoader().getResource("com/openbravo/images/customer_sml.png"));
+        icocustomer = new ImageIcon(getClass().getClassLoader().getResource("/images/customer_sml.png"));
     }
 
     @Override

@@ -19,15 +19,9 @@ public class JProductLineEdit extends javax.swing.JDialog {
     private boolean m_bunitsok;
     private boolean m_bpriceok;
 
-    /**
-     * Creates new form JProductLineEdit
-     */
     private JProductLineEdit(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
-    /**
-     * Creates new form JProductLineEdit
-     */
     private JProductLineEdit(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }
@@ -162,10 +156,6 @@ public class JProductLineEdit extends javax.swing.JDialog {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public static TicketLineInfo showMessage(Component parent, AppView app, TicketLineInfo oLine) throws BasicException {
 
         Window window = getWindow(parent);

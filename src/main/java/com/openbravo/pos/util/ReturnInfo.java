@@ -24,10 +24,6 @@ public class ReturnInfo implements SerializableRead, IKeyed {
         return idret;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
         idret = dr.getInt(1);

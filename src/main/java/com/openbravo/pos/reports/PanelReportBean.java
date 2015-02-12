@@ -27,10 +27,6 @@ public class PanelReportBean extends JPanelReport {
 
     private JParamsComposed qbffilter = new JParamsComposed();
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     @Override
     public void init(AppView app) throws BeanFactoryException {
 
@@ -38,10 +34,6 @@ public class PanelReportBean extends JPanelReport {
         super.init(app);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

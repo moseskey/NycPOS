@@ -16,9 +16,6 @@ public class JPanelConfigLocale extends javax.swing.JPanel implements PanelConfi
 
     private final static String DEFAULT_VALUE = "(Default)";
 
-    /**
-     * Creates new form JPanelConfigLocale
-     */
     public JPanelConfigLocale() {
 
         initComponents();

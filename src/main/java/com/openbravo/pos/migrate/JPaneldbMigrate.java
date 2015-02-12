@@ -55,9 +55,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
     private String eScript2 = "";
     private String eScript3 = "";
 
-    /**
-     * Creates new form JPaneldbMigrate
-     */
     public JPaneldbMigrate(AppView oApp) {
         this(oApp.getProperties());
     }
@@ -100,10 +97,10 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
         }
 
 // JG Aug 2014 for 3.80
-        eScript = "/com/openbravo/pos/scripts/" + sdbmanager2 + "-create.sql";
-        eScript1 = "/com/openbravo/pos/scripts/" + sdbmanager2 + "-createjl.sql";
-        eScript2 = "/com/openbravo/pos/scripts/" + sdbmanager2 + "-DropFK.sql";
-        eScript3 = "/com/openbravo/pos/scripts/SQL-CreateFK.sql";
+        eScript = "/sql/" + sdbmanager2 + "-create.sql";
+        eScript1 = "/sql/" + sdbmanager2 + "-createjl.sql";
+        eScript2 = "/sql/" + sdbmanager2 + "-DropFK.sql";
+        eScript3 = "/sql/SQL-CreateFK.sql";
 
         if ("".equals(eScript)) {
             return (false);
@@ -203,10 +200,6 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         // connect to the database

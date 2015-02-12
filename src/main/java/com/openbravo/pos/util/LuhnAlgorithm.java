@@ -2,9 +2,6 @@ package com.openbravo.pos.util;
 
 public class LuhnAlgorithm {
 
-    /**
-     * Creates a new instance of LuhnAlgorithm
-     */
     private LuhnAlgorithm() {
     }
 

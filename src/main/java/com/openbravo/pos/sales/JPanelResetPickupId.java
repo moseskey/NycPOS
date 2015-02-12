@@ -31,9 +31,6 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
     private String SQL;
     private Statement stmt;
 
-    /**
-     * Creates new form JPaneldbUpdate
-     */
     public JPanelResetPickupId(AppView oApp) {
         this(oApp.getProperties());
     }
@@ -99,10 +96,6 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
         return AppLocal.getIntString("Menu.Resetpickup");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

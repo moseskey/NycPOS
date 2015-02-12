@@ -8,9 +8,6 @@ public class ListCellRendererBasic extends DefaultListCellRenderer {
 
     private IRenderString m_renderer;
 
-    /**
-     * Creates a new instance of ListCellRendererBasic
-     */
     public ListCellRendererBasic(IRenderString renderer) {
         m_renderer = renderer;
     }

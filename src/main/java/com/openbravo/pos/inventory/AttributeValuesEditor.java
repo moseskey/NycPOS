@@ -15,9 +15,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
 
     private Object insertid;
 
-    /**
-     * Creates new form AttributesValuesEditor
-     */
     public AttributeValuesEditor(DirtyManager dirty) {
 
         initComponents();
@@ -83,10 +80,6 @@ public class AttributeValuesEditor extends javax.swing.JPanel implements EditorR
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         return new Object[] {

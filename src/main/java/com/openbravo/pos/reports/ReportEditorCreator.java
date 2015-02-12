@@ -9,10 +9,6 @@ public interface ReportEditorCreator extends FilterEditorCreator {
 
     public void init(AppView app);
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void activate() throws BasicException;
 
     public Component getComponent();

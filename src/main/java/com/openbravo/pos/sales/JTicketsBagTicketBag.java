@@ -8,9 +8,6 @@ public class JTicketsBagTicketBag extends javax.swing.JPanel {
 
     private JTicketsBagTicket m_ticketsbagticket;
 
-    /**
-     * Creates new form JTicketsBagTicketBag
-     */
     public JTicketsBagTicketBag(JTicketsBagTicket ticketsbagticket) {
         m_ticketsbagticket = ticketsbagticket;
         initComponents();

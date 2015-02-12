@@ -9,11 +9,6 @@ public class InstanceQuery {
 
     private final AppMessage m_appstub;
 
-    /**
-     * Creates a new instance of InstanceQuery
-     * @throws java.rmi.RemoteException
-     * @throws java.rmi.NotBoundException
-     */
     public InstanceQuery() throws RemoteException, NotBoundException {
 
         Registry registry = LocateRegistry.getRegistry();

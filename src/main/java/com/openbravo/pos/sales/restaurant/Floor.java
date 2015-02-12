@@ -25,21 +25,14 @@ public class Floor implements SerializableRead {
 
     private static Image defimg = null;
 
-    /**
-     * Creates a new instance of Floor
-     */
     public Floor() {
         try {
-//            defimg = ImageIO.read(getClass().getClassLoader().getResourceAsStream("com/openbravo/images/atlantikdesigner.png"));
-            defimg = ImageIO.read(getClass().getClassLoader().getResourceAsStream("com/openbravo/images/floors.png"));
+//            defimg = ImageIO.read(getClass().getClassLoader().getResourceAsStream("/images/atlantikdesigner.png"));
+            defimg = ImageIO.read(getClass().getClassLoader().getResourceAsStream("/images/floors.png"));
         } catch (Exception fnfe) {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
         m_sID = dr.getString(1);

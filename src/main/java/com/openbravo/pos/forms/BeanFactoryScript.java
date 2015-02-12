@@ -15,10 +15,6 @@ public class BeanFactoryScript implements BeanFactoryApp {
         this.script = script;
     }
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     @Override
     public void init(AppView app) throws BeanFactoryException {
 

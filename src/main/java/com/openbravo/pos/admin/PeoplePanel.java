@@ -18,9 +18,6 @@ public class PeoplePanel extends JPanelTable {
     private TableDefinition tpeople;
     private PeopleView jeditor;
 
-    /**
-     * Creates a new instance of JPanelPeople
-     */
     public PeoplePanel() {
     }
 
@@ -61,10 +58,6 @@ public class PeoplePanel extends JPanelTable {
         return jeditor;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

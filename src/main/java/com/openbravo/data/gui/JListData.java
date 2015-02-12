@@ -6,9 +6,6 @@ public class JListData extends javax.swing.JDialog {
 
     private Object m_selected;
 
-    /**
-     * Creates new form JListData
-     */
     public JListData(java.awt.Frame parent) {
         super(parent, true);
         initComponents();

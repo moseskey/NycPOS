@@ -6,9 +6,6 @@ public class StringParser {
     private int maxPosition;
     private String str;
 
-    /**
-     * Creates a new instance of StringParser
-     */
     public StringParser(String str) {
         this.str = str;
         currentPosition = 0;

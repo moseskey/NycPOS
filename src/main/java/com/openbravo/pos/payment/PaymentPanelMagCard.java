@@ -13,9 +13,6 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
     private String m_sTransactionID;
     private double m_dTotal;
 
-    /**
-     * Creates new form JMagCardReader
-     */
     // public PaymentPanelMagCard(String sReader, JPaymentNotifier notifier) {
     public PaymentPanelMagCard(MagCardReader cardreader, JPaymentNotifier notifier) {
 

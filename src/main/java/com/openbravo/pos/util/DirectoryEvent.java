@@ -12,9 +12,6 @@ public class DirectoryEvent implements ActionListener {
     private JTextComponent m_jTxtField;
     private JFileChooser m_fc;
 
-    /**
-     * Creates a new instance of DirectoryChooser
-     */
     public DirectoryEvent(JTextComponent TxtField) {
         m_jTxtField = TxtField;
         m_fc = new JFileChooser();

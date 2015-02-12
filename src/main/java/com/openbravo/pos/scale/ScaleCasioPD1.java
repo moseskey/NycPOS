@@ -22,9 +22,6 @@ public class ScaleCasioPD1 implements Scale, SerialPortEventListener {
     private double m_dWeightDecimals;
     private int m_iStatusScale;
 
-    /**
-     * Creates a new instance of ScaleComm
-     */
     public ScaleCasioPD1(String sPortPrinter) {
         m_sPortScale = sPortPrinter;
         m_out = null;

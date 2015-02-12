@@ -9,9 +9,6 @@ public class JPaymentFree extends javax.swing.JPanel implements JPaymentInterfac
     private double m_dTotal;
     private JPaymentNotifier m_notifier;
 
-    /**
-     * Creates new form JPaymentFree
-     */
     public JPaymentFree(JPaymentNotifier notifier) {
         m_notifier = notifier;
         initComponents();

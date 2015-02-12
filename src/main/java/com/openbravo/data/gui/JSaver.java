@@ -11,9 +11,6 @@ public class JSaver extends JPanel implements StateListener {
 
     protected BrowsableEditableData m_bd;
 
-    /**
-     * Creates new form JSaver
-     */
     public JSaver(BrowsableEditableData bd) {
 
         initComponents();

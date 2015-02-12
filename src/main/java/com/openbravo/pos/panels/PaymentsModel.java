@@ -93,10 +93,6 @@ public class PaymentsModel {
         return p;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public static PaymentsModel loadInstance(AppView app) throws BasicException {
 
         PaymentsModel p = new PaymentsModel();
@@ -480,10 +476,6 @@ public class PaymentsModel {
         private Double m_CategoryUnits;
         private Double m_CategorySum;
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public void readValues(DataRead dr) throws BasicException {
             m_CategoryName = dr.getString(1);
@@ -521,10 +513,6 @@ public class PaymentsModel {
         private String m_ProductName;
         private Double m_TotalUnits;
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public void readValues(DataRead dr) throws BasicException {
             m_Name = dr.getString(1);
@@ -563,10 +551,6 @@ public class PaymentsModel {
         private Double m_ProductPriceTax;
         private Double m_ProductPriceNet;  //JG 7 June 2014
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public void readValues(DataRead dr) throws BasicException {
             m_ProductName = dr.getString(1);
@@ -630,10 +614,6 @@ public class PaymentsModel {
         private Double m_SalesTaxes;
         private Double m_SalesTaxNet;           //JG June 2014
         private Double m_SalesTaxGross;          //JG June 2014
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public void readValues(DataRead dr) throws BasicException {
             m_SalesTaxName = dr.getString(1);
@@ -725,10 +705,6 @@ public class PaymentsModel {
 // JG 1 Oct 13 - Add Payment Reason for Partial Cash - thanks Shaun Cains
         private String s_PaymentReason;
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public void readValues(DataRead dr) throws BasicException {
             m_PaymentType = dr.getString(1);

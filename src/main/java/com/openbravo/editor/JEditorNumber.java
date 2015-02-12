@@ -24,9 +24,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
 
     private Boolean priceWith00;
 
-    /**
-     * Creates a new instance of JEditorNumber
-     */
     public JEditorNumber() {
         m_fmt = getFormat();
 
@@ -108,10 +105,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
         firePropertyChange("Text", sOldText, getText());
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public int getValueInteger() throws BasicException {
         try {
             return Integer.parseInt(getText());
@@ -147,10 +140,6 @@ public abstract class JEditorNumber extends JEditorAbstract {
         return getText();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     protected String getTextFormat() throws BasicException {
         return m_fmt.formatValue(getDoubleValue());

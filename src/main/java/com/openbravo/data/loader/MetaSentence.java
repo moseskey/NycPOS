@@ -14,9 +14,6 @@ public class MetaSentence extends JDBCSentence {
 
     protected SerializerWrite m_SerWrite = null;
 
-    /**
-     * Creates a new instance of MetaDataSentence
-     */
     public MetaSentence(Session s, String sSentence, SerializerWrite serwrite, SerializerRead serread) {
         super(s);
         m_sSentence = sSentence;
@@ -32,9 +29,6 @@ public class MetaSentence extends JDBCSentence {
 
         private ArrayList m_aParams;
 
-        /**
-         * Creates a new instance of MetaParameter
-         */
         public MetaParameter() {
             m_aParams = new ArrayList();
         }
@@ -77,10 +71,6 @@ public class MetaSentence extends JDBCSentence {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public DataResultSet openExec(Object params) throws BasicException {
 
         closeExec();
@@ -158,17 +148,9 @@ public class MetaSentence extends JDBCSentence {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void closeExec() throws BasicException {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public DataResultSet moreResults() throws BasicException {
         return null;
     }

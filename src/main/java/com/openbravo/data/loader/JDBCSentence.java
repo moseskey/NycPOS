@@ -10,9 +10,6 @@ public abstract class JDBCSentence extends BaseSentence {
 
         protected Session m_s;
 
-    /**
-     * Creates a new instance of BaseSentence
-     */
     public JDBCSentence(Session s) {
         super();
         m_s = s;
@@ -30,10 +27,6 @@ public abstract class JDBCSentence extends BaseSentence {
 //            m_iColumnCount = -1;
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             public Integer getInt(int columnIndex) throws BasicException {
             try {
                 int iValue = m_rs.getInt(columnIndex);
@@ -43,10 +36,6 @@ public abstract class JDBCSentence extends BaseSentence {
             }
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             public String getString(int columnIndex) throws BasicException {
             try {
                 return m_rs.getString(columnIndex);
@@ -55,10 +44,6 @@ public abstract class JDBCSentence extends BaseSentence {
             }
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             public Double getDouble(int columnIndex) throws BasicException {
             try {
                 double dValue = m_rs.getDouble(columnIndex);
@@ -68,10 +53,6 @@ public abstract class JDBCSentence extends BaseSentence {
             }
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             public Boolean getBoolean(int columnIndex) throws BasicException {
             try {
                 boolean bValue = m_rs.getBoolean(columnIndex);
@@ -81,10 +62,6 @@ public abstract class JDBCSentence extends BaseSentence {
             }
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             public java.util.Date getTimestamp(int columnIndex) throws BasicException {
             try {
                 java.sql.Timestamp ts = m_rs.getTimestamp(columnIndex);
@@ -94,10 +71,6 @@ public abstract class JDBCSentence extends BaseSentence {
             }
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             public byte[] getBytes(int columnIndex) throws BasicException {
             try {
                 return m_rs.getBytes(columnIndex);
@@ -106,10 +79,6 @@ public abstract class JDBCSentence extends BaseSentence {
             }
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             public Object getObject(int columnIndex) throws BasicException {
             try {
                 return m_rs.getObject(columnIndex);
@@ -118,10 +87,6 @@ public abstract class JDBCSentence extends BaseSentence {
             }
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             public DataField[] getDataField() throws BasicException {
             try {
                 ResultSetMetaData md = m_rs.getMetaData();
@@ -138,19 +103,11 @@ public abstract class JDBCSentence extends BaseSentence {
             }
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             @Override
         public Object getCurrent() throws BasicException {
             return m_serread.readValues(this);
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             @Override
         public boolean next() throws BasicException {
             try {
@@ -160,10 +117,6 @@ public abstract class JDBCSentence extends BaseSentence {
             }
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             @Override
         public void close() throws BasicException {
             try {
@@ -173,10 +126,6 @@ public abstract class JDBCSentence extends BaseSentence {
             }
         }
 
-            /**
-             *
-             * @throws BasicException
-             */
             @Override
         public int updateCount() throws BasicException {
             return -1; // es decir somos datos.

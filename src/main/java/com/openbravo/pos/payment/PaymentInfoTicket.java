@@ -15,9 +15,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
     private double m_change;
     private String m_dCardName =null;
 
-    /**
-     * Creates a new instance of PaymentInfoCash
-     */
     public PaymentInfoTicket(double dTicket, String sName) {
         m_sName = sName;
         m_dTicket = dTicket;
@@ -36,10 +33,6 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
         m_dTendered = 0.00;
      }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
         m_sName = dr.getString(1);

@@ -8,9 +8,6 @@ import com.openbravo.data.user.StateListener;
 
 public class JCounter extends JPanel implements BrowseListener, StateListener  {
 
-    /**
-     * Creates new form JCounter
-     */
     public JCounter(BrowsableEditableData bd) {
         initComponents();
         bd.addBrowseListener(this);

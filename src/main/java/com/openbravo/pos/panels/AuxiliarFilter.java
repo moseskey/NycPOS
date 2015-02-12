@@ -23,9 +23,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
 
     protected EventListenerList listeners = new EventListenerList();
 
-    /**
-     * Creates new form AuxiliarFilter
-     */
     public AuxiliarFilter() {
         initComponents();
     }
@@ -35,10 +32,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
          m_dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         product = null;
@@ -65,10 +58,6 @@ public class AuxiliarFilter extends javax.swing.JPanel implements ReportEditorCr
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         return product == null ? null : product.getID();

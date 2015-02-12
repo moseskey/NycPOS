@@ -15,9 +15,6 @@ public class JFrmMigrate extends javax.swing.JFrame {
 
     private JPaneldbMigrate config;
 
-    /**
-     * Creates new form JFrmMigrate
-     */
     public JFrmMigrate(AppProperties props) {
         initComponents();
 

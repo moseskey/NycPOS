@@ -48,9 +48,6 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
     private Interpreter i;
 
 
-    /**
-     * Creates new form JTicketsBagRestaurantMap
-     */
     public JTicketsBagRestaurant(AppView app, JTicketsBagRestaurantMap restaurant) {
         super();
         m_App = app;

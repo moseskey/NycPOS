@@ -17,9 +17,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
 
     private Session s;
 
-    /**
-     * Creates a new instance of DataLogicReceipts
-     */
     public DataLogicReceipts() {
     }
 
@@ -28,10 +25,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
         this.s = s;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final TicketInfo getSharedTicket(String Id) throws BasicException {
 
         if (Id == null) {
@@ -45,10 +38,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final List<SharedTicketInfo> getSharedTicketList() throws BasicException {
 
         return (List<SharedTicketInfo>) new StaticSentence(s
@@ -59,10 +48,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
                 , new SerializerReadClass(SharedTicketInfo.class)).list();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void updateSharedTicket(final String id, final TicketInfo ticket, int pickupid) throws BasicException {
 
         Object[] values = new Object[] {
@@ -86,10 +71,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
                 , new SerializerWriteBasicExt(datas, new int[] {1, 2, 3, 0})).exec(values);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void insertSharedTicket(final String id, final TicketInfo ticket, int pickupid) throws BasicException {
 
         Object[] values = new Object[] {
@@ -115,10 +96,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
             , new SerializerWriteBasicExt(datas, new int[] {0, 1, 2, 3})).exec(values);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void deleteSharedTicket(final String id) throws BasicException {
 
         new StaticSentence(s
@@ -126,10 +103,6 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
             , SerializerWriteString.INSTANCE).exec(id);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final Integer getPickupId(String Id) throws BasicException {
 
         if (Id == null) {

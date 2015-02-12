@@ -10,16 +10,10 @@ public class JPasswordDialog extends javax.swing.JDialog {
 
     private String m_sPassword;
 
-    /**
-     * Creates new form JCalendarDialog
-     */
     public JPasswordDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         init();
     }
-    /**
-     * Creates new form JCalendarDialog
-     */
     public JPasswordDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         init();

@@ -169,10 +169,6 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
             });
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public int updateCustomerExt(final CustomerInfoExt customer) throws BasicException {
 
         return new PreparedSentence(s

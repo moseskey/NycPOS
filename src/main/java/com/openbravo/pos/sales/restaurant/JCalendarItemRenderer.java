@@ -18,9 +18,6 @@ public class JCalendarItemRenderer extends javax.swing.JPanel implements ListCel
 
     private boolean m_bDone = false;
 
-    /**
-     * Creates new form JCalendarItemRenderer
-     */
     public JCalendarItemRenderer() {
 
         super();

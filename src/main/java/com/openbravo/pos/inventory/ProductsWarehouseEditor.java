@@ -19,9 +19,6 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
 
     public Object location;
 
-    /**
-     * Creates new form ProductsWarehouseEditor
-     */
     public ProductsWarehouseEditor(DirtyManager dirty) {
         initComponents();
 
@@ -91,10 +88,6 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
         m_jMaximum.setEnabled(false);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         return new Object[] {

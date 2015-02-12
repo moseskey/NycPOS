@@ -24,9 +24,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
 
     private Object insertid;
 
-    /**
-     * Creates new form AttributeSetEditor
-     */
     public AttributeUseEditor(AppView app, DirtyManager dirty) {
 
         attributesent = new StaticSentence(app.getSession()
@@ -50,10 +47,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
         this.insertid = insertid;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void activate() throws BasicException {
 
         attributemodel = new ComboBoxValModel(attributesent.list());
@@ -121,10 +114,6 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         Object[] value = new Object[5];

@@ -12,9 +12,6 @@ public class TaxCustCategoryInfo implements IKeyed {
     private String m_sID;
     private String m_sName;
 
-    /**
-     * Creates new CategoryInfo
-     */
     public TaxCustCategoryInfo(String id, String name) {
         m_sID = id;
         m_sName = name;

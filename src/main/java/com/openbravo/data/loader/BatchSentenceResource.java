@@ -10,18 +10,11 @@ public class BatchSentenceResource extends BatchSentence {
 
     private String m_sResScript;
 
-    /**
-     * Creates a new instance of BatchSentenceResource
-     */
     public BatchSentenceResource(Session s, String resscript) {
         super(s);
         m_sResScript = resscript;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     protected Reader getReader() throws BasicException {
 
         InputStream in = BatchSentenceResource.class.getResourceAsStream(m_sResScript);

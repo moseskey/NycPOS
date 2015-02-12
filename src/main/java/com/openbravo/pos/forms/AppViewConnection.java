@@ -13,16 +13,9 @@ import java.sql.SQLException;
 
 public class AppViewConnection {
 
-    /**
-     * Creates a new instance of AppViewConnection
-     */
     private AppViewConnection() {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public static Session createSession(AppProperties props) throws BasicException {
 
         try{

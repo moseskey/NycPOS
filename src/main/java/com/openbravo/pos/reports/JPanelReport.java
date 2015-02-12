@@ -38,18 +38,11 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
 
     protected TaxesLogic taxeslogic;
 
-    /**
-     * Creates new form JPanelReport
-     */
     public JPanelReport() {
 
         initComponents();
     }
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     @Override
     public void init(AppView app) throws BeanFactoryException {
 
@@ -110,10 +103,6 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

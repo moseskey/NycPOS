@@ -7,9 +7,6 @@ public class Signumprovider {
     private Set m_positives = new HashSet();
     private Set m_negatives = new HashSet();
 
-    /**
-     * Creates a new instance of Signumprovider
-     */
     public Signumprovider() {
     }
 

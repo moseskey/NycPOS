@@ -4,16 +4,9 @@ public class BeanFactoryData implements BeanFactoryApp {
 
     private BeanFactoryApp bf;
 
-    /**
-     * Creates a new instance of BeanFactoryData
-     */
     public BeanFactoryData() {
     }
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     @Override
     public void init(AppView app) throws BeanFactoryException {
 

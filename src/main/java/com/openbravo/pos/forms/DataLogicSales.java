@@ -46,9 +46,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 // JG 22 Oct 2013
     private String getCardName;
 
-    /**
-     * Creates a new instance of SentenceContainerGeneric
-     */
     public DataLogicSales() {
         stockdiaryDatas = new Datas[] {
             Datas.STRING,
@@ -140,10 +137,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 // ADDED JDL 25.05.13 Warranty flag
 // JG uniCenta June 2014 includes StockUnits
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final ProductInfoExt getProductInfo(String id) throws BasicException {
 	return (ProductInfoExt) new PreparedSentence(s
 		, "SELECT "
@@ -174,10 +167,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 // ADDED JDL 25.05.13 Warranty flag
 // JG uniCenta June 2014 includes StockUnits
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final ProductInfoExt getProductInfoByCode(String sCode) throws BasicException {
 	return (ProductInfoExt) new PreparedSentence(s
 		, "SELECT "
@@ -208,10 +197,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 // ADDED JDL 25.05.13 Warranty flag
 // JG uniCenta June 2014 includes StockUnits
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final ProductInfoExt getProductInfoByReference(String sReference) throws BasicException {
 	return (ProductInfoExt) new PreparedSentence(s
 		, "SELECT "
@@ -238,10 +223,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
     // added display name on icon option 14.04.13
 // JG 3 Oct 2013 - Add Catalgue Status (temp holder for eCommerce links)
 
-    /**
-     *
-     * @throws BasicException
-     */
         public final List<CategoryInfo> getRootCategories() throws BasicException {
            return new PreparedSentence(s
             , "SELECT "
@@ -257,10 +238,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
             , CategoryInfo.getSerializerRead()).list();
     }
 
-        /**
-     *
-     * @throws BasicException
-     */
     public final List<CategoryInfo> getSubcategories(String category) throws BasicException  {
         return new PreparedSentence(s
             , "SELECT "
@@ -283,10 +260,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 // ADDED JDL 10.04.2013 TEXTTIP text s
 // ADDED JDL 25.05.13 Warranty flag
 // JG uniCenta June 2014 includes StockUnits
-    /**
-     *
-     * @throws BasicException
-     */
     public List<ProductInfoExt> getProductCatalog(String category) throws BasicException  {
 	return new PreparedSentence(s
 		, "SELECT "
@@ -324,10 +297,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 // ADDED JDL 10.04.2013 TEXTTIP text
 // ADDED JDL 25.05.13 Warranty flag
 
-    /**
-     *
-     * @throws BasicException
-     */
     public List<ProductInfoExt> getProductComments(String id) throws BasicException {
 	return new PreparedSentence(s
 		, "SELECT "
@@ -360,10 +329,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
     }
 // ADDED JG 10 Nov. 12 Promo ***
 
-    /**
-     *
-     * @throws BasicException
-     */
         public List<PromoInfo> getCurrentPromos() throws BasicException {
 
         return new PreparedSentence(s
@@ -392,10 +357,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
             , PromoInfo.getSerializerRead()).list();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public PromoInfo[] getPromos() throws BasicException{
 
             List<PromoInfo> _promos = getCurrentPromos();
@@ -424,10 +385,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
         }
 // End of Promotion
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final CategoryInfo getCategoryInfo(String id) throws BasicException {
         return (CategoryInfo) new PreparedSentence(s
         , "SELECT "
@@ -737,10 +694,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
 
 // JG Oct 2013 - add for CustomerView>Tranx table
 
-    /**
-     *
-     * @throws BasicException
-     */
         @SuppressWarnings("unchecked")
     public final List<CustomerTransaction> getCustomersTransactionList() throws BasicException {
         return new PreparedSentence(s,
@@ -805,10 +758,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
             , new SerializerReadClass(FloorsInfo.class));
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public CustomerInfoExt findCustomerExt(String card) throws BasicException {
         return (CustomerInfoExt) new PreparedSentence(s
                 , "SELECT "
@@ -843,10 +792,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
                 , new CustomerExtRead()).find(card);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public CustomerInfoExt loadCustomerExt(String id) throws BasicException {
         return (CustomerInfoExt) new PreparedSentence(s
                 , "SELECT "
@@ -879,10 +824,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
                 , new CustomerExtRead()).find(id);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final boolean isCashActive(String id) throws BasicException {
 
         return new PreparedSentence(s,
@@ -892,10 +833,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
             != null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final TicketInfo loadTicket(final int tickettype, final int ticketid) throws BasicException {
         TicketInfo ticket = (TicketInfo) new PreparedSentence(s
                 , "SELECT "
@@ -942,10 +879,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
         return ticket;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void saveTicket(final TicketInfo ticket, final String location) throws BasicException {
 
         Transaction t;
@@ -1108,10 +1041,6 @@ public Object transact() throws BasicException {
         t.execute();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final void deleteTicket(final TicketInfo ticket, final String location) throws BasicException {
 
         Transaction t = new Transaction(s) {
@@ -1177,34 +1106,18 @@ public Object transact() throws BasicException {
         t.execute();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final Integer getNextPickupIndex() throws BasicException {
         return (Integer) s.DB.getSequenceSentence(s, "PICKUP_NUMBER").find();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final Integer getNextTicketIndex() throws BasicException {
         return (Integer) s.DB.getSequenceSentence(s, "TICKETSNUM").find();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final Integer getNextTicketRefundIndex() throws BasicException {
         return (Integer) s.DB.getSequenceSentence(s, "TICKETSNUM_REFUND").find();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final Integer getNextTicketPaymentIndex() throws BasicException {
         return (Integer) s.DB.getSequenceSentence(s, "TICKETSNUM_PAYMENT").find();
     }
@@ -1434,10 +1347,6 @@ public Object transact() throws BasicException {
         };
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final double findProductStock(String warehouse, String id, String attsetinstid) throws BasicException {
 
         PreparedSentence p = attsetinstid == null
@@ -1523,10 +1432,6 @@ public Object transact() throws BasicException {
 
     protected static class CustomerExtRead implements SerializerRead {
 
-        /**
-         *
-         * @throws BasicException
-         */
         @Override
         public Object readValues(DataRead dr) throws BasicException {
             CustomerInfoExt c = new CustomerInfoExt(dr.getString(1));

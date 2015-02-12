@@ -24,9 +24,6 @@ public class StartPOS {
     private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.StartPOS");
 
 
-    /**
-     * Creates a new instance of StartPOS
-     */
     private StartPOS() {
     }
 

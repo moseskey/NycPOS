@@ -18,9 +18,6 @@ public class LeavesPanel extends JPanelTable {
     private TableDefinition tleaves;
     private LeavesView jeditor;
 
-    /**
-     * Creates a new instance of LeavesPanel
-     */
     public LeavesPanel() {
     }
 
@@ -31,10 +28,6 @@ public class LeavesPanel extends JPanelTable {
         jeditor = new LeavesView(app, dirty);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         jeditor.activate();

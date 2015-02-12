@@ -16,9 +16,6 @@ public class SQLTableModel extends AbstractTableModel {
     private DataField[] m_df;
     private Datas[] m_classes;
 
-    /**
-     * Creates a new instance of SQLTableModel
-     */
     public SQLTableModel(DataField[] df) {
         m_aRows = new ArrayList();
 
@@ -75,10 +72,6 @@ public class SQLTableModel extends AbstractTableModel {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void addRow(DataRead dr) throws BasicException {
 
         Object[] m_values = new Object[m_classes.length];

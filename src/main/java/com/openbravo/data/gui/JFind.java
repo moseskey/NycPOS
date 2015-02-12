@@ -11,15 +11,9 @@ public class JFind extends JDialog {
     private FindInfo m_FindInfo;
     private Vectorer m_vec;
 
-    /**
-     * Creates new form JFind
-     */
     private JFind(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
-    /**
-     * Creates new form JFind
-     */
     private JFind(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }
@@ -68,10 +62,6 @@ public class JFind extends JDialog {
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public static FindInfo showMessage(Component parent, FindInfo lastFindInfo) throws BasicException {
 
         Window window = getWindow(parent);

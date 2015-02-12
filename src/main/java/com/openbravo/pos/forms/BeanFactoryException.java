@@ -2,9 +2,6 @@ package com.openbravo.pos.forms;
 
 public class BeanFactoryException extends java.lang.RuntimeException {
 
-    /**
-     * Creates a new instance of <code>BeanFactoryException</code> without detail message.
-     */
     public BeanFactoryException() {
     }
 

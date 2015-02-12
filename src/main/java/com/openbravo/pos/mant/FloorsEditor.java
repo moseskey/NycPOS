@@ -16,9 +16,6 @@ public final class FloorsEditor extends JPanel implements EditorRecord {
 //    private DirtyManager m_Dirty = new DirtyManager();
     private String m_sID;
 
-    /**
-     * Creates new form FloorsEditor
-     */
     public FloorsEditor(DirtyManager dirty) {
         initComponents();
 
@@ -74,10 +71,6 @@ public final class FloorsEditor extends JPanel implements EditorRecord {
         m_jImage.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

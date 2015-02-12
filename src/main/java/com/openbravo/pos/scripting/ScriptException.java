@@ -2,9 +2,6 @@ package com.openbravo.pos.scripting;
 
 public class ScriptException extends java.lang.Exception {
 
-    /**
-     * Creates a new instance of <code>ScriptException</code> without detail message.
-     */
     public ScriptException() {
     }
 

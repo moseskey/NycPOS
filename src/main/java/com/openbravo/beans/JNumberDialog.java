@@ -13,17 +13,11 @@ public class JNumberDialog extends javax.swing.JDialog {
 
     private Double m_value;
 
-    /**
-     * Creates new form JNumberDialog
-     */
     public JNumberDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         init();
     }
 
-    /**
-     * Creates new form JNumberDialog
-     */
     public JNumberDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         init();

@@ -16,18 +16,11 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
     private DataLogicPresenceManagement dlpresencemanagement;
     private JFlowPanel jBreaks;
 
-    /**
-     * Creates new form JPanelEmployeePresence
-     */
     public JPanelEmployeePresence() {
         initComponents();
         this.setVisible(true);
     }
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     @Override
     public void init(AppView app) throws BeanFactoryException {
         this.app = app;
@@ -93,10 +86,6 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
         return AppLocal.getIntString("Menu.CheckInCheckOut");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         boolean isOnLeave = dlpresencemanagement.IsOnLeave(app.getAppUserView().getUser().getId());

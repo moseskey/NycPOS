@@ -16,10 +16,6 @@ public class JRDataSourceBasic implements JRDataSource {
 
     private ReportFields m_fields = null;
 
-    /**
-     * Creates a new instance of JRDataSourceBasic
-     * @throws com.openbravo.basic.BasicException
-     */
     public JRDataSourceBasic(BaseSentence sent, ReportFields fields, Object params) throws BasicException  {
 
         this.sent = sent;
@@ -27,10 +23,6 @@ public class JRDataSourceBasic implements JRDataSource {
         m_fields = fields;
     }
 
-    /**
-     *
-     * @throws JRException
-     */
     @Override
     public Object getFieldValue(JRField jrField) throws JRException {
 
@@ -41,10 +33,6 @@ public class JRDataSourceBasic implements JRDataSource {
         }
     }
 
-    /**
-     *
-     * @throws JRException
-     */
     @Override
     public boolean next() throws JRException {
 

@@ -27,9 +27,6 @@ public class PaymentGatewayBluePayAUTHNETEMU implements PaymentGateway {
     private String m_sCommercePassword;
     private boolean m_bTestMode;
 
-    /**
-     * Creates a new instance of PaymentGatewayBluePayAUTHNETEMU
-     */
     public PaymentGatewayBluePayAUTHNETEMU(AppProperties props) {
         // Grab some configuration variables
         m_sCommerceID = props.getProperty("payment.BluePay.accountID");

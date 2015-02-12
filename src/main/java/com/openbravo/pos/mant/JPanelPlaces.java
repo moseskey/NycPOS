@@ -19,9 +19,6 @@ public class JPanelPlaces extends JPanelTable {
     private TableDefinition tplaces;
     private PlacesEditor jeditor;
 
-    /**
-     * Creates a new instance of JPanelPlaces
-     */
     public JPanelPlaces() {
     }
 
@@ -71,10 +68,6 @@ public class JPanelPlaces extends JPanelTable {
         return AppLocal.getIntString("Menu.Tables");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         jeditor.activate(); // primero activo el editor

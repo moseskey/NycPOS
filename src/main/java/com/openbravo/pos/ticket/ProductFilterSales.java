@@ -18,9 +18,6 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
     private final SentenceList m_sentcat;
     private ComboBoxValModel m_CategoryModel;
 
-    /**
-     * Creates new form ProductFilterSales
-     */
     public ProductFilterSales(DataLogicSales dlSales, JEditorKeys jKeys) {
         initComponents();
 
@@ -64,10 +61,6 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

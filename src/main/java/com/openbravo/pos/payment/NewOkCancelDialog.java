@@ -20,9 +20,6 @@ public class NewOkCancelDialog extends javax.swing.JDialog {
     public static final int RET_OK = 1;
     private static Object JLabel;
 
-    /**
-     * Creates new form NewOkCancelDialog
-     */
     public NewOkCancelDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();

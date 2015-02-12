@@ -47,9 +47,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
     private boolean b;
 
-    /**
-     * Creates new form JCatalog
-     */
     public JCatalog(DataLogicSales dlSales) {
         this(dlSales, false, false, 64, 54);
          // this(dlSales, false, false, 32, 32);
@@ -68,9 +65,9 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
         m_jscrollcat.getVerticalScrollBar().setPreferredSize(new Dimension(48, 48));
 
-        tnbcat = new ThumbNailBuilder(48, 48, "com/openbravo/images/category.png");
-        tnbsubcat = new ThumbNailBuilder(width, height, "com/openbravo/images/subcategory.png");
-        tnbbutton = new ThumbNailBuilder(width, height, "com/openbravo/images/package.png");
+        tnbcat = new ThumbNailBuilder(48, 48, "/images/category.png");
+        tnbsubcat = new ThumbNailBuilder(width, height, "/images/subcategory.png");
+        tnbbutton = new ThumbNailBuilder(width, height, "/images/package.png");
 
     }
 
@@ -91,10 +88,6 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void loadCatalog() throws BasicException {
 

@@ -4,9 +4,6 @@ public class EmployeeInfoExt extends EmployeeInfo {
 
     protected boolean visible;
 
-    /**
-     * Creates a new instance of EmployeeInfoExt
-     */
     public EmployeeInfoExt(String id) {
         super(id);
     }

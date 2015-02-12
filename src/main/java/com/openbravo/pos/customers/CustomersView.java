@@ -37,9 +37,6 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
     private DirtyManager m_Dirty;
     private DataLogicSales dlSales;
 
-    /**
-     * Creates new form CustomersView
-     */
     public CustomersView(AppView app, DirtyManager dirty) {
         try {
             dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -86,7 +83,6 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
 
     /**
      * Instantiate object
-     * @throws BasicException
      */
     @SuppressWarnings("unchecked")
     public void activate() throws BasicException {
@@ -396,7 +392,6 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
 
     /**
      * Create object
-     * @throws BasicException
      */
     @Override
     public Object createValue() throws BasicException {

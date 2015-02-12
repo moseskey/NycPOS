@@ -8,9 +8,6 @@ public class MyPrinterState {
 
     private int m_iSize;
 
-    /**
-     * Creates a new instance of PrinterState
-     */
     public MyPrinterState(int iSize) {
         m_iSize = iSize;
     }

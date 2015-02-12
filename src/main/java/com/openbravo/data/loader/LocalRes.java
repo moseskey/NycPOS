@@ -13,9 +13,6 @@ public class LocalRes {
         m_resources.addBundleName("data_messages");
     }
 
-    /**
-     * Creates a new instance of LocalRes
-     */
     private LocalRes() {
     }
 

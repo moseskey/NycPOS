@@ -11,9 +11,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
 
     private Object m_oId;
 
-    /**
-     * Creates new form ThirdPartiesView
-     */
     public ThirdPartiesView(AppView app, DirtyManager dirty) {
         initComponents();
 
@@ -147,10 +144,6 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
         m_jNotes.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public Object createValue() throws BasicException {
 
         Object[] thirdparty = new Object[13];

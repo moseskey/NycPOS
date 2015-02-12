@@ -7,34 +7,19 @@ public class BasicSentenceEnum implements SentenceEnum {
     BaseSentence sent;
     DataResultSet SRS;
 
-    /**
-     * Creates a new instance of AbstractSentenceEnum
-     */
     public BasicSentenceEnum(BaseSentence sent) {
         this.sent = sent;
         this.SRS = null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void load() throws BasicException {
         load(null);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void load(Object params) throws BasicException {
         SRS = sent.openExec(params);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public Object getCurrent() throws BasicException {
         if (SRS == null) {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
@@ -43,10 +28,6 @@ public class BasicSentenceEnum implements SentenceEnum {
         return SRS.getCurrent();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public boolean next() throws BasicException {
         if (SRS == null) {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));

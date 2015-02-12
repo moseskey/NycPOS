@@ -136,18 +136,11 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 //   private String loyaltyCardNumber=null;
 
 
-    /**
-     * Creates new form JTicketView
-     */
     public JPanelTicket() {
 
         initComponents ();
     }
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     @Override
     public void init(AppView app) throws BeanFactoryException {
 
@@ -258,10 +251,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 // added by JDL 26.04.13
@@ -1611,7 +1600,6 @@ if (pickupSize!=null && (Integer.parseInt(pickupSize) >= tmpPickupId.length())){
         /**
          *
          * @return Script object and value
-         * @throws ScriptException
          */
         public Object evalScript(String code, ScriptArg... args) throws ScriptException {
 

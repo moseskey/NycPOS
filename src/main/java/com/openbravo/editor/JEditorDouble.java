@@ -4,9 +4,6 @@ import com.openbravo.format.Formats;
 
 public class JEditorDouble extends JEditorNumber {
 
-    /**
-     * Creates a new instance of JEditorDouble
-     */
     public JEditorDouble() {
     }
 

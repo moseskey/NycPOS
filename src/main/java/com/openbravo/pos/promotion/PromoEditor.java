@@ -44,9 +44,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
     private DataLogicSales m_dlSales;
     private Session s;
 
-    /**
-     * Creates new form PlacesEditor
-     */
     public PromoEditor(AppView app, DataLogicSales dlSales, DirtyManager dirty) {
         m_dlSales = (DataLogicSales) app.getBean("com.openbravo.pos.forms.DataLogicSales");
         initComponents();
@@ -100,10 +97,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
         writeValueEOF();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void activate() throws BasicException {
         m_jCatModel = new ComboBoxValModel(m_dlSales.getCategoriesList().list());
         m_jCatName.setModel(m_jCatModel);
@@ -438,10 +431,6 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

@@ -15,9 +15,6 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
 
     private ComboBoxValModel m_ReasonModel;
 
-    /**
-     * Creates new form JParamsReason
-     */
     public JParamsReason() {
         initComponents();
 
@@ -39,10 +36,6 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
     public void init(AppView app) {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
     }
@@ -57,10 +50,6 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

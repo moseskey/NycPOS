@@ -18,10 +18,6 @@ public interface AppView {
 
     public AppProperties getProperties();
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     public Object getBean(String beanfactory) throws BeanFactoryException;
 
     public void setActiveCash(String value, int iSeq, Date dStart, Date dEnd);

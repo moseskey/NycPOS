@@ -13,15 +13,9 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
 
     private String m_sDialogTicket;
 
-    /**
-     * Creates new form JTicketsBagSharedList
-     */
     private JTicketsBagSharedList(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
-    /**
-     * Creates new form JTicketsBagSharedList
-     */
     private JTicketsBagSharedList(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }

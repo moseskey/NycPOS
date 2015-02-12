@@ -21,9 +21,6 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
     private SentenceList m_sentcat;
     private ComboBoxValModel m_CategoryModel;
 
-    /**
-     * Creates new form JQBFProduct
-     */
     public ProductFilter() {
 
         initComponents();
@@ -46,10 +43,6 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
         m_jCboPriceSell.setModel(ListQBFModelNumber.getMandatoryNumber());
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 
@@ -70,10 +63,6 @@ public class ProductFilter extends javax.swing.JPanel implements ReportEditorCre
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

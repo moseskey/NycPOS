@@ -6,9 +6,6 @@ import java.awt.image.BufferedImage;
 
 public abstract class Codes {
 
-    /**
-     * Creates a new instance of Codes
-     */
     public Codes() {
     }
 

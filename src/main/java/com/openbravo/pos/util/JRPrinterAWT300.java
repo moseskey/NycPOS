@@ -28,8 +28,6 @@ public class JRPrinterAWT300 implements Printable
 
 	/**
 	 *
-     * @throws net.sf.jasperreports.engine.JRException
-     * @throws JRException
 	 */
 	protected JRPrinterAWT300(JasperPrint jrPrint) throws JRException
 	{
@@ -41,7 +39,6 @@ public class JRPrinterAWT300 implements Printable
 
 	/**
 	 *
-     * @throws JRException
 	 */
 	public static boolean printPages(
 		JasperPrint jrPrint,
@@ -61,7 +58,6 @@ public class JRPrinterAWT300 implements Printable
 
 	/**
 	 *
-     * @throws JRException
 	 */
 	public static Image printPageToImage(
 		JasperPrint jrPrint,

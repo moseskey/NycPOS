@@ -2,9 +2,6 @@ package com.openbravo.editor;
 
 public class JEditorString extends JEditorText {
 
-    /**
-     * Creates a new instance of JEditorString
-     */
     public JEditorString() {
         super();
     }

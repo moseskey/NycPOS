@@ -15,9 +15,6 @@ public class JCalendarDialog extends javax.swing.JDialog {
     private JCalendarPanel myCalendar = null;
     private JTimePanel myTime = null;
 
-    /**
-     * Creates new form JCalendarDialog
-     */
     public JCalendarDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
 
@@ -27,9 +24,6 @@ public class JCalendarDialog extends javax.swing.JDialog {
         } else {
         }
     }
-    /**
-     * Creates new form JCalendarDialog
-     */
     public JCalendarDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
 

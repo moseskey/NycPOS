@@ -15,16 +15,10 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
     private EmployeeInfo selectedEmployee;
     private ListProvider lpr;
 
-    /**
-     * Creates new form JEmployeeFinder
-     */
     private JEmployeeFinder(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
 
-    /**
-     * Creates new form JEmployeeFinder
-     */
     private JEmployeeFinder(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }
@@ -81,10 +75,6 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         Object[] afilter = new Object[2];

@@ -11,9 +11,6 @@ public class SQLTable implements TreeNode {
 
     private ArrayList m_aColumns;
 
-    /**
-     * Creates a new instance of SQLTable
-     */
     public SQLTable(SQLDatabase db, String name) {
         m_db = db;
         m_sName = name;

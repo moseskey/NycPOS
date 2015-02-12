@@ -29,9 +29,6 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
     private double m_dTotal;
     private final Boolean priceWith00;
 
-    /**
-     * Creates new form JPaymentCash
-     */
     public JPaymentCashPos(JPaymentNotifier notifier, DataLogicSystem dlSystem) {
 
         m_notifier = notifier;
@@ -133,7 +130,7 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
             this.m_config = m_config;
 
             this.dlSystem = dlSystem;
-            tnbbutton = new ThumbNailBuilder(64, 50, "com/openbravo/images/cash.png");
+            tnbbutton = new ThumbNailBuilder(64, 50, "/images/cash.png");
         }
 
         public void addButton(String image, double amount) {

@@ -13,16 +13,9 @@ public class ScriptFactory {
 
     public static final String RHINO = "rhino";
 
-    /**
-     * Creates a new instance of ScriptFactory
-     */
     private ScriptFactory() {
     }
 
-    /**
-     *
-     * @throws ScriptException
-     */
     public static ScriptEngine getScriptEngine(String name) throws ScriptException {
 // JG 16 May use switch
         switch (name) {

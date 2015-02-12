@@ -21,18 +21,11 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
 
     protected AppView app;
 
-    /**
-     * Creates new form JPanelTableEditor
-     */
     public JPanelTable() {
 
         initComponents();
     }
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     @Override
     public void init(AppView app) throws BeanFactoryException {
 
@@ -136,10 +129,6 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         startNavigation();

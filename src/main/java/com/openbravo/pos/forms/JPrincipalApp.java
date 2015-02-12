@@ -44,9 +44,6 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
     //HS Updates
     private CustomerInfo customerInfo;
 
-    /**
-     * Creates new form JPrincipalApp
-     */
     public JPrincipalApp(JRootApp appview, AppUser appuser) {
 
         m_appview = appview;
@@ -96,7 +93,7 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
         } catch (ScriptException e) {
             logger.log(Level.SEVERE, "Cannot read Menu.Root resource. Trying default menu.", e);
             try {
-                m_jPanelLeft.setViewportView(getScriptMenu(StringUtils.readResource("/com/openbravo/pos/templates/Menu.Root.txt")));
+                m_jPanelLeft.setViewportView(getScriptMenu(StringUtils.readResource("/templates/default/Menu.Root.txt")));
 // JG 6 May 2013 use multicatch
             } catch (    IOException | ScriptException ex) {
                 logger.log(Level.SEVERE, "Cannot read default menu", ex);

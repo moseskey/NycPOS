@@ -60,9 +60,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
     }
 
 
-    /**
-     * Creates new TicketModel
-     */
     public TicketInfo() {
         m_sId = UUID.randomUUID().toString();
         tickettype = RECEIPT_NORMAL;
@@ -109,10 +106,6 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         taxes = null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
         m_sId = dr.getString(1);

@@ -15,9 +15,6 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
     private SentenceList attsent;
     private ComboBoxValModel attmodel;
 
-    /**
-     * Creates new form AttributeUseFilter
-     */
     public AttributeFilter() {
         initComponents();
     }
@@ -35,10 +32,6 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
         attmodel = new ComboBoxValModel();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         List a = attsent.list();
@@ -65,10 +58,6 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
         jAttr.removeActionListener(l);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         AttributeInfo att = (AttributeInfo) attmodel.getSelectedItem();

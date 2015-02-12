@@ -30,16 +30,9 @@ public class Place implements SerializableRead, java.io.Serializable {
     private boolean m_bPeople;
     private JButton m_btn;
 
-    /**
-     * Creates a new instance of TablePlace
-     */
     public Place() {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
         m_sId = dr.getString(1);

@@ -9,9 +9,6 @@ public class JLabelDirty extends JLabel {
     private static Icon m_IconModif = null;
     private static Icon m_IconNull = null;
 
-    /**
-     * Creates a new instance of JDirtyPicture
-     */
     public JLabelDirty(DirtyManager dm) {
 
         if (m_IconModif == null) {

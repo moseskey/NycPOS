@@ -15,27 +15,15 @@ public abstract class SentenceExecTransaction implements SentenceExec {
         m_s = s;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public final int exec() throws BasicException {
         return exec((Object) null);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public final int exec(Object... params) throws BasicException {
         return exec((Object) params);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public final int exec(final Object params) throws BasicException {
 
@@ -49,10 +37,6 @@ public abstract class SentenceExecTransaction implements SentenceExec {
         return t.execute();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     protected abstract int execInTransaction(Object params) throws BasicException;
 }
 

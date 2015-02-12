@@ -26,9 +26,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     protected String m_dCardName =null;
 
-    /**
-     * Creates a new instance of PaymentInfoMagcard
-     */
     public PaymentInfoMagcard(
             String sHolderName,
             String sCardNumber,
@@ -54,9 +51,6 @@ public class PaymentInfoMagcard extends PaymentInfo {
         m_sReturnMessage = null;
     }
 
-    /**
-     * Creates a new instance of PaymentInfoMagcard
-     */
     public PaymentInfoMagcard(
             String sHolderName,
             String sCardNumber,

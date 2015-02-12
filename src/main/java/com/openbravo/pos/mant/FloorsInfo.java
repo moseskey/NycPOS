@@ -16,9 +16,6 @@ public class FloorsInfo implements SerializableRead, IKeyed {
     private String m_sID;
     private String m_sName;
 
-    /**
-     * Creates a new instance of FloorsInfo
-     */
     public FloorsInfo() {
         m_sID = null;
         m_sName = null;
@@ -29,10 +26,6 @@ public class FloorsInfo implements SerializableRead, IKeyed {
         return m_sID;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
         m_sID = dr.getString(1);

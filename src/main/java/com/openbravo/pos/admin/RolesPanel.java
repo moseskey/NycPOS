@@ -19,9 +19,6 @@ public class RolesPanel extends JPanelTable {
     private RolesView jeditor;
 
 
-    /**
-     * Creates a new instance of RolesPanel
-     */
     public RolesPanel() {
      }
 

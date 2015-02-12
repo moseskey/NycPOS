@@ -19,9 +19,6 @@ public class JRootKiosk extends javax.swing.JFrame implements AppMessage {
     private AppProperties m_props;
     private OSValidator m_OS;
 
-    /**
-     * Creates new form JRootKiosk
-     */
     public JRootKiosk() {
 
         setUndecorated(true);
@@ -62,10 +59,6 @@ public class JRootKiosk extends javax.swing.JFrame implements AppMessage {
         }
     }
 
-    /**
-     *
-     * @throws RemoteException
-     */
     @Override
     public void restoreWindow() throws RemoteException {
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -9,9 +9,6 @@ public class JProductAttListItem extends javax.swing.JPanel implements JProductA
     private String attid;
     private ComboBoxValModel model;
 
-    /**
-     * Creates new form JProductAttListItem
-     */
     public JProductAttListItem(String attid, String label, String value, List<String> values) {
 
         this.attid = attid;

@@ -17,9 +17,6 @@ public class PeopleInfo implements SerializableRead, IKeyed {
 
     protected String m_sName;
 
-    /**
-     * Creates a new instance of RoleInfo
-     */
     public PeopleInfo() {
         m_sID = null;
         m_sName = null;
@@ -29,10 +26,6 @@ public class PeopleInfo implements SerializableRead, IKeyed {
         return m_sID;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void readValues(DataRead dr) throws BasicException {
         m_sID = dr.getString(1);
         m_sName = dr.getString(2);

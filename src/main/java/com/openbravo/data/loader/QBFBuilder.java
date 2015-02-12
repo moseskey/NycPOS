@@ -10,7 +10,6 @@ public class QBFBuilder implements ISQLBuilderStatic {
 
     private final String[] m_asFindFields;
 
-//    /** Creates a new instance of QBFBuilder */
 //    public QBFBuilder(TableDefinition tb, String[] asFindFields) {
 //        StringBuilder sent = new StringBuilder();
 //        sent.append("select ");
@@ -43,10 +42,6 @@ public class QBFBuilder implements ISQLBuilderStatic {
         m_asFindFields = asFindFields;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public String getSQL(SerializerWrite sw, Object params) throws BasicException {
 

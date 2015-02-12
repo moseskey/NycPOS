@@ -18,9 +18,6 @@ public class TaxCustCategoriesPanel extends JPanelTable {
     private TableDefinition ttaxcategories;
     private TaxCustCategoriesEditor jeditor;
 
-    /**
-     * Creates a new instance of JPanelDuty
-     */
     public TaxCustCategoriesPanel() {
     }
 

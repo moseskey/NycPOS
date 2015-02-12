@@ -69,7 +69,6 @@ public class DevicePrinterPrinter implements DevicePrinter {
     private static final HashMap<String, MediaSizeName> mediasizenamemap = new HashMap<>();
 
     /**
-     * Creates a new instance of DevicePrinterPrinter
      *
      * @param printername - name of printer that will be called in the system
      */

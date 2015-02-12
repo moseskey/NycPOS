@@ -135,7 +135,6 @@ public class AppConfig implements AppProperties {
 
     /**
      * Save values to .properties file
-     * @throws IOException
      */
     public void save() throws IOException {
 
@@ -148,7 +147,6 @@ public class AppConfig implements AppProperties {
 
     /**
      * Settings over-rides
-     * @throws IOException
      */
 
     private void loadDefault() {

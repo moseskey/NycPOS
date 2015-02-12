@@ -93,10 +93,6 @@ public class PromoInfo implements SerializableRead, IKeyed {
         return m_sID;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void readValues(DataRead dr) throws BasicException {
         m_sID = dr.getString(1);
         m_sName = dr.getString(2);

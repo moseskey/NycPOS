@@ -15,9 +15,6 @@ public class TableDefinition {
     private int[] idinx;
 
 
-    /**
-     * Creates a new instance of TableDefinition
-     */
     public TableDefinition(
             Session s,
             String tablename,

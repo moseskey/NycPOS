@@ -21,9 +21,6 @@ public class ScaleSamsungEsp implements Scale, SerialPortEventListener {
     private double m_dWeightDecimals;
     private int m_iStatusScale;
 
-    /**
-     * Creates a new instance of ScaleComm
-     */
     public ScaleSamsungEsp(String sPortPrinter) {
         m_sPortScale = sPortPrinter;
         m_out = null;

@@ -7,10 +7,6 @@ public interface JPanelView {
 
     public abstract String getTitle();
 
-    /**
-     *
-     * @throws BasicException
-     */
     public abstract void activate() throws BasicException;
 
     public abstract boolean deactivate();

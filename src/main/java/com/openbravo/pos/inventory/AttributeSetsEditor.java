@@ -12,9 +12,6 @@ public final class AttributeSetsEditor extends javax.swing.JPanel implements Edi
 
     private Object id;
 
-    /**
-     * Creates new form AttributesEditor
-     */
     public AttributeSetsEditor(DirtyManager dirty) {
         initComponents();
 
@@ -55,10 +52,6 @@ public final class AttributeSetsEditor extends javax.swing.JPanel implements Edi
         m_jName.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

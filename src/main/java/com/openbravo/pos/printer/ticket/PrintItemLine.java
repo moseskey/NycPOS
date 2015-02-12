@@ -15,9 +15,6 @@ public class PrintItemLine implements PrintItem {
 
     protected List<StyledText> m_atext;
 
-    /**
-     * Creates a new instance of PrinterItemLine
-     */
     public PrintItemLine(int textsize, Font font, int fontheight) {
         this.textsize = textsize;
         this.font = font;

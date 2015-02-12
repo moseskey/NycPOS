@@ -20,10 +20,6 @@ public class RoleTreeInfo implements SerializableRead, IKeyed {
         m_description = null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
         m_parentNode = dr.getString(1);

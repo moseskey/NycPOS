@@ -22,9 +22,6 @@ class ScriptEngineVelocity implements ScriptEngine {
     private AppView m_App;
 
 
-    /**
-     * Creates a new instance of ScriptEngineVelocity
-     */
     public ScriptEngineVelocity() throws ScriptException {
 
         if (m_ve == null) {

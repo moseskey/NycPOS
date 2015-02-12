@@ -10,11 +10,8 @@ public class ProductRenderer extends DefaultListCellRenderer {
 
     ThumbNailBuilder tnbprod;
 
-    /**
-     * Creates a new instance of ProductRenderer
-     */
     public ProductRenderer() {
-        tnbprod = new ThumbNailBuilder(48,48, "com/openbravo/images/package.png");
+        tnbprod = new ThumbNailBuilder(48,48, "/images/package.png");
     }
 
     @Override

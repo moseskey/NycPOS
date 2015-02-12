@@ -77,10 +77,6 @@ public class TaxesLogic {
         }
     }
 
-    /**
-     *
-     * @throws TaxesException
-     */
     public void calculateTaxes(TicketInfo ticket) throws TaxesException {
 
         // JG June 2013 use diamond inference
@@ -93,10 +89,6 @@ public class TaxesLogic {
         ticket.setTaxes(tickettaxes);
     }
 
-    /**
-     *
-     * @throws TaxesException
-     */
     public List<TicketTaxInfo> calculateTaxes(TicketLineInfo line) throws TaxesException {
 
         TaxesLogicElement taxesapplied = getTaxesApplied(line.getTaxInfo());

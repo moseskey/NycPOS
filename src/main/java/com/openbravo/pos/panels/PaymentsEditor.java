@@ -23,9 +23,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
     private AppView m_App;
     private String m_sNotes;
 
-    /**
-     * Creates new form JPanelPayments
-     */
     public PaymentsEditor(AppView oApp, DirtyManager dirty) {
 
         m_App = oApp;
@@ -106,10 +103,6 @@ public final class PaymentsEditor extends javax.swing.JPanel implements EditorRe
         m_jNotes.setEnabled(false);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 //JG Modified Array + 1 - July 2011

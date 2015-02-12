@@ -22,9 +22,6 @@ public class JTicketsBagShared extends JTicketsBag {
     private DataLogicReceipts dlReceipts = null;
 
 
-    /**
-     * Creates new form JTicketsBagShared
-     */
     public JTicketsBagShared(AppView app, TicketsEditor panelticket) {
 
         super(app, panelticket);

@@ -7,17 +7,10 @@ public class NormalBuilder implements ISQLBuilderStatic {
 
     private String m_sSentence;
 
-    /**
-     * Creates a new instance of NormalBuilder
-     */
     public NormalBuilder(String sSentence) {
         m_sSentence = sSentence;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public String getSQL(SerializerWrite sw, Object params) throws BasicException {
 

@@ -17,9 +17,6 @@ public class JPaymentCheque extends javax.swing.JPanel implements JPaymentInterf
     private double m_dTotal;
     private Boolean priceWith00;
 
-    /**
-     * Creates new form JPaymentCash
-     */
     public JPaymentCheque(JPaymentNotifier notifier) {
 
         m_notifier = notifier;

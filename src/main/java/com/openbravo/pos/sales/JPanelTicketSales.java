@@ -15,9 +15,6 @@ public class JPanelTicketSales extends JPanelTicket {
 
     private CatalogSelector m_cat;
 
-    /**
-     * Creates a new instance of JPanelTicketSales
-     */
     public JPanelTicketSales() {
     }
 
@@ -58,10 +55,6 @@ public class JPanelTicketSales extends JPanelTicket {
         return JTicketsBag.createTicketsBag(m_App.getProperties().getProperty("machine.ticketsbag"), m_App, this);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         super.activate();

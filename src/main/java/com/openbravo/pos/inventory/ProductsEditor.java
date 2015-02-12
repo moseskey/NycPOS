@@ -62,9 +62,6 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 //    private Object m_Sendstatus; - use this for sent y/n or resend
 //    private Object m_Lineorder; - shuffle ticketlines into group (starters, mains etc)
 
-    /**
-     * Creates new form JEditProduct
-     */
     public ProductsEditor(DataLogicSales dlSales, DirtyManager dirty) {
         initComponents();
 
@@ -135,10 +132,6 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         writeValueEOF();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void activate() throws BasicException {
 
         // Load the taxes logic
@@ -520,7 +513,6 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
     /**
      *
      * @return myprod
-     * @throws BasicException
      */
     @Override
     public Object createValue() throws BasicException {

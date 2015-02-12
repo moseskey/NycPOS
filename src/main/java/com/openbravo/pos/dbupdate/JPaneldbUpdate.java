@@ -25,9 +25,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
     private String eScript;
 
 
-    /**
-     * Creates new form JPaneldbUpdate
-     */
     public JPaneldbUpdate(AppView oApp) {
         this(oApp.getProperties());
     }
@@ -59,22 +56,22 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
     public void performUpdate(String sScript){
         switch (sdbmanager) {
             case "HSQL Database Engine":
-                eScript = "/com/openbravo/pos/scripts/HSQLDB" + sScript;
+                eScript = "/sql/HSQLDB" + sScript;
                 break;
             case "MySQL":
-                eScript = "/com/openbravo/pos/scripts/MySQL" + sScript;
+                eScript = "/sql/MySQL" + sScript;
                 break;
             case "PostgreSQL":
-                eScript = "/com/openbravo/pos/scripts/PostgreSQL" + sScript;
+                eScript = "/sql/PostgreSQL" + sScript;
                 break;
             case "Oracle":
-                eScript = "/com/openbravo/pos/scripts/Oracle" + sScript;
+                eScript = "/sql/Oracle" + sScript;
                 break;
             case "Apache Derby":
-                eScript = "/com/openbravo/pos/scripts/Derby" + sScript;
+                eScript = "/sql/Derby" + sScript;
                 break;
             default:
-                eScript = "/com/openbravo/pos/scripts/Derby" + sScript;
+                eScript = "/sql/Derby" + sScript;
                 break;
         }
 
@@ -107,10 +104,6 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
         return AppLocal.getIntString("Menu.Configuration");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
        // connect to the database

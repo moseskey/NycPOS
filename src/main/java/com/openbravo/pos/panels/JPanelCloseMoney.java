@@ -50,18 +50,11 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
     private AppUser m_User;
 
-    /**
-     * Creates new form JPanelCloseMoney
-     */
     public JPanelCloseMoney() {
 
         initComponents();
     }
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     @Override
     public void init(AppView app) throws BeanFactoryException {
 
@@ -115,10 +108,6 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         return AppLocal.getIntString("Menu.CloseTPV");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         loadData();

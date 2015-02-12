@@ -28,9 +28,6 @@ public class JCalendarPanel extends javax.swing.JPanel {
 
     private DateFormat fmtMonthYear = new SimpleDateFormat("MMMMM yyyy");
 
-    /**
-     * Creates new form JCalendarPanel2
-     */
     public JCalendarPanel() {
         this(new Date());
     }

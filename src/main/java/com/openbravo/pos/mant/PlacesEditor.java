@@ -19,9 +19,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
 
     private String m_sID;
 
-    /**
-     * Creates new form PlacesEditor
-     */
     public PlacesEditor(DataLogicSales dlSales, DirtyManager dirty) {
         initComponents();
 
@@ -36,10 +33,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
         writeValueEOF();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void activate() throws BasicException {
 
         m_FloorModel = new ComboBoxValModel(m_sentfloor.list());
@@ -113,10 +106,6 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
         m_jY.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         Object[] place = new Object[6];

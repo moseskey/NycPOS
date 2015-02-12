@@ -40,9 +40,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
 
     // private Date dinitdate = new GregorianCalendar(1900, 0, 0, 12, 0).getTime();
 
-    /**
-     * Creates new form JPanelReservations
-     */
     public JTicketsBagRestaurantRes(AppView oApp, JTicketsBagRestaurantMap restaurantmap) {
 
         m_restaurantmap = restaurantmap;
@@ -215,10 +212,6 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         txtCustomer.activate();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

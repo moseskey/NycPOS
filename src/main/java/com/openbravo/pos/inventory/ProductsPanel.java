@@ -24,9 +24,6 @@ public class ProductsPanel extends JPanelTable2 implements EditorListener {
 
     private DataLogicSales m_dlSales = null;
 
-    /**
-     * Creates a new instance of ProductsPanel2
-     */
     public ProductsPanel() {
     }
 
@@ -104,10 +101,6 @@ public class ProductsPanel extends JPanelTable2 implements EditorListener {
         return AppLocal.getIntString("Menu.Products");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

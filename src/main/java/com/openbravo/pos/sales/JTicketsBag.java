@@ -16,9 +16,6 @@ public abstract class JTicketsBag extends JPanel {
 
     protected TicketsEditor m_panelticket;
 
-    /**
-     * Creates new form JTicketsBag
-     */
     public JTicketsBag(AppView oApp, TicketsEditor panelticket) {
         m_App = oApp;
         m_panelticket = panelticket;

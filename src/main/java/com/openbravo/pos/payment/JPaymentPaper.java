@@ -22,9 +22,6 @@ public class JPaymentPaper extends javax.swing.JPanel implements JPaymentInterfa
     // private String m_sCustomer;
 
 
-    /**
-     * Creates new form JPaymentTicket
-     */
     public JPaymentPaper(JPaymentNotifier notifier, String sPaper) {
 
         m_notifier = notifier;

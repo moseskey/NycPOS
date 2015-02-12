@@ -44,9 +44,6 @@ public class BrowsableEditableData {
 
     private boolean iseditable = true;
 
-    /**
-     * Creates a new instance of BrowsableEditableData
-     */
     public BrowsableEditableData(BrowsableData bd, EditorRecord ed, DirtyManager dirty) {
         m_bd = bd;
 
@@ -237,7 +234,6 @@ public class BrowsableEditableData {
 
     /**
      * Refresh object data
-     * @throws BasicException
      */
     public void refreshData() throws BasicException {
         saveData();
@@ -248,7 +244,6 @@ public class BrowsableEditableData {
 
     /**
      * Load object data
-     * @throws BasicException
      */
     public void loadData() throws BasicException {
         saveData();
@@ -259,7 +254,6 @@ public class BrowsableEditableData {
 
     /**
      * Unload object data
-     * @throws BasicException
      */
     public void unloadData() throws BasicException {
         saveData();
@@ -270,7 +264,6 @@ public class BrowsableEditableData {
 
     /**
      * Sort object data
-     * @throws BasicException
      */
     public void sort(Comparator c) throws BasicException {
         saveData();
@@ -280,7 +273,6 @@ public class BrowsableEditableData {
 
     /**
      * Move data to object
-     * @throws BasicException
      */
     public void moveTo(int i) throws BasicException {
         saveData();
@@ -291,7 +283,6 @@ public class BrowsableEditableData {
 
     /**
      * Step into data -1 (Back)
-     * @throws BasicException
      */
     public final void movePrev() throws BasicException {
         saveData();
@@ -302,7 +293,6 @@ public class BrowsableEditableData {
 
     /**
      * Step into data +1 (Forward)
-     * @throws BasicException
      */
     public final void moveNext() throws BasicException {
         saveData();
@@ -313,7 +303,6 @@ public class BrowsableEditableData {
 
     /**
      * Step into data BOF (First)
-     * @throws BasicException
      */
     public final void moveFirst() throws BasicException {
         saveData();
@@ -324,7 +313,6 @@ public class BrowsableEditableData {
 
     /**
      * Step into data EOF (End)
-     * @throws BasicException
      */
     public final void moveLast() throws BasicException {
         saveData();
@@ -335,7 +323,6 @@ public class BrowsableEditableData {
 
     /**
      * Step into data =value (Next)
-     * @throws BasicException
      */
     public final int findNext(Finder f) throws BasicException {
         return m_bd.findNext(m_iIndex, f);
@@ -343,7 +330,6 @@ public class BrowsableEditableData {
 
     /**
      * Save data
-     * @throws BasicException
      */
     public void saveData() throws BasicException {
 
@@ -376,7 +362,6 @@ public class BrowsableEditableData {
 
     /**
      * Evaluate data before before commit
-     * @throws BasicException
      */
     public boolean actionClosingForm(Component c) throws BasicException {
         if (m_Dirty.isDirty()) {
@@ -401,7 +386,6 @@ public class BrowsableEditableData {
 
     /**
      * Instantiate data
-     * @throws BasicException
      */
 
     public final void actionLoad() throws BasicException {
@@ -413,7 +397,6 @@ public class BrowsableEditableData {
 
     /**
      * Insert data - conditional
-     * @throws BasicException
      */
     public final void actionInsert() throws BasicException {
         // primero persistimos
@@ -430,7 +413,6 @@ public class BrowsableEditableData {
 
     /**
      * Delete data
-     * @throws BasicException
      */
     public final void actionDelete() throws BasicException {
         // primero persistimos

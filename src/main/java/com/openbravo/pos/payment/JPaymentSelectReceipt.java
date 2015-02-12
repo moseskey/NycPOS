@@ -4,15 +4,9 @@ import java.awt.*;
 
 public class JPaymentSelectReceipt extends JPaymentSelect {
 
-    /**
-     * Creates new form JPaymentSelect
-     */
     protected JPaymentSelectReceipt(java.awt.Frame parent, boolean modal, ComponentOrientation o) {
         super(parent, modal, o);
     }
-    /**
-     * Creates new form JPaymentSelect
-     */
     protected JPaymentSelectReceipt(java.awt.Dialog parent, boolean modal, ComponentOrientation o) {
         super(parent, modal, o);
     }

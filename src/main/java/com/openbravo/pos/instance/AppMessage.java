@@ -5,9 +5,5 @@ import java.rmi.RemoteException;
 
 public interface AppMessage extends Remote {
 
-    /**
-     *
-     * @throws RemoteException
-     */
     public void restoreWindow() throws RemoteException;
 }

@@ -12,9 +12,6 @@ public class ConfigPaymentPanelLinkPoint extends javax.swing.JPanel implements P
 
     private static File m_fCurrentDirectory = null;
 
-    /**
-     * Creates new form ConfigPaymentPanelLinkPoint
-     */
     public ConfigPaymentPanelLinkPoint() {
         initComponents();
     }

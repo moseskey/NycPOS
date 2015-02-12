@@ -7,9 +7,6 @@ public class AttributeInfo implements IKeyed {
     private String id;
     private String name;
 
-    /**
-     * Creates new CategoryInfo
-     */
     public AttributeInfo(String id, String name) {
         this.id = id;
         this.name = name;

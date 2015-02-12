@@ -18,9 +18,6 @@ public class JFrmConfig extends javax.swing.JFrame {
 
     private final JPanelConfiguration config;
 
-    /**
-     * Creates new form JFrmConfig
-     */
     public JFrmConfig(AppProperties props) {
 
         initComponents();

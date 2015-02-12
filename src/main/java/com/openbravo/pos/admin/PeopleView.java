@@ -23,9 +23,6 @@ public class PeopleView extends JPanel implements EditorRecord {
     private final SentenceList m_sentrole;
     private ComboBoxValModel m_RoleModel;
 
-    /**
-     * Creates new form PeopleEditor
-     */
     public PeopleView(DataLogicAdmin dlAdmin, DirtyManager dirty) {
         initComponents();
 
@@ -123,10 +120,6 @@ public class PeopleView extends JPanel implements EditorRecord {
         jButton3.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         Object[] people = new Object[7];
@@ -145,10 +138,6 @@ public class PeopleView extends JPanel implements EditorRecord {
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void activate() throws BasicException {
 
         m_RoleModel = new ComboBoxValModel(m_sentrole.list());

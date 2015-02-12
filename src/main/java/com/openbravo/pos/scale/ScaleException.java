@@ -2,9 +2,6 @@ package com.openbravo.pos.scale;
 
 public class ScaleException extends java.lang.Exception {
 
-    /**
-     * Creates a new instance of <code>ScaleException</code> without detail message.
-     */
     public ScaleException() {
     }
 

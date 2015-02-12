@@ -30,9 +30,6 @@ public class CodesStar extends Codes {
     private static final byte[] NEW_LINE = {0x0D, 0x0A}; // Print and carriage return
 
 
-    /**
-     * Creates a new instance of CodesStar
-     */
     public CodesStar() {
     }
 

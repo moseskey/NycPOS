@@ -14,24 +14,13 @@ public class ProductVectorer implements Vectorer {
         AppLocal.getIntString("label.prodpricesell")
     };
 
-    /**
-     * Creates a new instance of ProductVectorer
-     */
     public ProductVectorer() {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public String[] getHeaders() throws BasicException {
         return m_sHeaders;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public String[] getValues(Object obj) throws BasicException {
         ProductInfoExt myprod = (ProductInfoExt) obj;
         String[] m_sValues = new String[5];

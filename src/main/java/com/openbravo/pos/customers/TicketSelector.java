@@ -6,10 +6,6 @@ import java.awt.event.ActionListener;
 
 public interface TicketSelector {
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void loadCustomers() throws BasicException;
 
     public void setComponentEnabled(boolean value);

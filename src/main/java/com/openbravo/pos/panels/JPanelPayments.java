@@ -11,9 +11,6 @@ public class JPanelPayments extends JPanelTable {
     private PaymentsEditor jeditor;
     private DataLogicSales m_dlSales = null;
 
-    /**
-     * Creates a new instance of JPanelPayments
-     */
     public JPanelPayments() {
     }
 

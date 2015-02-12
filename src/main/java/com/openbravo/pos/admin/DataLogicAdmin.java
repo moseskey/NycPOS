@@ -13,9 +13,6 @@ public class DataLogicAdmin extends BeanFactoryDataSingle {
     private TableDefinition m_tresources;
 
 
-    /**
-     * Creates a new instance of DataLogicAdmin
-     */
     public DataLogicAdmin() {
     }
 

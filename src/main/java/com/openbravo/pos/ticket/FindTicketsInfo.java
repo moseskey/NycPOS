@@ -15,17 +15,10 @@ public class FindTicketsInfo implements SerializableRead {
     private String customer;
     private double total;
 
-    /**
-     * Creates new ProductInfo
-     */
     public FindTicketsInfo() {
 
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void readValues(DataRead dr) throws BasicException {
 

@@ -13,10 +13,6 @@ public class ScaleDialog implements Scale {
         this.parent = parent;
     }
 
-    /**
-     *
-     * @throws ScaleException
-     */
     @Override
     public Double readWeight() throws ScaleException {
 

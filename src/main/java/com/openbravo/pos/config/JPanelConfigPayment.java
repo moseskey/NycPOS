@@ -21,9 +21,6 @@ public class JPanelConfigPayment extends javax.swing.JPanel implements PanelConf
     private final Map<String, PaymentConfiguration> paymentsName = new HashMap<>();
     private PaymentConfiguration pc;
 
-    /**
-     * Creates new form JPanelConfigPayment
-     */
     public JPanelConfigPayment() {
 
         initComponents();

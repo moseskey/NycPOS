@@ -38,14 +38,11 @@ public class JPanelButtons extends javax.swing.JPanel {
 
     private JPanelTicket panelticket;
 
-    /**
-     * Creates new form JPanelButtons
-     */
     public JPanelButtons(String sConfigKey, JPanelTicket panelticket) {
         initComponents();
 
         // Load categories default thumbnail
-        tnbmacro = new ThumbNailBuilder(24, 24, "com/openbravo/images/run_script.png");
+        tnbmacro = new ThumbNailBuilder(24, 24, "/images/run_script.png");
 
         this.panelticket = panelticket;
 

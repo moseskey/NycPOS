@@ -67,9 +67,6 @@ public class ProductInfoExt {
     */
         public double m_dStockUnits;
 
-    /*
-     * Creates new ProductInfo
-     */
 
     public ProductInfoExt() {
         m_ID = null;                    //1

@@ -61,19 +61,12 @@ public class TicketParser extends DefaultHandler {
     private String pickupId;
 
 
-    /**
-     * Creates a new instance of TicketParser
-     */
     public TicketParser(DeviceTicket printer, DataLogicSystem system) {
         m_printer = printer;
         m_system = system;
         today = Calendar.getInstance().getTime();
     }
 
-    /**
-     *
-     * @throws TicketPrinterException
-     */
     public void printTicket(String sIn, TicketInfo ticket) throws TicketPrinterException {
 //       cUser=ticket.getUser().getName();
        cUser=ticket.getName();
@@ -91,18 +84,10 @@ public class TicketParser extends DefaultHandler {
 
     }
 
-    /**
-     *
-     * @throws TicketPrinterException
-     */
     public void printTicket(String sIn) throws TicketPrinterException {
         printTicket(new StringReader(sIn));
     }
 
-    /**
-     *
-     * @throws TicketPrinterException
-     */
     public void printTicket(Reader in) throws TicketPrinterException  {
 
         try {

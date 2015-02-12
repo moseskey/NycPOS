@@ -12,16 +12,10 @@ public class SelectPrinter extends javax.swing.JDialog {
     private String printservice;
     private boolean ok;
 
-    /**
-     * Creates new form SelectPrinter
-     */
     private SelectPrinter(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
     }
 
-    /**
-     * Creates new form SelectPrinter
-     */
     private SelectPrinter(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
     }

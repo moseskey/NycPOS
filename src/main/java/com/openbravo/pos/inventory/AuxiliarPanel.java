@@ -48,10 +48,6 @@ public class AuxiliarPanel extends JPanelTable2 {
         editor = new AuxiliarEditor(app, dirty);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         filter.activate();

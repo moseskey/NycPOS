@@ -10,9 +10,6 @@ public class MenuExecAction extends AbstractAction {
     private final AppView m_App;
     private final String m_sMyView;
 
-    /**
-     * Creates a new instance of MenuExecAction
-     */
     public MenuExecAction(AppView app, String icon, String keytext, String sMyView) {
         putValue(Action.SMALL_ICON, new ImageIcon(JPrincipalApp.class.getResource(icon)));
         putValue(Action.NAME, AppLocal.getIntString(keytext));

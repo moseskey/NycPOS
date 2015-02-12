@@ -13,9 +13,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
     // private DirtyManager m_Dirty = new DirtyManager();
     private String m_sID;
 
-    /**
-     * Creates new form LocationsEditor
-     */
     public LocationsView(DirtyManager dirty) {
         initComponents();
 
@@ -71,10 +68,6 @@ public final class LocationsView extends javax.swing.JPanel implements EditorRec
         m_jAddress.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
         Object[] location = new Object[3];

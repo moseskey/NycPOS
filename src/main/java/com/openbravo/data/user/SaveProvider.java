@@ -11,9 +11,6 @@ public class SaveProvider {
 
     protected SentenceExec m_sentdelete;
 
-    /**
-     * Creates a new instance of SavePrSentence
-     */
     public SaveProvider(SentenceExec sentupdate, SentenceExec sentinsert, SentenceExec sentdelete) {
         m_sentupdate = sentupdate;
         m_sentinsert = sentinsert;
@@ -36,10 +33,6 @@ public class SaveProvider {
         return m_sentdelete != null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public int deleteData(Object value) throws BasicException {
         return m_sentdelete.exec(value);
     }
@@ -48,10 +41,6 @@ public class SaveProvider {
         return m_sentinsert != null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public int insertData(Object value) throws BasicException {
         return m_sentinsert.exec(value);
     }
@@ -60,10 +49,6 @@ public class SaveProvider {
         return m_sentupdate != null;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public int updateData(Object value) throws BasicException {
         return m_sentupdate.exec(value);
     }

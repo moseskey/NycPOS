@@ -16,9 +16,6 @@ public class JTicketCatalogLines extends javax.swing.JPanel {
     private JRefundLines m_reflines;
     private CatalogSelector m_catalog;
 
-    /**
-     * Creates new form JTicketCatalogLines
-     */
     public JTicketCatalogLines(AppView app, JPanelTicketEdits jTicketEdit, boolean pricevisible, boolean taxesincluded, int width, int height) {
 
         DataLogicSystem dlSystem = null;
@@ -41,10 +38,6 @@ public class JTicketCatalogLines extends javax.swing.JPanel {
         showView("catalog");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void loadCatalog() throws BasicException {
         m_catalog.loadCatalog();
     }

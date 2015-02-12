@@ -15,9 +15,6 @@ public class JListNavigator extends javax.swing.JPanel implements BrowseListener
 
     protected BrowsableEditableData m_bd;
 
-    /**
-     * Creates new form JListBrowse
-     */
     public JListNavigator(BrowsableEditableData bd) {
         this(bd, false);
     }

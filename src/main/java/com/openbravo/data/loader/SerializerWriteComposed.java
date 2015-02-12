@@ -9,9 +9,6 @@ public class SerializerWriteComposed implements SerializerWrite {
 
     private List<SerializerWrite> serwrites = new ArrayList<SerializerWrite>();
 
-    /**
-     * Creates a new instance of SerializerWriteComposed
-     */
     public SerializerWriteComposed() {
     }
 
@@ -19,10 +16,6 @@ public class SerializerWriteComposed implements SerializerWrite {
         serwrites.add(sw);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public void writeValues(DataWrite dp, Object obj) throws BasicException {
 
         Object[] a = (Object[]) obj;

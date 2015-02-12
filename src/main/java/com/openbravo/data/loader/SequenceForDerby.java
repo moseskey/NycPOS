@@ -8,9 +8,6 @@ public class SequenceForDerby extends BaseSentence {
     private BaseSentence sent2;
     private BaseSentence sent3;
 
-    /**
-     * Creates a new instance of SequenceForMySQL
-     */
     public SequenceForDerby(Session s, String sSeqTable) {
 
         sent1 = new StaticSentence(s, "DELETE FROM  " + sSeqTable);
@@ -21,10 +18,6 @@ public class SequenceForDerby extends BaseSentence {
 
     // Funciones de bajo nivel
 
-    /**
-     *
-     * @throws BasicException
-     */
         @Override
     public DataResultSet openExec(Object params) throws BasicException {
         sent1.exec();
@@ -32,19 +25,11 @@ public class SequenceForDerby extends BaseSentence {
         return sent3.openExec(null);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public DataResultSet moreResults() throws BasicException {
         return sent3.moreResults();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void closeExec() throws BasicException {
         sent3.closeExec();

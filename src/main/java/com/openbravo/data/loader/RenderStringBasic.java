@@ -7,9 +7,6 @@ public class RenderStringBasic implements IRenderString {
     private Formats[] m_aFormats;
     private int[] m_aiIndex;
 
-    /**
-     * Creates a new instance of StringnizerBasic
-     */
     public RenderStringBasic(Formats[] fmts, int[] aiIndex) {
         m_aFormats = fmts;
         m_aiIndex = aiIndex;

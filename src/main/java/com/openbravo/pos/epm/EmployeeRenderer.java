@@ -10,11 +10,8 @@ public class EmployeeRenderer extends DefaultListCellRenderer {
 
     private Icon icoemployee;
 
-    /**
-     * Creates a new instance of EmployeeRenderer
-     */
     public EmployeeRenderer() {
-        icoemployee = new ImageIcon(getClass().getClassLoader().getResource("com/openbravo/images/user.png"));
+        icoemployee = new ImageIcon(getClass().getClassLoader().getResource("/images/user.png"));
     }
 
     @Override

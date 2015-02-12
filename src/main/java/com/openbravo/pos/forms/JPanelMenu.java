@@ -10,9 +10,6 @@ public class JPanelMenu extends JPanel implements JPanelView {
     private MenuDefinition m_menu;
     private boolean created = false;
 
-    /**
-     * Creates new form JStockMenu
-     */
     public JPanelMenu(MenuDefinition menu) {
 
         m_menu = menu;
@@ -31,10 +28,6 @@ public class JPanelMenu extends JPanel implements JPanelView {
         return m_menu.getTitle();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 

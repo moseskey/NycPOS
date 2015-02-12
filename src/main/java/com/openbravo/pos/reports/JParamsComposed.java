@@ -13,9 +13,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
 // JG 16 May 12 use diamond inference
     private List<ReportEditorCreator> editors = new ArrayList<>();
 
-    /**
-     * Creates new form JParamsComposed
-     */
     public JParamsComposed() {
         initComponents();
     }
@@ -27,10 +24,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
         }
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         for (ReportEditorCreator qbff : editors) {
@@ -55,10 +48,6 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

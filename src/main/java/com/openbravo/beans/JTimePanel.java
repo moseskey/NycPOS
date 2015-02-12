@@ -33,9 +33,6 @@ public class JTimePanel extends javax.swing.JPanel {
     private JButtonDate m_jbtnplusminute = null;
     private JButtonDate m_jbtnminusminute = null;
 
-    /**
-     * Creates new form JTimePanel
-     */
     public JTimePanel() {
         this(null, BUTTONS_ALL);
     }

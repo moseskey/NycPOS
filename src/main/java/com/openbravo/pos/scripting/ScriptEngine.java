@@ -11,10 +11,6 @@ public interface ScriptEngine {
 
     public Object get(String key);
 
-    /**
-     *
-     * @throws ScriptException
-     */
     public Object eval(String src) throws ScriptException;
 
 }

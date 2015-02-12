@@ -104,9 +104,6 @@ public class JRootApp extends JPanel implements AppView {
     }
 
 
-    /**
-     * Creates new form JRootApp
-     */
     public JRootApp() {
 
 // JG 16 May 2013 use multicatch
@@ -379,10 +376,6 @@ public class JRootApp extends JPanel implements AppView {
         return m_props;
     }
 
-    /**
-     *
-     * @throws BeanFactoryException
-     */
     @Override
     public Object getBean(String beanfactory) throws BeanFactoryException {
 
@@ -441,20 +434,20 @@ public class JRootApp extends JPanel implements AppView {
         m_oldclasses = new HashMap<>();
 
         // update bean names from 2.00 to 2.20
-        m_oldclasses.put("com.openbravo.pos.reports.JReportCustomers", "/com/openbravo/reports/customers.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportCustomersB", "/com/openbravo/reports/customersb.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportClosedPos", "/com/openbravo/reports/closedpos.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportClosedProducts", "/com/openbravo/reports/closedproducts.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JChartSales", "/com/openbravo/reports/chartsales.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportInventory", "/com/openbravo/reports/inventory.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportInventory2", "/com/openbravo/reports/inventoryb.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportInventoryBroken", "/com/openbravo/reports/inventorybroken.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportInventoryDiff", "/com/openbravo/reports/inventorydiff.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportPeople", "/com/openbravo/reports/people.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportTaxes", "/com/openbravo/reports/taxes.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportUserSales", "/com/openbravo/reports/usersales.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportProducts", "/com/openbravo/reports/products.bs");
-        m_oldclasses.put("com.openbravo.pos.reports.JReportCatalog", "/com/openbravo/reports/productscatalog.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportCustomers", "/reports/customers.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportCustomersB", "/reports/customersb.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportClosedPos", "/reports/closedpos.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportClosedProducts", "/reports/closedproducts.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JChartSales", "/reports/chartsales.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportInventory", "/reports/inventory.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportInventory2", "/reports/inventoryb.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportInventoryBroken", "/reports/inventorybroken.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportInventoryDiff", "/reports/inventorydiff.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportPeople", "/reports/people.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportTaxes", "/reports/taxes.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportUserSales", "/reports/usersales.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportProducts", "/reports/products.bs");
+        m_oldclasses.put("com.openbravo.pos.reports.JReportCatalog", "/reports/productscatalog.bs");
 
         // update bean names from 2.10 to 2.20
         m_oldclasses.put("com.openbravo.pos.panels.JPanelTax", "com.openbravo.pos.inventory.TaxPanel");

@@ -25,9 +25,6 @@ public class FindInfo implements Finder {
 
     private Vectorer m_vec;
 
-    /**
-     * Creates a new instance of FindInfo
-     */
     public FindInfo(Vectorer vec, String sText, int iField, boolean bMatchCase, int iMatch) {
         m_vec = vec;
         m_sText = sText;
@@ -46,9 +43,6 @@ public class FindInfo implements Finder {
         }
     }
 
-    /**
-     * Creates a new instance of FindInfo
-     */
     public FindInfo(Vectorer vec) {
         this(vec,  "", 0, true, MATCH_ANYPARTFIELD);
     }
@@ -73,10 +67,6 @@ public class FindInfo implements Finder {
         return m_iMatch;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public boolean match(Object obj) throws BasicException {
 
         String[] v = m_vec.getValues(obj);

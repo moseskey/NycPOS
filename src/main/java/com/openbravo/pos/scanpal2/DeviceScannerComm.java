@@ -29,9 +29,6 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
 
     private int m_iProductOrder;
 
-    /**
-     * Creates a new instance of ScanDeviceComm
-     */
     DeviceScannerComm(String sPort) {
         m_sPort = sPort;
 
@@ -41,10 +38,6 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
         m_in = null;
     }
 
-    /**
-     *
-     * @throws DeviceScannerException
-     */
     public void connectDevice() throws DeviceScannerException {
 
         try {
@@ -105,19 +98,11 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
         m_in = null;
     }
 
-    /**
-     *
-     * @throws DeviceScannerException
-     */
     public void startDownloadProduct() throws DeviceScannerException {
         writeLine(COMMAND_READ); // writeLine(COMMAND_READ);
         readCommand(COMMAND_ACK);
     }
 
-    /**
-     *
-     * @throws DeviceScannerException
-     */
     public ProductDownloaded recieveProduct() throws DeviceScannerException {
         byte[] line = readLine();
         if (checkCommand(COMMAND_OVER, line)) {
@@ -147,10 +132,6 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
         }
     }
 
-    /**
-     *
-     * @throws DeviceScannerException
-     */
     public void startUploadProduct() throws DeviceScannerException {
         // Inicializamos la conversacion
         writeLine(COMMAND_CIPHER);
@@ -158,10 +139,6 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
         m_iProductOrder = 0;
     }
 
-    /**
-     *
-     * @throws DeviceScannerException
-     */
     public void sendProduct(String sName, String sCode, Double dPrice) throws DeviceScannerException {
 
         m_iProductOrder++;
@@ -189,10 +166,6 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
         readCommand(COMMAND_ACK);
     }
 
-    /**
-     *
-     * @throws DeviceScannerException
-     */
     public void stopUploadProduct() throws DeviceScannerException {
         // Cerramos la conversacion
         writeLine(COMMAND_OVER);

@@ -19,9 +19,6 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
     private DataLogicCustomers dlCustomers;
     private CustomerInfo currentcustomer;
 
-    /**
-     * Creates new form JParamsCustomer
-     */
     public JParamsCustomer() {
 
         initComponents();
@@ -47,10 +44,6 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
         dlCustomers = (DataLogicCustomers) app.getBean("com.openbravo.pos.customers.DataLogicCustomers");
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
 
@@ -68,10 +61,6 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

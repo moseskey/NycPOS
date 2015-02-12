@@ -16,9 +16,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
     private Formats formatsvalue;
     private QBFCompareEnum comparevalue;
 
-    /**
-     * Creates new form JParamsText
-     */
     public JParamsText() {
         initComponents();
 
@@ -97,10 +94,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
     public void init(AppView app) {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         txtField.setText(null);
@@ -116,10 +109,6 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
         return this;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

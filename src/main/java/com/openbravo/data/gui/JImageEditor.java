@@ -29,9 +29,6 @@ public class JImageEditor extends javax.swing.JPanel {
     private static File m_fCurrentDirectory = null;
     private static NumberFormat m_percentformat = new DecimalFormat("#,##0.##%");
 
-    /**
-     * Creates new form JImageEditor
-     */
     public JImageEditor() {
         initComponents();
 

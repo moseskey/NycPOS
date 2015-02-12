@@ -56,9 +56,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
     private String customerDetails;
     private String tableName;
 
-    /**
-     * Creates new form JTicketsBagRestaurant
-     */
 
     public JTicketsBagRestaurantMap(AppView app, TicketsEditor panelticket) {
 

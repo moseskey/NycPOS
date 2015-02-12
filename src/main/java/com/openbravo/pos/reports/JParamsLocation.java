@@ -15,9 +15,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
     private SentenceList m_sentlocations;
     private ComboBoxValModel m_LocationsModel;
 
-    /**
-     * Creates new form JParamsLocation
-     */
     public JParamsLocation() {
         initComponents();
     }
@@ -32,10 +29,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
         m_LocationsModel = new ComboBoxValModel();
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public void activate() throws BasicException {
         List a = m_sentlocations.list();
@@ -67,10 +60,6 @@ public class JParamsLocation extends javax.swing.JPanel implements ReportEditorC
         m_jLocation.removeActionListener(l);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

@@ -24,9 +24,6 @@ public class SimpleReceipt extends javax.swing.JPanel {
     private TicketInfo ticket;
     private Object ticketext;
 
-    /**
-     * Creates new form SimpleReceipt
-     */
     public SimpleReceipt(String ticketline, DataLogicSales dlSales, DataLogicCustomers dlCustomers, TaxesLogic taxeslogic) {
 
         initComponents();

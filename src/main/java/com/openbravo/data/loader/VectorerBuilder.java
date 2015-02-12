@@ -5,22 +5,11 @@ import com.openbravo.basic.BasicException;
 
 public abstract class VectorerBuilder implements Vectorer {
 
-    /**
-     * Creates a new instance of VectorerBuilder
-     */
     public VectorerBuilder() {
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public abstract String[] getHeaders() throws BasicException;
 
-    /**
-     *
-     * @throws BasicException
-     */
     public String[] getValues(Object obj) throws BasicException {
 
         SerializableToArray s2a = new SerializableToArray();
@@ -32,9 +21,6 @@ public abstract class VectorerBuilder implements Vectorer {
 
         private ArrayList m_aParams;
 
-        /**
-         * Creates a new instance of MetaParameter
-         */
         public SerializableToArray() {
             m_aParams = new ArrayList();
         }

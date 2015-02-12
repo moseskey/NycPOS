@@ -15,10 +15,6 @@ public class VectorerBasic implements Vectorer {
         m_aiIndex = aiIndex;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public String[] getHeaders() throws BasicException {
 
         String[] asvalues = new String[m_aiIndex.length];
@@ -29,10 +25,6 @@ public class VectorerBasic implements Vectorer {
         return asvalues;
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     public String[] getValues(Object obj) throws BasicException {
         Object[] avalues = (Object[]) obj;
         String[] asvalues = new String[m_aiIndex.length];

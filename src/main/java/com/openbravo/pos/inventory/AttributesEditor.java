@@ -12,9 +12,6 @@ public final class AttributesEditor extends javax.swing.JPanel implements Editor
 
     private Object id;
 
-    /**
-     * Creates new form AttributesEditor
-     */
     public AttributesEditor(DirtyManager dirty) {
         initComponents();
 
@@ -55,10 +52,6 @@ public final class AttributesEditor extends javax.swing.JPanel implements Editor
         m_jName.setEnabled(true);
     }
 
-    /**
-     *
-     * @throws BasicException
-     */
     @Override
     public Object createValue() throws BasicException {
 

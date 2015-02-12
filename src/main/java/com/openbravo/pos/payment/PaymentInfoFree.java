@@ -6,9 +6,6 @@ public class PaymentInfoFree extends PaymentInfo {
     private double m_dTendered;
     private String m_dCardName =null;
 
-    /**
-     * Creates a new instance of PaymentInfoFree
-     */
     public PaymentInfoFree(double dTotal) {
         m_dTotal = dTotal;
     }

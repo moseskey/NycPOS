@@ -9,9 +9,6 @@ public class ParametersPrinter extends javax.swing.JPanel implements ParametersC
 
     private String othersizename = "standard";
 
-    /**
-     * Creates new form ParametersPrinter
-     */
     public ParametersPrinter(String [] printernames) {
         initComponents();
 

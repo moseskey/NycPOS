@@ -8,9 +8,6 @@ public class UserInfo implements Serializable {
     private final String m_sId;
     private final String m_sName;
 
-    /**
-     * Creates a new instance of UserInfoBasic
-     */
     public UserInfo(String id, String name) {
         m_sId = id;
         m_sName = name;
