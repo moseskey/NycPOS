@@ -377,7 +377,10 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
             super.getListCellRendererComponent(list, null, index, isSelected, cellHasFocus);
             CategoryInfo cat = (CategoryInfo) value;
             setText(cat.getName());
-            setIcon(new ImageIcon(tnbcat.getThumbNail(cat.getImage())));
+            System.out.println(">>> FIXME SmallCategoryRenderer: " + cat.getName() + " // " + cat.getImage());
+            if (cat.getImage() != null) {
+                setIcon(new ImageIcon(tnbcat.getThumbNail(cat.getImage())));
+            }
             return this;
         }
     }

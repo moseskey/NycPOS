@@ -30,8 +30,10 @@ public class ImageUtils {
     }
 
     public static byte[] getBytesFromResource(String file) {
-
-        InputStream in = ImageUtils.class.getResourceAsStream(file);
+        //InputStream in = ImageUtils.class.getResourceAsStream(file);
+        //InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(file);
+        InputStream in = ClassLoader.class.getResourceAsStream(file);
+        System.out.println(">> ImageUtils.getBytesFromResource: " + file + " // " + in);
 
         if (in == null) {
             return null;

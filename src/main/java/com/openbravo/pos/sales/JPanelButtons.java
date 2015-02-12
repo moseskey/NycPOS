@@ -157,6 +157,7 @@ public class JPanelButtons extends javax.swing.JPanel {
 
             setName(sKey);
             setText(title);
+            System.out.println(">>> JButtonFunc(): " + sImage);
             setIcon(new ImageIcon(tnbmacro.getThumbNail(panelticket.getResourceAsImage(sImage))));
             setFocusPainted(false);
             setFocusable(false);
