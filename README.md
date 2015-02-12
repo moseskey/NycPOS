@@ -41,3 +41,30 @@ strip out the awt/swing interface for JavaFX 8, and otherwise modernize the
 code base. Much work has already been done to this effect, however there is
 still a long, uphill battle in front of us, due to the poor state of the
 existing code base.
+
+### Stated Project Goals
+
+NycPOS is an attempt to create a truly open, modern POS ready for use by
+small-to-medium businesses ("small enterprises") with one or more retail
+locations, notably restaurants, groceries, or other plain, small
+brick-and-mortar businesses. It does not aim to be a "one-size-fits-all" retail
+or ERP environment. Please look to other projects if that is your specific
+use-case.
+
+### Project TODO
+
+In line with the above, we are currently working on the following (in no
+specific or promised delivery order):
+
+* Converting AWT/Swing UI to JavaFX 8
+* Modernizing the database structure, scripts
+* Fixing database upgrades 
+* Fixing broken scripts/templates
+* Adding multiple templates for various types of businesses
+  (restaurant/grocery/etc)
+* Revamping entire system to support multiple displays, printers, and other
+  peripherals in a much easier to use, simplified UI
+* Adding a full unit test suite
+* Greatly expanding payment gateway support and consolidating configuration
+  screens
+* Adding support for NFC and other "modern" payment peripherals
