@@ -1,7 +1,3 @@
---    uniCenta oPOS - Touch Friendly Point Of Sale
---    Copyright (C) 2009-2014 uniCenta
---    http://www.unicenta.net
-
 --    This file is part of uniCenta oPOS.
 --
 --    uniCenta oPOS is free software: you can redistribute it and/or modify
