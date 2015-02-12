@@ -64,6 +64,7 @@ In line with the above, we are currently working on the following (in no
 specific or promised delivery order):
 
 * Fix broken AWT/Swing screens
+* Change all binary (image) assets to better / standardized open icon set
 * Fix and write unit tests for peripherals
 * Fix dependency issues
 * Unit tests, travis deployment
