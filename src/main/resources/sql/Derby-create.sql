@@ -1,5 +1,4 @@
 -- Database create script for DERBY
--- Copyright (c) 2009-2014 uniCenta
 -- v3.70
 
 CREATE TABLE APPLICATIONS (
