@@ -25,7 +25,7 @@
     <Component class="javax.swing.JButton" name="m_jKey0">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btn0.png"/>
+          <Image iconType="3" name="/images/btn0.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -43,7 +43,7 @@
     <Component class="javax.swing.JButton" name="m_jKey1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btn1.png"/>
+          <Image iconType="3" name="/images/btn1.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -61,7 +61,7 @@
     <Component class="javax.swing.JButton" name="m_jKey4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btn4a.png"/>
+          <Image iconType="3" name="/images/btn4a.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -79,7 +79,7 @@
     <Component class="javax.swing.JButton" name="m_jKey7">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btn7a.png"/>
+          <Image iconType="3" name="/images/btn7a.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -97,7 +97,7 @@
     <Component class="javax.swing.JButton" name="m_jCE">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btnce.png"/>
+          <Image iconType="3" name="/images/btnce.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -115,7 +115,7 @@
     <Component class="javax.swing.JButton" name="m_jMinus">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btnminus.png"/>
+          <Image iconType="3" name="/images/btnminus.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -133,7 +133,7 @@
     <Component class="javax.swing.JButton" name="m_jKey9">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btn9a.png"/>
+          <Image iconType="3" name="/images/btn9a.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -151,7 +151,7 @@
     <Component class="javax.swing.JButton" name="m_jKey8">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btn8a.png"/>
+          <Image iconType="3" name="/images/btn8a.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -169,7 +169,7 @@
     <Component class="javax.swing.JButton" name="m_jKey5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btn5a.png"/>
+          <Image iconType="3" name="/images/btn5a.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -187,7 +187,7 @@
     <Component class="javax.swing.JButton" name="m_jKey6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btn6a.png"/>
+          <Image iconType="3" name="/images/btn6a.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -205,7 +205,7 @@
     <Component class="javax.swing.JButton" name="m_jKey3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btn3a.png"/>
+          <Image iconType="3" name="/images/btn3a.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -223,7 +223,7 @@
     <Component class="javax.swing.JButton" name="m_jKey2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btn2a.png"/>
+          <Image iconType="3" name="/images/btn2a.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
@@ -241,7 +241,7 @@
     <Component class="javax.swing.JButton" name="m_jKeyDot">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/btndot.png"/>
+          <Image iconType="3" name="/images/btndot.png"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>

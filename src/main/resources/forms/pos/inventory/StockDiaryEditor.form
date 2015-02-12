@@ -97,7 +97,7 @@
         <Component class="javax.swing.JButton" name="m_jbtndate">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/date.png"/>
+              <Image iconType="3" name="/images/date.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Open Calendar"/>
           </Properties>
@@ -186,7 +186,7 @@
         <Component class="javax.swing.JButton" name="jEditProduct">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/search24.png"/>
+              <Image iconType="3" name="/images/search24.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Search Product List"/>
           </Properties>
@@ -266,7 +266,7 @@
         <Component class="javax.swing.JButton" name="m_jEnter">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/barcode.png"/>
+              <Image iconType="3" name="/images/barcode.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Get Barcode"/>
             <Property name="focusPainted" type="boolean" value="false"/>
@@ -333,7 +333,7 @@
         <Component class="javax.swing.JButton" name="m_jEnter1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/products.png"/>
+              <Image iconType="3" name="/images/products.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Enter Product ID"/>
             <Property name="focusPainted" type="boolean" value="false"/>
@@ -398,7 +398,7 @@
         <Component class="javax.swing.JButton" name="jEditAttributes">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/attributes.png"/>
+              <Image iconType="3" name="/images/attributes.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Product Attributes"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

@@ -78,7 +78,7 @@
                 <Component class="javax.swing.JButton" name="jButton1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/com/openbravo/images/customer_add_sml.png"/>
+                      <Image iconType="3" name="/images/customer_add_sml.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Go to Customers"/>
                     <Property name="focusPainted" type="boolean" value="false"/>
@@ -104,7 +104,7 @@
                 <Component class="javax.swing.JButton" name="btnCustomer">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/com/openbravo/images/customer_sml.png"/>
+                      <Image iconType="3" name="/images/customer_sml.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Find Customers"/>
                     <Property name="focusPainted" type="boolean" value="false"/>
@@ -130,7 +130,7 @@
                 <Component class="javax.swing.JButton" name="btnSplit">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/com/openbravo/images/sale_split_sml.png"/>
+                      <Image iconType="3" name="/images/sale_split_sml.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Split Sale"/>
                     <Property name="focusPainted" type="boolean" value="false"/>
@@ -188,7 +188,7 @@
                               <Font name="Arial" size="11" style="0"/>
                             </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/com/openbravo/images/scale.png"/>
+                              <Image iconType="3" name="/images/scale.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                               <ResourceString bundle="pos_messages.properties" key="button.scale" replaceFormat="AppLocal.getIntString(&quot;{key}&quot;)"/>
@@ -242,7 +242,7 @@
                         <Component class="javax.swing.JButton" name="j_btnKitchenPrt">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/com/openbravo/images/printer24.png"/>
+                              <Image iconType="3" name="/images/printer24.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                               <ResourceString bundle="pos_messages.properties" key="button.sendorder" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
@@ -344,7 +344,7 @@
                     <Component class="javax.swing.JButton" name="m_jUp">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/com/openbravo/images/1uparrow.png"/>
+                          <Image iconType="3" name="/images/1uparrow.png"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="Scroll Up a Line"/>
                         <Property name="focusPainted" type="boolean" value="false"/>
@@ -370,7 +370,7 @@
                     <Component class="javax.swing.JButton" name="m_jDown">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/com/openbravo/images/1downarrow.png"/>
+                          <Image iconType="3" name="/images/1downarrow.png"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="Scroll Down a Line"/>
                         <Property name="focusPainted" type="boolean" value="false"/>
@@ -396,7 +396,7 @@
                     <Component class="javax.swing.JButton" name="m_jDelete">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/com/openbravo/images/editdelete.png"/>
+                          <Image iconType="3" name="/images/editdelete.png"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="Remove Line"/>
                         <Property name="focusPainted" type="boolean" value="false"/>
@@ -422,7 +422,7 @@
                     <Component class="javax.swing.JButton" name="m_jList">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/com/openbravo/images/search32.png"/>
+                          <Image iconType="3" name="/images/search32.png"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="Product Search"/>
                         <Property name="focusPainted" type="boolean" value="false"/>
@@ -448,7 +448,7 @@
                     <Component class="javax.swing.JButton" name="m_jEditLine">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/com/openbravo/images/sale_editline.png"/>
+                          <Image iconType="3" name="/images/sale_editline.png"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="Edit Line"/>
                         <Property name="focusPainted" type="boolean" value="false"/>
@@ -474,7 +474,7 @@
                     <Component class="javax.swing.JButton" name="jEditAttributes">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/com/openbravo/images/attributes.png"/>
+                          <Image iconType="3" name="/images/attributes.png"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="Choose Attributes"/>
                         <Property name="focusPainted" type="boolean" value="false"/>
@@ -847,7 +847,7 @@
                     <Component class="javax.swing.JButton" name="m_jEnter">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/com/openbravo/images/barcode.png"/>
+                          <Image iconType="3" name="/images/barcode.png"/>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value="Get Barcode"/>
                         <Property name="focusPainted" type="boolean" value="false"/>

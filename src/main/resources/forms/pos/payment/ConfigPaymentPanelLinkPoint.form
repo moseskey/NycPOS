@@ -149,7 +149,7 @@
           <Font name="Arial" size="12" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/fileopen.png"/>
+          <Image iconType="3" name="/images/fileopen.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Open Folder"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

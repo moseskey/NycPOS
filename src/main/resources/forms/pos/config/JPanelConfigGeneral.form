@@ -377,7 +377,7 @@
             <Component class="javax.swing.JButton" name="jbtnLogoName">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/fileopen.png"/>
+                  <Image iconType="3" name="/images/fileopen.png"/>
                 </Property>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[64, 32]"/>
@@ -398,7 +398,7 @@
             <Component class="javax.swing.JButton" name="jbtnLogoText">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/fileopen.png"/>
+                  <Image iconType="3" name="/images/fileopen.png"/>
                 </Property>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[64, 32]"/>

@@ -127,7 +127,7 @@
     <Component class="javax.swing.JButton" name="Enter1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/products24.png"/>
+          <Image iconType="3" name="/images/products24.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Enter Product ID"/>
       </Properties>
@@ -164,7 +164,7 @@
     <Component class="javax.swing.JButton" name="Enter2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/barcode.png"/>
+          <Image iconType="3" name="/images/barcode.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Get Barcode"/>
       </Properties>
@@ -191,7 +191,7 @@
     <Component class="javax.swing.JButton" name="search">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/search24.png"/>
+          <Image iconType="3" name="/images/search24.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Search Products"/>
       </Properties>

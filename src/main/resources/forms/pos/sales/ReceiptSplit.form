@@ -45,7 +45,7 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/cancel.png"/>
+              <Image iconType="3" name="/images/cancel.png"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="pos_messages.properties" key="Button.Cancel" replaceFormat="AppLocal.getIntString(&quot;{key}&quot;)"/>
@@ -67,7 +67,7 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/ok.png"/>
+              <Image iconType="3" name="/images/ok.png"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="pos_messages.properties" key="Button.OK" replaceFormat="AppLocal.getIntString(&quot;{key}&quot;)"/>
@@ -115,7 +115,7 @@
             <Component class="javax.swing.JButton" name="jBtnToRightAll">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/2rightarrow.png"/>
+                  <Image iconType="3" name="/images/2rightarrow.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Split All Line Items"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
@@ -137,7 +137,7 @@
             <Component class="javax.swing.JButton" name="jBtnToRightOne">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/1rightarrow.png"/>
+                  <Image iconType="3" name="/images/1rightarrow.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Split only one of the Line Items"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
@@ -159,7 +159,7 @@
             <Component class="javax.swing.JButton" name="jBtnToLeftOne">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/1leftarrow.png"/>
+                  <Image iconType="3" name="/images/1leftarrow.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Un-Split only one of the Line Items"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
@@ -181,7 +181,7 @@
             <Component class="javax.swing.JButton" name="jBtnToLeftAll">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/2leftarrow.png"/>
+                  <Image iconType="3" name="/images/2leftarrow.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Un-Split All Line Items"/>
                 <Property name="focusPainted" type="boolean" value="false"/>

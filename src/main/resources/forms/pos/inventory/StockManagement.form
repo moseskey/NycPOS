@@ -88,7 +88,7 @@
         <Component class="javax.swing.JButton" name="m_jbtndate">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/date.png"/>
+              <Image iconType="3" name="/images/date.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Open Calendar"/>
           </Properties>
@@ -217,7 +217,7 @@
         <Component class="javax.swing.JButton" name="m_jUp">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/1uparrow.png"/>
+              <Image iconType="3" name="/images/1uparrow.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Scroll Up a Line"/>
             <Property name="focusPainted" type="boolean" value="false"/>
@@ -239,7 +239,7 @@
         <Component class="javax.swing.JButton" name="m_jDown">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/1downarrow.png"/>
+              <Image iconType="3" name="/images/1downarrow.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Scroll Down a Line"/>
             <Property name="focusPainted" type="boolean" value="false"/>
@@ -261,7 +261,7 @@
         <Component class="javax.swing.JButton" name="m_jDelete">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/editdelete.png"/>
+              <Image iconType="3" name="/images/editdelete.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Remove Line"/>
             <Property name="focusPainted" type="boolean" value="false"/>
@@ -283,7 +283,7 @@
         <Component class="javax.swing.JButton" name="jEditAttributes">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/attributes.png"/>
+              <Image iconType="3" name="/images/attributes.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Attrubutes"/>
             <Property name="focusPainted" type="boolean" value="false"/>
@@ -468,7 +468,7 @@
             <Component class="javax.swing.JButton" name="m_jEnter">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/barcode.png"/>
+                  <Image iconType="3" name="/images/barcode.png"/>
                 </Property>
                 <Property name="focusPainted" type="boolean" value="false"/>
                 <Property name="focusable" type="boolean" value="false"/>

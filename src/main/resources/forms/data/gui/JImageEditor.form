@@ -28,7 +28,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/no_photo.png"/>
+              <Image iconType="3" name="/images/no_photo.png"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
@@ -67,7 +67,7 @@
             <Component class="javax.swing.JButton" name="m_jbtnopen">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/camera.png"/>
+                  <Image iconType="3" name="/images/camera.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Open Folder"/>
               </Properties>
@@ -78,7 +78,7 @@
             <Component class="javax.swing.JButton" name="m_jbtnclose">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/fileclose.png"/>
+                  <Image iconType="3" name="/images/fileclose.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Remove Picture"/>
               </Properties>
@@ -89,7 +89,7 @@
             <Component class="javax.swing.JButton" name="m_jbtnzoomin">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/viewmag+.png"/>
+                  <Image iconType="3" name="/images/viewmag+.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Zoom In"/>
               </Properties>
@@ -123,7 +123,7 @@
             <Component class="javax.swing.JButton" name="m_jbtnzoomout">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/viewmag-.png"/>
+                  <Image iconType="3" name="/images/viewmag-.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Zoom Out"/>
               </Properties>

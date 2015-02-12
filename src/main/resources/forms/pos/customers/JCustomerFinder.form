@@ -349,7 +349,7 @@
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/com/openbravo/images/reload.png"/>
+                          <Image iconType="3" name="/images/reload.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                           <ResourceString bundle="pos_messages.properties" key="button.reset" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
@@ -371,7 +371,7 @@
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/com/openbravo/images/ok.png"/>
+                          <Image iconType="3" name="/images/ok.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                           <ResourceString bundle="pos_messages.properties" key="button.executefilter" replaceFormat="AppLocal.getIntString(&quot;{key}&quot;)"/>
@@ -458,7 +458,7 @@
                       <Font name="Arial" size="12" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/com/openbravo/images/cancel.png"/>
+                      <Image iconType="3" name="/images/cancel.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                       <ResourceString bundle="pos_messages.properties" key="Button.Cancel" replaceFormat="AppLocal.getIntString(&quot;{key}&quot;)"/>
@@ -477,7 +477,7 @@
                 <Component class="javax.swing.JButton" name="jcmdOK">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/com/openbravo/images/ok.png"/>
+                      <Image iconType="3" name="/images/ok.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                       <ResourceString bundle="pos_messages.properties" key="Button.OK" replaceFormat="AppLocal.getIntString(&quot;{key}&quot;)"/>

@@ -126,7 +126,7 @@
             <Component class="javax.swing.JButton" name="m_jButtonAdd">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/btnplus.png"/>
+                  <Image iconType="3" name="/images/btnplus.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Add Part Payment"/>
               </Properties>
@@ -137,7 +137,7 @@
             <Component class="javax.swing.JButton" name="m_jButtonRemove">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/btnminus.png"/>
+                  <Image iconType="3" name="/images/btnminus.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Delete Part Payment"/>
               </Properties>
@@ -206,7 +206,7 @@
                   <Font name="Arial" size="12" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/cancel.png"/>
+                  <Image iconType="3" name="/images/cancel.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                   <ResourceString bundle="pos_messages.properties" key="Button.Cancel" replaceFormat="AppLocal.getIntString(&quot;{key}&quot;)"/>
@@ -231,7 +231,7 @@
                   <Font name="Arial" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/openbravo/images/ok.png"/>
+                  <Image iconType="3" name="/images/ok.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                   <ResourceString bundle="pos_messages.properties" key="Button.OK" replaceFormat="AppLocal.getIntString(&quot;{key}&quot;)"/>
@@ -258,7 +258,7 @@
         <Component class="javax.swing.JToggleButton" name="m_jButtonPrint">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/printer24_off.png"/>
+              <Image iconType="3" name="/images/printer24_off.png"/>
             </Property>
             <Property name="selected" type="boolean" value="true"/>
             <Property name="toolTipText" type="java.lang.String" value="Print Receipt"/>
@@ -269,7 +269,7 @@
             </Property>
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/openbravo/images/printer24.png"/>
+              <Image iconType="3" name="/images/printer24.png"/>
             </Property>
           </Properties>
           <Events>

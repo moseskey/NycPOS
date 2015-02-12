@@ -31,7 +31,7 @@
     <Component class="javax.swing.JButton" name="m_DelTicket">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/sale_delete.png"/>
+          <Image iconType="3" name="/images/sale_delete.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Delete Current Order"/>
         <Property name="focusPainted" type="boolean" value="false"/>
@@ -57,7 +57,7 @@
     <Component class="javax.swing.JButton" name="m_MoveTable">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/movetable.png"/>
+          <Image iconType="3" name="/images/movetable.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Move Table"/>
         <Property name="focusPainted" type="boolean" value="false"/>
@@ -83,7 +83,7 @@
     <Component class="javax.swing.JButton" name="m_TablePlan">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/tables.png"/>
+          <Image iconType="3" name="/images/tables.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Go to Table Plan"/>
         <Property name="focusPainted" type="boolean" value="false"/>
@@ -109,7 +109,7 @@
     <Component class="javax.swing.JButton" name="m_KitchenPrint">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/openbravo/images/printer24.png"/>
+          <Image iconType="3" name="/images/printer24.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Send to Kichen Printer"/>
         <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
