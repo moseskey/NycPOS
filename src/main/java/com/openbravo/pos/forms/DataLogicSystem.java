@@ -8,6 +8,8 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.net.URL;
+import java.net.MalformedURLException;
 import java.util.*;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -73,12 +75,21 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
             @Override
             public Object readValues(DataRead dr) throws BasicException {
                 return new AppUser(
-                        dr.getString(1),
-                        dr.getString(2),
-                        dr.getString(3),
-                        dr.getString(4),
-                        dr.getString(5),
-                        new ImageIcon(tnb.getThumbNail(ImageUtils.readImage(dr.getBytes(6)))));
+                    dr.getString(1),
+                    dr.getString(2),
+                    dr.getString(3),
+                    dr.getString(4),
+                    dr.getString(5),
+
+                    //new ImageIcon(tnb.getThumbNail(ImageUtils.readImage(dr.getBytes(6))))
+                    // FIXME -- pulling the image from the database is broken, so temporary fix until
+                    // FIXME -- all of the awt/swing UI can be swapped out for something better
+                    //new ImageIcon(new URL("classpath:/images/no-img.png"))
+                    //new ImageIcon(getClass().getClassLoader().getResourceAsStream("/images/no-img.png"))
+                    //new ImageIcon(Thread.currentThread().getContextClassLoader().getResourceAsStream("/images/no-img.png"))
+                    new ImageIcon("classpath:/images/no-img.png")
+
+                );
             }
         };
 
