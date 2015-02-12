@@ -4,16 +4,16 @@
 --
 -- UPDATE existing tables
 --
-UPDATE ROLES SET PERMISSIONS = $FILE{/com/openbravo/pos/templates/Role.Administrator.xml} WHERE ID = '0';
+UPDATE ROLES SET PERMISSIONS = $FILE{/templates/default/Role.Administrator.xml} WHERE ID = '0';
 
-UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Menu.Root.txt} WHERE ID = '0';
-UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Printer.CloseCash.xml} WHERE ID = '25';
-UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Printer.CustomerPaid.XML} WHERE ID = '26';
-UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Printer.CustomerPaid2.xml} WHERE ID = '27';
-UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Printer.PartialCash.xml} WHERE ID = '31';
-UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Printer.Ticket.xml} WHERE ID = '33';
-UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Printer.Ticket2.xml} WHERE ID = '34';
-UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Printer.TicketPreview.xml} WHERE ID = '37';
+UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Menu.Root.txt} WHERE ID = '0';
+UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Printer.CloseCash.xml} WHERE ID = '25';
+UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Printer.CustomerPaid.XML} WHERE ID = '26';
+UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Printer.CustomerPaid2.xml} WHERE ID = '27';
+UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Printer.PartialCash.xml} WHERE ID = '31';
+UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Printer.Ticket.xml} WHERE ID = '33';
+UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Printer.Ticket2.xml} WHERE ID = '34';
+UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Printer.TicketPreview.xml} WHERE ID = '37';
 
 --
 -- ALTER existing tables

@@ -8,7 +8,7 @@ CREATE TABLE APPJL (
   );
 
 -- Add new resource file
-INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES('56', 'Printer.TicketClose', 0, $FILE{/com/openbravo/pos/templates/Printer.TicketClose.txt});
+INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES('56', 'Printer.TicketClose', 0, $FILE{/templates/default/Printer.TicketClose.txt});
 
 
 -- PRODUCT

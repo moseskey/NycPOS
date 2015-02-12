@@ -3,11 +3,11 @@
 
 -- RESOURCES
 -- ABSTRACTED TO SEPARATE DOWNLOAD SO AS NOT TO OVERWRITE EXISTING USER SETTINGS
--- UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Printer.TicketKitchen.xml} WHERE ID = '35';
--- UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Printer.TicketLine.xml} WHERE ID = '36';
--- UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/Printer.TicketPreview.xml} WHERE ID = '37';
+-- UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Printer.TicketKitchen.xml} WHERE ID = '35';
+-- UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Printer.TicketLine.xml} WHERE ID = '36';
+-- UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/Printer.TicketPreview.xml} WHERE ID = '37';
 
-UPDATE RESOURCES SET CONTENT = $FILE{/com/openbravo/pos/templates/script.ReceiptConsolidate.xml} WHERE ID = '43';
+UPDATE RESOURCES SET CONTENT = $FILE{/templates/default/script.ReceiptConsolidate.xml} WHERE ID = '43';
 
 -- PRODUCT
 ALTER TABLE PRODUCTS ADD COLUMN DISPLAY VARCHAR(255);

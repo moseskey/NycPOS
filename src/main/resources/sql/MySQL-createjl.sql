@@ -8,7 +8,7 @@ CREATE TABLE APPJL (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Add new resource file
-INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES('56', 'Printer.TicketClose', 0, $FILE{/com/openbravo/pos/templates/Printer.TicketClose.xml});
+INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES('56', 'Printer.TicketClose', 0, $FILE{/templates/default/Printer.TicketClose.xml});
 
 -- PRODUCT
 ALTER TABLE PRODUCTS ADD COLUMN ISVPRICE BIT DEFAULT b'0' NOT NULL;
