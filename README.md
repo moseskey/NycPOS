@@ -81,3 +81,5 @@ specific or promised delivery order):
   peripherals in easier to use, simplified UI
 * Expand payment gateway support and consolidate/simplify configuration screens
   * Add support for NFC and other "modern" payment peripherals
+* Swap Apache Derby for SQLite for simple installations
+* Create standalone distributions and installers for Linux, OS X, Windows
