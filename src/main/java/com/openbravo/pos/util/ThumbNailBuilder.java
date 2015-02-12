@@ -3,6 +3,7 @@ package com.openbravo.pos.util;
 import java.awt.image.*;
 import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 
@@ -18,15 +19,14 @@ public class ThumbNailBuilder {
 
     public ThumbNailBuilder(int width, int height, Image imgdef) {
         init(width, height, imgdef);
-
     }
 
     public ThumbNailBuilder(int width, int height, String img) {
-
         Image defimg;
         try {
-            System.out.println(">>> " + getClass().getClassLoader().getResourceAsStream(img));
-            init(width, height, ImageIO.read(getClass().getClassLoader().getResourceAsStream(img)));
+            //init(width, height, ImageIO.read(getClass().getClassLoader().getResource(img)));
+            System.out.println(">> ThumbNailBuilder: " + width + ", " + height + ": " + img);
+            init(width, height, ImageIO.read(new URL("classpath:" + img)));
         } catch (IOException fnfe) {
             init(width, height, null);
         }
