@@ -58,20 +58,25 @@ brick-and-mortar businesses. It does not aim to be a "one-size-fits-all" retail
 or ERP environment. Please look to other projects if that is your specific
 use-case.
 
-### Project TODO
+### TODO
 
 In line with the above, we are currently working on the following (in no
 specific or promised delivery order):
 
-* Converting AWT/Swing UI to JavaFX 8
-* Modernizing the database structure, scripts
-* Fixing database upgrades 
-* Fixing broken scripts/templates
-* Adding multiple templates for various types of businesses
-  (restaurant/grocery/etc)
-* Revamping entire system to support multiple displays, printers, and other
-  peripherals in a much easier to use, simplified UI
-* Adding a full unit test suite
-* Greatly expanding payment gateway support and consolidating configuration
-  screens
-* Adding support for NFC and other "modern" payment peripherals
+* Fix broken AWT/Swing screens
+* Fix and write unit tests for peripherals
+* Fix dependency issues
+* Unit tests, travis deployment
+* Convert AWT/Swing UI to JavaFX 8
+* Modernize database schema/structure/scripts
+  * Standardize database schema (reflection?)
+  * Swap out hard coded SQL for ORM/generated scripts (jOOQ?)
+  * Separate sample data from scripts into template resource files 
+* Fix database upgrades/migrations (Flyway in conjunction with jOOQ?)
+* Fix broken scripts in template resources
+  * Add multiple templates for various types of businesses
+    (restaurant/grocery/etc)
+* Revamp system to support multiple displays, printers, cash drawers and other
+  peripherals in easier to use, simplified UI
+* Expand payment gateway support and consolidate/simplify configuration screens
+  * Add support for NFC and other "modern" payment peripherals
