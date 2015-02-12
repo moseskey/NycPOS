@@ -1,10 +1,10 @@
 # About NycPOS
-This is a full rewrite of OpenBravo POS/uniCenta oPOS using modern development
-tools, methods, and libraries. Additionally, once complete, it will carry a
-full new UI written using modern Java UI (likely JavaFX 8), and more consistent
-themeing. An attempt is being made to salvage as much of the original code as
-possible, in order to provide an upgrade path for those currently on outdated
-versions of OpenBravo/uniCenta.
+This is a full, top-down rewrite of OpenBravo POS/uniCenta oPOS using modern
+development tools, methods, and libraries. Additionally, once complete, it will
+carry a full new UI written using modern Java UI (likely JavaFX 8), and more
+consistent themeing. An attempt is being made to salvage as much of the
+original code as possible, in order to provide an upgrade path for those
+currently on outdated versions of OpenBravo/uniCenta.
 
 Please be advised that this project is currently in a state of flux, however it
 is currently able to compile "out of the box." However, it is nowhere near
