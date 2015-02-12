@@ -14,11 +14,6 @@ import org.pushingpixels.substance.api.SubstanceLookAndFeel;
 import org.pushingpixels.substance.api.SubstanceSkin;
 import com.openbravo.pos.ticket.TicketInfo;
 
-
-// JG 16 May 2013 deprecated for pushingpixels
-// import org.jvnet.substance.SubstanceLookAndFeel;
-// import org.jvnet.substance.api.SubstanceSkin;
-
 public class StartPOS {
 
     private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.StartPOS");
@@ -28,8 +23,7 @@ public class StartPOS {
     }
 
     public static boolean registerApp() {
-
-        // vemos si existe alguna instancia
+        // check if there is another instance running
         InstanceQuery i = null;
         try {
             i = new InstanceQuery();
@@ -42,11 +36,9 @@ public class StartPOS {
     }
 
     public static void main (final String args[]) {
-
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-
                 if (!registerApp()) {
                     System.exit(1);
                 }
@@ -73,7 +65,6 @@ public class StartPOS {
 
                 // Set the look and feel.
                 try {
-
                     Object laf = Class.forName(config.getProperty("swing.defaultlaf")).newInstance();
                     if (laf instanceof LookAndFeel){
                         UIManager.setLookAndFeel((LookAndFeel) laf);
