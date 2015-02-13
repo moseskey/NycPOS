@@ -82,7 +82,7 @@ specific or promised delivery order):
 * Create standalone distributions and installers for Linux, OS X, Windows
 * Expand payment gateway support and consolidate/simplify configuration screens
   * Add support for NFC and other "modern" payment peripherals
-* Swap Apache Derby for SQLite for simple installations
+* Swap Apache Derby for H2/SQLite for simple installations
 * Add option to operate as client/server and eliminate direct database access
   in client (for security/sanity purposes)
   * Isolate business logic from client logic
