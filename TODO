@@ -1,6 +1,8 @@
 Replace database creation/migration with liquibase
+Fix application startup code paths (currently massively, horribly coded)
 Verify all databases work correctly with inventory & stock (write unit tests to this effect)
 Retool database selection screen
+Fix remaining resources and property files
 Check peripherals (printers, mag card readers)
 Check all jasper reports
 Fix remaining awt/swing screens
