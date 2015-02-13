@@ -21,8 +21,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class JPanelResetPickupId extends JPanel implements JPanelView {
-
-
     private AppConfig config;
     private Connection con;
     private String sdbmanager;
@@ -45,8 +43,7 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
     }
 
     public void performReset() {
-
-        if ("HSQL Database Engine".equals(sdbmanager)) {
+        if (false) { /*"HSQL Database Engine".equals(sdbmanager)) {
             SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
             try {
                 stmt.executeUpdate(SQL);
@@ -75,15 +72,15 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
             SQL =  "UPDATE PICKUP_NUMBER SET ID=0";
             try {
                 stmt.executeUpdate(SQL);
-            } catch (SQLException e) {System.out.println(e.getMessage());}
+            } catch (SQLException e) {System.out.println(e.getMessage());}*/
         } else {
             SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
             try {
                 stmt.executeUpdate(SQL);
             } catch (SQLException e) {System.out.println(e.getMessage());}
         }
-        JOptionPane.showMessageDialog(this, "Reset complete.");
 
+        JOptionPane.showMessageDialog(this, "Reset complete.");
     }
 
     @Override
@@ -208,14 +205,12 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnUpdateActionPerformed(java.awt.event.ActionEvent
-                                           evt) {//GEN-FIRST:event_jbtnUpdateActionPerformed
+    private void jbtnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnUpdateActionPerformed
         performReset();
 
     }//GEN-LAST:event_jbtnUpdateActionPerformed
 
-    private void jbtnExitActionPerformed(java.awt.event.ActionEvent
-                                         evt) {//GEN-FIRST:event_jbtnExitActionPerformed
+    private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
         deactivate();
         System.exit(0);
     }//GEN-LAST:event_jbtnExitActionPerformed

@@ -1,7 +1,7 @@
 package com.openbravo.data.loader;
 
-public class SessionDBGeneric implements SessionDB {
-
+public class SessionDBGeneric /*implements SessionDB*/ {
+/*
     private String name;
 
     public SessionDBGeneric(String name) {
@@ -36,5 +36,5 @@ public class SessionDBGeneric implements SessionDB {
     public SentenceFind resetSequenceSentence(Session s, String sequence) {
         return new StaticSentence(s, "ALTER SEQUENCE " + sequence + " RESTART WITH 0", null,
                                   SerializerReadInteger.INSTANCE);
-    }
+    }*/
 }

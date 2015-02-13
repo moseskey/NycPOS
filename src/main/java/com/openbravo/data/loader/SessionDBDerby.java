@@ -1,8 +1,7 @@
 package com.openbravo.data.loader;
 
-public class SessionDBDerby implements SessionDB {
-
-    @Override
+public class SessionDBDerby /*implements SessionDB*/ {
+    /*@Override
     public String TRUE() {
         return "1";
     }
@@ -35,5 +34,5 @@ public class SessionDBDerby implements SessionDB {
     @Override
     public SentenceFind resetSequenceSentence(Session s, String sequence) {
         return new SequenceForDerby(s, sequence);
-    }
+    }*/
 }

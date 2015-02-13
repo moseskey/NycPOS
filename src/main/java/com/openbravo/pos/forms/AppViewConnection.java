@@ -21,13 +21,13 @@ public class AppViewConnection {
         try {
 
             // register the database driver
-            if (isJavaWebStart()) {
+            /*if (isJavaWebStart()) {
                 Class.forName(props.getProperty("db.driver"), true, Thread.currentThread().getContextClassLoader());
             } else {
                 ClassLoader cloader = new URLClassLoader(new URL[] {new File(props.getProperty("db.driverlib")).toURI().toURL()});
                 DriverManager.registerDriver(new DriverWrapper((Driver) Class.forName(
                                                                    props.getProperty("db.driver"), true, cloader).newInstance()));
-            }
+            }*/
 
             String sDBUser = props.getProperty("db.user");
             String sDBPassword = props.getProperty("db.password");
@@ -39,9 +39,9 @@ public class AppViewConnection {
             return new Session(props.getProperty("db.URL"), sDBUser, sDBPassword);
 
 // JG 16 May use multicatch
-        } catch (InstantiationException | IllegalAccessException | MalformedURLException |
+        /*} catch (InstantiationException | IllegalAccessException | MalformedURLException |
                      ClassNotFoundException e) {
-            throw new BasicException(AppLocal.getIntString("message.databasedrivererror"), e);
+            throw new BasicException(AppLocal.getIntString("message.databasedrivererror"), e);*/
         } catch (SQLException eSQL) {
             throw new BasicException(AppLocal.getIntString("message.databaseconnectionerror"), eSQL);
         }

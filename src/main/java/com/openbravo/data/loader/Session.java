@@ -128,21 +128,24 @@ public final class Session {
     }
 
     private SessionDB getDiff() throws SQLException {
-
         String sdbmanager = getConnection().getMetaData().getDatabaseProductName();
+
         switch (sdbmanager) {
-            case "HSQL Database Engine":
+            case "PostgreSQL":
+                return new SessionDBPostgreSQL();
+            case "H2":
+                return new SessionDBH2();
+            /*case "HSQL Database Engine":
                 return new SessionDBHSQLDB();
             case "MySQL":
                 return new SessionDBMySQL();
-            case "PostgreSQL":
-                return new SessionDBPostgreSQL();
             case "Oracle":
                 return new SessionDBOracle();
             case "Apache Derby":
-                return new SessionDBDerby();
+                return new SessionDBDerby();*/
             default:
-                return new SessionDBGeneric(sdbmanager);
+                throw new SQLException("unsupported database");
+                //return new SessionDBGeneric(sdbmanager);
         }
     }
 }

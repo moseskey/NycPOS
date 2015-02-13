@@ -1,7 +1,7 @@
 package com.openbravo.data.loader;
 
-public class SessionDBMySQL implements SessionDB {
-
+public class SessionDBMySQL /*implements SessionDB*/ {
+/*
     public String TRUE() {
         return "TRUE";
     }
@@ -29,4 +29,5 @@ public class SessionDBMySQL implements SessionDB {
     public SentenceFind resetSequenceSentence(Session s, String sequence) {
         return new SequenceForMySQL(s, "UPDATE PICKUP_NUMBER SET ID=1");
     }
+    */
 }

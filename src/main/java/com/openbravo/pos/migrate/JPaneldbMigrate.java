@@ -80,19 +80,16 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
         jbtnDbDriverLib.addActionListener(new DirectoryEvent(jtxtDbDriverLib));
         jNewdbType.addActionListener(dirty);
 
-
-
-        jNewdbType.addItem("MySQL");
+        //jNewdbType.addItem("MySQL");
         jNewdbType.addItem("PostgreSQL");
-
-
-
+        jNewdbType.addItem("H2");
     }
 
     @SuppressWarnings("empty-statement")
     public Boolean createMigratedb() {
 
         if ((!"MySQL".equals(sdbmanager2)) && (!"PostgreSQL".equals(sdbmanager2))) {
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> not sure what this is <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
             return (false);
         }
 
@@ -1142,7 +1139,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
 
 // GET THE SEQUENCE NUMBERS
-                    if (("Apache Derby".equals(sdbmanager)) || ("MySQL".equals(sdbmanager))) {
+                    if (false) { /*("Apache Derby".equals(sdbmanager)) || ("MySQL".equals(sdbmanager))) {
                         SQL = "SELECT * FROM TICKETSNUM";
                         rs = stmt.executeQuery(SQL);
                         while (rs.next()) {
@@ -1158,6 +1155,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
                         while (rs.next()) {
                             ticketsnumRefund = rs.getString("ID");
                         }
+                        */
                     } else {
                         SQL = "SELECT * FROM TICKETSNUM";
                         rs = stmt.executeQuery(SQL);
@@ -1179,13 +1177,14 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
 
 // WRITE SEQUENCE NUMBER
-                    if (("Apache Derby".equals(sdbmanager2)) || ("MySQL".equals(sdbmanager2))) {
+                    if (false) { /*("Apache Derby".equals(sdbmanager2)) || ("MySQL".equals(sdbmanager2))) {
                         SQL = "UPDATE TICKETSNUM SET ID=" + ticketsnum;
                         stmt2.executeUpdate(SQL);
                         SQL = "UPDATE TICKETSNUM_PAYMENT SET ID=" + ticketsnumPayment;
                         stmt2.executeUpdate(SQL);
                         SQL = "UPDATE TICKETSNUM_REFUND SET ID=" + ticketsnumRefund;
                         stmt2.executeUpdate(SQL);
+                        */
                     } else {
                         SQL = "ALTER SEQUENCE TICKETSNUM RESTART WITH " + ticketsnum;
                         stmt2.executeUpdate(SQL);
@@ -1202,8 +1201,9 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
 
 //JG Aug 2014 - added to .properties
-                    if ("MySQL".equals(sdbmanager2)) {
+                    if (false) { /*"MySQL".equals(sdbmanager2)) {
                         config.setProperty("db.engine", "MySQL");
+                        */
                     } else {
                         config.setProperty("db.engine", "PostgreSQL");
                     }
@@ -1266,17 +1266,20 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
     private void jNewdbTypeActionPerformed(java.awt.event.ActionEvent
                                            evt) {//GEN-FIRST:event_jNewdbTypeActionPerformed
-        if ("MySQL".equals(jNewdbType.getSelectedItem())) {
+        if (false) { /*"MySQL".equals(jNewdbType.getSelectedItem())) {
             jtxtDbDriverLib.setText(System.getProperty("user.dir") +
                                     "/lib/mysql-connector-java-5.1.26-bin.jar");
             jtxtDbDriver.setText("com.mysql.jdbc.Driver");
             jtxtDbURL.setText("jdbc:mysql://localhost:3306/unicentaopos");
+            */
 
         } else if ("PostgreSQL".equals(jNewdbType.getSelectedItem())) {
             jtxtDbDriverLib.setText(System.getProperty("user.dir") + "/lib/postgresql-9.2-1003.jdbc4.jar");
             jtxtDbDriver.setText("org.postgresql.Driver");
             jtxtDbURL.setText("jdbc:postgresql://localhost:5432/unicentaopos");
         } else {
+            System.out.println("wildly unsupported database");
+            System.exit(1);
         }
     }//GEN-LAST:event_jNewdbTypeActionPerformed
 

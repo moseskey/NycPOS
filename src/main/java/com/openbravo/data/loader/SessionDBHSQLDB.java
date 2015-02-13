@@ -1,7 +1,7 @@
 package com.openbravo.data.loader;
 
-public class SessionDBHSQLDB implements SessionDB {
-
+public class SessionDBHSQLDB /*implements SessionDB*/ {
+/*
     @Override
     public String TRUE() {
         return "TRUE";
@@ -38,4 +38,5 @@ public class SessionDBHSQLDB implements SessionDB {
         return new StaticSentence(s, "CALL NEXT VALUE FOR " + sequence, null,
                                   SerializerReadInteger.INSTANCE);
     }
+    */
 }

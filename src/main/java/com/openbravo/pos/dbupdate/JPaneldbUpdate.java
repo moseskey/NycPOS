@@ -55,14 +55,11 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
     public void performUpdate(String sScript) {
         switch (sdbmanager) {
-            case "HSQL Database Engine":
+            /*case "HSQL Database Engine":
                 eScript = "/sql/HSQLDB" + sScript;
                 break;
             case "MySQL":
                 eScript = "/sql/MySQL" + sScript;
-                break;
-            case "PostgreSQL":
-                eScript = "/sql/PostgreSQL" + sScript;
                 break;
             case "Oracle":
                 eScript = "/sql/Oracle" + sScript;
@@ -72,7 +69,15 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
                 break;
             default:
                 eScript = "/sql/Derby" + sScript;
+                break;*/
+            case "H2":
+                eScript = "/sql/H2" + sScript;
+            case "PostgreSQL":
+                eScript = "/sql/PostgreSQL" + sScript;
                 break;
+            default:
+                System.out.println("Unsupported database type");
+                System.exit(1);
         }
 
         // update database using updater scripts

@@ -2,8 +2,8 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 
-public class SequenceForMySQL extends BaseSentence {
-
+public class SequenceForMySQL /*extends BaseSentence*/ {
+/*
     private BaseSentence sent1;
     private BaseSentence sent2;
 
@@ -26,5 +26,5 @@ public class SequenceForMySQL extends BaseSentence {
 
     public void closeExec() throws BasicException {
         sent2.closeExec();
-    }
+    }*/
 }

@@ -196,12 +196,12 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 //               SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > {fn TIMESTAMP('"+ m_PaymentsToClose.getDateStartDerby() +"')}";
 //            } else {
 //               SQL="SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > " + "'" + m_PaymentsToClose.printDateStart()+ "'";
-            if ("PostgreSQL".equals(sdbmanager)) {
-                SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > " + "'" +
-                      m_PaymentsToClose.printDateStart() + "'";
+            if ("H2".equals(sdbmanager) || "PostgreSQL".equals(sdbmanager)) {
+                SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > " + "'" + m_PaymentsToClose.printDateStart() + "'";
             } else {
-                SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > {fn TIMESTAMP('" +
-                      m_PaymentsToClose.getDateStartDerby() + "')}";
+                System.out.println("Unsupported database!!!");
+                System.exit(1);
+                //SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > {fn TIMESTAMP('" + m_PaymentsToClose.getDateStartDerby() + "')}";
             }
 
             stmt = (Statement) con.createStatement();
@@ -212,13 +212,14 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
             rs = null;
             con = null;
             s = null;
-        } catch (SQLException e) {System.out.println("error = " + e);}
-        m_jNoCashSales.setText(result.toString());
+        } catch (SQLException e) {
+            System.out.println("error = " + e);
+        }
 
+        m_jNoCashSales.setText(result.toString());
     }
 
     private void printPayments(String report) {
-
         String sresource = m_dlSystem.getResourceAsXML(report);
         if (sresource == null) {
             MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,

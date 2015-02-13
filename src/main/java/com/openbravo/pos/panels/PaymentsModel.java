@@ -324,10 +324,10 @@ public class PaymentsModel {
         return m_dDateEnd;
     }
 
-    public String getDateStartDerby() {
+    /*public String getDateStartDerby() {
         SimpleDateFormat ndf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return ndf.format(m_dDateStart);
-    }
+    }*/
 
     public String printHost() {
 //        return m_sHost;

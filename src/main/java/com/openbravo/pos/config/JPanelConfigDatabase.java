@@ -38,13 +38,14 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
         jcboDBDriver.addActionListener(dirty);
 
 //  JG 31 Aug 13 - Added DB Defaults
-        jcboDBDriver.addItem("Apache Derby Embedded");
+        /*jcboDBDriver.addItem("Apache Derby Embedded");
         jcboDBDriver.addItem("Apache Derby Client/Server");
-        jcboDBDriver.addItem("HSQLDB");
-        jcboDBDriver.addItem("MySQL");
-        jcboDBDriver.addItem("Oracle 11g Express");
+        jcboDBDriver.addItem("HSQLDB");*/
         jcboDBDriver.addItem("PostgreSQL");
+        jcboDBDriver.addItem("H2");
 
+        /*jcboDBDriver.addItem("MySQL");
+        jcboDBDriver.addItem("Oracle");*/
     }
 
     @Override
@@ -342,13 +343,12 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
 
     }//GEN-LAST:event_jtxtDbDriverActionPerformed
 
-    private void jcboDBDriverActionPerformed(java.awt.event.ActionEvent
-                                             evt) {//GEN-FIRST:event_jcboDBDriverActionPerformed
+    private void jcboDBDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcboDBDriverActionPerformed
 //  JG 31 Aug 13 - Added DB Defaults
         String dirname = System.getProperty("dirname.path");
         dirname = dirname == null ? "./" : dirname;
 
-        if ("Apache Derby Embedded".equals(jcboDBDriver.getSelectedItem())) {
+        /*if ("Apache Derby Embedded".equals(jcboDBDriver.getSelectedItem())) {
             jtxtDbDriverLib.setText(new File(new File(dirname), "lib/derby.jar").getAbsolutePath());
             jtxtDbDriver.setText("org.apache.derby.jdbc.EmbeddedDriver");
             jtxtDbURL.setText("jdbc:derby:" + new File(new File(System.getProperty("user.home")),
@@ -370,8 +370,7 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
             jtxtDbPassword.setText("");
 
         } else if ("MySQL".equals(jcboDBDriver.getSelectedItem())) {
-            jtxtDbDriverLib.setText(new File(new File(dirname),
-                                             "lib/mysql-connector-java-5.1.26-bin.jar").getAbsolutePath());
+            jtxtDbDriverLib.setText(new File(new File(dirname), "lib/mysql-connector-java-5.1.26-bin.jar").getAbsolutePath());
             jtxtDbDriver.setText("com.mysql.jdbc.Driver");
             jtxtDbURL.setText("jdbc:mysql://localhost:3306/unicentaopos");
 
@@ -380,19 +379,20 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
             jtxtDbDriver.setText("oracle.jdbc.driver.OracleDriver");
             jtxtDbURL.setText("jdbc:oracle:thin://localhost:1521/unicentaopos");
 
-        } else if ("PostgreSQL".equals(jcboDBDriver.getSelectedItem())) {
-            jtxtDbDriverLib.setText(new File(new File(dirname),
-                                             "lib/postgresql-9.2-1003.jdbc4.jar").getAbsolutePath());
+        } else */
+
+        if ("PostgreSQL".equals(jcboDBDriver.getSelectedItem())) {
+            jtxtDbDriverLib.setText(new File(new File(dirname), "lib/postgresql-9.2-1003.jdbc4.jar").getAbsolutePath());
             jtxtDbDriver.setText("org.postgresql.Driver");
             jtxtDbURL.setText("jdbc:postgresql://localhost:5432/unicentaopos");
-        } else {
-
-        }
+        } /*else {
+            System.out.println("bad database selected");
+            System.exit(1);
+        }*/
     }//GEN-LAST:event_jcboDBDriverActionPerformed
 
 //  JG 3 Oct 13 - Test DB Connection
-    private void jButtonTestActionPerformed(java.awt.event.ActionEvent
-                                            evt) {//GEN-FIRST:event_jButtonTestActionPerformed
+    private void jButtonTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTestActionPerformed
         try {
             String driverlib = jtxtDbDriverLib.getText();
             String driver = jtxtDbDriver.getText();
@@ -427,8 +427,7 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
         }
     }//GEN-LAST:event_jButtonTestActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent
-                                         evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
             String URL = "http://www.unicenta.com";
@@ -458,5 +457,4 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
     private javax.swing.JTextField jtxtDbURL;
     private javax.swing.JTextField jtxtDbUser;
     // End of variables declaration//GEN-END:variables
-
 }

@@ -1,6 +1,7 @@
 package com.openbravo.data.loader;
 
-public class SessionDBOracle implements SessionDB {
+public class SessionDBOracle /*implements SessionDB*/ {
+    /*
 
     public String TRUE() {
         return "1";
@@ -31,4 +32,5 @@ public class SessionDBOracle implements SessionDB {
         return new StaticSentence(s, "SELECT " + sequence + ".NEXTVAL FROM DUAL", null,
                                   SerializerReadInteger.INSTANCE);
     }
+    */
 }
