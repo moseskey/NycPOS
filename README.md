@@ -1,4 +1,4 @@
-# About NycPOS
+# About NycPOS [![Build Status](https://travis-ci.org/KNQ/NycPOS.svg)](https://travis-ci.org/KNQ/NycPOS)
 This is a full, top-down rewrite of OpenBravo POS/uniCenta oPOS using modern
 development tools, methods, and libraries. Additionally, once complete, it will
 carry a new UI written using modern Java UI (likely JavaFX 8), and more
@@ -17,8 +17,6 @@ is currently able to compile "out of the box." However, it is nowhere near
 ready for production use. We expect it will take 4-6 weeks of development time
 to get the code into a modern, stable state before it will be usable by
 non-developers.
-
-[![Build Status](https://travis-ci.org/KNQ/NycPOS.svg)](https://travis-ci.org/KNQ/NycPOS)
 
 ## Compiling and Running
 
