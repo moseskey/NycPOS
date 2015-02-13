@@ -6,7 +6,7 @@ Fix remaining resources and property files
 Check peripherals (printers, mag card readers)
 Check all jasper reports
 Fix remaining awt/swing screens
-Strip all custom i18n/locale supoprt code
+Strip all custom i18n/locale supoprt code (AppLocal/anything tagged with '// NOT I18N' and other bad code)
 Strip remaining references to openbravo/unicenta
 Remove all manually generated SQL, and native SQL calls with jOOQ
 Re-add Oracle, MySQL, HSQLDB database support
