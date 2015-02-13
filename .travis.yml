@@ -4,3 +4,6 @@ jdk:
     - oraclejdk7
 before_install:
     - ./misc/install-maven-artifacts.sh
+cache:
+    directories:
+        - $HOME/.m2
