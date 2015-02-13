@@ -71,9 +71,9 @@ specific or promised delivery order):
 * Convert AWT/Swing UI to JavaFX 8
 * Modernize database schema/structure/scripts
   * Standardize database schema (reflection?)
-  * Swap out hard coded SQL for ORM/generated scripts (jOOQ?)
+  * Swap out hard coded SQL for ORM style generated code (jOOQ)
   * Separate sample data from scripts into template resource files 
-* Fix database upgrades/migrations (Flyway in conjunction with jOOQ?)
+* Fix database upgrades/migrations (liquibase)
 * Fix broken scripts in template resources
   * Add multiple templates for various types of businesses
     (restaurant/grocery/etc)

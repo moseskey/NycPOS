@@ -2,8 +2,11 @@ Replace database creation/migration with liquibase
 Verify all databases work correctly with inventory & stock (write unit tests to this effect)
 Retool database selection screen
 Check peripherals (printers, mag card readers)
-Fix remaining awt/swing screens
 Check all jasper reports
+Fix remaining awt/swing screens
+Strip all custom i18n/locale supoprt code
 Strip remaining references to openbravo/unicenta
 Remove all manually generated SQL, and native SQL calls with jOOQ
 Re-add Oracle, MySQL, HSQLDB database support
+Strip AWT/swing screens with JavaFX 8
+Add support for SQLite
