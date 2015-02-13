@@ -1,0 +1,7 @@
+Strip derby & hsql, add H2
+Verify h2, postgresql, and mysql work correctly with inventory & stock
+Retool database selection screen
+Check peripherals (printers, mag card readers)
+Fix remaining awt/swing screens
+Check all jasper reports
+Strip remaining references to openbravo/unicenta

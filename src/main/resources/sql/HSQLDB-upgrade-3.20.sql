@@ -1,4 +1,0 @@
--- Database upgrade script for HSQLDB
--- v3.02 - v3.05
-
-UPDATE APPLICATIONS SET NAME = $APP_NAME{}, VERSION = $APP_VERSION{} WHERE ID = $APP_ID{};
