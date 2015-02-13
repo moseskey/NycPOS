@@ -81,5 +81,5 @@ public class CodesTMU220 extends Codes {
     }
 
     @Override
-    public byte[] getImageLogo(){ return IMAGE_LOGO; }
+    public byte[] getImageLogo() { return IMAGE_LOGO; }
 }

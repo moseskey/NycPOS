@@ -49,19 +49,20 @@ public class Hashcypher {
         // Show the changePassword dialogs but do not check the old password
 
         String sPassword = JPasswordDialog.showEditPassword(parent,
-                AppLocal.getIntString("Label.Password"),
-                AppLocal.getIntString("label.passwordnew"),
-                new ImageIcon(Hashcypher.class.getResource("/images/password.png")));
+                                                            AppLocal.getIntString("Label.Password"),
+                                                            AppLocal.getIntString("label.passwordnew"),
+                                                            new ImageIcon(Hashcypher.class.getResource("/images/password.png")));
         if (sPassword != null) {
             String sPassword2 = JPasswordDialog.showEditPassword(parent,
-                    AppLocal.getIntString("Label.Password"),
-                    AppLocal.getIntString("label.passwordrepeat"),
-                    new ImageIcon(Hashcypher.class.getResource("/images/password.png")));
+                                                                 AppLocal.getIntString("Label.Password"),
+                                                                 AppLocal.getIntString("label.passwordrepeat"),
+                                                                 new ImageIcon(Hashcypher.class.getResource("/images/password.png")));
             if (sPassword2 != null) {
                 if (sPassword.equals(sPassword2)) {
                     return  Hashcypher.hashString(sPassword);
                 } else {
-                    JOptionPane.showMessageDialog(parent, AppLocal.getIntString("message.changepassworddistinct"), AppLocal.getIntString("message.title"), JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(parent, AppLocal.getIntString("message.changepassworddistinct"),
+                                                  AppLocal.getIntString("message.title"), JOptionPane.WARNING_MESSAGE);
                 }
             }
         }
@@ -72,15 +73,16 @@ public class Hashcypher {
     public static String changePassword(Component parent, String sOldPassword) {
 
         String sPassword = JPasswordDialog.showEditPassword(parent,
-                AppLocal.getIntString("Label.Password"),
-                AppLocal.getIntString("label.passwordold"),
-                new ImageIcon(Hashcypher.class.getResource("/images/password.png")));
+                                                            AppLocal.getIntString("Label.Password"),
+                                                            AppLocal.getIntString("label.passwordold"),
+                                                            new ImageIcon(Hashcypher.class.getResource("/images/password.png")));
         if (sPassword != null) {
             if (Hashcypher.authenticate(sPassword, sOldPassword)) {
                 return changePassword(parent);
             } else {
-                JOptionPane.showMessageDialog(parent, AppLocal.getIntString("message.BadPassword"), AppLocal.getIntString("message.title"), JOptionPane.WARNING_MESSAGE);
-           }
+                JOptionPane.showMessageDialog(parent, AppLocal.getIntString("message.BadPassword"),
+                                              AppLocal.getIntString("message.title"), JOptionPane.WARNING_MESSAGE);
+            }
         }
         return null;
     }

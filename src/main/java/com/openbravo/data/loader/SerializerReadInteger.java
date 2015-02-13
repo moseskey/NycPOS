@@ -10,6 +10,6 @@ public class SerializerReadInteger implements SerializerRead {
     }
 
     public Object readValues(DataRead dr) throws BasicException {
-        return Datas.INT.getValue(dr,1);
+        return Datas.INT.getValue(dr, 1);
     }
 }

@@ -8,7 +8,7 @@ public class JPanelNull extends JPanel implements JPanelView {
 
     public JPanelNull(AppView oApp, Object o) {
 
-        initComponents ();
+        initComponents();
         if (o instanceof Exception) {
         }
         jtxtException.setText(o.toString());

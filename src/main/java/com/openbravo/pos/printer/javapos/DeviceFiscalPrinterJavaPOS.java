@@ -64,7 +64,8 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
     @Override
     public void printLine(String sproduct, double dprice, double dunits, int taxinfo) {
         try {
-            m_fiscal.printRecItem(sproduct, roundFiscal(dprice * dunits), (int)(dunits * 1000), taxinfo, roundFiscal(dprice), "");
+            m_fiscal.printRecItem(sproduct, roundFiscal(dprice * dunits), (int)(dunits * 1000), taxinfo,
+                                  roundFiscal(dprice), "");
         } catch (JposException e) {
         }
     }
@@ -230,13 +231,15 @@ public class DeviceFiscalPrinterJavaPOS extends javax.swing.JPanel implements De
         jPanel1.setBounds(10, 60, 470, 260);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         printZReport();
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         printXReport();
 

@@ -28,11 +28,11 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
         config.load();
 
         jMessageBox.setText("Performing this action, will clear all "
-                + "data in the CSVImport table. \n\n"
-                + "It is recommended that this is performed before "
-                + "running a new import. \n");
+                            + "data in the CSVImport table. \n\n"
+                            + "It is recommended that this is performed before "
+                            + "running a new import. \n");
 
-        }
+    }
 
     @Override
     public String getTitle() {
@@ -46,30 +46,31 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
 
     @Override
     public void activate() throws BasicException {
- // connect to the database
-         String db_user =(config.getProperty("db.user"));
-         String db_url = (config.getProperty("db.URL"));
-         String db_password = (config.getProperty("db.password"));
+// connect to the database
+        String db_user = (config.getProperty("db.user"));
+        String db_url = (config.getProperty("db.URL"));
+        String db_password = (config.getProperty("db.password"));
 
-         if (db_user != null && db_password != null && db_password.startsWith("crypt:")) {
-                // the password is encrypted
-                AltEncrypter cypher = new AltEncrypter("cypherkey" + db_user);
-                db_password = cypher.decrypt(db_password.substring(6));
-         }
-         try{
-            con = DriverManager.getConnection(db_url,db_user,db_password);
+        if (db_user != null && db_password != null && db_password.startsWith("crypt:")) {
+            // the password is encrypted
+            AltEncrypter cypher = new AltEncrypter("cypherkey" + db_user);
+            db_password = cypher.decrypt(db_password.substring(6));
+        }
+        try {
+            con = DriverManager.getConnection(db_url, db_user, db_password);
             stmt = (Statement) con.createStatement();
 
-            } catch (Exception e) {
-       }
+        } catch (Exception e) {
+        }
 
     }
 
     @Override
-    public boolean deactivate() {        try{
+    public boolean deactivate() {
+        try {
             stmt.close();
             con.close();
-        }catch (Exception e){}
+        } catch (Exception e) {}
 
         return (true);
     }
@@ -92,7 +93,8 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
         setPreferredSize(new java.awt.Dimension(420, 240));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jLabel1.setText(bundle.getString("label.csvresetimport")); // NOI18N
 
         jMessageBox.setEditable(false);
@@ -113,7 +115,8 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
         });
 
         jButtonCleardb.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButtonCleardb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_delete.png"))); // NOI18N
+        jButtonCleardb.setIcon(new javax.swing.ImageIcon(
+                                   getClass().getResource("/images/sale_delete.png"))); // NOI18N
         jButtonCleardb.setText(bundle.getString("label.csvclearlog")); // NOI18N
         jButtonCleardb.setEnabled(false);
         jButtonCleardb.addActionListener(new java.awt.event.ActionListener() {
@@ -127,48 +130,53 @@ public class JPanelCSVCleardb extends JPanel implements JPanelView {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jEnableButton)
-                        .addGap(74, 74, 74)
-                        .addComponent(jButtonCleardb)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addComponent(jEnableButton)
+                                          .addGap(74, 74, 74)
+                                          .addComponent(jButtonCleardb)))
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonCleardb)
-                    .addComponent(jEnableButton))
-                .addContainerGap(32, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addComponent(jLabel1)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                      .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButtonCleardb)
+                                .addComponent(jEnableButton))
+                      .addContainerGap(32, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jEnableButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jEnableButtonStateChanged
-        if (jEnableButton.isSelected()){
+    private void jEnableButtonStateChanged(javax.swing.event.ChangeEvent
+                                           evt) {//GEN-FIRST:event_jEnableButtonStateChanged
+        if (jEnableButton.isSelected()) {
             jButtonCleardb.setEnabled(true);
-        }else {
+        } else {
             jButtonCleardb.setEnabled(false);
         }
     }//GEN-LAST:event_jEnableButtonStateChanged
 
-    private void jButtonCleardbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCleardbActionPerformed
-        SQL="DELETE FROM CSVIMPORT";
-        try{
-        stmt.executeUpdate(SQL);
-        }catch (Exception e){
+    private void jButtonCleardbActionPerformed(java.awt.event.ActionEvent
+                                               evt) {//GEN-FIRST:event_jButtonCleardbActionPerformed
+        SQL = "DELETE FROM CSVIMPORT";
+        try {
+            stmt.executeUpdate(SQL);
+        } catch (Exception e) {
         }
     }//GEN-LAST:event_jButtonCleardbActionPerformed
 
-    private void jEnableButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEnableButtonActionPerformed
+    private void jEnableButtonActionPerformed(java.awt.event.ActionEvent
+                                              evt) {//GEN-FIRST:event_jEnableButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jEnableButtonActionPerformed
 

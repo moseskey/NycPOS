@@ -117,7 +117,8 @@ public class JMessageDialog extends javax.swing.JDialog {
         jPanel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jPanel4.setLayout(new javax.swing.BoxLayout(jPanel4, javax.swing.BoxLayout.Y_AXIS));
 
-        jlblErrorCode.setFont(jlblErrorCode.getFont().deriveFont(jlblErrorCode.getFont().getStyle() & ~java.awt.Font.BOLD, jlblErrorCode.getFont().getSize()-2));
+        jlblErrorCode.setFont(jlblErrorCode.getFont().deriveFont(jlblErrorCode.getFont().getStyle() &
+                                                                 ~java.awt.Font.BOLD, jlblErrorCode.getFont().getSize() - 2));
         jlblErrorCode.setText("jlblErrorCode");
         jPanel4.add(jlblErrorCode);
 
@@ -170,10 +171,11 @@ public class JMessageDialog extends javax.swing.JDialog {
         getContentPane().add(jPanel3, java.awt.BorderLayout.SOUTH);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-455)/2, (screenSize.height-171)/2, 455, 171);
+        setBounds((screenSize.width - 455) / 2, (screenSize.height - 171) / 2, 455, 171);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcmdMoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdMoreActionPerformed
+    private void jcmdMoreActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jcmdMoreActionPerformed
 
         // Add your handling code here:
         jcmdMore.setEnabled(false);
@@ -185,7 +187,8 @@ public class JMessageDialog extends javax.swing.JDialog {
 
     }//GEN-LAST:event_jcmdMoreActionPerformed
 
-    private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
+    private void jcmdOKActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jcmdOKActionPerformed
         // Add your handling code here:
         setVisible(false);
         dispose();

@@ -12,13 +12,14 @@ public class SequenceForDerby extends BaseSentence {
 
         sent1 = new StaticSentence(s, "DELETE FROM  " + sSeqTable);
         sent2 = new StaticSentence(s, "INSERT INTO " + sSeqTable + " VALUES (DEFAULT)");
-        sent3 = new StaticSentence(s, "SELECT IDENTITY_VAL_LOCAL() FROM " + sSeqTable, null, SerializerReadInteger.INSTANCE);
+        sent3 = new StaticSentence(s, "SELECT IDENTITY_VAL_LOCAL() FROM " + sSeqTable, null,
+                                   SerializerReadInteger.INSTANCE);
     }
 
 
     // Funciones de bajo nivel
 
-        @Override
+    @Override
     public DataResultSet openExec(Object params) throws BasicException {
         sent1.exec();
         sent2.exec();

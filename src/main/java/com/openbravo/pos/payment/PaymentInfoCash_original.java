@@ -7,7 +7,7 @@ public class PaymentInfoCash_original extends PaymentInfo {
     private double m_dPaid;
     private double m_dTotal;
     private double m_dTendered;
-    private String m_dCardName =null;
+    private String m_dCardName = null;
 
     public PaymentInfoCash_original(double dTotal, double dPaid) {
         m_dTotal = dTotal;
@@ -15,12 +15,12 @@ public class PaymentInfoCash_original extends PaymentInfo {
     }
 
     @Override
-    public PaymentInfo copyPayment(){
+    public PaymentInfo copyPayment() {
         return new PaymentInfoCash_original(m_dTotal, m_dPaid);
     }
 
     @Override
-    public String getTransactionID(){
+    public String getTransactionID() {
         return "no ID";
     }
 
@@ -45,14 +45,14 @@ public class PaymentInfoCash_original extends PaymentInfo {
     }
 
     @Override
-    public double getChange(){
-       return m_dPaid - m_dTotal;
-   }
+    public double getChange() {
+        return m_dPaid - m_dTotal;
+    }
 
     @Override
-   public String getCardName() {
-       return m_dCardName;
-   }
+    public String getCardName() {
+        return m_dCardName;
+    }
 
     public String printPaid() {
         return Formats.CURRENCY.formatValue(new Double(m_dPaid));

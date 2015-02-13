@@ -16,11 +16,11 @@ public interface DataRead {
 
     //public java.io.InputStream getBinaryStream(int columnIndex) throws DataException;
 
-        public byte[] getBytes(int columnIndex) throws BasicException;
+    public byte[] getBytes(int columnIndex) throws BasicException;
 
     public Object getObject(int columnIndex) throws BasicException ;
 
 //    public int getColumnCount() throws DataException;
 
-        public DataField[] getDataField() throws BasicException;
+    public DataField[] getDataField() throws BasicException;
 }

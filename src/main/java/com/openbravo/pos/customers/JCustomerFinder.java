@@ -116,7 +116,7 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
             jListCustomers.setModel(new MyListData(lpr.loadData()));
             if (jListCustomers.getModel().getSize() > 0) {
                 jListCustomers.setSelectedIndex(0);
-                }
+            }
         } catch (BasicException e) {
         }
     }
@@ -306,7 +306,8 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         m_jtxtName.setPreferredSize(new java.awt.Dimension(220, 25));
 
         jLblPhone.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jLblPhone.setText(bundle.getString("label.phone")); // NOI18N
         jLblPhone.setMaximumSize(new java.awt.Dimension(120, 25));
         jLblPhone.setPreferredSize(new java.awt.Dimension(120, 25));
@@ -324,7 +325,8 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         m_jtxtPhone.setPreferredSize(new java.awt.Dimension(220, 25));
 
         jcmdReset.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reload.png"))); // NOI18N
+        jcmdReset.setIcon(new javax.swing.ImageIcon(
+                              getClass().getResource("/images/reload.png"))); // NOI18N
         jcmdReset.setText(bundle.getString("button.reset")); // NOI18N
         jcmdReset.setToolTipText("Clear Filter");
         jcmdReset.setActionCommand("Reset ");
@@ -355,62 +357,88 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLblPostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLblTaxID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLblSearchKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLblPhone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLblName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(m_jtxtSearchKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(m_jtxtTaxID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(m_jtxtPostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(m_jtxtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(m_jtxtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(m_jtxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 35, Short.MAX_VALUE)))
-                .addContainerGap())
+                      .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel7Layout.createSequentialGroup()
+                                          .addContainerGap()
+                                          .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                                              .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jLblPostal, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLblTaxID, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLblSearchKey, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLblPhone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                      javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLblName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                      javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(m_jtxtSearchKey, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(m_jtxtTaxID, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(m_jtxtPostal, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(m_jtxtName, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(m_jtxtPhone, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                                              .addComponent(jLblEmail, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                            javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addComponent(m_jtxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                            javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                          .addGap(0, 35, Short.MAX_VALUE)))
+                      .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(m_jtxtTaxID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLblTaxID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLblSearchKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jtxtSearchKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLblPostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jtxtPostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(m_jtxtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLblName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jtxtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jtxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addGap(11, 11, 11)
+                      .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(m_jtxtTaxID, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLblTaxID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              Short.MAX_VALUE))
+                      .addGap(6, 6, 6)
+                      .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLblSearchKey, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jtxtSearchKey, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGap(6, 6, 6)
+                      .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLblPostal, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jtxtPostal, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(m_jtxtName, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLblName, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLblPhone, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jtxtPhone, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLblEmail, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jtxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         m_jtxtName.getAccessibleContext().setAccessibleName("");
@@ -444,7 +472,8 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         jPanel8.setLayout(new java.awt.BorderLayout());
 
         jcmdCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        jcmdCancel.setIcon(new javax.swing.ImageIcon(
+                               getClass().getResource("/images/cancel.png"))); // NOI18N
         jcmdCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         jcmdCancel.setFocusPainted(false);
         jcmdCancel.setFocusable(false);
@@ -483,32 +512,37 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         setSize(new java.awt.Dimension(613, 497));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
+    private void jcmdOKActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jcmdOKActionPerformed
 
         selectedCustomer = (CustomerInfo) jListCustomers.getSelectedValue();
         dispose();
 
     }//GEN-LAST:event_jcmdOKActionPerformed
 
-    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
+    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
 
         dispose();
 
     }//GEN-LAST:event_jcmdCancelActionPerformed
 
-    private void jcmdExecuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdExecuteActionPerformed
+    private void jcmdExecuteActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_jcmdExecuteActionPerformed
 
-                    executeSearch();
+        executeSearch();
 
     }//GEN-LAST:event_jcmdExecuteActionPerformed
 
-    private void jListCustomersValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListCustomersValueChanged
+    private void jListCustomersValueChanged(javax.swing.event.ListSelectionEvent
+                                            evt) {//GEN-FIRST:event_jListCustomersValueChanged
 
         jcmdOK.setEnabled(jListCustomers.getSelectedValue() != null);
 
     }//GEN-LAST:event_jListCustomersValueChanged
 
-    private void jListCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListCustomersMouseClicked
+    private void jListCustomersMouseClicked(java.awt.event.MouseEvent
+                                            evt) {//GEN-FIRST:event_jListCustomersMouseClicked
 
         if (evt.getClickCount() == 2) {
             selectedCustomer = (CustomerInfo) jListCustomers.getSelectedValue();
@@ -517,7 +551,8 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
 
     }//GEN-LAST:event_jListCustomersMouseClicked
 
-private void jcmdResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdResetActionPerformed
+    private void jcmdResetActionPerformed(java.awt.event.ActionEvent
+                                          evt) {//GEN-FIRST:event_jcmdResetActionPerformed
 
         m_jtxtTaxID.reset();
         m_jtxtSearchKey.reset();
@@ -529,7 +564,7 @@ private void jcmdResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         m_jtxtTaxID.activate();
 
         cleanSearch();
-}//GEN-LAST:event_jcmdResetActionPerformed
+    }//GEN-LAST:event_jcmdResetActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLblEmail;

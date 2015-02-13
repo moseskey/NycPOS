@@ -50,11 +50,11 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
         Object enddate = Formats.TIMESTAMP.parseValue(jTxtEndDate.getText());
 
         return new Object[] {
-            startdate == null ? QBFCompareEnum.COMP_NONE : QBFCompareEnum.COMP_GREATEROREQUALS,
-            startdate,
-            enddate == null ? QBFCompareEnum.COMP_NONE : QBFCompareEnum.COMP_LESS,
-            enddate
-        };
+                   startdate == null ? QBFCompareEnum.COMP_NONE : QBFCompareEnum.COMP_GREATEROREQUALS,
+                   startdate,
+                   enddate == null ? QBFCompareEnum.COMP_NONE : QBFCompareEnum.COMP_LESS,
+                   enddate
+               };
     }
 
     /**
@@ -73,7 +73,9 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
         btnDateStart = new javax.swing.JButton();
         btnDateEnd = new javax.swing.JButton();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder(null, AppLocal.getIntString("label.bydates"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
+        setBorder(javax.swing.BorderFactory.createTitledBorder(null, AppLocal.getIntString("label.bydates"),
+                                                               javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                                                               javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
         setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setPreferredSize(new java.awt.Dimension(0, 60));
 
@@ -89,7 +91,8 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
         jTxtEndDate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTxtEndDate.setPreferredSize(new java.awt.Dimension(150, 25));
 
-        btnDateStart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
+        btnDateStart.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/date.png"))); // NOI18N
         btnDateStart.setToolTipText("Open Calendar");
         btnDateStart.setMaximumSize(new java.awt.Dimension(40, 33));
         btnDateStart.setMinimumSize(new java.awt.Dimension(40, 33));
@@ -116,34 +119,47 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jTxtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(btnDateStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jTxtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(btnDateEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGap(12, 12, 12)
+                      .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(0, 0, 0)
+                      .addComponent(jTxtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(10, 10, 10)
+                      .addComponent(btnDateStart, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(10, 10, 10)
+                      .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(0, 0, 0)
+                      .addComponent(jTxtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(10, 10, 10)
+                      .addComponent(btnDateEnd, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDateStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDateEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                      .addGap(4, 4, 4)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTxtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnDateStart, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTxtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnDateEnd, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDateStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDateStartActionPerformed
+    private void btnDateStartActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_btnDateStartActionPerformed
 
         Date date;
         try {
@@ -157,7 +173,8 @@ public class JParamsDatesInterval extends javax.swing.JPanel implements ReportEd
         }
     }//GEN-LAST:event_btnDateStartActionPerformed
 
-    private void btnDateEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDateEndActionPerformed
+    private void btnDateEndActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_btnDateEndActionPerformed
 
         Date date;
         try {

@@ -13,7 +13,7 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
     private String m_transactionID;
     private double m_dTendered;
     private double m_change;
-    private String m_dCardName =null;
+    private String m_dCardName = null;
 
     public PaymentInfoTicket(double dTicket, String sName) {
         m_sName = sName;
@@ -31,7 +31,7 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
         m_dTicket = 0.0;
         m_transactionID = null;
         m_dTendered = 0.00;
-     }
+    }
 
     @Override
     public void readValues(DataRead dr) throws BasicException {
@@ -39,12 +39,13 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
         m_dTicket = dr.getDouble(2);
         m_transactionID = dr.getString(3);
         if (dr.getDouble(4) != null) {
-            m_dTendered = dr.getDouble(4);}
+            m_dTendered = dr.getDouble(4);
+        }
         m_dCardName = dr.getString(5);
-     }
+    }
 
     @Override
-    public PaymentInfo copyPayment(){
+    public PaymentInfo copyPayment() {
         return new PaymentInfoTicket(m_dTicket, m_sName);
     }
 
@@ -59,7 +60,7 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
     }
 
     @Override
-    public String getTransactionID(){
+    public String getTransactionID() {
         return m_transactionID;
     }
 
@@ -69,9 +70,9 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
     }
 
     @Override
-    public double getChange(){
-       return m_dTendered - m_dTicket;
-   }
+    public double getChange() {
+        return m_dTendered - m_dTicket;
+    }
 
     @Override
     public double getTendered() {
@@ -80,8 +81,8 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     @Override
     public String getCardName() {
-       return m_dCardName;
-   }
+        return m_dCardName;
+    }
 
 
     public String printPaid() {
@@ -90,7 +91,7 @@ public class PaymentInfoTicket extends PaymentInfo implements SerializableRead  
 
     // Especificas
 
-        public String printPaperTotal() {
+    public String printPaperTotal() {
         // En una devolucion hay que cambiar el signo al total
         return Formats.CURRENCY.formatValue(-m_dTicket);
     }

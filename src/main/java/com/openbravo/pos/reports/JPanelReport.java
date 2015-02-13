@@ -75,7 +75,8 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
             }
 // JG 16 May 12 use multicatch
         } catch (JRException | IOException | ClassNotFoundException e) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotloadreport"), e);
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.cannotloadreport"), e);
             msg.show(this);
             jr = null;
         }
@@ -144,7 +145,7 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
                 Map reportparams = new HashMap();
                 reportparams.put("ARG", params);
                 if (res != null) {
-                      reportparams.put("REPORT_RESOURCE_BUNDLE", ResourceBundle.getBundle(res));
+                    reportparams.put("REPORT_RESOURCE_BUNDLE", ResourceBundle.getBundle(res));
                 }
                 reportparams.put("TAXESLOGIC", taxeslogic);
 
@@ -155,13 +156,16 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
                 setVisibleFilter(false);
 
             } catch (MissingResourceException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotloadresourcedata"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotloadresourcedata"), e);
                 msg.show(this);
             } catch (JRException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfillreport"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotfillreport"), e);
                 msg.show(this);
             } catch (BasicException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotloadreportdata"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotloadreportdata"), e);
                 msg.show(this);
             }
         }
@@ -195,10 +199,12 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
 
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
-        jToggleFilter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1downarrow.png"))); // NOI18N
+        jToggleFilter.setIcon(new javax.swing.ImageIcon(
+                                  getClass().getResource("/images/1downarrow.png"))); // NOI18N
         jToggleFilter.setSelected(true);
         jToggleFilter.setToolTipText("Hide/Show Filter");
-        jToggleFilter.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1uparrow.png"))); // NOI18N
+        jToggleFilter.setSelectedIcon(new javax.swing.ImageIcon(
+                                          getClass().getResource("/images/1uparrow.png"))); // NOI18N
         jToggleFilter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleFilterActionPerformed(evt);
@@ -222,13 +228,15 @@ public abstract class JPanelReport extends JPanel implements JPanelView, BeanFac
         add(jPanelHeader, java.awt.BorderLayout.NORTH);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         launchreport();
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jToggleFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleFilterActionPerformed
+    private void jToggleFilterActionPerformed(java.awt.event.ActionEvent
+                                              evt) {//GEN-FIRST:event_jToggleFilterActionPerformed
 
         jPanelFilter.setVisible(jToggleFilter.isSelected());
 

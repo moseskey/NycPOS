@@ -48,51 +48,56 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
 
 
 //lets test for our settings
-        String timerCheck =(config.getProperty("till.autotimer"));
-        if (timerCheck == null){
-            config.setProperty("till.autotimer","100");
+        String timerCheck = (config.getProperty("till.autotimer"));
+        if (timerCheck == null) {
+            config.setProperty("till.autotimer", "100");
         }
         jTextAutoLogoffTime.setText(config.getProperty("till.autotimer").toString());
 
         jMarineOpt.setSelected(Boolean.valueOf(config.getProperty("till.marineoption")).booleanValue());
-        jchkShowCustomerDetails.setSelected(Boolean.valueOf(config.getProperty("table.showcustomerdetails")).booleanValue());
-        jchkShowWaiterDetails.setSelected(Boolean.valueOf(config.getProperty("table.showwaiterdetails")).booleanValue());
-        jchkTextOverlay.setSelected(Boolean.valueOf(config.getProperty("payments.textoverlay")).booleanValue());
+        jchkShowCustomerDetails.setSelected(Boolean.valueOf(
+                                                config.getProperty("table.showcustomerdetails")).booleanValue());
+        jchkShowWaiterDetails.setSelected(Boolean.valueOf(
+                                              config.getProperty("table.showwaiterdetails")).booleanValue());
+        jchkTextOverlay.setSelected(Boolean.valueOf(
+                                        config.getProperty("payments.textoverlay")).booleanValue());
         jchkAutoLogoff.setSelected(Boolean.valueOf(config.getProperty("till.autoLogoff")).booleanValue());
-        jchkAutoLogoffToTables.setSelected(Boolean.valueOf(config.getProperty("till.autoLogoffrestaurant")).booleanValue());
+        jchkAutoLogoffToTables.setSelected(Boolean.valueOf(
+                                               config.getProperty("till.autoLogoffrestaurant")).booleanValue());
         jTaxIncluded.setSelected(Boolean.valueOf(config.getProperty("till.taxincluded")).booleanValue());
         jCheckPrice00.setSelected(Boolean.valueOf(config.getProperty("till.pricewith00")).booleanValue());
-        jMoveAMountBoxToTop.setSelected(Boolean.valueOf(config.getProperty("till.amountattop")).booleanValue());
+        jMoveAMountBoxToTop.setSelected(Boolean.valueOf(
+                                            config.getProperty("till.amountattop")).booleanValue());
         jCloseCashbtn.setSelected(Boolean.valueOf(config.getProperty("screen.600800")).booleanValue());
 
 
-        if (config.getProperty("table.customercolour")==null){
+        if (config.getProperty("table.customercolour") == null) {
             jCustomerColour.setSelectedItem("blue");
-        }else{
+        } else {
             jCustomerColour.setSelectedItem(config.getProperty("table.customercolour"));
         }
-        if (config.getProperty("table.waitercolour")==null){
+        if (config.getProperty("table.waitercolour") == null) {
             jWaiterColour.setSelectedItem("red");
-        }else{
+        } else {
             jWaiterColour.setSelectedItem(config.getProperty("table.waitercolour"));
         }
-        if (config.getProperty("table.tablecolour")==null){
+        if (config.getProperty("table.tablecolour") == null) {
             jTableNameColour.setSelectedItem("black");
-        }else{
+        } else {
             jTableNameColour.setSelectedItem((config.getProperty("table.tablecolour")));
         }
 
 
-        if (jchkAutoLogoff.isSelected()){
-                jchkAutoLogoffToTables.setVisible(true);
-                jLabelInactiveTime.setVisible(true);
-                jLabelTimedMessage.setVisible(true);
-                jTextAutoLogoffTime.setVisible(true);
-        }else{
-                jchkAutoLogoffToTables.setVisible(false);
-                jLabelInactiveTime.setVisible(false);
-                jLabelTimedMessage.setVisible(false);
-                jTextAutoLogoffTime.setVisible(false);
+        if (jchkAutoLogoff.isSelected()) {
+            jchkAutoLogoffToTables.setVisible(true);
+            jLabelInactiveTime.setVisible(true);
+            jLabelTimedMessage.setVisible(true);
+            jTextAutoLogoffTime.setVisible(true);
+        } else {
+            jchkAutoLogoffToTables.setVisible(false);
+            jLabelInactiveTime.setVisible(false);
+            jLabelTimedMessage.setVisible(false);
+            jTextAutoLogoffTime.setVisible(false);
         }
 
 
@@ -102,20 +107,22 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
     @Override
     public void saveProperties(AppConfig config) {
 
-        config.setProperty("till.autotimer",jTextAutoLogoffTime.getText());
+        config.setProperty("till.autotimer", jTextAutoLogoffTime.getText());
         config.setProperty("till.marineoption", Boolean.toString(jMarineOpt.isSelected()));
-        config.setProperty("table.showcustomerdetails", Boolean.toString(jchkShowCustomerDetails.isSelected()));
+        config.setProperty("table.showcustomerdetails",
+                           Boolean.toString(jchkShowCustomerDetails.isSelected()));
         config.setProperty("table.showwaiterdetails", Boolean.toString(jchkShowWaiterDetails.isSelected()));
         config.setProperty("payments.textoverlay", Boolean.toString(jchkTextOverlay.isSelected()));
         config.setProperty("till.autoLogoff", Boolean.toString(jchkAutoLogoff.isSelected()));
-        config.setProperty("till.autoLogoffrestaurant", Boolean.toString(jchkAutoLogoffToTables.isSelected()));
-        config.setProperty("table.customercolour",jCustomerColour.getSelectedItem().toString());
-        config.setProperty("table.waitercolour",jWaiterColour.getSelectedItem().toString());
-        config.setProperty("table.tablecolour",jTableNameColour.getSelectedItem().toString());
-        config.setProperty("till.taxincluded",Boolean.toString(jTaxIncluded.isSelected()));
-        config.setProperty("till.pricewith00",Boolean.toString(jCheckPrice00.isSelected()));
-        config.setProperty("till.amountattop",Boolean.toString(jMoveAMountBoxToTop.isSelected()));
-        config.setProperty("screen.600800",Boolean.toString(jCloseCashbtn.isSelected()));
+        config.setProperty("till.autoLogoffrestaurant",
+                           Boolean.toString(jchkAutoLogoffToTables.isSelected()));
+        config.setProperty("table.customercolour", jCustomerColour.getSelectedItem().toString());
+        config.setProperty("table.waitercolour", jWaiterColour.getSelectedItem().toString());
+        config.setProperty("table.tablecolour", jTableNameColour.getSelectedItem().toString());
+        config.setProperty("till.taxincluded", Boolean.toString(jTaxIncluded.isSelected()));
+        config.setProperty("till.pricewith00", Boolean.toString(jCheckPrice00.isSelected()));
+        config.setProperty("till.amountattop", Boolean.toString(jMoveAMountBoxToTop.isSelected()));
+        config.setProperty("screen.600800", Boolean.toString(jCloseCashbtn.isSelected()));
 
 
         dirty.setDirty(false);
@@ -155,8 +162,13 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
 
         setPreferredSize(new java.awt.Dimension(650, 450));
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), bundle.getString("label.autologoffpanel"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(
+                              javax.swing.BorderFactory.createEtchedBorder(), bundle.getString("label.autologoffpanel"),
+                              javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                              javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12),
+                              new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel2.setLayout(null);
 
         jchkAutoLogoff.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -204,7 +216,11 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
         jPanel2.add(jLabelTimedMessage);
         jLabelTimedMessage.setBounds(260, 50, 190, 25);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), bundle.getString("label.tabledisplayoptions"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(
+                              javax.swing.BorderFactory.createEtchedBorder(), bundle.getString("label.tabledisplayoptions"),
+                              javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                              javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12),
+                              new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel3.setLayout(null);
 
         jchkShowCustomerDetails.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -277,7 +293,11 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
         jPanel3.add(jTableNameColour);
         jTableNameColour.setBounds(380, 100, 200, 30);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), bundle.getString("label.general"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(
+                              javax.swing.BorderFactory.createEtchedBorder(), bundle.getString("label.general"),
+                              javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                              javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12),
+                              new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel4.setLayout(null);
 
         jMarineOpt.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -341,44 +361,53 @@ public class JPanelConfigSystem extends javax.swing.JPanel implements PanelConfi
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                      .addGap(10, 10, 10)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 600,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 600,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 600,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(0, 0, 0)
+                      .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(0, 0, 0)
+                      .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jchkAutoLogoffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jchkAutoLogoffActionPerformed
-        if (jchkAutoLogoff.isSelected()){
-                jchkAutoLogoffToTables.setVisible(true);
-                jLabelInactiveTime.setVisible(true);
-                jLabelTimedMessage.setVisible(true);
-                jTextAutoLogoffTime.setVisible(true);
-        }else{
-                jchkAutoLogoffToTables.setVisible(false);
-                jLabelInactiveTime.setVisible(false);
-                jLabelTimedMessage.setVisible(false);
-                jTextAutoLogoffTime.setVisible(false);
+    private void jchkAutoLogoffActionPerformed(java.awt.event.ActionEvent
+                                               evt) {//GEN-FIRST:event_jchkAutoLogoffActionPerformed
+        if (jchkAutoLogoff.isSelected()) {
+            jchkAutoLogoffToTables.setVisible(true);
+            jLabelInactiveTime.setVisible(true);
+            jLabelTimedMessage.setVisible(true);
+            jTextAutoLogoffTime.setVisible(true);
+        } else {
+            jchkAutoLogoffToTables.setVisible(false);
+            jLabelInactiveTime.setVisible(false);
+            jLabelTimedMessage.setVisible(false);
+            jTextAutoLogoffTime.setVisible(false);
         }
     }//GEN-LAST:event_jchkAutoLogoffActionPerformed
 
-    private void jCheckPrice00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckPrice00ActionPerformed
+    private void jCheckPrice00ActionPerformed(java.awt.event.ActionEvent
+                                              evt) {//GEN-FIRST:event_jCheckPrice00ActionPerformed
 
     }//GEN-LAST:event_jCheckPrice00ActionPerformed
 
-    private void jCustomerColourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCustomerColourActionPerformed
+    private void jCustomerColourActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_jCustomerColourActionPerformed
 
     }//GEN-LAST:event_jCustomerColourActionPerformed
 

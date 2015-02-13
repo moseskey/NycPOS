@@ -40,7 +40,7 @@ public class PeoplePanel extends JPanelTable {
 
     @Override
     public Vectorer getVectorer() {
-        return tpeople.getVectorerBasic(new int[]{1});
+        return tpeople.getVectorerBasic(new int[] {1});
     }
 
     @Override
@@ -50,7 +50,7 @@ public class PeoplePanel extends JPanelTable {
 
     @Override
     public ListCellRenderer getListCellRenderer() {
-        return new ListCellRendererBasic(tpeople.getRenderStringBasic(new int[]{1}));
+        return new ListCellRendererBasic(tpeople.getRenderStringBasic(new int[] {1}));
     }
 
     @Override

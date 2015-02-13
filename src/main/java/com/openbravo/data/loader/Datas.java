@@ -21,7 +21,7 @@ public abstract class Datas {
     public final static Datas IMAGE = new DatasIMAGE();
     //public final static Datas INPUTSTREAM = new DatasINPUTSTREAM();
 
-        public final static Datas OBJECT = new DatasOBJECT();
+    public final static Datas OBJECT = new DatasOBJECT();
 
     public final static Datas SERIALIZABLE = new DatasSERIALIZABLE();
 
@@ -136,7 +136,7 @@ public abstract class Datas {
         public Object getValue(DataRead dr, int i) throws BasicException {
             return dr.getTimestamp(i);
         }
-         public void setValue(DataWrite dw, int i, Object value) throws BasicException {
+        public void setValue(DataWrite dw, int i, Object value) throws BasicException {
             dw.setTimestamp(i, (java.util.Date) value);
         }
         public Class getClassValue() {

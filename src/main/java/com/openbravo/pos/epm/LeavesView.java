@@ -26,7 +26,8 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
 
     public LeavesView(AppView app, DirtyManager dirty) {
 
-        dlPresenceManagement = (DataLogicPresenceManagement) app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");
+        dlPresenceManagement = (DataLogicPresenceManagement)
+                               app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");
         initComponents();
 
         m_sentcat = dlPresenceManagement.getLeavesList();
@@ -136,16 +137,16 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
                 startdate = (Date) Formats.TIMESTAMP.parseValue(m_jStartDate.getText());
                 return (startdate.before(date)
                         || (startdate.getDate() == date.getDate()
-                        && startdate.getMonth() == date.getMonth()
-                        && startdate.getYear() == date.getYear()));
+                            && startdate.getMonth() == date.getMonth()
+                            && startdate.getYear() == date.getYear()));
 
             } catch (BasicException ex) {
             }
         }
         return (systemDate.before(date)
                 || (systemDate.getDate() == date.getDate()
-                && systemDate.getMonth() == date.getMonth()
-                && systemDate.getYear() == date.getYear()));
+                    && systemDate.getMonth() == date.getMonth()
+                    && systemDate.getYear() == date.getYear()));
     }
 
 // TODO - rewrite IsValidStartDate using Apache commons or Calendar
@@ -157,16 +158,16 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
             try {
                 Date enddate = (Date) Formats.TIMESTAMP.parseValue(m_jEndDate.getText());
                 validEndDate = (enddate.after(date)
-                        || (enddate.getDate() == date.getDate()
-                        && enddate.getMonth() == date.getMonth()
-                        && enddate.getYear() == date.getYear()));
+                                || (enddate.getDate() == date.getDate()
+                                    && enddate.getMonth() == date.getMonth()
+                                    && enddate.getYear() == date.getYear()));
             } catch (BasicException ex) {
             }
         }
         return validEndDate && (systemDate.before(date)
-                || (systemDate.getDate() == date.getDate()
-                && systemDate.getMonth() == date.getMonth()
-                && systemDate.getYear() == date.getYear()));
+                                || (systemDate.getDate() == date.getDate()
+                                    && systemDate.getMonth() == date.getMonth()
+                                    && systemDate.getYear() == date.getYear()));
     }
 
     /**
@@ -202,7 +203,8 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         jScrollPane1.setViewportView(m_jLeaveNote);
 
         m_Name.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         m_Name.setText(bundle.getString("label.epm.employee")); // NOI18N
 
         m_StartDate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -216,7 +218,8 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         m_Notes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_Notes.setText(AppLocal.getIntString("label.epm.notes")); // NOI18N
 
-        btnEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user_sml.png"))); // NOI18N
+        btnEmployee.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/images/user_sml.png"))); // NOI18N
         btnEmployee.setFocusPainted(false);
         btnEmployee.setFocusable(false);
         btnEmployee.setMaximumSize(new java.awt.Dimension(57, 33));
@@ -237,7 +240,8 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
             }
         });
 
-        btnStartDate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
+        btnStartDate.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/date.png"))); // NOI18N
         btnStartDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStartDateActionPerformed(evt);
@@ -251,82 +255,102 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(m_Notes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                    .addComponent(m_EndDate, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                    .addComponent(m_StartDate, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                    .addComponent(m_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(m_jEndDate)
-                            .addComponent(m_jStartDate)
-                            .addComponent(m_jEmployeeName, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnStartDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEndDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
-                .addGap(77, 77, 77))
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(m_Notes, javax.swing.GroupLayout.Alignment.TRAILING,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                                .addComponent(m_EndDate, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                                .addComponent(m_StartDate, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                                .addComponent(m_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(m_jEndDate)
+                                                    .addComponent(m_jStartDate)
+                                                    .addComponent(m_jEmployeeName, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(btnStartDate, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(btnEmployee, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(btnEndDate, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
+                      .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(m_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(m_StartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(btnEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(m_jEmployeeName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(m_jStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(m_EndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(m_Notes, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                          .addComponent(m_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(m_StartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                          .addComponent(btnEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 28,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                           javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                          .addComponent(btnStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 28,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                          .addGap(0, 0, Short.MAX_VALUE)
+                                          .addComponent(m_jEmployeeName, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                           javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                          .addComponent(m_jStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addGap(12, 12, 12)
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(m_EndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                          .addComponent(btnEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 29,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(m_Notes, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap(15, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
+    private void btnEmployeeActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
 
-       JEmployeeFinder finder = JEmployeeFinder.getEmployeeFinder(this, dlPresenceManagement);
+        JEmployeeFinder finder = JEmployeeFinder.getEmployeeFinder(this, dlPresenceManagement);
         finder.search(null);
         finder.setVisible(true);
 
         try {
             m_jEmployeeName.setText(finder.getSelectedEmployee() == null
-                    ? null
-                    : dlPresenceManagement.loadEmployeeExt(finder.getSelectedEmployee().getId()).toString());
+                                    ? null
+                                    : dlPresenceManagement.loadEmployeeExt(finder.getSelectedEmployee().getId()).toString());
             m_employeeid = finder.getSelectedEmployee() == null
-                    ? null
-                    :finder.getSelectedEmployee().getId();
+                           ? null
+                           : finder.getSelectedEmployee().getId();
         } catch (BasicException e) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindemployee"), e);
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.cannotfindemployee"), e);
             msg.show(this);
         }
-}//GEN-LAST:event_btnEmployeeActionPerformed
+    }//GEN-LAST:event_btnEmployeeActionPerformed
 
-    private void btnEndDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEndDateActionPerformed
+    private void btnEndDateActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_btnEndDateActionPerformed
         Date date;
         try {
             date = (Date) Formats.TIMESTAMP.parseValue(m_jEndDate.getText());
@@ -338,11 +362,12 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
             if (IsValidEndDate(date)) {
                 m_jEndDate.setText(Formats.TIMESTAMP.formatValue(date));
             } else {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.invalidenddate"));
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.invalidenddate"));
                 msg.show(this);
             }
         }
-}//GEN-LAST:event_btnEndDateActionPerformed
+    }//GEN-LAST:event_btnEndDateActionPerformed
 
     private void btnStartDateActionPerformed(java.awt.event.ActionEvent evt) {
         Date date;
@@ -356,11 +381,12 @@ public final class LeavesView extends javax.swing.JPanel implements EditorRecord
             if (IsValidStartDate(date)) {
                 m_jStartDate.setText(Formats.TIMESTAMP.formatValue(date));
             } else {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.invalidstartdate"));
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.invalidstartdate"));
                 msg.show(this);
             }
         }
-}
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEmployee;

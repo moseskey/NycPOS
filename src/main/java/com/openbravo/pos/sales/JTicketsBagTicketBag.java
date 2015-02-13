@@ -46,7 +46,8 @@ public class JTicketsBagTicketBag extends javax.swing.JPanel {
         jPanEdit.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         m_jBtnDelete.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        m_jBtnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_delete.png"))); // NOI18N
+        m_jBtnDelete.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/sale_delete.png"))); // NOI18N
         m_jBtnDelete.setText(AppLocal.getIntString("Button.DeleteTicket")); // NOI18N
         m_jBtnDelete.setToolTipText("Delete current Ticket");
         m_jBtnDelete.setFocusPainted(false);
@@ -64,7 +65,8 @@ public class JTicketsBagTicketBag extends javax.swing.JPanel {
         jPanEdit.add(m_jBtnDelete);
 
         m_jBtnCancel.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        m_jBtnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        m_jBtnCancel.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/cancel.png"))); // NOI18N
         m_jBtnCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         m_jBtnCancel.setToolTipText("Cancel Action");
         m_jBtnCancel.setFocusPainted(false);
@@ -85,7 +87,8 @@ public class JTicketsBagTicketBag extends javax.swing.JPanel {
 
         jPanRefund.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        m_jBtnCancel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fileclose.png"))); // NOI18N
+        m_jBtnCancel1.setIcon(new javax.swing.ImageIcon(
+                                  getClass().getResource("/images/fileclose.png"))); // NOI18N
         m_jBtnCancel1.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         m_jBtnCancel1.setFocusPainted(false);
         m_jBtnCancel1.setFocusable(false);
@@ -101,15 +104,18 @@ public class JTicketsBagTicketBag extends javax.swing.JPanel {
         add(jPanRefund, "refund");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jBtnCancel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jBtnCancel1ActionPerformed
+    private void m_jBtnCancel1ActionPerformed(java.awt.event.ActionEvent
+                                              evt) {//GEN-FIRST:event_m_jBtnCancel1ActionPerformed
 
         m_ticketsbagticket.canceleditionTicket();
 
     }//GEN-LAST:event_m_jBtnCancel1ActionPerformed
 
-    private void m_jBtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jBtnDeleteActionPerformed
+    private void m_jBtnDeleteActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jBtnDeleteActionPerformed
 
-        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannadelete"), AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannadelete"),
+                                                AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (res == JOptionPane.YES_OPTION) {
             m_ticketsbagticket.deleteTicket();
 
@@ -117,7 +123,8 @@ public class JTicketsBagTicketBag extends javax.swing.JPanel {
 
     }//GEN-LAST:event_m_jBtnDeleteActionPerformed
 
-    private void m_jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jBtnCancelActionPerformed
+    private void m_jBtnCancelActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jBtnCancelActionPerformed
 
         m_ticketsbagticket.canceleditionTicket();
 

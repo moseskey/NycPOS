@@ -37,7 +37,8 @@ public class CommStream {
                 m_out = m_CommPortPrinter.getOutputStream(); // Tomamos el chorro de escritura
 
                 if (m_PortIdPrinter.getPortType() == CommPortIdentifier.PORT_SERIAL) {
-                    ((SerialPort)m_CommPortPrinter).setSerialPortParams(9600, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE); // Configuramos el puerto
+                    ((SerialPort)m_CommPortPrinter).setSerialPortParams(9600, SerialPort.DATABITS_8,
+                                                                        SerialPort.STOPBITS_1, SerialPort.PARITY_NONE); // Configuramos el puerto
                 } else if (m_PortIdPrinter.getPortType() == CommPortIdentifier.PORT_PARALLEL) {
                     ((ParallelPort)m_CommPortPrinter).setMode(1);
                 }

@@ -6,7 +6,7 @@ public interface AppUserView {
 
     // Acciones de la aplicacion
 
-        public AppUser getUser(); // Usuario logado
+    public AppUser getUser(); // Usuario logado
 
     public void showTask(String sTaskClass);
 

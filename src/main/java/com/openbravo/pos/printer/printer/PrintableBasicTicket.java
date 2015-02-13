@@ -17,7 +17,8 @@ public class PrintableBasicTicket implements Printable {
 
     private BasicTicket ticket;
 
-    public PrintableBasicTicket(BasicTicket ticket, int imageable_x, int imageable_y, int imageable_width, int imageable_height) {
+    public PrintableBasicTicket(BasicTicket ticket, int imageable_x, int imageable_y,
+                                int imageable_width, int imageable_height) {
         this.ticket = ticket;
         this.imageable_x = imageable_x;
         this.imageable_y = imageable_y;
@@ -68,7 +69,7 @@ public class PrintableBasicTicket implements Printable {
         }
 
         return printed
-            ? Printable.PAGE_EXISTS
-            : Printable.NO_SUCH_PAGE;
+               ? Printable.PAGE_EXISTS
+               : Printable.NO_SUCH_PAGE;
     }
 }

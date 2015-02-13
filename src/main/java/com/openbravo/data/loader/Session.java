@@ -40,8 +40,8 @@ public final class Session {
 
         // creamos una nueva conexion.
         m_c = (m_sappuser == null && m_spassword == null)
-        ? DriverManager.getConnection(m_surl)
-        : DriverManager.getConnection(m_surl, m_sappuser, m_spassword);
+              ? DriverManager.getConnection(m_surl)
+              : DriverManager.getConnection(m_surl, m_sappuser, m_spassword);
         m_c.setAutoCommit(true);
         m_bInTransaction = false;
     }

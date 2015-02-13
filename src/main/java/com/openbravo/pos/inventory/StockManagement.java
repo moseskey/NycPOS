@@ -141,11 +141,13 @@ public class StockManagement extends JPanel implements JPanelView {
     public boolean deactivate() {
 
         if (m_invlines.getCount() > 0) {
-            int res = JOptionPane.showConfirmDialog(this, LocalRes.getIntString("message.wannasave"), LocalRes.getIntString("title.editor"), JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int res = JOptionPane.showConfirmDialog(this, LocalRes.getIntString("message.wannasave"),
+                                                    LocalRes.getIntString("title.editor"), JOptionPane.YES_NO_CANCEL_OPTION,
+                                                    JOptionPane.QUESTION_MESSAGE);
             if (res == JOptionPane.YES_OPTION) {
                 saveData();
                 return true;
-            } else return res == JOptionPane.NO_OPTION;
+            } else { return res == JOptionPane.NO_OPTION; }
         } else {
             return true;
         }
@@ -156,7 +158,7 @@ public class StockManagement extends JPanel implements JPanelView {
     }
 
     private void deleteLine(int index) {
-        if (index < 0){
+        if (index < 0) {
             Toolkit.getDefaultToolkit().beep(); // No hay ninguna seleccionada
         } else {
             m_invlines.deleteLine(index);
@@ -176,7 +178,7 @@ public class StockManagement extends JPanel implements JPanelView {
         incProductByCode(sCode, 1.0);
     }
     private void incProductByCode(String sCode, double dQuantity) {
-    // precondicion: sCode != null
+        // precondicion: sCode != null
 
         try {
             ProductInfoExt oProduct = m_dlSales.getProductInfoByCode(sCode);
@@ -194,7 +196,7 @@ public class StockManagement extends JPanel implements JPanelView {
 
     private void addUnits(double dUnits) {
         int i  = m_invlines.getSelectedRow();
-        if (i >= 0 ) {
+        if (i >= 0) {
             InventoryLine inv = m_invlines.getLine(i);
             double dunits = inv.getMultiply() + dUnits;
             if (dunits <= 0.0) {
@@ -208,7 +210,7 @@ public class StockManagement extends JPanel implements JPanelView {
 
     private void setUnits(double dUnits) {
         int i  = m_invlines.getSelectedRow();
-        if (i >= 0 ) {
+        if (i >= 0) {
             InventoryLine inv = m_invlines.getLine(i);
             inv.setMultiply(dUnits);
             m_invlines.setLine(i, inv);
@@ -247,7 +249,7 @@ public class StockManagement extends JPanel implements JPanelView {
         } else if (cTrans == '.') {
             if (m_jcodebar.getText() == null || m_jcodebar.getText().equals("")) {
                 m_jcodebar.setText("0.");
-            } else if (NUMBER_STATE != DECIMAL){
+            } else if (NUMBER_STATE != DECIMAL) {
                 m_jcodebar.setText(m_jcodebar.getText() + cTrans);
             }
             NUMBER_STATE = DECIMAL;
@@ -281,30 +283,31 @@ public class StockManagement extends JPanel implements JPanelView {
             if (reason == MovementReason.OUT_CROSSING) {
                 // Es una doble entrada
                 saveData(new InventoryRecord(
-                        d, MovementReason.OUT_MOVEMENT,
-                        (LocationInfo) m_LocationsModel.getSelectedItem(),
-                        m_App.getAppUserView().getUser().getName(),
-                        m_invlines.getLines()
-                    ));
+                             d, MovementReason.OUT_MOVEMENT,
+                             (LocationInfo) m_LocationsModel.getSelectedItem(),
+                             m_App.getAppUserView().getUser().getName(),
+                             m_invlines.getLines()
+                         ));
                 saveData(new InventoryRecord(
-                        d, MovementReason.IN_MOVEMENT,
-                        (LocationInfo) m_LocationsModelDes.getSelectedItem(),
-                        m_App.getAppUserView().getUser().getName(),
-                        m_invlines.getLines()
-                    ));
+                             d, MovementReason.IN_MOVEMENT,
+                             (LocationInfo) m_LocationsModelDes.getSelectedItem(),
+                             m_App.getAppUserView().getUser().getName(),
+                             m_invlines.getLines()
+                         ));
             } else {
                 // Es un movimiento
                 saveData(new InventoryRecord(
-                        d, reason,
-                        (LocationInfo) m_LocationsModel.getSelectedItem(),
-                        m_App.getAppUserView().getUser().getName(),
-                        m_invlines.getLines()
-                    ));
+                             d, reason,
+                             (LocationInfo) m_LocationsModel.getSelectedItem(),
+                             m_App.getAppUserView().getUser().getName(),
+                             m_invlines.getLines()
+                         ));
             }
 
             stateToInsert();
         } catch (BasicException eData) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotsaveinventorydata"), eData);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                            AppLocal.getIntString("message.cannotsaveinventorydata"), eData);
             msg.show(this);
         }
     }
@@ -318,17 +321,17 @@ public class StockManagement extends JPanel implements JPanelView {
             InventoryLine inv = rec.getLines().get(i);
 
             sent.exec(new Object[] {
-                UUID.randomUUID().toString(),
-                rec.getDate(),
-                rec.getReason().getKey(),
-                rec.getLocation().getID(),
-                inv.getProductID(),
-                inv.getProductAttSetInstId(),
-                rec.getReason().samesignum(inv.getMultiply()),
-                inv.getPrice(),
-                rec.getUser()
+                          UUID.randomUUID().toString(),
+                          rec.getDate(),
+                          rec.getReason().getKey(),
+                          rec.getLocation().getID(),
+                          inv.getProductID(),
+                          inv.getProductAttSetInstId(),
+                          rec.getReason().samesignum(inv.getMultiply()),
+                          inv.getPrice(),
+                          rec.getUser()
 
-            });
+                      });
         }
 
         // si se ha grabado se imprime, si no, no.
@@ -339,7 +342,8 @@ public class StockManagement extends JPanel implements JPanelView {
 
         String sresource = m_dlSystem.getResourceAsXML("Printer.Inventory");
         if (sresource == null) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotprintticket"));
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.cannotprintticket"));
             msg.show(this);
         } else {
             try {
@@ -347,8 +351,9 @@ public class StockManagement extends JPanel implements JPanelView {
                 script.put("inventoryrecord", invrec);
                 m_TTP.printTicket(script.eval(sresource).toString());
 // JG 16 May 2013 use multicatch
-            } catch (    ScriptException | TicketPrinterException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotprintticket"), e);
+            } catch (ScriptException | TicketPrinterException e) {
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotprintticket"), e);
                 msg.show(this);
             }
         }
@@ -360,11 +365,11 @@ public class StockManagement extends JPanel implements JPanelView {
         public void actionPerformed(ActionEvent e) {
             String sQty = m_jcodebar.getText();
             if (sQty != null) {
-                Double dQty = (Double.valueOf(sQty)==0) ? 1.0 : Double.valueOf(sQty);
-                incProduct( (ProductInfoExt) e.getSource(), dQty);
+                Double dQty = (Double.valueOf(sQty) == 0) ? 1.0 : Double.valueOf(sQty);
+                incProduct((ProductInfoExt) e.getSource(), dQty);
                 m_jcodebar.setText(null);
             } else {
-                incProduct( (ProductInfoExt) e.getSource(),1.0);
+                incProduct((ProductInfoExt) e.getSource(), 1.0);
             }
         }
     }
@@ -419,12 +424,12 @@ public class StockManagement extends JPanel implements JPanelView {
         jLabel1.setMinimumSize(new java.awt.Dimension(40, 25));
         jLabel1.setPreferredSize(new java.awt.Dimension(90, 25));
         //jPanel8.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 10, -1, -1));
-		jPanel8.add(jLabel1);
+        jPanel8.add(jLabel1);
 
         m_jdate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jdate.setPreferredSize(new java.awt.Dimension(90, 25));
         //jPanel8.add(m_jdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 25));
-		jPanel8.add(m_jdate);
+        jPanel8.add(m_jdate);
 
         m_jbtndate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
         m_jbtndate.setToolTipText("Open Calendar");
@@ -434,7 +439,7 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         //jPanel8.add(m_jbtndate, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 8, 40, 30));
-		jPanel8.add(m_jbtndate);
+        jPanel8.add(m_jbtndate);
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText(AppLocal.getIntString("label.stockreason")); // NOI18N
@@ -442,7 +447,7 @@ public class StockManagement extends JPanel implements JPanelView {
         jLabel2.setMinimumSize(new java.awt.Dimension(40, 25));
         jLabel2.setPreferredSize(new java.awt.Dimension(90, 25));
         //jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, 90, -1));
-		jPanel8.add(jLabel2);
+        jPanel8.add(jLabel2);
 
         m_jreason.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         m_jreason.setPreferredSize(new java.awt.Dimension(90, 25));
@@ -452,7 +457,7 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         //jPanel8.add(m_jreason, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 200, 25));
-		jPanel8.add(m_jreason);
+        jPanel8.add(m_jreason);
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel8.setText(AppLocal.getIntString("label.warehouse")); // NOI18N
@@ -460,23 +465,23 @@ public class StockManagement extends JPanel implements JPanelView {
         jLabel8.setMinimumSize(new java.awt.Dimension(40, 25));
         jLabel8.setPreferredSize(new java.awt.Dimension(90, 25));
         //jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, -1, -1));
-		jPanel8.add(jLabel8);
+        jPanel8.add(jLabel8);
 
         m_jLocationDes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         m_jLocationDes.setPreferredSize(new java.awt.Dimension(90, 25));
         //jPanel8.add(m_jLocationDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 200, 25));
-		jPanel8.add(m_jLocationDes);
+        jPanel8.add(m_jLocationDes);
 
         m_jLocation.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         m_jLocation.setPreferredSize(new java.awt.Dimension(90, 25));
         //jPanel8.add(m_jLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 200, 25));
-		jPanel8.add(m_jLocation);
+        jPanel8.add(m_jLocation);
 
         jPanel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel5.setPreferredSize(new java.awt.Dimension(400, 245));
         jPanel5.setLayout(new java.awt.BorderLayout());
         //jPanel8.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, -1, 150));
-		jPanel8.add(jPanel5);
+        jPanel8.add(jPanel5);
 
         m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1uparrow.png"))); // NOI18N
         m_jUp.setToolTipText("Scroll Up a Line");
@@ -490,9 +495,10 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         //jPanel8.add(m_jUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
-		jPanel8.add(m_jUp);
+        jPanel8.add(m_jUp);
 
-        m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1downarrow.png"))); // NOI18N
+        m_jDown.setIcon(new javax.swing.ImageIcon(
+                            getClass().getResource("/images/1downarrow.png"))); // NOI18N
         m_jDown.setToolTipText("Scroll Down a Line");
         m_jDown.setFocusPainted(false);
         m_jDown.setFocusable(false);
@@ -504,9 +510,10 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         //jPanel8.add(m_jDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
-		jPanel8.add(m_jDown);
+        jPanel8.add(m_jDown);
 
-        m_jDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editdelete.png"))); // NOI18N
+        m_jDelete.setIcon(new javax.swing.ImageIcon(
+                              getClass().getResource("/images/editdelete.png"))); // NOI18N
         m_jDelete.setToolTipText("Remove Line");
         m_jDelete.setFocusPainted(false);
         m_jDelete.setFocusable(false);
@@ -518,9 +525,10 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         //jPanel8.add(m_jDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
-		jPanel8.add(m_jDelete);
+        jPanel8.add(m_jDelete);
 
-        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/attributes.png"))); // NOI18N
+        jEditAttributes.setIcon(new javax.swing.ImageIcon(
+                                    getClass().getResource("/images/attributes.png"))); // NOI18N
         jEditAttributes.setToolTipText("Attrubutes");
         jEditAttributes.setFocusPainted(false);
         jEditAttributes.setFocusable(false);
@@ -535,7 +543,7 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         //jPanel8.add(jEditAttributes, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, -1, -1));
-		jPanel8.add(jEditAttributes);
+        jPanel8.add(jEditAttributes);
 
         btnDownloadProducts.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnDownloadProducts.setText("ScanPal");
@@ -547,7 +555,7 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         //jPanel8.add(btnDownloadProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, -1, -1));
-		jPanel8.add(btnDownloadProducts);
+        jPanel8.add(btnDownloadProducts);
 
         jTextField1.setBackground(javax.swing.UIManager.getDefaults().getColor("Panel.background"));
         jTextField1.setForeground(javax.swing.UIManager.getDefaults().getColor("Panel.background"));
@@ -564,13 +572,13 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         //jPanel8.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
-		jPanel8.add(jTextField1);
+        jPanel8.add(jTextField1);
 
         jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.Y_AXIS));
         jPanel2.add(jPanel6);
 
         //jPanel8.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-		jPanel8.add(jPanel2);
+        jPanel8.add(jPanel2);
 
         jPanel1.setMinimumSize(new java.awt.Dimension(150, 250));
         jPanel1.setPreferredSize(new java.awt.Dimension(220, 250));
@@ -590,16 +598,19 @@ public class StockManagement extends JPanel implements JPanelView {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jNumberKeys, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jNumberKeys, javax.swing.GroupLayout.PREFERRED_SIZE,
+                          javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jNumberKeys, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                      .addComponent(jNumberKeys, javax.swing.GroupLayout.PREFERRED_SIZE, 210,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barcode.png"))); // NOI18N
+        m_jEnter.setIcon(new javax.swing.ImageIcon(
+                             getClass().getResource("/images/barcode.png"))); // NOI18N
         m_jEnter.setFocusPainted(false);
         m_jEnter.setFocusable(false);
         m_jEnter.setRequestFocusEnabled(false);
@@ -612,7 +623,9 @@ public class StockManagement extends JPanel implements JPanelView {
         m_jcodebar.setBackground(java.awt.Color.white);
         m_jcodebar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jcodebar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jcodebar.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1)));
+        m_jcodebar.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                 javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)),
+                                 javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1)));
         m_jcodebar.setOpaque(true);
         m_jcodebar.setPreferredSize(new java.awt.Dimension(135, 30));
         m_jcodebar.setRequestFocusEnabled(false);
@@ -627,30 +640,35 @@ public class StockManagement extends JPanel implements JPanelView {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(m_jcodebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(m_jEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                          .addGap(9, 9, 9)
+                                          .addComponent(m_jcodebar, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                          .addComponent(m_jEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 66,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(m_jcodebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jEnter))
-                .addGap(0, 5, Short.MAX_VALUE))
+                      .addGap(5, 5, 5)
+                      .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 214,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(m_jcodebar, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jEnter))
+                      .addGap(0, 5, Short.MAX_VALUE))
         );
 
         //jPanel8.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 240, 260));
-		jPanel8.add(jPanel1);
+        jPanel8.add(jPanel1);
 
         add(jPanel8, java.awt.BorderLayout.PAGE_START);
 
@@ -668,17 +686,20 @@ public class StockManagement extends JPanel implements JPanelView {
         stateTransition(evt.getKeyChar());
     }//GEN-LAST:event_jTextField1KeyTyped
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jNumberKeysKeyPerformed(com.openbravo.beans.JNumberEvent evt) {//GEN-FIRST:event_jNumberKeysKeyPerformed
+    private void jNumberKeysKeyPerformed(com.openbravo.beans.JNumberEvent
+                                         evt) {//GEN-FIRST:event_jNumberKeysKeyPerformed
 
         stateTransition(evt.getKey());
 
     }//GEN-LAST:event_jNumberKeysKeyPerformed
 
-    private void m_jcodebarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_m_jcodebarMouseClicked
+    private void m_jcodebarMouseClicked(java.awt.event.MouseEvent
+                                        evt) {//GEN-FIRST:event_m_jcodebarMouseClicked
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -687,7 +708,8 @@ public class StockManagement extends JPanel implements JPanelView {
         });
     }//GEN-LAST:event_m_jcodebarMouseClicked
 
-    private void btnDownloadProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDownloadProductsActionPerformed
+    private void btnDownloadProductsActionPerformed(java.awt.event.ActionEvent
+                                                    evt) {//GEN-FIRST:event_btnDownloadProductsActionPerformed
 
         // Ejecutamos la descarga...
         DeviceScanner s = m_App.getDeviceScanner();
@@ -703,7 +725,8 @@ public class StockManagement extends JPanel implements JPanelView {
             // MessageInf msg = new MessageInf(MessageInf.SGN_SUCCESS, "Se ha subido con exito la lista de productos al ScanPal.");
             // msg.show(this);
         } catch (DeviceScannerException e) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.scannerfail2"), e);
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.scannerfail2"), e);
             msg.show(this);
         } finally {
             s.disconnectDevice();
@@ -711,7 +734,8 @@ public class StockManagement extends JPanel implements JPanelView {
 
     }//GEN-LAST:event_btnDownloadProductsActionPerformed
 
-    private void jEditAttributesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEditAttributesActionPerformed
+    private void jEditAttributesActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_jEditAttributesActionPerformed
 
         int i = m_invlines.getSelectedRow();
         if (i < 0) {
@@ -729,36 +753,42 @@ public class StockManagement extends JPanel implements JPanelView {
                     m_invlines.setLine(i, line);
                 }
             } catch (BasicException ex) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindattributes"), ex);
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotfindattributes"), ex);
                 msg.show(this);
             }
         }
     }//GEN-LAST:event_jEditAttributesActionPerformed
 
-    private void m_jDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jDeleteActionPerformed
+    private void m_jDeleteActionPerformed(java.awt.event.ActionEvent
+                                          evt) {//GEN-FIRST:event_m_jDeleteActionPerformed
 
         deleteLine(m_invlines.getSelectedRow());
     }//GEN-LAST:event_m_jDeleteActionPerformed
 
-    private void m_jDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jDownActionPerformed
+    private void m_jDownActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_m_jDownActionPerformed
 
         m_invlines.goDown();
 
     }//GEN-LAST:event_m_jDownActionPerformed
 
-    private void m_jUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jUpActionPerformed
+    private void m_jUpActionPerformed(java.awt.event.ActionEvent
+                                      evt) {//GEN-FIRST:event_m_jUpActionPerformed
 
         m_invlines.goUp();
 
     }//GEN-LAST:event_m_jUpActionPerformed
 
-    private void m_jreasonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jreasonActionPerformed
+    private void m_jreasonActionPerformed(java.awt.event.ActionEvent
+                                          evt) {//GEN-FIRST:event_m_jreasonActionPerformed
 
         m_jLocationDes.setEnabled(m_ReasonModel.getSelectedItem() == MovementReason.OUT_CROSSING);
 
     }//GEN-LAST:event_m_jreasonActionPerformed
 
-    private void m_jbtndateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtndateActionPerformed
+    private void m_jbtndateActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_m_jbtndateActionPerformed
 
         Date date;
         try {
@@ -772,7 +802,8 @@ public class StockManagement extends JPanel implements JPanelView {
         }
     }//GEN-LAST:event_m_jbtndateActionPerformed
 
-    private void m_jEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jEnterActionPerformed
+    private void m_jEnterActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_m_jEnterActionPerformed
 
         incProductByCode(m_jcodebar.getText());
         m_jcodebar.setText(null);

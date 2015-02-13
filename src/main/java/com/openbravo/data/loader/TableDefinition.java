@@ -16,10 +16,10 @@ public class TableDefinition {
 
 
     public TableDefinition(
-            Session s,
-            String tablename,
-            String[] fieldname, String[] fieldtran, Datas[] fielddata, Formats[] fieldformat,
-            int[] idinx) {
+        Session s,
+        String tablename,
+        String[] fieldname, String[] fieldtran, Datas[] fielddata, Formats[] fieldformat,
+        int[] idinx) {
 
         m_s = s;
         this.tablename = tablename;
@@ -33,10 +33,10 @@ public class TableDefinition {
     }
 
     public TableDefinition(
-            Session s,
-            String tablename,
-            String[] fieldname, Datas[] fielddata, Formats[] fieldformat,
-            int[] idinx) {
+        Session s,
+        String tablename,
+        String[] fieldname, Datas[] fielddata, Formats[] fieldformat,
+        int[] idinx) {
         this(s, tablename, fieldname, fieldname, fielddata, fieldformat, idinx);
     }
 
@@ -148,7 +148,8 @@ public class TableDefinition {
     }
 
     public SentenceExec getInsertSentence(int[] fieldindx) {
-        return new PreparedSentence(m_s, getInsertSQL(fieldindx), getSerializerInsertBasic(fieldindx), null);
+        return new PreparedSentence(m_s, getInsertSQL(fieldindx), getSerializerInsertBasic(fieldindx),
+                                    null);
     }
 
     private String getInsertSQL(int[] fieldindx) {
@@ -190,7 +191,8 @@ public class TableDefinition {
     }
 
     public SentenceExec getUpdateSentence(int[] fieldindx) {
-        return new PreparedSentence(m_s, getUpdateSQL(fieldindx), getSerializerUpdateBasic(fieldindx), null);
+        return new PreparedSentence(m_s, getUpdateSQL(fieldindx), getSerializerUpdateBasic(fieldindx),
+                                    null);
     }
 
     private String getUpdateSQL(int[] fieldindx) {

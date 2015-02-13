@@ -55,7 +55,8 @@ public class ThumbNailBuilder {
 
         img = getThumbNail(img);
 
-        BufferedImage imgtext = new BufferedImage(img.getWidth(null), img.getHeight(null),  BufferedImage.TYPE_INT_ARGB);
+        BufferedImage imgtext = new BufferedImage(img.getWidth(null), img.getHeight(null),
+                                                  BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = imgtext.createGraphics();
 
         // The text
@@ -77,7 +78,7 @@ public class ThumbNailBuilder {
 //        float[] dist = {0.1f, 1.0f};
 //        Color[] colors = {c2, c1};
 //        Paint gpaint = new RadialGradientPaint(center, radius, dist, colors);
-        Paint gpaint = new GradientPaint(new Point(0,0), c1, new Point(label.getWidth() / 2, 0), c2, true);
+        Paint gpaint = new GradientPaint(new Point(0, 0), c1, new Point(label.getWidth() / 2, 0), c2, true);
 
         g2d.drawImage(img, 0, 0, null);
         g2d.translate(0, imgtext.getHeight() - label.getHeight());
@@ -102,9 +103,9 @@ public class ThumbNailBuilder {
         double scaley = (double) m_height / (double) img.getHeight(null);
         if (scalex < scaley) {
             targetw = m_width;
-            targeth = (int) (img.getHeight(null) * scalex);
+            targeth = (int)(img.getHeight(null) * scalex);
         } else {
-            targetw = (int) (img.getWidth(null) * scaley);
+            targetw = (int)(img.getWidth(null) * scaley);
             targeth = (int) m_height;
         }
 
@@ -153,7 +154,7 @@ public class ThumbNailBuilder {
             int y = (m_height > targeth) ? (m_height - targeth) / 2 : 0;
             g2d = midimg.createGraphics();
             g2d.drawImage(previmg, x, y, x + targetw, y + targeth,
-                                   0, 0, targetw, targeth, null);
+                          0, 0, targetw, targeth, null);
             g2d.dispose();
             previmg = midimg;
         }

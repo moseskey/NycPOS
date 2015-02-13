@@ -22,7 +22,8 @@ public class JFrmMigrate extends javax.swing.JFrame {
             this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/images/favicon.png")));
         } catch (IOException e) {
         }
-        setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION + " - " + AppLocal.getIntString("Menu.Configuration"));
+        setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION + " - " +
+                 AppLocal.getIntString("Menu.Configuration"));
 
         addWindowListener(new MyFrameListener());
 
@@ -36,7 +37,7 @@ public class JFrmMigrate extends javax.swing.JFrame {
         }
     }
 
-    private class MyFrameListener extends WindowAdapter{
+    private class MyFrameListener extends WindowAdapter {
 
         @Override
         public void windowClosing(WindowEvent evt) {
@@ -61,7 +62,7 @@ public class JFrmMigrate extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-702)/2, (screenSize.height-325)/2, 702, 325);
+        setBounds((screenSize.width - 702) / 2, (screenSize.height - 325) / 2, 702, 325);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -77,10 +78,10 @@ public class JFrmMigrate extends javax.swing.JFrame {
 
 // Set the look and feel.
 // JG 6 May 2013 to Multicatch
-             //   try {
-               //     UIManager.setLookAndFeel(config.getProperty("swing.defaultlaf"));
-               // } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-               // }
+                //   try {
+                //     UIManager.setLookAndFeel(config.getProperty("swing.defaultlaf"));
+                // } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+                // }
 
                 new JFrmMigrate(config).setVisible(true);
 

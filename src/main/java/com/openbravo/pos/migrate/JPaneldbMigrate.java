@@ -115,11 +115,13 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
             java.util.List l = bsentence.list();
             if (l.size() > 0) {
-                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("migration.warning"), l.toArray(new Throwable[l.size()])));
+                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                AppLocal.getIntString("migration.warning"), l.toArray(new Throwable[l.size()])));
             }
 
         } catch (BasicException e) {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER, AppLocal.getIntString("migration.warningnodefault"), e));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER,
+                                                            AppLocal.getIntString("migration.warningnodefault"), e));
             session.close();
         } finally {
         }
@@ -129,11 +131,13 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
             BatchSentence bsentence = new BatchSentenceResource(session2, eScript2);
             java.util.List l = bsentence.list();
             if (l.size() > 0) {
-                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("migration.warning"), l.toArray(new Throwable[l.size()])));
+                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                AppLocal.getIntString("migration.warning"), l.toArray(new Throwable[l.size()])));
             }
 
         } catch (BasicException e) {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER, AppLocal.getIntString("migration.warningnofk"), e));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER,
+                                                            AppLocal.getIntString("migration.warningnofk"), e));
             session.close();
         } finally {
         }
@@ -150,11 +154,13 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
             BatchSentence bsentence = new BatchSentenceResource(session2, eScript3);
             java.util.List l = bsentence.list();
             if (l.size() > 0) {
-                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("migration.warning"), l.toArray(new Throwable[l.size()])));
+                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                AppLocal.getIntString("migration.warning"), l.toArray(new Throwable[l.size()])));
             }
 
         } catch (BasicException e) {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER, AppLocal.getIntString("database.ScriptNotFound"), e));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER,
+                                                            AppLocal.getIntString("database.ScriptNotFound"), e));
             session.close();
         } finally {
         }
@@ -185,15 +191,18 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
         try {
             Class.forName(jtxtDbDriver.getText());
 
-            ClassLoader cloader = new URLClassLoader(new URL[]{new File(jtxtDbDriverLib.getText()).toURI().toURL()});
-            DriverManager.registerDriver(new DriverWrapper((Driver) Class.forName(jtxtDbDriver.getText(), true, cloader).newInstance()));
+            ClassLoader cloader = new URLClassLoader(new URL[] {new File(jtxtDbDriverLib.getText()).toURI().toURL()});
+            DriverManager.registerDriver(new DriverWrapper((Driver) Class.forName(jtxtDbDriver.getText(), true,
+                                                                                  cloader).newInstance()));
             con2 = (Connection) DriverManager.getConnection(db_url2, db_user2, db_password2);
 
             session2 = new Session(db_url2, db_user2, db_password2);
             sdbmanager2 = con2.getMetaData().getDatabaseProductName();
             return (true);
-        } catch (ClassNotFoundException | MalformedURLException | InstantiationException | IllegalAccessException | SQLException e) {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER, AppLocal.getIntString("database.UnableToConnect"), e));
+        } catch (ClassNotFoundException | MalformedURLException | InstantiationException |
+                     IllegalAccessException | SQLException e) {
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER,
+                                                            AppLocal.getIntString("database.UnableToConnect"), e));
             return (false);
         }
 
@@ -220,7 +229,8 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
         } catch (BasicException | SQLException e) {
 // put some error trap here
 
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER, AppLocal.getIntString("database.UnableToConnect"), e));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER,
+                                                            AppLocal.getIntString("database.UnableToConnect"), e));
             System.exit(0);
         }
 
@@ -284,7 +294,9 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 
         jPanel1.setLayout(null);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "New Database details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "New Database details",
+                                                                       javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                                                                       javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
         jPanel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -297,7 +309,8 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
             }
         });
 
-        jbtnDbDriverLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fileopen.png"))); // NOI18N
+        jbtnDbDriverLib.setIcon(new javax.swing.ImageIcon(
+                                    getClass().getResource("/images/fileopen.png"))); // NOI18N
         jbtnDbDriverLib.setMaximumSize(new java.awt.Dimension(64, 32));
         jbtnDbDriverLib.setMinimumSize(new java.awt.Dimension(64, 32));
         jbtnDbDriverLib.setPreferredSize(new java.awt.Dimension(64, 32));
@@ -341,8 +354,10 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
         });
 
         jButtonTest.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButtonTest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/database.png"))); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        jButtonTest.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/images/database.png"))); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jButtonTest.setText(bundle.getString("Button.Test")); // NOI18N
         jButtonTest.setActionCommand(bundle.getString("Button.Test")); // NOI18N
         jButtonTest.addActionListener(new java.awt.event.ActionListener() {
@@ -356,72 +371,95 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtDbUser, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtDbPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addComponent(jButtonTest, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jNewdbType, 0, 394, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jtxtDbDriver, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
-                                    .addComponent(jtxtDbDriverLib, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtxtDbURL))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbtnDbDriverLib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)
+                                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jtxtDbUser, javax.swing.GroupLayout.PREFERRED_SIZE, 177,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jtxtDbPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 177,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addGap(26, 26, 26)
+                                          .addComponent(jButtonTest, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                                              .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93,
+                                                                            javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addComponent(jNewdbType, 0, 394, Short.MAX_VALUE))
+                                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                                              .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                        .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                                                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                      Short.MAX_VALUE)
+                                                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                      Short.MAX_VALUE))
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                              .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                        .addComponent(jtxtDbDriver, javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+                                                                        .addComponent(jtxtDbDriverLib, javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jtxtDbURL))))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(jbtnDbDriverLib, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jbtnDbDriverLib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jNewdbType, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxtDbDriverLib, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtxtDbDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtxtDbURL, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxtDbUser, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxtDbPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButtonTest, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                      .addContainerGap(20, Short.MAX_VALUE)
+                      .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jbtnDbDriverLib, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jNewdbType, javax.swing.GroupLayout.PREFERRED_SIZE, 24,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jtxtDbDriverLib, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jtxtDbDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jtxtDbURL, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jtxtDbUser, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jtxtDbPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                          .addComponent(jButtonTest, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -429,35 +467,43 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
-                .addContainerGap())
+                      .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+                      .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(364, Short.MAX_VALUE)
-                .addComponent(jbtnMigrate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                      .addContainerGap(364, Short.MAX_VALUE)
+                      .addComponent(jbtnMigrate, javax.swing.GroupLayout.PREFERRED_SIZE, 130,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                      .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(26, 26, 26))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtnMigrate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              Short.MAX_VALUE))
+                      .addGap(18, 18, 18)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jbtnMigrate, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnMigrateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMigrateActionPerformed
+    private void jbtnMigrateActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_jbtnMigrateActionPerformed
         if (getSeconddbDetails()) {
 // check if this a supported migration path
 
@@ -611,7 +657,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
                     rs = stmt.executeQuery(SQL);
                     while (rs.next()) {
                         SQL = "INSERT INTO CUSTOMERS (ID, SEARCHKEY, TAXID, NAME, TAXCATEGORY, CARD, MAXDEBT, ADDRESS, ADDRESS2, POSTAL, CITY,  REGION, COUNTRY, FIRSTNAME, LASTNAME, EMAIL, PHONE, PHONE2, FAX, NOTES, VISIBLE, CURDATE, CURDEBT )"
-                                + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                              + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                         pstmt = con2.prepareStatement(SQL);
                         pstmt.setString(1, rs.getString("ID"));
                         pstmt.setString(2, rs.getString("SEARCHKEY"));
@@ -757,7 +803,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
                     rs = stmt.executeQuery(SQL);
                     while (rs.next()) {
                         SQL = "INSERT INTO PRODUCTS (ID, REFERENCE, CODE, CODETYPE, NAME, PRICEBUY, PRICESELL, CATEGORY, TAXCAT, ATTRIBUTESET_ID, STOCKCOST, STOCKVOLUME, IMAGE, ISCOM, ISSCALE, ISKITCHEN, PRINTKB, SENDSTATUS, ISSERVICE, DISPLAY, ATTRIBUTES, ISVPRICE, ISVERPATRIB, TEXTTIP, WARRANTY, STOCKUNITS)"
-                                + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                              + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                         pstmt = con2.prepareStatement(SQL);
                         pstmt.setString(1, rs.getString("ID"));
                         pstmt.setString(2, rs.getString("REFERENCE"));
@@ -787,10 +833,10 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
 // JG Aug 2014 for 3.80 from 3.70
                         pstmt.setDouble(26, rs.getDouble("STOCKUNITS"));
 // Dis-Allow Product Control account
-                    if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
-                        pstmt.executeUpdate();
+                        if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
+                            pstmt.executeUpdate();
+                        }
                     }
-                }
 
 
 // copy PRODUCTS_CAT table
@@ -803,10 +849,10 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
                         pstmt.setInt(2, rs.getInt("CATORDER"));
 // JG Aug 2014 for 3.80
 // Dis-Allow Product Control account
-if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
-                        pstmt.executeUpdate();
+                        if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
+                            pstmt.executeUpdate();
+                        }
                     }
-                }
 
 
                     // copy PRODUCTS_COM table
@@ -1158,7 +1204,7 @@ if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
 //JG Aug 2014 - added to .properties
                     if ("MySQL".equals(sdbmanager2)) {
                         config.setProperty("db.engine", "MySQL");
-                    }else{
+                    } else {
                         config.setProperty("db.engine", "PostgreSQL");
                     }
 //
@@ -1167,7 +1213,8 @@ if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
                     config.setProperty("db.URL", jtxtDbURL.getText());
                     config.setProperty("db.user", jtxtDbUser.getText());
                     AltEncrypter cypher = new AltEncrypter("cypherkey" + jtxtDbUser.getText());
-                    config.setProperty("db.password", "crypt:" + cypher.encrypt(new String(jtxtDbPassword.getPassword())));
+                    config.setProperty("db.password",
+                                       "crypt:" + cypher.encrypt(new String(jtxtDbPassword.getPassword())));
                     dirty.setDirty(false);
 
 
@@ -1177,9 +1224,11 @@ if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
 
                     try {
                         config.save();
-                        JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.restartchanges"), AppLocal.getIntString("message.title"), JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.restartchanges"),
+                                                      AppLocal.getIntString("message.title"), JOptionPane.INFORMATION_MESSAGE);
                     } catch (IOException e) {
-                        JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotsaveconfig"), e));
+                        JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                        AppLocal.getIntString("message.cannotsaveconfig"), e));
                     }
 
 
@@ -1192,28 +1241,34 @@ if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
                 }
             } else {
                 JFrame frame = new JFrame();
-                JOptionPane.showMessageDialog(frame, AppLocal.getIntString("message.migratenotsupported"), AppLocal.getIntString("message.nigratemessage"), JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(frame, AppLocal.getIntString("message.migratenotsupported"),
+                                              AppLocal.getIntString("message.nigratemessage"), JOptionPane.WARNING_MESSAGE);
 
             }
         }
     }//GEN-LAST:event_jbtnMigrateActionPerformed
 
-    private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
+    private void jbtnExitActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jbtnExitActionPerformed
         deactivate();
         System.exit(0);
     }//GEN-LAST:event_jbtnExitActionPerformed
 
-    private void jtxtDbURLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtDbURLActionPerformed
+    private void jtxtDbURLActionPerformed(java.awt.event.ActionEvent
+                                          evt) {//GEN-FIRST:event_jtxtDbURLActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtDbURLActionPerformed
 
-    private void jtxtDbDriverLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtDbDriverLibActionPerformed
+    private void jtxtDbDriverLibActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_jtxtDbDriverLibActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtDbDriverLibActionPerformed
 
-    private void jNewdbTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNewdbTypeActionPerformed
+    private void jNewdbTypeActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jNewdbTypeActionPerformed
         if ("MySQL".equals(jNewdbType.getSelectedItem())) {
-            jtxtDbDriverLib.setText(System.getProperty("user.dir") + "/lib/mysql-connector-java-5.1.26-bin.jar");
+            jtxtDbDriverLib.setText(System.getProperty("user.dir") +
+                                    "/lib/mysql-connector-java-5.1.26-bin.jar");
             jtxtDbDriver.setText("com.mysql.jdbc.Driver");
             jtxtDbURL.setText("jdbc:mysql://localhost:3306/unicentaopos");
 
@@ -1225,11 +1280,13 @@ if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
         }
     }//GEN-LAST:event_jNewdbTypeActionPerformed
 
-    private void jtxtDbUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtDbUserActionPerformed
+    private void jtxtDbUserActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jtxtDbUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtDbUserActionPerformed
 
-    private void jButtonTestjButtonTestConnectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTestjButtonTestConnectionActionPerformed
+    private void jButtonTestjButtonTestConnectionActionPerformed(java.awt.event.ActionEvent
+                                                                 evt) {//GEN-FIRST:event_jButtonTestjButtonTestConnectionActionPerformed
         try {
             String driverlib = jtxtDbDriverLib.getText();
             String driver = jtxtDbDriver.getText();
@@ -1237,22 +1294,27 @@ if (!"xxx999_999xxx_x9x9x9".equals(rs.getString(1))) {
             String user = jtxtDbUser.getText();
             String password = new String(jtxtDbPassword.getPassword());
 
-            ClassLoader cloader = new URLClassLoader(new URL[]{new File(driverlib).toURI().toURL()});
-            DriverManager.registerDriver(new DriverWrapper((Driver) Class.forName(driver, true, cloader).newInstance()));
+            ClassLoader cloader = new URLClassLoader(new URL[] {new File(driverlib).toURI().toURL()});
+            DriverManager.registerDriver(new DriverWrapper((Driver) Class.forName(driver, true,
+                                                                                  cloader).newInstance()));
 
             Session session = new Session(url, user, password);
             Connection connection = session.getConnection();
             boolean isValid = (connection == null) ? false : connection.isValid(1000);
 
             if (isValid) {
-                JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.databaseconnectsuccess"), "Connection Test", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.databaseconnectsuccess"),
+                                              "Connection Test", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, "Connection Error"));
             }
-        } catch (InstantiationException | IllegalAccessException | MalformedURLException | ClassNotFoundException e) {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.databasedrivererror"), e));
+        } catch (InstantiationException | IllegalAccessException | MalformedURLException |
+                     ClassNotFoundException e) {
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                            AppLocal.getIntString("message.databasedrivererror"), e));
         } catch (SQLException e) {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.databaseconnectionerror"), e));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                            AppLocal.getIntString("message.databaseconnectionerror"), e));
         } catch (Exception e) {
             JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, "Unknown exception", e));
         }

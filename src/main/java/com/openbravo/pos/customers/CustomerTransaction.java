@@ -31,7 +31,8 @@ public class CustomerTransaction {
     public CustomerTransaction() {
     }
 
-    public CustomerTransaction(String ticketId, String productName, String unit, Double amount, Double total, Date transactionDate, String name) {
+    public CustomerTransaction(String ticketId, String productName, String unit, Double amount,
+                               Double total, Date transactionDate, String name) {
         this.ticketId = ticketId;
         this.productName = productName;
         this.unit = unit;

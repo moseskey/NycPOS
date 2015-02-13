@@ -13,7 +13,8 @@ public class Field {
     private boolean comparable;
     private boolean title;
 
-    public Field(String label, Datas data, Formats format, boolean title, boolean searchable, boolean comparable) {
+    public Field(String label, Datas data, Formats format, boolean title, boolean searchable,
+                 boolean comparable) {
         this.label = label;
         this.data = data;
         this.format = format;

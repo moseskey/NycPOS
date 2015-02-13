@@ -53,8 +53,8 @@ public class MetaSentence extends JDBCSentence {
 //             throw new DataException("Param type not allowed");
 //       }
         public void setBytes(int paramIndex, byte[] value) throws BasicException {
-             throw new BasicException(LocalRes.getIntString("exception.noparamtype"));
-       }
+            throw new BasicException(LocalRes.getIntString("exception.noparamtype"));
+        }
         public void setObject(int paramIndex, Object value) throws BasicException {
             setString(paramIndex, (value == null) ? null : value.toString());
         }
@@ -65,7 +65,7 @@ public class MetaSentence extends JDBCSentence {
 
         private void ensurePlace(int i) {
             m_aParams.ensureCapacity(i);
-            while (i >= m_aParams.size()){
+            while (i >= m_aParams.size()) {
                 m_aParams.add(null);
             }
         }
@@ -96,49 +96,63 @@ public class MetaSentence extends JDBCSentence {
             } else if ("getTypeInfo".equals(m_sSentence)) {
                 return new JDBCDataResultSet(db.getTypeInfo(), m_SerRead);
 
-            // Los objetos por catalogo, esquema
+                // Los objetos por catalogo, esquema
 
-            // Los tipos definidos por usuario
+                // Los tipos definidos por usuario
             } else if ("getUDTs".equals(m_sSentence)) {
                 return new JDBCDataResultSet(db.getUDTs(mp.getString(0), mp.getString(1), null, null), m_SerRead);
             } else if ("getSuperTypes".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getSuperTypes(mp.getString(0), mp.getString(1), mp.getString(2)), m_SerRead);
+                return new JDBCDataResultSet(db.getSuperTypes(mp.getString(0), mp.getString(1), mp.getString(2)),
+                                             m_SerRead);
 
-            // Los atributos
+                // Los atributos
             } else if ("getAttributes".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getAttributes(mp.getString(0), mp.getString(1), null, null), m_SerRead);
+                return new JDBCDataResultSet(db.getAttributes(mp.getString(0), mp.getString(1), null, null),
+                                             m_SerRead);
 
-            // Las Tablas y sus objetos relacionados
+                // Las Tablas y sus objetos relacionados
             } else if ("getTables".equals(m_sSentence)) {
                 return new JDBCDataResultSet(db.getTables(mp.getString(0), mp.getString(1), null, null), m_SerRead);
             } else if ("getSuperTables".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getSuperTables(mp.getString(0), mp.getString(1), mp.getString(2)), m_SerRead);
+                return new JDBCDataResultSet(db.getSuperTables(mp.getString(0), mp.getString(1), mp.getString(2)),
+                                             m_SerRead);
             } else if ("getTablePrivileges".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getTablePrivileges(mp.getString(0), mp.getString(1), mp.getString(2)), m_SerRead);
+                return new JDBCDataResultSet(db.getTablePrivileges(mp.getString(0), mp.getString(1),
+                                                                   mp.getString(2)), m_SerRead);
             } else if ("getBestRowIdentifier".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getBestRowIdentifier(mp.getString(0), mp.getString(1), mp.getString(2), 0, true), m_SerRead);
+                return new JDBCDataResultSet(db.getBestRowIdentifier(mp.getString(0), mp.getString(1),
+                                                                     mp.getString(2), 0, true), m_SerRead);
             } else if ("getPrimaryKeys".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getPrimaryKeys(mp.getString(0), mp.getString(1), mp.getString(2)), m_SerRead);
+                return new JDBCDataResultSet(db.getPrimaryKeys(mp.getString(0), mp.getString(1), mp.getString(2)),
+                                             m_SerRead);
             } else if ("getColumnPrivileges".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getColumnPrivileges(mp.getString(0), mp.getString(1), mp.getString(2), null), m_SerRead);
+                return new JDBCDataResultSet(db.getColumnPrivileges(mp.getString(0), mp.getString(1),
+                                                                    mp.getString(2), null), m_SerRead);
             } else if ("getColumns".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getColumns(mp.getString(0), mp.getString(1), mp.getString(2), null), m_SerRead);
+                return new JDBCDataResultSet(db.getColumns(mp.getString(0), mp.getString(1), mp.getString(2), null),
+                                             m_SerRead);
             } else if ("getVersionColumns".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getVersionColumns(mp.getString(0), mp.getString(1), mp.getString(2)), m_SerRead);
+                return new JDBCDataResultSet(db.getVersionColumns(mp.getString(0), mp.getString(1),
+                                                                  mp.getString(2)), m_SerRead);
             } else if ("getIndexInfo".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getIndexInfo(mp.getString(0), mp.getString(1), mp.getString(2), false, false), m_SerRead);
+                return new JDBCDataResultSet(db.getIndexInfo(mp.getString(0), mp.getString(1), mp.getString(2),
+                                                             false, false), m_SerRead);
             } else if ("getExportedKeys".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getExportedKeys(mp.getString(0), mp.getString(1), mp.getString(2)), m_SerRead);
+                return new JDBCDataResultSet(db.getExportedKeys(mp.getString(0), mp.getString(1), mp.getString(2)),
+                                             m_SerRead);
             } else if ("getImportedKeys".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getImportedKeys(mp.getString(0), mp.getString(1), mp.getString(2)), m_SerRead);
+                return new JDBCDataResultSet(db.getImportedKeys(mp.getString(0), mp.getString(1), mp.getString(2)),
+                                             m_SerRead);
             } else if ("getCrossReference".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getCrossReference(mp.getString(0), mp.getString(1), mp.getString(2), null, null, null), m_SerRead);
+                return new JDBCDataResultSet(db.getCrossReference(mp.getString(0), mp.getString(1), mp.getString(2),
+                                                                  null, null, null), m_SerRead);
 
-            // Los procedimientos y sus objetos relacionados
+                // Los procedimientos y sus objetos relacionados
             } else if ("getProcedures".equals(m_sSentence)) {
                 return new JDBCDataResultSet(db.getProcedures(mp.getString(0), mp.getString(1), null), m_SerRead);
             } else if ("getProcedureColumns".equals(m_sSentence)) {
-                return new JDBCDataResultSet(db.getProcedureColumns(mp.getString(0), mp.getString(1), mp.getString(2), null), m_SerRead);
+                return new JDBCDataResultSet(db.getProcedureColumns(mp.getString(0), mp.getString(1),
+                                                                    mp.getString(2), null), m_SerRead);
 
             } else {
                 return null;

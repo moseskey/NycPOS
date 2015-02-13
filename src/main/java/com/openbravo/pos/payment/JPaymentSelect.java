@@ -12,7 +12,7 @@ import java.util.Map;
 import javax.swing.JFrame;
 
 public abstract class JPaymentSelect extends javax.swing.JDialog
-                            implements JPaymentNotifier {
+    implements JPaymentNotifier {
 
     private PaymentInfoList m_aPaymentInfo;
     private boolean printselected;
@@ -123,9 +123,9 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
             jpayinterface.getComponent().applyComponentOrientation(getComponentOrientation());
             m_jTabPayment.addTab(
-                    AppLocal.getIntString(jpay.getLabelKey()),
-                    new javax.swing.ImageIcon(getClass().getResource(jpay.getIconKey())),
-                    jpayinterface.getComponent());
+                AppLocal.getIntString(jpay.getLabelKey()),
+                new javax.swing.ImageIcon(getClass().getResource(jpay.getIconKey())),
+                jpayinterface.getComponent());
         }
     }
 
@@ -296,7 +296,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
     public class JPaymentMagcardRefundCreator implements JPaymentCreator {
 
         @Override
-       public JPaymentInterface createJPayment() {
+        public JPaymentInterface createJPayment() {
             return new JPaymentMagcard(app, JPaymentSelect.this);
         }
 
@@ -312,7 +312,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
 // * Bank Payment receipt - Thanks Steve Clough! August 2011
 
-            public class JPaymentBankCreator implements JPaymentCreator {
+    public class JPaymentBankCreator implements JPaymentCreator {
 
         @Override
         public JPaymentInterface createJPayment() {
@@ -338,7 +338,8 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         m_jRemaininglEuros.setText(Formats.CURRENCY.formatValue(m_dTotal - m_aPaymentInfo.getTotal()));
         m_jButtonRemove.setEnabled(!m_aPaymentInfo.isEmpty());
         m_jTabPayment.setSelectedIndex(0); // selecciono el primero
-        ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).activate(customerext, m_dTotal - m_aPaymentInfo.getTotal(), m_sTransactionID);
+        ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).activate(customerext,
+                                                                            m_dTotal - m_aPaymentInfo.getTotal(), m_sTransactionID);
     }
 
     protected static Window getWindow(Component parent) {
@@ -357,7 +358,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         setStatusPanel(isPositive, isComplete);
     }
 
-    public void setTransactionID(String tID){
+    public void setTransactionID(String tID) {
         this.m_sTransactionID = tID;
     }
 
@@ -397,7 +398,10 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
         m_jTotalEuros.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         m_jTotalEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jTotalEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jTotalEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                    javax.swing.BorderFactory.createLineBorder(
+                                        javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                    javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jTotalEuros.setOpaque(true);
         m_jTotalEuros.setPreferredSize(new java.awt.Dimension(125, 25));
         m_jTotalEuros.setRequestFocusEnabled(false);
@@ -411,13 +415,17 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
         m_jRemaininglEuros.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         m_jRemaininglEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jRemaininglEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jRemaininglEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                         javax.swing.BorderFactory.createLineBorder(
+                                             javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                         javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jRemaininglEuros.setOpaque(true);
         m_jRemaininglEuros.setPreferredSize(new java.awt.Dimension(125, 25));
         m_jRemaininglEuros.setRequestFocusEnabled(false);
         jPanel6.add(m_jRemaininglEuros);
 
-        m_jButtonAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btnplus.png"))); // NOI18N
+        m_jButtonAdd.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/btnplus.png"))); // NOI18N
         m_jButtonAdd.setToolTipText("Add Part Payment");
         m_jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -426,7 +434,8 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         });
         jPanel6.add(m_jButtonAdd);
 
-        m_jButtonRemove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btnminus.png"))); // NOI18N
+        m_jButtonRemove.setIcon(new javax.swing.ImageIcon(
+                                    getClass().getResource("/images/btnminus.png"))); // NOI18N
         m_jButtonRemove.setToolTipText("Delete Part Payment");
         m_jButtonRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -457,7 +466,8 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         jPanel5.setLayout(new java.awt.BorderLayout());
 
         m_jButtonCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(
+                                    getClass().getResource("/images/cancel.png"))); // NOI18N
         m_jButtonCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         m_jButtonCancel.setFocusPainted(false);
         m_jButtonCancel.setFocusable(false);
@@ -488,14 +498,16 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
         jPanel5.add(jPanel2, java.awt.BorderLayout.LINE_END);
 
-        m_jButtonPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer24_off.png"))); // NOI18N
+        m_jButtonPrint.setIcon(new javax.swing.ImageIcon(
+                                   getClass().getResource("/images/printer24_off.png"))); // NOI18N
         m_jButtonPrint.setSelected(true);
         m_jButtonPrint.setToolTipText("Print Receipt");
         m_jButtonPrint.setFocusPainted(false);
         m_jButtonPrint.setFocusable(false);
         m_jButtonPrint.setMargin(new java.awt.Insets(8, 16, 8, 16));
         m_jButtonPrint.setRequestFocusEnabled(false);
-        m_jButtonPrint.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer24.png"))); // NOI18N
+        m_jButtonPrint.setSelectedIcon(new javax.swing.ImageIcon(
+                                           getClass().getResource("/images/printer24.png"))); // NOI18N
         m_jButtonPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jButtonPrintActionPerformed(evt);
@@ -509,16 +521,19 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jButtonRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonRemoveActionPerformed
+    private void m_jButtonRemoveActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_m_jButtonRemoveActionPerformed
 
         m_aPaymentInfo.removeLast();
         printState();
 
     }//GEN-LAST:event_m_jButtonRemoveActionPerformed
 
-    private void m_jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonAddActionPerformed
+    private void m_jButtonAddActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jButtonAddActionPerformed
 
-        PaymentInfo returnPayment = ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).executePayment();
+        PaymentInfo returnPayment = ((JPaymentInterface)
+                                     m_jTabPayment.getSelectedComponent()).executePayment();
         if (returnPayment != null) {
             m_aPaymentInfo.add(returnPayment);
             printState();
@@ -526,20 +541,23 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
     }//GEN-LAST:event_m_jButtonAddActionPerformed
 
-    private void m_jTabPaymentStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_m_jTabPaymentStateChanged
+    private void m_jTabPaymentStateChanged(javax.swing.event.ChangeEvent
+                                           evt) {//GEN-FIRST:event_m_jTabPaymentStateChanged
 
         if (m_jTabPayment.getSelectedComponent() != null) {
 //            ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).activate(customerext, m_dTotal - m_aPaymentInfo.getTotal(), m_sTransactionID);
             ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).activate(customerext,
-                    m_dTotal - m_aPaymentInfo.getTotal(),
-                    m_sTransactionID);
+                                                                                m_dTotal - m_aPaymentInfo.getTotal(),
+                                                                                m_sTransactionID);
         }
 
     }//GEN-LAST:event_m_jTabPaymentStateChanged
 
-    private void m_jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonOKActionPerformed
+    private void m_jButtonOKActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_m_jButtonOKActionPerformed
 
-        PaymentInfo returnPayment = ((JPaymentInterface) m_jTabPayment.getSelectedComponent()).executePayment();
+        PaymentInfo returnPayment = ((JPaymentInterface)
+                                     m_jTabPayment.getSelectedComponent()).executePayment();
 
         if (returnPayment != null) {
 
@@ -551,13 +569,15 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
     }//GEN-LAST:event_m_jButtonOKActionPerformed
 
-    private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed
+    private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed
 
         dispose();
 
     }//GEN-LAST:event_m_jButtonCancelActionPerformed
 
-    private void m_jButtonPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonPrintActionPerformed
+    private void m_jButtonPrintActionPerformed(java.awt.event.ActionEvent
+                                               evt) {//GEN-FIRST:event_m_jButtonPrintActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_m_jButtonPrintActionPerformed
 

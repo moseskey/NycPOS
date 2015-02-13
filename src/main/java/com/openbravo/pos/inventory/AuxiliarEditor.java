@@ -129,13 +129,13 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
     @Override
     public Object createValue() throws BasicException {
         return new Object[] {
-            id,
-            product,
-            product2,
-            m_jReference.getText(),
-            m_jBarcode.getText(),
-            name,
-        };
+                   id,
+                   product,
+                   product2,
+                   m_jReference.getText(),
+                   m_jBarcode.getText(),
+                   name,
+               };
     }
 
     @Override
@@ -239,7 +239,8 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         add(m_jEnter1);
         m_jEnter1.setBounds(250, 11, 57, 33);
 
-        m_jEnter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barcode.png"))); // NOI18N
+        m_jEnter2.setIcon(new javax.swing.ImageIcon(
+                              getClass().getResource("/images/barcode.png"))); // NOI18N
         m_jEnter2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jEnter2ActionPerformed(evt);
@@ -248,7 +249,8 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         add(m_jEnter2);
         m_jEnter2.setBounds(557, 11, 55, 31);
 
-        m_jSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search24.png"))); // NOI18N
+        m_jSearch.setIcon(new javax.swing.ImageIcon(
+                              getClass().getResource("/images/search24.png"))); // NOI18N
         m_jSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jSearchActionPerformed(evt);
@@ -284,29 +286,35 @@ public class AuxiliarEditor extends javax.swing.JPanel implements EditorRecord {
         jLabel4.setBounds(317, 11, 70, 25);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jSearchActionPerformed
+    private void m_jSearchActionPerformed(java.awt.event.ActionEvent
+                                          evt) {//GEN-FIRST:event_m_jSearchActionPerformed
 
         assignProduct(JProductFinder.showMessage(this, m_dlSales, JProductFinder.PRODUCT_AUXILIAR));
 
-}//GEN-LAST:event_m_jSearchActionPerformed
+    }//GEN-LAST:event_m_jSearchActionPerformed
 
-    private void m_jReferenceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jReferenceActionPerformed
+    private void m_jReferenceActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jReferenceActionPerformed
         this.assignProductByReference();
     }//GEN-LAST:event_m_jReferenceActionPerformed
 
-    private void m_jEnter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jEnter2ActionPerformed
+    private void m_jEnter2ActionPerformed(java.awt.event.ActionEvent
+                                          evt) {//GEN-FIRST:event_m_jEnter2ActionPerformed
         this.assignProductByCode();
     }//GEN-LAST:event_m_jEnter2ActionPerformed
 
-    private void m_jEnter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jEnter1ActionPerformed
+    private void m_jEnter1ActionPerformed(java.awt.event.ActionEvent
+                                          evt) {//GEN-FIRST:event_m_jEnter1ActionPerformed
         this.assignProductByReference();
     }//GEN-LAST:event_m_jEnter1ActionPerformed
 
-    private void m_jBarcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jBarcodeActionPerformed
+    private void m_jBarcodeActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_m_jBarcodeActionPerformed
         this.assignProductByCode();
     }//GEN-LAST:event_m_jBarcodeActionPerformed
 
-    private void m_jProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jProductActionPerformed
+    private void m_jProductActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_m_jProductActionPerformed
 
     }//GEN-LAST:event_m_jProductActionPerformed
 

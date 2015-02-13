@@ -79,7 +79,7 @@ public class JTicketLines extends javax.swing.JPanel {
 
         m_jTicketTable.getTableHeader().setReorderingAllowed(false);
         m_jTicketTable.setDefaultRenderer(Object.class, new TicketCellRenderer(acolumns));
- //       m_jTicketTable.setDefaultRenderer(Object.class, new TicketCellRendererSent(acolumns));
+//       m_jTicketTable.setDefaultRenderer(Object.class, new TicketCellRendererSent(acolumns));
 
 
         m_jTicketTable.setRowHeight(40);
@@ -101,7 +101,7 @@ public class JTicketLines extends javax.swing.JPanel {
         m_jTableModel.clear();
     }
 
-    public void setTicketLine(int index, TicketLineInfo oLine){
+    public void setTicketLine(int index, TicketLineInfo oLine) {
 
         m_jTableModel.setRow(index, oLine);
     }
@@ -122,7 +122,7 @@ public class JTicketLines extends javax.swing.JPanel {
         setSelectedIndex(index);
     }
 
-    public void removeTicketLine(int i){
+    public void removeTicketLine(int i) {
 
         m_jTableModel.removeRow(i);
 
@@ -137,7 +137,7 @@ public class JTicketLines extends javax.swing.JPanel {
         }
     }
 
-    public void setSelectedIndex(int i){
+    public void setSelectedIndex(int i) {
 
         // Seleccionamos
         m_jTicketTable.getSelectionModel().setSelectionInterval(i, i);
@@ -154,7 +154,7 @@ public class JTicketLines extends javax.swing.JPanel {
     public void selectionDown() {
 
         int i = m_jTicketTable.getSelectionModel().getMaxSelectionIndex();
-        if (i < 0){
+        if (i < 0) {
             i =  0; // No hay ninguna seleccionada
         } else {
             i ++;
@@ -173,7 +173,7 @@ public class JTicketLines extends javax.swing.JPanel {
     public void selectionUp() {
 
         int i = m_jTicketTable.getSelectionModel().getMinSelectionIndex();
-        if (i < 0){
+        if (i < 0) {
             i = m_jTableModel.getRowCount() - 1; // No hay ninguna seleccionada
         } else {
             i --;
@@ -197,14 +197,16 @@ public class JTicketLines extends javax.swing.JPanel {
         }
 
         @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column){
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
+                                                       boolean hasFocus, int row, int column) {
 
-           JLabel aux = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            JLabel aux = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row,
+                                                                      column);
             aux.setVerticalAlignment(javax.swing.SwingConstants.TOP);
             aux.setHorizontalAlignment(m_acolumns[column].align);
-            Font fName =aux.getFont();
-            aux.setFont(new Font(fName.getName(),Font.PLAIN,14)); //JG 20 May 2013 increased from 12
- //           aux.setBackground(Color.yellow);
+            Font fName = aux.getFont();
+            aux.setFont(new Font(fName.getName(), Font.PLAIN, 14)); //JG 20 May 2013 increased from 12
+//           aux.setBackground(Color.yellow);
             return aux;
         }
     }
@@ -218,14 +220,16 @@ public class JTicketLines extends javax.swing.JPanel {
         }
 
         @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column){
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
+                                                       boolean hasFocus, int row, int column) {
 
-           JLabel aux = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            JLabel aux = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row,
+                                                                      column);
 
             aux.setVerticalAlignment(javax.swing.SwingConstants.TOP);
             aux.setHorizontalAlignment(m_acolumns[column].align);
-            Font fName =aux.getFont();
-            aux.setFont(new Font(fName.getName(),Font.PLAIN,12));
+            Font fName = aux.getFont();
+            aux.setFont(new Font(fName.getName(), Font.PLAIN, 12));
             aux.setBackground(Color.yellow);
             return aux;
         }
@@ -271,7 +275,7 @@ public class JTicketLines extends javax.swing.JPanel {
             }
         }
 
-        public void setRow(int index, TicketLineInfo oLine){
+        public void setRow(int index, TicketLineInfo oLine) {
 
             String[] row = (String []) m_rows.get(index);
             for (int i = 0; i < m_acolumns.length; i++) {
@@ -328,8 +332,9 @@ public class JTicketLines extends javax.swing.JPanel {
         @Override
         public void endDocument() throws SAXException {}
         @Override
-        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException{
-            if ("column".equals(qName)){
+        public void startElement(String uri, String localName, String qName,
+                                 Attributes attributes) throws SAXException {
+            if ("column".equals(qName)) {
                 ColumnTicket c = new ColumnTicket();
                 c.name = attributes.getValue("name");
                 c.width = Integer.parseInt(attributes.getValue("width"));
@@ -355,7 +360,7 @@ public class JTicketLines extends javax.swing.JPanel {
         public void characters(char[] ch, int start, int length) throws SAXException {}
     }
 
-    public void setSendStatus(Boolean state){
+    public void setSendStatus(Boolean state) {
         sendStatus = state;
     }
 
@@ -380,8 +385,10 @@ public class JTicketLines extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        m_jScrollTableTicket.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        m_jScrollTableTicket.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        m_jScrollTableTicket.setHorizontalScrollBarPolicy(
+            javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        m_jScrollTableTicket.setVerticalScrollBarPolicy(
+            javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         m_jScrollTableTicket.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         m_jTicketTable.setFocusable(false);

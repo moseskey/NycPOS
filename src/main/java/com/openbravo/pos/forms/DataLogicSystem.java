@@ -62,12 +62,13 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
     }
 
     @Override
-    public void init(Session s){
+    public void init(Session s) {
 
         m_sInitScript = "/sql/" + s.DB.getName();
         m_dbVersion = s.DB.getName();
 
-        m_version = new PreparedSentence(s, "SELECT VERSION FROM APPLICATIONS WHERE ID = ?", SerializerWriteString.INSTANCE, SerializerReadString.INSTANCE);
+        m_version = new PreparedSentence(s, "SELECT VERSION FROM APPLICATIONS WHERE ID = ?",
+                                         SerializerWriteString.INSTANCE, SerializerReadString.INSTANCE);
         m_dummy = new StaticSentence(s, "SELECT * FROM PEOPLE WHERE 1 = 0");
 
         final ThumbNailBuilder tnb = new ThumbNailBuilder(32, 32, "/images/sysadmin.png");
@@ -75,189 +76,197 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
             @Override
             public Object readValues(DataRead dr) throws BasicException {
                 return new AppUser(
-                    dr.getString(1),
-                    dr.getString(2),
-                    dr.getString(3),
-                    dr.getString(4),
-                    dr.getString(5),
+                           dr.getString(1),
+                           dr.getString(2),
+                           dr.getString(3),
+                           dr.getString(4),
+                           dr.getString(5),
 
-                    //new ImageIcon(tnb.getThumbNail(ImageUtils.readImage(dr.getBytes(6))))
-                    // FIXME -- pulling the image from the database is broken, so temporary fix until
-                    // FIXME -- all of the awt/swing UI can be swapped out for something better
-                    //new ImageIcon(new URL("classpath:/images/no-img.png"))
-                    //new ImageIcon(getClass().getClassLoader().getResourceAsStream("/images/no-img.png"))
-                    //new ImageIcon(Thread.currentThread().getContextClassLoader().getResourceAsStream("/images/no-img.png"))
-                    new ImageIcon("classpath:/images/no-img.png")
+                           //new ImageIcon(tnb.getThumbNail(ImageUtils.readImage(dr.getBytes(6))))
+                           // FIXME -- pulling the image from the database is broken, so temporary fix until
+                           // FIXME -- all of the awt/swing UI can be swapped out for something better
+                           //new ImageIcon(new URL("classpath:/images/no-img.png"))
+                           //new ImageIcon(getClass().getClassLoader().getResourceAsStream("/images/no-img.png"))
+                           //new ImageIcon(Thread.currentThread().getContextClassLoader().getResourceAsStream("/images/no-img.png"))
+                           new ImageIcon("classpath:/images/no-img.png")
 
-                );
+                       );
             }
         };
 
 //Add 23.2.14 JDL new SQL fro CVS import
 //*******************************************************************
-        productIdRead =new SerializerRead() {
+        productIdRead = new SerializerRead() {
             @Override
             public String readValues(DataRead dr) throws BasicException {
                 return (
-                        dr.getString(1)
+                           dr.getString(1)
                        );
-            }};
+            }
+        };
 
- 	m_getProductAllFields = new PreparedSentence(s,
-		 "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND CODE=? AND NAME=? ",
-		 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING, Datas.STRING}),
-		 productIdRead
-                );
+        m_getProductAllFields = new PreparedSentence(s,
+                                                     "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND CODE=? AND NAME=? ",
+                                                     new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING, Datas.STRING}),
+                                                     productIdRead
+                                                    );
 
-       m_getProductRefAndCode  = new PreparedSentence(s,
-		 "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND CODE=?",
-		 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}),
-		 productIdRead
-                );
+        m_getProductRefAndCode  = new PreparedSentence(s,
+                                                       "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND CODE=?",
+                                                       new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}),
+                                                       productIdRead
+                                                      );
 
-       m_getProductRefAndName  = new PreparedSentence(s,
-		 "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND NAME=? ",
-		 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}),
-		 productIdRead
-                );
+        m_getProductRefAndName  = new PreparedSentence(s,
+                                                       "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND NAME=? ",
+                                                       new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}),
+                                                       productIdRead
+                                                      );
 
-       m_getProductCodeAndName  = new PreparedSentence(s,
-		 "SELECT ID FROM PRODUCTS WHERE CODE=? AND NAME=? ",
-		 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}),
-		 productIdRead
-                );
+        m_getProductCodeAndName  = new PreparedSentence(s,
+                                                        "SELECT ID FROM PRODUCTS WHERE CODE=? AND NAME=? ",
+                                                        new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}),
+                                                        productIdRead
+                                                       );
 
-      m_getProductByReference  = new PreparedSentence(s,
-		 "SELECT ID FROM PRODUCTS WHERE REFERENCE=? ",
-		 SerializerWriteString.INSTANCE, //(Datas.STRING)
-		 productIdRead
-                );
+        m_getProductByReference  = new PreparedSentence(s,
+                                                        "SELECT ID FROM PRODUCTS WHERE REFERENCE=? ",
+                                                        SerializerWriteString.INSTANCE, //(Datas.STRING)
+                                                        productIdRead
+                                                       );
 
-      m_getProductByCode  = new PreparedSentence(s,
-		 "SELECT ID FROM PRODUCTS WHERE CODE=? ",
-               SerializerWriteString.INSTANCE, //(Datas.STRING)
-		//, new SerializerWriteBasic(Datas.STRING),
-		 productIdRead
-                );
+        m_getProductByCode  = new PreparedSentence(s,
+                                                   "SELECT ID FROM PRODUCTS WHERE CODE=? ",
+                                                   SerializerWriteString.INSTANCE, //(Datas.STRING)
+                                                   //, new SerializerWriteBasic(Datas.STRING),
+                                                   productIdRead
+                                                  );
 
-      m_getProductByName  = new PreparedSentence(s,
-		 "SELECT ID FROM PRODUCTS WHERE NAME=? ",
-		 SerializerWriteString.INSTANCE, //(Datas.STRING)
-              //, new SerializerWriteBasic(Datas.STRING),
-		 productIdRead
-                );
+        m_getProductByName  = new PreparedSentence(s,
+                                                   "SELECT ID FROM PRODUCTS WHERE NAME=? ",
+                                                   SerializerWriteString.INSTANCE, //(Datas.STRING)
+                                                   //, new SerializerWriteBasic(Datas.STRING),
+                                                   productIdRead
+                                                  );
 
- //******************************************************************
+//******************************************************************
 
 
 
         m_peoplevisible = new StaticSentence(s,
-             "SELECT ID, NAME, APPPASSWORD, CARD, ROLE, IMAGE FROM PEOPLE WHERE VISIBLE = " + s.DB.TRUE() + " ORDER BY NAME",
-             null,
-             peopleread);
+                                             "SELECT ID, NAME, APPPASSWORD, CARD, ROLE, IMAGE FROM PEOPLE WHERE VISIBLE = " + s.DB.TRUE() +
+                                             " ORDER BY NAME",
+                                             null,
+                                             peopleread);
 
         m_peoplebycard = new PreparedSentence(s,
-             "SELECT ID, NAME, APPPASSWORD, CARD, ROLE, IMAGE FROM PEOPLE WHERE CARD = ? AND VISIBLE = " + s.DB.TRUE(),
-             SerializerWriteString.INSTANCE,
-             peopleread);
+                                              "SELECT ID, NAME, APPPASSWORD, CARD, ROLE, IMAGE FROM PEOPLE WHERE CARD = ? AND VISIBLE = " +
+                                              s.DB.TRUE(),
+                                              SerializerWriteString.INSTANCE,
+                                              peopleread);
 
         m_resourcebytes = new PreparedSentence(s,
-             "SELECT CONTENT FROM RESOURCES WHERE NAME = ?",
-             SerializerWriteString.INSTANCE,
-             SerializerReadBytes.INSTANCE);
+                                               "SELECT CONTENT FROM RESOURCES WHERE NAME = ?",
+                                               SerializerWriteString.INSTANCE,
+                                               SerializerReadBytes.INSTANCE);
 
         Datas[] resourcedata = new Datas[] {Datas.STRING, Datas.STRING, Datas.INT, Datas.BYTES};
         m_resourcebytesinsert = new PreparedSentence(s,
-                 "INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES (?, ?, ?, ?)",
-                 new SerializerWriteBasic(resourcedata));
+                                                     "INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES (?, ?, ?, ?)",
+                                                     new SerializerWriteBasic(resourcedata));
         m_resourcebytesupdate = new PreparedSentence(s,
-                 "UPDATE RESOURCES SET NAME = ?, RESTYPE = ?, CONTENT = ? WHERE NAME = ?",
-                 new SerializerWriteBasicExt(resourcedata, new int[] {1, 2, 3, 1}));
+                                                     "UPDATE RESOURCES SET NAME = ?, RESTYPE = ?, CONTENT = ? WHERE NAME = ?",
+                                                     new SerializerWriteBasicExt(resourcedata, new int[] {1, 2, 3, 1}));
 
         m_rolepermissions = new PreparedSentence(s,
-                 "SELECT PERMISSIONS FROM ROLES WHERE ID = ?",
-             SerializerWriteString.INSTANCE,
-             SerializerReadBytes.INSTANCE);
+                                                 "SELECT PERMISSIONS FROM ROLES WHERE ID = ?",
+                                                 SerializerWriteString.INSTANCE,
+                                                 SerializerReadBytes.INSTANCE);
 
         m_changepassword = new StaticSentence(s,
-                 "UPDATE PEOPLE SET APPPASSWORD = ? WHERE ID = ?",
-                new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}));
+                                              "UPDATE PEOPLE SET APPPASSWORD = ? WHERE ID = ?",
+                                              new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}));
 
         m_sequencecash = new StaticSentence(s,
-                "SELECT MAX(HOSTSEQUENCE) FROM CLOSEDCASH WHERE HOST = ?",
-                SerializerWriteString.INSTANCE,
-                SerializerReadInteger.INSTANCE);
+                                            "SELECT MAX(HOSTSEQUENCE) FROM CLOSEDCASH WHERE HOST = ?",
+                                            SerializerWriteString.INSTANCE,
+                                            SerializerReadInteger.INSTANCE);
 
         m_activecash = new StaticSentence(s,
-             "SELECT HOST, HOSTSEQUENCE, DATESTART, DATEEND, NOSALES FROM CLOSEDCASH WHERE MONEY = ?",
-             SerializerWriteString.INSTANCE,
-             new SerializerReadBasic(new Datas[] {
-                Datas.STRING,
-                Datas.INT,
-                Datas.TIMESTAMP,
-                Datas.TIMESTAMP,
-                Datas.INT}));
+                                          "SELECT HOST, HOSTSEQUENCE, DATESTART, DATEEND, NOSALES FROM CLOSEDCASH WHERE MONEY = ?",
+                                          SerializerWriteString.INSTANCE,
+                                          new SerializerReadBasic(new Datas[] {
+                                                                      Datas.STRING,
+                                                                      Datas.INT,
+                                                                      Datas.TIMESTAMP,
+                                                                      Datas.TIMESTAMP,
+                                                                      Datas.INT
+                                                                  }));
 
         m_insertcash = new StaticSentence(s,
-                 "INSERT INTO CLOSEDCASH(MONEY, HOST, HOSTSEQUENCE, DATESTART, DATEEND) " +
-                  "VALUES (?, ?, ?, ?, ?)",
-                 new SerializerWriteBasic(new Datas[] {
-                    Datas.STRING,
-                    Datas.STRING,
-                    Datas.INT,
-                    Datas.TIMESTAMP,
-                    Datas.TIMESTAMP}));
+                                          "INSERT INTO CLOSEDCASH(MONEY, HOST, HOSTSEQUENCE, DATESTART, DATEEND) " +
+                                          "VALUES (?, ?, ?, ?, ?)",
+                                          new SerializerWriteBasic(new Datas[] {
+                                                                       Datas.STRING,
+                                                                       Datas.STRING,
+                                                                       Datas.INT,
+                                                                       Datas.TIMESTAMP,
+                                                                       Datas.TIMESTAMP
+                                                                   }));
 
         m_draweropened = new StaticSentence(s,
-                 "INSERT INTO DRAWEROPENED ( NAME, TICKETID) " +
-                  "VALUES (?, ?)",
-                 new SerializerWriteBasic(new Datas[] {
-                    Datas.STRING,
-                    Datas.STRING}));
+                                            "INSERT INTO DRAWEROPENED ( NAME, TICKETID) " +
+                                            "VALUES (?, ?)",
+                                            new SerializerWriteBasic(new Datas[] {
+                                                                         Datas.STRING,
+                                                                         Datas.STRING
+                                                                     }));
 
         m_lineremoved = new StaticSentence(s,
-                "INSERT INTO LINEREMOVED (NAME, TICKETID, PRODUCTID, PRODUCTNAME, UNITS) " +
-                "VALUES (?, ?, ?, ?, ?)",
-                new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING, Datas.STRING, Datas.STRING, Datas.DOUBLE}));
+                                           "INSERT INTO LINEREMOVED (NAME, TICKETID, PRODUCTID, PRODUCTNAME, UNITS) " +
+                                           "VALUES (?, ?, ?, ?, ?)",
+                                           new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING, Datas.STRING, Datas.STRING, Datas.DOUBLE}));
 
         m_locationfind = new StaticSentence(s,
-                 "SELECT NAME FROM LOCATIONS WHERE ID = ?",
-                 SerializerWriteString.INSTANCE,
-                 SerializerReadString.INSTANCE);
+                                            "SELECT NAME FROM LOCATIONS WHERE ID = ?",
+                                            SerializerWriteString.INSTANCE,
+                                            SerializerReadString.INSTANCE);
 
 //Add 13.2.14 JDL for new gui based permissions
         m_permissionlist = new StaticSentence(s,
-                 "SELECT PERMISSIONS FROM PERMISSIONS WHERE ID = ?",
-                 SerializerWriteString.INSTANCE,
-                 new SerializerReadBasic(new Datas[] {
-                    Datas.STRING
-                }));
+                                              "SELECT PERMISSIONS FROM PERMISSIONS WHERE ID = ?",
+                                              SerializerWriteString.INSTANCE,
+                                              new SerializerReadBasic(new Datas[] {
+                                                                          Datas.STRING
+                                                                      }));
 
         m_updatepermissions = new StaticSentence(s,
-                 "INSERT INTO PERMISSIONS (ID, PERMISSIONS) " +
-                  "VALUES (?, ?)",
-                 new SerializerWriteBasic(new Datas[] {
-                    Datas.STRING,
-                    Datas.STRING}));
+                                                 "INSERT INTO PERMISSIONS (ID, PERMISSIONS) " +
+                                                 "VALUES (?, ?)",
+                                                 new SerializerWriteBasic(new Datas[] {
+                                                                              Datas.STRING,
+                                                                              Datas.STRING
+                                                                          }));
 
 
 // added 1.3.14.14 JDL new routine to write to CSV table, to clean up CSV import routine
         m_insertCSVEntry = new StaticSentence(s,
-                 "INSERT INTO CSVIMPORT (ID, ROWNUMBER, CSVERROR, REFERENCE, CODE, NAME, PRICEBUY, PRICESELL, PREVIOUSBUY, PREVIOUSSELL,CATEGORY) " +
-                  "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                 new SerializerWriteBasic(new Datas[] {
-                    Datas.STRING,
-                    Datas.STRING,
-                    Datas.STRING,
-                    Datas.STRING,
-                    Datas.STRING,
-                    Datas.STRING,
-                    Datas.DOUBLE,
-                    Datas.DOUBLE,
-                    Datas.DOUBLE,
-                    Datas.DOUBLE,
-                    Datas.STRING
-                }));
+                                              "INSERT INTO CSVIMPORT (ID, ROWNUMBER, CSVERROR, REFERENCE, CODE, NAME, PRICEBUY, PRICESELL, PREVIOUSBUY, PREVIOUSSELL,CATEGORY) "
+                                              +
+                                              "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                                              new SerializerWriteBasic(new Datas[] {
+                                                                           Datas.STRING,
+                                                                           Datas.STRING,
+                                                                           Datas.STRING,
+                                                                           Datas.STRING,
+                                                                           Datas.STRING,
+                                                                           Datas.STRING,
+                                                                           Datas.DOUBLE,
+                                                                           Datas.DOUBLE,
+                                                                           Datas.DOUBLE,
+                                                                           Datas.DOUBLE,
+                                                                           Datas.STRING
+                                                                       }));
 
         resetResourcesCache();
     }
@@ -269,7 +278,7 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
         return m_sInitScript;
     }
 
-    public String getDBVersion(){
+    public String getDBVersion() {
         return m_dbVersion;
     }
 
@@ -317,7 +326,7 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
     }
 
 //    private final byte[] getResource(String name) {
-        private byte[] getResource(String name) {
+    private byte[] getResource(String name) {
 
         byte[] resource;
 
@@ -433,42 +442,42 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
 
     public final void execAddCSVEntry(Object[] csv) throws BasicException {
         m_insertCSVEntry.exec(csv);
-}
+    }
 
 
-   // This is used by CSVimport to detect what type of product insert we are looking at, or what error occured
+    // This is used by CSVimport to detect what type of product insert we are looking at, or what error occured
 
-        public final String getProductRecordType(Object[] myProduct) throws BasicException {
+    public final String getProductRecordType(Object[] myProduct) throws BasicException {
         // check if the product exist with all the details, if so return product ID
-        if (m_getProductAllFields.find(myProduct) != null){
+        if (m_getProductAllFields.find(myProduct) != null) {
             return m_getProductAllFields.find(myProduct).toString();
         }
         // check if the product exists with matching reference and code, but a different name
-        if (m_getProductRefAndCode.find(myProduct[0],myProduct[1]) != null){
+        if (m_getProductRefAndCode.find(myProduct[0], myProduct[1]) != null) {
             return "name error";
         }
 
-       if (m_getProductRefAndName.find(myProduct[0],myProduct[2]) != null){
+        if (m_getProductRefAndName.find(myProduct[0], myProduct[2]) != null) {
             return "barcode error";
         }
 
-       if (m_getProductCodeAndName.find(myProduct[1],myProduct[2]) != null){
+        if (m_getProductCodeAndName.find(myProduct[1], myProduct[2]) != null) {
             return "reference error";
         }
 
-       if (m_getProductByReference.find(myProduct[0]) != null){
+        if (m_getProductByReference.find(myProduct[0]) != null) {
             return "Duplicate Reference found.";
         }
 
-       if (m_getProductByCode.find(myProduct[1]) != null){
+        if (m_getProductByCode.find(myProduct[1]) != null) {
             return "Duplicate Barcode found.";
         }
 
-       if (m_getProductByName.find(myProduct[2]) != null){
+        if (m_getProductByName.find(myProduct[2]) != null) {
             return "Duplicate Description found.";
         }
 
-       return "new";
+        return "new";
     }
 
 

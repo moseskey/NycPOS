@@ -14,16 +14,16 @@ import net.proteanit.sql.DbUtils;
 
 public class JMooringDetails extends javax.swing.JDialog {
 
-        private Connection con;
-        private ResultSet rs;
-        private Statement stmt;
-        private String ID;
-        private String SQL;
-        private String vesselName = "";
-        private Integer vesselSize;
-        private Integer vesselDays;
-        private Boolean vesselPower;
-        private boolean create = false;
+    private Connection con;
+    private ResultSet rs;
+    private Statement stmt;
+    private String ID;
+    private String SQL;
+    private String vesselName = "";
+    private Integer vesselSize;
+    private Integer vesselDays;
+    private Boolean vesselPower;
+    private boolean create = false;
 
 
     private JMooringDetails(java.awt.Frame parent, boolean modal) {
@@ -40,31 +40,31 @@ public class JMooringDetails extends javax.swing.JDialog {
         initComponents();
         setTitle("Select Vessel details");
 
-         try{
-            con=s.getConnection();
+        try {
+            con = s.getConnection();
             stmt = (Statement) con.createStatement();
 
-        SQL = "SELECT * FROM MOORERS";
-        rs = stmt.executeQuery(SQL);
+            SQL = "SELECT * FROM MOORERS";
+            rs = stmt.executeQuery(SQL);
 
-        jTableSelector.setModel(DbUtils.resultSetToTableModel(rs));
-        jTableSelector.getColumnModel().getColumn(0).setPreferredWidth(200);
-        jTableSelector.getColumnModel().getColumn(1).setPreferredWidth(40);
-        jTableSelector.getColumnModel().getColumn(2).setPreferredWidth(40);
-        jTableSelector.getColumnModel().getColumn(3).setPreferredWidth(40);
-        jTableSelector.setRowSelectionAllowed(true);
-        jTableSelector.getTableHeader().setReorderingAllowed(true);
+            jTableSelector.setModel(DbUtils.resultSetToTableModel(rs));
+            jTableSelector.getColumnModel().getColumn(0).setPreferredWidth(200);
+            jTableSelector.getColumnModel().getColumn(1).setPreferredWidth(40);
+            jTableSelector.getColumnModel().getColumn(2).setPreferredWidth(40);
+            jTableSelector.getColumnModel().getColumn(3).setPreferredWidth(40);
+            jTableSelector.setRowSelectionAllowed(true);
+            jTableSelector.getTableHeader().setReorderingAllowed(true);
 
 
-           } catch (Exception e) {
-       }
+        } catch (Exception e) {
+        }
 
 
     }
 
     public static JMooringDetails getMooringDetails(Component parent, Session s) {
         Window window = SwingUtilities.getWindowAncestor(parent);
-       // m_oticket = new ticket();
+        // m_oticket = new ticket();
         JMooringDetails myMsg;
         if (window instanceof Frame) {
             myMsg = new JMooringDetails((Frame) window, true);
@@ -119,8 +119,10 @@ public class JMooringDetails extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jbtnCreateTicket.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jbtnCreateTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ok.png"))); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        jbtnCreateTicket.setIcon(new javax.swing.ImageIcon(
+                                     getClass().getResource("/images/ok.png"))); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jbtnCreateTicket.setText(bundle.getString("label.mooringcreatebtn")); // NOI18N
         jbtnCreateTicket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,18 +132,18 @@ public class JMooringDetails extends javax.swing.JDialog {
 
         jTableSelector.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTableSelector.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Vessel Name", "Size", "Days", "Power"
-            }
-        ) {
+        new Object [][] {
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null}
+        },
+        new String [] {
+            "Vessel Name", "Size", "Days", "Power"
+        }
+                                ) {
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
             };
@@ -181,70 +183,78 @@ public class JMooringDetails extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jText, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbtnCreateTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addGap(10, 10, 10)
+                                          .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(jText, javax.swing.GroupLayout.PREFERRED_SIZE, 222,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                          .addComponent(jbtnCreateTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 150,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addGap(0, 0, Short.MAX_VALUE)))
+                      .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jbtnCreateTicket))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 179,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1)
+                                .addComponent(jbtnCreateTicket))
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-536)/2, (screenSize.height-274)/2, 536, 274);
+        setBounds((screenSize.width - 536) / 2, (screenSize.height - 274) / 2, 536, 274);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnCreateTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCreateTicketActionPerformed
+    private void jbtnCreateTicketActionPerformed(java.awt.event.ActionEvent
+                                                 evt) {//GEN-FIRST:event_jbtnCreateTicketActionPerformed
         // use the passed parameters to add line to the ticket
 
-        if (vesselName.equals("")){
-        this.create = false;
-        dispose();
-        }else{
-        this.create = true;
-        dispose();
+        if (vesselName.equals("")) {
+            this.create = false;
+            dispose();
+        } else {
+            this.create = true;
+            dispose();
         }
 
     }//GEN-LAST:event_jbtnCreateTicketActionPerformed
 
-    private void jTableSelectorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableSelectorMouseClicked
+    private void jTableSelectorMouseClicked(java.awt.event.MouseEvent
+                                            evt) {//GEN-FIRST:event_jTableSelectorMouseClicked
 
-        try{
-         int row = jTableSelector.getSelectedRow();
-         vesselName =(jTableSelector.getModel().getValueAt(row, 0).toString());
-         SQL = "SELECT * FROM MOORERS WHERE VESSELNAME ='" + vesselName +"';";
-         rs = stmt.executeQuery(SQL);
-         if (rs.next()){
-             vesselDays=rs.getInt("DAYS");
-             vesselSize=rs.getInt("SIZE");
-             vesselPower=rs.getBoolean("POWER");
-             jText.setText(vesselName);
-         }
-        }catch (Exception e){
-        JOptionPane.showMessageDialog(null, e);
+        try {
+            int row = jTableSelector.getSelectedRow();
+            vesselName = (jTableSelector.getModel().getValueAt(row, 0).toString());
+            SQL = "SELECT * FROM MOORERS WHERE VESSELNAME ='" + vesselName + "';";
+            rs = stmt.executeQuery(SQL);
+            if (rs.next()) {
+                vesselDays = rs.getInt("DAYS");
+                vesselSize = rs.getInt("SIZE");
+                vesselPower = rs.getBoolean("POWER");
+                jText.setText(vesselName);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
 
 
     }//GEN-LAST:event_jTableSelectorMouseClicked
 
-    private void jTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextActionPerformed
+    private void jTextActionPerformed(java.awt.event.ActionEvent
+                                      evt) {//GEN-FIRST:event_jTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextActionPerformed
 

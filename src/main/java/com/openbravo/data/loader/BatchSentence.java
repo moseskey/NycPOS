@@ -64,7 +64,7 @@ public abstract class BatchSentence extends BaseSentence {
 
         //public java.io.InputStream getBinaryStream(int columnIndex) throws DataException;
 
-                @Override
+        @Override
         public byte[] getBytes(int columnIndex) throws BasicException {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
         }
@@ -74,9 +74,9 @@ public abstract class BatchSentence extends BaseSentence {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
         }
 
-    //    public int getColumnCount() throws DataException;
+        //    public int getColumnCount() throws DataException;
 
-                @Override
+        @Override
         public DataField[] getDataField() throws BasicException {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
         }
@@ -140,7 +140,8 @@ public abstract class BatchSentence extends BaseSentence {
                         // Replace all occurrences of pattern in input
                         StringBuffer buf = new StringBuffer();
                         while (matcher.find()) {
-                            System.out.println("BatchSentence::openExec:matcher: " + matcher.group(1) + " // " + matcher.group(2));
+                            System.out.println("BatchSentence::openExec:matcher: " + matcher.group(1) + " // " + matcher.group(
+                                                   2));
                             if ("FILE".equals(matcher.group(1))) {
 
                                 paramlist.add(ImageUtils.getBytesFromResource(matcher.group(2)));

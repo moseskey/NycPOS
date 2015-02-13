@@ -8,7 +8,7 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     // Funciones de bajo nivel
 
-        public abstract DataResultSet openExec(Object params) throws BasicException;
+    public abstract DataResultSet openExec(Object params) throws BasicException;
 
     public abstract DataResultSet moreResults() throws BasicException;
 
@@ -16,7 +16,7 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     // Funciones
 
-        @Override
+    @Override
     public final int exec() throws BasicException {
         return exec((Object) null);
     }
@@ -50,7 +50,7 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     @Override
     public final List list(Object params) throws BasicException {
-    // En caso de error o lanza un pepinazo en forma de DataException
+        // En caso de error o lanza un pepinazo en forma de DataException
         DataResultSet SRS = openExec(params);
         List aSO = fetchAll(SRS);
         SRS.close();
@@ -65,7 +65,7 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     @Override
     public final List listPage(Object params, int offset, int length) throws BasicException {
-    // En caso de error o lanza un pepinazo en forma de DataException
+        // En caso de error o lanza un pepinazo en forma de DataException
         DataResultSet SRS = openExec(params);
         List aSO = fetchPage(SRS, offset, length);
         SRS.close();
@@ -85,7 +85,7 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     @Override
     public final Object find(Object params) throws BasicException {
-    // En caso de error o lanza un pepinazo en forma de SQLException
+        // En caso de error o lanza un pepinazo en forma de SQLException
         DataResultSet SRS = openExec(params);
         Object obj = fetchOne(SRS);
         SRS.close();
@@ -95,7 +95,7 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     // Utilidades
 
-        public final List fetchAll(DataResultSet SRS) throws BasicException {
+    public final List fetchAll(DataResultSet SRS) throws BasicException {
         if (SRS == null) {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
         }
@@ -109,7 +109,7 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
 
     // Utilidades
 
-        public final List fetchPage(DataResultSet SRS, int offset, int length) throws BasicException {
+    public final List fetchPage(DataResultSet SRS, int offset, int length) throws BasicException {
 
         if (SRS == null) {
             throw new BasicException(LocalRes.getIntString("exception.nodataset"));
@@ -148,4 +148,4 @@ public abstract class BaseSentence implements SentenceList, SentenceFind, Senten
         }
     }
 
- }
+}

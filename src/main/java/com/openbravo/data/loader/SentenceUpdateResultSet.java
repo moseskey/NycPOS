@@ -32,7 +32,7 @@ public class SentenceUpdateResultSet implements DataResultSet {
 
     //public java.io.InputStream getBinaryStream(int columnIndex) throws DataException;
 
-        public byte[] getBytes(int columnIndex) throws BasicException {
+    public byte[] getBytes(int columnIndex) throws BasicException {
         throw new BasicException(LocalRes.getIntString("exception.nodataset"));
     }
 
@@ -42,7 +42,7 @@ public class SentenceUpdateResultSet implements DataResultSet {
 
 //    public int getColumnCount() throws DataException;
 
-        public DataField[] getDataField() throws BasicException {
+    public DataField[] getDataField() throws BasicException {
         throw new BasicException(LocalRes.getIntString("exception.nodataset"));
     }
 

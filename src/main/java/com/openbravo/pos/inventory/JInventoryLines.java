@@ -24,18 +24,18 @@ public class JInventoryLines extends javax.swing.JPanel {
         TableColumn c;
 
         c = new TableColumn(0, 200,
-                 new DataCellRenderer(javax.swing.SwingConstants.LEFT),
-                 new DefaultCellEditor(new JTextField()));
+                            new DataCellRenderer(javax.swing.SwingConstants.LEFT),
+                            new DefaultCellEditor(new JTextField()));
         c.setHeaderValue(AppLocal.getIntString("label.item"));
         columns.addColumn(c);
         c = new TableColumn(1, 75,
-                 new DataCellRenderer(javax.swing.SwingConstants.RIGHT),
-                 new DefaultCellEditor(new JTextField()));
+                            new DataCellRenderer(javax.swing.SwingConstants.RIGHT),
+                            new DefaultCellEditor(new JTextField()));
         c.setHeaderValue(AppLocal.getIntString("label.units"));
         columns.addColumn(c);
         c = new TableColumn(2, 75,
-                 new DataCellRenderer(javax.swing.SwingConstants.RIGHT),
-                 new DefaultCellEditor(new JTextField()));
+                            new DataCellRenderer(javax.swing.SwingConstants.RIGHT),
+                            new DefaultCellEditor(new JTextField()));
         c.setHeaderValue(AppLocal.getIntString("label.price"));
         columns.addColumn(c);
 
@@ -94,7 +94,7 @@ public class JInventoryLines extends javax.swing.JPanel {
         return m_tableinventory.getSelectedRow();
     }
 
-    public void setSelectedIndex(int i){
+    public void setSelectedIndex(int i) {
 
         // Seleccionamos
         m_tableinventory.getSelectionModel().setSelectionInterval(i, i);
@@ -107,7 +107,7 @@ public class JInventoryLines extends javax.swing.JPanel {
     public void goDown() {
 
         int i = m_tableinventory.getSelectionModel().getMaxSelectionIndex();
-        if (i < 0){
+        if (i < 0) {
             i =  0; // No hay ninguna seleccionada
         } else {
             i ++;
@@ -125,7 +125,7 @@ public class JInventoryLines extends javax.swing.JPanel {
 
     public void goUp() {
         int i = m_tableinventory.getSelectionModel().getMinSelectionIndex();
-        if (i < 0){
+        if (i < 0) {
             i = m_inventorylines.getRowCount() - 1; // No hay ninguna seleccionada
         } else {
             i --;
@@ -162,13 +162,17 @@ public class JInventoryLines extends javax.swing.JPanel {
 
             InventoryLine i = m_rows.get(row);
             switch (column) {
-                case 0: return "<html>" + i.getProductName() + (
-                        i.getProductAttSetInstDesc() == null
-                        ? ""
-                        : "<br>" + i.getProductAttSetInstDesc());
-                case 1: return "x" + Formats.DOUBLE.formatValue(i.getMultiply());
-                case 2: return Formats.CURRENCY.formatValue(i.getPrice());
-                default: return null;
+                case 0:
+                    return "<html>" + i.getProductName() + (
+                               i.getProductAttSetInstDesc() == null
+                               ? ""
+                               : "<br>" + i.getProductAttSetInstDesc());
+                case 1:
+                    return "x" + Formats.DOUBLE.formatValue(i.getMultiply());
+                case 2:
+                    return Formats.CURRENCY.formatValue(i.getPrice());
+                default:
+                    return null;
             }
 
         }
@@ -194,7 +198,7 @@ public class JInventoryLines extends javax.swing.JPanel {
             return m_rows.get(index);
         }
 
-        public void setRow(int index, InventoryLine oLine){
+        public void setRow(int index, InventoryLine oLine) {
 
             m_rows.set(index, oLine);
             fireTableRowsUpdated(index, index);
@@ -225,9 +229,11 @@ public class JInventoryLines extends javax.swing.JPanel {
         }
 
         @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column){
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
+                                                       boolean hasFocus, int row, int column) {
 
-            JLabel aux = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            JLabel aux = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row,
+                                                                      column);
             aux.setVerticalAlignment(javax.swing.SwingConstants.TOP);
             aux.setHorizontalAlignment(m_iAlignment);
             if (!isSelected) {

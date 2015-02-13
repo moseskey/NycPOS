@@ -15,9 +15,11 @@ public class TableRendererBasic extends DefaultTableCellRenderer {
     }
 
     @Override
-    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column){
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
+                                                   boolean hasFocus, int row, int column) {
 
-        JLabel aux = (JLabel) super.getTableCellRendererComponent(table, null, isSelected, hasFocus, row, column);
+        JLabel aux = (JLabel) super.getTableCellRendererComponent(table, null, isSelected, hasFocus, row,
+                                                                  column);
 
         aux.setText(m_aFormats[column].formatValue(value));
         aux.setHorizontalAlignment(m_aFormats[column].getAlignment());

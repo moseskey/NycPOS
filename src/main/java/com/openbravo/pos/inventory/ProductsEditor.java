@@ -114,7 +114,7 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         m_jTextTip.getDocument().addDocumentListener(dirty);
         m_jDisplay.getDocument().addDocumentListener(dirty);
 // Added JG 7 June 2014 - Stock Units
-        m_jStockUnits.getDocument().putProperty(dlSales,24);
+        m_jStockUnits.getDocument().putProperty(dlSales, 24);
 
         FieldsManager fm = new FieldsManager();
         m_jPriceBuy.getDocument().addDocumentListener(fm);
@@ -176,10 +176,10 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         m_jCatalogOrder.setText(null);
         txtAttributes.setText(null);
 // Added JG 20.12.10 - Kitchen Print
-	m_jKitchen.setSelected(false);
+        m_jKitchen.setSelected(false);
 // **
 // Added JG 25.06.11 - Is Service
-	m_jService.setSelected(false);
+        m_jService.setSelected(false);
 // **
         m_jDisplay.setText(null);
 
@@ -188,14 +188,14 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 //
 
 // Added JDL 09.02.13 for Chris
-       m_jVerpatrib.setSelected(false);
+        m_jVerpatrib.setSelected(false);
 // Added JDL 09.04.13
-       m_jTextTip.setText(null);
+        m_jTextTip.setText(null);
 // ADDed JDL 26.05.13
-       m_jCheckWarrantyReceipt.setSelected(false);
+        m_jCheckWarrantyReceipt.setSelected(false);
 
 // JG July 2014
-	m_jStockUnits.setVisible(false);
+        m_jStockUnits.setVisible(false);
 
         reportlock = false;
 
@@ -218,24 +218,24 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         m_jCatalogOrder.setEnabled(false);
         txtAttributes.setEnabled(false);
 // Added JG 20.12.10 - Kitchen Print
-	m_jKitchen.setEnabled(false);
+        m_jKitchen.setEnabled(false);
 // **
 // Added JG 25.06.11 - Is Service
-	m_jService.setEnabled(false);
+        m_jService.setEnabled(false);
 // **
         m_jDisplay.setEnabled(false);
 
 // Added JDL 19.12.12 - Var Price
         m_jVprice.setEnabled(false);
 // Added JDL 09.02.13
-       m_jVerpatrib.setEnabled(false);
+        m_jVerpatrib.setEnabled(false);
 // ADDED JDL 09.04.13
-       m_jTextTip.setEnabled(false);
+        m_jTextTip.setEnabled(false);
 // ADDed JDL 26.05.13
-       m_jCheckWarrantyReceipt.setEnabled(false);
+        m_jCheckWarrantyReceipt.setEnabled(false);
 
 // JG July 2014
-	m_jStockUnits.setVisible(false);
+        m_jStockUnits.setVisible(false);
 
         calculateMargin();
         calculatePriceSellTax();
@@ -266,23 +266,23 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         m_jCatalogOrder.setText(null);
         txtAttributes.setText(null);
 // Added JG 20.12.10 - Kitchen Print
-	m_jKitchen.setSelected(false);
+        m_jKitchen.setSelected(false);
 // **
 // Added JG 25.06.11 - Is Service
-	m_jService.setSelected(false);
+        m_jService.setSelected(false);
 // **
         m_jDisplay.setText(null);
 
 // Added JDL 19.12.12 - Var Price
         m_jVprice.setSelected(false);
 // Added JDL 09.02.13
-       m_jVerpatrib.setSelected(false);
+        m_jVerpatrib.setSelected(false);
 // ADDED JDL 09.04.13
-       m_jTextTip.setText(null);
+        m_jTextTip.setText(null);
 // ADDed JDL 26.05.13
-       m_jCheckWarrantyReceipt.setSelected(false);
+        m_jCheckWarrantyReceipt.setSelected(false);
 // JG July 2014
-	m_jStockUnits.setVisible(false);
+        m_jStockUnits.setVisible(false);
 
         reportlock = false;
 
@@ -306,36 +306,37 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         m_jCatalogOrder.setEnabled(false);
         txtAttributes.setEnabled(true);
 // Added JG 20.12.10 - Kitchen Print
-	m_jKitchen.setEnabled(true);
+        m_jKitchen.setEnabled(true);
 // **
 // Added JG 25.06.11 - Is Service
-	m_jService.setEnabled(true);
+        m_jService.setEnabled(true);
 // **
         m_jDisplay.setEnabled(true);
 
 // Added JDL 19.12.12 - var Price
         m_jVprice.setEnabled(true);
 // Added JDL 09.02.13
-       m_jVerpatrib.setEnabled(true);
+        m_jVerpatrib.setEnabled(true);
 // ADDED JDL 08.04.13
-       m_jTextTip.setEnabled(true);
+        m_jTextTip.setEnabled(true);
 // ADDed JDL 26.05.13
-       m_jCheckWarrantyReceipt.setEnabled(true);
+        m_jCheckWarrantyReceipt.setEnabled(true);
 // JG July 2014
-	m_jStockUnits.setVisible(false);
+        m_jStockUnits.setVisible(false);
 
         calculateMargin();
         calculatePriceSellTax();
         calculateGP();
 
-   }
+    }
 
     @Override
     public void writeValueDelete(Object value) {
 
         reportlock = true;
         Object[] myprod = (Object[]) value;
-        m_jTitle.setText(Formats.STRING.formatValue(myprod[1]) + " - " + Formats.STRING.formatValue(myprod[3]) + " " + AppLocal.getIntString("label.recorddeleted"));
+        m_jTitle.setText(Formats.STRING.formatValue(myprod[1]) + " - " + Formats.STRING.formatValue(
+                             myprod[3]) + " " + AppLocal.getIntString("label.recorddeleted"));
         m_id = myprod[0];
         m_jRef.setText(Formats.STRING.formatValue(myprod[1]));
         m_jCode.setText(Formats.STRING.formatValue(myprod[2]));
@@ -353,23 +354,23 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         m_jInCatalog.setSelected(((Boolean)myprod[14]));
         m_jCatalogOrder.setText(Formats.INT.formatValue(myprod[15]));
         txtAttributes.setText(Formats.BYTEA.formatValue(myprod[16]));
-	m_jKitchen.setSelected(((Boolean)myprod[17]));
+        m_jKitchen.setSelected(((Boolean)myprod[17]));
 // Added JG 25.06.11 - Is Service
         m_jService.setSelected(((Boolean)myprod[18]));
 
         m_jDisplay.setText(Formats.STRING.formatValue(myprod[19]));
 
 // Added JDL 19.12.12 - Var Price
-	m_jVprice.setSelected(((Boolean)myprod[20]));
+        m_jVprice.setSelected(((Boolean)myprod[20]));
 // Added JDL 09.02.13
-       m_jVerpatrib.setSelected(((Boolean)myprod[21]));
+        m_jVerpatrib.setSelected(((Boolean)myprod[21]));
 // Added JDL 09.04.13
-       m_jTextTip.setText(Formats.STRING.formatValue(myprod[22]));
+        m_jTextTip.setText(Formats.STRING.formatValue(myprod[22]));
 // ADDed JDL 26.05.13
-       m_jCheckWarrantyReceipt.setSelected(((Boolean)myprod[23]));
+        m_jCheckWarrantyReceipt.setSelected(((Boolean)myprod[23]));
 
 // JG July 2014 for StockUnits
-       m_jStockUnits.setText(Formats.DOUBLE.formatValue(myprod[24]));
+        m_jStockUnits.setText(Formats.DOUBLE.formatValue(myprod[24]));
 
         txtAttributes.setCaretPosition(0);
 
@@ -397,20 +398,20 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 // Added JG 20.12.10 - Ktichen Print
         m_jKitchen.setEnabled(false);
 // Added JG 25.06.11 - Is Service
-	m_jService.setEnabled(true);
+        m_jService.setEnabled(true);
 // **
         m_jDisplay.setEnabled(false);
 
 // Added JDL 19.12.12 - Var Price
         m_jVprice.setEnabled(false);
 // Added JDL 09.02.13 for Chris
-       m_jVerpatrib.setEnabled(false);
+        m_jVerpatrib.setEnabled(false);
 // Added JDL 09.04.13
-       m_jTextTip.setEnabled(false);
+        m_jTextTip.setEnabled(false);
 // ADDed JDL 26.05.13
-       m_jCheckWarrantyReceipt.setEnabled(false);
+        m_jCheckWarrantyReceipt.setEnabled(false);
 // JG July 2014
-	m_jStockUnits.setVisible(false);
+        m_jStockUnits.setVisible(false);
 
         calculateMargin();
         calculatePriceSellTax();
@@ -422,7 +423,8 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 
         reportlock = true;
         Object[] myprod = (Object[]) value;
-        m_jTitle.setText(Formats.STRING.formatValue(myprod[1]) + " - " + Formats.STRING.formatValue(myprod[3]));
+        m_jTitle.setText(Formats.STRING.formatValue(myprod[1]) + " - " + Formats.STRING.formatValue(
+                             myprod[3]));
         m_id = myprod[0];
         m_jRef.setText(Formats.STRING.formatValue(myprod[1]));
         m_jCode.setText(Formats.STRING.formatValue(myprod[2]));
@@ -441,26 +443,26 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         m_jCatalogOrder.setText(Formats.INT.formatValue(myprod[15]));
         txtAttributes.setText(Formats.BYTEA.formatValue(myprod[16]));
 // Added JG 20.12.10 - Kitchen Print
-	m_jKitchen.setSelected(((Boolean)myprod[17]));
+        m_jKitchen.setSelected(((Boolean)myprod[17]));
 // **
 // Added JG 25.06.11 - Is Service
-	m_jService.setSelected(((Boolean)myprod[18]));
+        m_jService.setSelected(((Boolean)myprod[18]));
 
         m_jDisplay.setText(Formats.STRING.formatValue(myprod[19]));
 
 // Added JDL 19.12.12 - Var Price
-	m_jVprice.setSelected(((Boolean)myprod[20]));
+        m_jVprice.setSelected(((Boolean)myprod[20]));
 //
 
 // Added JDL 09.02.13 for Chris
-       m_jVerpatrib.setSelected(((Boolean)myprod[21]));
+        m_jVerpatrib.setSelected(((Boolean)myprod[21]));
 // Added JDL 09.04.13
-       m_jTextTip.setText(Formats.STRING.formatValue(myprod[22]));
+        m_jTextTip.setText(Formats.STRING.formatValue(myprod[22]));
 // ADDed JDL 26.05.13
-       m_jCheckWarrantyReceipt.setSelected(((Boolean)myprod[23]));
+        m_jCheckWarrantyReceipt.setSelected(((Boolean)myprod[23]));
 
 // JG July 2014 for StockUnits
-       m_jStockUnits.setText(Formats.DOUBLE.formatValue(myprod[24]));
+        m_jStockUnits.setText(Formats.DOUBLE.formatValue(myprod[24]));
 
         txtAttributes.setCaretPosition(0);
         reportlock = false;
@@ -485,10 +487,10 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         m_jCatalogOrder.setEnabled(m_jInCatalog.isSelected());
         txtAttributes.setEnabled(true);
 // Added JG 20.12.10 - Kitchen Print
-	m_jKitchen.setEnabled(true);
+        m_jKitchen.setEnabled(true);
 // **
 // Added JG 25.06.11 - Is Service
-	m_jService.setEnabled(true);
+        m_jService.setEnabled(true);
 // **
         m_jDisplay.setEnabled(true);
 // Added JG 20 Jul 13 - HTML Button
@@ -497,13 +499,13 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 // Added JDL 19.12.112 - Var Price
         m_jVprice.setEnabled(true);
 // Added JDL 09.02.13 for Chris
-       m_jVerpatrib.setEnabled(true);
+        m_jVerpatrib.setEnabled(true);
 // Added JDL 09.04.13
-       m_jTextTip.setEnabled(true);
+        m_jTextTip.setEnabled(true);
 // ADDed JDL 26.05.13
-       m_jCheckWarrantyReceipt.setEnabled(true);
+        m_jCheckWarrantyReceipt.setEnabled(true);
 // JG July 2014
-	m_jStockUnits.setVisible(false);
+        m_jStockUnits.setVisible(false);
 
         calculateMargin();
         calculatePriceSellTax();
@@ -536,21 +538,21 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         myprod[15] = Formats.INT.parseValue(m_jCatalogOrder.getText());
         myprod[16] = Formats.BYTEA.parseValue(txtAttributes.getText());
 // Added JG 20.12.10 - Kitchen Print
-	myprod[17] = m_jKitchen.isSelected();
+        myprod[17] = m_jKitchen.isSelected();
 // **
 // Added JG 25.06.11 - Is Service
-	myprod[18] = m_jService.isSelected();
+        myprod[18] = m_jService.isSelected();
 // **
         myprod[19] = m_jDisplay.getText();
 
 // Added JDL 19.12.12 - Var Price
-	myprod[20] = m_jVprice.isSelected();
+        myprod[20] = m_jVprice.isSelected();
 // Added JDL 09.02.13 for Chris
-       myprod[21] = m_jVerpatrib.isSelected();
+        myprod[21] = m_jVerpatrib.isSelected();
 // Added JDL 09.04.13
-       myprod[22] = m_jTextTip.getText();
+        myprod[22] = m_jTextTip.getText();
 // ADDed JDL 26.05.13
-       myprod[23] = m_jCheckWarrantyReceipt.isSelected();
+        myprod[23] = m_jCheckWarrantyReceipt.isSelected();
 
 // JG July 2014
         myprod[24] = Formats.DOUBLE.parseValue(m_jStockUnits.getText());
@@ -568,13 +570,13 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         return this;
     }
 
-/**
-* JG  Aug 2014 - temporary only!
-* ADD Product now requires a CurrentStock entry record
-* This is experimental whilst developing connex to external hosted DB as need to
-* get online product from its DB.
-* So for now just consume a new DB session. Expensive... (I know!)
-*/
+    /**
+    * JG  Aug 2014 - temporary only!
+    * ADD Product now requires a CurrentStock entry record
+    * This is experimental whilst developing connex to external hosted DB as need to
+    * get online product from its DB.
+    * So for now just consume a new DB session. Expensive... (I know!)
+    */
     private void setCurrentStock() {
 
         // connect to the database
@@ -583,17 +585,15 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         String password = AppLocal.getIntString("db.password");
 
         {
-          try
-            {
-              // create our java jdbc statement
-              try (Connection conn = DriverManager.getConnection(url,"user","password")) {
-                  // create our java jdbc statement
-                  Statement statement = conn.createStatement();
-                  statement.executeUpdate("INSERT INTO STOCKCURRENT " + "VALUES (1001, 'Simpson', 'Mr.', 'Springfield', 2001)");
-              }
-            }
-        catch (SQLException e)
-            {
+            try {
+                // create our java jdbc statement
+                try (Connection conn = DriverManager.getConnection(url, "user", "password")) {
+                    // create our java jdbc statement
+                    Statement statement = conn.createStatement();
+                    statement.executeUpdate("INSERT INTO STOCKCURRENT " +
+                                            "VALUES (1001, 'Simpson', 'Mr.', 'Springfield', 2001)");
+                }
+            } catch (SQLException e) {
                 System.err.println("Got an exception! ");
                 System.err.println(e.getMessage());
             }
@@ -604,7 +604,7 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 // AMENDED JDL 11 MAY 12 - STOP AUTOFILL IF FIELD ALREADY EXSISTS, AND GENERATE A RANDOM CODE NUMBER
     private void setCode() {
 
-        Long lDateTime= new Date().getTime(); // USED FOR RANDOM CODE DETAILS
+        Long lDateTime = new Date().getTime(); // USED FOR RANDOM CODE DETAILS
 
         if (!reportlock) {
             reportlock = true;
@@ -613,8 +613,9 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
                 //m_jCode.setText("0123456789012");
                 m_jCode.setText(Long.toString(lDateTime));
             } else {
-                if (m_jCode.getText()==null || "".equals(m_jCode.getText())){
-                m_jCode.setText(m_jRef.getText());}
+                if (m_jCode.getText() == null || "".equals(m_jCode.getText())) {
+                    m_jCode.setText(m_jRef.getText());
+                }
             }
             reportlock = false;
         }
@@ -635,12 +636,13 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 //                m_jDisplay.setText("<html>" + "Need Button Text");
                 m_jDisplay.setText(m_jName.getText());
             } else {
-                if (m_jDisplay.getText()==null || "".equals(m_jDisplay.getText())){
-                m_jDisplay.setText("<html>" + m_jName.getText());}
+                if (m_jDisplay.getText() == null || "".equals(m_jDisplay.getText())) {
+                    m_jDisplay.setText("<html>" + m_jName.getText());
+                }
             }
             reportlock = false;
         }
-        }
+    }
 // ADDED JG 20 Jul 13 - AUTOFILL HTML BUTTON
     private void setButtonHTML() {
 
@@ -707,7 +709,7 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
             if (dPriceBuy == null || dPriceSell == null) {
                 m_jGrossProfit.setText(null);
             } else {
-                m_jGrossProfit.setText(Formats.PERCENT.formatValue((dPriceSell - dPriceBuy)/dPriceSell));
+                m_jGrossProfit.setText(Formats.PERCENT.formatValue((dPriceSell - dPriceBuy) / dPriceSell));
             }
             reportlock = false;
         }
@@ -1086,7 +1088,8 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jLabel19.setText(bundle.getString("label.margin")); // NOI18N
         jLabel19.setPreferredSize(new java.awt.Dimension(48, 15));
         jPanel1.add(jLabel19);
@@ -1352,42 +1355,53 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(6, 6, 6))
+                      .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                          .addGap(7, 7, 7)
+                                          .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                          .addGap(6, 6, 6)
+                                          .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                          .addGap(6, 6, 6)
+                                          .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                          .addGap(6, 6, 6)
+                                          .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                          .addGap(6, 6, 6)
+                                          .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                      .addGap(6, 6, 6))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
-                .addContainerGap())
+                      .addGap(5, 5, 5)
+                      .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(5, 5, 5)
+                      .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(5, 5, 5)
+                      .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(5, 5, 5)
+                      .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(5, 5, 5)
+                      .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(5, 5, 5)
+                      .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+                      .addContainerGap())
         );
 
         jPanel4.add(jPanel5);
@@ -1409,7 +1423,8 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
         jTabbedPane1.setBounds(10, 0, 560, 370);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jInCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jInCatalogActionPerformed
+    private void m_jInCatalogActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jInCatalogActionPerformed
 
         if (m_jInCatalog.isSelected()) {
             m_jCatalogOrder.setEnabled(true);
@@ -1420,11 +1435,13 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 
     }//GEN-LAST:event_m_jInCatalogActionPerformed
 
-    private void m_jTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jTaxActionPerformed
+    private void m_jTaxActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_m_jTaxActionPerformed
 
     }//GEN-LAST:event_m_jTaxActionPerformed
 
-    private void m_jPriceSellTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jPriceSellTaxActionPerformed
+    private void m_jPriceSellTaxActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_m_jPriceSellTaxActionPerformed
 
     }//GEN-LAST:event_m_jPriceSellTaxActionPerformed
 
@@ -1442,23 +1459,28 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
 
     }//GEN-LAST:event_none
 
-    private void m_jCheckWarrantyReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCheckWarrantyReceiptActionPerformed
+    private void m_jCheckWarrantyReceiptActionPerformed(java.awt.event.ActionEvent
+                                                        evt) {//GEN-FIRST:event_m_jCheckWarrantyReceiptActionPerformed
 
     }//GEN-LAST:event_m_jCheckWarrantyReceiptActionPerformed
 
-    private void jButtonHTMLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonHTMLMouseClicked
+    private void jButtonHTMLMouseClicked(java.awt.event.MouseEvent
+                                         evt) {//GEN-FIRST:event_jButtonHTMLMouseClicked
         setButtonHTML();
     }//GEN-LAST:event_jButtonHTMLMouseClicked
 
-    private void jButtonHTMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHTMLActionPerformed
+    private void jButtonHTMLActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_jButtonHTMLActionPerformed
 
     }//GEN-LAST:event_jButtonHTMLActionPerformed
 
-    private void jLabel32MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel32MouseDragged
- // TODO for later
+    private void jLabel32MouseDragged(java.awt.event.MouseEvent
+                                      evt) {//GEN-FIRST:event_jLabel32MouseDragged
+// TODO for later
     }//GEN-LAST:event_jLabel32MouseDragged
 
-    private void m_jCodetypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCodetypeActionPerformed
+    private void m_jCodetypeActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_m_jCodetypeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_m_jCodetypeActionPerformed
 

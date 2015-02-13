@@ -32,7 +32,8 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
 
     private StringBuilder m_sline;
 
-    public DevicePrinterJavaPOS(String sDevicePrinterName, String sDeviceDrawerName) throws TicketPrinterException {
+    public DevicePrinterJavaPOS(String sDevicePrinterName,
+                                String sDeviceDrawerName) throws TicketPrinterException {
 
         m_sName = sDevicePrinterName;
         if (sDeviceDrawerName != null && !sDeviceDrawerName.equals("")) {
@@ -44,7 +45,8 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
             m_printer.open(sDevicePrinterName);
             m_printer.claim(10000);
             m_printer.setDeviceEnabled(true);
-            m_printer.setMapMode(POSPrinterConst.PTR_MM_METRIC);  // unit = 1/100 mm - i.e. 1 cm = 10 mm = 10 * 100 units
+            m_printer.setMapMode(
+                POSPrinterConst.PTR_MM_METRIC);  // unit = 1/100 mm - i.e. 1 cm = 10 mm = 10 * 100 units
         } catch (JposException e) {
             // cannot live without the printer.
             throw new TicketPrinterException(e.getMessage(), e);
@@ -98,7 +100,8 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
                     out.write(ImageUtils.writeImage(image));
                 }
 
-                m_printer.printBitmap(POSPrinterConst.PTR_S_RECEIPT, f.getAbsolutePath(), POSPrinterConst.PTR_BM_ASIS, POSPrinterConst.PTR_BM_CENTER);
+                m_printer.printBitmap(POSPrinterConst.PTR_S_RECEIPT, f.getAbsolutePath(),
+                                      POSPrinterConst.PTR_BM_ASIS, POSPrinterConst.PTR_BM_CENTER);
             }
 // JG 16 May 12 use multicatch
         } catch (IOException | JposException eIO) {
@@ -106,7 +109,7 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
     }
 
     @Override
-    public void printLogo(){
+    public void printLogo() {
     }
 
     @Override
@@ -114,9 +117,11 @@ public class DevicePrinterJavaPOS  implements DevicePrinter {
         try {
             if (m_printer.getCapRecBarCode()) { // si podemos imprimir codigos de barras
                 if (DevicePrinter.POSITION_NONE.equals(position)) {
-                    m_printer.printBarCode(POSPrinterConst.PTR_S_RECEIPT, code, POSPrinterConst.PTR_BCS_EAN13, 10 * 100, 60 * 100, POSPrinterConst.PTR_BC_CENTER, POSPrinterConst.PTR_BC_TEXT_NONE);
+                    m_printer.printBarCode(POSPrinterConst.PTR_S_RECEIPT, code, POSPrinterConst.PTR_BCS_EAN13, 10 * 100,
+                                           60 * 100, POSPrinterConst.PTR_BC_CENTER, POSPrinterConst.PTR_BC_TEXT_NONE);
                 } else {
-                    m_printer.printBarCode(POSPrinterConst.PTR_S_RECEIPT, code, POSPrinterConst.PTR_BCS_EAN13, 10 * 100, 60 * 100, POSPrinterConst.PTR_BC_CENTER, POSPrinterConst.PTR_BC_TEXT_BELOW);
+                    m_printer.printBarCode(POSPrinterConst.PTR_S_RECEIPT, code, POSPrinterConst.PTR_BCS_EAN13, 10 * 100,
+                                           60 * 100, POSPrinterConst.PTR_BC_CENTER, POSPrinterConst.PTR_BC_TEXT_BELOW);
                 }
             }
         } catch (JposException e) {

@@ -27,7 +27,8 @@ public class JFrmConfig extends javax.swing.JFrame {
         } catch (IOException e) {
         }
 
-        setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION + " - " + AppLocal.getIntString("Menu.Configuration"));
+        setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION + " - " +
+                 AppLocal.getIntString("Menu.Configuration"));
 
         addWindowListener(new MyFrameListener());
 
@@ -41,7 +42,7 @@ public class JFrmConfig extends javax.swing.JFrame {
         }
     }
 
-    private class MyFrameListener extends WindowAdapter{
+    private class MyFrameListener extends WindowAdapter {
 
         @Override
         public void windowClosing(WindowEvent evt) {
@@ -86,7 +87,8 @@ public class JFrmConfig extends javax.swing.JFrame {
 // JG 6 May 2013 to Multicatch
                 try {
                     UIManager.setLookAndFeel(config.getProperty("swing.defaultlaf"));
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                             UnsupportedLookAndFeelException e) {
                 }
 
                 new JFrmConfig(config).setVisible(true);

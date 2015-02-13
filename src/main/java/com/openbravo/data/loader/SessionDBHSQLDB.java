@@ -29,11 +29,13 @@ public class SessionDBHSQLDB implements SessionDB {
 
     @Override
     public SentenceFind getSequenceSentence(Session s, String sequence) {
-        return new StaticSentence(s, "CALL NEXT VALUE FOR " + sequence, null, SerializerReadInteger.INSTANCE);
+        return new StaticSentence(s, "CALL NEXT VALUE FOR " + sequence, null,
+                                  SerializerReadInteger.INSTANCE);
     }
 
     @Override
     public SentenceFind resetSequenceSentence(Session s, String sequence) {
-        return new StaticSentence(s, "CALL NEXT VALUE FOR " + sequence, null, SerializerReadInteger.INSTANCE);
+        return new StaticSentence(s, "CALL NEXT VALUE FOR " + sequence, null,
+                                  SerializerReadInteger.INSTANCE);
     }
 }

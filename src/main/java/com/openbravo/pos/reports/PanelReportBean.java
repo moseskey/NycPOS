@@ -78,8 +78,8 @@ public class PanelReportBean extends JPanelReport {
 
     protected String getResourceBundle() {
         return resourcebundle == null
-                ? report
-                : resourcebundle;
+               ? report
+               : resourcebundle;
     }
 
     public void setSentence(String sentence) {
@@ -97,9 +97,9 @@ public class PanelReportBean extends JPanelReport {
 
     protected BaseSentence getSentence() {
         return new StaticSentence(m_App.getSession(),
-             new QBFBuilder(sentence, paramnames.toArray(new String[paramnames.size()])),
-             qbffilter.getSerializerWrite(),
-             new SerializerReadBasic(fielddatas.toArray(new Datas[fielddatas.size()])));
+                                  new QBFBuilder(sentence, paramnames.toArray(new String[paramnames.size()])),
+                                  qbffilter.getSerializerWrite(),
+                                  new SerializerReadBasic(fielddatas.toArray(new Datas[fielddatas.size()])));
     }
 
     protected ReportFields getReportFields() {

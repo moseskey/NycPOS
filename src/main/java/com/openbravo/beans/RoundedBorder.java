@@ -58,11 +58,13 @@ public class RoundedBorder extends AbstractBorder {
         this(colorBorder, Color.WHITE, thickness, roundedRadius, true, true);
     }
 
-    public RoundedBorder(Color colorBorder, float thickness, int roundedRadius, boolean btopborder, boolean bbottomborder) {
+    public RoundedBorder(Color colorBorder, float thickness, int roundedRadius, boolean btopborder,
+                         boolean bbottomborder) {
         this(colorBorder, Color.WHITE, thickness, roundedRadius, btopborder, bbottomborder);
     }
 
-    public RoundedBorder(Color colorBorder, Color colorgradient, float thickness, int roundedRadius, boolean btopborder, boolean bbottomborder) {
+    public RoundedBorder(Color colorBorder, Color colorgradient, float thickness, int roundedRadius,
+                         boolean btopborder, boolean bbottomborder) {
 
         this.colorBorder = colorBorder;
         this.colorgradient = colorgradient;
@@ -96,24 +98,24 @@ public class RoundedBorder extends AbstractBorder {
                 g2d.setPaint(new GradientPaint(0, 0, colorgradient, width, 0, c.getBackground()));
             }
             g2d.fillRoundRect(
-                    (int) (x + thickness),
-                    (int) (y + thickness - ftop),
-                    (int) (width - thickness - thickness),
-                    (int) (height - thickness - thickness + ftop + fbottom),
-                    (int) (roundedRadius * 2 - imedium),
-                    (int) (roundedRadius * 2 - imedium));
+                (int)(x + thickness),
+                (int)(y + thickness - ftop),
+                (int)(width - thickness - thickness),
+                (int)(height - thickness - thickness + ftop + fbottom),
+                (int)(roundedRadius * 2 - imedium),
+                (int)(roundedRadius * 2 - imedium));
         }
 
         if (thickness > 0f) {
             g2d.setStroke(new BasicStroke(thickness));
             g2d.setPaint(colorBorder);
             g2d.drawRoundRect(
-                    (int) (x),
-                    (int) (y - ftop),
-                    (int) (width- thickness),
-                    (int) (height - thickness + ftop + fbottom),
-                    roundedRadius * 2,
-                    roundedRadius * 2);
+                (int)(x),
+                (int)(y - ftop),
+                (int)(width - thickness),
+                (int)(height - thickness + ftop + fbottom),
+                roundedRadius * 2,
+                roundedRadius * 2);
         }
 
         g2d.setPaint(oldColor);
@@ -133,10 +135,10 @@ public class RoundedBorder extends AbstractBorder {
 
         // Los bordes estan a derecha y a izquierda
         return new Insets(
-                (int)(0.5 + thickness - ftopinset),
-                (int)(0.5 + thickness + roundedRadius),
-                (int)(0.5 + thickness - fbottominset),
-                (int)(0.5 + thickness + roundedRadius));
+                   (int)(0.5 + thickness - ftopinset),
+                   (int)(0.5 + thickness + roundedRadius),
+                   (int)(0.5 + thickness - fbottominset),
+                   (int)(0.5 + thickness + roundedRadius));
     }
 
     @Override
@@ -148,7 +150,7 @@ public class RoundedBorder extends AbstractBorder {
 //        insets.right = (int)(0.5 + thickness);
 
         insets.top = (int)(0.5 + thickness - ftopinset);
-        insets.left =(int)(0.5 + thickness + roundedRadius);
+        insets.left = (int)(0.5 + thickness + roundedRadius);
         insets.bottom = (int)(0.5 + thickness - fbottominset);
         insets.right = (int)(0.5 + thickness + roundedRadius);
 

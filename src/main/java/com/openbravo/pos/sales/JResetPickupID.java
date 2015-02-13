@@ -30,11 +30,12 @@ public class JResetPickupID extends javax.swing.JFrame {
             this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/images/favicon.png")));
         } catch (IOException e) {
         }
-        setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION + " - " + AppLocal.getIntString("Menu.Resetpickup"));
+        setTitle(AppLocal.APP_NAME + " - " + AppLocal.APP_VERSION + " - " +
+                 AppLocal.getIntString("Menu.Resetpickup"));
 
         addWindowListener(new MyFrameListener());
 
-       config = new JPanelResetPickupId(props);
+        config = new JPanelResetPickupId(props);
 
         getContentPane().add(config, BorderLayout.CENTER);
 
@@ -44,7 +45,7 @@ public class JResetPickupID extends javax.swing.JFrame {
         }
     }
 
-    private class MyFrameListener extends WindowAdapter{
+    private class MyFrameListener extends WindowAdapter {
 
         @Override
         public void windowClosing(WindowEvent evt) {
@@ -69,7 +70,7 @@ public class JResetPickupID extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-507)/2, (screenSize.height-304)/2, 507, 304);
+        setBounds((screenSize.width - 507) / 2, (screenSize.height - 304) / 2, 507, 304);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -87,13 +88,14 @@ public class JResetPickupID extends javax.swing.JFrame {
 // JG 6 May 2013 to Multicatch
                 try {
                     Object laf = Class.forName(config.getProperty("swing.defaultlaf")).newInstance();
-                    if (laf instanceof LookAndFeel){
+                    if (laf instanceof LookAndFeel) {
                         UIManager.setLookAndFeel((LookAndFeel) laf);
                     } else if (laf instanceof SubstanceSkin) {
                         SubstanceLookAndFeel.setSkin((SubstanceSkin) laf);
                     }
 // JG 6 May 2013 to multicatch
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                             UnsupportedLookAndFeelException e) {
                 }
 
                 JResetPickupID resetFrame = new JResetPickupID(config);//

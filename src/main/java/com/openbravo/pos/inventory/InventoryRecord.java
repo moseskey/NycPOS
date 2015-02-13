@@ -15,7 +15,8 @@ public class InventoryRecord {
     private final List<InventoryLine> m_invlines;
     private final String user;
 
-    public InventoryRecord(Date d, MovementReason reason, LocationInfo location, String currentUser, List<InventoryLine> invlines) {
+    public InventoryRecord(Date d, MovementReason reason, LocationInfo location, String currentUser,
+                           List<InventoryLine> invlines) {
         m_dDate = d;
         m_reason = reason;
         m_locationOri = location;

@@ -48,11 +48,11 @@ public final class TicketInfo implements SerializableRead, Externalizable {
     private Boolean oldTicket;
 
 
- // JG July 2014 Ticket creator Host - for ticket print
+// JG July 2014 Ticket creator Host - for ticket print
     private static String Hostname;
 
     public static void setHostname(String name) {
-        Hostname=name;
+        Hostname = name;
     }
 
     public static String getHostname() {
@@ -74,7 +74,7 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         payments = new ArrayList<>(); // JG June 2102 diamond inference
         taxes = null;
         m_sResponse = null;
-        oldTicket=false;
+        oldTicket = false;
 
     }
 
@@ -150,7 +150,7 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         for (PaymentInfo p : payments) {
             t.payments.add(p.copyPayment());
         }
-        t.oldTicket=oldTicket;
+        t.oldTicket = oldTicket;
         // taxes are not copied, must be calculated again.
 
         return t;
@@ -174,7 +174,7 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     public void setTicketId(int iTicketId) {
         m_iTicketId = iTicketId;
-    // refreshLines();
+        // refreshLines();
     }
 
     public void setPickupId(int iTicketId) {
@@ -196,14 +196,15 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
         if (info == null) {
             if (m_iTicketId == 0) {
-                name.append("(").append(m_dateformat.format(m_dDate)).append(" ").append(Long.toString(m_dDate.getTime() % 1000)).append(")");
+                name.append("(").append(m_dateformat.format(m_dDate)).append(" ").append(Long.toString(
+                                                                                             m_dDate.getTime() % 1000)).append(")");
             } else {
                 name.append(Integer.toString(m_iTicketId));
             }
         } else {
             name.append(info.toString());
 
-            }
+        }
         if (getCustomerId() != null) {
             name.append(" - ");
             name.append(m_Customer.toString());
@@ -247,16 +248,16 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         }
     }
 
-    public String getTransactionID(){
-        return (getPayments().size()>0)
-            ? ( getPayments().get(getPayments().size()-1) ).getTransactionID()
-            : StringUtils.getCardNumber(); //random transaction ID
+    public String getTransactionID() {
+        return (getPayments().size() > 0)
+               ? (getPayments().get(getPayments().size() - 1)).getTransactionID()
+               : StringUtils.getCardNumber(); //random transaction ID
     }
 
-    public String getReturnMessage(){
-        return ( (getPayments().get(getPayments().size()-1)) instanceof PaymentInfoMagcard )
-            ? ((PaymentInfoMagcard)(getPayments().get(getPayments().size()-1))).getReturnMessage()
-            : LocalRes.getIntString("button.ok");
+    public String getReturnMessage() {
+        return ((getPayments().get(getPayments().size() - 1)) instanceof PaymentInfoMagcard)
+               ? ((PaymentInfoMagcard)(getPayments().get(getPayments().size() - 1))).getReturnMessage()
+               : LocalRes.getIntString("button.ok");
 
     }
 
@@ -366,7 +367,7 @@ public final class TicketInfo implements SerializableRead, Externalizable {
             }
         }
         return sum;
-          }
+    }
 
     public double getTendered() {
         return getTotalPaid();
@@ -442,27 +443,28 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
     public String printId() {
 // We need acces to the config file
-      AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")), AppLocal.APP_ID + ".properties"));
-      m_config.load();
-      String receiptSize =(m_config.getProperty("till.receiptsize"));
-      String receiptPrefix =(m_config.getProperty("till.receiptprefix"));
+        AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")),
+                                                     AppLocal.APP_ID + ".properties"));
+        m_config.load();
+        String receiptSize = (m_config.getProperty("till.receiptsize"));
+        String receiptPrefix = (m_config.getProperty("till.receiptprefix"));
 // we have finished with m_config so unload it
-      m_config =null;
+        m_config = null;
 
 
         if (m_iTicketId > 0) {
-            String tmpTicketId=Integer.toString(m_iTicketId);
-            if (receiptSize == null || (Integer.parseInt(receiptSize) <= tmpTicketId.length())){
-                if (receiptPrefix != null){
-                    tmpTicketId=receiptPrefix+tmpTicketId;
+            String tmpTicketId = Integer.toString(m_iTicketId);
+            if (receiptSize == null || (Integer.parseInt(receiptSize) <= tmpTicketId.length())) {
+                if (receiptPrefix != null) {
+                    tmpTicketId = receiptPrefix + tmpTicketId;
                 }
                 return tmpTicketId;
             }
-            while (tmpTicketId.length()<Integer.parseInt(receiptSize)){
-                tmpTicketId="0"+tmpTicketId;
+            while (tmpTicketId.length() < Integer.parseInt(receiptSize)) {
+                tmpTicketId = "0" + tmpTicketId;
             }
-            if (receiptPrefix != null){
-                    tmpTicketId=receiptPrefix+tmpTicketId;
+            if (receiptPrefix != null) {
+                tmpTicketId = receiptPrefix + tmpTicketId;
             }
             return tmpTicketId;
         } else {
@@ -493,15 +495,15 @@ public final class TicketInfo implements SerializableRead, Externalizable {
 
 // Added JDL 28.05.13 for loyalty card functions
 
-        public void clearCardNumber(){
-        loyaltyCardNumber=null;
+    public void clearCardNumber() {
+        loyaltyCardNumber = null;
     }
 
-    public void setLoyaltyCardNumber(String cardNumber){
-        loyaltyCardNumber=cardNumber;
+    public void setLoyaltyCardNumber(String cardNumber) {
+        loyaltyCardNumber = cardNumber;
     }
 
-    public String getLoyaltyCardNumber(){
+    public String getLoyaltyCardNumber() {
         return (loyaltyCardNumber);
     }
 // Loyalty card functions added
@@ -534,17 +536,17 @@ public final class TicketInfo implements SerializableRead, Externalizable {
         return Formats.CURRENCY.formatValue(getTendered());
     }
 
-    public String VoucherReturned(){
-        return Formats.CURRENCY.formatValue(getTotalPaid()- getTotal());
+    public String VoucherReturned() {
+        return Formats.CURRENCY.formatValue(getTotalPaid() - getTotal());
     }
 //Added JDl 03.07.13
 
     public boolean getOldTicket() {
-	return (oldTicket);
-}
+        return (oldTicket);
+    }
 
     public void setOldTicket(Boolean otState) {
-	oldTicket = otState;
-}
+        oldTicket = otState;
+    }
 
 }

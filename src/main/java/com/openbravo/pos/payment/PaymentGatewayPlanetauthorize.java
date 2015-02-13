@@ -13,7 +13,8 @@ import java.util.StringTokenizer;
 
 public class PaymentGatewayPlanetauthorize implements PaymentGateway {
 
-    private static final String ENDPOINTADDRESS = "https://secure.planetauthorizegateway.com/api/transact.php";
+    private static final String ENDPOINTADDRESS =
+        "https://secure.planetauthorizegateway.com/api/transact.php";
     private static final String OPERATIONVALIDATE = "sale";
     private static final String OPERATIONREFUND = "refund";
 
@@ -21,11 +22,12 @@ public class PaymentGatewayPlanetauthorize implements PaymentGateway {
     private String m_sCommercePassword;
     private boolean m_bTestMode;
 
-    public PaymentGatewayPlanetauthorize (AppProperties props) {
+    public PaymentGatewayPlanetauthorize(AppProperties props) {
         m_sCommerceID = props.getProperty("payment.commerceid");
 
         AltEncrypter cypher = new AltEncrypter("cypherkey" + props.getProperty("payment.commerceid"));
-        this.m_sCommercePassword = cypher.decrypt(props.getProperty("payment.commercepassword").substring(6));
+        this.m_sCommercePassword = cypher.decrypt(props.getProperty("payment.commercepassword").substring(
+                                                      6));
 
         m_bTestMode = Boolean.valueOf(props.getProperty("payment.testmode")).booleanValue();
     }
@@ -52,7 +54,7 @@ public class PaymentGatewayPlanetauthorize implements PaymentGateway {
 
             //sb.append("&cvv="); //card security code
 
-            if (payinfo.getTrack1(true) == null){
+            if (payinfo.getTrack1(true) == null) {
                 sb.append("&ccnumber="); //test=4111111111111111 (visa)
                 sb.append(URLEncoder.encode(payinfo.getCardNumber(), "UTF-8"));
 
@@ -73,7 +75,7 @@ public class PaymentGatewayPlanetauthorize implements PaymentGateway {
                 //String track_1 = "%B4111111111111111^PADILLA VISDOMINE/LUIS ^0509120000000000000000999000000?";
                 //String track_2 = ";4111111111111111=05091200333300000000?";
                 //String track_3 = ";4111111111111111=7247241000000000000303009046040400005090=111111234564568798543654==1=0000000000000000?";
-                sb.append("&track_1="+ URLEncoder.encode(payinfo.getTrack1(true),"UTF-8"));
+                sb.append("&track_1=" + URLEncoder.encode(payinfo.getTrack1(true), "UTF-8"));
                 sb.append("&track_2=" + URLEncoder.encode(payinfo.getTrack2(true), "UTF-8"));
 
             }
@@ -90,64 +92,66 @@ public class PaymentGatewayPlanetauthorize implements PaymentGateway {
                 //payinfo.paymentError(AppLocal.getIntString("message.paymentrefundsnotsupported"));
             }
 
-        // open secure connection
-        URL url = new URL(ENDPOINTADDRESS);
-        URLConnection connection = url.openConnection();
-        connection.setDoOutput(true);
-        connection.setUseCaches(false);
-        connection.setAllowUserInteraction(false);
+            // open secure connection
+            URL url = new URL(ENDPOINTADDRESS);
+            URLConnection connection = url.openConnection();
+            connection.setDoOutput(true);
+            connection.setUseCaches(false);
+            connection.setAllowUserInteraction(false);
 
-        // not necessarily required but fixes a bug with some servers
-        connection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+            // not necessarily required but fixes a bug with some servers
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 
-        // POST the data in the string buffer
-        DataOutputStream out = new DataOutputStream(connection.getOutputStream());
-        out.write(sb.toString().getBytes());
-        out.flush();
-        out.close();
+            // POST the data in the string buffer
+            DataOutputStream out = new DataOutputStream(connection.getOutputStream());
+            out.write(sb.toString().getBytes());
+            out.flush();
+            out.close();
 
-        // process and read the gateway response
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            // process and read the gateway response
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-        String returned = in.readLine();
+            String returned = in.readLine();
 
-        //RESPONSE
-        //response=1&responsetext=SUCCESS&authcode=123456&transactionid=849066017&avsresponse=&cvvresponse=M&orderid=&type=sale&response_code=100
-        payinfo.setReturnMessage(returned);
-        in.close(); // fin
+            //RESPONSE
+            //response=1&responsetext=SUCCESS&authcode=123456&transactionid=849066017&avsresponse=&cvvresponse=M&orderid=&type=sale&response_code=100
+            payinfo.setReturnMessage(returned);
+            in.close(); // fin
 
-        if (returned == null) {
-            payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Response empty.");
-        } else {
-            Map props = new HashMap();
-            StringTokenizer tk = new StringTokenizer(returned, "?&");
-            while(tk.hasMoreTokens()) {
-                String sToken = tk.nextToken();
-                int i = sToken.indexOf('=');
-                if (i >= 0) {
-                    props.put(URLDecoder.decode(sToken.substring(0, i), "UTF-8"), URLDecoder.decode(sToken.substring(i + 1), "UTF-8"));
+            if (returned == null) {
+                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Response empty.");
+            } else {
+                Map props = new HashMap();
+                StringTokenizer tk = new StringTokenizer(returned, "?&");
+                while (tk.hasMoreTokens()) {
+                    String sToken = tk.nextToken();
+                    int i = sToken.indexOf('=');
+                    if (i >= 0) {
+                        props.put(URLDecoder.decode(sToken.substring(0, i), "UTF-8"),
+                                  URLDecoder.decode(sToken.substring(i + 1), "UTF-8"));
+                    } else {
+                        props.put(URLDecoder.decode(sToken, "UTF-8"), null);
+                    }
+                }
+
+                if ("100".equals(props.get("response_code"))) {
+                    //Transaction approved
+                    payinfo.paymentOK((String)props.get("authcode"), (String)props.get("transactionid"), returned);
                 } else {
-                    props.put(URLDecoder.decode(sToken, "UTF-8"), null);
+                    //Transaction declined
+                    payinfo.paymentError(AppLocal.getIntString("message.paymenterror"),
+                                         (String)props.get("responsetext"));
                 }
             }
-
-            if ("100".equals(props.get("response_code"))){
-                //Transaction approved
-                payinfo.paymentOK((String)props.get("authcode"), (String)props.get("transactionid"), returned);
-            } else {
-                //Transaction declined
-                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), (String)props.get("responsetext"));
-            }
+        } catch (UnsupportedEncodingException eUE) {
+            //no pasa nunca
+            payinfo.paymentError(AppLocal.getIntString("message.paymentexceptionservice"), eUE.getMessage());
+        } catch (MalformedURLException eMURL) {
+            // no pasa nunca
+            payinfo.paymentError(AppLocal.getIntString("message.paymentexceptionservice"), eMURL.getMessage());
+        } catch (IOException e) {
+            payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), e.getMessage());
         }
-    } catch (UnsupportedEncodingException eUE) {
-        //no pasa nunca
-        payinfo.paymentError(AppLocal.getIntString("message.paymentexceptionservice"), eUE.getMessage());
-    } catch (MalformedURLException eMURL) {
-        // no pasa nunca
-        payinfo.paymentError(AppLocal.getIntString("message.paymentexceptionservice"), eMURL.getMessage());
-    } catch(IOException e){
-        payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), e.getMessage());
-    }
 
     }
 

@@ -49,7 +49,7 @@ public class FloorsInfo implements SerializableRead, IKeyed {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return m_sName;
     }
 }

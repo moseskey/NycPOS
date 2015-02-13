@@ -10,7 +10,8 @@ import java.awt.event.ActionEvent;
 import java.util.Date;
 import javax.swing.*;
 
-public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanelView, BeanFactoryApp {
+public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanelView,
+    BeanFactoryApp {
 
     private AppView app;
     private DataLogicPresenceManagement dlpresencemanagement;
@@ -24,11 +25,11 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
     @Override
     public void init(AppView app) throws BeanFactoryException {
         this.app = app;
-        dlpresencemanagement = (DataLogicPresenceManagement) app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");
+        dlpresencemanagement = (DataLogicPresenceManagement)
+                               app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");
     }
 
-    private void listBreaks()
-    {
+    private void listBreaks() {
         try {
             jScrollPane1.getViewport().setView(null);
             jBreaks = new JFlowPanel();
@@ -73,7 +74,9 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
         public void actionPerformed(ActionEvent evt) {
             try {
                 dlpresencemanagement.StartBreak(app.getAppUserView().getUser().getId(), m_break.getId());
-                message.setText(app.getAppUserView().getUser().getName()+" "+AppLocal.getIntString("message.leavefor")+" "+ m_break.getName()+" "+AppLocal.getIntString("message.at")+" "+Formats.TIMESTAMP.formatValue(new Date()));
+                message.setText(app.getAppUserView().getUser().getName() + " " +
+                                AppLocal.getIntString("message.leavefor") + " " + m_break.getName() + " " +
+                                AppLocal.getIntString("message.at") + " " + Formats.TIMESTAMP.formatValue(new Date()));
                 BreakAction();
             } catch (BasicException ex) {
                 message.setText(AppLocal.getIntString("message.probleminbreak"));
@@ -91,27 +94,34 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
         boolean isOnLeave = dlpresencemanagement.IsOnLeave(app.getAppUserView().getUser().getId());
         listBreaks();
         if (isOnLeave) {
-            message.setText(app.getAppUserView().getUser().getName()+" "+AppLocal.getIntString("message.leavecontrol"));
+            message.setText(app.getAppUserView().getUser().getName() + " " +
+                            AppLocal.getIntString("message.leavecontrol"));
             LeaveAction();
         } else {
             boolean isCheckedIn = dlpresencemanagement.IsCheckedIn(app.getAppUserView().getUser().getId());
             if (isCheckedIn) {
                 Date lastCheckIn = dlpresencemanagement.GetLastCheckIn(app.getAppUserView().getUser().getId());
-                message.setText(app.getAppUserView().getUser().getName()+" "+AppLocal.getIntString("message.checkedin")+" "+Formats.TIMESTAMP.formatValue(lastCheckIn));
+                message.setText(app.getAppUserView().getUser().getName() + " " +
+                                AppLocal.getIntString("message.checkedin") + " " + Formats.TIMESTAMP.formatValue(lastCheckIn));
                 CheckInAction();
             } else {
                 Date lastCheckOut = dlpresencemanagement.GetLastCheckOut(app.getAppUserView().getUser().getId());
                 if (lastCheckOut != null) {
-                    message.setText(app.getAppUserView().getUser().getName()+" "+AppLocal.getIntString("message.checkedout")+" "+Formats.TIMESTAMP.formatValue(lastCheckOut));
+                    message.setText(app.getAppUserView().getUser().getName() + " " +
+                                    AppLocal.getIntString("message.checkedout") + " " + Formats.TIMESTAMP.formatValue(lastCheckOut));
                 } else {
-                    message.setText(app.getAppUserView().getUser().getName()+" "+AppLocal.getIntString("message.noshift"));
+                    message.setText(app.getAppUserView().getUser().getName() + " " +
+                                    AppLocal.getIntString("message.noshift"));
                 }
                 CheckOutAction();
             }
             boolean isOnBreak = dlpresencemanagement.IsOnBreak(app.getAppUserView().getUser().getId());
             if (isOnBreak) {
-                Object[] LastBreak = (Object[]) dlpresencemanagement.GetLastBreak(app.getAppUserView().getUser().getId());
-                message.setText(app.getAppUserView().getUser().getName()+" "+AppLocal.getIntString("message.leavefor")+" "+(String) LastBreak[0] +" "+AppLocal.getIntString("message.at")+" "+ Formats.TIMESTAMP.formatValue((Date) LastBreak[1]));
+                Object[] LastBreak = (Object[]) dlpresencemanagement.GetLastBreak(
+                                         app.getAppUserView().getUser().getId());
+                message.setText(app.getAppUserView().getUser().getName() + " " +
+                                AppLocal.getIntString("message.leavefor") + " " + (String) LastBreak[0] + " " +
+                                AppLocal.getIntString("message.at") + " " + Formats.TIMESTAMP.formatValue((Date) LastBreak[1]));
                 BreakAction();
             }
         }
@@ -188,14 +198,18 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
             }
         });
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setHorizontalScrollBarPolicy(
+            javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jScrollPane1.setPreferredSize(new java.awt.Dimension(570, 120));
 
         message.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         message.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        message.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        message.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                              javax.swing.BorderFactory.createLineBorder(
+                                  javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                              javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         message.setOpaque(true);
         message.setPreferredSize(new java.awt.Dimension(160, 25));
         message.setRequestFocusEnabled(false);
@@ -205,64 +219,83 @@ public class JPanelEmployeePresence extends javax.swing.JPanel implements JPanel
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(message, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addComponent(btnCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 256,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                           javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                          .addComponent(btnCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 248,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(message, javax.swing.GroupLayout.Alignment.TRAILING,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(18, 18, 18)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 49,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 49,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGap(18, 18, 18)
+                      .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap(80, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckInActionPerformed
+    private void btnCheckInActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_btnCheckInActionPerformed
         try {
             boolean isOnBreak = dlpresencemanagement.IsOnBreak(app.getAppUserView().getUser().getId());
             if (isOnBreak) {
                 dlpresencemanagement.EndBreak(app.getAppUserView().getUser().getId());
-                message.setText(app.getAppUserView().getUser().getName()+AppLocal.getIntString("message.breakoverandcheckedin")+" "+Formats.TIMESTAMP.formatValue(new Date()));
+                message.setText(app.getAppUserView().getUser().getName() +
+                                AppLocal.getIntString("message.breakoverandcheckedin") + " " + Formats.TIMESTAMP.formatValue(
+                                    new Date()));
             } else {
                 dlpresencemanagement.CheckIn(app.getAppUserView().getUser().getId());
-                message.setText(app.getAppUserView().getUser().getName()+" "+AppLocal.getIntString("message.checkedin")+" "+Formats.TIMESTAMP.formatValue(new Date()));
+                message.setText(app.getAppUserView().getUser().getName() + " " +
+                                AppLocal.getIntString("message.checkedin") + " " + Formats.TIMESTAMP.formatValue(new Date()));
             }
         } catch (BasicException ex) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotcheckin"));
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.cannotcheckin"));
             msg.show(this);
         }
         CheckInAction();
-}//GEN-LAST:event_btnCheckInActionPerformed
+    }//GEN-LAST:event_btnCheckInActionPerformed
 
-    private void btnCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckOutActionPerformed
+    private void btnCheckOutActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_btnCheckOutActionPerformed
         try {
             boolean isOnBreak = dlpresencemanagement.IsOnBreak(app.getAppUserView().getUser().getId());
             if (isOnBreak) {
                 dlpresencemanagement.EndBreak(app.getAppUserView().getUser().getId());
-                message.setText(app.getAppUserView().getUser().getName()+" "+AppLocal.getIntString("message.breakoverandcheckedout")+" "+Formats.TIMESTAMP.formatValue(new Date()));
+                message.setText(app.getAppUserView().getUser().getName() + " " +
+                                AppLocal.getIntString("message.breakoverandcheckedout") + " " + Formats.TIMESTAMP.formatValue(
+                                    new Date()));
             } else {
-                message.setText(app.getAppUserView().getUser().getName()+" "+AppLocal.getIntString("message.checkedout")+" "+Formats.TIMESTAMP.formatValue(new Date()));
+                message.setText(app.getAppUserView().getUser().getName() + " " +
+                                AppLocal.getIntString("message.checkedout") + " " + Formats.TIMESTAMP.formatValue(new Date()));
             }
             dlpresencemanagement.CheckOut(app.getAppUserView().getUser().getId());
         } catch (BasicException ex) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotcheckout"));
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.cannotcheckout"));
             msg.show(this);
         }
         CheckOutAction();
-}//GEN-LAST:event_btnCheckOutActionPerformed
+    }//GEN-LAST:event_btnCheckOutActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

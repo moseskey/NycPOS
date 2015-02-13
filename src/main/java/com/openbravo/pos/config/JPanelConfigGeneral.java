@@ -112,8 +112,8 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
 
         LAFInfo laf = (LAFInfo) jcboLAF.getSelectedItem();
         config.setProperty("swing.defaultlaf", laf == null
-                ? System.getProperty("swing.defaultlaf", "javax.swing.plaf.metal.MetalLookAndFeel")
-                : laf.getClassName());
+                           ? System.getProperty("swing.defaultlaf", "javax.swing.plaf.metal.MetalLookAndFeel")
+                           : laf.getClassName());
 
         config.setProperty("machine.screenmode", comboValue(jcboMachineScreenmode.getSelectedItem()));
         config.setProperty("machine.ticketsbag", comboValue(jcboTicketsBag.getSelectedItem()));
@@ -149,7 +149,8 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
 
                         SwingUtilities.updateComponentTreeUI(JPanelConfigGeneral.this.getTopLevelAncestor());
 // JG 6 May 2013 to Multicatch
-                    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+                    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                                 UnsupportedLookAndFeelException e) {
                     }
                 }
             });
@@ -252,7 +253,8 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         jcboTicketsBag.setPreferredSize(new java.awt.Dimension(200, 30));
 
         jchkHideInfo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jchkHideInfo.setText(bundle.getString("label.Infopanel")); // NOI18N
         jchkHideInfo.setToolTipText("");
         jchkHideInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -266,7 +268,11 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), bundle.getString("label.startuppanel"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(
+                              javax.swing.BorderFactory.createEtchedBorder(), bundle.getString("label.startuppanel"),
+                              javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                              javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12),
+                              new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel1.setLayout(null);
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -309,14 +315,16 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         jPanel1.add(jtxtStartupText);
         jtxtStartupText.setBounds(110, 60, 350, 30);
 
-        jbtnLogoName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fileopen.png"))); // NOI18N
+        jbtnLogoName.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/fileopen.png"))); // NOI18N
         jbtnLogoName.setMaximumSize(new java.awt.Dimension(64, 32));
         jbtnLogoName.setMinimumSize(new java.awt.Dimension(64, 32));
         jbtnLogoName.setPreferredSize(new java.awt.Dimension(64, 32));
         jPanel1.add(jbtnLogoName);
         jbtnLogoName.setBounds(480, 20, 64, 32);
 
-        jbtnLogoText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fileopen.png"))); // NOI18N
+        jbtnLogoText.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/fileopen.png"))); // NOI18N
         jbtnLogoText.setMaximumSize(new java.awt.Dimension(64, 32));
         jbtnLogoText.setMinimumSize(new java.awt.Dimension(64, 32));
         jbtnLogoText.setPreferredSize(new java.awt.Dimension(64, 32));
@@ -339,55 +347,74 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jcboLAF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jcboMachineScreenmode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtxtMachineHostname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jchkHideInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jcboTicketsBag, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                      .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel11Layout.createSequentialGroup()
+                                          .addContainerGap()
+                                          .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                                              .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                            javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addComponent(jcboLAF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                            javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                                              .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                            javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addComponent(jcboMachineScreenmode, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                            javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                                              .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                            javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addComponent(jtxtMachineHostname, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                            javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                                              .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                            javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                        .addComponent(jchkHideInfo, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(jcboTicketsBag, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 563,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtMachineHostname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcboLAF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcboMachineScreenmode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcboTicketsBag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jchkHideInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                      .addContainerGap()
+                      .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jtxtMachineHostname, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGap(6, 6, 6)
+                      .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jcboLAF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jcboMachineScreenmode, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jcboTicketsBag, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(jchkHideInfo, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                      .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -395,40 +422,49 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                      .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                      .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcboLAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcboLAFActionPerformed
+    private void jcboLAFActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_jcboLAFActionPerformed
 
     }//GEN-LAST:event_jcboLAFActionPerformed
 
-    private void jtxtStartupTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtStartupTextActionPerformed
+    private void jtxtStartupTextActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_jtxtStartupTextActionPerformed
 
     }//GEN-LAST:event_jtxtStartupTextActionPerformed
 
-    private void jtxtStartupTextjTetxtStartupTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxtStartupTextjTetxtStartupTextFocusGained
+    private void jtxtStartupTextjTetxtStartupTextFocusGained(java.awt.event.FocusEvent
+                                                             evt) {//GEN-FIRST:event_jtxtStartupTextjTetxtStartupTextFocusGained
         // JG 31 August 2103 GNU GPL License Warning
 
         transferFocus();
 
-        JOptionPane.showMessageDialog(jPanel1,"<html>Changing default Startup Text content may violate the <br>"
-            + " Free Software Foundation's GNU General Public License GPL","GNU GPL Warning",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(jPanel1,
+                                      "<html>Changing default Startup Text content may violate the <br>"
+                                      + " Free Software Foundation's GNU General Public License GPL", "GNU GPL Warning",
+                                      JOptionPane.WARNING_MESSAGE);
 
     }//GEN-LAST:event_jtxtStartupTextjTetxtStartupTextFocusGained
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jtxtStartupText.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jchkHideInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jchkHideInfoActionPerformed
+    private void jchkHideInfoActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_jchkHideInfoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jchkHideInfoActionPerformed
 

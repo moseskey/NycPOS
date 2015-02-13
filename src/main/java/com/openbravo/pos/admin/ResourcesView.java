@@ -78,8 +78,8 @@ public final class ResourcesView extends JPanel implements EditorRecord {
             m_jImage.setImage(ImageUtils.readImage((byte[]) resource[3]));
         } else if (restype == ResourceType.BINARY) {
             m_jText.setText(resource[3] == null
-                    ? null
-                    : Base64Encoder.encodeChunked((byte[]) resource[3]));
+                            ? null
+                            : Base64Encoder.encodeChunked((byte[]) resource[3]));
             m_jText.setCaretPosition(0);
             m_jImage.setImage(null);
         } else {
@@ -109,8 +109,8 @@ public final class ResourcesView extends JPanel implements EditorRecord {
             m_jImage.setImage(ImageUtils.readImage((byte[]) resource[3]));
         } else if (restype == ResourceType.BINARY) {
             m_jText.setText(resource[2] == null
-                    ? null
-                    : Base64Encoder.encodeChunked((byte[]) resource[3]));
+                            ? null
+                            : Base64Encoder.encodeChunked((byte[]) resource[3]));
             m_jText.setCaretPosition(0);
             m_jImage.setImage(null);
         } else {
@@ -209,33 +209,40 @@ public final class ResourcesView extends JPanel implements EditorRecord {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(m_jName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(m_jType, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(m_jName, javax.swing.GroupLayout.PREFERRED_SIZE, 180,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(m_jType, javax.swing.GroupLayout.PREFERRED_SIZE, 110,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addGap(0, 0, Short.MAX_VALUE)))
+                      .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jType, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                .addContainerGap())
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jName, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jType, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGap(18, 18, 18)
+                      .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                      .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jTypeActionPerformed
+    private void m_jTypeActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_m_jTypeActionPerformed
 
         ResourceType restype = (ResourceType) m_ResourceModel.getSelectedItem();
         if (restype == ResourceType.TEXT) {

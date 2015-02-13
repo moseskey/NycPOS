@@ -161,18 +161,21 @@ public class JFind extends JDialog {
         getContentPane().add(jPanel2, java.awt.BorderLayout.SOUTH);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-434)/2, (screenSize.height-222)/2, 434, 222);
+        setBounds((screenSize.width - 434) / 2, (screenSize.height - 222) / 2, 434, 222);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
+    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
 
         dispose();
 
     }//GEN-LAST:event_jcmdCancelActionPerformed
 
-    private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
+    private void jcmdOKActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jcmdOKActionPerformed
 
-        m_FindInfo = new FindInfo(m_vec, m_jFind.getText(), m_jWhere.getSelectedIndex(), m_jMatchCase.isSelected(), m_jMatch.getSelectedIndex());
+        m_FindInfo = new FindInfo(m_vec, m_jFind.getText(), m_jWhere.getSelectedIndex(),
+                                  m_jMatchCase.isSelected(), m_jMatch.getSelectedIndex());
 
         dispose();
 

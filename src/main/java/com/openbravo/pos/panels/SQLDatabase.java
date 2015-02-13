@@ -32,7 +32,7 @@ public class SQLDatabase implements TreeNode {
     }
 
     @Override
-    public Enumeration children(){
+    public Enumeration children() {
         return new EnumerationIter(m_aTables.iterator());
     }
     @Override
@@ -48,7 +48,7 @@ public class SQLDatabase implements TreeNode {
         return m_aTables.size();
     }
     @Override
-    public int getIndex(TreeNode node){
+    public int getIndex(TreeNode node) {
         return m_aTables.indexOf(node);
     }
     @Override

@@ -175,12 +175,12 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
 
     public void updateState(int iState) {
         if (iState == BrowsableEditableData.ST_INSERT || iState == BrowsableEditableData.ST_DELETE) {
-             // Insert o Delete
-            if (jbtnFirst != null) jbtnFirst.setEnabled(false);
-            if (jbtnPrev != null) jbtnPrev.setEnabled(false);
-            if (jbtnNext != null) jbtnNext.setEnabled(false);
-            if (jbtnLast != null) jbtnLast.setEnabled(false);
-            if (jbtnRefresh != null) jbtnRefresh.setEnabled(true);
+            // Insert o Delete
+            if (jbtnFirst != null) { jbtnFirst.setEnabled(false); }
+            if (jbtnPrev != null) { jbtnPrev.setEnabled(false); }
+            if (jbtnNext != null) { jbtnNext.setEnabled(false); }
+            if (jbtnLast != null) { jbtnLast.setEnabled(false); }
+            if (jbtnRefresh != null) { jbtnRefresh.setEnabled(true); }
         }
     }
 
@@ -188,18 +188,18 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
 
         if (iIndex >= 0 && iIndex < iCounter) {
             // Reposicionamiento
-            if (jbtnFirst != null) jbtnFirst.setEnabled(iIndex > 0);
-            if (jbtnPrev != null) jbtnPrev.setEnabled(iIndex > 0);
-            if (jbtnNext != null) jbtnNext.setEnabled(iIndex < iCounter - 1);
-            if (jbtnLast != null) jbtnLast.setEnabled(iIndex < iCounter - 1);
-            if (jbtnRefresh != null) jbtnRefresh.setEnabled(true);
+            if (jbtnFirst != null) { jbtnFirst.setEnabled(iIndex > 0); }
+            if (jbtnPrev != null) { jbtnPrev.setEnabled(iIndex > 0); }
+            if (jbtnNext != null) { jbtnNext.setEnabled(iIndex < iCounter - 1); }
+            if (jbtnLast != null) { jbtnLast.setEnabled(iIndex < iCounter - 1); }
+            if (jbtnRefresh != null) { jbtnRefresh.setEnabled(true); }
         } else {
             // EOF
-            if (jbtnFirst != null) jbtnFirst.setEnabled(false);
-            if (jbtnPrev != null) jbtnPrev.setEnabled(false);
-            if (jbtnNext != null) jbtnNext.setEnabled(false);
-            if (jbtnLast != null) jbtnLast.setEnabled(false);
-            if (jbtnRefresh != null) jbtnRefresh.setEnabled(false);
+            if (jbtnFirst != null) { jbtnFirst.setEnabled(false); }
+            if (jbtnPrev != null) { jbtnPrev.setEnabled(false); }
+            if (jbtnNext != null) { jbtnNext.setEnabled(false); }
+            if (jbtnLast != null) { jbtnLast.setEnabled(false); }
+            if (jbtnRefresh != null) { jbtnRefresh.setEnabled(false); }
         }
     }
 
@@ -210,7 +210,8 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
                 m_bd.sort(c);
             }
         } catch (BasicException eD) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.nolistdata"), eD);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.nolistdata"),
+                                            eD);
             msg.show(this);
         }
     }
@@ -231,7 +232,8 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
                 }
             }
         } catch (BasicException eD) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.nolistdata"), eD);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.nolistdata"),
+                                            eD);
             msg.show(this);
         }
     }
@@ -246,7 +248,8 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
         try {
             m_bd.actionLoad();
         } catch (BasicException eD) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.noreload"), eD);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.noreload"),
+                                            eD);
             msg.show(this);
         }
     }
@@ -263,7 +266,7 @@ public class JNavigator extends javax.swing.JPanel implements BrowseListener, St
 
     private void jbtnFirstActionPerformed(java.awt.event.ActionEvent evt) {
 
-        try{
+        try {
             m_bd.moveFirst();
         } catch (BasicException eD) {
             MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.nomove"), eD);

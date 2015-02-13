@@ -14,12 +14,12 @@ public abstract class BasicTicket implements PrintItem {
 
     protected int m_iBodyHeight;
 
-       public BasicTicket() {
+    public BasicTicket() {
 // JG 16 May 12 use diamond inference
-           m_aCommands = new ArrayList<>();
-           pil = null;
-           m_iBodyHeight = 0;
-       }
+        m_aCommands = new ArrayList<>();
+        pil = null;
+        m_iBodyHeight = 0;
+    }
 
     protected abstract Font getBaseFont();
 
@@ -28,55 +28,55 @@ public abstract class BasicTicket implements PrintItem {
     protected abstract double getImageScale();
 
     @Override
-       public int getHeight() {
-          return m_iBodyHeight;
-       }
+    public int getHeight() {
+        return m_iBodyHeight;
+    }
 
     @Override
-       public void draw(Graphics2D g2d, int x, int y, int width) {
+    public void draw(Graphics2D g2d, int x, int y, int width) {
 
-           int currenty = y;
-           for (PrintItem pi : m_aCommands) {
-               pi.draw(g2d, x, currenty, width);
-               currenty += pi.getHeight();
-           }
-       }
+        int currenty = y;
+        for (PrintItem pi : m_aCommands) {
+            pi.draw(g2d, x, currenty, width);
+            currenty += pi.getHeight();
+        }
+    }
 
     public java.util.List<PrintItem> getCommands() {
-          return m_aCommands;
-       }
+        return m_aCommands;
+    }
 
-       // INTERFAZ PRINTER 2
+    // INTERFAZ PRINTER 2
 
-           public void printImage(BufferedImage image) {
+    public void printImage(BufferedImage image) {
 
-           PrintItem pi = new PrintItemImage(image, getImageScale());
-           m_aCommands.add(pi);
-           m_iBodyHeight += pi.getHeight();
-       }
+        PrintItem pi = new PrintItemImage(image, getImageScale());
+        m_aCommands.add(pi);
+        m_iBodyHeight += pi.getHeight();
+    }
 
     public void printBarCode(String type, String position, String code) {
 
-           PrintItem pi = new PrintItemBarcode(type, position, code, getImageScale());
-           m_aCommands.add(pi);
-           m_iBodyHeight += pi.getHeight();
-       }
+        PrintItem pi = new PrintItemBarcode(type, position, code, getImageScale());
+        m_aCommands.add(pi);
+        m_iBodyHeight += pi.getHeight();
+    }
 
     public void beginLine(int iTextSize) {
-           pil = new PrintItemLine(iTextSize, getBaseFont(), getFontHeight());
-       }
+        pil = new PrintItemLine(iTextSize, getBaseFont(), getFontHeight());
+    }
 
     public void printText(int iStyle, String sText) {
-           if (pil != null) {
-               pil.addText(iStyle, sText);
-           }
-       }
+        if (pil != null) {
+            pil.addText(iStyle, sText);
+        }
+    }
 
     public void endLine() {
-           if (pil != null) {
-               m_aCommands.add(pil);
-               m_iBodyHeight += pil.getHeight();
-               pil = null;
-           }
-       }
- }
+        if (pil != null) {
+            m_aCommands.add(pil);
+            m_iBodyHeight += pil.getHeight();
+            pil = null;
+        }
+    }
+}

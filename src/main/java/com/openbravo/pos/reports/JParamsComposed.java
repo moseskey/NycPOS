@@ -53,7 +53,7 @@ public class JParamsComposed extends javax.swing.JPanel implements ReportEditorC
 
         Object[] value = new Object[editors.size()];
 
-        for(int i = 0; i < editors.size(); i++) {
+        for (int i = 0; i < editors.size(); i++) {
             value[i] = editors.get(i).createValue();
         }
 

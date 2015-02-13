@@ -29,11 +29,13 @@ public class SessionDBPostgreSQL implements SessionDB {
 
     @Override
     public SentenceFind getSequenceSentence(Session s, String sequence) {
-        return new StaticSentence(s, "SELECT NEXTVAL('" + sequence + "')", null, SerializerReadInteger.INSTANCE);
+        return new StaticSentence(s, "SELECT NEXTVAL('" + sequence + "')", null,
+                                  SerializerReadInteger.INSTANCE);
     }
 
     @Override
-    public SentenceFind resetSequenceSentence(Session s, String sequence){
-        return new StaticSentence(s, "ALTER SEQUENCE " + sequence + " RESTART WITH '0'", null, SerializerReadInteger.INSTANCE);
+    public SentenceFind resetSequenceSentence(Session s, String sequence) {
+        return new StaticSentence(s, "ALTER SEQUENCE " + sequence + " RESTART WITH '0'", null,
+                                  SerializerReadInteger.INSTANCE);
     }
 }

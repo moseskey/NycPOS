@@ -29,7 +29,7 @@ public abstract class SentenceExecTransaction implements SentenceExec {
 
         Transaction<Integer> t = new Transaction<Integer>(m_s) {
             @Override
-            public Integer transact() throws BasicException{
+            public Integer transact() throws BasicException {
                 return execInTransaction(params);
             }
         };

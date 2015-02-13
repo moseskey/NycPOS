@@ -40,7 +40,7 @@ public class LocationsPanel extends JPanelTable {
 
     @Override
     public Vectorer getVectorer() {
-        return tlocations.getVectorerBasic(new int[]{1, 2});
+        return tlocations.getVectorerBasic(new int[] {1, 2});
     }
 
     @Override
@@ -50,7 +50,7 @@ public class LocationsPanel extends JPanelTable {
 
     @Override
     public ListCellRenderer getListCellRenderer() {
-        return new ListCellRendererBasic(tlocations.getRenderStringBasic(new int[]{1}));
+        return new ListCellRendererBasic(tlocations.getRenderStringBasic(new int[] {1}));
     }
 
     @Override

@@ -32,7 +32,7 @@ public class SQLTable implements TreeNode {
     }
 
     @Override
-    public Enumeration children(){
+    public Enumeration children() {
         return new EnumerationIter(m_aColumns.iterator());
     }
     @Override
@@ -48,7 +48,7 @@ public class SQLTable implements TreeNode {
         return m_aColumns.size();
     }
     @Override
-    public int getIndex(TreeNode node){
+    public int getIndex(TreeNode node) {
         return m_aColumns.indexOf(node);
     }
     @Override

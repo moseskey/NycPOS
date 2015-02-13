@@ -39,7 +39,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
     private PaymentsModel m_PaymentsToClose = null;
 
     private TicketParser m_TTP;
-    private final DateFormat df= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+    private final DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 
     private Session s;
     private Connection con;
@@ -64,17 +64,17 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         m_TTP = new TicketParser(m_App.getDeviceTicket(), m_dlSystem);
 
         m_jTicketTable.setDefaultRenderer(Object.class, new TableRendererBasic(
-                new Formats[] {new FormatsPayment(), Formats.CURRENCY}));
+        new Formats[] {new FormatsPayment(), Formats.CURRENCY}));
         m_jTicketTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        m_jScrollTableTicket.getVerticalScrollBar().setPreferredSize(new Dimension(25,25));
+        m_jScrollTableTicket.getVerticalScrollBar().setPreferredSize(new Dimension(25, 25));
         m_jTicketTable.getTableHeader().setReorderingAllowed(false);
         m_jTicketTable.setRowHeight(25);
         m_jTicketTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         m_jsalestable.setDefaultRenderer(Object.class, new TableRendererBasic(
-                new Formats[] {Formats.STRING, Formats.CURRENCY, Formats.CURRENCY, Formats.CURRENCY}));
+                                             new Formats[] {Formats.STRING, Formats.CURRENCY, Formats.CURRENCY, Formats.CURRENCY}));
         m_jsalestable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        m_jScrollSales.getVerticalScrollBar().setPreferredSize(new Dimension(25,25));
+        m_jScrollSales.getVerticalScrollBar().setPreferredSize(new Dimension(25, 25));
         m_jsalestable.getTableHeader().setReorderingAllowed(false);
         m_jsalestable.setRowHeight(25);
         m_jsalestable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -83,11 +83,11 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jPanelTop.setVisible(false);
         if (m_App.getProperties().getProperty("screen.600800") != null) {
             if (Boolean.valueOf(m_App.getProperties().getProperty("screen.600800")) == true) {
-                   jPanelTop.setVisible(true);
-                   jPanelBottom.setVisible(false);
+                jPanelTop.setVisible(true);
+                jPanelBottom.setVisible(false);
             } else {
-                   jPanelTop.setVisible(false);
-                   jPanelBottom.setVisible(true);
+                jPanelTop.setVisible(false);
+                jPanelBottom.setVisible(true);
             }
 
         }
@@ -186,10 +186,10 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jColumns.getColumn(2).setResizable(false);
 
 // read number of no cash drawer activations
-       try{
-            result=0;
-            s=m_App.getSession();
-            con=s.getConnection();
+        try {
+            result = 0;
+            s = m_App.getSession();
+            con = s.getConnection();
             String sdbmanager = m_dlSystem.getDBVersion();
 // John L July 2014 Clear previous Drawer Openings
 //            if (("Derby".equals(sdbmanager)) || ("Apache Derby".equals(sdbmanager))){
@@ -197,40 +197,43 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 //            } else {
 //               SQL="SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > " + "'" + m_PaymentsToClose.printDateStart()+ "'";
             if ("PostgreSQL".equals(sdbmanager)) {
-                SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > " + "'" + m_PaymentsToClose.printDateStart() + "'";
+                SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > " + "'" +
+                      m_PaymentsToClose.printDateStart() + "'";
             } else {
-                SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > {fn TIMESTAMP('" + m_PaymentsToClose.getDateStartDerby() + "')}";
+                SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > {fn TIMESTAMP('" +
+                      m_PaymentsToClose.getDateStartDerby() + "')}";
             }
 
             stmt = (Statement) con.createStatement();
             rs = stmt.executeQuery(SQL);
-            while (rs.next()){
+            while (rs.next()) {
                 result ++;
             }
-            rs=null;
-            con=null;
-            s=null;
-            }
-        catch (SQLException e){System.out.println("error = " + e);}
+            rs = null;
+            con = null;
+            s = null;
+        } catch (SQLException e) {System.out.println("error = " + e);}
         m_jNoCashSales.setText(result.toString());
 
-       }
+    }
 
     private void printPayments(String report) {
 
         String sresource = m_dlSystem.getResourceAsXML(report);
         if (sresource == null) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotprintticket"));
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.cannotprintticket"));
             msg.show(this);
         } else {
             try {
                 ScriptEngine script = ScriptFactory.getScriptEngine(ScriptFactory.VELOCITY);
                 script.put("payments", m_PaymentsToClose);
-                script.put("nosales",result.toString());
+                script.put("nosales", result.toString());
                 m_TTP.printTicket(script.eval(sresource).toString());
 // JG 16 May 2012 use multicatch
             } catch (ScriptException | TicketPrinterException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotprintticket"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotprintticket"), e);
                 msg.show(this);
             }
         }
@@ -268,7 +271,8 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         m_jMinDate = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         m_jMaxDate = new javax.swing.JTextField();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0),
+                                             new java.awt.Dimension(32767, 0));
         jPanel5 = new javax.swing.JPanel();
         m_jScrollTableTicket = new javax.swing.JScrollPane();
         m_jTicketTable = new javax.swing.JTable();
@@ -300,7 +304,9 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
         jPanel1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, AppLocal.getIntString("label.datestitle"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
+                                                                       AppLocal.getIntString("label.datestitle"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                                                                       javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel11.setText(AppLocal.getIntString("label.sequence")); // NOI18N
@@ -330,42 +336,58 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(m_jSequence, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(m_jMinDate, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(m_jMaxDate, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                      .addContainerGap(48, Short.MAX_VALUE)
+                      .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(m_jSequence, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(m_jMinDate, javax.swing.GroupLayout.PREFERRED_SIZE, 160,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(10, 10, 10)
+                      .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(m_jMaxDate, javax.swing.GroupLayout.PREFERRED_SIZE, 160,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, 0,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jSequence, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jMinDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jMaxDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(filler1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                      .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                          .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jSequence, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jMinDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jMaxDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                          .addContainerGap()
+                                          .addComponent(filler1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        Short.MAX_VALUE)))
+                      .addContainerGap())
         );
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, AppLocal.getIntString("label.paymentstitle"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
+                                                                       AppLocal.getIntString("label.paymentstitle"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                                                                       javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
 
         m_jScrollTableTicket.setBorder(null);
         m_jScrollTableTicket.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -374,13 +396,13 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
         m_jTicketTable.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jTicketTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+                                    new Object [][] {
 
-            },
-            new String [] {
+                                    },
+                                    new String [] {
 
-            }
-        ));
+                                    }
+                                ));
         m_jTicketTable.setFocusable(false);
         m_jTicketTable.setIntercellSpacing(new java.awt.Dimension(0, 1));
         m_jTicketTable.setRequestFocusEnabled(false);
@@ -442,7 +464,8 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jLabel8.setText(bundle.getString("label.nocashsales")); // NOI18N
 
         m_jNoCashSales.setEditable(false);
@@ -454,82 +477,114 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addComponent(m_jScrollTableTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(m_jScrollSales, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                        .addComponent(m_jCash, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(m_jNoCashSales, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(m_jSalesTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(m_jSalesSubtotal)
-                            .addComponent(m_jCount)
-                            .addComponent(m_jSalesTaxes, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(m_jSales, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))))
-                .addContainerGap())
+                      .addGap(2, 2, 2)
+                      .addComponent(m_jScrollTableTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 260,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(m_jScrollSales, javax.swing.GroupLayout.PREFERRED_SIZE, 260,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                          .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                                          .addComponent(m_jCash, javax.swing.GroupLayout.PREFERRED_SIZE, 101,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                          .addGap(0, 0, Short.MAX_VALUE)
+                                          .addComponent(m_jNoCashSales, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                          .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                              .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING,
+                                                                            javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                              .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING,
+                                                                            javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                              .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING,
+                                                                            javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                                                              .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                            Short.MAX_VALUE))
+                                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 74,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                           javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                          .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(m_jSalesTotal, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(m_jSalesSubtotal)
+                                                    .addComponent(m_jCount)
+                                                    .addComponent(m_jSalesTaxes, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                                    .addComponent(m_jSales, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))))
+                      .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jCount, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(m_jSales, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jSalesSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jSalesTaxes, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(m_jSalesTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(m_jCash, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(m_jNoCashSales, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(m_jScrollSales, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jScrollTableTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 14, Short.MAX_VALUE))
+                      .addGap(17, 17, 17)
+                      .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                          .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jCount, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                          .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(m_jSales, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                          .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jSalesSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                          .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jSalesTaxes, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                          .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(m_jSalesTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addGap(18, 18, 18)
+                                          .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(m_jCash, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                           javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                          .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addGap(1, 1, 1)
+                                          .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(m_jNoCashSales, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(m_jScrollSales, javax.swing.GroupLayout.PREFERRED_SIZE, 301,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jScrollTableTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 301,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGap(0, 14, Short.MAX_VALUE))
         );
 
         jPanelTop.setEnabled(false);
 
         m_jCloseCashTop.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jCloseCashTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calculator.png"))); // NOI18N
+        m_jCloseCashTop.setIcon(new javax.swing.ImageIcon(
+                                    getClass().getResource("/images/calculator.png"))); // NOI18N
         m_jCloseCashTop.setText(AppLocal.getIntString("Button.CloseCash")); // NOI18N
         m_jCloseCashTop.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jCloseCashTop.setIconTextGap(2);
@@ -544,7 +599,8 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         });
 
         m_jPrintCashTop.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jPrintCashTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer.png"))); // NOI18N
+        m_jPrintCashTop.setIcon(new javax.swing.ImageIcon(
+                                    getClass().getResource("/images/printer.png"))); // NOI18N
         m_jPrintCashTop.setText(AppLocal.getIntString("Button.PrintCash")); // NOI18N
         m_jPrintCashTop.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jPrintCashTop.setIconTextGap(2);
@@ -562,22 +618,27 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jPanelTopLayout.setHorizontalGroup(
             jPanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTopLayout.createSequentialGroup()
-                .addComponent(m_jPrintCashTop, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(m_jCloseCashTop, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addComponent(m_jPrintCashTop, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(m_jCloseCashTop, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelTopLayout.setVerticalGroup(
             jPanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTopLayout.createSequentialGroup()
-                .addGroup(jPanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(m_jPrintCashTop, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jCloseCashTop, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                      .addGroup(jPanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(m_jPrintCashTop, javax.swing.GroupLayout.PREFERRED_SIZE, 45,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jCloseCashTop, javax.swing.GroupLayout.PREFERRED_SIZE, 45,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap())
         );
 
         m_jCloseCash.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jCloseCash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calculator.png"))); // NOI18N
+        m_jCloseCash.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/calculator.png"))); // NOI18N
         m_jCloseCash.setText(AppLocal.getIntString("Button.CloseCash")); // NOI18N
         m_jCloseCash.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jCloseCash.setIconTextGap(2);
@@ -592,7 +653,8 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         });
 
         m_jPrintCash.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jPrintCash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer.png"))); // NOI18N
+        m_jPrintCash.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/printer.png"))); // NOI18N
         m_jPrintCash.setText(AppLocal.getIntString("Button.PrintCash")); // NOI18N
         m_jPrintCash.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jPrintCash.setIconTextGap(2);
@@ -610,17 +672,21 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jPanelBottomLayout.setHorizontalGroup(
             jPanelBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBottomLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(m_jPrintCash, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(m_jCloseCash, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addComponent(m_jPrintCash, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(m_jCloseCash, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanelBottomLayout.setVerticalGroup(
             jPanelBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(m_jCloseCash, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(m_jPrintCash, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addComponent(m_jCloseCash, javax.swing.GroupLayout.PREFERRED_SIZE, 45,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(m_jPrintCash, javax.swing.GroupLayout.PREFERRED_SIZE, 45,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -628,40 +694,51 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jPanelBottom, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanelTop, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jPanelTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanelBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                      .addGap(6, 6, 6)
+                      .addComponent(jPanelTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                      .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(18, 18, 18)
+                      .addComponent(jPanelBottom, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap())
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jPrintCashTopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jPrintCashTopActionPerformed
+    private void m_jPrintCashTopActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_m_jPrintCashTopActionPerformed
 
         // print report
         printPayments("Printer.PartialCash");
     }//GEN-LAST:event_m_jPrintCashTopActionPerformed
 
-    private void m_jCloseCashTopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCloseCashTopActionPerformed
+    private void m_jCloseCashTopActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_m_jCloseCashTopActionPerformed
 
-        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannaclosecash"), AppLocal.getIntString("message.title"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannaclosecash"),
+                                                AppLocal.getIntString("message.title"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (res == JOptionPane.YES_OPTION) {
 
             Date dNow = new Date();
@@ -670,12 +747,13 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
                 // Cerramos la caja si esta pendiente de cerrar.
                 if (m_App.getActiveCashDateEnd() == null) {
                     new StaticSentence(m_App.getSession(),
-                         "UPDATE CLOSEDCASH SET DATEEND = ?, NOSALES = ? WHERE HOST = ? AND MONEY = ?",
-                         new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.INT, Datas.STRING, Datas.STRING}))
+                                       "UPDATE CLOSEDCASH SET DATEEND = ?, NOSALES = ? WHERE HOST = ? AND MONEY = ?",
+                                       new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.INT, Datas.STRING, Datas.STRING}))
                     .exec(new Object[] {dNow, result, m_App.getProperties().getHost(), m_App.getActiveCashIndex()});
                 }
             } catch (BasicException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotclosecash"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                                AppLocal.getIntString("message.cannotclosecash"), e);
                 msg.show(this);
             }
 
@@ -685,10 +763,10 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
                 // creamos la caja activa
                 m_dlSystem.execInsertCash(
-                    new Object[] {m_App.getActiveCashIndex(), m_App.getProperties().getHost(), m_App.getActiveCashSequence(), m_App.getActiveCashDateStart(), m_App.getActiveCashDateEnd(),0});
+                    new Object[] {m_App.getActiveCashIndex(), m_App.getProperties().getHost(), m_App.getActiveCashSequence(), m_App.getActiveCashDateStart(), m_App.getActiveCashDateEnd(), 0});
 
                 m_dlSystem.execDrawerOpened(
-                    new Object[] {m_App.getAppUserView().getUser().getName(),"Close Cash"});
+                    new Object[] {m_App.getAppUserView().getUser().getName(), "Close Cash"});
 
                 // ponemos la fecha de fin
                 m_PaymentsToClose.setDateEnd(dNow);
@@ -697,25 +775,30 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
                 printPayments("Printer.CloseCash");
 
                 // Mostramos el mensaje
-                JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.closecashok"), AppLocal.getIntString("message.title"), JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.closecashok"),
+                                              AppLocal.getIntString("message.title"), JOptionPane.INFORMATION_MESSAGE);
             } catch (BasicException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotclosecash"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                                AppLocal.getIntString("message.cannotclosecash"), e);
                 msg.show(this);
             }
 
             try {
                 loadData();
             } catch (BasicException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("label.noticketstoclose"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                                AppLocal.getIntString("label.noticketstoclose"), e);
                 msg.show(this);
             }
         }
 
     }//GEN-LAST:event_m_jCloseCashTopActionPerformed
 
-    private void m_jCloseCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCloseCashActionPerformed
+    private void m_jCloseCashActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jCloseCashActionPerformed
 
-        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannaclosecash"), AppLocal.getIntString("message.title"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannaclosecash"),
+                                                AppLocal.getIntString("message.title"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (res == JOptionPane.YES_OPTION) {
 
             Date dNow = new Date();
@@ -724,12 +807,13 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
                 // Cerramos la caja si esta pendiente de cerrar.
                 if (m_App.getActiveCashDateEnd() == null) {
                     new StaticSentence(m_App.getSession(),
-                         "UPDATE CLOSEDCASH SET DATEEND = ?, NOSALES = ? WHERE HOST = ? AND MONEY = ?",
-                         new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.INT, Datas.STRING, Datas.STRING}))
+                                       "UPDATE CLOSEDCASH SET DATEEND = ?, NOSALES = ? WHERE HOST = ? AND MONEY = ?",
+                                       new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.INT, Datas.STRING, Datas.STRING}))
                     .exec(new Object[] {dNow, result, m_App.getProperties().getHost(), m_App.getActiveCashIndex()});
                 }
             } catch (BasicException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotclosecash"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                                AppLocal.getIntString("message.cannotclosecash"), e);
                 msg.show(this);
             }
 
@@ -739,10 +823,10 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
                 // creamos la caja activa
                 m_dlSystem.execInsertCash(
-                    new Object[] {m_App.getActiveCashIndex(), m_App.getProperties().getHost(), m_App.getActiveCashSequence(), m_App.getActiveCashDateStart(), m_App.getActiveCashDateEnd(),0});
+                    new Object[] {m_App.getActiveCashIndex(), m_App.getProperties().getHost(), m_App.getActiveCashSequence(), m_App.getActiveCashDateStart(), m_App.getActiveCashDateEnd(), 0});
 
                 m_dlSystem.execDrawerOpened(
-                    new Object[] {m_App.getAppUserView().getUser().getName(),"Close Cash"});
+                    new Object[] {m_App.getAppUserView().getUser().getName(), "Close Cash"});
 
                 // ponemos la fecha de fin
                 m_PaymentsToClose.setDateEnd(dNow);
@@ -751,22 +835,26 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
                 printPayments("Printer.CloseCash");
 
                 // Mostramos el mensaje
-                JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.closecashok"), AppLocal.getIntString("message.title"), JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.closecashok"),
+                                              AppLocal.getIntString("message.title"), JOptionPane.INFORMATION_MESSAGE);
             } catch (BasicException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotclosecash"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                                AppLocal.getIntString("message.cannotclosecash"), e);
                 msg.show(this);
             }
 
             try {
                 loadData();
             } catch (BasicException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("label.noticketstoclose"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                                AppLocal.getIntString("label.noticketstoclose"), e);
                 msg.show(this);
             }
         }
     }//GEN-LAST:event_m_jCloseCashActionPerformed
 
-    private void m_jPrintCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jPrintCashActionPerformed
+    private void m_jPrintCashActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jPrintCashActionPerformed
 
         // print report
         printPayments("Printer.PartialCash");

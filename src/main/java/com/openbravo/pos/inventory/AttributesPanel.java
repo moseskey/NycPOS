@@ -18,14 +18,14 @@ public class AttributesPanel extends JPanelTable2 {
     protected void init() {
 
         row = new Row(
-                new Field("ID", Datas.STRING, Formats.STRING),
-                new Field(AppLocal.getIntString("Label.Name"), Datas.STRING, Formats.STRING, true, true, true)
+            new Field("ID", Datas.STRING, Formats.STRING),
+            new Field(AppLocal.getIntString("Label.Name"), Datas.STRING, Formats.STRING, true, true, true)
         );
 
         Table table = new Table(
-                "ATTRIBUTE",
-                new PrimaryKey("ID"),
-                new Column("NAME"));
+            "ATTRIBUTE",
+            new PrimaryKey("ID"),
+            new Column("NAME"));
 
         lpr = row.getListProvider(app.getSession(), table);
         spr = row.getSaveProvider(app.getSession(), table);

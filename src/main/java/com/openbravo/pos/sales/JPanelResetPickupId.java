@@ -39,52 +39,52 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
 
         initComponents();
         config = new AppConfig(props.getConfigFile());
-        m_props=props;
+        m_props = props;
 
 
     }
 
-    public void performReset(){
+    public void performReset() {
 
-       if ("HSQL Database Engine".equals(sdbmanager)) {
-                SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
-                try {
-                    stmt.executeUpdate(SQL);
-                } catch (SQLException e){System.out.println(e.getMessage());}
-       } else if ("MySQL".equals(sdbmanager)) {
-                SQL = "UPDATE PICKUP_NUMBER SET ID=0";
-                try {
-                    stmt.executeUpdate(SQL);
-                } catch (SQLException e){System.out.println(e.getMessage());}
+        if ("HSQL Database Engine".equals(sdbmanager)) {
+            SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
+            try {
+                stmt.executeUpdate(SQL);
+            } catch (SQLException e) {System.out.println(e.getMessage());}
+        } else if ("MySQL".equals(sdbmanager)) {
+            SQL = "UPDATE PICKUP_NUMBER SET ID=0";
+            try {
+                stmt.executeUpdate(SQL);
+            } catch (SQLException e) {System.out.println(e.getMessage());}
         } else if ("PostgreSQL".equals(sdbmanager)) {
-                SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
-                try {
-                    stmt.executeUpdate(SQL);
-                } catch (SQLException e){System.out.println(e.getMessage());}
+            SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
+            try {
+                stmt.executeUpdate(SQL);
+            } catch (SQLException e) {System.out.println(e.getMessage());}
         } else if ("Oracle".equals(sdbmanager)) {
-                SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
-                try {
-                    stmt.executeUpdate(SQL);
-                } catch (SQLException e){System.out.println(e.getMessage());}
+            SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
+            try {
+                stmt.executeUpdate(SQL);
+            } catch (SQLException e) {System.out.println(e.getMessage());}
         } else if ("Apache Derby".equals(sdbmanager)) {
-                SQL = "ALTER TABLE PICKUP_NUMBER ALTER COLUMN ID RESTART WITH 1";
-                try {
-                    stmt.executeUpdate(SQL);
-                } catch (SQLException e){System.out.println(e.getMessage());}
+            SQL = "ALTER TABLE PICKUP_NUMBER ALTER COLUMN ID RESTART WITH 1";
+            try {
+                stmt.executeUpdate(SQL);
+            } catch (SQLException e) {System.out.println(e.getMessage());}
         } else if ("Derby".equals(sdbmanager)) {
-                SQL =  "UPDATE PICKUP_NUMBER SET ID=0";
-                try {
-                    stmt.executeUpdate(SQL);
-                } catch (SQLException e){System.out.println(e.getMessage());}
+            SQL =  "UPDATE PICKUP_NUMBER SET ID=0";
+            try {
+                stmt.executeUpdate(SQL);
+            } catch (SQLException e) {System.out.println(e.getMessage());}
         } else {
-                SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
-                try {
-                    stmt.executeUpdate(SQL);
-                } catch (SQLException e){System.out.println(e.getMessage());}
+            SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
+            try {
+                stmt.executeUpdate(SQL);
+            } catch (SQLException e) {System.out.println(e.getMessage());}
         }
-                                JOptionPane.showMessageDialog(this,"Reset complete.");
+        JOptionPane.showMessageDialog(this, "Reset complete.");
 
-   }
+    }
 
     @Override
     public JComponent getComponent() {
@@ -99,33 +99,34 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
     @Override
     public void activate() throws BasicException {
 
-       // connect to the database
-         String db_user =(m_props.getProperty("db.user"));
-         String db_url = (m_props.getProperty("db.URL"));
-         String db_password = (m_props.getProperty("db.password"));
+        // connect to the database
+        String db_user = (m_props.getProperty("db.user"));
+        String db_url = (m_props.getProperty("db.URL"));
+        String db_password = (m_props.getProperty("db.password"));
 
-         if (db_user != null && db_password != null && db_password.startsWith("crypt:")) {
-                // the password is encrypted
-                AltEncrypter cypher = new AltEncrypter("cypherkey" + db_user);
-                db_password = cypher.decrypt(db_password.substring(6));
+        if (db_user != null && db_password != null && db_password.startsWith("crypt:")) {
+            // the password is encrypted
+            AltEncrypter cypher = new AltEncrypter("cypherkey" + db_user);
+            db_password = cypher.decrypt(db_password.substring(6));
         }
 
-         try{
+        try {
             session = AppViewConnection.createSession(m_props);
-            con = DriverManager.getConnection(db_url,db_user,db_password);
+            con = DriverManager.getConnection(db_url, db_user, db_password);
             sdbmanager = con.getMetaData().getDatabaseProductName();
             stmt = (Statement) con.createStatement();
-            } catch (BasicException | SQLException e) {
+        } catch (BasicException | SQLException e) {
 
-         JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER, AppLocal.getIntString("database.UnableToConnect"), e));
-         System.exit(0);
-       }
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER,
+                                                            AppLocal.getIntString("database.UnableToConnect"), e));
+            System.exit(0);
+        }
 
     }
 
     @Override
     public boolean deactivate() {
-    return(true);
+        return (true);
     }
 
 
@@ -173,40 +174,48 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jbtnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addGap(20, 20, 20)
+                      .addComponent(jbtnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 155,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(56, 56, 56)
+                      .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 101,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                      .addGap(22, 22, 22)
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jbtnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING,
+                          javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                          javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnUpdateActionPerformed
+    private void jbtnUpdateActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jbtnUpdateActionPerformed
         performReset();
 
     }//GEN-LAST:event_jbtnUpdateActionPerformed
 
-    private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
+    private void jbtnExitActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jbtnExitActionPerformed
         deactivate();
         System.exit(0);
     }//GEN-LAST:event_jbtnExitActionPerformed

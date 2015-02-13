@@ -52,14 +52,16 @@ public class SalesDetailInfo implements IKeyed {
     }
 
     public static SerializerRead getSerializerRead() {
-        return new SerializerRead() {@Override
- public Object readValues(DataRead dr) throws BasicException {
-            return new SalesDetailInfo(dr.getInt(1), dr.getString(2), dr.getDouble(3));
-        }};
+        return new SerializerRead() {
+            @Override
+            public Object readValues(DataRead dr) throws BasicException {
+                return new SalesDetailInfo(dr.getInt(1), dr.getString(2), dr.getDouble(3));
+            }
+        };
     }
 
     @Override
     public Object getKey() {
-       return getLineNO();
+        return getLineNO();
     }
 }

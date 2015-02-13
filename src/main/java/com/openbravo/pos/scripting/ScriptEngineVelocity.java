@@ -29,14 +29,15 @@ class ScriptEngineVelocity implements ScriptEngine {
             m_ve = new VelocityEngine();
             // ve.setProperty(VelocityEngine.RUNTIME_LOG_LOGSYSTEM, this);
 
-    //        m_ve.setProperty(VelocityEngine.RESOURCE_LOADER, "class");
-    //        // m_ve.setProperty("class.resource.loader.description", "Velocity Classpath Resource Loader");
-    //        // m_ve.setProperty("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
-    //        m_ve.setProperty("class.resource.loader.class", "com.openbravo.pos.forms.SystemResourceLoader");
-    //        m_ve.setProperty("class.resource.loader.description", "Velocity Resource Loader");
-    //        m_ve.setProperty("class.resource.loader.appresources", this);
+            //        m_ve.setProperty(VelocityEngine.RESOURCE_LOADER, "class");
+            //        // m_ve.setProperty("class.resource.loader.description", "Velocity Classpath Resource Loader");
+            //        // m_ve.setProperty("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
+            //        m_ve.setProperty("class.resource.loader.class", "com.openbravo.pos.forms.SystemResourceLoader");
+            //        m_ve.setProperty("class.resource.loader.description", "Velocity Resource Loader");
+            //        m_ve.setProperty("class.resource.loader.appresources", this);
 
-            m_ve.setProperty(VelocityEngine.RUNTIME_LOG_LOGSYSTEM_CLASS, "org.apache.velocity.runtime.log.NullLogSystem");
+            m_ve.setProperty(VelocityEngine.RUNTIME_LOG_LOGSYSTEM_CLASS,
+                             "org.apache.velocity.runtime.log.NullLogSystem");
             m_ve.setProperty(VelocityEngine.ENCODING_DEFAULT, "UTF-8");
             m_ve.setProperty(VelocityEngine.INPUT_ENCODING, "UTF-8");
             try {
@@ -45,7 +46,7 @@ class ScriptEngineVelocity implements ScriptEngine {
                 throw new ScriptException("Cannot initialize Velocity Engine", e);
             }
         }
-         c = new VelocityContext();
+        c = new VelocityContext();
     }
 
     @Override

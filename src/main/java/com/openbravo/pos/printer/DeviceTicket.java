@@ -85,13 +85,15 @@ public class DeviceTicket {
                     m_devicedisplay = new DeviceDisplayWindow();
                     break;
                 case "epson":
-                    m_devicedisplay = new DeviceDisplayESCPOS(pws.getPrinterWritter(sDisplayParam1, sDisplayParam2), new UnicodeTranslatorInt());
+                    m_devicedisplay = new DeviceDisplayESCPOS(pws.getPrinterWritter(sDisplayParam1, sDisplayParam2),
+                                                              new UnicodeTranslatorInt());
                     break;
                 case "surepos":
                     m_devicedisplay = new DeviceDisplaySurePOS(pws.getPrinterWritter(sDisplayParam1, sDisplayParam2));
                     break;
                 case "ld200":
-                    m_devicedisplay = new DeviceDisplayESCPOS(pws.getPrinterWritter(sDisplayParam1, sDisplayParam2), new UnicodeTranslatorEur());
+                    m_devicedisplay = new DeviceDisplayESCPOS(pws.getPrinterWritter(sDisplayParam1, sDisplayParam2),
+                                                              new UnicodeTranslatorEur());
                     break;
                 case "javapos":
                     m_devicedisplay = new DeviceDisplayJavaPOS(sDisplayParam1);
@@ -144,30 +146,36 @@ public class DeviceTicket {
                             sPrinterParam2 = "standard";
                         }
                         addPrinter(sPrinterIndex, new DevicePrinterPrinter(parent, sPrinterParam1,
-                                Integer.parseInt(props.getProperty("paper." + sPrinterParam2 + ".x")),
-                                Integer.parseInt(props.getProperty("paper." + sPrinterParam2 + ".y")),
-                                Integer.parseInt(props.getProperty("paper." + sPrinterParam2 + ".width")),
-                                Integer.parseInt(props.getProperty("paper." + sPrinterParam2 + ".height")),
-                                props.getProperty("paper." + sPrinterParam2 + ".mediasizename")
-                                ));
+                                                                           Integer.parseInt(props.getProperty("paper." + sPrinterParam2 + ".x")),
+                                                                           Integer.parseInt(props.getProperty("paper." + sPrinterParam2 + ".y")),
+                                                                           Integer.parseInt(props.getProperty("paper." + sPrinterParam2 + ".width")),
+                                                                           Integer.parseInt(props.getProperty("paper." + sPrinterParam2 + ".height")),
+                                                                           props.getProperty("paper." + sPrinterParam2 + ".mediasizename")
+                                                                          ));
                         break;
                     case "epson":
-                        addPrinter(sPrinterIndex, new DevicePrinterESCPOS(pws.getPrinterWritter(sPrinterParam1, sPrinterParam2), new CodesEpson(), new UnicodeTranslatorInt()));
+                        addPrinter(sPrinterIndex, new DevicePrinterESCPOS(pws.getPrinterWritter(sPrinterParam1,
+                                                                                                sPrinterParam2), new CodesEpson(), new UnicodeTranslatorInt()));
                         break;
                     case "tmu220":
-                        addPrinter(sPrinterIndex, new DevicePrinterESCPOS(pws.getPrinterWritter(sPrinterParam1, sPrinterParam2), new CodesTMU220(), new UnicodeTranslatorInt()));
+                        addPrinter(sPrinterIndex, new DevicePrinterESCPOS(pws.getPrinterWritter(sPrinterParam1,
+                                                                                                sPrinterParam2), new CodesTMU220(), new UnicodeTranslatorInt()));
                         break;
                     case "star":
-                        addPrinter(sPrinterIndex, new DevicePrinterESCPOS(pws.getPrinterWritter(sPrinterParam1, sPrinterParam2), new CodesStar(), new UnicodeTranslatorStar()));
+                        addPrinter(sPrinterIndex, new DevicePrinterESCPOS(pws.getPrinterWritter(sPrinterParam1,
+                                                                                                sPrinterParam2), new CodesStar(), new UnicodeTranslatorStar()));
                         break;
                     case "ithaca":
-                        addPrinter(sPrinterIndex, new DevicePrinterESCPOS(pws.getPrinterWritter(sPrinterParam1, sPrinterParam2), new CodesIthaca(), new UnicodeTranslatorInt()));
+                        addPrinter(sPrinterIndex, new DevicePrinterESCPOS(pws.getPrinterWritter(sPrinterParam1,
+                                                                                                sPrinterParam2), new CodesIthaca(), new UnicodeTranslatorInt()));
                         break;
                     case "surepos":
-                        addPrinter(sPrinterIndex, new DevicePrinterESCPOS(pws.getPrinterWritter(sPrinterParam1, sPrinterParam2), new CodesSurePOS(), new UnicodeTranslatorSurePOS()));
+                        addPrinter(sPrinterIndex, new DevicePrinterESCPOS(pws.getPrinterWritter(sPrinterParam1,
+                                                                                                sPrinterParam2), new CodesSurePOS(), new UnicodeTranslatorSurePOS()));
                         break;
                     case "plain":
-                        addPrinter(sPrinterIndex, new DevicePrinterPlain(pws.getPrinterWritter(sPrinterParam1, sPrinterParam2)));
+                        addPrinter(sPrinterIndex, new DevicePrinterPlain(pws.getPrinterWritter(sPrinterParam1,
+                                                                                               sPrinterParam2)));
                         break;
                     case "javapos":
                         addPrinter(sPrinterIndex, new DevicePrinterJavaPOS(sPrinterParam1, sPrinterParam2));
@@ -221,7 +229,7 @@ public class DeviceTicket {
      *
      * @return Fiscal printer
      */
-        public DeviceFiscalPrinter getFiscalPrinter() {
+    public DeviceFiscalPrinter getFiscalPrinter() {
         return m_deviceFiscal;
     }
 
@@ -229,7 +237,7 @@ public class DeviceTicket {
      *
      * @return Device display
      */
-        public DeviceDisplay getDeviceDisplay() {
+    public DeviceDisplay getDeviceDisplay() {
         return m_devicedisplay;
     }
 
@@ -237,7 +245,7 @@ public class DeviceTicket {
      *
      * @return Device printer
      */
-        public DevicePrinter getDevicePrinter(String key) {
+    public DevicePrinter getDevicePrinter(String key) {
         DevicePrinter printer = m_deviceprinters.get(key);
         return printer == null ? m_nullprinter : printer;
     }
@@ -254,7 +262,7 @@ public class DeviceTicket {
      *
      * @return Spacing string length
      */
-        public static String getWhiteString(int iSize, char cWhiteChar) {
+    public static String getWhiteString(int iSize, char cWhiteChar) {
 
         char[] cFill = new char[iSize];
         for (int i = 0; i < iSize; i++) {
@@ -338,13 +346,13 @@ public class DeviceTicket {
      *
      * @return Convert number to string
      */
-        public static byte[] transNumber(String sCad) {
+    public static byte[] transNumber(String sCad) {
 
         if (sCad == null) {
             return null;
         } else {
             byte bAux[] = new byte[sCad.length()];
-            for( int i = 0; i < sCad.length(); i++) {
+            for (int i = 0; i < sCad.length(); i++) {
                 bAux[i] = transNumberChar(sCad.charAt(i));
             }
             return bAux;
@@ -357,17 +365,28 @@ public class DeviceTicket {
      */
     public static byte transNumberChar(char sChar) {
         switch (sChar) {
-        case '0' : return 0x30;
-        case '1' : return 0x31;
-        case '2' : return 0x32;
-        case '3' : return 0x33;
-        case '4' : return 0x34;
-        case '5' : return 0x35;
-        case '6' : return 0x36;
-        case '7' : return 0x37;
-        case '8' : return 0x38;
-        case '9' : return 0x39;
-        default: return 0x30;
+            case '0' :
+                return 0x30;
+            case '1' :
+                return 0x31;
+            case '2' :
+                return 0x32;
+            case '3' :
+                return 0x33;
+            case '4' :
+                return 0x34;
+            case '5' :
+                return 0x35;
+            case '6' :
+                return 0x36;
+            case '7' :
+                return 0x37;
+            case '8' :
+                return 0x38;
+            case '9' :
+                return 0x39;
+            default:
+                return 0x30;
         }
     }
 }

@@ -99,7 +99,8 @@ public class JPanelButtons extends javax.swing.JPanel {
         @Override
         public void endDocument() throws SAXException {}
         @Override
-        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException{
+        public void startElement(String uri, String localName, String qName,
+                                 Attributes attributes) throws SAXException {
             switch (qName) {
                 case "button":
                     // The button title text
@@ -108,12 +109,12 @@ public class JPanelButtons extends javax.swing.JPanel {
                         titlekey = attributes.getValue("name");
                     }
                     String title = titlekey == null
-                            ? attributes.getValue("title")
-                            : AppLocal.getIntString(titlekey);
+                                   ? attributes.getValue("title")
+                                   : AppLocal.getIntString(titlekey);
                     // adding the button to the panel
                     JButton btn = new JButtonFunc(attributes.getValue("key"),
-                            attributes.getValue("image"),
-                            title);
+                                                  attributes.getValue("image"),
+                                                  title);
                     // The template resource or the code resource
                     final String template = attributes.getValue("template");
                     if (template == null) {

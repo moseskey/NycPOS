@@ -20,7 +20,7 @@ public class RolesPanel extends JPanelTable {
 
 
     public RolesPanel() {
-     }
+    }
 
     @Override
     protected void init() {

@@ -7,7 +7,7 @@ public class SerializerWriteBasicComposed implements SerializerWrite<Object[]> {
     private Datas[][] m_classes;
 
     public SerializerWriteBasicComposed(Datas[]... classes) {
-         m_classes = classes;
+        m_classes = classes;
     }
 
     public void writeValues(DataWrite dp, Object[] obj) throws BasicException {

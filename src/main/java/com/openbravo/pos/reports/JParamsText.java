@@ -60,13 +60,13 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
     public void setType(Formats format) {
 
         if (Formats.INT == format) {
-             setType(format, Datas.INT);
+            setType(format, Datas.INT);
         } else if (Formats.DOUBLE == format || Formats.CURRENCY == format || Formats.PERCENT == format) {
-             setType(format, Datas.DOUBLE);
+            setType(format, Datas.DOUBLE);
         } else if (Formats.DATE == format || Formats.TIME == format || Formats.TIMESTAMP == format) {
-             setType(format, Datas.TIMESTAMP);
+            setType(format, Datas.TIMESTAMP);
         } else if (Formats.BOOLEAN == format) {
-             setType(format, Datas.BOOLEAN);
+            setType(format, Datas.BOOLEAN);
         } else { // if (Formats.STRING == format) {
             setType(format, Datas.STRING);
         }
@@ -78,15 +78,17 @@ public final class JParamsText extends javax.swing.JPanel implements ReportEdito
 
     private void setDefaultCompare() {
         if (Formats.INT == formatsvalue) {
-             comparevalue = QBFCompareEnum.COMP_LESSOREQUALS;
-        } else if (Formats.DOUBLE == formatsvalue || Formats.CURRENCY == formatsvalue || Formats.PERCENT == formatsvalue) {
-             comparevalue = QBFCompareEnum.COMP_LESSOREQUALS;
-        } else if (Formats.DATE == formatsvalue || Formats.TIME == formatsvalue || Formats.TIMESTAMP == formatsvalue) {
-             comparevalue = QBFCompareEnum.COMP_GREATEROREQUALS;
+            comparevalue = QBFCompareEnum.COMP_LESSOREQUALS;
+        } else if (Formats.DOUBLE == formatsvalue || Formats.CURRENCY == formatsvalue ||
+                   Formats.PERCENT == formatsvalue) {
+            comparevalue = QBFCompareEnum.COMP_LESSOREQUALS;
+        } else if (Formats.DATE == formatsvalue || Formats.TIME == formatsvalue ||
+                   Formats.TIMESTAMP == formatsvalue) {
+            comparevalue = QBFCompareEnum.COMP_GREATEROREQUALS;
         } else if (Formats.BOOLEAN == formatsvalue) {
-             comparevalue = QBFCompareEnum.COMP_EQUALS;
+            comparevalue = QBFCompareEnum.COMP_EQUALS;
         } else { // if (Formats.STRING == formatsvalue) {
-             comparevalue = QBFCompareEnum.COMP_RE;
+            comparevalue = QBFCompareEnum.COMP_RE;
         }
     }
 

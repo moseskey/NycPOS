@@ -35,5 +35,5 @@ public class SessionDBDerby implements SessionDB {
     @Override
     public SentenceFind resetSequenceSentence(Session s, String sequence) {
         return new SequenceForDerby(s, sequence);
-}
+    }
 }

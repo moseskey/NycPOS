@@ -20,7 +20,8 @@ public class CategoryInfo implements IKeyed {
     private BufferedImage m_Image;
     private Boolean m_bCatShowName;
 
-    public CategoryInfo(String id, String name, BufferedImage image, String texttip, Boolean catshowname) {
+    public CategoryInfo(String id, String name, BufferedImage image, String texttip,
+                        Boolean catshowname) {
         m_sID = id;
         m_sName = name;
         m_Image = image;
@@ -50,7 +51,7 @@ public class CategoryInfo implements IKeyed {
     }
 // ADDED JDL 13.04.13 *************
 
-        public String getTextTip() {
+    public String getTextTip() {
         return m_sTextTip;
     }
 
@@ -87,9 +88,12 @@ public class CategoryInfo implements IKeyed {
     }
 
     public static SerializerRead getSerializerRead() {
-        return new SerializerRead() {@Override
- public Object readValues(DataRead dr) throws BasicException {
-            return new CategoryInfo(dr.getString(1), dr.getString(2), ImageUtils.readImage(dr.getBytes(3)),dr.getString(4),dr.getBoolean(5));
-        }};
+        return new SerializerRead() {
+            @Override
+            public Object readValues(DataRead dr) throws BasicException {
+                return new CategoryInfo(dr.getString(1), dr.getString(2), ImageUtils.readImage(dr.getBytes(3)),
+                                        dr.getString(4), dr.getBoolean(5));
+            }
+        };
     }
 }

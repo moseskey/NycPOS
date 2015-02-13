@@ -50,12 +50,12 @@ public class SharedTicketInfo implements SerializableRead, SerializableWrite {
 
 // JG Aug 2014 - Add User info
 
-        public String getAppUser() {
+    public String getAppUser() {
         return UserName;
     }
 // JG Aug 2014 - Add Customer info
 
-        public String getCustomerName() {
+    public String getCustomerName() {
         return CustomerName;
     }
 }

@@ -79,10 +79,10 @@ public class AppConfig implements AppProperties {
         }
     }
 
-   /**
-     * Local machine identity
-     * @return Machine name from OS
-     */
+    /**
+      * Local machine identity
+      * @return Machine name from OS
+      */
     private String getLocalHostName() {
         try {
             return java.net.InetAddress.getLocalHost().getHostName();
@@ -114,7 +114,7 @@ public class AppConfig implements AppProperties {
                 m_propsconfig.load(in);
                 in.close();
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             loadDefault();
         }
 
@@ -156,9 +156,12 @@ public class AppConfig implements AppProperties {
         String dirname = System.getProperty("dirname.path");
         dirname = dirname == null ? "./" : dirname;
 
-        m_propsconfig.setProperty("db.driverlib", new File(new File(dirname), "lib/derby.jar").getAbsolutePath());
+        m_propsconfig.setProperty("db.driverlib", new File(new File(dirname),
+                                                           "lib/derby.jar").getAbsolutePath());
         m_propsconfig.setProperty("db.driver", "org.apache.derby.jdbc.EmbeddedDriver");
-        m_propsconfig.setProperty("db.URL", "jdbc:derby:" + new File(new File(System.getProperty("user.home")), AppLocal.APP_ID + "-database").getAbsolutePath() + ";create=true");
+        m_propsconfig.setProperty("db.URL",
+                                  "jdbc:derby:" + new File(new File(System.getProperty("user.home")),
+                                                           AppLocal.APP_ID + "-database").getAbsolutePath() + ";create=true");
         m_propsconfig.setProperty("db.user", "");
         m_propsconfig.setProperty("db.password", "");
 
@@ -179,10 +182,10 @@ public class AppConfig implements AppProperties {
 //        m_propsconfig.setProperty("db.password", "password");
 
 
- /**
-  *
-  * Default component settings
-  */
+        /**
+         *
+         * Default component settings
+         */
         m_propsconfig.setProperty("machine.hostname", getLocalHostName());
 
         Locale l = Locale.getDefault();
@@ -190,7 +193,8 @@ public class AppConfig implements AppProperties {
         m_propsconfig.setProperty("user.country", l.getCountry());
         m_propsconfig.setProperty("user.variant", l.getVariant());
 
-        m_propsconfig.setProperty("swing.defaultlaf", System.getProperty("swing.defaultlaf", "javax.swing.plaf.metal.MetalLookAndFeel"));
+        m_propsconfig.setProperty("swing.defaultlaf", System.getProperty("swing.defaultlaf",
+                                                                         "javax.swing.plaf.metal.MetalLookAndFeel"));
 //        m_propsconfig.setProperty("swing.defaultlaf", System.getProperty("swing.defaultlaf", "javax.swing.plaf.synth.SynthLookAndFeel"));
 
         m_propsconfig.setProperty("machine.printer", "screen");

@@ -30,14 +30,14 @@ public class JCatalogTab extends javax.swing.JPanel {
     }
 // ADDED JDL 09.04.13 TEXTTIP FUNCTION
 
-        public void addButton(Icon ico, ActionListener al, String textTip) {
+    public void addButton(Icon ico, ActionListener al, String textTip) {
         JButton btn = new JButton();
         btn.applyComponentOrientation(getComponentOrientation());
         btn.setIcon(ico);
         btn.setFocusPainted(false);
         btn.setFocusable(false);
-        if (textTip != null){
-        btn.setToolTipText(textTip);
+        if (textTip != null) {
+            btn.setToolTipText(textTip);
         }
         btn.setRequestFocusEnabled(false);
         btn.setHorizontalTextPosition(SwingConstants.CENTER);

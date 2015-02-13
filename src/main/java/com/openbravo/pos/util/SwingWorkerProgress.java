@@ -30,7 +30,8 @@ public class SwingWorkerProgress {
             public void run() {
                 try {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                             UnsupportedLookAndFeelException ex) {
                 }
 
                 JFrame frame = new JFrame("Testing");

@@ -31,24 +31,24 @@ public class FindTicketsInfo implements SerializableRead {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
 
-        String sCustomer = (customer==null) ? "" : customer;
+        String sCustomer = (customer == null) ? "" : customer;
 
-        String sHtml = "<tr><td width=\"50\">"+ "["+ ticketid +"]" +"</td>" +
-                "<td width=\"100\">"+ Formats.TIMESTAMP.formatValue(date) +"</td>" +
-                "<td align=\"center\" width=\"100\">"+ sCustomer +"</td>" +
-                "<td align=\"right\" width=\"100\">"+ Formats.CURRENCY.formatValue(total) +"</td>"+
-                "<td width=\"100\">"+ Formats.STRING.formatValue(name) +"</td></tr>";
+        String sHtml = "<tr><td width=\"50\">" + "[" + ticketid + "]" + "</td>" +
+                       "<td width=\"100\">" + Formats.TIMESTAMP.formatValue(date) + "</td>" +
+                       "<td align=\"center\" width=\"100\">" + sCustomer + "</td>" +
+                       "<td align=\"right\" width=\"100\">" + Formats.CURRENCY.formatValue(total) + "</td>" +
+                       "<td width=\"100\">" + Formats.STRING.formatValue(name) + "</td></tr>";
 
         return sHtml;
     }
 
-    public int getTicketId(){
+    public int getTicketId() {
         return this.ticketid;
     }
 
-    public int getTicketType(){
+    public int getTicketType() {
         return this.tickettype;
     }
 

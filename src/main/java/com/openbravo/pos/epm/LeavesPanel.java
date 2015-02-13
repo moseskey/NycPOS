@@ -23,7 +23,8 @@ public class LeavesPanel extends JPanelTable {
 
     @Override
     protected void init() {
-        DataLogicPresenceManagement dlPresenceManagement  = (DataLogicPresenceManagement) app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");
+        DataLogicPresenceManagement dlPresenceManagement  = (DataLogicPresenceManagement)
+                                                            app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");
         tleaves = dlPresenceManagement.getTableLeaves();
         jeditor = new LeavesView(app, dirty);
     }
@@ -46,7 +47,7 @@ public class LeavesPanel extends JPanelTable {
 
     @Override
     public Vectorer getVectorer() {
-        return tleaves.getVectorerBasic(new int[]{2, 5});
+        return tleaves.getVectorerBasic(new int[] {2, 5});
     }
 
     @Override
@@ -56,7 +57,7 @@ public class LeavesPanel extends JPanelTable {
 
     @Override
     public ListCellRenderer getListCellRenderer() {
-        return new ListCellRendererBasic(tleaves.getRenderStringBasic(new int[]{2}));
+        return new ListCellRendererBasic(tleaves.getRenderStringBasic(new int[] {2}));
     }
 
     @Override

@@ -16,7 +16,7 @@ public class JCounter extends JPanel implements BrowseListener, StateListener  {
 
     public void updateState(int iState) {
         if (iState == BrowsableEditableData.ST_INSERT) {
-             // Insert
+            // Insert
             jlblIndex.setText("*");
         }
     }

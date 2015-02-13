@@ -114,7 +114,8 @@ public class JImageEditor extends javax.swing.JPanel {
     public void doLoad() {
         JFileChooser fc = new JFileChooser(m_fCurrentDirectory);
 
-        fc.addChoosableFileFilter(new ExtensionsFilter(LocalRes.getIntString("label.imagefiles"), "png", "gif", "jpg", "jpeg", "bmp"));
+        fc.addChoosableFileFilter(new ExtensionsFilter(LocalRes.getIntString("label.imagefiles"), "png",
+                                                       "gif", "jpg", "jpeg", "bmp"));
 
         if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             try {
@@ -122,7 +123,9 @@ public class JImageEditor extends javax.swing.JPanel {
                 if (img != null) {
                     // compruebo que no exceda el tamano maximo.
                     if (m_maxsize != null && (img.getHeight() > m_maxsize.height || img.getWidth() > m_maxsize.width)) {
-                        if (JOptionPane.showConfirmDialog(this, LocalRes.getIntString("message.resizeimage"), LocalRes.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+                        if (JOptionPane.showConfirmDialog(this, LocalRes.getIntString("message.resizeimage"),
+                                                          LocalRes.getIntString("title.editor"), JOptionPane.YES_NO_OPTION,
+                                                          JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
                             // Redimensionamos la imagen para que se ajuste
                             img = resizeImage(img);
                         }
@@ -141,11 +144,11 @@ public class JImageEditor extends javax.swing.JPanel {
         int mywidth = img.getWidth();
 
         if (myheight > m_maxsize.height) {
-            mywidth = (int) (mywidth * m_maxsize.height / myheight);
+            mywidth = (int)(mywidth * m_maxsize.height / myheight);
             myheight = m_maxsize.height;
         }
         if (mywidth > m_maxsize.width) {
-            myheight = (int) (myheight * m_maxsize.width / mywidth);
+            myheight = (int)(myheight * m_maxsize.width / mywidth);
             mywidth = m_maxsize.width;
         }
 
@@ -163,11 +166,11 @@ public class JImageEditor extends javax.swing.JPanel {
 
         g2d.fillRect(0, 0, mywidth, myheight);
         if (scalex < scaley) {
-            g2d.drawImage(img, 0,(int) ((myheight - img.getHeight(null) * scalex) / 2.0),
-             mywidth, (int) (img.getHeight(null) * scalex),  null);
+            g2d.drawImage(img, 0, (int)((myheight - img.getHeight(null) * scalex) / 2.0),
+                          mywidth, (int)(img.getHeight(null) * scalex),  null);
         } else {
-           g2d.drawImage(img, (int) ((mywidth - img.getWidth(null) * scaley) / 2.0), 0,
-            (int) (img.getWidth(null) * scaley), myheight, null);
+            g2d.drawImage(img, (int)((mywidth - img.getWidth(null) * scaley) / 2.0), 0,
+                          (int)(img.getWidth(null) * scaley), myheight, null);
         }
         g2d.dispose();
 
@@ -185,11 +188,11 @@ public class JImageEditor extends javax.swing.JPanel {
         }
         @Override
         public int getIconHeight() {
-            return ico == null ? 0 : (int) (zoom * ico.getIconHeight());
+            return ico == null ? 0 : (int)(zoom * ico.getIconHeight());
         }
         @Override
         public int getIconWidth() {
-            return ico == null ? 0 : (int) (zoom * ico.getIconWidth());
+            return ico == null ? 0 : (int)(zoom * ico.getIconWidth());
         }
         @Override
         public void paintIcon(Component c, Graphics g, int x, int y) {
@@ -199,7 +202,7 @@ public class JImageEditor extends javax.swing.JPanel {
                 g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
                 AffineTransform oldt = g2d.getTransform();
                 g2d.transform(AffineTransform.getScaleInstance(zoom, zoom));
-                ico.paintIcon(c, g2d, (int) (x / zoom), (int) (y / zoom));
+                ico.paintIcon(c, g2d, (int)(x / zoom), (int)(y / zoom));
                 g2d.setTransform(oldt);
             }
         }
@@ -233,7 +236,7 @@ public class JImageEditor extends javax.swing.JPanel {
                 int ipos = sFileName.lastIndexOf('.');
                 if (ipos >= 0) {
                     String sExt = sFileName.substring(ipos + 1);
-                    for(String s : extensions) {
+                    for (String s : extensions) {
                         if (s.equalsIgnoreCase(sExt)) {
                             return true;
                         }
@@ -271,7 +274,8 @@ public class JImageEditor extends javax.swing.JPanel {
         setLayout(new java.awt.BorderLayout());
 
         m_jImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        m_jImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/no_photo.png"))); // NOI18N
+        m_jImage.setIcon(new javax.swing.ImageIcon(
+                             getClass().getResource("/images/no_photo.png"))); // NOI18N
         m_jImage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         m_jScr.setViewportView(m_jImage);
 
@@ -282,7 +286,8 @@ public class JImageEditor extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5));
         jPanel2.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
 
-        m_jbtnopen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/camera.png"))); // NOI18N
+        m_jbtnopen.setIcon(new javax.swing.ImageIcon(
+                               getClass().getResource("/images/camera.png"))); // NOI18N
         m_jbtnopen.setToolTipText("Open Folder");
         m_jbtnopen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -291,7 +296,8 @@ public class JImageEditor extends javax.swing.JPanel {
         });
         jPanel2.add(m_jbtnopen);
 
-        m_jbtnclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fileclose.png"))); // NOI18N
+        m_jbtnclose.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/images/fileclose.png"))); // NOI18N
         m_jbtnclose.setToolTipText("Remove Picture");
         m_jbtnclose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -300,7 +306,8 @@ public class JImageEditor extends javax.swing.JPanel {
         });
         jPanel2.add(m_jbtnclose);
 
-        m_jbtnzoomin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/viewmag+.png"))); // NOI18N
+        m_jbtnzoomin.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/viewmag+.png"))); // NOI18N
         m_jbtnzoomin.setToolTipText("Zoom In");
         m_jbtnzoomin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,11 +317,15 @@ public class JImageEditor extends javax.swing.JPanel {
         jPanel2.add(m_jbtnzoomin);
 
         m_jPercent.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jPercent.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jPercent.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                 javax.swing.BorderFactory.createLineBorder(
+                                     javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                 javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jPercent.setOpaque(true);
         jPanel2.add(m_jPercent);
 
-        m_jbtnzoomout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/viewmag-.png"))); // NOI18N
+        m_jbtnzoomout.setIcon(new javax.swing.ImageIcon(
+                                  getClass().getResource("/images/viewmag-.png"))); // NOI18N
         m_jbtnzoomout.setToolTipText("Zoom Out");
         m_jbtnzoomout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -328,25 +339,29 @@ public class JImageEditor extends javax.swing.JPanel {
         add(jPanel1, java.awt.BorderLayout.LINE_END);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jbtnzoomoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtnzoomoutActionPerformed
+    private void m_jbtnzoomoutActionPerformed(java.awt.event.ActionEvent
+                                              evt) {//GEN-FIRST:event_m_jbtnzoomoutActionPerformed
 
         decZoom();
 
     }//GEN-LAST:event_m_jbtnzoomoutActionPerformed
 
-    private void m_jbtnzoominActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtnzoominActionPerformed
+    private void m_jbtnzoominActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jbtnzoominActionPerformed
 
         incZoom();
 
     }//GEN-LAST:event_m_jbtnzoominActionPerformed
 
-    private void m_jbtncloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtncloseActionPerformed
+    private void m_jbtncloseActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_m_jbtncloseActionPerformed
 
         setImage(null);
 
     }//GEN-LAST:event_m_jbtncloseActionPerformed
 
-    private void m_jbtnopenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtnopenActionPerformed
+    private void m_jbtnopenActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_m_jbtnopenActionPerformed
 
         doLoad();
 

@@ -24,7 +24,8 @@ public class SimpleReceipt extends javax.swing.JPanel {
     private TicketInfo ticket;
     private Object ticketext;
 
-    public SimpleReceipt(String ticketline, DataLogicSales dlSales, DataLogicCustomers dlCustomers, TaxesLogic taxeslogic) {
+    public SimpleReceipt(String ticketline, DataLogicSales dlSales, DataLogicCustomers dlCustomers,
+                         TaxesLogic taxeslogic) {
 
         initComponents();
 
@@ -89,8 +90,8 @@ public class SimpleReceipt extends javax.swing.JPanel {
     private int findFirstNonAuxiliarLine() {
 
         int i = ticketlines.getSelectedIndex();
-	while (i >= 0 && ticket.getLine(i).isProductCom()) {
-	    i--;
+        while (i >= 0 && ticket.getLine(i).isProductCom()) {
+            i--;
         }
         return i;
     }
@@ -125,7 +126,7 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
     public TicketLineInfo[] getSelectedLinesUnit() {
 
-       // never returns an empty array, or null, or an array with at least one element.
+        // never returns an empty array, or null, or an array with at least one element.
 
         int i = findFirstNonAuxiliarLine();
 
@@ -138,7 +139,7 @@ public class SimpleReceipt extends javax.swing.JPanel {
                 List<TicketLineInfo> l = new ArrayList<>();
 
                 if (line.getMultiply() > 1.0) {
-                    line.setMultiply(line.getMultiply() -1.0);
+                    line.setMultiply(line.getMultiply() - 1.0);
                     ticketlines.setTicketLine(i, line);
                     line = line.copyTicketLine();
                     line.setMultiply(1.0);
@@ -173,9 +174,10 @@ public class SimpleReceipt extends javax.swing.JPanel {
         TicketLineInfo firstline = lines[0];
 
         if (i >= 0
-                && ticket.getLine(i).getProductID() != null && firstline.getProductID() != null && ticket.getLine(i).getProductID().equals(firstline.getProductID())
-                && ticket.getLine(i).getTaxInfo().getId().equals(firstline.getTaxInfo().getId())
-                && ticket.getLine(i).getPrice() == firstline.getPrice()) {
+            && ticket.getLine(i).getProductID() != null && firstline.getProductID() != null &&
+            ticket.getLine(i).getProductID().equals(firstline.getProductID())
+            && ticket.getLine(i).getTaxInfo().getId().equals(firstline.getTaxInfo().getId())
+            && ticket.getLine(i).getPrice() == firstline.getPrice()) {
 
             // add the auxiliars.
             for (int j = 1; j < lines.length; j++) {
@@ -232,7 +234,10 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
         m_jTotalEuros.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jTotalEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jTotalEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jTotalEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                    javax.swing.BorderFactory.createLineBorder(
+                                        javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                    javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jTotalEuros.setOpaque(true);
         m_jTotalEuros.setPreferredSize(new java.awt.Dimension(150, 25));
         m_jTotalEuros.setRequestFocusEnabled(false);
@@ -257,7 +262,10 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
         m_jSubtotalEuros.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jSubtotalEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jSubtotalEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jSubtotalEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                       javax.swing.BorderFactory.createLineBorder(
+                                           javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                       javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jSubtotalEuros.setOpaque(true);
         m_jSubtotalEuros.setPreferredSize(new java.awt.Dimension(150, 25));
         m_jSubtotalEuros.setRequestFocusEnabled(false);
@@ -273,7 +281,10 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
         m_jTaxesEuros.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jTaxesEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jTaxesEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jTaxesEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                    javax.swing.BorderFactory.createLineBorder(
+                                        javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                    javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jTaxesEuros.setOpaque(true);
         m_jTaxesEuros.setPreferredSize(new java.awt.Dimension(150, 25));
         m_jTaxesEuros.setRequestFocusEnabled(false);
@@ -312,13 +323,17 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
         m_jTicketId.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jTicketId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        m_jTicketId.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jTicketId.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                  javax.swing.BorderFactory.createLineBorder(
+                                      javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                  javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jTicketId.setOpaque(true);
         m_jTicketId.setPreferredSize(new java.awt.Dimension(160, 25));
         m_jTicketId.setRequestFocusEnabled(false);
         m_jButtons.add(m_jTicketId);
 
-        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customer_sml.png"))); // NOI18N
+        btnCustomer.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/images/customer_sml.png"))); // NOI18N
         btnCustomer.setToolTipText("Show Customers");
         btnCustomer.setFocusPainted(false);
         btnCustomer.setFocusable(false);
@@ -342,7 +357,8 @@ public class SimpleReceipt extends javax.swing.JPanel {
         add(jPanel2, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
+    private void btnCustomerActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_btnCustomerActionPerformed
 
         JCustomerFinder finder = JCustomerFinder.getCustomerFinder(this, dlCustomers);
         finder.search(ticket.getCustomer());
@@ -350,10 +366,11 @@ public class SimpleReceipt extends javax.swing.JPanel {
 
         try {
             ticket.setCustomer(finder.getSelectedCustomer() == null
-                    ? null
-                    : dlSales.loadCustomerExt(finder.getSelectedCustomer().getId()));
+                               ? null
+                               : dlSales.loadCustomerExt(finder.getSelectedCustomer().getId()));
         } catch (BasicException e) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"), e);
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.cannotfindcustomer"), e);
             msg.show(this);
         }
 

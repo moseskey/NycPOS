@@ -30,7 +30,7 @@ public class ScaleComm implements Scale, SerialPortEventListener {
     @Override
     public Double readWeight() {
 
-        synchronized(this) {
+        synchronized (this) {
 
             if (m_iStatusScale != SCALE_READY) {
                 try {
@@ -86,18 +86,20 @@ public class ScaleComm implements Scale, SerialPortEventListener {
                 m_CommPortPrinter.addEventListener(this);
                 m_CommPortPrinter.notifyOnDataAvailable(true);
 
-                m_CommPortPrinter.setSerialPortParams(4800, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_ODD); // Configuramos el puerto
+                m_CommPortPrinter.setSerialPortParams(4800, SerialPort.DATABITS_8, SerialPort.STOPBITS_1,
+                                                      SerialPort.PARITY_ODD); // Configuramos el puerto
             }
             m_out.write(data);
-        } catch (NoSuchPortException | PortInUseException | UnsupportedCommOperationException | TooManyListenersException | IOException e) {
+        } catch (NoSuchPortException | PortInUseException | UnsupportedCommOperationException |
+                     TooManyListenersException | IOException e) {
         }
     }
 
     @Override
     public void serialEvent(SerialPortEvent e) {
 
-	// Determine type of event.
-	switch (e.getEventType()) {
+        // Determine type of event.
+        switch (e.getEventType()) {
             case SerialPortEvent.BI:
             case SerialPortEvent.OE:
             case SerialPortEvent.FE:
@@ -119,8 +121,8 @@ public class ScaleComm implements Scale, SerialPortEventListener {
                                 m_iStatusScale = SCALE_READY;
                                 notifyAll();
                             }
-                        } else if (b > 0x002F && b < 0x003A){
-                            synchronized(this) {
+                        } else if (b > 0x002F && b < 0x003A) {
+                            synchronized (this) {
                                 if (m_iStatusScale == SCALE_READY) {
                                     m_dWeightBuffer = 0.0; // se supone que esto debe estar ya garantizado
                                     m_iStatusScale = SCALE_READING;

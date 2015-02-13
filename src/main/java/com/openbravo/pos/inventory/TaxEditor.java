@@ -77,7 +77,8 @@ public class TaxEditor extends JPanel implements EditorRecord {
         try {
             a = taxparentsent.list();
         } catch (BasicException eD) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotloadlists"), eD);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                            AppLocal.getIntString("message.cannotloadlists"), eD);
             msg.show(this);
             a = new ArrayList();
         }

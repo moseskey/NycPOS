@@ -8,7 +8,7 @@ public class CodesStar extends Codes {
 
     // set line interspacing to 4mm
 
-        public static final byte[] INITSEQUENCE = {0x1B, 0x7A, 0x01};
+    public static final byte[] INITSEQUENCE = {0x1B, 0x7A, 0x01};
 
     private static final byte[] CHAR_SIZE_0 = {0x1B, 0x69, 0x00, 0x00};
     private static final byte[] CHAR_SIZE_1 = {0x1B, 0x69, 0x01, 0x00};
@@ -26,7 +26,7 @@ public class CodesStar extends Codes {
     private static final byte[] IMAGE_BEGIN = {0x1B, 0x30};
     private static final byte[] IMAGE_END = {0x1B, 0x7A, 0x01};
     private static final byte[] IMAGE_HEADER = {0x1B, 0x4B};
-    private static final byte[] IMAGE_LOGO = {0x1B, 0x1C, 0x70,0x01, 0x00};
+    private static final byte[] IMAGE_LOGO = {0x1B, 0x1C, 0x70, 0x01, 0x00};
     private static final byte[] NEW_LINE = {0x0D, 0x0A}; // Print and carriage return
 
 
@@ -76,7 +76,7 @@ public class CodesStar extends Codes {
     public int getImageWidth() { return 192; }
 
     @Override
-    public byte[] getImageLogo(){ return IMAGE_LOGO; }
+    public byte[] getImageLogo() { return IMAGE_LOGO; }
 
     @Override
     public byte[] transImage(BufferedImage image) {
@@ -88,9 +88,9 @@ public class CodesStar extends Codes {
 
         // Array de datos
         byte[] bData = new byte[
-                IMAGE_BEGIN.length +
-                (getImageHeader().length + 2 + iWidth + getNewLine().length) * iHeight +
-                IMAGE_END.length];
+            IMAGE_BEGIN.length +
+            (getImageHeader().length + 2 + iWidth + getNewLine().length) * iHeight +
+            IMAGE_END.length];
 
         // Comando de impresion de imagen
 
@@ -105,16 +105,16 @@ public class CodesStar extends Codes {
             System.arraycopy(getImageHeader(), 0, bData, index, getImageHeader().length);
             index += getImageHeader().length;
 
-        // Line Dimension
-        // JG note: nested ++'s not good construct need change later
-            bData[index ++] = (byte) (iWidth % 256);
-            bData[index ++] = (byte) (iWidth / 256);
+            // Line Dimension
+            // JG note: nested ++'s not good construct need change later
+            bData[index ++] = (byte)(iWidth % 256);
+            bData[index ++] = (byte)(iWidth / 256);
 
             for (int j = 0; j < centeredimage.getWidth(); j++) {
                 p = 0x00;
                 for (int d = 0; d < 8; d ++) {
                     p = p << 1;
-                   if (centeredimage.isBlack(j, i + d)) {
+                    if (centeredimage.isBlack(j, i + d)) {
                         p = p | 0x01;
                     }
                 }
@@ -143,13 +143,13 @@ public class CodesStar extends Codes {
 
             out.write(new byte[] {0x1B, 0x62, 0x03});
             if (DevicePrinter.POSITION_NONE.equals(position)) {
-                out.write(new byte[]{0x01});
+                out.write(new byte[] {0x01});
             } else {
-                out.write(new byte[]{0x02});
+                out.write(new byte[] {0x02});
             }
-            out.write(new byte[]{0x02}); // dots
-            out.write(new byte[]{0x50}); // height
-            out.write(DeviceTicket.transNumber(DeviceTicket.alignBarCode(code,13).substring(0,12)));
+            out.write(new byte[] {0x02}); // dots
+            out.write(new byte[] {0x50}); // height
+            out.write(DeviceTicket.transNumber(DeviceTicket.alignBarCode(code, 13).substring(0, 12)));
             out.write(new byte[] { 0x1E }); // end char
 
             out.write(new byte[] {0x1B, 0x1D, 0x61, 0x00}); // Align left

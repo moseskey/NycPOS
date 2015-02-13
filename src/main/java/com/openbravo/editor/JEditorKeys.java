@@ -137,7 +137,7 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
 
         private char m_cCad;
 
-        public MyKeyNumberListener(char cCad){
+        public MyKeyNumberListener(char cCad) {
             m_cCad = cCad;
         }
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,7 +180,7 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
     public void dotIs00(boolean enabled) {
         if (enabled) {
             m_jKeyDot.setIcon(new javax.swing.ImageIcon(getClass()
-                    .getResource("/images/btn00.png")));
+                                                        .getResource("/images/btn00.png")));
         }
     }
 
@@ -281,7 +281,8 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
         add(m_jCE, gridBagConstraints);
 
-        m_jMinus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btnminus.png"))); // NOI18N
+        m_jMinus.setIcon(new javax.swing.ImageIcon(
+                             getClass().getResource("/images/btnminus.png"))); // NOI18N
         m_jMinus.setFocusPainted(false);
         m_jMinus.setFocusable(false);
         m_jMinus.setMargin(new java.awt.Insets(8, 16, 8, 16));
@@ -373,7 +374,8 @@ public class JEditorKeys extends javax.swing.JPanel implements EditorKeys {
         gridBagConstraints.weighty = 1.0;
         add(m_jKey2, gridBagConstraints);
 
-        m_jKeyDot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btndot.png"))); // NOI18N
+        m_jKeyDot.setIcon(new javax.swing.ImageIcon(
+                              getClass().getResource("/images/btndot.png"))); // NOI18N
         m_jKeyDot.setFocusPainted(false);
         m_jKeyDot.setFocusable(false);
         m_jKeyDot.setMargin(new java.awt.Insets(8, 16, 8, 16));

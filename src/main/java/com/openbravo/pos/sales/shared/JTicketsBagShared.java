@@ -39,7 +39,8 @@ public class JTicketsBagShared extends JTicketsBag {
         selectValidTicket();
 
         // Authorisation
-        m_jDelTicket.setEnabled(m_App.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
+        m_jDelTicket.setEnabled(
+            m_App.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
 
     }
 
@@ -78,21 +79,22 @@ public class JTicketsBagShared extends JTicketsBag {
 // save current ticket, if exists,
         if (m_sCurrentTicket != null) {
             try {
-                dlReceipts.insertSharedTicket(m_sCurrentTicket, m_panelticket.getActiveTicket(),m_panelticket.getActiveTicket().getPickupId());
+                dlReceipts.insertSharedTicket(m_sCurrentTicket, m_panelticket.getActiveTicket(),
+                                              m_panelticket.getActiveTicket().getPickupId());
                 m_jListTickets.setText("*");
                 TicketInfo l = dlReceipts.getSharedTicket(m_sCurrentTicket);
-                    if(l.getLinesCount() == 0) {
+                if (l.getLinesCount() == 0) {
 //                      throw new BasicException(AppLocal.getIntString("message.nullticket"));
 //                    }else{
-                        dlReceipts.deleteSharedTicket(m_sCurrentTicket);
-                    }
+                    dlReceipts.deleteSharedTicket(m_sCurrentTicket);
+                }
             } catch (BasicException e) {
                 new MessageInf(e).show(this);
             }
         }
     }
 
-    private void setActiveTicket(String id) throws BasicException{
+    private void setActiveTicket(String id) throws BasicException {
 
         // BEGIN TRANSACTION
         TicketInfo ticket = dlReceipts.getSharedTicket(id);
@@ -118,7 +120,7 @@ public class JTicketsBagShared extends JTicketsBag {
             List<SharedTicketInfo> l = dlReceipts.getSharedTicketList();
             if (l.isEmpty()) {
                 m_jListTickets.setText("");
-                 newTicket();
+                newTicket();
             } else {
 //                m_jListTickets.setText("*");
 //                setActiveTicket(l.get(0).getId());
@@ -157,7 +159,8 @@ public class JTicketsBagShared extends JTicketsBag {
         setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setLayout(new java.awt.BorderLayout());
 
-        m_jNewTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_new.png"))); // NOI18N
+        m_jNewTicket.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/sale_new.png"))); // NOI18N
         m_jNewTicket.setToolTipText("New Sale");
         m_jNewTicket.setFocusPainted(false);
         m_jNewTicket.setFocusable(false);
@@ -173,7 +176,8 @@ public class JTicketsBagShared extends JTicketsBag {
         });
         jPanel1.add(m_jNewTicket);
 
-        m_jDelTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_delete.png"))); // NOI18N
+        m_jDelTicket.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/sale_delete.png"))); // NOI18N
         m_jDelTicket.setToolTipText("Cancel Sale");
         m_jDelTicket.setFocusPainted(false);
         m_jDelTicket.setFocusable(false);
@@ -190,7 +194,8 @@ public class JTicketsBagShared extends JTicketsBag {
         jPanel1.add(m_jDelTicket);
 
         m_jListTickets.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jListTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_pending.png"))); // NOI18N
+        m_jListTickets.setIcon(new javax.swing.ImageIcon(
+                                   getClass().getResource("/images/sale_pending.png"))); // NOI18N
         m_jListTickets.setToolTipText("Layaways");
         m_jListTickets.setFocusPainted(false);
         m_jListTickets.setFocusable(false);
@@ -210,7 +215,8 @@ public class JTicketsBagShared extends JTicketsBag {
         add(jPanel1, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jListTicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jListTicketsActionPerformed
+    private void m_jListTicketsActionPerformed(java.awt.event.ActionEvent
+                                               evt) {//GEN-FIRST:event_m_jListTicketsActionPerformed
 
 
         SwingUtilities.invokeLater(new Runnable() {
@@ -238,9 +244,11 @@ public class JTicketsBagShared extends JTicketsBag {
 
     }//GEN-LAST:event_m_jListTicketsActionPerformed
 
-    private void m_jDelTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jDelTicketActionPerformed
+    private void m_jDelTicketActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jDelTicketActionPerformed
 
-        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannadelete"), AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannadelete"),
+                                                AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (res == JOptionPane.YES_OPTION) {
             deleteTicket();
 
@@ -248,7 +256,8 @@ public class JTicketsBagShared extends JTicketsBag {
 
     }//GEN-LAST:event_m_jDelTicketActionPerformed
 
-    private void m_jNewTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jNewTicketActionPerformed
+    private void m_jNewTicketActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jNewTicketActionPerformed
 
         newTicket();
 

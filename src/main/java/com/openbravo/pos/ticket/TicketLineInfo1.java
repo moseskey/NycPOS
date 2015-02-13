@@ -23,7 +23,8 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
     private String productid;
     private String attsetinstid;
 
-    public TicketLineInfo1(String productid, double dMultiply, double dPrice, TaxInfo tax, Properties props) {
+    public TicketLineInfo1(String productid, double dMultiply, double dPrice, TaxInfo tax,
+                           Properties props) {
         init(productid, null, dMultiply, dPrice, tax, props);
     }
 
@@ -31,14 +32,16 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         init(productid, null, dMultiply, dPrice, tax, new Properties());
     }
 
-    public TicketLineInfo1(String productid, String productname, String producttaxcategory, double dMultiply, double dPrice, TaxInfo tax) {
+    public TicketLineInfo1(String productid, String productname, String producttaxcategory,
+                           double dMultiply, double dPrice, TaxInfo tax) {
         Properties props = new Properties();
         props.setProperty("product.name", productname);
         props.setProperty("product.taxcategoryid", producttaxcategory);
         init(productid, null, dMultiply, dPrice, tax, props);
     }
 
-    public TicketLineInfo1(String productname, String producttaxcategory, double dMultiply, double dPrice, TaxInfo tax) {
+    public TicketLineInfo1(String productname, String producttaxcategory, double dMultiply,
+                           double dPrice, TaxInfo tax) {
 
         Properties props = new Properties();
         props.setProperty("product.name", productname);
@@ -50,7 +53,8 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         init(null, null, 0.0, 0.0, null, new Properties());
     }
 
-    public TicketLineInfo1(ProductInfoExt product, double dMultiply, double dPrice, TaxInfo tax, Properties attributes) {
+    public TicketLineInfo1(ProductInfoExt product, double dMultiply, double dPrice, TaxInfo tax,
+                           Properties attributes) {
 
         String pid;
 
@@ -60,29 +64,29 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
             pid = product.getID();
 // JDL 20.12.20 set product name to a default rather than blank    TO DO
             attributes.setProperty("product.name", product.getName());
-               attributes.setProperty("product.com", product.isCom() ? "true" : "false");
+            attributes.setProperty("product.com", product.isCom() ? "true" : "false");
 // ADDED JG 20.12.10 - Kitchen Print
-	attributes.setProperty("product.kitchen", product.isKitchen() ? "true" : "false");
+            attributes.setProperty("product.kitchen", product.isKitchen() ? "true" : "false");
 // ***
 // ADDED JG 25.06.11 - IsService
-	attributes.setProperty("product.service", product.isService() ? "true" : "false");
+            attributes.setProperty("product.service", product.isService() ? "true" : "false");
 // ***
 // Added JDL 19.12.12 Variable Price Product
-        attributes.setProperty("product.vprice", product.isVprice() ? "true" : "false");
+            attributes.setProperty("product.vprice", product.isVprice() ? "true" : "false");
 //
 
 // Added JDL 09.02.132
-        attributes.setProperty("product.verpatrib", product.isVerpatrib() ? "true" : "false");
+            attributes.setProperty("product.verpatrib", product.isVerpatrib() ? "true" : "false");
 //
 
 // Added JDL 09.04.13 - Amend JG 10 Oct 13
-        if (product.getTextTip() != null) {
-            attributes.setProperty("product.texttip", product.getTextTip());
-        }
+            if (product.getTextTip() != null) {
+                attributes.setProperty("product.texttip", product.getTextTip());
+            }
 
 //
 // Added JDL 25.05.13
-        attributes.setProperty("product.warranty", product.getWarranty()? "true" : "false");
+            attributes.setProperty("product.warranty", product.getWarranty() ? "true" : "false");
 //
 
             if (product.getAttributeSetID() != null) {
@@ -101,10 +105,12 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
     }
 
     public TicketLineInfo1(TicketLineInfo1 line) {
-        init(line.productid, line.attsetinstid, line.multiply, line.price, line.tax, (Properties) line.attributes.clone());
+        init(line.productid, line.attsetinstid, line.multiply, line.price, line.tax,
+             (Properties) line.attributes.clone());
     }
 
-    private void init(String productid, String attsetinstid, double dMultiply, double dPrice, TaxInfo tax, Properties attributes) {
+    private void init(String productid, String attsetinstid, double dMultiply, double dPrice,
+                      TaxInfo tax, Properties attributes) {
 
         this.productid = productid;
         this.attsetinstid = attsetinstid;
@@ -151,14 +157,14 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         multiply = dr.getDouble(5);
         price = dr.getDouble(6);
         tax = new TaxInfo(
-                dr.getString(7),
-                dr.getString(8),
-                dr.getString(9),
-                dr.getString(10),
-                dr.getString(11),
-                dr.getDouble(12),
-                dr.getBoolean(13),
-                dr.getInt(14));
+            dr.getString(7),
+            dr.getString(8),
+            dr.getString(9),
+            dr.getString(10),
+            dr.getString(11),
+            dr.getDouble(12),
+            dr.getBoolean(13),
+            dr.getInt(14));
         attributes = new Properties();
         try {
             byte[] img = dr.getBytes(15);
@@ -226,8 +232,8 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
         return (attributes.getProperty("product.taxcategoryid"));
     }
 
-    public void setProductTaxCategoryID(String taxID){
-        attributes.setProperty("product.taxcategoryid",taxID);
+    public void setProductTaxCategoryID(String taxID) {
+        attributes.setProperty("product.taxcategoryid", taxID);
     }
 
     public String getProductCategoryID() {
@@ -332,45 +338,45 @@ public class TicketLineInfo1 implements SerializableWrite, SerializableRead, Ser
 // ADDED JG 20.12.10 - Kitchen Print
 
     public boolean isProductKitchen() {
-	return "true".equals(attributes.getProperty("product.kitchen"));
-}
+        return "true".equals(attributes.getProperty("product.kitchen"));
+    }
 // ***
 // ADDED JG 25.06.11 - Is Service
 
     public boolean isProductService() {
-	return "true".equals(attributes.getProperty("product.service"));
-}
+        return "true".equals(attributes.getProperty("product.service"));
+    }
 // Added JDL 19.12.12 - Variable price product
 
     public boolean isProductVprice() {
-	return "true".equals(attributes.getProperty("product.vprice"));
+        return "true".equals(attributes.getProperty("product.vprice"));
 //
 
-}
+    }
 
 // Added JDL 09.02.13 for Chris
 
     public boolean isProductVerpatrib() {
-	return "true".equals(attributes.getProperty("product.verpatrib"));
+        return "true".equals(attributes.getProperty("product.verpatrib"));
 //
 
-}
+    }
 
 // Added JDL 09.04.12 - Variable price product
 
     public String printTextTip() {
-	return attributes.getProperty("product.texttip");
+        return attributes.getProperty("product.texttip");
 //
 
-}
+    }
 
 // Added JDL 09.02.13
 
     public boolean isProductWarranty() {
-	return "true".equals(attributes.getProperty("product.warranty"));
+        return "true".equals(attributes.getProperty("product.warranty"));
 //
 
-}
+    }
 
 
 }

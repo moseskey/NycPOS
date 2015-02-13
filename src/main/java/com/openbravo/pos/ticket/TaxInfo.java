@@ -16,7 +16,8 @@ public class TaxInfo implements Serializable, IKeyed {
     private boolean cascade;
     private Integer order;
 
-    public TaxInfo(String id, String name, String taxcategoryid, String taxcustcategoryid, String parentid, double rate, boolean cascade, Integer order) {
+    public TaxInfo(String id, String name, String taxcategoryid, String taxcustcategoryid,
+                   String parentid, double rate, boolean cascade, Integer order) {
         this.id = id;
         this.name = name;
         this.taxcategoryid = taxcategoryid;
@@ -101,7 +102,7 @@ public class TaxInfo implements Serializable, IKeyed {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return name;
     }
 }

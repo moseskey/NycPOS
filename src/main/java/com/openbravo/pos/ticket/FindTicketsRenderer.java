@@ -15,15 +15,17 @@ public class FindTicketsRenderer extends DefaultListCellRenderer {
 
     public FindTicketsRenderer() {
         this.icoTicketNormal = new ImageIcon(getClass().getClassLoader().getResource("/images/pay.png"));
-        this.icoTicketRefund = new ImageIcon(getClass().getClassLoader().getResource("/images/refundit.png"));
+        this.icoTicketRefund = new ImageIcon(
+            getClass().getClassLoader().getResource("/images/refundit.png"));
     }
 
     @Override
-    public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+    public Component getListCellRendererComponent(JList list, Object value, int index,
+                                                  boolean isSelected, boolean cellHasFocus) {
         super.getListCellRendererComponent(list, null, index, isSelected, cellHasFocus);
 
         int ticketType = ((FindTicketsInfo)value).getTicketType();
-        setText("<html><table>" + value.toString() +"</table></html>");
+        setText("<html><table>" + value.toString() + "</table></html>");
         if (ticketType == RECEIPT_NORMAL) {
             setIcon(icoTicketNormal);
         } else {

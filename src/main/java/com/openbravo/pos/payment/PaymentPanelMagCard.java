@@ -32,7 +32,7 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
     }
 
     @Override
-    public JComponent getComponent(){
+    public JComponent getComponent() {
         return this;
     }
 
@@ -75,24 +75,24 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
 
         if (m_dTotal > 0.0) {
             return new PaymentInfoMagcard(
-                    m_jHolderName.getText(),
-                    m_jCardNumber.getText(),
-                    m_jExpirationDate.getText(),
-                    track1,
-                    track2,
-                    track3,
-                    m_sTransactionID,
-                    m_dTotal);
+                       m_jHolderName.getText(),
+                       m_jCardNumber.getText(),
+                       m_jExpirationDate.getText(),
+                       track1,
+                       track2,
+                       track3,
+                       m_sTransactionID,
+                       m_dTotal);
         } else {
             return new PaymentInfoMagcardRefund(
-                    m_jHolderName.getText(),
-                    m_jCardNumber.getText(),
-                    m_jExpirationDate.getText(),
-                    track1,
-                    track2,
-                    track3,
-                    m_sTransactionID,
-                    m_dTotal);
+                       m_jHolderName.getText(),
+                       m_jCardNumber.getText(),
+                       m_jExpirationDate.getText(),
+                       track1,
+                       track2,
+                       track3,
+                       m_sTransactionID,
+                       m_dTotal);
         }
     }
 
@@ -122,7 +122,7 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
     private class KeyBarsListener extends java.awt.event.KeyAdapter {
 
         @Override
-        public void keyTyped(java.awt.event.KeyEvent e){
+        public void keyTyped(java.awt.event.KeyEvent e) {
             m_jKeyFactory.setText(null);
             stateTransition(e.getKeyChar());
         }
@@ -186,14 +186,20 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
         jLabel7.setBounds(20, 80, 100, 25);
 
         m_jExpirationDate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jExpirationDate.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jExpirationDate.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                        javax.swing.BorderFactory.createLineBorder(
+                                            javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                        javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jExpirationDate.setOpaque(true);
         m_jExpirationDate.setPreferredSize(new java.awt.Dimension(150, 25));
         jPanel1.add(m_jExpirationDate);
         m_jExpirationDate.setBounds(120, 80, 70, 25);
 
         m_jCardNumber.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jCardNumber.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jCardNumber.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                    javax.swing.BorderFactory.createLineBorder(
+                                        javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                    javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jCardNumber.setOpaque(true);
         m_jCardNumber.setPreferredSize(new java.awt.Dimension(180, 25));
         jPanel1.add(m_jCardNumber);
@@ -206,7 +212,10 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
 
         m_jHolderName.setBackground(java.awt.Color.white);
         m_jHolderName.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jHolderName.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jHolderName.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                    javax.swing.BorderFactory.createLineBorder(
+                                        javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                    javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jHolderName.setOpaque(true);
         m_jHolderName.setPreferredSize(new java.awt.Dimension(180, 25));
         jPanel1.add(m_jHolderName);
@@ -215,7 +224,8 @@ public class PaymentPanelMagCard extends javax.swing.JPanel implements PaymentPa
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jResetActionPerformed
+    private void jResetActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jResetActionPerformed
 
         resetState();
 

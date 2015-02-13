@@ -13,7 +13,8 @@ public class LeavesInfo implements IKeyed {
     private String m_sNotes;
 
 
-    public LeavesInfo(String id, String name, String employeeid, String startdate, String enddate, String notes) {
+    public LeavesInfo(String id, String name, String employeeid, String startdate, String enddate,
+                      String notes) {
         m_sID = id;
         m_sName = name;
         m_sEmployeeID = employeeid;
@@ -44,7 +45,7 @@ public class LeavesInfo implements IKeyed {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return m_sName;
     }
 

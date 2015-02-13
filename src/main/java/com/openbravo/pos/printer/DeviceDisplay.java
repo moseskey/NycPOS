@@ -6,7 +6,7 @@ public interface DeviceDisplay {
 
     // INTERFAZ DESCRIPCION
 
-        public String getDisplayName();
+    public String getDisplayName();
 
     public String getDisplayDescription();
 
@@ -14,7 +14,7 @@ public interface DeviceDisplay {
 
     // INTERFAZ VISOR
 
-        public void writeVisor(int animation, String sLine1, String sLine2);
+    public void writeVisor(int animation, String sLine1, String sLine2);
 
     public void writeVisor(String sLine1, String sLine2);
 

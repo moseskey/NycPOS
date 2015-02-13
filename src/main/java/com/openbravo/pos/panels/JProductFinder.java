@@ -79,7 +79,8 @@ public class JProductFinder extends javax.swing.JDialog {
         return showMessage(parent, dlSales, PRODUCT_ALL);
     }
 
-    public static ProductInfoExt showMessage(Component parent, DataLogicSales dlSales, int productsType) {
+    public static ProductInfoExt showMessage(Component parent, DataLogicSales dlSales,
+                                             int productsType) {
 
         Window window = getWindow(parent);
 
@@ -185,7 +186,8 @@ public class JProductFinder extends javax.swing.JDialog {
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         jcmdCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        jcmdCancel.setIcon(new javax.swing.ImageIcon(
+                               getClass().getResource("/images/cancel.png"))); // NOI18N
         jcmdCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         jcmdCancel.setMargin(new java.awt.Insets(8, 16, 8, 16));
         jcmdCancel.setMaximumSize(new java.awt.Dimension(103, 44));
@@ -221,7 +223,8 @@ public class JProductFinder extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jListProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListProductsMouseClicked
+    private void jListProductsMouseClicked(java.awt.event.MouseEvent
+                                           evt) {//GEN-FIRST:event_jListProductsMouseClicked
 
         if (evt.getClickCount() == 2) {
             m_ReturnProduct = (ProductInfoExt) jListProducts.getSelectedValue();
@@ -230,26 +233,30 @@ public class JProductFinder extends javax.swing.JDialog {
 
     }//GEN-LAST:event_jListProductsMouseClicked
 
-    private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
+    private void jcmdOKActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jcmdOKActionPerformed
 
         m_ReturnProduct = (ProductInfoExt) jListProducts.getSelectedValue();
         dispose();
 
     }//GEN-LAST:event_jcmdOKActionPerformed
 
-    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
+    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
 
         dispose();
 
     }//GEN-LAST:event_jcmdCancelActionPerformed
 
-    private void jListProductsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListProductsValueChanged
+    private void jListProductsValueChanged(javax.swing.event.ListSelectionEvent
+                                           evt) {//GEN-FIRST:event_jListProductsValueChanged
 
         jcmdOK.setEnabled(jListProducts.getSelectedValue() != null);
 
     }//GEN-LAST:event_jListProductsValueChanged
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         try {
             jListProducts.setModel(new MyListData(lpr.loadData()));

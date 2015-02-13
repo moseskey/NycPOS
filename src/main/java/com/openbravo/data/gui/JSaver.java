@@ -23,29 +23,29 @@ public class JSaver extends JPanel implements StateListener {
 
     @Override
     public void updateState(int iState) {
-        switch  (iState) {
-        case BrowsableEditableData.ST_INSERT:
-            jbtnNew.setEnabled(m_bd.canInsertData());
-            jbtnDelete.setEnabled(false);
-            jbtnSave.setEnabled(m_bd.canInsertData());
-            break;
-        case BrowsableEditableData.ST_DELETE:
-            jbtnNew.setEnabled(m_bd.canInsertData());
-            jbtnDelete.setEnabled(false);
-            jbtnSave.setEnabled(m_bd.canDeleteData());
-            break;
-        case BrowsableEditableData.ST_NORECORD:
-            jbtnNew.setEnabled(m_bd.canInsertData());
-            jbtnDelete.setEnabled(false);
-            jbtnSave.setEnabled(false);
-            break;
-        case BrowsableEditableData.ST_UPDATE:
-            jbtnNew.setEnabled(m_bd.canInsertData());
-            jbtnDelete.setEnabled(m_bd.canDeleteData());
-            jbtnSave.setEnabled(m_bd.canUpdateData());
-            break;
+        switch (iState) {
+            case BrowsableEditableData.ST_INSERT:
+                jbtnNew.setEnabled(m_bd.canInsertData());
+                jbtnDelete.setEnabled(false);
+                jbtnSave.setEnabled(m_bd.canInsertData());
+                break;
+            case BrowsableEditableData.ST_DELETE:
+                jbtnNew.setEnabled(m_bd.canInsertData());
+                jbtnDelete.setEnabled(false);
+                jbtnSave.setEnabled(m_bd.canDeleteData());
+                break;
+            case BrowsableEditableData.ST_NORECORD:
+                jbtnNew.setEnabled(m_bd.canInsertData());
+                jbtnDelete.setEnabled(false);
+                jbtnSave.setEnabled(false);
+                break;
+            case BrowsableEditableData.ST_UPDATE:
+                jbtnNew.setEnabled(m_bd.canInsertData());
+                jbtnDelete.setEnabled(m_bd.canDeleteData());
+                jbtnSave.setEnabled(m_bd.canUpdateData());
+                break;
         }
-   }
+    }
 
     /**
      * This method is called from within the constructor to
@@ -76,7 +76,8 @@ public class JSaver extends JPanel implements StateListener {
         });
         add(jbtnNew);
 
-        jbtnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_delete.png"))); // NOI18N
+        jbtnDelete.setIcon(new javax.swing.ImageIcon(
+                               getClass().getResource("/images/sale_delete.png"))); // NOI18N
         jbtnDelete.setToolTipText("Delete");
         jbtnDelete.setFocusPainted(false);
         jbtnDelete.setFocusable(false);
@@ -90,7 +91,8 @@ public class JSaver extends JPanel implements StateListener {
         add(jbtnDelete);
         add(jSeparator1);
 
-        jbtnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/filesave.png"))); // NOI18N
+        jbtnSave.setIcon(new javax.swing.ImageIcon(
+                             getClass().getResource("/images/filesave.png"))); // NOI18N
         jbtnSave.setToolTipText("Save");
         jbtnSave.setFocusPainted(false);
         jbtnSave.setFocusable(false);
@@ -104,7 +106,8 @@ public class JSaver extends JPanel implements StateListener {
         add(jbtnSave);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSaveActionPerformed
+    private void jbtnSaveActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jbtnSaveActionPerformed
         try {
             m_bd.saveData();
 
@@ -114,16 +117,19 @@ public class JSaver extends JPanel implements StateListener {
         }
     }//GEN-LAST:event_jbtnSaveActionPerformed
 
-    private void jbtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDeleteActionPerformed
+    private void jbtnDeleteActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jbtnDeleteActionPerformed
         try {
             m_bd.actionDelete();
         } catch (BasicException eD) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.nodelete"), eD);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.nodelete"),
+                                            eD);
             msg.show(this);
         }
     }//GEN-LAST:event_jbtnDeleteActionPerformed
 
-    private void jbtnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNewActionPerformed
+    private void jbtnNewActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_jbtnNewActionPerformed
         try {
             m_bd.actionInsert();
         } catch (BasicException eD) {

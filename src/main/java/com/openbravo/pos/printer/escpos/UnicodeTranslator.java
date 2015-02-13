@@ -10,7 +10,7 @@ public abstract class UnicodeTranslator {
             return null;
         } else {
             byte bAux[] = new byte[sCad.length()];
-            for( int i = 0; i < sCad.length(); i++) {
+            for (int i = 0; i < sCad.length(); i++) {
                 bAux[i] = transChar(sCad.charAt(i));
             }
             return bAux;

@@ -34,12 +34,12 @@ public class FindInfo implements Finder {
 
         if (iMatch == MATCH_REGEXP) {
             m_TextPattern = m_bMatchCase
-                ? Pattern.compile(m_sText)
-                : Pattern.compile(m_sText, Pattern.CASE_INSENSITIVE);
+                            ? Pattern.compile(m_sText)
+                            : Pattern.compile(m_sText, Pattern.CASE_INSENSITIVE);
         } else {
             m_sTextCompare = m_bMatchCase
-                ? m_sText
-                : m_sText.toUpperCase();
+                             ? m_sText
+                             : m_sText.toUpperCase();
         }
     }
 
@@ -72,20 +72,20 @@ public class FindInfo implements Finder {
         String[] v = m_vec.getValues(obj);
 
         String sField = m_bMatchCase
-            ? v[m_iField]
-            : v[m_iField].toUpperCase();
+                        ? v[m_iField]
+                        : v[m_iField].toUpperCase();
 
         switch (m_iMatch) {
-        case MATCH_STARTFIELD:
-            return sField.startsWith(m_sTextCompare);
-        case MATCH_WHOLEFIELD:
-            return sField.equals(m_sTextCompare);
-        case MATCH_ANYPARTFIELD:
-            return sField.indexOf(m_sTextCompare) >= 0;
-        case MATCH_REGEXP:
-            return m_TextPattern.matcher(sField).matches();
-        default:
-            return false;
+            case MATCH_STARTFIELD:
+                return sField.startsWith(m_sTextCompare);
+            case MATCH_WHOLEFIELD:
+                return sField.equals(m_sTextCompare);
+            case MATCH_ANYPARTFIELD:
+                return sField.indexOf(m_sTextCompare) >= 0;
+            case MATCH_REGEXP:
+                return m_TextPattern.matcher(sField).matches();
+            default:
+                return false;
         }
     }
 

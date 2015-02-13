@@ -16,7 +16,7 @@ public class PaymentPanelFac {
                 return new PaymentPanelType(notifier);
             default:
                 // "Not defined
-           return new PaymentPanelBasic(notifier);
+                return new PaymentPanelBasic(notifier);
         }
     }
 }

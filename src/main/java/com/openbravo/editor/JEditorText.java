@@ -113,11 +113,16 @@ public abstract class JEditorText extends JEditorAbstract {
 
     protected final String getEditMode() {
         switch (m_iMode) {
-        case MODE_Abc1: return "Abc1";
-        case MODE_abc1: return "abc1";
-        case MODE_ABC1: return "ABC1";
-        case MODE_123:  return "123";
-        default: return null;
+            case MODE_Abc1:
+                return "Abc1";
+            case MODE_abc1:
+                return "abc1";
+            case MODE_ABC1:
+                return "ABC1";
+            case MODE_123:
+                return "123";
+            default:
+                return null;
         }
     }
 
@@ -129,9 +134,9 @@ public abstract class JEditorText extends JEditorAbstract {
             s.append(m_svalue);
         }
         if (m_cLastChar != '\u0000') {
-                s.append("<font color=\"#a0a0a0\">");
-                s.append(getKeyChar());
-                s.append("</font>");
+            s.append("<font color=\"#a0a0a0\">");
+            s.append(getKeyChar());
+            s.append("</font>");
         }
         s.append("<font color=\"#a0a0a0\">_</font>");
 
@@ -140,8 +145,8 @@ public abstract class JEditorText extends JEditorAbstract {
 
     protected String getTextFormat() throws BasicException {
         return (m_svalue == null)
-                ? "<html>"
-                : "<html>" + m_svalue;
+               ? "<html>"
+               : "<html>" + m_svalue;
     }
 
     protected void typeCharInternal(char c) {
@@ -209,7 +214,8 @@ public abstract class JEditorText extends JEditorAbstract {
             m_iTicks = 0;
             m_cLastChar = '\u0000';
             m_iMode = (m_iMode + 1) % 4;
-        } else if (c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == '0') {
+        } else if (c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' ||
+                   c == '8' || c == '9' || c == '0') {
             if (m_iMode == MODE_123) {
                 m_svalue = appendChar2Value(c);
             } else if (c == m_cLastChar) {
@@ -242,35 +248,75 @@ public abstract class JEditorText extends JEditorAbstract {
 
         char[] clist = null;
         switch (m_iMode) {
-        case MODE_abc1:
-             switch (m_cLastChar) {
-                case '1': clist = CHAR_abc1_1; break;
-                case '2': clist = CHAR_abc1_2; break;
-                case '3': clist = CHAR_abc1_3; break;
-                case '4': clist = CHAR_abc1_4; break;
-                case '5': clist = CHAR_abc1_5; break;
-                case '6': clist = CHAR_abc1_6; break;
-                case '7': clist = CHAR_abc1_7; break;
-                case '8': clist = CHAR_abc1_8; break;
-                case '9': clist = CHAR_abc1_9; break;
-                case '0': clist = CHAR_abc1_0; break;
-            }
-            break;
-        case MODE_Abc1:
-        case MODE_ABC1:
-            switch (m_cLastChar) {
-                case '1': clist = CHAR_ABC1_1; break;
-                case '2': clist = CHAR_ABC1_2; break;
-                case '3': clist = CHAR_ABC1_3; break;
-                case '4': clist = CHAR_ABC1_4; break;
-                case '5': clist = CHAR_ABC1_5; break;
-                case '6': clist = CHAR_ABC1_6; break;
-                case '7': clist = CHAR_ABC1_7; break;
-                case '8': clist = CHAR_ABC1_8; break;
-                case '9': clist = CHAR_ABC1_9; break;
-                case '0': clist = CHAR_ABC1_0; break;
-            }
-            break;
+            case MODE_abc1:
+                switch (m_cLastChar) {
+                    case '1':
+                        clist = CHAR_abc1_1;
+                        break;
+                    case '2':
+                        clist = CHAR_abc1_2;
+                        break;
+                    case '3':
+                        clist = CHAR_abc1_3;
+                        break;
+                    case '4':
+                        clist = CHAR_abc1_4;
+                        break;
+                    case '5':
+                        clist = CHAR_abc1_5;
+                        break;
+                    case '6':
+                        clist = CHAR_abc1_6;
+                        break;
+                    case '7':
+                        clist = CHAR_abc1_7;
+                        break;
+                    case '8':
+                        clist = CHAR_abc1_8;
+                        break;
+                    case '9':
+                        clist = CHAR_abc1_9;
+                        break;
+                    case '0':
+                        clist = CHAR_abc1_0;
+                        break;
+                }
+                break;
+            case MODE_Abc1:
+            case MODE_ABC1:
+                switch (m_cLastChar) {
+                    case '1':
+                        clist = CHAR_ABC1_1;
+                        break;
+                    case '2':
+                        clist = CHAR_ABC1_2;
+                        break;
+                    case '3':
+                        clist = CHAR_ABC1_3;
+                        break;
+                    case '4':
+                        clist = CHAR_ABC1_4;
+                        break;
+                    case '5':
+                        clist = CHAR_ABC1_5;
+                        break;
+                    case '6':
+                        clist = CHAR_ABC1_6;
+                        break;
+                    case '7':
+                        clist = CHAR_ABC1_7;
+                        break;
+                    case '8':
+                        clist = CHAR_ABC1_8;
+                        break;
+                    case '9':
+                        clist = CHAR_ABC1_9;
+                        break;
+                    case '0':
+                        clist = CHAR_ABC1_0;
+                        break;
+                }
+                break;
         }
 
         if (clist == null) {

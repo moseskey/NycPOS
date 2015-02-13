@@ -41,31 +41,31 @@ public class ProductInfoExt {
     protected double m_stockVolume;
 // ADDED JG 20.12.10 - Kitchen Print
 
-        protected boolean m_bKitchen;
+    protected boolean m_bKitchen;
 // ADDED JG 25.06.11 - Service
     private boolean m_bService;
 
     protected Properties attributes;
 // ADDED JG 13 Nov 12 - Display
 
-        protected String m_sDisplay;
+    protected String m_sDisplay;
 // ADDED JDL 19.12.12 - Variable price product
 
-        protected boolean m_bVprice;
+    protected boolean m_bVprice;
 // ADDED JDL 09.02.13
 
-        protected boolean m_bVerpatrib;
+    protected boolean m_bVerpatrib;
 // ADDED JDL 10.04.13
 
-        protected String m_sTextTip;
+    protected String m_sTextTip;
 // ADDED JDL 25.05.13
 
-        protected boolean m_bWarranty;
+    protected boolean m_bWarranty;
 
     /**
     * JG 7 June 2014 Stock Units
     */
-        public double m_dStockUnits;
+    public double m_dStockUnits;
 
 
     public ProductInfoExt() {
@@ -137,7 +137,7 @@ public class ProductInfoExt {
 
 // ADDED JG 13 Nov 12 - Display
 
-        public final String getDisplay() {
+    public final String getDisplay() {
         return m_sDisplay;
     }
 
@@ -167,7 +167,7 @@ public class ProductInfoExt {
 
 // ADDED JG 20.12.10 - Kitchen Print
 
-        public final boolean isKitchen() {
+    public final boolean isKitchen() {
         return m_bKitchen;
     }
 
@@ -178,7 +178,7 @@ public class ProductInfoExt {
 
 // ADDED JG 25.06.11 - Is Service
 
-        public final boolean isService() {
+    public final boolean isService() {
         return m_bService;
     }
 
@@ -188,12 +188,12 @@ public class ProductInfoExt {
 // **
 
 // ADDED JDL 19.12.12 - Variable price product
-        public final boolean isVprice() {
+    public final boolean isVprice() {
         return m_bVprice;
     }
 
     // ADDED JDL 09.02.13 - for Chris
-        public final boolean isVerpatrib() {
+    public final boolean isVerpatrib() {
         return m_bVerpatrib;
     }
 

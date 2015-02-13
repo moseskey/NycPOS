@@ -95,7 +95,8 @@ public class JDlgUploadProducts extends javax.swing.JDialog {
         jPanel2.add(jcmdOK);
 
         jcmdCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        jcmdCancel.setIcon(new javax.swing.ImageIcon(
+                               getClass().getResource("/images/cancel.png"))); // NOI18N
         jcmdCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         jcmdCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,15 +117,17 @@ public class JDlgUploadProducts extends javax.swing.JDialog {
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-474)/2, (screenSize.height-161)/2, 474, 161);
+        setBounds((screenSize.width - 474) / 2, (screenSize.height - 161) / 2, 474, 161);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
+    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
 
         dispose();
     }//GEN-LAST:event_jcmdCancelActionPerformed
 
-    private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
+    private void jcmdOKActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jcmdOKActionPerformed
 
 
         // Ponemos el estado de leyendo productos
@@ -151,7 +154,8 @@ public class JDlgUploadProducts extends javax.swing.JDialog {
             MessageInf msg = new MessageInf(MessageInf.SGN_SUCCESS, AppLocal.getIntString("message.scannerok"));
             msg.show(this);
         } catch (DeviceScannerException e) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.scannerfail"), e);
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.scannerfail"), e);
             msg.show(this);
         } finally {
             m_scanner.disconnectDevice();

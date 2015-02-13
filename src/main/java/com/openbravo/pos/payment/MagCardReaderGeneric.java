@@ -111,12 +111,14 @@ public final class MagCardReaderGeneric implements MagCardReader {
             m_sField = null;
             m_iAutomState = READING_END;
 
-        } else if (m_iAutomState == READING_TRACK1 || m_iAutomState == READING_TRACK2 || m_iAutomState == READING_TRACK3) {
+        } else if (m_iAutomState == READING_TRACK1 || m_iAutomState == READING_TRACK2 ||
+                   m_iAutomState == READING_TRACK3) {
             m_sField.append(c);
         }
 
 
-        if (m_iAutomState == READING_CARDTYPE || m_iAutomState == READING_TRACK1 || m_iAutomState == READING_STARTSENTINEL2) {
+        if (m_iAutomState == READING_CARDTYPE || m_iAutomState == READING_TRACK1 ||
+            m_iAutomState == READING_STARTSENTINEL2) {
             track1.append(c);
         } else if (m_iAutomState == READING_TRACK2 || m_iAutomState == READING_STARTSENTINEL3) {
             track2.append(c);
@@ -133,14 +135,19 @@ public final class MagCardReaderGeneric implements MagCardReader {
         }
 
         // Lectura de los valores
-        String sCardNumber1 = (m_aTrack1 == null || m_aTrack1.size() < 1) ? null : (String) m_aTrack1.get(0);
-        String sCardNumber2 = (m_aTrack2 == null || m_aTrack2.size() < 1) ? null : (String) m_aTrack2.get(0);
+        String sCardNumber1 = (m_aTrack1 == null ||
+                               m_aTrack1.size() < 1) ? null : (String) m_aTrack1.get(0);
+        String sCardNumber2 = (m_aTrack2 == null ||
+                               m_aTrack2.size() < 1) ? null : (String) m_aTrack2.get(0);
         String sHolderName = (m_aTrack1 == null || m_aTrack1.size() < 2) ? null : (String) m_aTrack1.get(1);
-        String sExpDate1 =  (m_aTrack1 == null || m_aTrack1.size() < 3) ? null : ((String) m_aTrack1.get(2)).substring(0, 4);
-        String sExpDate2 =  (m_aTrack2 == null || m_aTrack2.size() < 2) ? null : ((String) m_aTrack2.get(1)).substring(0, 4);
+        String sExpDate1 = (m_aTrack1 == null ||
+                            m_aTrack1.size() < 3) ? null : ((String) m_aTrack1.get(2)).substring(0, 4);
+        String sExpDate2 = (m_aTrack2 == null ||
+                            m_aTrack2.size() < 2) ? null : ((String) m_aTrack2.get(1)).substring(0, 4);
 
         // Test del numero de tarjeta
-        if (!checkCardNumber(sCardNumber1) || (sCardNumber2 != null && !sCardNumber1.equals(sCardNumber2))) {
+        if (!checkCardNumber(sCardNumber1) || (sCardNumber2 != null &&
+                                               !sCardNumber1.equals(sCardNumber2))) {
             return;
         }
         // Test del nombre del propietario
@@ -148,7 +155,8 @@ public final class MagCardReaderGeneric implements MagCardReader {
             return;
         }
         // Test de la fecha de expiracion
-        if ((sExpDate1 != null || !checkExpDate(sExpDate2)) && (!checkExpDate(sExpDate1) || !sExpDate1.equals(sExpDate2))) {
+        if ((sExpDate1 != null || !checkExpDate(sExpDate2)) && (!checkExpDate(sExpDate1) ||
+                                                                !sExpDate1.equals(sExpDate2))) {
             return;
         }
 
@@ -163,7 +171,7 @@ public final class MagCardReaderGeneric implements MagCardReader {
     }
 
     private boolean checkExpDate(String sDate) {
-        return ( sDate.length()==4 && StringUtils.isNumber(sDate.trim()) );
+        return (sDate.length() == 4 && StringUtils.isNumber(sDate.trim()));
     }
 
     private String formatHolderName(String sName) {

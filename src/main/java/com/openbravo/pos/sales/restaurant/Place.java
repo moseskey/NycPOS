@@ -14,7 +14,8 @@ import java.awt.Insets;
 public class Place implements SerializableRead, java.io.Serializable {
 
     private static final long serialVersionUID = 8652254694281L;
-    private static final Icon ICO_OCU = new ImageIcon(Place.class.getResource("/images/edit_group.png"));
+    private static final Icon ICO_OCU = new ImageIcon(
+        Place.class.getResource("/images/edit_group.png"));
     private static final Icon ICO_FRE = new NullIcon(22, 22);
 
     private String m_sId;
@@ -55,7 +56,7 @@ public class Place implements SerializableRead, java.io.Serializable {
         m_btn.setVerticalTextPosition(SwingConstants.BOTTOM);
         m_btn.setIcon(ICO_FRE);
         m_btn.setText(m_sName);
-        m_btn.setMargin(new Insets(2,5,2,5));
+        m_btn.setMargin(new Insets(2, 5, 2, 5));
 
     }
 
@@ -71,9 +72,9 @@ public class Place implements SerializableRead, java.io.Serializable {
 
     public JButton getButton() { return m_btn; }
 
-    public String getCustomer(){ return m_customer; }
+    public String getCustomer() { return m_customer; }
 
-    public String getWaiter(){ return m_waiter;}
+    public String getWaiter() { return m_waiter;}
 
     public boolean hasPeople() {
         return m_bPeople;
@@ -86,12 +87,12 @@ public class Place implements SerializableRead, java.io.Serializable {
 
     public void setButtonBounds() {
         Dimension d = m_btn.getPreferredSize();
-        m_btn.setPreferredSize(new Dimension(d.width +30,d.height + 15));
+        m_btn.setPreferredSize(new Dimension(d.width + 30, d.height + 15));
         d = m_btn.getPreferredSize();
         m_btn.setBounds(m_ix - d.width / 2, m_iy - d.height / 2, d.width, d.height);
     }
 
-    public void setButtonText(String btnText){
+    public void setButtonText(String btnText) {
         m_btn.setText(btnText);
     }
 

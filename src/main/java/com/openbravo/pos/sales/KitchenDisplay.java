@@ -23,39 +23,39 @@ public class KitchenDisplay {
     protected DataLogicSystem dlSystem;
 
     public KitchenDisplay(AppView oApp) {
-        m_App=oApp;
+        m_App = oApp;
 
 //get database connection details
-       try{
-            s=m_App.getSession();
-            con=s.getConnection();
-        }
-        catch (Exception e){
+        try {
+            s = m_App.getSession();
+            con = s.getConnection();
+        } catch (Exception e) {
 //            System.out.print("No session or connection");
         }
     }
 
-    public void addRecord(String ID, String table, String pickupID, String product, String multiply, String attributes){
+    public void addRecord(String ID, String table, String pickupID, String product, String multiply,
+                          String attributes) {
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
         System.out.println(dateFormat.format(date));
 
 
-     try{
+        try {
             SQL = "INSERT INTO KITCHENDISPLAY (ID, ORDERTIME, PLACE, PICKUPID, PRODUCT, MULTIPLY, ATTRIBUTES) VALUES (?, ?, ?, ?, ?, ?, ?) ";
-            pstmt=con.prepareStatement(SQL);
-            pstmt.setString(1,ID);
-            pstmt.setString(2,dateFormat.format(date));
-            pstmt.setString(3,table);
-            pstmt.setString(4,pickupID);
-            pstmt.setString(5,product);
-            pstmt.setString(6,multiply);
-            pstmt.setString(7,attributes);
+            pstmt = con.prepareStatement(SQL);
+            pstmt.setString(1, ID);
+            pstmt.setString(2, dateFormat.format(date));
+            pstmt.setString(3, table);
+            pstmt.setString(4, pickupID);
+            pstmt.setString(5, product);
+            pstmt.setString(6, multiply);
+            pstmt.setString(7, attributes);
             pstmt.executeUpdate();
-        }catch(Exception e){
-            }
+        } catch (Exception e) {
+        }
 
- }
+    }
 
 
 //              stmt = (Statement) con.createStatement();

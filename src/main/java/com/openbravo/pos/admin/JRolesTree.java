@@ -86,14 +86,18 @@ public class JRolesTree extends javax.swing.JPanel {
         m_jName.setBounds(90, 10, 260, 25);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         jLabel1.setText(bundle.getString("label.name")); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(10, 10, 70, 25);
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("All Permissions");
-        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Sales");
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Refunds");
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new
+        javax.swing.tree.DefaultMutableTreeNode("All Permissions");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new
+        javax.swing.tree.DefaultMutableTreeNode("Sales");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new
+        javax.swing.tree.DefaultMutableTreeNode("Refunds");
         treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Products");

@@ -89,13 +89,14 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
         try {
 
-         m_jPanelLeft.setViewportView(getScriptMenu(m_dlSystem.getResourceAsText("Menu.Root")));
+            m_jPanelLeft.setViewportView(getScriptMenu(m_dlSystem.getResourceAsText("Menu.Root")));
         } catch (ScriptException e) {
             logger.log(Level.SEVERE, "Cannot read Menu.Root resource. Trying default menu.", e);
             try {
-                m_jPanelLeft.setViewportView(getScriptMenu(StringUtils.readResource("/templates/default/Menu.Root.txt")));
+                m_jPanelLeft.setViewportView(getScriptMenu(
+                                                 StringUtils.readResource("/templates/default/Menu.Root.txt")));
 // JG 6 May 2013 use multicatch
-            } catch (    IOException | ScriptException ex) {
+            } catch (IOException | ScriptException ex) {
                 logger.log(Level.SEVERE, "Cannot read default menu", ex);
             }
         }
@@ -113,8 +114,8 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
     private void assignMenuButtonIcon() {
         jButton1.setIcon(m_jPanelLeft.isVisible()
-                ? menu_close
-                : menu_open);
+                         ? menu_close
+                         : menu_open);
     }
 
     public class ScriptMenu {
@@ -135,7 +136,7 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
 //        public JTaskPane getTaskPane() {
 
-                public JXTaskPaneContainer getTaskPane() {
+        public JXTaskPaneContainer getTaskPane() {
             return taskPane;
         }
     }
@@ -196,7 +197,7 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
 //        public JTaskPaneGroup getTaskGroup() {
 
-                public JXTaskPane getTaskGroup() {
+        public JXTaskPane getTaskGroup() {
             return taskGroup;
         }
     }
@@ -311,7 +312,8 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
                     m_dlSystem.execChangePassword(new Object[] {sNewPassword, m_appuser.getId()});
                     m_appuser.setPassword(sNewPassword);
                 } catch (BasicException e) {
-                    JMessageDialog.showMessage(JPrincipalApp.this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotchangepassword")));
+                    JMessageDialog.showMessage(JPrincipalApp.this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                                  AppLocal.getIntString("message.cannotchangepassword")));
                 }
             }
         }
@@ -366,7 +368,8 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
                 try {
                     m_jMyView.activate();
                 } catch (BasicException e) {
-                    JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.notactive"), e));
+                    JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                    AppLocal.getIntString("message.notactive"), e));
                 }
 
                 m_jLastView = m_jMyView;
@@ -382,7 +385,8 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
             }
         } else  {
 
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.notpermissions")));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                            AppLocal.getIntString("message.notpermissions")));
         }
         m_appview.waitCursorEnd();
     }
@@ -405,10 +409,12 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
                     JMessageDialog.showMessage(JPrincipalApp.this, new MessageInf(eb));
                 }
             } catch (BeanFactoryException e) {
-                JMessageDialog.showMessage(JPrincipalApp.this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("Label.LoadError"), e));
+                JMessageDialog.showMessage(JPrincipalApp.this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                              AppLocal.getIntString("Label.LoadError"), e));
             }
         } else  {
-            JMessageDialog.showMessage(JPrincipalApp.this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.notpermissions")));
+            JMessageDialog.showMessage(JPrincipalApp.this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                          AppLocal.getIntString("message.notpermissions")));
         }
         m_appview.waitCursorEnd();
     }
@@ -464,7 +470,9 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
         m_jPanelTitle.setLayout(new java.awt.BorderLayout());
 
         m_jTitle.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        m_jTitle.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, java.awt.Color.darkGray), javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+        m_jTitle.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                               javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, java.awt.Color.darkGray),
+                               javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10)));
         m_jPanelTitle.add(m_jTitle, java.awt.BorderLayout.NORTH);
 
         m_jPanelRight.add(m_jPanelTitle, java.awt.BorderLayout.NORTH);
@@ -476,11 +484,12 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
         add(m_jPanelRight, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-    setMenuVisible(!m_jPanelLeft.isVisible());
+        setMenuVisible(!m_jPanelLeft.isVisible());
 
-}//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

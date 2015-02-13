@@ -59,7 +59,8 @@ public class ComparatorCreatorBasic implements ComparatorCreator {
                 Object[] ao1 = (Object[]) o1;
                 Object[] ao2 = (Object[]) o2;
                 for (int i = 0; i < m_aiOrderBy.length; i++) {
-                    int result = m_aDatas[m_iAvailableIndexes[m_aiOrderBy[i]]].compare(ao1[m_iAvailableIndexes[m_aiOrderBy[i]]], ao2[m_iAvailableIndexes[m_aiOrderBy[i]]]);
+                    int result = m_aDatas[m_iAvailableIndexes[m_aiOrderBy[i]]].compare(
+                                     ao1[m_iAvailableIndexes[m_aiOrderBy[i]]], ao2[m_iAvailableIndexes[m_aiOrderBy[i]]]);
                     if (result != 0) {
                         return result;
                     }

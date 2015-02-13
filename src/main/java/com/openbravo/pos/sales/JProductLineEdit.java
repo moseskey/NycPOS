@@ -40,9 +40,12 @@ public class JProductLineEdit extends javax.swing.JDialog {
 
 //  JG 7 May 14 Allow User edit of Product.Name if has EditLine permissions
 //        m_jName.setEnabled(m_oLine.getProductID() == null && app.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
-        m_jName.setEnabled(app.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
-        m_jPrice.setEnabled(app.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
-        m_jPriceTax.setEnabled(app.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
+        m_jName.setEnabled(
+            app.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
+        m_jPrice.setEnabled(
+            app.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
+        m_jPriceTax.setEnabled(
+            app.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
 
 //        m_jName.setText(m_oLine.getProperty("product.name"));
         m_jName.setText(oLine.getProductName());
@@ -82,7 +85,7 @@ public class JProductLineEdit extends javax.swing.JDialog {
             m_jSubtotal.setText(m_oLine.printSubValue());
             m_jTotal.setText(m_oLine.printValue());
             m_jButtonOK.setEnabled(true);
-       } else {
+        } else {
             m_jSubtotal.setText(null);
             m_jTotal.setText(null);
             m_jButtonOK.setEnabled(false);
@@ -156,7 +159,8 @@ public class JProductLineEdit extends javax.swing.JDialog {
         }
     }
 
-    public static TicketLineInfo showMessage(Component parent, AppView app, TicketLineInfo oLine) throws BasicException {
+    public static TicketLineInfo showMessage(Component parent, AppView app,
+                                             TicketLineInfo oLine) throws BasicException {
 
         Window window = getWindow(parent);
 
@@ -245,10 +249,14 @@ public class JProductLineEdit extends javax.swing.JDialog {
         jPanel2.add(m_jPriceTax);
         m_jPriceTax.setBounds(100, 110, 240, 25);
 
-        m_jTaxrate.setBackground(javax.swing.UIManager.getDefaults().getColor("TextField.disabledBackground"));
+        m_jTaxrate.setBackground(
+            javax.swing.UIManager.getDefaults().getColor("TextField.disabledBackground"));
         m_jTaxrate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jTaxrate.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jTaxrate.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jTaxrate.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                 javax.swing.BorderFactory.createLineBorder(
+                                     javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                 javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jTaxrate.setOpaque(true);
         m_jTaxrate.setPreferredSize(new java.awt.Dimension(150, 25));
         m_jTaxrate.setRequestFocusEnabled(false);
@@ -265,10 +273,14 @@ public class JProductLineEdit extends javax.swing.JDialog {
         jPanel2.add(jLabel6);
         jLabel6.setBounds(10, 200, 90, 25);
 
-        m_jTotal.setBackground(javax.swing.UIManager.getDefaults().getColor("TextField.disabledBackground"));
+        m_jTotal.setBackground(
+            javax.swing.UIManager.getDefaults().getColor("TextField.disabledBackground"));
         m_jTotal.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jTotal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jTotal.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jTotal.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                               javax.swing.BorderFactory.createLineBorder(
+                                   javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                               javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jTotal.setOpaque(true);
         m_jTotal.setPreferredSize(new java.awt.Dimension(150, 25));
         m_jTotal.setRequestFocusEnabled(false);
@@ -280,10 +292,14 @@ public class JProductLineEdit extends javax.swing.JDialog {
         jPanel2.add(jLabel7);
         jLabel7.setBounds(10, 170, 90, 25);
 
-        m_jSubtotal.setBackground(javax.swing.UIManager.getDefaults().getColor("TextField.disabledBackground"));
+        m_jSubtotal.setBackground(
+            javax.swing.UIManager.getDefaults().getColor("TextField.disabledBackground"));
         m_jSubtotal.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jSubtotal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jSubtotal.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jSubtotal.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                  javax.swing.BorderFactory.createLineBorder(
+                                      javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                  javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jSubtotal.setOpaque(true);
         m_jSubtotal.setPreferredSize(new java.awt.Dimension(150, 25));
         m_jSubtotal.setRequestFocusEnabled(false);
@@ -295,7 +311,8 @@ public class JProductLineEdit extends javax.swing.JDialog {
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         m_jButtonCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(
+                                    getClass().getResource("/images/cancel.png"))); // NOI18N
         m_jButtonCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         m_jButtonCancel.setFocusPainted(false);
         m_jButtonCancel.setFocusable(false);
@@ -336,16 +353,18 @@ public class JProductLineEdit extends javax.swing.JDialog {
         getContentPane().add(jPanel3, java.awt.BorderLayout.EAST);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-580)/2, (screenSize.height-362)/2, 580, 362);
+        setBounds((screenSize.width - 580) / 2, (screenSize.height - 362) / 2, 580, 362);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed
+    private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed
 
         dispose();
 
     }//GEN-LAST:event_m_jButtonCancelActionPerformed
 
-    private void m_jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonOKActionPerformed
+    private void m_jButtonOKActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_m_jButtonOKActionPerformed
 
         returnLine = m_oLine;
 

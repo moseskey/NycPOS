@@ -15,7 +15,7 @@ public class KeyGetterBuilder implements IKeyGetter {
     public Object getKey(Object value) {
 
         return (value == null)
-            ? null
-            : ((IKeyed) value).getKey();
+               ? null
+               : ((IKeyed) value).getKey();
     }
 }

@@ -24,17 +24,17 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
     protected String m_sReturnMessage;
 
-    protected String m_dCardName =null;
+    protected String m_dCardName = null;
 
     public PaymentInfoMagcard(
-            String sHolderName,
-            String sCardNumber,
-            String sExpirationDate,
-            String track1,
-            String track2,
-            String track3,
-            String sTransactionID,
-            double dTotal) {
+        String sHolderName,
+        String sCardNumber,
+        String sExpirationDate,
+        String track1,
+        String track2,
+        String track3,
+        String sTransactionID,
+        double dTotal) {
 
         m_sHolderName = sHolderName;
         m_sCardNumber = sCardNumber;
@@ -52,25 +52,25 @@ public class PaymentInfoMagcard extends PaymentInfo {
     }
 
     public PaymentInfoMagcard(
-            String sHolderName,
-            String sCardNumber,
-            String sExpirationDate,
-            String sTransactionID,
-            double dTotal) {
+        String sHolderName,
+        String sCardNumber,
+        String sExpirationDate,
+        String sTransactionID,
+        double dTotal) {
         this(sHolderName, sCardNumber, sExpirationDate, null, null, null, sTransactionID, dTotal);
     }
 
     @Override
-    public PaymentInfo copyPayment(){
+    public PaymentInfo copyPayment() {
         PaymentInfoMagcard p = new PaymentInfoMagcard(
-                m_sHolderName,
-                m_sCardNumber,
-                m_sExpirationDate,
-                track1,
-                track2,
-                track3,
-                m_sTransactionID,
-                m_dTotal);
+            m_sHolderName,
+            m_sCardNumber,
+            m_sExpirationDate,
+            track1,
+            track2,
+            track3,
+            m_sTransactionID,
+            m_dTotal);
 
         p.m_sAuthorization = m_sAuthorization;
         p.m_sErrorMessage = m_sErrorMessage;
@@ -96,9 +96,9 @@ public class PaymentInfoMagcard extends PaymentInfo {
     }
 
     @Override
-  public String getCardName() {
-       return getCardType(m_sCardNumber);
-   }
+    public String getCardName() {
+        return getCardType(m_sCardNumber);
+    }
 
     public String getCardNumber() {
         return m_sCardNumber;
@@ -113,25 +113,25 @@ public class PaymentInfoMagcard extends PaymentInfo {
         return m_sTransactionID;
     }
 
-    public String getCardType(String sCardNumber){
+    public String getCardType(String sCardNumber) {
         String c = "UNKNOWN";
 
-       if (sCardNumber.startsWith("4")) {
-           c = "VISA";
-       } else if (sCardNumber.startsWith("6")) {
-           c = "DISC";
-       } else if (sCardNumber.startsWith("5")) {
-           c = "MAST";
-       } else if (sCardNumber.startsWith("34") || sCardNumber.startsWith("37")) {
-           c = "AMEX";
-       } else if (sCardNumber.startsWith("3528") || sCardNumber.startsWith("3589")) {
-           c = "JCB";
-       } else if (sCardNumber.startsWith("3")) {
-           c = "DINE";
-       }
-       m_dCardName = c;
-       return c;
-   }
+        if (sCardNumber.startsWith("4")) {
+            c = "VISA";
+        } else if (sCardNumber.startsWith("6")) {
+            c = "DISC";
+        } else if (sCardNumber.startsWith("5")) {
+            c = "MAST";
+        } else if (sCardNumber.startsWith("34") || sCardNumber.startsWith("37")) {
+            c = "AMEX";
+        } else if (sCardNumber.startsWith("3528") || sCardNumber.startsWith("3589")) {
+            c = "JCB";
+        } else if (sCardNumber.startsWith("3")) {
+            c = "DINE";
+        }
+        m_dCardName = c;
+        return c;
+    }
 
     /**
      * Get tracks of magnetic card.
@@ -145,20 +145,20 @@ public class PaymentInfoMagcard extends PaymentInfo {
      */
     public String getTrack1(boolean framingChar) {
         return (framingChar)
-            ? track1
-            : track1.substring(1, track1.length()-2);
+               ? track1
+               : track1.substring(1, track1.length() - 2);
     }
 
     public String getTrack2(boolean framingChar) {
         return (framingChar)
-            ? track2
-            : track2.substring(1, track2.length()-2);
+               ? track2
+               : track2.substring(1, track2.length() - 2);
     }
 
     public String getTrack3(boolean framingChar) {
         return (framingChar)
-            ? track3
-            : track3.substring(1, track3.length()-2);
+               ? track3
+               : track3.substring(1, track3.length() - 2);
     }
 
     public String getAuthorization() {
@@ -174,11 +174,11 @@ public class PaymentInfoMagcard extends PaymentInfo {
         m_sErrorMessage = sMessage + "\n" + moreInfo;
     }
 
-    public void setReturnMessage(String returnMessage){
+    public void setReturnMessage(String returnMessage) {
         m_sReturnMessage = returnMessage;
     }
 
-    public String getReturnMessage(){
+    public String getReturnMessage() {
         return m_sReturnMessage;
     }
 
@@ -195,7 +195,7 @@ public class PaymentInfoMagcard extends PaymentInfo {
 
 //            return m_sCardNumber.substring(0, m_sCardNumber.length() - 4).replaceAll(".", "*") +
 //                    m_sCardNumber.substring(m_sCardNumber.length() - 4);
-              return "**** **** **** " + m_sCardNumber.substring(m_sCardNumber.length() - 4);
+            return "**** **** **** " + m_sCardNumber.substring(m_sCardNumber.length() - 4);
         } else {
             return "**** **** **** ****";
         }
@@ -219,9 +219,9 @@ public class PaymentInfoMagcard extends PaymentInfo {
     }
 
     @Override
-    public double getChange(){
-       return 0.00;
-   }
+    public double getChange() {
+        return 0.00;
+    }
 
     @Override
     public double getTendered() {

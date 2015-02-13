@@ -50,7 +50,7 @@ public abstract class VectorerBuilder implements Vectorer {
 //            // m_aParams.set(paramIndex - 1, value.toString()); // quiza un uuencode o algo asi
 //        }
         public void setBytes(int paramIndex, byte[] value) throws BasicException {
-            ensurePlace(paramIndex -1);
+            ensurePlace(paramIndex - 1);
             //m_aParams.set(paramIndex - 1, value.toString()); // quiza un uuencode o algo asi
             m_aParams.set(paramIndex - 1, Arrays.toString(value)); // quiza un uuencode o algo asi
         }
@@ -61,7 +61,7 @@ public abstract class VectorerBuilder implements Vectorer {
 
         private void ensurePlace(int i) {
             m_aParams.ensureCapacity(i);
-            while (i >= m_aParams.size()){
+            while (i >= m_aParams.size()) {
                 m_aParams.add(null);
             }
         }

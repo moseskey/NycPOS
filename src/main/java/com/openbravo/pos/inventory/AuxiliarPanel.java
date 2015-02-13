@@ -26,23 +26,24 @@ public class AuxiliarPanel extends JPanelTable2 {
         filter.addActionListener(new ReloadActionListener());
 
         row = new Row(
-                new Field("ID", Datas.STRING, Formats.STRING),
-                new Field("PRODUCT1", Datas.STRING, Formats.STRING),
-                new Field("PRODUCT2", Datas.STRING, Formats.STRING),
-                new Field(AppLocal.getIntString("label.prodref"), Datas.STRING, Formats.STRING, true, true, true),
-                new Field(AppLocal.getIntString("label.prodbarcode"), Datas.STRING, Formats.STRING, false, true, true),
-                new Field(AppLocal.getIntString("label.prodname"), Datas.STRING, Formats.STRING, true, true, true)
+            new Field("ID", Datas.STRING, Formats.STRING),
+            new Field("PRODUCT1", Datas.STRING, Formats.STRING),
+            new Field("PRODUCT2", Datas.STRING, Formats.STRING),
+            new Field(AppLocal.getIntString("label.prodref"), Datas.STRING, Formats.STRING, true, true, true),
+            new Field(AppLocal.getIntString("label.prodbarcode"), Datas.STRING, Formats.STRING, false, true,
+                      true),
+            new Field(AppLocal.getIntString("label.prodname"), Datas.STRING, Formats.STRING, true, true, true)
         );
         Table table = new Table(
-                "PRODUCTS_COM",
-                new PrimaryKey("ID"),
-                new Column("PRODUCT"),
-                new Column("PRODUCT2"));
+            "PRODUCTS_COM",
+            new PrimaryKey("ID"),
+            new Column("PRODUCT"),
+            new Column("PRODUCT2"));
 
         lpr = row.getListProvider(app.getSession(),
-                "SELECT COM.ID, COM.PRODUCT, COM.PRODUCT2, P.REFERENCE, P.CODE, P.NAME " +
-                "FROM PRODUCTS_COM COM, PRODUCTS P " +
-                "WHERE COM.PRODUCT2 = P.ID AND COM.PRODUCT = ?", filter);
+                                  "SELECT COM.ID, COM.PRODUCT, COM.PRODUCT2, P.REFERENCE, P.CODE, P.NAME " +
+                                  "FROM PRODUCTS_COM COM, PRODUCTS P " +
+                                  "WHERE COM.PRODUCT2 = P.ID AND COM.PRODUCT = ?", filter);
         spr = row.getSaveProvider(app.getSession(), table);
 
         editor = new AuxiliarEditor(app, dirty);
@@ -58,7 +59,7 @@ public class AuxiliarPanel extends JPanelTable2 {
     }
 
     @Override
-    public Component getFilter(){
+    public Component getFilter() {
         return filter.getComponent();
     }
 

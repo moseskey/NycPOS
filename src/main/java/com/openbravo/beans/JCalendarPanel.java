@@ -90,7 +90,7 @@ public class JCalendarPanel extends javax.swing.JPanel {
         }
 
         // Borramos todos los dias
-        for(int i = 0; i < 42; i++) {
+        for (int i = 0; i < 42; i++) {
             JButtonDate jAux = m_ListDates[i];
             jAux.DateInf = null;
             jAux.setEnabled(false);
@@ -112,7 +112,7 @@ public class JCalendarPanel extends javax.swing.JPanel {
             int iCurrentMonth = m_CalendarHelper.get(Calendar.MONTH);
             m_CalendarHelper.set(Calendar.DAY_OF_MONTH, 1);
 
-            while(m_CalendarHelper.get(Calendar.MONTH) == iCurrentMonth) {
+            while (m_CalendarHelper.get(Calendar.MONTH) == iCurrentMonth) {
 
                 JButtonDate jAux = getLabelByDate(m_CalendarHelper.getTime());
                 jAux.DateInf = m_CalendarHelper.getTime();
@@ -153,7 +153,7 @@ public class JCalendarPanel extends javax.swing.JPanel {
             m_jBtnYearInc.DateInf = m_CalendarHelper.getTime();
             m_jBtnYearInc.setEnabled(isEnabled());
 
-            if(m_jCurrent != null) {
+            if (m_jCurrent != null) {
                 m_jCurrent.setForeground((Color)UIManager.getDefaults().get("TextPane.foreground"));
                 m_jCurrent.setBackground((Color)UIManager.getDefaults().get("TextPane.background"));
                 m_jCurrent.setBorder(null);
@@ -186,7 +186,7 @@ public class JCalendarPanel extends javax.swing.JPanel {
 
         public void actionPerformed(ActionEvent e) {
             JButtonDate oLbl = (JButtonDate)e.getSource();
-            if(oLbl.DateInf != null) {
+            if (oLbl.DateInf != null) {
                 setDate(oLbl.DateInf);
             }
         }
@@ -224,11 +224,15 @@ public class JCalendarPanel extends javax.swing.JPanel {
 
         ActionListener dateclick = new DateClick();
 
-        m_jBtnYearDec = new JButtonDate(new ImageIcon(getClass().getResource("/images/2leftarrow.png")), dateclick);
-        m_jBtnMonthDec = new JButtonDate(new ImageIcon(getClass().getResource("/images/1leftarrow.png")), dateclick);
+        m_jBtnYearDec = new JButtonDate(new ImageIcon(getClass().getResource("/images/2leftarrow.png")),
+                                        dateclick);
+        m_jBtnMonthDec = new JButtonDate(new ImageIcon(getClass().getResource("/images/1leftarrow.png")),
+                                         dateclick);
         m_jBtnToday = new JButtonDate(m_resources.getString("button.Today"), dateclick);
-        m_jBtnMonthInc = new JButtonDate(new ImageIcon(getClass().getResource("/images/1rightarrow.png")), dateclick);
-        m_jBtnYearInc = new JButtonDate(new ImageIcon(getClass().getResource("/images/2rightarrow.png")), dateclick);
+        m_jBtnMonthInc = new JButtonDate(new ImageIcon(getClass().getResource("/images/1rightarrow.png")),
+                                         dateclick);
+        m_jBtnYearInc = new JButtonDate(new ImageIcon(getClass().getResource("/images/2rightarrow.png")),
+                                        dateclick);
 
         m_jBtnToday.DateInf = new Date();
         m_jActions.add(m_jBtnYearDec);
@@ -238,7 +242,7 @@ public class JCalendarPanel extends javax.swing.JPanel {
         m_jActions.add(m_jBtnYearInc);
 
         m_ListDates = new JButtonDate[42];
-        for(int i = 0; i < 42; i++) {
+        for (int i = 0; i < 42; i++) {
             JButtonDate jAux = new JButtonDate(dateclick);
             // jAux.setFont(new Font("Dialog", 1, 24));
             jAux.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -252,7 +256,7 @@ public class JCalendarPanel extends javax.swing.JPanel {
         }
 
         m_jDays = new JLabel[7];
-        for(int iHead = 0; iHead < 7; iHead++) {
+        for (int iHead = 0; iHead < 7; iHead++) {
             JLabel JAuxHeader = new JLabel();
             //JAuxHeader.setFont(new Font("Dialog", 1, 24));
             JAuxHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

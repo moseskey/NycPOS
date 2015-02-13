@@ -41,7 +41,7 @@ public abstract class JTicketsBag extends JPanel {
                 return new JTicketsBagRestaurantMap(app, panelticket);
             default:
                 // "simple"
-           return new JTicketsBagSimple(app, panelticket);
+                return new JTicketsBagSimple(app, panelticket);
         }
     }
 }

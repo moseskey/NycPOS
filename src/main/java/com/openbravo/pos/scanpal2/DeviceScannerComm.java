@@ -51,7 +51,8 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
             m_CommPortPrinter.addEventListener(this);
             m_CommPortPrinter.notifyOnDataAvailable(true);
 
-            m_CommPortPrinter.setSerialPortParams(115200, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE); // Configuramos el puerto
+            m_CommPortPrinter.setSerialPortParams(115200, SerialPort.DATABITS_8, SerialPort.STOPBITS_1,
+                                                  SerialPort.PARITY_NONE); // Configuramos el puerto
 //        } catch (NoSuchPortException e) {
 //            e.printStackTrace();
 //        } catch (PortInUseException e) {
@@ -70,7 +71,7 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
             throw new DeviceScannerException(e);
         }
 
-        synchronized(this) {
+        synchronized (this) {
             // m_iStatus = STATUS_WAITING;
             m_aLines = new LinkedList<byte[]>();
             m_abuffer = new ByteArrayOutputStream();
@@ -86,7 +87,7 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
         } catch (IOException e) {
         }
 
-        synchronized(this) {
+        synchronized (this) {
             // m_iStatus = STATUS_WAITING;
             m_aLines = null;
             m_abuffer = null;
@@ -186,7 +187,7 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
             throw new DeviceScannerException("No Serial port opened");
         } else {
 
-            synchronized(this) {
+            synchronized (this) {
                 try {
                     m_out.write(aline);
                     m_out.write(0x0D);
@@ -249,10 +250,10 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
             isum += adata[i];
         }
 
-        byte high = (byte) ((isum & 0xFF00) >> 8);
-        if (high == 0x0D) high = 0x0E;
-        byte low = (byte) (isum & 0x00FF);
-        if (low == 0x0D) low = 0x0E;
+        byte high = (byte)((isum & 0xFF00) >> 8);
+        if (high == 0x0D) { high = 0x0E; }
+        byte low = (byte)(isum & 0x00FF);
+        if (low == 0x0D) { low = 0x0E; }
 
         byte[] result = new byte[2];
         result[0] = high;
@@ -276,8 +277,8 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
 
     public void serialEvent(SerialPortEvent e) {
 
-	// Determine type of event.
-	switch (e.getEventType()) {
+        // Determine type of event.
+        switch (e.getEventType()) {
             case SerialPortEvent.BI:
             case SerialPortEvent.OE:
             case SerialPortEvent.FE:
@@ -292,7 +293,7 @@ public class DeviceScannerComm implements DeviceScanner, SerialPortEventListener
                 try {
                     while (m_in.available() > 0) {
                         int b = m_in.read();
-                        synchronized(this) {
+                        synchronized (this) {
                             if (b == 0x0D) {
                                 m_aLines.add(m_abuffer.toByteArray());
                                 m_abuffer.reset();

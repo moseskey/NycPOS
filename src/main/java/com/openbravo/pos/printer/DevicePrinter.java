@@ -35,7 +35,7 @@ public interface DevicePrinter {
 
     // INTERFAZ DESCRIPCION
 
-        public String getPrinterName();
+    public String getPrinterName();
 
     public String getPrinterDescription();
 
@@ -45,7 +45,7 @@ public interface DevicePrinter {
 
     // INTERFAZ PRINTER
 
-        public void beginReceipt();
+    public void beginReceipt();
 
     public void printImage(BufferedImage image);
 
@@ -63,5 +63,5 @@ public interface DevicePrinter {
 
     // INTERFAZ VARIOUS
 
-        public void openDrawer();
+    public void openDrawer();
 }

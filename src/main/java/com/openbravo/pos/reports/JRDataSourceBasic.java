@@ -16,7 +16,8 @@ public class JRDataSourceBasic implements JRDataSource {
 
     private ReportFields m_fields = null;
 
-    public JRDataSourceBasic(BaseSentence sent, ReportFields fields, Object params) throws BasicException  {
+    public JRDataSourceBasic(BaseSentence sent, ReportFields fields,
+                             Object params) throws BasicException  {
 
         this.sent = sent;
         SRS = sent.openExec(params);

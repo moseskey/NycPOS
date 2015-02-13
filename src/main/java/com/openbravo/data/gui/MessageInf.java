@@ -8,7 +8,7 @@ public class MessageInf {
 
     // SIGNAL_WORD'S
 
-        public final static int SGN_DANGER = 0xFF000000; // Death or serious injury will occur
+    public final static int SGN_DANGER = 0xFF000000; // Death or serious injury will occur
 
     public final static int SGN_WARNING = 0xFE000000; // Death or serious injury may occur
 
@@ -16,18 +16,20 @@ public class MessageInf {
 
     public final static int SGN_NOTICE = 0xFC000000; // Damage to property may occur
 
-    public final static int SGN_IMPORTANT = 0xFA000000; // Operating or maintenance instructions or additional information
+    public final static int SGN_IMPORTANT =
+        0xFA000000; // Operating or maintenance instructions or additional information
 
     public final static int SGN_SUCCESS = 0xFB000000;
 
     // ERROR_CLASS'ES
 
-        public final static int CLS_GENERIC = 0x00000000;
+    public final static int CLS_GENERIC = 0x00000000;
 
     // ERROR_CODE'S
 
     // VARIABLES
-    private int m_iMsgNumber; // = SIGNAL_WORD (0xFF000000) | ERROR_CLASS (0x00FF0000) | ERROR_CODE (0x0000FFFF)
+    private int
+    m_iMsgNumber; // = SIGNAL_WORD (0xFF000000) | ERROR_CLASS (0x00FF0000) | ERROR_CODE (0x0000FFFF)
     private String m_sHazard;
     private String m_sConsequences;
     private String m_sAvoiding;
@@ -44,7 +46,7 @@ public class MessageInf {
         m_eCause = e;
     }
     public MessageInf(int iSignalWord, String sHazard) {
-        this (iSignalWord, sHazard, null);
+        this(iSignalWord, sHazard, null);
     }
 
     public MessageInf(Throwable e) {
@@ -69,7 +71,7 @@ public class MessageInf {
             return UIManager.getIcon("OptionPane.errorIcon");
         } else if (iSignalWord == SGN_WARNING) {
             return UIManager.getIcon("OptionPane.warningIcon");
-       } else if (iSignalWord == SGN_CAUTION) {
+        } else if (iSignalWord == SGN_CAUTION) {
             return UIManager.getIcon("OptionPane.warningIcon");
         } else if (iSignalWord == SGN_NOTICE) {
             return UIManager.getIcon("OptionPane.informationIcon");

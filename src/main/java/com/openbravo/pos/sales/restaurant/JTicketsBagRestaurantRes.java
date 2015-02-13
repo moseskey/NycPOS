@@ -69,7 +69,7 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         m_Dirty = new DirtyManager();
         m_timereservation.addPropertyChangeListener("Date", m_Dirty);
         txtCustomer.addPropertyChangeListener("Text", m_Dirty);
-        txtCustomer.addPropertyChangeListener("Text", new PropertyChangeListener(){
+        txtCustomer.addPropertyChangeListener("Text", new PropertyChangeListener() {
             @Override
             public void propertyChange(PropertyChangeEvent evt) {
                 customer = new CustomerInfo(null);
@@ -84,7 +84,8 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         writeValueEOF();
 
         ListProvider lpr = new ListProviderCreator(dlCustomers.getReservationsList(), new MyDateFilter());
-        SaveProvider spr = new SaveProvider(dlCustomers.getReservationsUpdate(), dlCustomers.getReservationsInsert(), dlCustomers.getReservationsDelete());
+        SaveProvider spr = new SaveProvider(dlCustomers.getReservationsUpdate(),
+                                            dlCustomers.getReservationsInsert(), dlCustomers.getReservationsDelete());
 
         m_bd = new BrowsableEditableData(lpr, spr, new CompareReservations(), this, m_Dirty);
 
@@ -118,7 +119,8 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         try {
             return m_bd.actionClosingForm(this);
         } catch (BasicException eD) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.CannotMove"), eD);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.CannotMove"),
+                                            eD);
             msg.show(this);
             return false;
         }
@@ -263,7 +265,8 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
             try {
                 m_bd.actionLoad();
             } catch (BasicException eD) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.noreload"), eD);
+                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.noreload"),
+                                                eD);
                 msg.show(this);
                 m_dcurrentday = doldcurrentday; // nos retractamos...
             }
@@ -356,7 +359,8 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         m_jToolbarContainer.setLayout(new java.awt.BorderLayout());
 
         m_jbtnTables.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jbtnTables.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tables.png"))); // NOI18N
+        m_jbtnTables.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/tables.png"))); // NOI18N
         m_jbtnTables.setText(AppLocal.getIntString("button.tables")); // NOI18N
         m_jbtnTables.setToolTipText("Go to Table Plan");
         m_jbtnTables.setFocusPainted(false);
@@ -370,7 +374,8 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         jPanel4.add(m_jbtnTables);
 
         m_jbtnReceive.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jbtnReceive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/receive.png"))); // NOI18N
+        m_jbtnReceive.setIcon(new javax.swing.ImageIcon(
+                                  getClass().getResource("/images/receive.png"))); // NOI18N
         m_jbtnReceive.setText(AppLocal.getIntString("button.receive")); // NOI18N
         m_jbtnReceive.setToolTipText("Receive pre-Booked Customer");
         m_jbtnReceive.setFocusPainted(false);
@@ -437,7 +442,8 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         jPanel1.add(txtCustomer);
         txtCustomer.setBounds(90, 160, 220, 25);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customer_add_sml.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(
+                             getClass().getResource("/images/customer_add_sml.png"))); // NOI18N
         jButton1.setToolTipText("Show Customers");
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
@@ -463,7 +469,8 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
         add(jPanel2, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jbtnReceiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtnReceiveActionPerformed
+    private void m_jbtnReceiveActionPerformed(java.awt.event.ActionEvent
+                                              evt) {//GEN-FIRST:event_m_jbtnReceiveActionPerformed
 
 
         // marco el cliente como recibido...
@@ -474,19 +481,22 @@ public class JTicketsBagRestaurantRes extends javax.swing.JPanel implements Edit
             m_bd.saveData();
             m_restaurantmap.viewTables(customer);
         } catch (BasicException eD) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, LocalRes.getIntString("message.nosaveticket"), eD);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                            LocalRes.getIntString("message.nosaveticket"), eD);
             msg.show(this);
         }
 
     }//GEN-LAST:event_m_jbtnReceiveActionPerformed
 
-    private void m_jbtnTablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtnTablesActionPerformed
+    private void m_jbtnTablesActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jbtnTablesActionPerformed
 
         m_restaurantmap.viewTables();
 
     }//GEN-LAST:event_m_jbtnTablesActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         JCustomerFinder finder = JCustomerFinder.getCustomerFinder(this, dlCustomers);
         finder.search(customer);

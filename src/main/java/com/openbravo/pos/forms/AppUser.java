@@ -126,8 +126,8 @@ public class AppUser {
     private static String mapNewClass(String classname) {
         String newclass = m_oldclasses.get(classname);
         return newclass == null
-                ? classname
-                : newclass;
+               ? classname
+               : newclass;
     }
 
     private static void initOldClasses() {
@@ -135,10 +135,14 @@ public class AppUser {
         m_oldclasses = new HashMap<>();
 
         // update permissions from 0.0.24 to 2.20
-        m_oldclasses.put("net.adrianromero.tpv.panelsales.JPanelTicketSales", "com.openbravo.pos.sales.JPanelTicketSales");
-        m_oldclasses.put("net.adrianromero.tpv.panelsales.JPanelTicketEdits", "com.openbravo.pos.sales.JPanelTicketEdits");
-        m_oldclasses.put("net.adrianromero.tpv.panels.JPanelPayments", "com.openbravo.pos.panels.JPanelPayments");
-        m_oldclasses.put("net.adrianromero.tpv.panels.JPanelCloseMoney", "com.openbravo.pos.panels.JPanelCloseMoney");
+        m_oldclasses.put("net.adrianromero.tpv.panelsales.JPanelTicketSales",
+                         "com.openbravo.pos.sales.JPanelTicketSales");
+        m_oldclasses.put("net.adrianromero.tpv.panelsales.JPanelTicketEdits",
+                         "com.openbravo.pos.sales.JPanelTicketEdits");
+        m_oldclasses.put("net.adrianromero.tpv.panels.JPanelPayments",
+                         "com.openbravo.pos.panels.JPanelPayments");
+        m_oldclasses.put("net.adrianromero.tpv.panels.JPanelCloseMoney",
+                         "com.openbravo.pos.panels.JPanelCloseMoney");
         m_oldclasses.put("net.adrianromero.tpv.reports.JReportClosedPos", "/reports/closedpos.bs");
 
 //        m_oldclasses.put("payment.cash", "");
@@ -153,38 +157,49 @@ public class AppUser {
 //        m_oldclasses.put("refund.magcard", "");
 
         m_oldclasses.put("Menu.StockManagement", "com.openbravo.pos.forms.MenuStockManagement");
-        m_oldclasses.put("net.adrianromero.tpv.inventory.ProductsPanel", "com.openbravo.pos.inventory.ProductsPanel");
-        m_oldclasses.put("net.adrianromero.tpv.inventory.ProductsWarehousePanel", "com.openbravo.pos.inventory.ProductsWarehousePanel");
-        m_oldclasses.put("net.adrianromero.tpv.inventory.CategoriesPanel", "com.openbravo.pos.inventory.CategoriesPanel");
+        m_oldclasses.put("net.adrianromero.tpv.inventory.ProductsPanel",
+                         "com.openbravo.pos.inventory.ProductsPanel");
+        m_oldclasses.put("net.adrianromero.tpv.inventory.ProductsWarehousePanel",
+                         "com.openbravo.pos.inventory.ProductsWarehousePanel");
+        m_oldclasses.put("net.adrianromero.tpv.inventory.CategoriesPanel",
+                         "com.openbravo.pos.inventory.CategoriesPanel");
         m_oldclasses.put("net.adrianromero.tpv.panels.JPanelTax", "com.openbravo.pos.inventory.TaxPanel");
-        m_oldclasses.put("net.adrianromero.tpv.inventory.StockDiaryPanel", "com.openbravo.pos.inventory.StockDiaryPanel");
-        m_oldclasses.put("net.adrianromero.tpv.inventory.StockManagement", "com.openbravo.pos.inventory.StockManagement");
+        m_oldclasses.put("net.adrianromero.tpv.inventory.StockDiaryPanel",
+                         "com.openbravo.pos.inventory.StockDiaryPanel");
+        m_oldclasses.put("net.adrianromero.tpv.inventory.StockManagement",
+                         "com.openbravo.pos.inventory.StockManagement");
         m_oldclasses.put("net.adrianromero.tpv.reports.JReportProducts", "/reports/products.bs");
         m_oldclasses.put("net.adrianromero.tpv.reports.JReportCatalog", "/reports/productscatalog.bs");
         m_oldclasses.put("net.adrianromero.tpv.reports.JReportInventory", "/reports/inventory.bs");
         m_oldclasses.put("net.adrianromero.tpv.reports.JReportInventory2", "/reports/inventoryb.bs");
-        m_oldclasses.put("net.adrianromero.tpv.reports.JReportInventoryBroken", "/reports/inventorybroken.bs");
+        m_oldclasses.put("net.adrianromero.tpv.reports.JReportInventoryBroken",
+                         "/reports/inventorybroken.bs");
         m_oldclasses.put("net.adrianromero.tpv.reports.JReportInventoryDiff", "/reports/inventorydiff.bs");
 
         m_oldclasses.put("Menu.SalesManagement", "com.openbravo.pos.forms.MenuSalesManagement");
         m_oldclasses.put("net.adrianromero.tpv.reports.JReportUserSales", "/reports/usersales.bs");
-        m_oldclasses.put("net.adrianromero.tpv.reports.JReportClosedProducts", "/reports/closedproducts.bs");
+        m_oldclasses.put("net.adrianromero.tpv.reports.JReportClosedProducts",
+                         "/reports/closedproducts.bs");
         m_oldclasses.put("net.adrianromero.tpv.reports.JReportTaxes", "/reports/taxes.bs");
         m_oldclasses.put("net.adrianromero.tpv.reports.JChartSales", "/reports/chartsales.bs");
 
         m_oldclasses.put("Menu.Maintenance", "com.openbravo.pos.forms.MenuMaintenance");
         m_oldclasses.put("net.adrianromero.tpv.admin.PeoplePanel", "com.openbravo.pos.admin.PeoplePanel");
         m_oldclasses.put("net.adrianromero.tpv.admin.RolesPanel", "com.openbravo.pos.admin.RolesPanel");
-        m_oldclasses.put("net.adrianromero.tpv.admin.ResourcesPanel", "com.openbravo.pos.admin.ResourcesPanel");
-        m_oldclasses.put("net.adrianromero.tpv.inventory.LocationsPanel", "com.openbravo.pos.inventory.LocationsPanel");
+        m_oldclasses.put("net.adrianromero.tpv.admin.ResourcesPanel",
+                         "com.openbravo.pos.admin.ResourcesPanel");
+        m_oldclasses.put("net.adrianromero.tpv.inventory.LocationsPanel",
+                         "com.openbravo.pos.inventory.LocationsPanel");
         m_oldclasses.put("net.adrianromero.tpv.mant.JPanelFloors", "com.openbravo.pos.mant.JPanelFloors");
         m_oldclasses.put("net.adrianromero.tpv.mant.JPanelPlaces", "com.openbravo.pos.mant.JPanelPlaces");
         m_oldclasses.put("com.openbravo.possync.ProductsSync", "com.openbravo.possync.ProductsSyncCreate");
         m_oldclasses.put("com.openbravo.possync.OrdersSync", "com.openbravo.possync.OrdersSyncCreate");
 
         m_oldclasses.put("Menu.ChangePassword", "Menu.ChangePassword");
-        m_oldclasses.put("net.adrianromero.tpv.panels.JPanelPrinter", "com.openbravo.pos.panels.JPanelPrinter");
-        m_oldclasses.put("net.adrianromero.tpv.config.JPanelConfiguration", "com.openbravo.pos.config.JPanelConfiguration");
+        m_oldclasses.put("net.adrianromero.tpv.panels.JPanelPrinter",
+                         "com.openbravo.pos.panels.JPanelPrinter");
+        m_oldclasses.put("net.adrianromero.tpv.config.JPanelConfiguration",
+                         "com.openbravo.pos.config.JPanelConfiguration");
 
 //        m_oldclasses.put("button.print", "");
 //        m_oldclasses.put("button.opendrawer", "");
@@ -216,8 +231,9 @@ public class AppUser {
         @Override
         public void endDocument() throws SAXException {}
         @Override
-        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException{
-            if ("class".equals(qName)){
+        public void startElement(String uri, String localName, String qName,
+                                 Attributes attributes) throws SAXException {
+            if ("class".equals(qName)) {
                 m_apermissions.add(mapNewClass(attributes.getValue("name")));
             }
         }

@@ -40,7 +40,7 @@ public class TaxCategoryInfo implements Serializable, IKeyed {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return m_sName;
     }
 }

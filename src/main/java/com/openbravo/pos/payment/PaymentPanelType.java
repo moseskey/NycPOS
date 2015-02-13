@@ -30,7 +30,7 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
     }
 
     @Override
-    public JComponent getComponent(){
+    public JComponent getComponent() {
         return this;
     }
 
@@ -59,24 +59,24 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
 
         if (m_dTotal > 0.0) {
             return new PaymentInfoMagcard(
-                    m_jHolderName.getText(),
-                    m_jCardNumber.getText(),
-                    m_jExpirationDate.getText(),
-                    null,
-                    null,
-                    null,
-                    m_sTransactionID,
-                    m_dTotal);
+                       m_jHolderName.getText(),
+                       m_jCardNumber.getText(),
+                       m_jExpirationDate.getText(),
+                       null,
+                       null,
+                       null,
+                       m_sTransactionID,
+                       m_dTotal);
         } else {
             return new PaymentInfoMagcardRefund(
-                    m_jHolderName.getText(),
-                    m_jCardNumber.getText(),
-                    m_jExpirationDate.getText(),
-                    null,
-                    null,
-                    null,
-                    m_sTransactionID,
-                    m_dTotal);
+                       m_jHolderName.getText(),
+                       m_jCardNumber.getText(),
+                       m_jExpirationDate.getText(),
+                       null,
+                       null,
+                       null,
+                       m_sTransactionID,
+                       m_dTotal);
         }
     }
 
@@ -92,7 +92,8 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
         return !(m_jHolderName.getText() == null || m_jHolderName.getText().equals(""));
     }
     private boolean isValidCardNumber() {
-        return (LuhnAlgorithm.checkCC(m_jCardNumber.getText()) && m_jCardNumber.getText().length()>13 && m_jCardNumber.getText().length()<20);
+        return (LuhnAlgorithm.checkCC(m_jCardNumber.getText()) && m_jCardNumber.getText().length() > 13 &&
+                m_jCardNumber.getText().length() < 20);
     }
     private boolean isValidExpirationDate() {
         return !(m_jExpirationDate.getText() == null || m_jExpirationDate.getText().length() != 4);
@@ -160,39 +161,53 @@ public class PaymentPanelType extends javax.swing.JPanel implements PaymentPanel
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(m_jExpirationDate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(m_jHolderName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                        .addComponent(m_jCardNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                      .addGap(20, 20, 20)
+                      .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              Short.MAX_VALUE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                          .addComponent(m_jExpirationDate, javax.swing.GroupLayout.PREFERRED_SIZE, 90,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                          .addComponent(m_jHolderName, javax.swing.GroupLayout.Alignment.LEADING,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                          .addComponent(m_jCardNumber, javax.swing.GroupLayout.Alignment.LEADING,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                      .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jHolderName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jCardNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(m_jExpirationDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                      .addGap(20, 20, 20)
+                      .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jHolderName, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGap(5, 5, 5)
+                      .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jCardNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGap(5, 5, 5)
+                      .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                          .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addComponent(m_jExpirationDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         add(jPanel4, java.awt.BorderLayout.CENTER);

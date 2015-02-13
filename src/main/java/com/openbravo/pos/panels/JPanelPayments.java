@@ -28,8 +28,8 @@ public class JPanelPayments extends JPanelTable {
     @Override
     public SaveProvider getSaveProvider() {
         return  new SaveProvider(null,
-                 m_dlSales.getPaymentMovementInsert(),
-                 m_dlSales.getPaymentMovementDelete());
+                                 m_dlSales.getPaymentMovementInsert(),
+                                 m_dlSales.getPaymentMovementDelete());
     }
 
     @Override

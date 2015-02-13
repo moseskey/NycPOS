@@ -26,16 +26,16 @@ public class JPaymentCheque extends javax.swing.JPanel implements JPaymentInterf
         m_jTendered.addPropertyChangeListener("Edition", new RecalculateState());
         m_jTendered.addEditorKeys(m_jKeys);
 
- /* added JDL 11.05.13
-        AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")), AppLocal.APP_ID + ".properties"));
-        m_config.load();
-        priceWith00 =("true".equals(m_config.getProperty("till.pricewith00")));
-        if (priceWith00) {
-            // use '00' instead of '.'
-            m_jKeys.dotIs00(true);
-        }
-        m_config=null;
-*/
+        /* added JDL 11.05.13
+               AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")), AppLocal.APP_ID + ".properties"));
+               m_config.load();
+               priceWith00 =("true".equals(m_config.getProperty("till.pricewith00")));
+               if (priceWith00) {
+                   // use '00' instead of '.'
+                   m_jKeys.dotIs00(true);
+               }
+               m_config=null;
+        */
 
 
     }
@@ -136,7 +136,10 @@ public class JPaymentCheque extends javax.swing.JPanel implements JPaymentInterf
         m_jMoneyEuros.setBackground(new java.awt.Color(204, 255, 51));
         m_jMoneyEuros.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         m_jMoneyEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jMoneyEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jMoneyEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                    javax.swing.BorderFactory.createLineBorder(
+                                        javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                    javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jMoneyEuros.setOpaque(true);
         m_jMoneyEuros.setPreferredSize(new java.awt.Dimension(180, 30));
         jPanel4.add(m_jMoneyEuros);

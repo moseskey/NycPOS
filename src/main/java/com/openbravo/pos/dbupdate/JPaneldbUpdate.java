@@ -33,27 +33,27 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
         initComponents();
         config = new AppConfig(props.getConfigFile());
-        m_props=props;
+        m_props = props;
 
- /*       jMessageBox.setText("This updater is for version 3.02 of Unicenta oPOS. \n\n"
-                + "This update will add the following to the database. \n\n"
-                + "Variable Price flag, column to Products table \n"
-                + "Mandatory Attribute flag, column to Products table. \n"
-                + "TextTip column will be added to the Products table  \n\n"
-                + "New Resource file creation for Printer.TicketClose. \n\n"
-                + "The table required for CSV import reports and the \n"
-                + "table required for the marine option will also be created");
+        /*       jMessageBox.setText("This updater is for version 3.02 of Unicenta oPOS. \n\n"
+                       + "This update will add the following to the database. \n\n"
+                       + "Variable Price flag, column to Products table \n"
+                       + "Mandatory Attribute flag, column to Products table. \n"
+                       + "TextTip column will be added to the Products table  \n\n"
+                       + "New Resource file creation for Printer.TicketClose. \n\n"
+                       + "The table required for CSV import reports and the \n"
+                       + "table required for the marine option will also be created");
 
-   */
-         jMessageBox.setText("This updater is no longer required.\n"
-                 + "All John L updates, are now handled in the main program. \n");
+          */
+        jMessageBox.setText("This updater is no longer required.\n"
+                            + "All John L updates, are now handled in the main program. \n");
 
         jbtnUpdate.setVisible(false);
 
 
     }
 
-    public void performUpdate(String sScript){
+    public void performUpdate(String sScript) {
         switch (sdbmanager) {
             case "HSQL Database Engine":
                 eScript = "/sql/HSQLDB" + sScript;
@@ -75,24 +75,26 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
                 break;
         }
 
-                // update database using updater scripts
-                    try {
-                        BatchSentence bsentence = new BatchSentenceResource(session,  eScript);
+        // update database using updater scripts
+        try {
+            BatchSentence bsentence = new BatchSentenceResource(session,  eScript);
 
-                        java.util.List l = bsentence.list();
-                        if (l.size() > 0) {
-                            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("database.UpdaterWarning"), l.toArray(new Throwable[l.size()])));
-                        }else{
-                                JOptionPane.showMessageDialog(this,"Update complete.");
-                        }
+            java.util.List l = bsentence.list();
+            if (l.size() > 0) {
+                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                AppLocal.getIntString("database.UpdaterWarning"), l.toArray(new Throwable[l.size()])));
+            } else {
+                JOptionPane.showMessageDialog(this, "Update complete.");
+            }
 
-                   } catch (BasicException e) {
-                        JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER, AppLocal.getIntString("database.ScriptNotFound"), e));
-                        session.close();
-                    } finally{
+        } catch (BasicException e) {
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER,
+                                                            AppLocal.getIntString("database.ScriptNotFound"), e));
+            session.close();
+        } finally {
 
-                    }
-   }
+        }
+    }
 
     @Override
     public JComponent getComponent() {
@@ -106,33 +108,34 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
 
     @Override
     public void activate() throws BasicException {
-       // connect to the database
-         String db_user =(m_props.getProperty("db.user"));
-         String db_url = (m_props.getProperty("db.URL"));
-         String db_password = (m_props.getProperty("db.password"));
+        // connect to the database
+        String db_user = (m_props.getProperty("db.user"));
+        String db_url = (m_props.getProperty("db.URL"));
+        String db_password = (m_props.getProperty("db.password"));
 
-         if (db_user != null && db_password != null && db_password.startsWith("crypt:")) {
-                // the password is encrypted
-                AltEncrypter cypher = new AltEncrypter("cypherkey" + db_user);
-                db_password = cypher.decrypt(db_password.substring(6));
-         }
+        if (db_user != null && db_password != null && db_password.startsWith("crypt:")) {
+            // the password is encrypted
+            AltEncrypter cypher = new AltEncrypter("cypherkey" + db_user);
+            db_password = cypher.decrypt(db_password.substring(6));
+        }
 
-         try{
+        try {
             session = AppViewConnection.createSession(m_props);
-            con = DriverManager.getConnection(db_url,db_user,db_password);
+            con = DriverManager.getConnection(db_url, db_user, db_password);
             sdbmanager = con.getMetaData().getDatabaseProductName();
-            } catch (BasicException | SQLException e) {
+        } catch (BasicException | SQLException e) {
 // put some error trap here
 
-         JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER, AppLocal.getIntString("database.UnableToConnect"), e));
-         System.exit(0);
-       }
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER,
+                                                            AppLocal.getIntString("database.UnableToConnect"), e));
+            System.exit(0);
+        }
 
     }
 
     @Override
     public boolean deactivate() {
-    return(true);
+        return (true);
     }
 
 
@@ -183,12 +186,14 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 10, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGap(0, 10, Short.MAX_VALUE)
+                      .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING,
+                          javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -196,34 +201,42 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(207, 207, 207)
-                        .addComponent(jbtnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addGap(207, 207, 207)
+                                          .addComponent(jbtnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 122,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                          .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jbtnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnUpdateActionPerformed
+    private void jbtnUpdateActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jbtnUpdateActionPerformed
         performUpdate("-updater.sql");
 
     }//GEN-LAST:event_jbtnUpdateActionPerformed
 
-    private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
+    private void jbtnExitActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jbtnExitActionPerformed
         deactivate();
         System.exit(0);
     }//GEN-LAST:event_jbtnExitActionPerformed

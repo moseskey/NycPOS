@@ -76,7 +76,7 @@ public class DataWriteUtils {
                 case '\\':
                     sb.append("\\\\");
                     break;
-                 case '\'':
+                case '\'':
                     sb.append("\\'");
                     break;
                 case '\n':
@@ -92,4 +92,4 @@ public class DataWriteUtils {
         }
         return sb.toString();
     }
- }
+}

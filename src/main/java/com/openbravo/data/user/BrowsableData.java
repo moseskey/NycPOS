@@ -99,15 +99,15 @@ public class BrowsableData implements ListModel {
     public void refreshData() throws BasicException {
 
         putNewData(m_dataprov == null
-                ? null
-                : m_dataprov.refreshData());
+                   ? null
+                   : m_dataprov.refreshData());
     }
 
     public void loadData() throws BasicException {
 
         putNewData(m_dataprov == null
-                ? null
-                : m_dataprov.loadData());
+                   ? null
+                   : m_dataprov.loadData());
     }
 
     public void unloadData() throws BasicException {
@@ -235,11 +235,11 @@ public class BrowsableData implements ListModel {
             if (m_comparer == null) {
                 // Anadimos el elemento indicado al final...
                 newindex = m_aData.size();
-             } else {
-                 // lo insertamos en el lugar adecuado
+            } else {
+                // lo insertamos en el lugar adecuado
                 newindex = insertionPoint(value);
-             }
-             m_aData.add(newindex, value);
+            }
+            m_aData.add(newindex, value);
 
             // Disparamos la inserccion
             fireDataIntervalAdded(newindex, newindex);
@@ -270,20 +270,20 @@ public class BrowsableData implements ListModel {
 
     private final int insertionPoint(Object value) {
 
-	int low = 0;
-	int high = m_aData.size() - 1;
+        int low = 0;
+        int high = m_aData.size() - 1;
 
-	while (low <= high) {
-	    int mid = (low + high) >> 1;
-	    Object midVal = m_aData.get(mid);
-	    int cmp = m_comparer.compare(midVal, value);
+        while (low <= high) {
+            int mid = (low + high) >> 1;
+            Object midVal = m_aData.get(mid);
+            int cmp = m_comparer.compare(midVal, value);
 
-	    if (cmp <= 0) {
-		low = mid + 1;
+            if (cmp <= 0) {
+                low = mid + 1;
             } else {
-		high = mid - 1;
+                high = mid - 1;
             }
-	}
-	return low;
+        }
+        return low;
     }
 }

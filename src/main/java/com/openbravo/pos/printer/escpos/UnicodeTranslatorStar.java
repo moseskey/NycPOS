@@ -16,59 +16,85 @@ public class UnicodeTranslatorStar extends UnicodeTranslator {
             return (byte) sChar;
         } else {
             switch (sChar) {
-                case '\u00c1': return 0x41; // A acute
-                case '\u00c9': return 0x45; // E acute
-                case '\u00cd': return 0x49; // I acute
-                case '\u00d3': return 0x4F; // O acute
-                case '\u00da': return 0x55; // U acute
+                case '\u00c1':
+                    return 0x41; // A acute
+                case '\u00c9':
+                    return 0x45; // E acute
+                case '\u00cd':
+                    return 0x49; // I acute
+                case '\u00d3':
+                    return 0x4F; // O acute
+                case '\u00da':
+                    return 0x55; // U acute
 
 
-                case '\u00C7': return -0x80; // 0x80 : C cedilla
-                case '\u00FC': return -0x7F; // 0x81 : u dieresis
-                case '\u00E9': return -0x7E; // 0x82 : e acute
+                case '\u00C7':
+                    return -0x80; // 0x80 : C cedilla
+                case '\u00FC':
+                    return -0x7F; // 0x81 : u dieresis
+                case '\u00E9':
+                    return -0x7E; // 0x82 : e acute
 //                case '\u0000': return -0x7D; // 0x83 :
-                case '\u00E4': return -0x7C; // 0x84 : a dieresis
+                case '\u00E4':
+                    return -0x7C; // 0x84 : a dieresis
 //                case '\u0000': return -0x7B; // 0x85 :
-                case '\u00E5': return -0x7A; // 0x86 : a circle
-                case '\u00E7': return -0x79; // 0x87 : c cedilla
+                case '\u00E5':
+                    return -0x7A; // 0x86 : a circle
+                case '\u00E7':
+                    return -0x79; // 0x87 : c cedilla
 //                case '\u0000': return -0x78; // 0x88 :
 //                case '\u0000': return -0x77; // 0x89 :
 //                case '\u0000': return -0x76; // 0x8A :
 //                case '\u0000': return -0x75; // 0x8B :
 //                case '\u0000': return -0x74; // 0x8C :dieresis
 //                case '\u0000': return -0x73; // 0x8D :
-                case '\u00C4': return -0x72; // 0x8E : A dieresis
-                case '\u00C5': return -0x71; // 0x8F : A circle
+                case '\u00C4':
+                    return -0x72; // 0x8E : A dieresis
+                case '\u00C5':
+                    return -0x71; // 0x8F : A circle
 //                case '\u0000': return -0x70; // 0x90 :
 //                case '\u0000': return -0x6F; // 0x91 :
 //                case '\u0000': return -0x6E; // 0x92 :
 //                case '\u0000': return -0x6D; // 0x93 :
-                case '\u00F6': return -0x6C; // 0x94 : o dieresis
+                case '\u00F6':
+                    return -0x6C; // 0x94 : o dieresis
 //                case '\u0000': return -0x6B; // 0x95 :
 //                case '\u0000': return -0x6A; // 0x96 :
 //                case '\u0000': return -0x69; // 0x97 :
 //                case '\u0000': return -0x68; // 0x98 :
-                case '\u00D6': return -0x67; // 0x99 : O dieresis
-                case '\u00DC': return -0x66; // 0x9A : U dieresesis
+                case '\u00D6':
+                    return -0x67; // 0x99 : O dieresis
+                case '\u00DC':
+                    return -0x66; // 0x9A : U dieresesis
 //                case '\u0000': return -0x65; // 0x9B :
-                case '\u00A3': return -0x64; // 0x9C : Pound currency
-                case '\u00A5': return -0x63; // 0x9D : Yen currency
+                case '\u00A3':
+                    return -0x64; // 0x9C : Pound currency
+                case '\u00A5':
+                    return -0x63; // 0x9D : Yen currency
 //                case '\u0000': return -0x62; // 0x9E :
 //                case '\u0000': return -0x61; // 0x9F :
-                case '\u00E1': return -0x60; // 0xA0 : a acute
-                case '\u00ED': return -0x5F; // 0xA1 : i acute
-                case '\u00F3': return -0x5E; // 0xA2 : o acute
-                case '\u00FA': return -0x5D; // 0xA3 : u acute
-                case '\u00F1': return -0x5C; // 0xA4 : n tilde
-                case '\u00D1': return -0x5B; // 0xA5 : N tilde
+                case '\u00E1':
+                    return -0x60; // 0xA0 : a acute
+                case '\u00ED':
+                    return -0x5F; // 0xA1 : i acute
+                case '\u00F3':
+                    return -0x5E; // 0xA2 : o acute
+                case '\u00FA':
+                    return -0x5D; // 0xA3 : u acute
+                case '\u00F1':
+                    return -0x5C; // 0xA4 : n tilde
+                case '\u00D1':
+                    return -0x5B; // 0xA5 : N tilde
 //                case '\u0000': return -0x5A; // 0xA6 :
 //                case '\u0000': return -0x59; // 0xA7 :
-                case '\u00BF': return -0x58; // 0xA8 : open ?
+                case '\u00BF':
+                    return -0x58; // 0xA8 : open ?
 //                case '\u0000': return -0x57; // 0xA9 :
 //                case '\u0000': return -0x56; // 0xAA :
 //                case '\u0000': return -0x55; // 0xAB :
 //                case '\u0000': return -0x54; // 0xAC :
-                case '\u00A1': return -0x53; // 0xAD : open !
+                case '\u00A1':
+                    return -0x53; // 0xAD : open !
 //                case '\u0000': return -0x52; // 0xAE :
 //                case '\u0000': return -0x51; // 0xAF :
 //                case '\u0000': return -0x50; // 0xB0 :
@@ -133,7 +159,8 @@ public class UnicodeTranslatorStar extends UnicodeTranslator {
 //                case '\u0000': return -0x15; // 0xEB :
 //                case '\u0000': return -0x14; // 0xEC :
 //                case '\u0000': return -0x13; // 0xED :
-                case '\u20AC': return -0x12; // 0xEE : euro sign
+                case '\u20AC':
+                    return -0x12; // 0xEE : euro sign
 //                case '\u0000': return -0x11; // 0xEF :
 //                case '\u0000': return -0x10; // 0xF0 :
 //                case '\u0000': return -0x0F; // 0xF1 :
@@ -151,7 +178,8 @@ public class UnicodeTranslatorStar extends UnicodeTranslator {
 //                case '\u0000': return -0x03; // 0xFD :
 //                case '\u0000': return -0x02; // 0xFE :
 //                case '\u0000': return -0x01; // 0xFF :
-                default: return 0x3F; // ? Not valid character.
+                default:
+                    return 0x3F; // ? Not valid character.
 
             }
         }

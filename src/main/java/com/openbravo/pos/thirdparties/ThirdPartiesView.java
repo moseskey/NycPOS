@@ -330,19 +330,22 @@ public class ThirdPartiesView extends javax.swing.JPanel implements EditorRecord
 
         jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel14.setText("Contact");
-        jLabel14.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        jLabel14.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0,
+                                                                                                      0)));
         add(jLabel14);
         jLabel14.setBounds(20, 160, 520, 16);
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel15.setText("Payment");
-        jLabel15.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        jLabel15.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0,
+                                                                                                      0)));
         add(jLabel15);
         jLabel15.setBounds(20, 310, 520, 16);
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel16.setText("Notes");
-        jLabel16.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        jLabel16.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0,
+                                                                                                      0)));
         add(jLabel16);
         jLabel16.setBounds(20, 380, 520, 16);
     }// </editor-fold>//GEN-END:initComponents

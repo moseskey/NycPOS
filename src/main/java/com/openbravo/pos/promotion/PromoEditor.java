@@ -77,7 +77,7 @@ public class PromoEditor extends JPanel implements EditorRecord {
         m_jType.addActionListener(new java.awt.event.ActionListener() {
 
             @Override
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 onSelectPromoType(evt);
             }
         });
@@ -114,34 +114,34 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
 
         m_sID = null;
-/*        m_jName.setText(null);
-        m_jTypeModel.setSelectedKey(null);
-        m_jStartDate.setText(null);
-        m_jEndDate.setText(null);
-        m_jStartHour.setText(null);
-        m_jEndHour.setText(null);
-        m_jArticle.setText(null);
-        m_jCategory.setText(null);
-        m_jAmount.setText(null);
-        m_jMin.setText(null);
-        m_jMax.setText(null);
-        m_jStepAmount.setText(null);
-        m_jStepQty.setText(null);
-        m_jBonusArticle.setText(null);
+        /*        m_jName.setText(null);
+                m_jTypeModel.setSelectedKey(null);
+                m_jStartDate.setText(null);
+                m_jEndDate.setText(null);
+                m_jStartHour.setText(null);
+                m_jEndHour.setText(null);
+                m_jArticle.setText(null);
+                m_jCategory.setText(null);
+                m_jAmount.setText(null);
+                m_jMin.setText(null);
+                m_jMax.setText(null);
+                m_jStepAmount.setText(null);
+                m_jStepQty.setText(null);
+                m_jBonusArticle.setText(null);
 
-        m_jName.setEnabled(false);
-        m_jStartDate.setEnabled(false);
-        m_jEndDate.setEnabled(false);
-        //m_jStartHour.setEnabled(false);
-        //m_jEndHour.setEnabled(false);
-        //m_jArticle.setEnabled(false);
-        m_jCategory.setEnabled(false);
-        m_jAmount.setEnabled(false);
-        m_jMin.setEnabled(false);
-        m_jMax.setEnabled(false);
-        m_jStepAmount.setEnabled(false);
-        //m_jStepQty.setEnabled(false);
-        m_jBonusArticle.setEnabled(false);*/
+                m_jName.setEnabled(false);
+                m_jStartDate.setEnabled(false);
+                m_jEndDate.setEnabled(false);
+                //m_jStartHour.setEnabled(false);
+                //m_jEndHour.setEnabled(false);
+                //m_jArticle.setEnabled(false);
+                m_jCategory.setEnabled(false);
+                m_jAmount.setEnabled(false);
+                m_jMin.setEnabled(false);
+                m_jMax.setEnabled(false);
+                m_jStepAmount.setEnabled(false);
+                //m_jStepQty.setEnabled(false);
+                m_jBonusArticle.setEnabled(false);*/
 
     }
 
@@ -166,22 +166,22 @@ public class PromoEditor extends JPanel implements EditorRecord {
         m_jProdName.setText(null);
         m_jBonusProd.setText(null);
 
-/*        m_jName.setEnabled(false);
-        m_jStartDate.setEnabled(false);
-        m_jEndDate.setEnabled(false);
-        m_jStartHour.setEnabled(false);
-        m_jEndHour.setEnabled(false);
-        m_jArticle.setEnabled(false);
-        m_jCategory.setEnabled(false);
-        m_jAmount.setEnabled(false);
-        m_jMin.setEnabled(false);
-        m_jMax.setEnabled(false);
-        m_jStepAmount.setEnabled(false);
-        m_jStepQty.setEnabled(false);
-        m_jBonusArticle.setEnabled(false);
-        m_jType.setEnabled(true);
-        *
-        */
+        /*        m_jName.setEnabled(false);
+                m_jStartDate.setEnabled(false);
+                m_jEndDate.setEnabled(false);
+                m_jStartHour.setEnabled(false);
+                m_jEndHour.setEnabled(false);
+                m_jArticle.setEnabled(false);
+                m_jCategory.setEnabled(false);
+                m_jAmount.setEnabled(false);
+                m_jMin.setEnabled(false);
+                m_jMax.setEnabled(false);
+                m_jStepAmount.setEnabled(false);
+                m_jStepQty.setEnabled(false);
+                m_jBonusArticle.setEnabled(false);
+                m_jType.setEnabled(true);
+                *
+                */
 
     }
 
@@ -223,20 +223,20 @@ public class PromoEditor extends JPanel implements EditorRecord {
         }
 
 
-/*        m_jName.setEnabled(true);
-        m_jStartDate.setEnabled(false);
-        m_jEndDate.setEnabled(false);
-        //m_jStartHour.setEnabled(false);
-        //m_jEndHour.setEnabled(false);
-        //m_jArticle.setEnabled(false);
-        m_jCategory.setEnabled(false);
-        m_jAmount.setEnabled(false);
-        m_jMin.setEnabled(false);
-        m_jMax.setEnabled(false);
-        m_jStepAmount.setEnabled(false);
-        //m_jStepQty.setEnabled(false);
-        m_jBonusArticle.setEnabled(false);
-        m_jType.setEnabled(true);*/
+        /*        m_jName.setEnabled(true);
+                m_jStartDate.setEnabled(false);
+                m_jEndDate.setEnabled(false);
+                //m_jStartHour.setEnabled(false);
+                //m_jEndHour.setEnabled(false);
+                //m_jArticle.setEnabled(false);
+                m_jCategory.setEnabled(false);
+                m_jAmount.setEnabled(false);
+                m_jMin.setEnabled(false);
+                m_jMax.setEnabled(false);
+                m_jStepAmount.setEnabled(false);
+                //m_jStepQty.setEnabled(false);
+                m_jBonusArticle.setEnabled(false);
+                m_jType.setEnabled(true);*/
 
     }
 
@@ -277,19 +277,19 @@ public class PromoEditor extends JPanel implements EditorRecord {
             Logger.getLogger(PromoEditor.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-/*        m_jName.setEnabled(true);
-        m_jStartDate.setEnabled(false);
-        m_jEndDate.setEnabled(false);
-        //m_jStartHour.setEnabled(false);
-        //m_jEndHour.setEnabled(false);
-        m_jMax.setEnabled(false);
-        m_jMin.setEnabled(false);
-        m_jName.setEnabled(false);
-        m_jStartDate.setEnabled(false);
-        //m_jStartHour.setEnabled(false);
-        m_jStepAmount.setEnabled(false);
-        //m_jStepQty.setEnabled(false);
-        m_jType.setEnabled(true);*/
+        /*        m_jName.setEnabled(true);
+                m_jStartDate.setEnabled(false);
+                m_jEndDate.setEnabled(false);
+                //m_jStartHour.setEnabled(false);
+                //m_jEndHour.setEnabled(false);
+                m_jMax.setEnabled(false);
+                m_jMin.setEnabled(false);
+                m_jName.setEnabled(false);
+                m_jStartDate.setEnabled(false);
+                //m_jStartHour.setEnabled(false);
+                m_jStepAmount.setEnabled(false);
+                //m_jStepQty.setEnabled(false);
+                m_jType.setEnabled(true);*/
 
         Integer _type = new Integer(promo[8].toString());
 
@@ -442,11 +442,13 @@ public class PromoEditor extends JPanel implements EditorRecord {
             Integer _type = new Integer(m_jTypeModel.getSelectedKey().toString());
 
             if (m_jName.getText().equals("")) {
-                JOptionPane.showConfirmDialog(this, "Discount Name is mandatory", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showConfirmDialog(this, "Discount Name is mandatory",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                 return null;
             }
             if ((m_jStartDate.getText().equals("")) || (m_jEndDate.getText().equals(""))) {
-                JOptionPane.showConfirmDialog(this, "A period is Mandatory", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showConfirmDialog(this, "A period is Mandatory", AppLocal.getIntString("Invalid Entry"),
+                                              JOptionPane.WARNING_MESSAGE);
                 return null;
             }
 
@@ -455,17 +457,20 @@ public class PromoEditor extends JPanel implements EditorRecord {
                 Integer _end = new Integer(m_jEndDate.getText());
 
                 if (_start > _end) {
-                    JOptionPane.showConfirmDialog(this, "End Date must greater than Start date", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showConfirmDialog(this, "End Date must greater than Start date",
+                                                  AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                     return null;
                 }
             }
 
             if ((m_jArticle.getText().equals("")) && (m_jCategory.getText().equals(""))) {
-                JOptionPane.showConfirmDialog(this, "Please fill in a Product or a Category ", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showConfirmDialog(this, "Please fill in a Product or a Category ",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                 return null;
             }
             if ((!m_jArticle.getText().equals("")) && (!m_jCategory.getText().equals(""))) {
-                JOptionPane.showConfirmDialog(this, "You have to fill in a Product or a Category, but not both", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showConfirmDialog(this, "You have to fill in a Product or a Category, but not both",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                 return null;
             }
 
@@ -475,7 +480,8 @@ public class PromoEditor extends JPanel implements EditorRecord {
                 case 1:
 
                     if (m_jAmount.getText().equals("")) {
-                        JOptionPane.showConfirmDialog(this, "Please add amount of Discount", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showConfirmDialog(this, "Please add amount of Discount",
+                                                      AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                         return null;
                     }
                     break;
@@ -483,7 +489,8 @@ public class PromoEditor extends JPanel implements EditorRecord {
                 // Discount in money
                 case 2:
                     if (m_jAmount.getText().equals("")) {
-                        JOptionPane.showConfirmDialog(this, "Please add amount of Discount", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showConfirmDialog(this, "Please add amount of Discount",
+                                                      AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                         return null;
                     }
 
@@ -492,11 +499,13 @@ public class PromoEditor extends JPanel implements EditorRecord {
                 // Gift / Coupon
                 case 3:
                     if (m_jBonusArticle.getText().equals("")) {
-                        JOptionPane.showConfirmDialog(this, "Please add the Product for the Gift", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showConfirmDialog(this, "Please add the Product for the Gift",
+                                                      AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                         return null;
                     }
                     if (m_jStepQty.getText().equals("")) {
-                        JOptionPane.showConfirmDialog(this, "Please add the Quantity step", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showConfirmDialog(this, "Please add the Quantity step",
+                                                      AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                         return null;
                     }
 
@@ -505,7 +514,8 @@ public class PromoEditor extends JPanel implements EditorRecord {
                 //Get X% of discount on the cheapest product of a category
                 case 4:
                     if ((m_jCategory.getText().equals(""))) {
-                        JOptionPane.showConfirmDialog(this, "Please add a category", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showConfirmDialog(this, "Please add a category", AppLocal.getIntString("Invalid Entry"),
+                                                      JOptionPane.WARNING_MESSAGE);
                         return null;
                     }
 
@@ -514,15 +524,18 @@ public class PromoEditor extends JPanel implements EditorRecord {
                 //Mix'n'Match (Buy 2 get 3)
                 case 5:
                     if (m_jMin.getText().equals("")) {
-                        JOptionPane.showConfirmDialog(this, "Please complete Minimum Threshold", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showConfirmDialog(this, "Please complete Minimum Threshold",
+                                                      AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                         return null;
                     }
                     if (m_jMax.getText().equals("")) {
-                        JOptionPane.showConfirmDialog(this, "Please complete Minimum Threshold", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showConfirmDialog(this, "Please complete Minimum Threshold",
+                                                      AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                         return null;
                     }
                     if (m_jStepQty.getText().equals("")) {
-                        JOptionPane.showConfirmDialog(this, "Please add a Quantity step", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showConfirmDialog(this, "Please add a Quantity step",
+                                                      AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                         return null;
                     }
                     break;
@@ -531,7 +544,8 @@ public class PromoEditor extends JPanel implements EditorRecord {
                 case 6:
 
                     if (m_jAmount.getText().equals("")) {
-                        JOptionPane.showConfirmDialog(this, "Please add the amount of Discount", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showConfirmDialog(this, "Please add the amount of Discount",
+                                                      AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                         return null;
                     }
                     break;
@@ -539,7 +553,8 @@ public class PromoEditor extends JPanel implements EditorRecord {
 
             }
         } else {
-            JOptionPane.showConfirmDialog(this, "You Must select a Discount Type", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showConfirmDialog(this, "You Must select a Discount Type",
+                                          AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
             return null;
         }
 
@@ -576,295 +591,308 @@ public class PromoEditor extends JPanel implements EditorRecord {
     }
 
 
-private void onSelectPromoType(java.awt.event.ActionEvent evt) {
+    private void onSelectPromoType(java.awt.event.ActionEvent evt) {
 
-    if (m_jTypeModel.getSelectedKey() != null) {
+        if (m_jTypeModel.getSelectedKey() != null) {
 
-        Integer _type = new Integer(m_jTypeModel.getSelectedKey().toString());
+            Integer _type = new Integer(m_jTypeModel.getSelectedKey().toString());
 
-        if(m_jCategory.getText().isEmpty()) {
-            m_jCatName.setSelectedIndex(-1);
-        }
+            if (m_jCategory.getText().isEmpty()) {
+                m_jCatName.setSelectedIndex(-1);
+            }
 
-        m_jAmount.setText("");
-        m_jBonusArticle.setText("");
-        //m_jCategory.setText("");
-        m_jStepQty.setText("");
-        m_jMin.setText("");
-        m_jMax.setText("");
-        m_jProdName.setText("");
-        m_jBonusProd.setText("");
-        m_jProdName.setText(null);
-        m_jBonusProd.setText(null);
+            m_jAmount.setText("");
+            m_jBonusArticle.setText("");
+            //m_jCategory.setText("");
+            m_jStepQty.setText("");
+            m_jMin.setText("");
+            m_jMax.setText("");
+            m_jProdName.setText("");
+            m_jBonusProd.setText("");
+            m_jProdName.setText(null);
+            m_jBonusProd.setText(null);
 
-        switch (_type) {
+            switch (_type) {
 
-            // discount in %
-            case 1:
+                // discount in %
+                case 1:
 //                jLabel13.setText("%");
 
-                //m_jName.setText(null);
-                //m_jStartDate.setText(null);
-                //m_jEndDate.setText(null);
-                //m_jStartHour.setText(null);
-                //m_jEndHour.setText(null);
-                //m_jTypeModel.setSelectedKey(null);
-                //m_jArticle.setText(null);
-                m_jCategory.setText(null);
-                //m_jAmount.setText(null);
-                m_jMin.setText(null);
-                m_jMax.setText(null);
-                m_jStepAmount.setText(null);
-                m_jStepQty.setText(null);
-                m_jBonusArticle.setText(null);
-                m_jBonusProd.setText(null);
+                    //m_jName.setText(null);
+                    //m_jStartDate.setText(null);
+                    //m_jEndDate.setText(null);
+                    //m_jStartHour.setText(null);
+                    //m_jEndHour.setText(null);
+                    //m_jTypeModel.setSelectedKey(null);
+                    //m_jArticle.setText(null);
+                    m_jCategory.setText(null);
+                    //m_jAmount.setText(null);
+                    m_jMin.setText(null);
+                    m_jMax.setText(null);
+                    m_jStepAmount.setText(null);
+                    m_jStepQty.setText(null);
+                    m_jBonusArticle.setText(null);
+                    m_jBonusProd.setText(null);
 
-                break;
+                    break;
 
-            // discount value
-            case 2:
+                // discount value
+                case 2:
 //                jLabel13.setText("Value");
 
-                //m_jName.setText(null);
-                //m_jStartDate.setText(null);
-                //m_jEndDate.setText(null);
-                //m_jStartHour.setText(null);
-                //m_jEndHour.setText(null);
-                //m_jTypeModel.setSelectedKey(null);
-                //m_jArticle.setText(null);
-                m_jCategory.setText(null);
-                //m_jAmount.setText(null);
-                m_jMin.setText(null);
-                m_jMax.setText(null);
-                m_jStepAmount.setText(null);
-                m_jStepQty.setText(null);
-                m_jBonusArticle.setText(null);
-                m_jBonusProd.setText(null);
+                    //m_jName.setText(null);
+                    //m_jStartDate.setText(null);
+                    //m_jEndDate.setText(null);
+                    //m_jStartHour.setText(null);
+                    //m_jEndHour.setText(null);
+                    //m_jTypeModel.setSelectedKey(null);
+                    //m_jArticle.setText(null);
+                    m_jCategory.setText(null);
+                    //m_jAmount.setText(null);
+                    m_jMin.setText(null);
+                    m_jMax.setText(null);
+                    m_jStepAmount.setText(null);
+                    m_jStepQty.setText(null);
+                    m_jBonusArticle.setText(null);
+                    m_jBonusProd.setText(null);
 
-                break;
+                    break;
 
-            // Gift / Coupon
-            case 3:
+                // Gift / Coupon
+                case 3:
 //                jLabel13.setText("");
 
-                //m_jName.setText(null);
-                //m_jStartDate.setText(null);
-                //m_jEndDate.setText(null);
-                //m_jStartHour.setText(null);
-                //m_jEndHour.setText(null);
-                //m_jTypeModel.setSelectedKey(null);
-                //m_jArticle.setText(null);
-                m_jCategory.setText(null);
-                m_jAmount.setText(null);
-                //m_jMin.setText(null);
-                //m_jMax.setText(null);
-                //m_jStepAmount.setText(null);
-                //m_jStepQty.setText(null);
-                //m_jBonusArticle.setText(null);
-                //m_jBonusProd.setText(null);
+                    //m_jName.setText(null);
+                    //m_jStartDate.setText(null);
+                    //m_jEndDate.setText(null);
+                    //m_jStartHour.setText(null);
+                    //m_jEndHour.setText(null);
+                    //m_jTypeModel.setSelectedKey(null);
+                    //m_jArticle.setText(null);
+                    m_jCategory.setText(null);
+                    m_jAmount.setText(null);
+                    //m_jMin.setText(null);
+                    //m_jMax.setText(null);
+                    //m_jStepAmount.setText(null);
+                    //m_jStepQty.setText(null);
+                    //m_jBonusArticle.setText(null);
+                    //m_jBonusProd.setText(null);
 
-                break;
+                    break;
 
-            //Get X% of discount on the cheapest article of a category
-            case 4:
+                //Get X% of discount on the cheapest article of a category
+                case 4:
 //                jLabel13.setText("%");
 
-                //m_jName.setText(null);
-                //m_jStartDate.setText(null);
-                //m_jEndDate.setText(null);
-                //m_jStartHour.setText(null);
-                //m_jEndHour.setText(null);
-                //m_jTypeModel.setSelectedKey(null);
-                m_jArticle.setText(null);
-                //m_jCategory.setText(null);
-                //m_jAmount.setText(null);
-                //m_jMin.setText(null);
-                //m_jMax.setText(null);
-                m_jStepAmount.setText(null);
-                m_jStepQty.setText(null);
-                m_jBonusArticle.setText(null);
-                m_jBonusProd.setText(null);
+                    //m_jName.setText(null);
+                    //m_jStartDate.setText(null);
+                    //m_jEndDate.setText(null);
+                    //m_jStartHour.setText(null);
+                    //m_jEndHour.setText(null);
+                    //m_jTypeModel.setSelectedKey(null);
+                    m_jArticle.setText(null);
+                    //m_jCategory.setText(null);
+                    //m_jAmount.setText(null);
+                    //m_jMin.setText(null);
+                    //m_jMax.setText(null);
+                    m_jStepAmount.setText(null);
+                    m_jStepQty.setText(null);
+                    m_jBonusArticle.setText(null);
+                    m_jBonusProd.setText(null);
 
-                break;
+                    break;
 
-            //Mix'n'Match (Buy 2 get 3)
-            case 5:
+                //Mix'n'Match (Buy 2 get 3)
+                case 5:
 //                jLabel13.setText("");
 
-                //m_jName.setText(null);
-                //m_jStartDate.setText(null);
-                //m_jEndDate.setText(null);
-                //m_jStartHour.setText(null);
-                //m_jEndHour.setText(null);
-                //m_jTypeModel.setSelectedKey(null);
-                //m_jArticle.setText(null);
-                m_jCategory.setText(null);
-                m_jAmount.setText(null);
-                //m_jMin.setText(null);
-                //m_jMax.setText(null);
-                m_jStepAmount.setText(null);
-                //m_jStepQty.setText(null);
-                m_jBonusArticle.setText(null);
-                m_jBonusProd.setText(null);
+                    //m_jName.setText(null);
+                    //m_jStartDate.setText(null);
+                    //m_jEndDate.setText(null);
+                    //m_jStartHour.setText(null);
+                    //m_jEndHour.setText(null);
+                    //m_jTypeModel.setSelectedKey(null);
+                    //m_jArticle.setText(null);
+                    m_jCategory.setText(null);
+                    m_jAmount.setText(null);
+                    //m_jMin.setText(null);
+                    //m_jMax.setText(null);
+                    m_jStepAmount.setText(null);
+                    //m_jStepQty.setText(null);
+                    m_jBonusArticle.setText(null);
+                    m_jBonusProd.setText(null);
 
-                break;
+                    break;
 
-            // discount in % by category
-            case 6:
+                // discount in % by category
+                case 6:
 //                jLabel13.setText("%");
 
-                //m_jName.setText(null);
-                //m_jStartDate.setText(null);
-                //m_jEndDate.setText(null);
-                //m_jStartHour.setText(null);
-                //m_jEndHour.setText(null);
-                //m_jTypeModel.setSelectedKey(null);
-                //m_jArticle.setText(null);
-                //m_jCategory.setText(null);
-                //m_jAmount.setText(null);
+                    //m_jName.setText(null);
+                    //m_jStartDate.setText(null);
+                    //m_jEndDate.setText(null);
+                    //m_jStartHour.setText(null);
+                    //m_jEndHour.setText(null);
+                    //m_jTypeModel.setSelectedKey(null);
+                    //m_jArticle.setText(null);
+                    //m_jCategory.setText(null);
+                    //m_jAmount.setText(null);
+                    m_jMin.setText(null);
+                    m_jMax.setText(null);
+                    m_jStepAmount.setText(null);
+                    m_jStepQty.setText(null);
+                    //m_jBonusArticle.setText(null);
+                    m_jBonusProd.setText(null);
+
+                    break;
+
+            }
+        }
+
+
+    }
+
+    private void OnCheckAmount(java.awt.event.FocusEvent evt) {
+
+        if (!m_jAmount.getText().equals("")) {
+            if (!isNumeric(m_jAmount.getText())) {
+                JOptionPane.showConfirmDialog(this, "The Amount is not correct",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                m_jAmount.setText(null);
+            }
+        }
+    }
+
+    private void OnCheckMin(java.awt.event.FocusEvent evt) {
+
+        if (!m_jMin.getText().equals("")) {
+            if (!isNumeric(m_jMin.getText())) {
+                JOptionPane.showConfirmDialog(this, "The minimum is not correct",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                 m_jMin.setText(null);
+                return;
+            }
+        }
+        if ((!m_jMin.getText().equals("")) && (!m_jMax.getText().equals(""))) {
+            Integer _min = new Integer(m_jMin.getText());
+            Integer _max = new Integer(m_jMax.getText());
+
+            if (_min > _max) {
+                JOptionPane.showConfirmDialog(this, "The minimum can't be greater than the maximum",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                m_jMin.setText(null);
+            }
+        }
+
+    }
+
+    private void OnCheckMax(java.awt.event.FocusEvent evt) {
+
+
+        if (!m_jMax.getText().equals("")) {
+            if (!isNumeric(m_jMax.getText())) {
+                JOptionPane.showConfirmDialog(this, "The maximum is not correct",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                 m_jMax.setText(null);
+                return;
+            }
+        }
+        if ((!m_jMin.getText().equals("")) && (!m_jMax.getText().equals(""))) {
+            Integer _min = new Integer(m_jMin.getText());
+            Integer _max = new Integer(m_jMax.getText());
+
+            if (_max < _min) {
+                JOptionPane.showConfirmDialog(this, "The minimum can't be greater than the maximum",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                m_jMin.setText(null);
+            }
+        }
+
+
+    }
+
+    private void OnCheckQuantityStep(java.awt.event.FocusEvent evt) {
+
+        if (!m_jStepAmount.getText().equals("")) {
+            if (!isNumeric(m_jStepAmount.getText())) {
+                JOptionPane.showConfirmDialog(this, "The step is not correct",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                 m_jStepAmount.setText(null);
+            }
+        }
+
+
+    }
+
+    private void OnCheckDiscountStep(java.awt.event.FocusEvent evt) {
+
+        if (!m_jStepQty.getText().equals("")) {
+            if (!isNumeric(m_jStepQty.getText())) {
+                JOptionPane.showConfirmDialog(this, "The step is not correct",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
                 m_jStepQty.setText(null);
-                //m_jBonusArticle.setText(null);
-                m_jBonusProd.setText(null);
-
-                break;
-
+            }
         }
+
     }
 
+    private void OnCheckBonus(java.awt.event.FocusEvent evt) {
+        if (!m_jBonusArticle.getText().equals("")) {
 
-}
-
-private void OnCheckAmount(java.awt.event.FocusEvent evt) {
-
-    if (!m_jAmount.getText().equals("")) {
-        if (!isNumeric(m_jAmount.getText())) {
-            JOptionPane.showConfirmDialog(this, "The Amount is not correct", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
-            m_jAmount.setText(null);
-        }
-    }
-}
-
-private void OnCheckMin(java.awt.event.FocusEvent evt) {
-
-    if (!m_jMin.getText().equals("")) {
-        if (!isNumeric(m_jMin.getText())) {
-            JOptionPane.showConfirmDialog(this, "The minimum is not correct", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
-            m_jMin.setText(null);
-            return;
-        }
-    }
-    if ((!m_jMin.getText().equals("")) && (!m_jMax.getText().equals(""))) {
-        Integer _min = new Integer(m_jMin.getText());
-        Integer _max = new Integer(m_jMax.getText());
-
-        if (_min > _max) {
-            JOptionPane.showConfirmDialog(this, "The minimum can't be greater than the maximum", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
-            m_jMin.setText(null);
-        }
-    }
-
-}
-
-private void OnCheckMax(java.awt.event.FocusEvent evt) {
-
-
-    if (!m_jMax.getText().equals("")) {
-        if (!isNumeric(m_jMax.getText())) {
-            JOptionPane.showConfirmDialog(this, "The maximum is not correct", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
-            m_jMax.setText(null);
-            return;
-        }
-    }
-    if ((!m_jMin.getText().equals("")) && (!m_jMax.getText().equals(""))) {
-        Integer _min = new Integer(m_jMin.getText());
-        Integer _max = new Integer(m_jMax.getText());
-
-        if (_max < _min) {
-            JOptionPane.showConfirmDialog(this, "The minimum can't be greater than the maximum", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
-            m_jMin.setText(null);
-        }
-    }
-
-
-}
-
-private void OnCheckQuantityStep(java.awt.event.FocusEvent evt) {
-
-    if (!m_jStepAmount.getText().equals("")) {
-        if (!isNumeric(m_jStepAmount.getText())) {
-            JOptionPane.showConfirmDialog(this, "The step is not correct", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
-            m_jStepAmount.setText(null);
-        }
-    }
-
-
-}
-
-private void OnCheckDiscountStep(java.awt.event.FocusEvent evt) {
-
-    if (!m_jStepQty.getText().equals("")) {
-        if (!isNumeric(m_jStepQty.getText())) {
-            JOptionPane.showConfirmDialog(this, "The step is not correct", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
-            m_jStepQty.setText(null);
-        }
-    }
-
-}
-
-private void OnCheckBonus(java.awt.event.FocusEvent evt) {
-    if (!m_jBonusArticle.getText().equals("")) {
-
-        try {
             try {
-                ProductInfoExt _pie = dls.getProductInfoByReference(m_jBonusArticle.getText());
-                m_jBonusArticle.setText(_pie.getID());
-                _DescBonusArticle = _pie.getName();
-            } catch (NullPointerException e) {
-                JOptionPane.showConfirmDialog(this, "This Product doesn't exist", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                try {
+                    ProductInfoExt _pie = dls.getProductInfoByReference(m_jBonusArticle.getText());
+                    m_jBonusArticle.setText(_pie.getID());
+                    _DescBonusArticle = _pie.getName();
+                } catch (NullPointerException e) {
+                    JOptionPane.showConfirmDialog(this, "This Product doesn't exist",
+                                                  AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                }
+
+            } catch (BasicException e) {
+                JOptionPane.showConfirmDialog(this, "This Product doesn't exist",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
             }
 
-        } catch (BasicException e) {
-            JOptionPane.showConfirmDialog(this, "This Product doesn't exist", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
         }
-
     }
-}
 
-private void OnCheckArticle(java.awt.event.FocusEvent evt) {
+    private void OnCheckArticle(java.awt.event.FocusEvent evt) {
 
-    if (!m_jArticle.getText().equals("")) {
-        try {
+        if (!m_jArticle.getText().equals("")) {
             try {
-                ProductInfoExt _pie = dls.getProductInfoByReference(m_jArticle.getText());
-                m_jArticle.setText(_pie.getID());
-            } catch (NullPointerException e) {
-                JOptionPane.showConfirmDialog(this, "This Product doesn't exist", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                try {
+                    ProductInfoExt _pie = dls.getProductInfoByReference(m_jArticle.getText());
+                    m_jArticle.setText(_pie.getID());
+                } catch (NullPointerException e) {
+                    JOptionPane.showConfirmDialog(this, "This Product doesn't exist",
+                                                  AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                }
+            } catch (BasicException e) {
+                JOptionPane.showConfirmDialog(this, "This Product doesn't exist",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
             }
-        } catch (BasicException e) {
-            JOptionPane.showConfirmDialog(this, "This Product doesn't exist", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+
         }
 
     }
 
-}
-
-private void OnCheckCategory(java.awt.event.FocusEvent evt) {
-    if (!m_jCategory.getText().equals("")) {
-        try {
+    private void OnCheckCategory(java.awt.event.FocusEvent evt) {
+        if (!m_jCategory.getText().equals("")) {
             try {
-                CategoryInfo _ci = dls.getCategoryInfo(m_jCategory.getText());
-            } catch (NullPointerException e) {
-                JOptionPane.showConfirmDialog(this, "This Category doesn't exist", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                try {
+                    CategoryInfo _ci = dls.getCategoryInfo(m_jCategory.getText());
+                } catch (NullPointerException e) {
+                    JOptionPane.showConfirmDialog(this, "This Category doesn't exist",
+                                                  AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
+                }
+            } catch (BasicException e) {
+                JOptionPane.showConfirmDialog(this, "This Category doesn't exist",
+                                              AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
             }
-        } catch (BasicException e) {
-            JOptionPane.showConfirmDialog(this, "This Category doesn't exist", AppLocal.getIntString("Invalid Entry"), JOptionPane.WARNING_MESSAGE);
-        }
 
+        }
     }
-}
 
     private boolean isNumeric(String test) {
         try {
@@ -1019,7 +1047,8 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
 
         m_jEndDate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        btnValidFrom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/date.png"))); // NOI18N
+        btnValidFrom.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/date.png"))); // NOI18N
         btnValidFrom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnValidFromActionPerformed(evt);
@@ -1029,7 +1058,8 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
         m_jEndHour.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jEndHour.setPreferredSize(new java.awt.Dimension(110, 28));
 
-        m_jSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search24.png"))); // NOI18N
+        m_jSearch.setIcon(new javax.swing.ImageIcon(
+                              getClass().getResource("/images/search24.png"))); // NOI18N
         m_jSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jSearchActionPerformed(evt);
@@ -1038,7 +1068,8 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
 
         m_jMax.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        m_jSearch1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search24.png"))); // NOI18N
+        m_jSearch1.setIcon(new javax.swing.ImageIcon(
+                               getClass().getResource("/images/search24.png"))); // NOI18N
         m_jSearch1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m_jSearch1ActionPerformed(evt);
@@ -1050,192 +1081,254 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(m_jArticle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(m_jBonusArticle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(m_jCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(m_jAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(m_jMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(m_jMax, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(m_jStepAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(m_jStartHour, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(m_jEndHour, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(m_jStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(116, 116, 116)
-                                        .addComponent(btnValidFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(m_jEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(m_jProdName, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(m_jCatName, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(m_jType, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(m_jSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnValidTo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(m_jStepQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(m_jBonusProd, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(m_jSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(m_jName, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 19, Short.MAX_VALUE))))
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)
+                                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)
+                                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)
+                                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)
+                                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)
+                                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)
+                                                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)
+                                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)
+                                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                              .addComponent(m_jArticle, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                            javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addComponent(m_jBonusArticle, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                            javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addComponent(m_jCategory, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                            javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(m_jAmount, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                              .addComponent(m_jMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                            javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addComponent(m_jMax, javax.swing.GroupLayout.PREFERRED_SIZE, 68,
+                                                                            javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(m_jStepAmount, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addGroup(layout.createSequentialGroup()
+                                                                                  .addComponent(m_jStartHour, javax.swing.GroupLayout.PREFERRED_SIZE, 103,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                  .addComponent(m_jEndHour, javax.swing.GroupLayout.PREFERRED_SIZE, 103,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                        .addComponent(m_jStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 103,
+                                                                                      javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addGroup(layout.createSequentialGroup()
+                                                                                  .addGap(116, 116, 116)
+                                                                                  .addComponent(btnValidFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 42,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                  .addGap(18, 18, 18)
+                                                                                  .addComponent(m_jEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 103,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                        .addGroup(layout.createSequentialGroup()
+                                                                                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                            .addComponent(m_jProdName, javax.swing.GroupLayout.PREFERRED_SIZE, 236,
+                                                                                                          javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                            .addComponent(m_jCatName, javax.swing.GroupLayout.PREFERRED_SIZE, 240,
+                                                                                                          javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                            .addComponent(m_jType, javax.swing.GroupLayout.PREFERRED_SIZE, 132,
+                                                                                                          javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                  .addComponent(m_jSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 33,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addComponent(btnValidTo, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
+                                                                            javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(m_jStepQty, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                      javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(m_jBonusProd, javax.swing.GroupLayout.PREFERRED_SIZE, 248,
+                                                                                      javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                              .addComponent(m_jSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 33,
+                                                                            javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                          .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                          .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(m_jName, javax.swing.GroupLayout.PREFERRED_SIZE, 333,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addGap(0, 19, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnValidFrom))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jStartHour, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jEndHour, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(m_jEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnValidTo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(m_jSearch)
-                            .addComponent(m_jProdName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(m_jCatName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(m_jAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jMin, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jMax, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jStepAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(m_jStepQty, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(m_jBonusProd, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(m_jSearch1))
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m_jArticle, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jBonusArticle, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              Short.MAX_VALUE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(btnValidFrom))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jStartHour, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jEndHour, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(m_jType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(m_jEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(btnValidTo))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(m_jSearch)
+                                                    .addComponent(m_jProdName, javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(m_jCatName, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(m_jAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jMin, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jMax, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jStepAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(m_jStepQty, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE))
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(m_jBonusProd, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(m_jSearch1))
+                      .addGap(14, 14, 14)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(m_jArticle, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jBonusArticle, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnValidFromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidFromActionPerformed
+    private void btnValidFromActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_btnValidFromActionPerformed
 
-    Date date;
-    try {
-        date = (Date) Formats.TIMESTAMP.parseValue(m_jStartDate.getText());
-    } catch (BasicException e) {
-        date = null;
-    }
-    date = JCalendarDialog.showCalendarTimeHours(this, date);
-    if (date != null) {
+        Date date;
+        try {
+            date = (Date) Formats.TIMESTAMP.parseValue(m_jStartDate.getText());
+        } catch (BasicException e) {
+            date = null;
+        }
+        date = JCalendarDialog.showCalendarTimeHours(this, date);
+        if (date != null) {
 
 
-        DateFormat formatter_date;
-        formatter_date = new SimpleDateFormat("yyyyMMdd");
+            DateFormat formatter_date;
+            formatter_date = new SimpleDateFormat("yyyyMMdd");
 
-        DateFormat formatter_heure;
-        formatter_heure = new SimpleDateFormat("HH");
+            DateFormat formatter_heure;
+            formatter_heure = new SimpleDateFormat("HH");
 
-        String _date = formatter_date.format(date);
-        String _heure = formatter_heure.format(date);
-        m_jStartDate.setText(Formats.STRING.formatValue(_date));
-        m_jStartHour.setText(Formats.STRING.formatValue(_heure));
-    }
+            String _date = formatter_date.format(date);
+            String _heure = formatter_heure.format(date);
+            m_jStartDate.setText(Formats.STRING.formatValue(_date));
+            m_jStartHour.setText(Formats.STRING.formatValue(_heure));
+        }
 
     }//GEN-LAST:event_btnValidFromActionPerformed
 
-    private void btnValidToActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidToActionPerformed
+    private void btnValidToActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_btnValidToActionPerformed
 
-    Date date;
-    try {
-        date = (Date) Formats.TIMESTAMP.parseValue(m_jEndDate.getText());
-    } catch (BasicException e) {
-        date = null;
-    }
-    date = JCalendarDialog.showCalendarTimeHours(this, date);
-    if (date != null) {
+        Date date;
+        try {
+            date = (Date) Formats.TIMESTAMP.parseValue(m_jEndDate.getText());
+        } catch (BasicException e) {
+            date = null;
+        }
+        date = JCalendarDialog.showCalendarTimeHours(this, date);
+        if (date != null) {
 
 
-        DateFormat formatter_date;
-        formatter_date = new SimpleDateFormat("yyyyMMdd");
+            DateFormat formatter_date;
+            formatter_date = new SimpleDateFormat("yyyyMMdd");
 
-        DateFormat formatter_heure;
-        formatter_heure = new SimpleDateFormat("HH");
+            DateFormat formatter_heure;
+            formatter_heure = new SimpleDateFormat("HH");
 
-        String _date = formatter_date.format(date);
-        String _heure = formatter_heure.format(date);
+            String _date = formatter_date.format(date);
+            String _heure = formatter_heure.format(date);
 
-        m_jEndDate.setText(Formats.STRING.formatValue(_date));
-        m_jEndHour.setText(Formats.STRING.formatValue(_heure));
-    }
+            m_jEndDate.setText(Formats.STRING.formatValue(_date));
+            m_jEndHour.setText(Formats.STRING.formatValue(_heure));
+        }
     }//GEN-LAST:event_btnValidToActionPerformed
 
-    private void m_jSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jSearchActionPerformed
+    private void m_jSearchActionPerformed(java.awt.event.ActionEvent
+                                          evt) {//GEN-FIRST:event_m_jSearchActionPerformed
         ProductInfoExt prod = JProductFinder.showMessage(PromoEditor.this, m_dlSales);
         if (prod != null) {
             //buttonTransition(prod);
@@ -1248,7 +1341,8 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
         }
     }//GEN-LAST:event_m_jSearchActionPerformed
 
-    private void m_jSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jSearch1ActionPerformed
+    private void m_jSearch1ActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_m_jSearch1ActionPerformed
         ProductInfoExt prod = JProductFinder.showMessage(PromoEditor.this, m_dlSales);
         if (prod != null) {
             //buttonTransition(prod);
@@ -1261,7 +1355,8 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
         }
     }//GEN-LAST:event_m_jSearch1ActionPerformed
 
-    private void m_jCatNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCatNameActionPerformed
+    private void m_jCatNameActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_m_jCatNameActionPerformed
         try {
             getCatID(m_jCatModel.getSelectedText());
         } catch (BasicException ex) {
@@ -1269,31 +1364,32 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
         }
     }//GEN-LAST:event_m_jCatNameActionPerformed
 
-    private void m_jCategoryPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_m_jCategoryPropertyChange
-        if(m_jCategory.getText().isEmpty()) {
+    private void m_jCategoryPropertyChange(java.beans.PropertyChangeEvent
+                                           evt) {//GEN-FIRST:event_m_jCategoryPropertyChange
+        if (m_jCategory.getText().isEmpty()) {
             m_jCatName.setSelectedIndex(-1);
         }
     }//GEN-LAST:event_m_jCategoryPropertyChange
 
     private void assignProduct(ProductInfoExt prod) {
 
-            if (prod == null) {
-                //m_jArticle.setText(null);
-                //Jt_articleid.setText(null);
-            } else {
-                m_jArticle.setText(prod.getID());
-            }
+        if (prod == null) {
+            //m_jArticle.setText(null);
+            //Jt_articleid.setText(null);
+        } else {
+            m_jArticle.setText(prod.getID());
+        }
 
     }
 
     private void assignProduct1(ProductInfoExt prod) {
 
-            if (prod == null) {
-                //m_jBonusArticle.setText(null);
-                //jt_bonusid.setText(null);
-            } else {
-                m_jBonusArticle.setText(prod.getID());
-            }
+        if (prod == null) {
+            //m_jBonusArticle.setText(null);
+            //jt_bonusid.setText(null);
+        } else {
+            m_jBonusArticle.setText(prod.getID());
+        }
 
     }
 
@@ -1322,7 +1418,7 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
             while (resultSet.next()) {
                 String id = resultSet.getString("ID");
 
-                    m_jCategory.setText(id);
+                m_jCategory.setText(id);
 
             }
 
@@ -1335,7 +1431,7 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
 
 
         }
-}
+    }
 
     private void getCatName(String Id) throws BasicException {
         Connection connection;// = null;
@@ -1362,11 +1458,11 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
             while (resultSet.next()) {
                 String name = resultSet.getString("NAME");
 
-                int ii=m_jCatName.getItemCount();
-                for(int i=1; i<ii; i++){
+                int ii = m_jCatName.getItemCount();
+                for (int i = 1; i < ii; i++) {
                     String a = m_jCatModel.getElementAt(i).toString();
                     String b = name;
-                    if(a.equals(b)){
+                    if (a.equals(b)) {
                         //m_jCatModel.setSelectedKey(i);
                         m_jCatModel.setSelectedItem(name);
                     }
@@ -1383,7 +1479,7 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
 
 
         }
-}
+    }
 
     private void getProdName(String Id) throws BasicException {
         Connection connection;// = null;
@@ -1421,7 +1517,7 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
 
 
         }
-}
+    }
 
     private void getBonusName(String Id) throws BasicException {
         Connection connection;// = null;
@@ -1459,7 +1555,7 @@ private void OnCheckCategory(java.awt.event.FocusEvent evt) {
 
 
         }
-}
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnValidFrom;

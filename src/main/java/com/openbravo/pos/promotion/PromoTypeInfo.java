@@ -41,7 +41,7 @@ public class PromoTypeInfo implements SerializableRead, IKeyed {
         m_sName = sName;
     }
 
-    public String toString(){
+    public String toString() {
         return m_sName;
     }
 }

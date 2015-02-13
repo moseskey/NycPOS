@@ -65,19 +65,19 @@ public class ProductInfoEdit {
         m_ID = id;
     }
 
-    public final String getReference(){
+    public final String getReference() {
         return m_sRef;
     }
 
-    public final void setReference(String sRef){
+    public final void setReference(String sRef) {
         m_sRef = sRef;
     }
 
-    public final String getCode(){
+    public final String getCode() {
         return m_sCode;
     }
 
-    public final void setCode(String sCode){
+    public final void setCode(String sCode) {
         m_sCode = sCode;
     }
 
@@ -85,7 +85,7 @@ public class ProductInfoEdit {
         return m_sName;
     }
 
-    public final void setName(String sName){
+    public final void setName(String sName) {
         m_sName = sName;
     }
 
@@ -93,7 +93,7 @@ public class ProductInfoEdit {
         return m_bCom;
     }
 
-    public final void setCom(boolean bValue){
+    public final void setCom(boolean bValue) {
         m_bCom = bValue;
     }
 
@@ -101,7 +101,7 @@ public class ProductInfoEdit {
         return m_bScale;
     }
 
-    public final void setScale(boolean bValue){
+    public final void setScale(boolean bValue) {
         m_bScale = bValue;
     }
 
@@ -129,7 +129,7 @@ public class ProductInfoEdit {
         attributeuseid = value;
     }
 
-    public final double getPriceBuy(){
+    public final double getPriceBuy() {
         return m_dPriceBuy;
     }
 
@@ -137,7 +137,7 @@ public class ProductInfoEdit {
         m_dPriceBuy = dPrice;
     }
 
-    public final double getPriceSell(){
+    public final double getPriceSell() {
         return m_dPriceSell;
     }
 

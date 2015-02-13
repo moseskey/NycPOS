@@ -25,7 +25,8 @@ public class CustomersPanel extends JPanelTable {
 
     @Override
     protected void init() {
-        DataLogicCustomers dlCustomers  = (DataLogicCustomers) app.getBean("com.openbravo.pos.customers.DataLogicCustomers");
+        DataLogicCustomers dlCustomers  = (DataLogicCustomers)
+                                          app.getBean("com.openbravo.pos.customers.DataLogicCustomers");
         tcustomers = dlCustomers.getTableCustomers();
         jeditor = new CustomersView(app, dirty);
 
@@ -49,7 +50,7 @@ public class CustomersPanel extends JPanelTable {
 
     @Override
     public Vectorer getVectorer() {
-        return tcustomers.getVectorerBasic(new int[]{1, 2, 3, 4});
+        return tcustomers.getVectorerBasic(new int[] {1, 2, 3, 4});
     }
 
     @Override
@@ -59,7 +60,7 @@ public class CustomersPanel extends JPanelTable {
 
     @Override
     public ListCellRenderer getListCellRenderer() {
-        return new ListCellRendererBasic(tcustomers.getRenderStringBasic(new int[]{3}));
+        return new ListCellRendererBasic(tcustomers.getRenderStringBasic(new int[] {3}));
     }
 
     @Override

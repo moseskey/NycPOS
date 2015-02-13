@@ -48,7 +48,7 @@ public class TaxPanel extends JPanelTable {
 
     @Override
     public Vectorer getVectorer() {
-        return ttaxes.getVectorerBasic(new int[]{1, 5, 7});
+        return ttaxes.getVectorerBasic(new int[] {1, 5, 7});
     }
 
     @Override
@@ -58,7 +58,7 @@ public class TaxPanel extends JPanelTable {
 
     @Override
     public ListCellRenderer getListCellRenderer() {
-        return new ListCellRendererBasic(ttaxes.getRenderStringBasic(new int[]{1}));
+        return new ListCellRendererBasic(ttaxes.getRenderStringBasic(new int[] {1}));
     }
 
     @Override

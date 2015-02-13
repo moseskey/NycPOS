@@ -25,7 +25,7 @@ public class RoleExtInfo extends RoleInfo {
 
     //  implements Vectorer, ComparatorCreator
 
-        public static String[] getHeaders() {
+    public static String[] getHeaders() {
         return new String[] {"Name"};
     }
 

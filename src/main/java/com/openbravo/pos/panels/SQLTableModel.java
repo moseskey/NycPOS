@@ -78,14 +78,14 @@ public class SQLTableModel extends AbstractTableModel {
         for (int i = 0; i < m_classes.length; i++) {
             m_values[i] = m_classes[i].getValue(dr, i + 1);
         }
-         m_aRows.add(m_values);
+        m_aRows.add(m_values);
     }
 
     public String getColumnString(int row) {
         Object [] rowvalues = (Object[]) m_aRows.get(row);
 // JG 16 May 2013 use StringBuilder instead of StringBuilder
         StringBuilder s = new StringBuilder();
-        for(int i = 0; i < rowvalues.length; i++) {
+        for (int i = 0; i < rowvalues.length; i++) {
             if (i > 0) {
                 s.append(", ");
             }

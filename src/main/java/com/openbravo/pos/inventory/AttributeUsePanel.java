@@ -24,24 +24,24 @@ public class AttributeUsePanel extends JPanelTable2 {
         filter.addActionListener(new ReloadActionListener());
 
         row = new Row(
-                new Field("ID", Datas.STRING, Formats.STRING),
-                new Field("ATRIBUTESET_ID", Datas.STRING, Formats.STRING),
-                new Field("ATTRIBUTE_ID", Datas.STRING, Formats.STRING),
-                new Field(AppLocal.getIntString("label.order"), Datas.INT, Formats.INT, false, true, true),
-                new Field(AppLocal.getIntString("label.name"), Datas.STRING, Formats.STRING, true, true, true)
+            new Field("ID", Datas.STRING, Formats.STRING),
+            new Field("ATRIBUTESET_ID", Datas.STRING, Formats.STRING),
+            new Field("ATTRIBUTE_ID", Datas.STRING, Formats.STRING),
+            new Field(AppLocal.getIntString("label.order"), Datas.INT, Formats.INT, false, true, true),
+            new Field(AppLocal.getIntString("label.name"), Datas.STRING, Formats.STRING, true, true, true)
         );
 
         Table table = new Table(
-                "ATTRIBUTEUSE",
-                new PrimaryKey("ID"),
-                new Column("ATTRIBUTESET_ID"),
-                new Column("ATTRIBUTE_ID"),
-                new Column("LINENO"));
+            "ATTRIBUTEUSE",
+            new PrimaryKey("ID"),
+            new Column("ATTRIBUTESET_ID"),
+            new Column("ATTRIBUTE_ID"),
+            new Column("LINENO"));
 
         lpr = row.getListProvider(app.getSession(),
-                "SELECT ATTUSE.ID, ATTUSE.ATTRIBUTESET_ID, ATTUSE.ATTRIBUTE_ID, ATTUSE.LINENO, ATT.NAME " +
-                "FROM ATTRIBUTEUSE ATTUSE, ATTRIBUTE ATT " +
-                "WHERE ATTUSE.ATTRIBUTE_ID = ATT.ID AND ATTUSE.ATTRIBUTESET_ID = ? ORDER BY LINENO", filter);
+                                  "SELECT ATTUSE.ID, ATTUSE.ATTRIBUTESET_ID, ATTUSE.ATTRIBUTE_ID, ATTUSE.LINENO, ATT.NAME " +
+                                  "FROM ATTRIBUTEUSE ATTUSE, ATTRIBUTE ATT " +
+                                  "WHERE ATTUSE.ATTRIBUTE_ID = ATT.ID AND ATTUSE.ATTRIBUTESET_ID = ? ORDER BY LINENO", filter);
         spr = row.getSaveProvider(app.getSession(), table);
 
         editor = new AttributeUseEditor(app, dirty);
@@ -58,7 +58,7 @@ public class AttributeUsePanel extends JPanelTable2 {
     }
 
     @Override
-    public Component getFilter(){
+    public Component getFilter() {
         return filter.getComponent();
     }
 

@@ -200,9 +200,11 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/restaurant_floor_sml.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(
+                            getClass().getResource("/images/restaurant_floor_sml.png"))); // NOI18N
         jLabel4.setText(" ");
-        jLabel4.setBorder(new javax.swing.border.MatteBorder(new javax.swing.ImageIcon(getClass().getResource("/images/restaurant_floor_sml.png")))); // NOI18N
+        jLabel4.setBorder(new javax.swing.border.MatteBorder(new javax.swing.ImageIcon(
+                                                                 getClass().getResource("/images/restaurant_floor_sml.png")))); // NOI18N
         add(jLabel4);
         jLabel4.setBounds(110, 250, 200, 140);
 

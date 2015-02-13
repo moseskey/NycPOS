@@ -54,48 +54,53 @@ public class JProductAttEdit extends javax.swing.JDialog {
         initComponents();
 
         attsetSave = new PreparedSentence(s,
-                "INSERT INTO ATTRIBUTESETINSTANCE (ID, ATTRIBUTESET_ID, DESCRIPTION) VALUES (?, ?, ?)",
-                new SerializerWriteBasic(Datas.STRING, Datas.STRING, Datas.STRING));
+                                          "INSERT INTO ATTRIBUTESETINSTANCE (ID, ATTRIBUTESET_ID, DESCRIPTION) VALUES (?, ?, ?)",
+                                          new SerializerWriteBasic(Datas.STRING, Datas.STRING, Datas.STRING));
         attinstSave = new PreparedSentence(s,
-                "INSERT INTO ATTRIBUTEINSTANCE(ID, ATTRIBUTESETINSTANCE_ID, ATTRIBUTE_ID, VALUE) VALUES (?, ?, ?, ?)",
-                new SerializerWriteBasic(Datas.STRING, Datas.STRING, Datas.STRING, Datas.STRING));
+                                           "INSERT INTO ATTRIBUTEINSTANCE(ID, ATTRIBUTESETINSTANCE_ID, ATTRIBUTE_ID, VALUE) VALUES (?, ?, ?, ?)",
+                                           new SerializerWriteBasic(Datas.STRING, Datas.STRING, Datas.STRING, Datas.STRING));
 
         attsetSent = new PreparedSentence(s,
-                "SELECT ID, NAME FROM ATTRIBUTESET WHERE ID = ?",
-                SerializerWriteString.INSTANCE,
-                new SerializerRead()  {
-                @Override
-                public Object readValues(DataRead dr) throws BasicException {
-                    return new AttributeSetInfo(dr.getString(1), dr.getString(2));
-                }});
+                                          "SELECT ID, NAME FROM ATTRIBUTESET WHERE ID = ?",
+                                          SerializerWriteString.INSTANCE,
+        new SerializerRead()  {
+            @Override
+            public Object readValues(DataRead dr) throws BasicException {
+                return new AttributeSetInfo(dr.getString(1), dr.getString(2));
+            }
+        });
         attsetinstExistsSent = new PreparedSentence(s,
-                "SELECT ID FROM ATTRIBUTESETINSTANCE WHERE ATTRIBUTESET_ID = ? AND DESCRIPTION = ?",
-                new SerializerWriteBasic(Datas.STRING, Datas.STRING),
-                SerializerReadString.INSTANCE);
+                                                    "SELECT ID FROM ATTRIBUTESETINSTANCE WHERE ATTRIBUTESET_ID = ? AND DESCRIPTION = ?",
+                                                    new SerializerWriteBasic(Datas.STRING, Datas.STRING),
+                                                    SerializerReadString.INSTANCE);
 
-        attinstSent = new PreparedSentence(s, "SELECT A.ID, A.NAME, " + s.DB.CHAR_NULL() + ", " + s.DB.CHAR_NULL() + " " +
-                "FROM ATTRIBUTEUSE AU JOIN ATTRIBUTE A ON AU.ATTRIBUTE_ID = A.ID " +
-                "WHERE AU.ATTRIBUTESET_ID = ? " +
-                "ORDER BY AU.LINENO",
-            SerializerWriteString.INSTANCE,
-            new SerializerRead() {
-                @Override
-                public Object readValues(DataRead dr) throws BasicException {
+        attinstSent = new PreparedSentence(s,
+                                           "SELECT A.ID, A.NAME, " + s.DB.CHAR_NULL() + ", " + s.DB.CHAR_NULL() + " " +
+                                           "FROM ATTRIBUTEUSE AU JOIN ATTRIBUTE A ON AU.ATTRIBUTE_ID = A.ID " +
+                                           "WHERE AU.ATTRIBUTESET_ID = ? " +
+                                           "ORDER BY AU.LINENO",
+                                           SerializerWriteString.INSTANCE,
+        new SerializerRead() {
+            @Override
+            public Object readValues(DataRead dr) throws BasicException {
                 return new AttributeInstInfo(dr.getString(1), dr.getString(2), dr.getString(3), dr.getString(4));
-            }});
+            }
+        });
         attinstSent2 = new PreparedSentence(s, "SELECT A.ID, A.NAME, AI.ID, AI.VALUE " +
-            "FROM ATTRIBUTEUSE AU JOIN ATTRIBUTE A ON AU.ATTRIBUTE_ID = A.ID LEFT OUTER JOIN ATTRIBUTEINSTANCE AI ON AI.ATTRIBUTE_ID = A.ID " +
-            "WHERE AU.ATTRIBUTESET_ID = ? AND AI.ATTRIBUTESETINSTANCE_ID = ?" +
-            "ORDER BY AU.LINENO",
-            new SerializerWriteBasic(Datas.STRING, Datas.STRING),
-            new SerializerRead() {
-                @Override
-                public Object readValues(DataRead dr) throws BasicException {
+                                            "FROM ATTRIBUTEUSE AU JOIN ATTRIBUTE A ON AU.ATTRIBUTE_ID = A.ID LEFT OUTER JOIN ATTRIBUTEINSTANCE AI ON AI.ATTRIBUTE_ID = A.ID "
+                                            +
+                                            "WHERE AU.ATTRIBUTESET_ID = ? AND AI.ATTRIBUTESETINSTANCE_ID = ?" +
+                                            "ORDER BY AU.LINENO",
+                                            new SerializerWriteBasic(Datas.STRING, Datas.STRING),
+        new SerializerRead() {
+            @Override
+            public Object readValues(DataRead dr) throws BasicException {
                 return new AttributeInstInfo(dr.getString(1), dr.getString(2), dr.getString(3), dr.getString(4));
-            }});
-                attvaluesSent = new PreparedSentence(s, "SELECT VALUE FROM ATTRIBUTEVALUE WHERE ATTRIBUTE_ID = ?",
-                SerializerWriteString.INSTANCE,
-                SerializerReadString.INSTANCE);
+            }
+        });
+        attvaluesSent = new PreparedSentence(s, "SELECT VALUE FROM ATTRIBUTEVALUE WHERE ATTRIBUTE_ID = ?",
+                                             SerializerWriteString.INSTANCE,
+                                             SerializerReadString.INSTANCE);
 
         getRootPane().setDefaultButton(m_jButtonOK);
     }
@@ -139,8 +144,8 @@ public class JProductAttEdit extends javax.swing.JDialog {
             setTitle(asi.getName());
 
             List<AttributeInstInfo> attinstinfo = attsetinstid == null
-                    ? attinstSent.list(attsetid)
-                    : attinstSent2.list(attsetid, attsetinstid);
+                                                  ? attinstSent.list(attsetid)
+                                                  : attinstSent2.list(attsetid, attsetinstid);
 
             itemslist = new ArrayList<>();
 
@@ -280,7 +285,8 @@ public class JProductAttEdit extends javax.swing.JDialog {
         jPanel1.add(m_jButtonOK);
 
         m_jButtonCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(
+                                    getClass().getResource("/images/cancel.png"))); // NOI18N
         m_jButtonCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         m_jButtonCancel.setFocusPainted(false);
         m_jButtonCancel.setFocusable(false);
@@ -308,10 +314,11 @@ public class JProductAttEdit extends javax.swing.JDialog {
         getContentPane().add(jPanel3, java.awt.BorderLayout.EAST);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-609)/2, (screenSize.height-388)/2, 609, 388);
+        setBounds((screenSize.width - 609) / 2, (screenSize.height - 388) / 2, 609, 388);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonOKActionPerformed
+    private void m_jButtonOKActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_m_jButtonOKActionPerformed
 
         StringBuilder description = new StringBuilder();
         for (JProductAttEditI item : itemslist) {
@@ -367,7 +374,8 @@ public class JProductAttEdit extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_m_jButtonOKActionPerformed
 
-    private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed
+    private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed
 
         dispose();
     }//GEN-LAST:event_m_jButtonCancelActionPerformed

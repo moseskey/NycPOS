@@ -75,6 +75,6 @@ public class PrintItemBarcode implements PrintItem {
 
     @Override
     public int getHeight() {
-        return (int) (m_iHeight * scale) + 20;
+        return (int)(m_iHeight * scale) + 20;
     }
 }

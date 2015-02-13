@@ -120,7 +120,8 @@ public class JPasswordDialog extends javax.swing.JDialog {
         jPanel1.add(jcmdOK);
 
         jcmdCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        jcmdCancel.setIcon(new javax.swing.ImageIcon(
+                               getClass().getResource("/images/cancel.png"))); // NOI18N
         jcmdCancel.setText(m_resources.getString("button.cancel")); // NOI18N
         jcmdCancel.setMargin(new java.awt.Insets(8, 16, 8, 16));
         jcmdCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -160,20 +161,24 @@ public class JPasswordDialog extends javax.swing.JDialog {
 
         m_jPanelTitle.setLayout(new java.awt.BorderLayout());
 
-        m_lblMessage.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, java.awt.Color.darkGray), javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+        m_lblMessage.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                   javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, java.awt.Color.darkGray),
+                                   javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5)));
         m_jPanelTitle.add(m_lblMessage, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(m_jPanelTitle, java.awt.BorderLayout.NORTH);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-258)/2, (screenSize.height-428)/2, 258, 428);
+        setBounds((screenSize.width - 258) / 2, (screenSize.height - 428) / 2, 258, 428);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jNumberKeys21KeyPerformed(com.openbravo.beans.JNumberEvent evt) {//GEN-FIRST:event_jNumberKeys21KeyPerformed
+    private void jNumberKeys21KeyPerformed(com.openbravo.beans.JNumberEvent
+                                           evt) {//GEN-FIRST:event_jNumberKeys21KeyPerformed
 
     }//GEN-LAST:event_jNumberKeys21KeyPerformed
 
-    private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
+    private void jcmdOKActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jcmdOKActionPerformed
 
         m_sPassword = m_jpassword.getPassword();
         setVisible(false);
@@ -181,7 +186,8 @@ public class JPasswordDialog extends javax.swing.JDialog {
 
     }//GEN-LAST:event_jcmdOKActionPerformed
 
-    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
+    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
 
         setVisible(false);
         dispose();
@@ -195,7 +201,8 @@ public class JPasswordDialog extends javax.swing.JDialog {
 
     }//GEN-LAST:event_closeWindow
 
-    private void m_jKeysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jKeysActionPerformed
+    private void m_jKeysActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_m_jKeysActionPerformed
     }//GEN-LAST:event_m_jKeysActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

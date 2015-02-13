@@ -15,7 +15,7 @@ public class FormatsValidate extends Formats {
         this(fmt, new FormatsConstrain[0]);
     }
     public FormatsValidate(Formats fmt, FormatsConstrain constrain) {
-        this(fmt, new FormatsConstrain[]{constrain});
+        this(fmt, new FormatsConstrain[] {constrain});
     }
 
     @Override

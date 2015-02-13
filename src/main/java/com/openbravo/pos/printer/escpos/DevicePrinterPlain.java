@@ -14,7 +14,7 @@ public class DevicePrinterPlain implements DevicePrinter  {
 
     // Creates new TicketPrinter
 
-        public DevicePrinterPlain(PrinterWritter CommOutputPrinter) throws TicketPrinterException {
+    public DevicePrinterPlain(PrinterWritter CommOutputPrinter) throws TicketPrinterException {
 
         out = CommOutputPrinter;
         trans = new UnicodeTranslatorStar(); // The star translator stands for the 437 int char page
@@ -48,7 +48,7 @@ public class DevicePrinterPlain implements DevicePrinter  {
     }
 
     @Override
-    public void printLogo(){
+    public void printLogo() {
 
     }
 

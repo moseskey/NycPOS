@@ -10,7 +10,7 @@ public class SerializerReadImage implements SerializerRead {
     }
 
     public Object readValues(DataRead dr) throws BasicException {
-        return Datas.IMAGE.getValue(dr,1);
+        return Datas.IMAGE.getValue(dr, 1);
     }
 
 }

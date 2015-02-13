@@ -23,7 +23,8 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
         super(parent, modal);
     }
 
-    public static JEmployeeFinder getEmployeeFinder(Component parent, DataLogicPresenceManagement dlPresenceManagement) {
+    public static JEmployeeFinder getEmployeeFinder(Component parent,
+                                                    DataLogicPresenceManagement dlPresenceManagement) {
         Window window = getWindow(parent);
         JEmployeeFinder myMsg;
         if (window instanceof Frame) {
@@ -165,20 +166,24 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(m_jtxtName, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 126,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(18, 18, 18)
+                      .addComponent(m_jtxtName, javax.swing.GroupLayout.PREFERRED_SIZE, 220,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jtxtName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jtxtName, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel5.add(jPanel7, java.awt.BorderLayout.CENTER);
@@ -250,7 +255,8 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
         jPanel1.add(jcmdOK);
 
         jcmdCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        jcmdCancel.setIcon(new javax.swing.ImageIcon(
+                               getClass().getResource("/images/cancel.png"))); // NOI18N
         jcmdCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         jcmdCancel.setFocusPainted(false);
         jcmdCancel.setFocusable(false);
@@ -270,47 +276,53 @@ public class JEmployeeFinder extends javax.swing.JDialog implements EditorCreato
         getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-613)/2, (screenSize.height-495)/2, 613, 495);
+        setBounds((screenSize.width - 613) / 2, (screenSize.height - 495) / 2, 613, 495);
     }// </editor-fold>//GEN-END:initComponents
-    private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
+    private void jcmdOKActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jcmdOKActionPerformed
 
         selectedEmployee = (EmployeeInfo) jListEmployees.getSelectedValue();
         dispose();
 
     }//GEN-LAST:event_jcmdOKActionPerformed
 
-    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
+    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
 
         dispose();
 
     }//GEN-LAST:event_jcmdCancelActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         executeSearch();
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jListEmployeesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListEmployeesValueChanged
+    private void jListEmployeesValueChanged(javax.swing.event.ListSelectionEvent
+                                            evt) {//GEN-FIRST:event_jListEmployeesValueChanged
 
         jcmdOK.setEnabled(jListEmployees.getSelectedValue() != null);
 
-}//GEN-LAST:event_jListEmployeesValueChanged
+    }//GEN-LAST:event_jListEmployeesValueChanged
 
-    private void jListEmployeesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListEmployeesMouseClicked
+    private void jListEmployeesMouseClicked(java.awt.event.MouseEvent
+                                            evt) {//GEN-FIRST:event_jListEmployeesMouseClicked
 
         if (evt.getClickCount() == 2) {
             selectedEmployee = (EmployeeInfo) jListEmployees.getSelectedValue();
             dispose();
         }
 
-}//GEN-LAST:event_jListEmployeesMouseClicked
+    }//GEN-LAST:event_jListEmployeesMouseClicked
 
-private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         m_jtxtName.reset();
         cleanSearch();
-}//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

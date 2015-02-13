@@ -39,9 +39,10 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
         m_jTendered.addEditorKeys(m_jKeys);
 
 // added JDL 11.05.13
-        AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")), AppLocal.APP_ID + ".properties"));
+        AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")),
+                                                     AppLocal.APP_ID + ".properties"));
         m_config.load();
-        priceWith00 =("true".equals(m_config.getProperty("till.pricewith00")));
+        priceWith00 = ("true".equals(m_config.getProperty("till.pricewith00")));
         if (priceWith00) {
             // use '00' instead of '.'
             m_jKeys.dotIs00(true);
@@ -55,7 +56,8 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
                 script.put("payment", new ScriptPaymentCash(dlSystem));
                 script.eval(code);
             } catch (ScriptException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotexecute"), e);
+                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                                AppLocal.getIntString("message.cannotexecute"), e);
                 msg.show(this);
             }
         }
@@ -104,8 +106,8 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
         m_jMoneyEuros.setText(Formats.CURRENCY.formatValue(m_dPaid));
         m_jChangeEuros.setText(iCompare > 0
-                ? Formats.CURRENCY.formatValue(m_dPaid - m_dTotal)
-                : null);
+                               ? Formats.CURRENCY.formatValue(m_dPaid - m_dTotal)
+                               : null);
 
         m_notifier.setStatus(m_dPaid > 0.0, iCompare >= 0);
     }
@@ -125,7 +127,8 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
         public ScriptPaymentCash(DataLogicSystem dlSystem) {
 //added 19.04.13 JDL
-            AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")), AppLocal.APP_ID + ".properties"));
+            AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")),
+                                                         AppLocal.APP_ID + ".properties"));
             m_config.load();
             this.m_config = m_config;
 
@@ -137,13 +140,15 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
             JButton btn = new JButton();
 //added 19.04.13 JDL removal of text on payment buttons if required.
             try {
-            if ((m_config.getProperty("payments.textoverlay")).equals("true")){
-                     btn.setIcon(new ImageIcon(tnbbutton.getThumbNailText(dlSystem.getResourceAsImage(image),"")));
-            } else {
-                     btn.setIcon(new ImageIcon(tnbbutton.getThumbNailText(dlSystem.getResourceAsImage(image), Formats.CURRENCY.formatValue(amount))));
-            }
-            } catch (Exception e){
-                    btn.setIcon(new ImageIcon(tnbbutton.getThumbNailText(dlSystem.getResourceAsImage(image), Formats.CURRENCY.formatValue(amount))));
+                if ((m_config.getProperty("payments.textoverlay")).equals("true")) {
+                    btn.setIcon(new ImageIcon(tnbbutton.getThumbNailText(dlSystem.getResourceAsImage(image), "")));
+                } else {
+                    btn.setIcon(new ImageIcon(tnbbutton.getThumbNailText(dlSystem.getResourceAsImage(image),
+                                                                         Formats.CURRENCY.formatValue(amount))));
+                }
+            } catch (Exception e) {
+                btn.setIcon(new ImageIcon(tnbbutton.getThumbNailText(dlSystem.getResourceAsImage(image),
+                                                                     Formats.CURRENCY.formatValue(amount))));
             }
 
             btn.setFocusPainted(false);
@@ -169,9 +174,9 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
             Double tendered = m_jTendered.getDoubleValue();
 
             if (tendered == null) {
-                 m_jTendered.setDoubleValue(amount);
+                m_jTendered.setDoubleValue(amount);
             } else {
-              m_jTendered.setDoubleValue(tendered + amount);
+                m_jTendered.setDoubleValue(tendered + amount);
 
             }
 
@@ -211,7 +216,10 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
         m_jChangeEuros.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         m_jChangeEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jChangeEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jChangeEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                     javax.swing.BorderFactory.createLineBorder(
+                                         javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                     javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jChangeEuros.setOpaque(true);
         m_jChangeEuros.setPreferredSize(new java.awt.Dimension(180, 30));
         jPanel4.add(m_jChangeEuros);
@@ -231,7 +239,10 @@ public class JPaymentCashPos extends javax.swing.JPanel implements JPaymentInter
 
         m_jMoneyEuros.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         m_jMoneyEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jMoneyEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jMoneyEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                    javax.swing.BorderFactory.createLineBorder(
+                                        javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                    javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jMoneyEuros.setOpaque(true);
         m_jMoneyEuros.setPreferredSize(new java.awt.Dimension(180, 30));
         jPanel4.add(m_jMoneyEuros);

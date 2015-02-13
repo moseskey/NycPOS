@@ -13,7 +13,7 @@ public class JRefundLines extends javax.swing.JPanel {
 
     private final JPanelTicketEdits m_jTicketEdit;
 
-public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
+    public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
 
         m_jTicketEdit = jTicketEdit;
 
@@ -115,7 +115,8 @@ public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
         add(jPanel3, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jbtnAddAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtnAddAllActionPerformed
+    private void m_jbtnAddAllActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jbtnAddAllActionPerformed
 
         for (Object m_aLine : m_aLines) {
             TicketLineInfo oLine = (TicketLineInfo) m_aLine;
@@ -126,7 +127,8 @@ public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
 
     }//GEN-LAST:event_m_jbtnAddAllActionPerformed
 
-    private void m_jbtnAddOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtnAddOneActionPerformed
+    private void m_jbtnAddOneActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jbtnAddOneActionPerformed
 
         int index = ticketlines.getSelectedIndex();
         if (index >= 0) {
@@ -138,7 +140,8 @@ public JRefundLines(DataLogicSystem dlSystem, JPanelTicketEdits jTicketEdit) {
 
     }//GEN-LAST:event_m_jbtnAddOneActionPerformed
 
-    private void m_jbtnAddLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtnAddLineActionPerformed
+    private void m_jbtnAddLineActionPerformed(java.awt.event.ActionEvent
+                                              evt) {//GEN-FIRST:event_m_jbtnAddLineActionPerformed
 
         int index = ticketlines.getSelectedIndex();
         if (index >= 0) {

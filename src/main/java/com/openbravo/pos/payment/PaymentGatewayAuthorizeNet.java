@@ -33,13 +33,14 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
         m_sCommerceID = props.getProperty("payment.commerceid");
 
         AltEncrypter cypher = new AltEncrypter("cypherkey" + props.getProperty("payment.commerceid"));
-        this.m_sCommercePassword = cypher.decrypt(props.getProperty("payment.commercepassword").substring(6));
+        this.m_sCommercePassword = cypher.decrypt(props.getProperty("payment.commercepassword").substring(
+                                                      6));
 
         m_bTestMode = Boolean.parseBoolean(props.getProperty("payment.testmode"));
 
         ENDPOINTADDRESS = (m_bTestMode)
-                ? "https://test.authorize.net/gateway/transact.dll"
-                : "https://cardpresent.authorize.net/gateway/transact.dll";
+                          ? "https://test.authorize.net/gateway/transact.dll"
+                          : "https://cardpresent.authorize.net/gateway/transact.dll";
     }
 
     public PaymentGatewayAuthorizeNet() {
@@ -83,11 +84,11 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
                 String[] cc_name = payinfo.getHolderName().split(" ");
                 sb.append("&x_first_name=");
                 if (cc_name.length > 0) {
-                   sb.append(URLEncoder.encode(cc_name[0], "UTF-8"));
+                    sb.append(URLEncoder.encode(cc_name[0], "UTF-8"));
                 }
                 sb.append("&x_last_name=");
                 if (cc_name.length > 1) {
-                   sb.append(URLEncoder.encode(cc_name[1], "UTF-8"));
+                    sb.append(URLEncoder.encode(cc_name[1], "UTF-8"));
                 }
             } else {
                 // Example Track1
@@ -131,7 +132,7 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
 
             // not necessarily required but fixes a bug with some servers
             // JG May 12 added try-with-resources
-            connection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             try (DataOutputStream out = new DataOutputStream(connection.getOutputStream())) {
 
                 out.write(sb.toString().getBytes());
@@ -165,29 +166,28 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
                     StringBuilder errorLine = new StringBuilder();
 // JG July 2014
                     //Transaction declined
-                    if (anp.getNumErrors()>0) {
+                    if (anp.getNumErrors() > 0) {
 
-                        for (int i=1; i<=anp.getNumErrors(); i++) {
+                        for (int i = 1; i <= anp.getNumErrors(); i++) {
 // JG July 2014                            errorLine.append(props.get("Description").toString());
 //                            errorLine.append("\n");
-                            errorLine.append(props.get("ErrorCode"+Integer.toString(i)));
+                            errorLine.append(props.get("ErrorCode" + Integer.toString(i)));
                             errorLine.append(": ");
-                            errorLine.append(props.get("ErrorText"+Integer.toString(i)));
+                            errorLine.append(props.get("ErrorText" + Integer.toString(i)));
                             errorLine.append("\n");
                         }
 
-                    payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), errorLine.toString());
+                        payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), errorLine.toString());
                     }
                 }
-            }
-            else {
+            } else {
                 payinfo.paymentError(anp.getResult(), "");
             }
 
 // JG 16 May 12 use multicatch
         } catch (UnsupportedEncodingException | MalformedURLException eUE) {
             payinfo.paymentError(AppLocal.getIntString("message.paymentexceptionservice"), eUE.getMessage());
-        } catch(IOException e){
+        } catch (IOException e) {
             payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), e.getMessage());
         }
 
@@ -195,119 +195,118 @@ public class PaymentGatewayAuthorizeNet implements PaymentGateway {
 
     private class AuthorizeNetParser extends DefaultHandler {
 
-    private SAXParser m_sp = null;
-    private final Map props = new HashMap();
-    private String text;
-    private final InputStream is;
-    private String result;
-    private int numMessages = 0;
-    private int numErrors = 0;
+        private SAXParser m_sp = null;
+        private final Map props = new HashMap();
+        private String text;
+        private final InputStream is;
+        private String result;
+        private int numMessages = 0;
+        private int numErrors = 0;
 
-    public AuthorizeNetParser(String input) {
-        is = new ByteArrayInputStream(input.getBytes());
-    }
-
-    public Map splitXML(){
-        try {
-            if (m_sp == null) {
-                SAXParserFactory spf = SAXParserFactory.newInstance();
-                m_sp = spf.newSAXParser();
-            }
-
-            m_sp.parse(is, this);
-
-         } catch (ParserConfigurationException ePC) {
-            result = LocalRes.getIntString("exception.parserconfig");
-        } catch (SAXException eSAX) {
-            result = LocalRes.getIntString("exception.xmlfile");
-        } catch (IOException eIO) {
-            result = LocalRes.getIntString("exception.iofile");
+        public AuthorizeNetParser(String input) {
+            is = new ByteArrayInputStream(input.getBytes());
         }
-        result = LocalRes.getIntString("button.ok");
-        return props;
-    }
 
-    @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+        public Map splitXML() {
+            try {
+                if (m_sp == null) {
+                    SAXParserFactory spf = SAXParserFactory.newInstance();
+                    m_sp = spf.newSAXParser();
+                }
 
-        try {
+                m_sp.parse(is, this);
+
+            } catch (ParserConfigurationException ePC) {
+                result = LocalRes.getIntString("exception.parserconfig");
+            } catch (SAXException eSAX) {
+                result = LocalRes.getIntString("exception.xmlfile");
+            } catch (IOException eIO) {
+                result = LocalRes.getIntString("exception.iofile");
+            }
+            result = LocalRes.getIntString("button.ok");
+            return props;
+        }
+
+        @Override
+        public void endElement(String uri, String localName, String qName) throws SAXException {
+
+            try {
 // JG 16 May 12 use switch
-            if (qName.equals("ResponseCode")) {
-                props.put("ResponseCode", URLDecoder.decode(text, "UTF-8"));
-                text="";
-            } else if (qName.equals("ErrorCode")){
-                numErrors++;
-                props.put("ErrorCode"+Integer.toString(numErrors), URLDecoder.decode(text, "UTF-8"));
-                text = "";
-            } else if (qName.equals("ErrorText")) {
-                props.put("ErrorText"+Integer.toString(numErrors), URLDecoder.decode(text, "UTF-8"));
-                text="";
-            } else if (qName.equals("Code")) {
-                numMessages++;
-                props.put("Code"+Integer.toString(numMessages), URLDecoder.decode(text, "UTF-8"));
-                text = "";
-            } else if (qName.equals("Description")) {
-                props.put("Description"+Integer.toString(numMessages), URLDecoder.decode(text, "UTF-8"));
-                text="";
-            } else if (qName.equals("AuthCode")) {
-                props.put("AuthCode", URLDecoder.decode(text, "UTF-8"));
-                text="";
-            } else if (qName.equals("AVSResultCode")) {
-                props.put("AVSResultCode", URLDecoder.decode(text, "UTF-8"));
-                text="";
-            } else if (qName.equals("CVVResultCode")) {
-                props.put("CVVResultCode", URLDecoder.decode(text, "UTF-8"));
-                text="";
-            } else if (qName.equals("TransID")) {
-                props.put("TransID", URLDecoder.decode(text, "UTF-8"));
-                text="";
-            } else if (qName.equals("RefTransID")) {
-                props.put("RefTransID", URLDecoder.decode(text, "UTF-8"));
-                text="";
-            } else if (qName.equals("TransHash")) {
-                props.put("TransHash", URLDecoder.decode(text, "UTF-8"));
-                text="";
-            } else if (qName.equals("TestMode")) {
-                props.put("TestMode", URLDecoder.decode(text, "UTF-8"));
-                text="";
-            } else if (qName.equals("UserRef")) {
-                props.put("UserRef", URLDecoder.decode(text, "UTF-8"));
-                text="";
+                if (qName.equals("ResponseCode")) {
+                    props.put("ResponseCode", URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("ErrorCode")) {
+                    numErrors++;
+                    props.put("ErrorCode" + Integer.toString(numErrors), URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("ErrorText")) {
+                    props.put("ErrorText" + Integer.toString(numErrors), URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("Code")) {
+                    numMessages++;
+                    props.put("Code" + Integer.toString(numMessages), URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("Description")) {
+                    props.put("Description" + Integer.toString(numMessages), URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("AuthCode")) {
+                    props.put("AuthCode", URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("AVSResultCode")) {
+                    props.put("AVSResultCode", URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("CVVResultCode")) {
+                    props.put("CVVResultCode", URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("TransID")) {
+                    props.put("TransID", URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("RefTransID")) {
+                    props.put("RefTransID", URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("TransHash")) {
+                    props.put("TransHash", URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("TestMode")) {
+                    props.put("TestMode", URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                } else if (qName.equals("UserRef")) {
+                    props.put("UserRef", URLDecoder.decode(text, "UTF-8"));
+                    text = "";
+                }
+            } catch (UnsupportedEncodingException eUE) {
+                result = eUE.getMessage();
             }
         }
-        catch(UnsupportedEncodingException eUE){
-            result = eUE.getMessage();
+
+        @Override
+        public void startDocument() throws SAXException {
+            text = new String();
         }
-    }
 
-    @Override
-    public void startDocument() throws SAXException {
-        text = new String();
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-    }
-
-    @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
-        if (text!=null) {
-            text = new String(ch, start, length);
+        @Override
+        public void endDocument() throws SAXException {
         }
-    }
 
-    public String getResult(){
-        return this.result;
-    }
+        @Override
+        public void characters(char[] ch, int start, int length) throws SAXException {
+            if (text != null) {
+                text = new String(ch, start, length);
+            }
+        }
 
-    public int getNumErrors(){
-        return numErrors;
-    }
+        public String getResult() {
+            return this.result;
+        }
 
-    public int getNumMessages(){
-        return numMessages;
-    }
+        public int getNumErrors() {
+            return numErrors;
+        }
 
- }
+        public int getNumMessages() {
+            return numMessages;
+        }
+
+    }
 
 }

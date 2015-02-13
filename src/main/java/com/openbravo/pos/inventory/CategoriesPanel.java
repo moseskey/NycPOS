@@ -40,17 +40,17 @@ public class CategoriesPanel extends JPanelTable {
 
     @Override
     public Vectorer getVectorer() {
-        return tcategories.getVectorerBasic(new int[]{1});
+        return tcategories.getVectorerBasic(new int[] {1});
     }
 
     @Override
     public ComparatorCreator getComparatorCreator() {
-        return tcategories.getComparatorCreator(new int[]{1});
+        return tcategories.getComparatorCreator(new int[] {1});
     }
 
     @Override
     public ListCellRenderer getListCellRenderer() {
-        return new ListCellRendererBasic(tcategories.getRenderStringBasic(new int[]{1}));
+        return new ListCellRendererBasic(tcategories.getRenderStringBasic(new int[] {1}));
     }
 
     @Override

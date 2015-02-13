@@ -28,7 +28,7 @@ public class DeviceDisplayJavaPOS implements DeviceDisplay, DeviceDisplayImpl {
         }
 
         m_displaylines = new DeviceDisplayBase(this);
-   }
+    }
 
     @Override
     public String getDisplayName() {

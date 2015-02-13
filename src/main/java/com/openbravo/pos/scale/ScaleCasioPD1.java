@@ -35,7 +35,7 @@ public class ScaleCasioPD1 implements Scale, SerialPortEventListener {
     @Override
     public Double readWeight() {
 
-        synchronized(this) {
+        synchronized (this) {
 
             if (m_iStatusScale != SCALE_READY) {
                 try {
@@ -94,20 +94,21 @@ public class ScaleCasioPD1 implements Scale, SerialPortEventListener {
                 m_CommPortPrinter.notifyOnDataAvailable(true);
 
                 m_CommPortPrinter.setSerialPortParams(9600,
-                        SerialPort.DATABITS_7,
-                        SerialPort.STOPBITS_1,
-                        SerialPort.PARITY_EVEN);
+                                                      SerialPort.DATABITS_7,
+                                                      SerialPort.STOPBITS_1,
+                                                      SerialPort.PARITY_EVEN);
             }
             m_out.write(data);
-        } catch (NoSuchPortException | PortInUseException | UnsupportedCommOperationException | TooManyListenersException | IOException e) {
+        } catch (NoSuchPortException | PortInUseException | UnsupportedCommOperationException |
+                     TooManyListenersException | IOException e) {
         }
     }
 
     @Override
     public void serialEvent(SerialPortEvent e) {
 
-	// Determine type of event.
-	switch (e.getEventType()) {
+        // Determine type of event.
+        switch (e.getEventType()) {
             case SerialPortEvent.BI:
             case SerialPortEvent.OE:
             case SerialPortEvent.FE:
@@ -123,47 +124,47 @@ public class ScaleCasioPD1 implements Scale, SerialPortEventListener {
                     while (m_in.available() > 0) {
                         int b = m_in.read();
 
-            if (b==0x0003 || b==3) {
-                synchronized (this) {
-                    SCALE_NOMORE = 1;
-                    m_iStatusScale = SCALE_READY;
-                    notifyAll();
-                }
-
-            }else if (b == 0x004C || b==76) {
-                synchronized (this) {
-                    SCALE_NOMORE = 0;
-                }
-
-            }else if (SCALE_NOMORE==0){
-                m_iStatusScale = SCALE_READY;
-
-            }else if (b > 0x002F && b < 0x003A && SCALE_NOMORE==1 || b == 0x002E){
-                synchronized(this) {
-
-                    if (m_iStatusScale == SCALE_READY) {
-                        m_dWeightBuffer = 0.0;
-                        m_dWeightDecimals = 1.0;
-                        m_iStatusScale = SCALE_READING;
-                        }
-                    if (b == 0x002E) {
-                        m_iStatusScale = SCALE_READINGDECIMALS;
-                        } else {
-                        m_dWeightBuffer = m_dWeightBuffer * 10.0 + b - 0x0030;
-
-                        if (m_iStatusScale == SCALE_READINGDECIMALS) {
-                            m_dWeightDecimals *= 10.0;
+                        if (b == 0x0003 || b == 3) {
+                            synchronized (this) {
+                                SCALE_NOMORE = 1;
+                                m_iStatusScale = SCALE_READY;
+                                notifyAll();
                             }
+
+                        } else if (b == 0x004C || b == 76) {
+                            synchronized (this) {
+                                SCALE_NOMORE = 0;
+                            }
+
+                        } else if (SCALE_NOMORE == 0) {
+                            m_iStatusScale = SCALE_READY;
+
+                        } else if (b > 0x002F && b < 0x003A && SCALE_NOMORE == 1 || b == 0x002E) {
+                            synchronized (this) {
+
+                                if (m_iStatusScale == SCALE_READY) {
+                                    m_dWeightBuffer = 0.0;
+                                    m_dWeightDecimals = 1.0;
+                                    m_iStatusScale = SCALE_READING;
+                                }
+                                if (b == 0x002E) {
+                                    m_iStatusScale = SCALE_READINGDECIMALS;
+                                } else {
+                                    m_dWeightBuffer = m_dWeightBuffer * 10.0 + b - 0x0030;
+
+                                    if (m_iStatusScale == SCALE_READINGDECIMALS) {
+                                        m_dWeightDecimals *= 10.0;
+                                    }
+                                }
+                            }
+                        } else {
+                            m_dWeightBuffer = 0.0;
+                            m_dWeightDecimals = 1.0;
+                            m_iStatusScale = SCALE_READY;
                         }
                     }
-                } else {
-                    m_dWeightBuffer = 0.0;
-                    m_dWeightDecimals = 1.0;
-                    m_iStatusScale = SCALE_READY;
-                    }
-            }
-                    } catch (IOException eIO) {}
+                } catch (IOException eIO) {}
                 break;
-                }
         }
     }
+}

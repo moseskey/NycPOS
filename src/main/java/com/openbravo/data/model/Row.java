@@ -49,15 +49,15 @@ public class Row {
 
     public SentenceExec getExecSentence(Session s, String sql, final int... indexes) {
         return new PreparedSentence(s, sql,
-            new SerializerWrite<Object[]>() {
-                @Override
-                public void writeValues(DataWrite dp, Object[] obj) throws BasicException {
-                    for (int i = 0; i < indexes.length; i++) {
-                        fields[indexes[i]].getData().setValue(dp, i + 1, obj[indexes[i]]);
-                    }
+        new SerializerWrite<Object[]>() {
+            @Override
+            public void writeValues(DataWrite dp, Object[] obj) throws BasicException {
+                for (int i = 0; i < indexes.length; i++) {
+                    fields[indexes[i]].getData().setValue(dp, i + 1, obj[indexes[i]]);
                 }
             }
-        );
+        }
+                                   );
     }
 
     public ListProvider getListProvider(Session s, Table t) {
@@ -82,52 +82,52 @@ public class Row {
 
     public SentenceExec getInsertSentence(Session s, final Table t) {
         return new PreparedSentence(s,  t.getInsertSQL(),
-            new SerializerWrite<Object[]>() {
-                @Override
-                public void writeValues(DataWrite dp, Object[] obj) throws BasicException {
-                    for (int i = 0; i < t.getColumns().length; i++) {
-                        fields[i].getData().setValue(dp, i + 1, obj[i]);
-                    }
+        new SerializerWrite<Object[]>() {
+            @Override
+            public void writeValues(DataWrite dp, Object[] obj) throws BasicException {
+                for (int i = 0; i < t.getColumns().length; i++) {
+                    fields[i].getData().setValue(dp, i + 1, obj[i]);
                 }
             }
-        );
+        }
+                                   );
     }
 
     public SentenceExec getDeleteSentence(Session s, final Table t) {
         return new PreparedSentence(s,  t.getDeleteSQL(),
-            new SerializerWrite<Object[]>() {
-                @Override
-                public void writeValues(DataWrite dp, Object[] obj) throws BasicException {
-                    int index = 1;
-                    for (int i = 0; i < t.getColumns().length; i++) {
-                        if (t.getColumns()[i].isPK()) {
-                            fields[i].getData().setValue(dp, index++, obj[i]);
-                        }
+        new SerializerWrite<Object[]>() {
+            @Override
+            public void writeValues(DataWrite dp, Object[] obj) throws BasicException {
+                int index = 1;
+                for (int i = 0; i < t.getColumns().length; i++) {
+                    if (t.getColumns()[i].isPK()) {
+                        fields[i].getData().setValue(dp, index++, obj[i]);
                     }
                 }
             }
-        );
+        }
+                                   );
     }
 
     public SentenceExec getUpdateSentence(Session s, final Table t) {
         return new PreparedSentence(s,  t.getUpdateSQL(),
-            new SerializerWrite<Object[]>() {
-                @Override
-                public void writeValues(DataWrite dp, Object[] obj) throws BasicException {
-                    int index = 1;
-                    for (int i = 0; i < t.getColumns().length; i++) {
-                        if (!t.getColumns()[i].isPK()) {
-                            fields[i].getData().setValue(dp, index++, obj[i]);
-                        }
+        new SerializerWrite<Object[]>() {
+            @Override
+            public void writeValues(DataWrite dp, Object[] obj) throws BasicException {
+                int index = 1;
+                for (int i = 0; i < t.getColumns().length; i++) {
+                    if (!t.getColumns()[i].isPK()) {
+                        fields[i].getData().setValue(dp, index++, obj[i]);
                     }
-                    for (int i = 0; i < t.getColumns().length; i++) {
-                        if (t.getColumns()[i].isPK()) {
-                            fields[i].getData().setValue(dp, index++, obj[i]);
-                        }
+                }
+                for (int i = 0; i < t.getColumns().length; i++) {
+                    if (t.getColumns()[i].isPK()) {
+                        fields[i].getData().setValue(dp, index++, obj[i]);
                     }
                 }
             }
-        );
+        }
+                                   );
     }
 
     public Datas[] getDatas() {
@@ -236,8 +236,8 @@ public class Row {
                         Object[] ao2 = (Object[]) o2;
                         for (int i = 0; i < orderby.length; i++) {
                             int result = fields[comparablefields.get(orderby[i])].getData().compare(
-                                    ao1[comparablefields.get(orderby[i])],
-                                    ao2[comparablefields.get(orderby[i])]);
+                                             ao1[comparablefields.get(orderby[i])],
+                                             ao2[comparablefields.get(orderby[i])]);
                             if (result != 0) {
                                 return result;
                             }

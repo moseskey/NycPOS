@@ -82,7 +82,7 @@ public class TaxesLogic {
         // JG June 2013 use diamond inference
         List<TicketTaxInfo> tickettaxes = new ArrayList<>();
 
-        for (TicketLineInfo line: ticket.getLines()) {
+        for (TicketLineInfo line : ticket.getLines()) {
             tickettaxes = sumLineTaxes(tickettaxes, calculateTaxes(line));
         }
 
@@ -110,8 +110,8 @@ public class TaxesLogic {
             for (TaxesLogicElement te : taxesapplied.getSons()) {
 
                 List<TicketTaxInfo> sublinetaxes = calculateLineTaxes(
-                        te.getTax().isCascade() ? acum : base,
-                        te);
+                                                       te.getTax().isCascade() ? acum : base,
+                                                       te);
                 linetaxes.addAll(sublinetaxes);
                 acum += sumTaxes(sublinetaxes);
             }
@@ -213,9 +213,11 @@ public class TaxesLogic {
 
         for (TaxInfo tax : taxlist) {
             if (tax.getParentID() == null && tax.getTaxCategoryID().equals(tcid)) {
-                if ((customer == null || customer.getTaxCustCategoryID() == null) && tax.getTaxCustCategoryID() == null) {
+                if ((customer == null || customer.getTaxCustCategoryID() == null) &&
+                    tax.getTaxCustCategoryID() == null) {
                     return tax;
-                } else if (customer != null && customer.getTaxCustCategoryID() != null && customer.getTaxCustCategoryID().equals(tax.getTaxCustCategoryID())) {
+                } else if (customer != null && customer.getTaxCustCategoryID() != null &&
+                           customer.getTaxCustCategoryID().equals(tax.getTaxCustCategoryID())) {
                     return tax;
                 }
 

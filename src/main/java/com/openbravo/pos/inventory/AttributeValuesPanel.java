@@ -24,19 +24,19 @@ public class AttributeValuesPanel extends JPanelTable2 {
         filter.addActionListener(new ReloadActionListener());
 
         row = new Row(
-                new Field("ID", Datas.STRING, Formats.STRING),
-                new Field("ATTRIBUTE_ID", Datas.STRING, Formats.STRING),
-                new Field(AppLocal.getIntString("label.value"), Datas.STRING, Formats.STRING, true, true, true)
+            new Field("ID", Datas.STRING, Formats.STRING),
+            new Field("ATTRIBUTE_ID", Datas.STRING, Formats.STRING),
+            new Field(AppLocal.getIntString("label.value"), Datas.STRING, Formats.STRING, true, true, true)
         );
 
         Table table = new Table(
-                "ATTRIBUTEVALUE",
-                new PrimaryKey("ID"),
-                new Column("ATTRIBUTE_ID"),
-                new Column("VALUE"));
+            "ATTRIBUTEVALUE",
+            new PrimaryKey("ID"),
+            new Column("ATTRIBUTE_ID"),
+            new Column("VALUE"));
 
         lpr = row.getListProvider(app.getSession(),
-                "SELECT ID, ATTRIBUTE_ID, VALUE FROM ATTRIBUTEVALUE WHERE ATTRIBUTE_ID = ? ", filter);
+                                  "SELECT ID, ATTRIBUTE_ID, VALUE FROM ATTRIBUTEVALUE WHERE ATTRIBUTE_ID = ? ", filter);
         spr = row.getSaveProvider(app.getSession(), table);
 
         editor = new AttributeValuesEditor(dirty);
@@ -52,7 +52,7 @@ public class AttributeValuesPanel extends JPanelTable2 {
     }
 
     @Override
-    public Component getFilter(){
+    public Component getFilter() {
         return filter.getComponent();
     }
 

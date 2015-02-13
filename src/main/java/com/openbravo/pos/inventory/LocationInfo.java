@@ -57,7 +57,7 @@ public class LocationInfo implements SerializableRead, IKeyed {
         m_sAddress = sAddress;
     }
 
-    public String toString(){
+    public String toString() {
         return m_sName;
     }
 }

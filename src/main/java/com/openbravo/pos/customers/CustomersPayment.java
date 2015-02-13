@@ -78,7 +78,9 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
     @Override
     public boolean deactivate() {
         if (dirty.isDirty()) {
-            int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannasave"), AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannasave"),
+                                                    AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_CANCEL_OPTION,
+                                                    JOptionPane.QUESTION_MESSAGE);
             if (res == JOptionPane.YES_OPTION) {
                 save();
                 return true;
@@ -145,14 +147,16 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         try {
             CustomerInfoExt customer = dlsales.findCustomerExt(editorcard.getText());
             if (customer == null) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"));
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotfindcustomer"));
                 msg.show(this);
             } else {
                 editCustomer(customer);
             }
 
         } catch (BasicException ex) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"), ex);
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.cannotfindcustomer"), ex);
             msg.show(this);
         }
 
@@ -178,7 +182,8 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
 
         String resource = dlsystem.getResourceAsXML(resname);
         if (resource == null) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotprintticket"));
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.cannotprintticket"));
             msg.show(this);
         } else {
             try {
@@ -187,8 +192,9 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
                 script.put("customer", customer);
                 ttp.printTicket(script.eval(resource).toString());
 // JG 6 May use multicatch
-            } catch (    ScriptException | TicketPrinterException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotprintticket"), e);
+            } catch (ScriptException | TicketPrinterException e) {
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotprintticket"), e);
                 msg.show(this);
             }
         }
@@ -236,7 +242,8 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
 
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customer_sml.png"))); // NOI18N
+        btnCustomer.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/images/customer_sml.png"))); // NOI18N
         btnCustomer.setToolTipText("Customer Account");
         btnCustomer.setFocusPainted(false);
         btnCustomer.setFocusable(false);
@@ -249,7 +256,8 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         });
         jPanel6.add(btnCustomer);
 
-        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/filesave.png"))); // NOI18N
+        btnSave.setIcon(new javax.swing.ImageIcon(
+                            getClass().getResource("/images/filesave.png"))); // NOI18N
         btnSave.setToolTipText("Save");
         btnSave.setFocusPainted(false);
         btnSave.setFocusable(false);
@@ -387,87 +395,117 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTaxId, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNotes, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMaxdebt, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCurdebt, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCurdate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                          .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(txtTaxId, javax.swing.GroupLayout.PREFERRED_SIZE, 240,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                          .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 240,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                          .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, 240,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                          .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(txtNotes, javax.swing.GroupLayout.PREFERRED_SIZE, 270,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                          .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(txtMaxdebt, javax.swing.GroupLayout.PREFERRED_SIZE, 130,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                          .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(txtCurdebt, javax.swing.GroupLayout.PREFERRED_SIZE, 130,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                          .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 140,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(txtCurdate, javax.swing.GroupLayout.PREFERRED_SIZE, 130,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                      .addContainerGap(81, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTaxId, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(txtNotes, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMaxdebt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCurdebt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCurdate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(223, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTaxId, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel12)
+                                .addComponent(txtNotes, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtMaxdebt, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCurdebt, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCurdate, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addContainerGap(223, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         readCustomer();
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void m_jKeysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jKeysActionPerformed
+    private void m_jKeysActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_m_jKeysActionPerformed
 
         readCustomer();
 
     }//GEN-LAST:event_m_jKeysActionPerformed
 
-    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
+    private void btnCustomerActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_btnCustomerActionPerformed
 
         JCustomerFinder finder = JCustomerFinder.getCustomerFinder(this, dlcustomers);
         finder.search(null);
@@ -477,22 +515,25 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
             try {
                 CustomerInfoExt c = dlsales.loadCustomerExt(customer.getId());
                 if (c == null) {
-                    MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"));
+                    MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                    AppLocal.getIntString("message.cannotfindcustomer"));
                     msg.show(this);
                 } else {
                     editCustomer(c);
                 }
             } catch (BasicException ex) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"), ex);
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotfindcustomer"), ex);
                 msg.show(this);
             }
         }
         editorcard.reset();
         editorcard.activate();
 
-}//GEN-LAST:event_btnCustomerActionPerformed
+    }//GEN-LAST:event_btnCustomerActionPerformed
 
-    private void btnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayActionPerformed
+    private void btnPayActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_btnPayActionPerformed
 
         paymentdialog.setPrintSelected(true);
 
@@ -521,7 +562,8 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
             try {
                 dlsales.saveTicket(ticket, app.getInventoryLocation());
             } catch (BasicException eData) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.nosaveticket"), eData);
+                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                                AppLocal.getIntString("message.nosaveticket"), eData);
                 msg.show(this);
             }
 
@@ -531,29 +573,32 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
             try {
                 c = dlsales.loadCustomerExt(customerext.getId());
                 if (c == null) {
-                    MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"));
+                    MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                    AppLocal.getIntString("message.cannotfindcustomer"));
                     msg.show(this);
                 } else {
                     editCustomer(c);
                 }
             } catch (BasicException ex) {
                 c = null;
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"), ex);
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotfindcustomer"), ex);
                 msg.show(this);
             }
 
             printTicket(paymentdialog.isPrintSelected()
-                    ? "Printer.CustomerPaid"
-                    : "Printer.CustomerPaid2",
-                    ticket, c);
+                        ? "Printer.CustomerPaid"
+                        : "Printer.CustomerPaid2",
+                        ticket, c);
         }
 
         editorcard.reset();
         editorcard.activate();
 
-}//GEN-LAST:event_btnPayActionPerformed
+    }//GEN-LAST:event_btnPayActionPerformed
 
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_btnSaveActionPerformed
 
         if (dirty.isDirty()) {
             save();
@@ -562,7 +607,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
             editorcard.activate();
         }
 
-}//GEN-LAST:event_btnSaveActionPerformed
+    }//GEN-LAST:event_btnSaveActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnPay;

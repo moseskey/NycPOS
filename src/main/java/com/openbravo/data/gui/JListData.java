@@ -112,15 +112,17 @@ public class JListData extends javax.swing.JDialog {
         getContentPane().add(jToolBar1, java.awt.BorderLayout.NORTH);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-264)/2, (screenSize.height-337)/2, 264, 337);
+        setBounds((screenSize.width - 264) / 2, (screenSize.height - 337) / 2, 264, 337);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCancelActionPerformed
+    private void m_jCancelActionPerformed(java.awt.event.ActionEvent
+                                          evt) {//GEN-FIRST:event_m_jCancelActionPerformed
 
         dispose();
     }//GEN-LAST:event_m_jCancelActionPerformed
 
-    private void m_jOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jOKActionPerformed
+    private void m_jOKActionPerformed(java.awt.event.ActionEvent
+                                      evt) {//GEN-FIRST:event_m_jOKActionPerformed
 
         m_selected = m_jData.getSelectedValue();
 

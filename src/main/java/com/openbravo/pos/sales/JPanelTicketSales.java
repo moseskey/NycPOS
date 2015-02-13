@@ -32,16 +32,16 @@ public class JPanelTicketSales extends JPanelTicket {
     @Override
     protected Component getSouthComponent() {
         m_cat = new JCatalog(dlSales,
-                "true".equals(m_jbtnconfig.getProperty("pricevisible")),
-                "true".equals(m_jbtnconfig.getProperty("taxesincluded")),
-                Integer.parseInt(m_jbtnconfig.getProperty("img-width", "64")),
-                Integer.parseInt(m_jbtnconfig.getProperty("img-height", "54")));
+                             "true".equals(m_jbtnconfig.getProperty("pricevisible")),
+                             "true".equals(m_jbtnconfig.getProperty("taxesincluded")),
+                             Integer.parseInt(m_jbtnconfig.getProperty("img-width", "64")),
+                             Integer.parseInt(m_jbtnconfig.getProperty("img-height", "54")));
         //   Integer.parseInt(m_jbtnconfig.getProperty("img-width", "32")),
-               //   Integer.parseInt(m_jbtnconfig.getProperty("img-height", "32")));
+        //   Integer.parseInt(m_jbtnconfig.getProperty("img-height", "32")));
         m_cat.addActionListener(new CatalogListener());
         m_cat.getComponent().setPreferredSize(new Dimension(
-                0,
-                Integer.parseInt(m_jbtnconfig.getProperty("cat-height", "245"))));
+                                                  0,
+                                                  Integer.parseInt(m_jbtnconfig.getProperty("cat-height", "245"))));
         return m_cat.getComponent();
     }
 
@@ -52,7 +52,8 @@ public class JPanelTicketSales extends JPanelTicket {
 
     @Override
     protected JTicketsBag getJTicketsBag() {
-        return JTicketsBag.createTicketsBag(m_App.getProperties().getProperty("machine.ticketsbag"), m_App, this);
+        return JTicketsBag.createTicketsBag(m_App.getProperties().getProperty("machine.ticketsbag"), m_App,
+                                            this);
     }
 
     @Override

@@ -97,7 +97,8 @@ public class JDlgChangePassword extends javax.swing.JDialog {
         jPanel2.add(jcmdOK);
 
         jcmdCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        jcmdCancel.setIcon(new javax.swing.ImageIcon(
+                               getClass().getResource("/images/cancel.png"))); // NOI18N
         jcmdCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         jcmdCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,25 +143,30 @@ public class JDlgChangePassword extends javax.swing.JDialog {
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-416)/2, (screenSize.height-205)/2, 416, 205);
+        setBounds((screenSize.width - 416) / 2, (screenSize.height - 205) / 2, 416, 205);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
+    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
 
         dispose();
     }//GEN-LAST:event_jcmdCancelActionPerformed
 
-    private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
+    private void jcmdOKActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jcmdOKActionPerformed
 
-        if (new String(jtxtPasswordNew.getPassword()).equals(new String(jtxtPasswordRepeat.getPassword()))) {
+        if (new String(jtxtPasswordNew.getPassword()).equals(new String(
+                                                                 jtxtPasswordRepeat.getPassword()))) {
             if (Hashcypher.authenticate(new String(jtxtPasswordOld.getPassword()), m_sOldPassword)) {
                 m_sNewPassword = Hashcypher.hashString(new String(jtxtPasswordNew.getPassword()));
                 dispose();
             } else {
-                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.BadPassword")));
+                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                AppLocal.getIntString("message.BadPassword")));
             }
         } else {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.changepassworddistinct")));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                            AppLocal.getIntString("message.changepassworddistinct")));
         }
     }//GEN-LAST:event_jcmdOKActionPerformed
 

@@ -6,7 +6,7 @@ public class MovementReason extends ComboItemLocal {
 
     // public static final MovementReason NULL = new MovementReason(null, "");
 
-        public static final MovementReason IN_PURCHASE = new MovementReason(+1, "stock.in.purchase");
+    public static final MovementReason IN_PURCHASE = new MovementReason(+1, "stock.in.purchase");
 
     public static final MovementReason IN_REFUND = new MovementReason(+2, "stock.in.refund");
 
@@ -35,7 +35,7 @@ public class MovementReason extends ComboItemLocal {
         if (d == null || m_iKey == null) {
             return d;
         } else if ((m_iKey > 0 && d < 0.0) ||
-            (m_iKey < 0 && d > 0.0)) {
+                   (m_iKey < 0 && d > 0.0)) {
             return -d;
         } else {
             return d;

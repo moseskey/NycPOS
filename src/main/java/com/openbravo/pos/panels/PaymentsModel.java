@@ -107,13 +107,15 @@ public class PaymentsModel {
 // JG 9 Nov 12
         // Product category Sales
         Object[] valcategorysales = (Object []) new StaticSentence(app.getSession(),
-             "SELECT COUNT(*), SUM(TICKETLINES.UNITS), SUM((TICKETLINES.PRICE + TICKETLINES.PRICE * TAXES.RATE ) * TICKETLINES.UNITS) " +
-              "FROM TICKETLINES, TICKETS, RECEIPTS, TAXES " +
-              "WHERE TICKETLINES.TICKET = TICKETS.ID AND TICKETS.ID = RECEIPTS.ID AND TICKETLINES.TAXID = TAXES.ID AND TICKETLINES.PRODUCT IS NOT NULL AND RECEIPTS.MONEY = ? " +
-              "GROUP BY RECEIPTS.MONEY",
-             SerializerWriteString.INSTANCE,
-             new SerializerReadBasic(new Datas[] {Datas.INT, Datas.DOUBLE, Datas.DOUBLE}))
-            .find(app.getActiveCashIndex());
+                                                                   "SELECT COUNT(*), SUM(TICKETLINES.UNITS), SUM((TICKETLINES.PRICE + TICKETLINES.PRICE * TAXES.RATE ) * TICKETLINES.UNITS) "
+                                                                   +
+                                                                   "FROM TICKETLINES, TICKETS, RECEIPTS, TAXES " +
+                                                                   "WHERE TICKETLINES.TICKET = TICKETS.ID AND TICKETS.ID = RECEIPTS.ID AND TICKETLINES.TAXID = TAXES.ID AND TICKETLINES.PRODUCT IS NOT NULL AND RECEIPTS.MONEY = ? "
+                                                                   +
+                                                                   "GROUP BY RECEIPTS.MONEY",
+                                                                   SerializerWriteString.INSTANCE,
+                                                                   new SerializerReadBasic(new Datas[] {Datas.INT, Datas.DOUBLE, Datas.DOUBLE}))
+                                    .find(app.getActiveCashIndex());
 
         if (valcategorysales == null) {
             p.m_iCategorySalesRows = 0;
@@ -122,21 +124,22 @@ public class PaymentsModel {
         } else {
             p.m_iCategorySalesRows = (Integer) valcategorysales[0];
             p.m_dCategorySalesTotalUnits = (Double) valcategorysales[1];
-            p.m_dCategorySalesTotal= (Double) valcategorysales[2];
+            p.m_dCategorySalesTotal = (Double) valcategorysales[2];
         }
 
         List categorys = new StaticSentence(app.getSession(),
-             "SELECT a.NAME, sum(c.UNITS), sum(c.UNITS * (c.PRICE + (c.PRICE * d.RATE))) " +
-              "FROM CATEGORIES as a " +
-              "LEFT JOIN PRODUCTS as b on a.id = b.CATEGORY " +
-              "LEFT JOIN TICKETLINES as c on b.id = c.PRODUCT " +
-              "LEFT JOIN TAXES as d on c.TAXID = d.ID " +
-              "LEFT JOIN RECEIPTS as e on c.TICKET = e.ID " +
-              "WHERE e.MONEY = ? " +
-              "GROUP BY a.NAME",
-             SerializerWriteString.INSTANCE,
-             new SerializerReadClass(PaymentsModel.CategorySalesLine.class)) //new SerializerReadBasic(new Datas[] {Datas.STRING, Datas.DOUBLE}))
-            .list(app.getActiveCashIndex());
+                                            "SELECT a.NAME, sum(c.UNITS), sum(c.UNITS * (c.PRICE + (c.PRICE * d.RATE))) " +
+                                            "FROM CATEGORIES as a " +
+                                            "LEFT JOIN PRODUCTS as b on a.id = b.CATEGORY " +
+                                            "LEFT JOIN TICKETLINES as c on b.id = c.PRODUCT " +
+                                            "LEFT JOIN TAXES as d on c.TAXID = d.ID " +
+                                            "LEFT JOIN RECEIPTS as e on c.TICKET = e.ID " +
+                                            "WHERE e.MONEY = ? " +
+                                            "GROUP BY a.NAME",
+                                            SerializerWriteString.INSTANCE,
+                                            new SerializerReadClass(
+                                                PaymentsModel.CategorySalesLine.class)) //new SerializerReadBasic(new Datas[] {Datas.STRING, Datas.DOUBLE}))
+        .list(app.getActiveCashIndex());
 
         if (categorys == null) {
             p.m_lcategorysales = new ArrayList();
@@ -147,12 +150,12 @@ public class PaymentsModel {
 
         // Payments
         Object[] valtickets = (Object []) new StaticSentence(app.getSession(),
-             "SELECT COUNT(*), SUM(PAYMENTS.TOTAL) " +
-              "FROM PAYMENTS, RECEIPTS " +
-              "WHERE PAYMENTS.RECEIPT = RECEIPTS.ID AND RECEIPTS.MONEY = ?",
-             SerializerWriteString.INSTANCE,
-             new SerializerReadBasic(new Datas[] {Datas.INT, Datas.DOUBLE}))
-            .find(app.getActiveCashIndex());
+                                                             "SELECT COUNT(*), SUM(PAYMENTS.TOTAL) " +
+                                                             "FROM PAYMENTS, RECEIPTS " +
+                                                             "WHERE PAYMENTS.RECEIPT = RECEIPTS.ID AND RECEIPTS.MONEY = ?",
+                                                             SerializerWriteString.INSTANCE,
+                                                             new SerializerReadBasic(new Datas[] {Datas.INT, Datas.DOUBLE}))
+                              .find(app.getActiveCashIndex());
 
         if (valtickets == null) {
             p.m_iPayments = 0;
@@ -164,13 +167,14 @@ public class PaymentsModel {
 
 // JG 16 Oct 13 - Added. Shaun Cains ADD REASON
         List l = new StaticSentence(app.getSession(),
-             "SELECT PAYMENTS.PAYMENT, SUM(PAYMENTS.TOTAL), PAYMENTS.NOTES " +
-              "FROM PAYMENTS, RECEIPTS " +
-              "WHERE PAYMENTS.RECEIPT = RECEIPTS.ID AND RECEIPTS.MONEY = ? " +
-              "GROUP BY PAYMENTS.PAYMENT, PAYMENTS.NOTES",
-             SerializerWriteString.INSTANCE,
-             new SerializerReadClass(PaymentsModel.PaymentsLine.class)) //new SerializerReadBasic(new Datas[] {Datas.STRING, Datas.DOUBLE}))
-            .list(app.getActiveCashIndex());
+                                    "SELECT PAYMENTS.PAYMENT, SUM(PAYMENTS.TOTAL), PAYMENTS.NOTES " +
+                                    "FROM PAYMENTS, RECEIPTS " +
+                                    "WHERE PAYMENTS.RECEIPT = RECEIPTS.ID AND RECEIPTS.MONEY = ? " +
+                                    "GROUP BY PAYMENTS.PAYMENT, PAYMENTS.NOTES",
+                                    SerializerWriteString.INSTANCE,
+                                    new SerializerReadClass(
+                                        PaymentsModel.PaymentsLine.class)) //new SerializerReadBasic(new Datas[] {Datas.STRING, Datas.DOUBLE}))
+        .list(app.getActiveCashIndex());
 
         if (l == null) {
             p.m_lpayments = new ArrayList();
@@ -180,11 +184,11 @@ public class PaymentsModel {
 
         // Sales
         Object[] recsales = (Object []) new StaticSentence(app.getSession(),
-                "SELECT COUNT(DISTINCT RECEIPTS.ID), SUM(TICKETLINES.UNITS * TICKETLINES.PRICE) " +
-                        "FROM RECEIPTS, TICKETLINES WHERE RECEIPTS.ID = TICKETLINES.TICKET AND RECEIPTS.MONEY = ?",
-                SerializerWriteString.INSTANCE,
-                new SerializerReadBasic(new Datas[] {Datas.INT, Datas.DOUBLE}))
-                .find(app.getActiveCashIndex());
+                                                           "SELECT COUNT(DISTINCT RECEIPTS.ID), SUM(TICKETLINES.UNITS * TICKETLINES.PRICE) " +
+                                                           "FROM RECEIPTS, TICKETLINES WHERE RECEIPTS.ID = TICKETLINES.TICKET AND RECEIPTS.MONEY = ?",
+                                                           SerializerWriteString.INSTANCE,
+                                                           new SerializerReadBasic(new Datas[] {Datas.INT, Datas.DOUBLE}))
+                            .find(app.getActiveCashIndex());
         if (recsales == null) {
             p.m_iSales = null;
             p.m_dSalesBase = null;
@@ -195,11 +199,11 @@ public class PaymentsModel {
 
         // Taxes
         Object[] rectaxes = (Object []) new StaticSentence(app.getSession(),
-            "SELECT SUM(TAXLINES.AMOUNT), SUM(TAXLINES.BASE) " +
-            "FROM RECEIPTS, TAXLINES WHERE RECEIPTS.ID = TAXLINES.RECEIPT AND RECEIPTS.MONEY = ?",
-             SerializerWriteString.INSTANCE,
-             new SerializerReadBasic(new Datas[] {Datas.DOUBLE, Datas.DOUBLE}))
-            .find(app.getActiveCashIndex());
+                                                           "SELECT SUM(TAXLINES.AMOUNT), SUM(TAXLINES.BASE) " +
+                                                           "FROM RECEIPTS, TAXLINES WHERE RECEIPTS.ID = TAXLINES.RECEIPT AND RECEIPTS.MONEY = ?",
+                                                           SerializerWriteString.INSTANCE,
+                                                           new SerializerReadBasic(new Datas[] {Datas.DOUBLE, Datas.DOUBLE}))
+                            .find(app.getActiveCashIndex());
         if (rectaxes == null) {
             p.m_dSalesTaxes = null;
             p.m_dSalesTaxNet = null;
@@ -210,13 +214,15 @@ public class PaymentsModel {
 
         // JG June 2014 Added .BASE for array
         List<SalesLine> asales = new StaticSentence(app.getSession(),
-                "SELECT TAXCATEGORIES.NAME, SUM(TAXLINES.AMOUNT), SUM(TAXLINES.BASE), SUM(TAXLINES.BASE + TAXLINES.AMOUNT) " +
-                "FROM RECEIPTS, TAXLINES, TAXES, TAXCATEGORIES WHERE RECEIPTS.ID = TAXLINES.RECEIPT AND TAXLINES.TAXID = TAXES.ID AND TAXES.CATEGORY = TAXCATEGORIES.ID " +
-                "AND RECEIPTS.MONEY = ?" +
-                "GROUP BY TAXCATEGORIES.NAME",
-                 SerializerWriteString.INSTANCE,
-                 new SerializerReadClass(PaymentsModel.SalesLine.class))
-                .list(app.getActiveCashIndex());
+                                                    "SELECT TAXCATEGORIES.NAME, SUM(TAXLINES.AMOUNT), SUM(TAXLINES.BASE), SUM(TAXLINES.BASE + TAXLINES.AMOUNT) "
+                                                    +
+                                                    "FROM RECEIPTS, TAXLINES, TAXES, TAXCATEGORIES WHERE RECEIPTS.ID = TAXLINES.RECEIPT AND TAXLINES.TAXID = TAXES.ID AND TAXES.CATEGORY = TAXCATEGORIES.ID "
+                                                    +
+                                                    "AND RECEIPTS.MONEY = ?" +
+                                                    "GROUP BY TAXCATEGORIES.NAME",
+                                                    SerializerWriteString.INSTANCE,
+                                                    new SerializerReadClass(PaymentsModel.SalesLine.class))
+        .list(app.getActiveCashIndex());
         if (asales == null) {
 // JG 16 May 2013 use diamond inference
             p.m_lsales = new ArrayList<>();
@@ -224,18 +230,20 @@ public class PaymentsModel {
             p.m_lsales = asales;
         }
 
-         // added by janar153 @ 29.12.2013
+        // added by janar153 @ 29.12.2013
         // removed lines list
         SimpleDateFormat ndf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String startDateFormatted = ndf.format(app.getActiveCashDateStart());
         List removedLines = new StaticSentence(app.getSession(),
-             "SELECT LINEREMOVED.NAME, LINEREMOVED.TICKETID, LINEREMOVED.PRODUCTNAME, SUM(LINEREMOVED.UNITS) AS TOTAL_UNITS  " +
-              "FROM LINEREMOVED " +
-              "WHERE LINEREMOVED.REMOVEDDATE > ? " +
-              "GROUP BY LINEREMOVED.NAME, LINEREMOVED.TICKETID, LINEREMOVED.PRODUCTNAME",
-             SerializerWriteString.INSTANCE,
-             new SerializerReadClass(PaymentsModel.RemovedProductLines.class)) //new SerializerReadBasic(new Datas[] {Datas.STRING, Datas.DOUBLE}))
-            .list(startDateFormatted);
+                                               "SELECT LINEREMOVED.NAME, LINEREMOVED.TICKETID, LINEREMOVED.PRODUCTNAME, SUM(LINEREMOVED.UNITS) AS TOTAL_UNITS  "
+                                               +
+                                               "FROM LINEREMOVED " +
+                                               "WHERE LINEREMOVED.REMOVEDDATE > ? " +
+                                               "GROUP BY LINEREMOVED.NAME, LINEREMOVED.TICKETID, LINEREMOVED.PRODUCTNAME",
+                                               SerializerWriteString.INSTANCE,
+                                               new SerializerReadClass(
+                                                   PaymentsModel.RemovedProductLines.class)) //new SerializerReadBasic(new Datas[] {Datas.STRING, Datas.DOUBLE}))
+        .list(startDateFormatted);
 
         if (removedLines == null) {
             p.m_lremovedlines = new ArrayList();
@@ -247,13 +255,15 @@ public class PaymentsModel {
         // by janar153 @ 01.12.2013
         // Product Sales
         Object[] valproductsales = (Object []) new StaticSentence(app.getSession(),
-             "SELECT COUNT(*), SUM(TICKETLINES.UNITS), SUM((TICKETLINES.PRICE + TICKETLINES.PRICE * TAXES.RATE ) * TICKETLINES.UNITS) " +
-              "FROM TICKETLINES, TICKETS, RECEIPTS, TAXES " +
-              "WHERE TICKETLINES.TICKET = TICKETS.ID AND TICKETS.ID = RECEIPTS.ID AND TICKETLINES.TAXID = TAXES.ID AND TICKETLINES.PRODUCT IS NOT NULL AND RECEIPTS.MONEY = ? " +
-              "GROUP BY RECEIPTS.MONEY",
-             SerializerWriteString.INSTANCE,
-             new SerializerReadBasic(new Datas[] {Datas.INT, Datas.DOUBLE, Datas.DOUBLE}))
-            .find(app.getActiveCashIndex());
+                                                                  "SELECT COUNT(*), SUM(TICKETLINES.UNITS), SUM((TICKETLINES.PRICE + TICKETLINES.PRICE * TAXES.RATE ) * TICKETLINES.UNITS) "
+                                                                  +
+                                                                  "FROM TICKETLINES, TICKETS, RECEIPTS, TAXES " +
+                                                                  "WHERE TICKETLINES.TICKET = TICKETS.ID AND TICKETS.ID = RECEIPTS.ID AND TICKETLINES.TAXID = TAXES.ID AND TICKETLINES.PRODUCT IS NOT NULL AND RECEIPTS.MONEY = ? "
+                                                                  +
+                                                                  "GROUP BY RECEIPTS.MONEY",
+                                                                  SerializerWriteString.INSTANCE,
+                                                                  new SerializerReadBasic(new Datas[] {Datas.INT, Datas.DOUBLE, Datas.DOUBLE}))
+                                   .find(app.getActiveCashIndex());
 
         if (valproductsales == null) {
             p.m_iProductSalesRows = 0;
@@ -262,17 +272,19 @@ public class PaymentsModel {
         } else {
             p.m_iProductSalesRows = (Integer) valproductsales[0];
             p.m_dProductSalesTotalUnits = (Double) valproductsales[1];
-            p.m_dProductSalesTotal= (Double) valproductsales[2];
+            p.m_dProductSalesTotal = (Double) valproductsales[2];
         }
 
         List products = new StaticSentence(app.getSession(),
-             "SELECT PRODUCTS.NAME, SUM(TICKETLINES.UNITS), TICKETLINES.PRICE, TAXES.RATE " +
-              "FROM TICKETLINES, TICKETS, RECEIPTS, PRODUCTS, TAXES " +
-              "WHERE TICKETLINES.PRODUCT = PRODUCTS.ID AND TICKETLINES.TICKET = TICKETS.ID AND TICKETS.ID = RECEIPTS.ID AND TICKETLINES.TAXID = TAXES.ID AND RECEIPTS.MONEY = ? " +
-              "GROUP BY PRODUCTS.NAME, TICKETLINES.PRICE, TAXES.RATE",
-             SerializerWriteString.INSTANCE,
-             new SerializerReadClass(PaymentsModel.ProductSalesLine.class)) //new SerializerReadBasic(new Datas[] {Datas.STRING, Datas.DOUBLE}))
-            .list(app.getActiveCashIndex());
+                                           "SELECT PRODUCTS.NAME, SUM(TICKETLINES.UNITS), TICKETLINES.PRICE, TAXES.RATE " +
+                                           "FROM TICKETLINES, TICKETS, RECEIPTS, PRODUCTS, TAXES " +
+                                           "WHERE TICKETLINES.PRODUCT = PRODUCTS.ID AND TICKETLINES.TICKET = TICKETS.ID AND TICKETS.ID = RECEIPTS.ID AND TICKETLINES.TAXID = TAXES.ID AND RECEIPTS.MONEY = ? "
+                                           +
+                                           "GROUP BY PRODUCTS.NAME, TICKETLINES.PRICE, TAXES.RATE",
+                                           SerializerWriteString.INSTANCE,
+                                           new SerializerReadClass(
+                                               PaymentsModel.ProductSalesLine.class)) //new SerializerReadBasic(new Datas[] {Datas.STRING, Datas.DOUBLE}))
+        .list(app.getActiveCashIndex());
 
         if (products == null) {
             p.m_lproductsales = new ArrayList();
@@ -312,7 +324,7 @@ public class PaymentsModel {
         return m_dDateEnd;
     }
 
-    public String getDateStartDerby(){
+    public String getDateStartDerby() {
         SimpleDateFormat ndf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return ndf.format(m_dDateStart);
     }
@@ -364,8 +376,8 @@ public class PaymentsModel {
 
     public String printSalesTotal() {
         return Formats.CURRENCY.formatValue((m_dSalesBase == null || m_dSalesTaxes == null)
-                ? null
-                : m_dSalesBase + m_dSalesTaxes);
+                                            ? null
+                                            : m_dSalesBase + m_dSalesTaxes);
     }
 
     public List<SalesLine> getSaleLines() {
@@ -374,7 +386,7 @@ public class PaymentsModel {
 
 // JG 9 Nov 12
 
-        public double getCategorySalesRows() {
+    public double getCategorySalesRows() {
         return m_iCategorySalesRows;
     }
 
@@ -405,7 +417,7 @@ public class PaymentsModel {
 
     // by janar153 @ 01.12.2013
 
-        public double getProductSalesRows() {
+    public double getProductSalesRows() {
         return m_iProductSalesRows;
     }
 
@@ -436,7 +448,7 @@ public class PaymentsModel {
 
     // added by janar153 @ 29.12.2013
 
-        public List<RemovedProductLines> getRemovedProductLines() {
+    public List<RemovedProductLines> getRemovedProductLines() {
         return m_lremovedlines;
     }
     // end
@@ -459,9 +471,12 @@ public class PaymentsModel {
             public Object getValueAt(int row, int column) {
                 PaymentsLine l = m_lpayments.get(row);
                 switch (column) {
-                case 0: return l.getType();
-                case 1: return l.getValue();
-                default: return null;
+                    case 0:
+                        return l.getType();
+                    case 1:
+                        return l.getValue();
+                    default:
+                        return null;
                 }
             }
         };
@@ -470,7 +485,7 @@ public class PaymentsModel {
 // JG 9 Nov 12
     // Products category sales class
 
-        public static class CategorySalesLine implements SerializableRead {
+    public static class CategorySalesLine implements SerializableRead {
 
         private String m_CategoryName;
         private Double m_CategoryUnits;
@@ -507,7 +522,7 @@ public class PaymentsModel {
 
     // added by janar153 @ 29.12.2013
 
-        public static class RemovedProductLines implements SerializableRead {
+    public static class RemovedProductLines implements SerializableRead {
         private String m_Name;
         private String m_TicketId;
         private String m_ProductName;
@@ -542,7 +557,7 @@ public class PaymentsModel {
 
     // by janar153 @ 01.12.2013
 
-        public static class ProductSalesLine implements SerializableRead {
+    public static class ProductSalesLine implements SerializableRead {
 
         private String m_ProductName;
         private Double m_ProductUnits;
@@ -558,7 +573,7 @@ public class PaymentsModel {
             m_ProductPrice = dr.getDouble(3);
             m_TaxRate = dr.getDouble(4);
 
-            m_ProductPriceTax = m_ProductPrice + m_ProductPrice*m_TaxRate;
+            m_ProductPriceTax = m_ProductPrice + m_ProductPrice * m_TaxRate;
             m_ProductPriceNet = m_ProductPrice * m_TaxRate;
         }
 
@@ -595,14 +610,14 @@ public class PaymentsModel {
         }
 
         public String printProductSubValue() {
-            return Formats.CURRENCY.formatValue(m_ProductPriceTax*m_ProductUnits);
+            return Formats.CURRENCY.formatValue(m_ProductPriceTax * m_ProductUnits);
         }
 
         /**
          * JG 4 Jun 2014
          */
         public String printProductPriceNet() {
-            return Formats.CURRENCY.formatValue(m_ProductPrice*m_ProductUnits);
+            return Formats.CURRENCY.formatValue(m_ProductPrice * m_ProductUnits);
         }
 
     }
@@ -689,10 +704,14 @@ public class PaymentsModel {
             public Object getValueAt(int row, int column) {
                 SalesLine l = m_lsales.get(row);
                 switch (column) {
-                case 0: return l.getTaxName();
-                case 1: return l.getTaxes();
-                case 2: return l.getTaxNet();       //JG June 2014
-                default: return null;
+                    case 0:
+                        return l.getTaxName();
+                    case 1:
+                        return l.getTaxes();
+                    case 2:
+                        return l.getTaxNet();       //JG June 2014
+                    default:
+                        return null;
                 }
             }
         };
@@ -709,7 +728,7 @@ public class PaymentsModel {
         public void readValues(DataRead dr) throws BasicException {
             m_PaymentType = dr.getString(1);
             m_PaymentValue = dr.getDouble(2);
-            s_PaymentReason=dr.getString(3) == null ? "": dr.getString(3);
+            s_PaymentReason = dr.getString(3) == null ? "" : dr.getString(3);
         }
 
         public String printType() {
@@ -734,6 +753,6 @@ public class PaymentsModel {
 
         public String getReason() {
             return s_PaymentReason;
+        }
     }
-  }
 }

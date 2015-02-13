@@ -54,8 +54,8 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
     public Object createValue() throws BasicException {
 
         return new Object[] {
-            m_ReasonModel.getSelectedItem() == null ? QBFCompareEnum.COMP_NONE : QBFCompareEnum.COMP_EQUALS, m_ReasonModel.getSelectedKey()
-        };
+                   m_ReasonModel.getSelectedItem() == null ? QBFCompareEnum.COMP_NONE : QBFCompareEnum.COMP_EQUALS, m_ReasonModel.getSelectedKey()
+               };
     }
 
     /**
@@ -70,7 +70,9 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
         jLabel2 = new javax.swing.JLabel();
         m_jreason = new javax.swing.JComboBox();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder(null, AppLocal.getIntString("label.byreason"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
+        setBorder(javax.swing.BorderFactory.createTitledBorder(null,
+                                                               AppLocal.getIntString("label.byreason"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                                                               javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
         setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setPreferredSize(new java.awt.Dimension(400, 60));
 
@@ -84,18 +86,22 @@ public class JParamsReason extends javax.swing.JPanel implements ReportEditorCre
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(m_jreason, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGap(12, 12, 12)
+                      .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(30, 30, 30)
+                      .addComponent(m_jreason, javax.swing.GroupLayout.PREFERRED_SIZE, 220,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jreason, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                      .addGap(4, 4, 4)
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m_jreason, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                              javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 

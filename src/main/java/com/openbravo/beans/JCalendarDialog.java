@@ -86,7 +86,8 @@ public class JCalendarDialog extends javax.swing.JDialog {
         myMsg.getRootPane().setDefaultButton(myMsg.jcmdOK);
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        myMsg.setBounds((screenSize.width - dialogwidth) / 2, (screenSize.height - 359) / 2, dialogwidth, 359);
+        myMsg.setBounds((screenSize.width - dialogwidth) / 2, (screenSize.height - 359) / 2, dialogwidth,
+                        359);
 
         //myMsg.show();
         myMsg.m_date = null;
@@ -151,7 +152,8 @@ public class JCalendarDialog extends javax.swing.JDialog {
         jPanel1.add(jcmdOK);
 
         jcmdCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        jcmdCancel.setIcon(new javax.swing.ImageIcon(
+                               getClass().getResource("/images/cancel.png"))); // NOI18N
         jcmdCancel.setText(m_resources.getString("button.cancel")); // NOI18N
         jcmdCancel.setMargin(new java.awt.Insets(8, 16, 8, 16));
         jcmdCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -173,7 +175,8 @@ public class JCalendarDialog extends javax.swing.JDialog {
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
+    private void jcmdOKActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jcmdOKActionPerformed
 
         GregorianCalendar dateresult;
 
@@ -182,19 +185,19 @@ public class JCalendarDialog extends javax.swing.JDialog {
 
         if (myTime == null) {
             dateresult = new GregorianCalendar(
-                    date1.get(GregorianCalendar.YEAR),
-                    date1.get(GregorianCalendar.MONTH),
-                    date1.get(GregorianCalendar.DAY_OF_MONTH));
+                date1.get(GregorianCalendar.YEAR),
+                date1.get(GregorianCalendar.MONTH),
+                date1.get(GregorianCalendar.DAY_OF_MONTH));
 
         } else {
             GregorianCalendar date2 = new GregorianCalendar();
             date2.setTime(myTime.getDate());
             dateresult = new GregorianCalendar(
-                    date1.get(GregorianCalendar.YEAR),
-                    date1.get(GregorianCalendar.MONTH),
-                    date1.get(GregorianCalendar.DAY_OF_MONTH),
-                    date2.get(GregorianCalendar.HOUR_OF_DAY),
-                    date2.get(GregorianCalendar.MINUTE));
+                date1.get(GregorianCalendar.YEAR),
+                date1.get(GregorianCalendar.MONTH),
+                date1.get(GregorianCalendar.DAY_OF_MONTH),
+                date2.get(GregorianCalendar.HOUR_OF_DAY),
+                date2.get(GregorianCalendar.MINUTE));
         }
 
         m_date = dateresult.getTime();
@@ -203,7 +206,8 @@ public class JCalendarDialog extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_jcmdOKActionPerformed
 
-    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
+    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
 
         setVisible(false);
         dispose();

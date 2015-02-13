@@ -26,7 +26,8 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
             jlblMessage.setText(AppLocal.getIntString("message.nopaymentgateway"));
         } else {
             // Se van a poder efectuar pagos con tarjeta
-            m_cardpanel = PaymentPanelFac.getPaymentPanel(app.getProperties().getProperty("payment.magcardreader"), notifier);
+            m_cardpanel = PaymentPanelFac.getPaymentPanel(
+                              app.getProperties().getProperty("payment.magcardreader"), notifier);
             add(m_cardpanel.getComponent(), BorderLayout.CENTER);
             jlblMessage.setText(null);
             // jlblMessage.setText(AppLocal.getIntString("message.nocardreader"));
@@ -65,13 +66,13 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
         if (payinfo.isPaymentOK()) {
 //            jlblMessage.setText("Transaction ID: " + payinfo.getTransactionID() + "APPROVED!");
             JOptionPane.showMessageDialog(getRootPane(), "Transaction APPROVED!", "Card Payment",
-                    JOptionPane.PLAIN_MESSAGE);
+                                          JOptionPane.PLAIN_MESSAGE);
             revalidate();
             return payinfo;
         } else {
             if (!payinfo.isPaymentOK()) {
-                JOptionPane.showMessageDialog(getRootPane(),payinfo.getMessage(), "Error",
-                    JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(getRootPane(), payinfo.getMessage(), "Error",
+                                              JOptionPane.ERROR_MESSAGE);
                 jlblMessage.setText(payinfo.getMessage());
                 revalidate();
             }
@@ -84,7 +85,7 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
         return this;
     }
 
-    public void setTransaction(String transid){
+    public void setTransaction(String transid) {
         transaction = transid;
     }
 
@@ -119,16 +120,18 @@ public class JPaymentMagcard extends javax.swing.JPanel implements JPaymentInter
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jlblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                      .addContainerGap()
+                      .addComponent(jlblMessage, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                      .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addComponent(jlblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                      .addGap(2, 2, 2)
+                      .addComponent(jlblMessage, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap())
         );
 
         add(jPanel1, java.awt.BorderLayout.PAGE_START);

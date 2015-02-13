@@ -36,10 +36,10 @@ public class MaterialFilter extends javax.swing.JPanel implements EditorCreator 
     @Override
     public Object createValue() throws BasicException {
         return new Object[] {
-            m_jCboName.getSelectedItem(), m_jName.getText(),
-            m_jCboPriceBuy.getSelectedItem(), Formats.CURRENCY.parseValue(m_jPriceBuy.getText()),
-            m_ProdsModel.getSelectedKey() == null ? QBFCompareEnum.COMP_NONE : QBFCompareEnum.COMP_EQUALS, m_ProdsModel.getSelectedKey()
-        };
+                   m_jCboName.getSelectedItem(), m_jName.getText(),
+                   m_jCboPriceBuy.getSelectedItem(), Formats.CURRENCY.parseValue(m_jPriceBuy.getText()),
+                   m_ProdsModel.getSelectedKey() == null ? QBFCompareEnum.COMP_NONE : QBFCompareEnum.COMP_EQUALS, m_ProdsModel.getSelectedKey()
+               };
     }
 
 
@@ -68,7 +68,8 @@ public class MaterialFilter extends javax.swing.JPanel implements EditorCreator 
         setRequestFocusEnabled(false);
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.Y_AXIS));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(AppLocal.getIntString("label.byform"))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(
+                              AppLocal.getIntString("label.byform"))); // NOI18N
         jPanel1.setMaximumSize(new java.awt.Dimension(32767, 140));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 140));
         jPanel1.setRequestFocusEnabled(false);

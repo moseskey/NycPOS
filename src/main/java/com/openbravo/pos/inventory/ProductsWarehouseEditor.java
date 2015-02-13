@@ -64,13 +64,14 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
         prodref = myprod[2];
         prodname = myprod[3];
         location = myprod[4];
-        m_jTitle.setText(Formats.STRING.formatValue(myprod[2]) + " - " + Formats.STRING.formatValue(myprod[3]));
+        m_jTitle.setText(Formats.STRING.formatValue(myprod[2]) + " - " + Formats.STRING.formatValue(
+                             myprod[3]));
         m_jQuantity.setText(Formats.DOUBLE.formatValue(myprod[7]));
         m_jMinimum.setText(Formats.DOUBLE.formatValue(myprod[5]));
         m_jMaximum.setText(Formats.DOUBLE.formatValue(myprod[6]));
         m_jMinimum.setEnabled(true);
         m_jMaximum.setEnabled(true);
-     }
+    }
 
     @Override
     public void writeValueDelete(Object value) {
@@ -80,7 +81,8 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
         prodref = myprod[2];
         prodname = myprod[3];
         location = myprod[4];
-        m_jTitle.setText(Formats.STRING.formatValue(myprod[2]) + " - " + Formats.STRING.formatValue(myprod[3]));
+        m_jTitle.setText(Formats.STRING.formatValue(myprod[2]) + " - " + Formats.STRING.formatValue(
+                             myprod[3]));
         m_jQuantity.setText(Formats.DOUBLE.formatValue(myprod[7]));
         m_jMinimum.setText(Formats.DOUBLE.formatValue(myprod[5]));
         m_jMaximum.setText(Formats.DOUBLE.formatValue(myprod[6]));
@@ -91,15 +93,15 @@ public class ProductsWarehouseEditor extends javax.swing.JPanel implements Edito
     @Override
     public Object createValue() throws BasicException {
         return new Object[] {
-            id,
-            prodid,
-            prodref,
-            prodname,
-            location,
-            Formats.DOUBLE.parseValue(m_jMinimum.getText()),
-            Formats.DOUBLE.parseValue(m_jMaximum.getText()),
-            Formats.DOUBLE.parseValue(m_jQuantity.getText())
-        };
+                   id,
+                   prodid,
+                   prodref,
+                   prodname,
+                   location,
+                   Formats.DOUBLE.parseValue(m_jMinimum.getText()),
+                   Formats.DOUBLE.parseValue(m_jMaximum.getText()),
+                   Formats.DOUBLE.parseValue(m_jQuantity.getText())
+               };
     }
 
     @Override

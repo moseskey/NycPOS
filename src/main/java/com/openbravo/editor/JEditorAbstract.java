@@ -10,8 +10,14 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
     private EditorKeys editorkeys;
 
     private boolean m_bActive;
-    private final Border m_borderactive =  new javax.swing.border.CompoundBorder(new javax.swing.border.LineBorder(javax.swing.UIManager.getDefaults().getColor("TextField.selectionBackground")), new javax.swing.border.EmptyBorder(new java.awt.Insets(1, 4, 1, 4)));
-    private final Border m_borderinactive =  new javax.swing.border.CompoundBorder(new javax.swing.border.LineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), new javax.swing.border.EmptyBorder(new java.awt.Insets(1, 4, 1, 4)));
+    private final Border m_borderactive =  new javax.swing.border.CompoundBorder(
+        new javax.swing.border.LineBorder(
+            javax.swing.UIManager.getDefaults().getColor("TextField.selectionBackground")),
+        new javax.swing.border.EmptyBorder(new java.awt.Insets(1, 4, 1, 4)));
+    private final Border m_borderinactive =  new javax.swing.border.CompoundBorder(
+        new javax.swing.border.LineBorder(
+            javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+        new javax.swing.border.EmptyBorder(new java.awt.Insets(1, 4, 1, 4)));
 
     public JEditorAbstract() {
 
@@ -104,8 +110,8 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
             editorkeys.setInactive(this);
         }
         panBackground.setBackground(b
-            ? javax.swing.UIManager.getDefaults().getColor("TextField.background")
-            : javax.swing.UIManager.getDefaults().getColor("TextField.disabledBackground"));
+                                    ? javax.swing.UIManager.getDefaults().getColor("TextField.background")
+                                    : javax.swing.UIManager.getDefaults().getColor("TextField.disabledBackground"));
         super.setEnabled(b);
     }
 
@@ -152,7 +158,8 @@ public abstract class JEditorAbstract extends javax.swing.JPanel implements Edit
         add(m_jMode, java.awt.BorderLayout.LINE_END);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jTextActionPerformed
+    private void m_jTextActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_m_jTextActionPerformed
 
         activate();
 

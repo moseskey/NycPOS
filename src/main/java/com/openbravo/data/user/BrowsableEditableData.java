@@ -62,14 +62,16 @@ public class BrowsableEditableData {
     /**
      * Check Ticket Dirty state
      */
-    public BrowsableEditableData(ListProvider dataprov, SaveProvider saveprov, Comparator c, EditorRecord ed, DirtyManager dirty) {
+    public BrowsableEditableData(ListProvider dataprov, SaveProvider saveprov, Comparator c,
+                                 EditorRecord ed, DirtyManager dirty) {
         this(new BrowsableData(dataprov, saveprov, c), ed, dirty);
     }
 
     /**
      * Ticket Dirty state
      */
-    public BrowsableEditableData(ListProvider dataprov, SaveProvider saveprov, EditorRecord ed, DirtyManager dirty) {
+    public BrowsableEditableData(ListProvider dataprov, SaveProvider saveprov, EditorRecord ed,
+                                 DirtyManager dirty) {
         this(new BrowsableData(dataprov, saveprov, null), ed, dirty);
     }
 
@@ -339,9 +341,9 @@ public class BrowsableEditableData {
                 m_editorrecord.refresh();
                 baseMoveTo(i);
             } else if (m_iState == ST_INSERT) {
-                    int i = m_bd.insertRecord(m_editorrecord.createValue());
-                    m_editorrecord.refresh();
-                    baseMoveTo(i);
+                int i = m_bd.insertRecord(m_editorrecord.createValue());
+                m_editorrecord.refresh();
+                baseMoveTo(i);
             } else if (m_iState == ST_DELETE) {
                 int i = m_bd.removeRecord(m_iIndex);
                 m_editorrecord.refresh();
@@ -355,7 +357,9 @@ public class BrowsableEditableData {
      */
     public void actionReloadCurrent(Component c) {
         if (!m_Dirty.isDirty() ||
-                JOptionPane.showConfirmDialog(c, LocalRes.getIntString("message.changeslost"), LocalRes.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+            JOptionPane.showConfirmDialog(c, LocalRes.getIntString("message.changeslost"),
+                                          LocalRes.getIntString("title.editor"), JOptionPane.YES_NO_OPTION,
+                                          JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
             refreshCurrent();
         }
     }
@@ -365,7 +369,9 @@ public class BrowsableEditableData {
      */
     public boolean actionClosingForm(Component c) throws BasicException {
         if (m_Dirty.isDirty()) {
-            int res = JOptionPane.showConfirmDialog(c, LocalRes.getIntString("message.wannasave"), LocalRes.getIntString("title.editor"), JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int res = JOptionPane.showConfirmDialog(c, LocalRes.getIntString("message.wannasave"),
+                                                    LocalRes.getIntString("title.editor"), JOptionPane.YES_NO_CANCEL_OPTION,
+                                                    JOptionPane.QUESTION_MESSAGE);
             if (res == JOptionPane.YES_OPTION) {
                 saveData();
                 return true;
@@ -434,7 +440,7 @@ public class BrowsableEditableData {
     }
 
     private final void baseMoveTo(int i) {
-    // Este senor y el constructor a INX_EOF, son los unicos que tienen potestad de modificar m_iIndex.
+        // Este senor y el constructor a INX_EOF, son los unicos que tienen potestad de modificar m_iIndex.
         if (i >= 0 && i < m_bd.getSize()) {
             m_iIndex = i;
         } else {

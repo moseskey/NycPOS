@@ -23,12 +23,14 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
     public void init(AppView app) {
 
         attsent = new StaticSentence(app.getSession(),
-             "SELECT ID, NAME FROM ATTRIBUTE ORDER BY NAME",
-             null,
-             new SerializerRead() {@Override
- public Object readValues(DataRead dr) throws BasicException {
+                                     "SELECT ID, NAME FROM ATTRIBUTE ORDER BY NAME",
+                                     null,
+        new SerializerRead() {
+            @Override
+            public Object readValues(DataRead dr) throws BasicException {
                 return new AttributeInfo(dr.getString(1), dr.getString(2));
-            }});
+            }
+        });
         attmodel = new ComboBoxValModel();
     }
 
@@ -88,20 +90,22 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jAttr, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                      .addContainerGap()
+                      .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 110,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(jAttr, javax.swing.GroupLayout.PREFERRED_SIZE, 220,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jAttr, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jAttr, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
+                      .addContainerGap(22, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

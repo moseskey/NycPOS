@@ -34,7 +34,8 @@ public abstract class QBFCompareEnum {
         public String getExpression(String sField, String sSQLValue) { return sField + " < " + sSQLValue; }
     };
 
-    public final static QBFCompareEnum COMP_GREATEROREQUALS = new QBFCompareEnum(7, "qbf.greaterequals") {
+    public final static QBFCompareEnum COMP_GREATEROREQUALS = new QBFCompareEnum(7,
+    "qbf.greaterequals") {
         public String getExpression(String sField, String sSQLValue) { return sField + " >= " + sSQLValue; }
     };
 

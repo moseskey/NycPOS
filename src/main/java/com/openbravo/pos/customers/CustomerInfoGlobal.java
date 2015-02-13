@@ -14,7 +14,7 @@ public class CustomerInfoGlobal {
 
     //Singleton constructor
 
-        public static CustomerInfoGlobal getInstance() {
+    public static CustomerInfoGlobal getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new CustomerInfoGlobal();
         }
@@ -32,7 +32,7 @@ public class CustomerInfoGlobal {
 
     public BrowsableEditableData getEditableData() {
         return editableData;
-}
+    }
 
     public void setEditableData(BrowsableEditableData editableData) {
         this.editableData = editableData;

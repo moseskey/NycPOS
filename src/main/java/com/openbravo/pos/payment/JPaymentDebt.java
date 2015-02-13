@@ -54,7 +54,8 @@ public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterfac
             txtCurdate.setText(Formats.DATE.formatValue(customerext.getCurdate()));
             txtCurdebt.setText(Formats.CURRENCY.formatValue(RoundUtils.getValue(customerext.getCurdebt())));
 
-            if (RoundUtils.compare(RoundUtils.getValue(customerext.getCurdebt()), RoundUtils.getValue(customerext.getMaxdebt())) >= 0) {
+            if (RoundUtils.compare(RoundUtils.getValue(customerext.getCurdebt()),
+                                   RoundUtils.getValue(customerext.getMaxdebt())) >= 0) {
                 m_jKeys.setEnabled(false);
                 m_jTendered.setEnabled(false);
             } else {
@@ -95,7 +96,8 @@ public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterfac
             m_jMoneyEuros.setText(Formats.CURRENCY.formatValue(m_dPaid));
 
 
-            if (RoundUtils.compare(RoundUtils.getValue(customerext.getCurdebt()) + m_dPaid, RoundUtils.getValue(customerext.getMaxdebt())) >= 0) {
+            if (RoundUtils.compare(RoundUtils.getValue(customerext.getCurdebt()) + m_dPaid,
+                                   RoundUtils.getValue(customerext.getMaxdebt())) >= 0) {
                 // maximum debt exceded
                 jlblMessage.setText(AppLocal.getIntString("message.customerdebtexceded"));
                 notifier.setStatus(false, false);
@@ -162,7 +164,10 @@ public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterfac
         m_jMoneyEuros.setBackground(new java.awt.Color(204, 255, 51));
         m_jMoneyEuros.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         m_jMoneyEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        m_jMoneyEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jMoneyEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                    javax.swing.BorderFactory.createLineBorder(
+                                        javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                    javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jMoneyEuros.setOpaque(true);
         m_jMoneyEuros.setPreferredSize(new java.awt.Dimension(200, 30));
         jPanel4.add(m_jMoneyEuros);
@@ -266,7 +271,8 @@ public class JPaymentDebt extends javax.swing.JPanel implements JPaymentInterfac
         add(jPanel2, java.awt.BorderLayout.EAST);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jKeysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jKeysActionPerformed
+    private void m_jKeysActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_m_jKeysActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_m_jKeysActionPerformed
 

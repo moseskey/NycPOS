@@ -18,7 +18,7 @@ public class SQLColumn implements TreeNode {
     }
 
     @Override
-    public Enumeration children(){
+    public Enumeration children() {
         return null;
     }
     @Override
@@ -34,7 +34,7 @@ public class SQLColumn implements TreeNode {
         return 0;
     }
     @Override
-    public int getIndex(TreeNode node){
+    public int getIndex(TreeNode node) {
         throw new ArrayIndexOutOfBoundsException();
     }
     @Override

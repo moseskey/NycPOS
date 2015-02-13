@@ -12,7 +12,8 @@ import java.awt.Insets;
 import java.io.Serializable;
 import com.openbravo.format.Formats;
 
-public class JCalendarItemRenderer extends javax.swing.JPanel implements ListCellRenderer, Serializable {
+public class JCalendarItemRenderer extends javax.swing.JPanel implements ListCellRenderer,
+    Serializable {
 
     protected static Border noFocusBorder;
 
@@ -35,7 +36,8 @@ public class JCalendarItemRenderer extends javax.swing.JPanel implements ListCel
         setBorder(noFocusBorder);
     }
 
-    public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+    public Component getListCellRendererComponent(JList list, Object value, int index,
+                                                  boolean isSelected, boolean cellHasFocus) {
 
         applyComponentOrientation(list.getComponentOrientation());
 
@@ -83,9 +85,9 @@ public class JCalendarItemRenderer extends javax.swing.JPanel implements ListCel
     }
 
 
-   /**
-    * Overridden for performance reasons.
-    */
+    /**
+     * Overridden for performance reasons.
+     */
     protected void firePropertyChange(String propertyName, Object oldValue, Object newValue) {}
     public void firePropertyChange(String propertyName, byte oldValue, byte newValue) {}
     public void firePropertyChange(String propertyName, char oldValue, char newValue) {}

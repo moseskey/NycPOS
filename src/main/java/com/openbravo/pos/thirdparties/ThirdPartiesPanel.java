@@ -21,7 +21,8 @@ public class ThirdPartiesPanel extends JPanelTable {
     }
 
     protected void init() {
-        DataLogicThirdParties dlThirdParties = (DataLogicThirdParties) app.getBean("com.openbravo.pos.thirdparties.DataLogicThirdParties");
+        DataLogicThirdParties dlThirdParties = (DataLogicThirdParties)
+                                               app.getBean("com.openbravo.pos.thirdparties.DataLogicThirdParties");
         tthirdparties = dlThirdParties.getTableThirdParties();
         jeditor = new ThirdPartiesView(app, dirty);
     }
@@ -35,7 +36,7 @@ public class ThirdPartiesPanel extends JPanelTable {
     }
 
     public Vectorer getVectorer() {
-        return tthirdparties.getVectorerBasic(new int[]{1, 2, 3, 4});
+        return tthirdparties.getVectorerBasic(new int[] {1, 2, 3, 4});
     }
 
     public ComparatorCreator getComparatorCreator() {
@@ -43,7 +44,7 @@ public class ThirdPartiesPanel extends JPanelTable {
     }
 
     public ListCellRenderer getListCellRenderer() {
-        return new ListCellRendererBasic(tthirdparties.getRenderStringBasic(new int[]{1, 2}));
+        return new ListCellRendererBasic(tthirdparties.getRenderStringBasic(new int[] {1, 2}));
     }
 
     public EditorRecord getEditor() {

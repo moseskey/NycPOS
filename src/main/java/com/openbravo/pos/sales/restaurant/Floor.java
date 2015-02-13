@@ -68,7 +68,7 @@ public class Floor implements SerializableRead {
         }
 
         @Override
-        protected void paintComponent (Graphics g) {
+        protected void paintComponent(Graphics g) {
             super.paintComponent(g);
             if (img != null) {
                 g.drawImage(img, 0, 0, this);
@@ -78,8 +78,8 @@ public class Floor implements SerializableRead {
         @Override
         public Dimension getPreferredSize() {
             return (img == null)
-                ? new Dimension(640, 480)
-                : new Dimension(img.getWidth(this), img.getHeight(this));
+                   ? new Dimension(640, 480)
+                   : new Dimension(img.getWidth(this), img.getHeight(this));
         }
         @Override
         public Dimension getMinimumSize() {

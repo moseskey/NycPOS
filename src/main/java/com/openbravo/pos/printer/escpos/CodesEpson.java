@@ -67,5 +67,5 @@ public class CodesEpson extends Codes {
     public int getImageWidth() { return 256; }
 
     @Override
-    public byte[] getImageLogo(){ return IMAGE_LOGO; }
+    public byte[] getImageLogo() { return IMAGE_LOGO; }
 }

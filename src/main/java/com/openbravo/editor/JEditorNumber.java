@@ -28,10 +28,11 @@ public abstract class JEditorNumber extends JEditorAbstract {
         m_fmt = getFormat();
 
 // added JDL 11.05.13
-        AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")), AppLocal.APP_ID + ".properties"));
+        AppConfig m_config =  new AppConfig(new File((System.getProperty("user.home")),
+                                                     AppLocal.APP_ID + ".properties"));
         m_config.load();
-        priceWith00 =("true".equals(m_config.getProperty("till.pricewith00")));
-        m_config=null;
+        priceWith00 = ("true".equals(m_config.getProperty("till.pricewith00")));
+        m_config = null;
         reset();
     }
 
@@ -80,7 +81,7 @@ public abstract class JEditorNumber extends JEditorAbstract {
             try {
                 //return priceWith00? Double.parseDouble(text)/100 : Double.parseDouble(text);
                 return Double.parseDouble(text);
-               // return  Double.parseDouble(text);
+                // return  Double.parseDouble(text);
             } catch (NumberFormatException e) {
                 return null;
             }
@@ -160,23 +161,25 @@ public abstract class JEditorNumber extends JEditorAbstract {
         } else if (cTrans == '-') {
             m_bNegative = !m_bNegative;
         } else if ((cTrans == '0')
-        && (m_iNumberStatus == NUMBER_ZERONULL)) {
+                   && (m_iNumberStatus == NUMBER_ZERONULL)) {
             // m_iNumberStatus = NUMBER_ZERO;
             m_sNumber = "0";
-        } else if ((cTrans == '1' || cTrans == '2' || cTrans == '3' || cTrans == '4' || cTrans == '5' || cTrans == '6' || cTrans == '7' || cTrans == '8' || cTrans == '9')
-        && (m_iNumberStatus == NUMBER_ZERONULL)) {
+        } else if ((cTrans == '1' || cTrans == '2' || cTrans == '3' || cTrans == '4' || cTrans == '5' ||
+                    cTrans == '6' || cTrans == '7' || cTrans == '8' || cTrans == '9')
+                   && (m_iNumberStatus == NUMBER_ZERONULL)) {
             m_iNumberStatus = NUMBER_INT;
             m_sNumber = Character.toString(cTrans);
 //       } else if (cTrans == DEC_SEP &&  m_iNumberStatus == NUMBER_ZERONULL && !priceWith00) {
         } else if (cTrans == DEC_SEP &&  m_iNumberStatus == NUMBER_ZERONULL) {
             m_iNumberStatus = NUMBER_DEC;
-            m_sNumber = "0"+DEC_SEP;
+            m_sNumber = "0" + DEC_SEP;
         } else if (cTrans == DEC_SEP &&  m_iNumberStatus == NUMBER_ZERONULL) {
             m_iNumberStatus = NUMBER_INT;
             m_sNumber = "0";
 
-        } else if ((cTrans == '0' || cTrans == '1' || cTrans == '2' || cTrans == '3' || cTrans == '4' || cTrans == '5' || cTrans == '6' || cTrans == '7' || cTrans == '8' || cTrans == '9')
-        && (m_iNumberStatus == NUMBER_INT)) {
+        } else if ((cTrans == '0' || cTrans == '1' || cTrans == '2' || cTrans == '3' || cTrans == '4' ||
+                    cTrans == '5' || cTrans == '6' || cTrans == '7' || cTrans == '8' || cTrans == '9')
+                   && (m_iNumberStatus == NUMBER_INT)) {
             //m_iNumberStatus = NUMBER_INT;
             m_sNumber += cTrans;
 //         } else if (cTrans == DEC_SEP &&  m_iNumberStatus == NUMBER_INT && !priceWith00) {
@@ -187,8 +190,9 @@ public abstract class JEditorNumber extends JEditorAbstract {
 //            m_iNumberStatus = NUMBER_DEC;
             m_sNumber += "00";
 
-        } else if ((cTrans == '0' || cTrans == '1' || cTrans == '2' || cTrans == '3' || cTrans == '4' || cTrans == '5' || cTrans == '6' || cTrans == '7' || cTrans == '8' || cTrans == '9')
-        && (m_iNumberStatus == NUMBER_DEC)) {
+        } else if ((cTrans == '0' || cTrans == '1' || cTrans == '2' || cTrans == '3' || cTrans == '4' ||
+                    cTrans == '5' || cTrans == '6' || cTrans == '7' || cTrans == '8' || cTrans == '9')
+                   && (m_iNumberStatus == NUMBER_DEC)) {
             m_sNumber += cTrans;
 
         } else {
@@ -199,11 +203,12 @@ public abstract class JEditorNumber extends JEditorAbstract {
     }
 
 
- /* Added JDL 13.04.13 routine
- * routine to set the amount appearance to show '.'
- */
-    private String setTempjPrice(String jPrice){
-        jPrice = jPrice.replace(".","");
-        return (jPrice.length()<= 2)? jPrice : (new StringBuffer(jPrice).insert(jPrice.length()-2,".").toString());
+    /* Added JDL 13.04.13 routine
+    * routine to set the amount appearance to show '.'
+    */
+    private String setTempjPrice(String jPrice) {
+        jPrice = jPrice.replace(".", "");
+        return (jPrice.length() <= 2) ? jPrice : (new StringBuffer(jPrice).insert(jPrice.length() - 2,
+                                                                                  ".").toString());
     }
 }

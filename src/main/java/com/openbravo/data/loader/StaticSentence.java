@@ -18,7 +18,8 @@ public class StaticSentence extends JDBCSentence {
     // Estado
     private Statement m_Stmt;
 
-    public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite, SerializerRead serread) {
+    public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite,
+                          SerializerRead serread) {
         super(s);
         m_sentence = sentence;
         m_SerWrite = serwrite;
@@ -31,7 +32,8 @@ public class StaticSentence extends JDBCSentence {
     public StaticSentence(Session s, ISQLBuilderStatic sentence, SerializerWrite serwrite) {
         this(s, sentence, serwrite, null);
     }
-    public StaticSentence(Session s, String sentence, SerializerWrite serwrite, SerializerRead serread) {
+    public StaticSentence(Session s, String sentence, SerializerWrite serwrite,
+                          SerializerRead serread) {
         this(s, new NormalBuilder(sentence), serwrite, serread);
     }
     public StaticSentence(Session s, String sentence, SerializerWrite serwrite) {
@@ -53,7 +55,7 @@ public class StaticSentence extends JDBCSentence {
 
             String sentence = m_sentence.getSQL(m_SerWrite, params);
 
-           logger.log(Level.INFO, "Executing static SQL: {0}", sentence);
+            logger.log(Level.INFO, "Executing static SQL: {0}", sentence);
 
             if (m_Stmt.execute(sentence)) {
                 return new JDBCDataResultSet(m_Stmt.getResultSet(), m_SerRead);
@@ -76,7 +78,7 @@ public class StaticSentence extends JDBCSentence {
         if (m_Stmt != null) {
             try {
                 m_Stmt.close();
-           } catch (SQLException eSQL) {
+            } catch (SQLException eSQL) {
                 throw new BasicException(eSQL);
             } finally {
                 m_Stmt = null;
@@ -88,7 +90,7 @@ public class StaticSentence extends JDBCSentence {
     public DataResultSet moreResults() throws BasicException {
 
         try {
-            if (m_Stmt.getMoreResults()){
+            if (m_Stmt.getMoreResults()) {
                 // tenemos resultset
                 return new JDBCDataResultSet(m_Stmt.getResultSet(), m_SerRead);
             } else {

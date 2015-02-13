@@ -5,20 +5,20 @@ public class LuhnAlgorithm {
     private LuhnAlgorithm() {
     }
 
-    public static boolean checkCC(String cardNumber){
+    public static boolean checkCC(String cardNumber) {
         int sum = 0;
 
         int flip = 0;
 
-        if ( !StringUtils.isNumber(cardNumber) ){
+        if (!StringUtils.isNumber(cardNumber)) {
             return false;
         }
 
-        for (int i = cardNumber.length() -1; i >= 0; i--) {
-             int k = Character.digit(cardNumber.charAt(i), 10);
-             flip ++;
+        for (int i = cardNumber.length() - 1; i >= 0; i--) {
+            int k = Character.digit(cardNumber.charAt(i), 10);
+            flip ++;
 
-             if ( flip % 2 == 0 ) {
+            if (flip % 2 == 0) {
                 k *= 2;
                 if (k > 9) {
                     k -= 9;

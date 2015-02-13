@@ -27,16 +27,17 @@ public class PaymentGatewayPGNET implements PaymentGateway {
         m_sCommerceID = props.getProperty("payment.commerceid");
 
         AltEncrypter cypher = new AltEncrypter("cypherkey" + props.getProperty("payment.commerceid"));
-        this.m_sCommercePassword = cypher.decrypt(props.getProperty("payment.commercepassword").substring(6));
+        this.m_sCommercePassword = cypher.decrypt(props.getProperty("payment.commercepassword").substring(
+                                                      6));
 
         m_bTestMode = Boolean.valueOf(props.getProperty("payment.testmode")).booleanValue();
 
         ENDPOINTADDRESS = (m_bTestMode)
-                ? "https://www.paymentsgateway.net/cgi-bin/posttest.pl"
-                : "https://www.paymentsgateway.net/cgi-bin/postauth.pl";
+                          ? "https://www.paymentsgateway.net/cgi-bin/posttest.pl"
+                          : "https://www.paymentsgateway.net/cgi-bin/postauth.pl";
     }
 
-    public PaymentGatewayPGNET(){
+    public PaymentGatewayPGNET() {
 
     }
 
@@ -58,11 +59,10 @@ public class PaymentGatewayPGNET implements PaymentGateway {
             String amount = formatter.format(Math.abs(payinfo.getTotal()));
             sb.append(URLEncoder.encode(amount.replace(',', '.'), "UTF-8"));
 
-                if (payinfo.getTrack1(true) != null){
+            if (payinfo.getTrack1(true) != null) {
                 sb.append("&pg_cc_swipe_data=");
                 sb.append(URLEncoder.encode(payinfo.getTrack1(true), "UTF-8"));
-               }
-                else {
+            } else {
                 sb.append("&ecom_payment_card_type=");
                 sb.append(getCardType(payinfo.getCardNumber()));
 
@@ -79,16 +79,16 @@ public class PaymentGatewayPGNET implements PaymentGateway {
                 String[] cc_name = payinfo.getHolderName().split(" ");
                 sb.append("&ecom_billto_postal_name_first=");
                 if (cc_name.length > 0) {
-                sb.append(URLEncoder.encode(cc_name[0], "UTF-8"));
+                    sb.append(URLEncoder.encode(cc_name[0], "UTF-8"));
                 }
                 sb.append("&ecom_billto_postal_name_last=");
                 if (cc_name.length > 1) {
-                sb.append(URLEncoder.encode(cc_name[1], "UTF-8"));
+                    sb.append(URLEncoder.encode(cc_name[1], "UTF-8"));
                 }
 
                 sb.append("&ecom_payment_card_name=");
                 sb.append(payinfo.getHolderName());
-             }
+            }
 
             //PAYMENT
             if (payinfo.getTotal() >= 0.0) {
@@ -113,7 +113,7 @@ public class PaymentGatewayPGNET implements PaymentGateway {
 
             // not necessarily required but fixes a bug with some servers
 // JG 16 May 12 use try-with-resources
-            connection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             try (DataOutputStream out = new DataOutputStream(connection.getOutputStream())) {
                 out.write(sb.toString().getBytes());
                 out.flush();
@@ -122,29 +122,31 @@ public class PaymentGatewayPGNET implements PaymentGateway {
             // process and read the gateway response
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-            String returned="", aux;
+            String returned = "", aux;
 
             while ((aux = in.readLine()) != null) {
-                    returned += "&" + aux;
+                returned += "&" + aux;
             }
 
             payinfo.setReturnMessage(returned);
-            in.close();	                     // fin
+            in.close();                      // fin
 
             Map props = new HashMap();
             StringTokenizer tk = new java.util.StringTokenizer(returned, "&");
-            while(tk.hasMoreTokens()) {
+            while (tk.hasMoreTokens()) {
                 String sToken = tk.nextToken();
                 int i = sToken.indexOf('=');
                 if (i >= 0) {
-                    props.put(URLDecoder.decode(sToken.substring(0, i), "UTF-8"), URLDecoder.decode(sToken.substring(i + 1), "UTF-8"));
+                    props.put(URLDecoder.decode(sToken.substring(0, i), "UTF-8"),
+                              URLDecoder.decode(sToken.substring(i + 1), "UTF-8"));
                 } else {
                     props.put(URLDecoder.decode(sToken, "UTF-8"), null);
                 }
             }
 
             if (APPROVED.equals(props.get("pg_response_type"))) {
-                payinfo.paymentOK((String)props.get("pg_authorization_code"), (String)props.get("pg_trace_number"), returned);
+                payinfo.paymentOK((String)props.get("pg_authorization_code"), (String)props.get("pg_trace_number"),
+                                  returned);
             } else {
 
                 String sCode = (String)props.get("pg_response_description");
@@ -160,13 +162,13 @@ public class PaymentGatewayPGNET implements PaymentGateway {
 // JG 16 May 12 use multicatch
         } catch (UnsupportedEncodingException | MalformedURLException eUE) {
             payinfo.paymentError(AppLocal.getIntString("message.paymentexceptionservice"), eUE.getMessage());
-        } catch(IOException e){
+        } catch (IOException e) {
             payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), e.getMessage());
         }
 
     }
 
-    private String getCardType(String sCardNumber){
+    private String getCardType(String sCardNumber) {
         String c = "UNKNOWN";
         if (sCardNumber.startsWith("4")) {
             c = "VISA";

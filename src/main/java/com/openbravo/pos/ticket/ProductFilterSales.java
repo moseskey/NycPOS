@@ -70,7 +70,7 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
         if (m_jtxtBarCode.getText() == null || m_jtxtBarCode.getText().equals("")) {
             afilter[8] = QBFCompareEnum.COMP_NONE;
             afilter[9] = null;
-        } else{
+        } else {
             afilter[8] = QBFCompareEnum.COMP_RE;
             afilter[9] = "%" + m_jtxtBarCode.getText() + "%";
         }
@@ -117,11 +117,11 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
             afilter[11] = m_jStockUnits.getDoubleValue();
         }
 
-System.out.println(afilter[10]);
-System.out.println(afilter[11]);
-System.out.println(afilter);
+        System.out.println(afilter[10]);
+        System.out.println(afilter[11]);
+        System.out.println(afilter);
 
-return afilter;
+        return afilter;
     }
 
     /**
@@ -228,7 +228,8 @@ return afilter;
         m_jStockUnits.setBounds(290, 160, 130, 25);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jCboPriceBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCboPriceBuyActionPerformed
+    private void m_jCboPriceBuyActionPerformed(java.awt.event.ActionEvent
+                                               evt) {//GEN-FIRST:event_m_jCboPriceBuyActionPerformed
 
     }//GEN-LAST:event_m_jCboPriceBuyActionPerformed
 

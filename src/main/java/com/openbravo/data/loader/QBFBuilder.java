@@ -5,7 +5,8 @@ import com.openbravo.basic.BasicException;
 public class QBFBuilder implements ISQLBuilderStatic {
 
     private final String m_sSentNullFilter;   // la sentencia que se devuelve cuando el filtro es vacio
-    private final String m_sSentBeginPart;  // La sentencia que se devuelve es m_sSentBeginPart + ( filtro ) + m_sSentEndPart
+    private final String
+    m_sSentBeginPart;  // La sentencia que se devuelve es m_sSentBeginPart + ( filtro ) + m_sSentEndPart
     private final String m_sSentEndPart;
 
     private final String[] m_asFindFields;
@@ -28,7 +29,7 @@ public class QBFBuilder implements ISQLBuilderStatic {
 //        m_asFindFields = asFindFields;
 //    }
 
-        public QBFBuilder(String sSentence, String[] asFindFields) {
+    public QBFBuilder(String sSentence, String[] asFindFields) {
         int iPos = sSentence.indexOf("?(QBF_FILTER)");
         if (iPos < 0) {
             m_sSentBeginPart = sSentence;
@@ -70,7 +71,7 @@ public class QBFBuilder implements ISQLBuilderStatic {
             m_aiCondFields = new QBFCompareEnum[asFindFields.length];
             m_aParams = new String[asFindFields.length];
 
-            for( int i = 0; i < m_aParams.length; i++) {
+            for (int i = 0; i < m_aParams.length; i++) {
                 m_aParams[i] = DataWriteUtils.getSQLValue((Object) null);
             }
         }

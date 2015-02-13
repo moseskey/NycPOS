@@ -36,7 +36,7 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
 
         BP_TestMode = Boolean.valueOf(props.getProperty("payment.testmode")).booleanValue();
 
-        ENDPOINTADDRESS = props.getProperty( "payment.BluePay20POST.URL" );
+        ENDPOINTADDRESS = props.getProperty("payment.BluePay20POST.URL");
     }
 
     public PaymentGatewayBluePay20POST() {
@@ -44,8 +44,7 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
     }
 
     @Override
-    public void execute(PaymentInfoMagcard payinfo)
-    {
+    public void execute(PaymentInfoMagcard payinfo) {
         StringUtils.getCardNumber();
 
 // JG 16 May 12 use StringBuilder in place of StringBuilder
@@ -72,7 +71,7 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
                  * This is not ideal but until the POS Devs get back to me or I
                  * find a better way to detect this, it should be good enough
                  */
-                BP_Master_ID = ( payinfo.getTransactionID().startsWith("1001") ? payinfo.getTransactionID() : null ) ;
+                BP_Master_ID = (payinfo.getTransactionID().startsWith("1001") ? payinfo.getTransactionID() : null) ;
             }
 
             if (payinfo.getTrack1(true) == null) {
@@ -86,29 +85,27 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
                 String[] cc_name = payinfo.getHolderName().split(" ");
                 sb.append("&NAME1=");
                 if (cc_name.length > 0) {
-                   sb.append(URLEncoder.encode(cc_name[0], "UTF-8"));
+                    sb.append(URLEncoder.encode(cc_name[0], "UTF-8"));
                 }
                 sb.append("&NAME2=");
                 if (cc_name.length > 1) {
-                   sb.append(URLEncoder.encode(cc_name[1], "UTF-8"));
+                    sb.append(URLEncoder.encode(cc_name[1], "UTF-8"));
                 }
             } else {
                 // Example Track1
                 // %B4111111111111111^PADILLA VISDOMINE/LUIS^0905123000000000000002212322222?5
 
-                String swipe = URLEncoder.encode( payinfo.getTrack1(true), "UTF-8" ) + URLEncoder.encode( payinfo.getTrack2(true), "UTF-8" );
+                String swipe = URLEncoder.encode(payinfo.getTrack1(true),
+                                                 "UTF-8") + URLEncoder.encode(payinfo.getTrack2(true), "UTF-8");
 
-                swipe = swipe.replace( "%0A", "" );
-                swipe = swipe.replace( "%5E", "^" );
+                swipe = swipe.replace("%0A", "");
+                swipe = swipe.replace("%5E", "^");
 
-                if( BP_Trans_Type.equals( "REFUND" ) && BP_Master_ID != null )
-                {
+                if (BP_Trans_Type.equals("REFUND") && BP_Master_ID != null) {
                     // Do nothing, SWIPE data is not need if there is a master ID when refunding.
-                }
-                else
-                {
+                } else {
                     sb.append("&SWIPE=");
-                    sb.append( swipe );
+                    sb.append(swipe);
                 }
             }
 
@@ -118,30 +115,32 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
 
 
             sb.append("&MODE=");
-            sb.append( BP_TestMode ? "TEST" : "LIVE" );
+            sb.append(BP_TestMode ? "TEST" : "LIVE");
             sb.append("&TRANS_TYPE=");
             sb.append(BP_Trans_Type);
             sb.append("&MASTER_ID=");
-            sb.append( BP_Master_ID != null ? BP_Master_ID : "" );
-            sb.append( "&NAME1=");
-            sb.append( URLEncoder.encode(payinfo.getHolderName().split(" ")[0], "UTF-8") );
+            sb.append(BP_Master_ID != null ? BP_Master_ID : "");
+            sb.append("&NAME1=");
+            sb.append(URLEncoder.encode(payinfo.getHolderName().split(" ")[0], "UTF-8"));
 
             // Start Tamper Proof Seal
             MessageDigest md5;
             try {
                 md5 = MessageDigest.getInstance("MD5");
-                BP_Tamper_Proof_Seal = BP_SecretKey + BP_AccountID + BP_Trans_Type + amount + ( BP_Master_ID != null ? BP_Master_ID : "" ) + URLEncoder.encode(payinfo.getHolderName().split(" ")[0], "UTF-8") + (PAYMENT_ACCOUNT != null ? PAYMENT_ACCOUNT : "");
-                byte[] hash = md5.digest( BP_Tamper_Proof_Seal.getBytes("UTF-8") );
+                BP_Tamper_Proof_Seal = BP_SecretKey + BP_AccountID + BP_Trans_Type + amount +
+                                       (BP_Master_ID != null ? BP_Master_ID : "") + URLEncoder.encode(
+                                           payinfo.getHolderName().split(" ")[0], "UTF-8") + (PAYMENT_ACCOUNT != null ? PAYMENT_ACCOUNT : "");
+                byte[] hash = md5.digest(BP_Tamper_Proof_Seal.getBytes("UTF-8"));
 
-                StringBuilder sbhash = new StringBuilder(2*hash.length);
-                for(byte b : hash){
-                    sbhash.append(String.format("%02x", b&0xff));
+                StringBuilder sbhash = new StringBuilder(2 * hash.length);
+                for (byte b : hash) {
+                    sbhash.append(String.format("%02x", b & 0xff));
                 }
                 String md5hex = sbhash.toString();
 
-                sb.append( "&TAMPER_PROOF_SEAL=");
+                sb.append("&TAMPER_PROOF_SEAL=");
 
-                sb.append( URLEncoder.encode( md5hex, "UTF-8") );
+                sb.append(URLEncoder.encode(md5hex, "UTF-8"));
 
             } catch (NoSuchAlgorithmException ex) {
                 Logger.getLogger(PaymentGatewayBluePay20POST.class.getName()).log(Level.SEVERE, null, ex);
@@ -156,7 +155,7 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
 
             // not necessarily required but fixes a bug with some servers
             // JG May 12 added try-with-resources
-            connection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             try (DataOutputStream out = new DataOutputStream(connection.getOutputStream())) {
                 out.write(sb.toString().getBytes());
                 out.flush();
@@ -175,7 +174,7 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
             }
 
             // Custom parser to handle GET/POST style response
-            BluePay20POSTParser results = new BluePay20POSTParser( returned );
+            BluePay20POSTParser results = new BluePay20POSTParser(returned);
 
             /**
              * Server will return:
@@ -183,21 +182,15 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
              *      STATUS=2 When the transaction
              *      STATUS=E Then there is an error with the request formating or data sent
              */
-            if( results.getStatus().equals("1") )
-            {
-                payinfo.paymentOK( results.getAuth_Code(), results.getTrans_ID(), results.getMessage() );
-            }
-            else if( results.getStatus().equals("2") )
-            {
-                if( results.getMessage().equals( "DUPLICATE" ))
-                {
-                    payinfo.paymentError( "DUPLICATE of Trans # " + results.Trans_ID + "", amount);
-                }
-                else
+            if (results.getStatus().equals("1")) {
+                payinfo.paymentOK(results.getAuth_Code(), results.getTrans_ID(), results.getMessage());
+            } else if (results.getStatus().equals("2")) {
+                if (results.getMessage().equals("DUPLICATE")) {
+                    payinfo.paymentError("DUPLICATE of Trans # " + results.Trans_ID + "", amount);
+                } else {
                     payinfo.paymentError(results.getMessage(), amount);
-            }
-            else
-            {
+                }
+            } else {
                 /**
                  * When there is an issue with the request the server will
                  * return a 400 header and STAUTS=E with a short MESSAGE=Somthing
@@ -210,14 +203,12 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
 // JG 16 May 12 use multicatch
         } catch (UnsupportedEncodingException | MalformedURLException eUE) {
             payinfo.paymentError(AppLocal.getIntString("message.paymentexceptionservice"), eUE.getMessage());
-        } catch(IOException e) // Throw but buffered reader when the server returns a 400 header
-        {
+        } catch (IOException e) { // Throw but buffered reader when the server returns a 400 header
             payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), e.getMessage());
         }
     }
 
-    private class BluePay20POSTParser
-    {
+    private class BluePay20POSTParser {
         private String Trans_ID;
         private String Status;
         private String AVS;
@@ -227,15 +218,12 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
         private String Rebid;
         private String Trans_Type;
 
-        public BluePay20POSTParser( String result )
-        {
-            String[] pairs = result.split( "&" );
-            for( String pair : pairs )
-            {
-                String[] parts = pair.split( "=" );
+        public BluePay20POSTParser(String result) {
+            String[] pairs = result.split("&");
+            for (String pair : pairs) {
+                String[] parts = pair.split("=");
 
-                switch( parts[0] )
-                {
+                switch (parts[0]) {
                     case "TRANS_ID":
                         this.Trans_ID = parts[1];
                         break;
@@ -266,43 +254,35 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
             }
         }
 
-        public String getTrans_ID()
-        {
+        public String getTrans_ID() {
             return this.Trans_ID;
         }
 
-        public String getStatus()
-        {
+        public String getStatus() {
             return this.Status;
         }
 
-        public String getAVS()
-        {
+        public String getAVS() {
             return this.AVS;
         }
 
-        public String getCVV2()
-        {
+        public String getCVV2() {
             return this.CVV2;
         }
 
-        public String getAuth_Code()
-        {
+        public String getAuth_Code() {
             return this.Auth_Code;
         }
 
-        public String getMessage()
-        {
+        public String getMessage() {
             return this.Message;
         }
 
-        public String getRebid()
-        {
+        public String getRebid() {
             return this.Rebid;
         }
 
-        public String getTrans_Type()
-        {
+        public String getTrans_Type() {
             return this.Trans_Type;
         }
     }

@@ -56,10 +56,10 @@ public class HostInfo implements IKeyed {
 
     public static SerializerRead getSerializerRead() {
         return new SerializerRead() {
-    @Override
-    public Object readValues(DataRead dr) throws BasicException {
-            return new HostInfo(dr.getString(1), dr.getString(2), dr.getString(3));
-        }
+            @Override
+            public Object readValues(DataRead dr) throws BasicException {
+                return new HostInfo(dr.getString(1), dr.getString(2), dr.getString(3));
+            }
         };
     }
 }

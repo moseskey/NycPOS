@@ -52,7 +52,7 @@ public class JClockPanel extends javax.swing.JPanel {
         return m_lPeriod;
     }
 
-    public void setTime(Date dDate){
+    public void setTime(Date dDate) {
         m_date = dDate;
         repaint();
     }
@@ -104,12 +104,12 @@ public class JClockPanel extends javax.swing.JPanel {
 
         // Pinto la esfera del reloj;
         g2.setPaint(this.isEnabled()
-            ? new GradientPaint(-1200, -1200, Color.BLUE, 1200, 1200, Color.CYAN)
-            : new GradientPaint(-1200, -1200, Color.GRAY, 1200, 1200, Color.LIGHT_GRAY));
+                    ? new GradientPaint(-1200, -1200, Color.BLUE, 1200, 1200, Color.CYAN)
+                    : new GradientPaint(-1200, -1200, Color.GRAY, 1200, 1200, Color.LIGHT_GRAY));
         g2.fillOval(-1000, -1000, 2000, 2000);
         g2.setPaint(this.isEnabled()
-            ? new GradientPaint(-1200, -1200, Color.CYAN, 1200, 1200, Color.BLUE)
-            : new GradientPaint(-1200, -1200, Color.LIGHT_GRAY, 1200, 1200, Color.GRAY));
+                    ? new GradientPaint(-1200, -1200, Color.CYAN, 1200, 1200, Color.BLUE)
+                    : new GradientPaint(-1200, -1200, Color.LIGHT_GRAY, 1200, 1200, Color.GRAY));
         g2.fillOval(-900, -900, 1800, 1800);
         g2.setColor(Color.BLACK);
         g2.drawOval(-1000, -1000, 2000, 2000);
@@ -134,11 +134,12 @@ public class JClockPanel extends javax.swing.JPanel {
         if (m_date != null) {
             // Aguja de las horas
             g2.setTransform(mytrans);
-            g2.transform(AffineTransform.getRotateInstance((dhour + dminute / 60.0) * Math.PI / 6.0)); // Poner hora
+            g2.transform(AffineTransform.getRotateInstance((dhour + dminute / 60.0) * Math.PI /
+                                                           6.0)); // Poner hora
 
             if (m_lPeriod > 0L) { // pintamos la marca del periodo...
                 // dibujo un arco con el periodo seleccionado...
-                int iArc = (int) (m_lPeriod / 120000L);
+                int iArc = (int)(m_lPeriod / 120000L);
                 g2.setColor(new Color(255, 255, 255, 100));
                 g2.fillArc(-1000, -1000, 2000, 2000, 90 - iArc, iArc);
                 g2.setColor(Color.DARK_GRAY);
@@ -146,26 +147,26 @@ public class JClockPanel extends javax.swing.JPanel {
             } else {
                 // la aguja de las horas
                 g2.setColor(Color.WHITE);
-                g2.fillPolygon(new int[]{0, -35, 0, 35}, new int[]{100, 0, -600, 0}, 4);
+                g2.fillPolygon(new int[] {0, -35, 0, 35}, new int[] {100, 0, -600, 0}, 4);
                 g2.setColor(Color.DARK_GRAY);
-                g2.drawPolygon(new int[]{0, -35, 0, 35}, new int[]{100, 0, -600, 0}, 4);
+                g2.drawPolygon(new int[] {0, -35, 0, 35}, new int[] {100, 0, -600, 0}, 4);
 
                 // Aguja de los minutos
                 g2.setTransform(mytrans);
                 g2.transform(AffineTransform.getRotateInstance((dminute) * Math.PI / 30.0)); // Poner minutos
                 g2.setColor(Color.WHITE);
-                g2.fillPolygon(new int[]{0, -35, 0, 35}, new int[]{100, 0, -900, 0}, 4);
+                g2.fillPolygon(new int[] {0, -35, 0, 35}, new int[] {100, 0, -900, 0}, 4);
                 g2.setColor(Color.DARK_GRAY);
-                g2.drawPolygon(new int[]{0, -35, 0, 35}, new int[]{100, 0, -900, 0}, 4);
+                g2.drawPolygon(new int[] {0, -35, 0, 35}, new int[] {100, 0, -900, 0}, 4);
 
                 // Aguja de los segundos
                 if (m_bSeconds) {
                     g2.setTransform(mytrans);
                     g2.transform(AffineTransform.getRotateInstance(dsecond * Math.PI / 30.0)); // Poner segundos
                     g2.setColor(Color.YELLOW);
-                    g2.fillPolygon(new int[]{-15, 0, 15}, new int[]{200, -900, 200},  3);
+                    g2.fillPolygon(new int[] { -15, 0, 15}, new int[] {200, -900, 200},  3);
                     g2.setColor(Color.DARK_GRAY);
-                    g2.drawPolygon(new int[]{-15, 0, 15}, new int[]{200, -900, 200},  3);
+                    g2.drawPolygon(new int[] { -15, 0, 15}, new int[] {200, -900, 200},  3);
 
                     g2.setTransform(mytrans);
                     g2.setColor(Color.YELLOW);

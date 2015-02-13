@@ -161,16 +161,18 @@ public class JSort extends JDialog {
         getContentPane().add(jPanel2, java.awt.BorderLayout.SOUTH);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-396)/2, (screenSize.height-199)/2, 396, 199);
+        setBounds((screenSize.width - 396) / 2, (screenSize.height - 199) / 2, 396, 199);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
+    private void jcmdCancelActionPerformed(java.awt.event.ActionEvent
+                                           evt) {//GEN-FIRST:event_jcmdCancelActionPerformed
 
         dispose();
 
     }//GEN-LAST:event_jcmdCancelActionPerformed
 
-    private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
+    private void jcmdOKActionPerformed(java.awt.event.ActionEvent
+                                       evt) {//GEN-FIRST:event_jcmdOKActionPerformed
 
         int iSort1 = m_jSort1.getSelectedIndex();
         int iSort2 = m_jSort2.getSelectedIndex();

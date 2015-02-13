@@ -11,7 +11,8 @@ import com.openbravo.data.user.BrowsableData;
 import com.openbravo.data.user.BrowsableEditableData;
 import com.openbravo.data.user.BrowseListener;
 
-public class JListNavigator extends javax.swing.JPanel implements BrowseListener, ListSelectionListener {
+public class JListNavigator extends javax.swing.JPanel implements BrowseListener,
+    ListSelectionListener {
 
     protected BrowsableEditableData m_bd;
 
@@ -27,7 +28,8 @@ public class JListNavigator extends javax.swing.JPanel implements BrowseListener
 
         if (bTouchable) {
             jScrollPane1.getVerticalScrollBar().setPreferredSize(new Dimension(35, 35));
-            jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+            jScrollPane1.setHorizontalScrollBarPolicy(
+                javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
             jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         }
 

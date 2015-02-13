@@ -27,7 +27,7 @@ public class StockModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int row, int column) {
         return m_formats[column].formatValue(
-                ((Object[]) m_bd.getElementAt(row))[column]);
+                   ((Object[]) m_bd.getElementAt(row))[column]);
     }
     @Override
     public boolean isCellEditable(int row, int column) {

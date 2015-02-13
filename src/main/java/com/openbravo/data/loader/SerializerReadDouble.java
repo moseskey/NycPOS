@@ -10,6 +10,6 @@ public class SerializerReadDouble implements SerializerRead {
     }
 
     public Object readValues(DataRead dr) throws BasicException {
-        return Datas.DOUBLE.getValue(dr,1);
+        return Datas.DOUBLE.getValue(dr, 1);
     }
 }

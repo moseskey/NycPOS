@@ -5,7 +5,8 @@ import javax.swing.event.*;
 import java.util.*;
 import java.beans.*;
 
-public class DirtyManager implements DocumentListener, ChangeListener, ActionListener, PropertyChangeListener {
+public class DirtyManager implements DocumentListener, ChangeListener, ActionListener,
+    PropertyChangeListener {
 
     private boolean m_bDirty;
 
@@ -64,7 +65,7 @@ public class DirtyManager implements DocumentListener, ChangeListener, ActionLis
 
     public void propertyChange(PropertyChangeEvent evt) {
         //if ("image".equals(evt.getPropertyName())) {
-            setDirty(true);
+        setDirty(true);
         //}
     }
 

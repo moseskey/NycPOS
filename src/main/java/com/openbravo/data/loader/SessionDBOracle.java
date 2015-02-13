@@ -23,10 +23,12 @@ public class SessionDBOracle implements SessionDB {
     }
 
     public SentenceFind getSequenceSentence(Session s, String sequence) {
-        return new StaticSentence(s, "SELECT " + sequence + ".NEXTVAL FROM DUAL", null, SerializerReadInteger.INSTANCE);
+        return new StaticSentence(s, "SELECT " + sequence + ".NEXTVAL FROM DUAL", null,
+                                  SerializerReadInteger.INSTANCE);
     }
 
     public SentenceFind resetSequenceSentence(Session s, String sequence) {
-        return new StaticSentence(s, "SELECT " + sequence + ".NEXTVAL FROM DUAL", null, SerializerReadInteger.INSTANCE);
+        return new StaticSentence(s, "SELECT " + sequence + ".NEXTVAL FROM DUAL", null,
+                                  SerializerReadInteger.INSTANCE);
     }
 }

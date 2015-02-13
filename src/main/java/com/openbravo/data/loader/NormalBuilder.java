@@ -74,7 +74,7 @@ public class NormalBuilder implements ISQLBuilderStatic {
 
         private void ensurePlace(int i) {
             m_aParams.ensureCapacity(i);
-            while (i >= m_aParams.size()){
+            while (i >= m_aParams.size()) {
                 m_aParams.add(null);
             }
         }

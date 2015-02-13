@@ -24,13 +24,13 @@ public class JPanelFloors extends JPanelTable {
     @Override
     protected void init() {
         tfloors = new TableDefinition(app.getSession(),
-            "FLOORS",
-             new String[] {"ID", "NAME", "IMAGE"},
-             new String[] {"ID", AppLocal.getIntString("Label.Name"), "IMAGE"},
-             new Datas[] {Datas.STRING, Datas.STRING, Datas.IMAGE},
-             new Formats[] {Formats.NULL, Formats.STRING},
-             new int[] {0}
-        );
+                                      "FLOORS",
+                                      new String[] {"ID", "NAME", "IMAGE"},
+                                      new String[] {"ID", AppLocal.getIntString("Label.Name"), "IMAGE"},
+                                      new Datas[] {Datas.STRING, Datas.STRING, Datas.IMAGE},
+                                      new Formats[] {Formats.NULL, Formats.STRING},
+                                      new int[] {0}
+                                     );
         jeditor = new FloorsEditor(dirty);
     }
 
@@ -41,12 +41,12 @@ public class JPanelFloors extends JPanelTable {
 
     @Override
     public Vectorer getVectorer() {
-        return tfloors.getVectorerBasic(new int[]{1});
+        return tfloors.getVectorerBasic(new int[] {1});
     }
 
     @Override
     public ListCellRenderer getListCellRenderer() {
-        return new ListCellRendererBasic(tfloors.getRenderStringBasic(new int[]{1}));
+        return new ListCellRendererBasic(tfloors.getRenderStringBasic(new int[] {1}));
     }
 
     @Override

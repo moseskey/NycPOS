@@ -49,13 +49,15 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
     /**
      * Logging / Monitor
      */
-    protected static final Logger LOGGER = Logger.getLogger("com.openbravo.pos.customers.CustomersList");
+    protected static final Logger LOGGER =
+        Logger.getLogger("com.openbravo.pos.customers.CustomersList");
 
     public OrderCustomerList(DataLogicCustomers dlCustomers, AppView app, TicketsEditor panelticket) {
         this.application = app;
         this.panelticket = panelticket;
         this.dataLogicCustomers = dlCustomers;
-        this.dataLogicReceipts = (DataLogicReceipts) application.getBean("com.openbravo.pos.sales.DataLogicReceipts");
+        this.dataLogicReceipts = (DataLogicReceipts)
+                                 application.getBean("com.openbravo.pos.sales.DataLogicReceipts");
         tnbbutton = new ThumbNailBuilder(90, 98);
 
 //        orderSynchroniseHelper = new OrdersSynchroniseHelper(application, dataLogicReceipts, panelticket.getActiveTicket());
@@ -175,7 +177,8 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
                     ImageIcon icon = new ImageIcon(tnbbutton.getThumbNailText(image, text));
 //                    flowTab.addButton(icon, new SelectedCustomerAction(ticket.getId()));
                 }
-                LOGGER.log(Level.INFO, "Time of finished loadCustomerOrders {0}", (System.currentTimeMillis() - time));
+                LOGGER.log(Level.INFO, "Time of finished loadCustomerOrders {0}",
+                           (System.currentTimeMillis() - time));
             }
         });
     }
@@ -232,8 +235,8 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
 
 //    private void synchroniseData() {
 //        try {
-            // get tickets only from selected customer or show all
-            // add newest tickets from provider
+    // get tickets only from selected customer or show all
+    // add newest tickets from provider
 //            orderSynchroniseHelper.synchSharedTickets(panelticket.getActiveTicket());
 //        } catch (Exception e) {
 //            LOGGER.log(Level.WARNING, "Error synchronise orders", e);

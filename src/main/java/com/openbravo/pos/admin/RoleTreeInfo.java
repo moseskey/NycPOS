@@ -41,7 +41,7 @@ public class RoleTreeInfo implements SerializableRead, IKeyed {
     }
 
     public String getDescription() {
-           return m_description;
+        return m_description;
     }
 
     @Override

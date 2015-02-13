@@ -23,7 +23,8 @@ public class BreaksPanel extends JPanelTable {
 
     @Override
     protected void init() {
-        DataLogicPresenceManagement dlPresenceManagement  = (DataLogicPresenceManagement) app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");
+        DataLogicPresenceManagement dlPresenceManagement  = (DataLogicPresenceManagement)
+                                                            app.getBean("com.openbravo.pos.epm.DataLogicPresenceManagement");
         tbreaks = dlPresenceManagement.getTableBreaks();
         jeditor = new BreaksView(app, dirty);
     }
@@ -47,7 +48,7 @@ public class BreaksPanel extends JPanelTable {
 
     @Override
     public Vectorer getVectorer() {
-        return tbreaks.getVectorerBasic(new int[]{1, 2});
+        return tbreaks.getVectorerBasic(new int[] {1, 2});
     }
 
     @Override
@@ -57,7 +58,7 @@ public class BreaksPanel extends JPanelTable {
 
     @Override
     public ListCellRenderer getListCellRenderer() {
-        return new ListCellRendererBasic(tbreaks.getRenderStringBasic(new int[]{1}));
+        return new ListCellRendererBasic(tbreaks.getRenderStringBasic(new int[] {1}));
     }
 
     @Override

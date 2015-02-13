@@ -135,9 +135,9 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
         bd.actionLoad();
 
         //HS insert new customer 20.03.2014
-        if (CustomerInfoGlobal.getInstance()!=null){
+        if (CustomerInfoGlobal.getInstance() != null) {
             bd.actionInsert();
-    }
+        }
 
     }
 
@@ -147,7 +147,8 @@ public abstract class JPanelTable extends JPanel implements JPanelView, BeanFact
         try {
             return bd.actionClosingForm(this);
         } catch (BasicException eD) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.CannotMove"), eD);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.CannotMove"),
+                                            eD);
             msg.show(this);
             return false;
         }

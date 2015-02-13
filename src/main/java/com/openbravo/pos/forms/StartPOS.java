@@ -35,7 +35,7 @@ public class StartPOS {
         }
     }
 
-    public static void main (final String args[]) {
+    public static void main(final String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -66,13 +66,14 @@ public class StartPOS {
                 // Set the look and feel.
                 try {
                     Object laf = Class.forName(config.getProperty("swing.defaultlaf")).newInstance();
-                    if (laf instanceof LookAndFeel){
+                    if (laf instanceof LookAndFeel) {
                         UIManager.setLookAndFeel((LookAndFeel) laf);
                     } else if (laf instanceof SubstanceSkin) {
                         SubstanceLookAndFeel.setSkin((SubstanceSkin) laf);
                     }
 // JG 6 May 2013 to multicatch
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                             UnsupportedLookAndFeelException e) {
                     logger.log(Level.WARNING, "Cannot set Look and Feel", e);
                 }
 // JG July 2014 Hostname for Tickets

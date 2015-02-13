@@ -27,7 +27,8 @@ public class AltEncrypter {
 //        } catch (NoSuchPaddingException e) {
 //        } catch (NoSuchAlgorithmException e) {
 //        } catch (InvalidKeyException e) {
-        } catch (UnsupportedEncodingException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidKeyException e) {
+        } catch (UnsupportedEncodingException | NoSuchPaddingException | NoSuchAlgorithmException |
+                     InvalidKeyException e) {
         }
     }
 

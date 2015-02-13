@@ -65,7 +65,7 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
 
         private final SharedTicketInfo m_Ticket;
 
-        public JButtonTicket(SharedTicketInfo ticket){
+        public JButtonTicket(SharedTicketInfo ticket) {
 
             super();
 
@@ -74,8 +74,8 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
             setFocusable(false);
             setRequestFocusEnabled(false);
             setMargin(new Insets(8, 14, 8, 14));
-            setFont(new java.awt.Font ("Dialog", 0, 14));
-            setBackground(new java.awt.Color (220, 220, 220));
+            setFont(new java.awt.Font("Dialog", 0, 14));
+            setBackground(new java.awt.Color(220, 220, 220));
             addActionListener(new ActionListenerImpl());
 
             setText(ticket.getName());
@@ -90,12 +90,12 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
             @Override
             public void actionPerformed(ActionEvent evt) {
 
-                        // Selecciono el ticket
-                        m_sDialogTicket = m_Ticket.getId();
+                // Selecciono el ticket
+                m_sDialogTicket = m_Ticket.getId();
 
-                        // y oculto la ventana
-                        JTicketsBagSharedList.this.setVisible(false);
-                    }
+                // y oculto la ventana
+                JTicketsBagSharedList.this.setVisible(false);
+            }
         }
     }
 
@@ -141,7 +141,8 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
         jPanel3.add(jPanel4);
 
         m_jButtonCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(
+                                    getClass().getResource("/images/cancel.png"))); // NOI18N
         m_jButtonCancel.setText(AppLocal.getIntString("Button.Close")); // NOI18N
         m_jButtonCancel.setFocusPainted(false);
         m_jButtonCancel.setFocusable(false);
@@ -160,7 +161,8 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed
+    private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed
 
         dispose();
 

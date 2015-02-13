@@ -24,7 +24,7 @@ public class JProductsSelector extends javax.swing.JPanel {
 
     //public void addProduct(Image img, String name, ActionListener al) {
 
-        public void addProduct(Image img, String display, ActionListener al,String textTip) {
+    public void addProduct(Image img, String display, ActionListener al, String textTip) {
         JButton btn = new JButton();
         btn.applyComponentOrientation(getComponentOrientation());
 // Added JG 13 Nov 12 - Render Display text
@@ -32,8 +32,8 @@ public class JProductsSelector extends javax.swing.JPanel {
 //        btn.setText(name);
         btn.setIcon(new ImageIcon(img));
         btn.setFocusPainted(false);
-        if (textTip != null){
-        btn.setToolTipText(textTip);
+        if (textTip != null) {
+            btn.setToolTipText(textTip);
         }
         btn.setFocusable(false);
         btn.setRequestFocusEnabled(false);

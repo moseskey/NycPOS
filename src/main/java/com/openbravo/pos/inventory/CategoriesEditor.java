@@ -48,7 +48,7 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         m_jCatNameShow.addActionListener(dirty);
 
 // Added JDL 13.04.13
-       m_jTextTip.getDocument().addDocumentListener(dirty);
+        m_jTextTip.getDocument().addDocumentListener(dirty);
 
 
         writeValueEOF();
@@ -62,7 +62,8 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         try {
             a = m_sentcat.list();
         } catch (BasicException eD) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotloadlists"), eD);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                            AppLocal.getIntString("message.cannotloadlists"), eD);
             msg.show(this);
             a = new ArrayList();
         }
@@ -212,9 +213,11 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         m_jImage.setBounds(200, 170, 250, 190);
 
         m_jCatalogAdd.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jCatalogAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editnew.png"))); // NOI18N
+        m_jCatalogAdd.setIcon(new javax.swing.ImageIcon(
+                                  getClass().getResource("/images/editnew.png"))); // NOI18N
         m_jCatalogAdd.setText(AppLocal.getIntString("button.catalogadd")); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
+        java.util.ResourceBundle bundle =
+            java.util.ResourceBundle.getBundle("locales/pos_messages"); // NOI18N
         m_jCatalogAdd.setToolTipText(bundle.getString("button.catalogadd")); // NOI18N
         m_jCatalogAdd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jCatalogAdd.setMargin(new java.awt.Insets(2, 4, 2, 14));
@@ -227,7 +230,8 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         m_jCatalogAdd.setBounds(540, 40, 80, 30);
 
         m_jCatalogDelete.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jCatalogDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editdelete.png"))); // NOI18N
+        m_jCatalogDelete.setIcon(new javax.swing.ImageIcon(
+                                     getClass().getResource("/images/editdelete.png"))); // NOI18N
         m_jCatalogDelete.setText(AppLocal.getIntString("button.catalogdel")); // NOI18N
         m_jCatalogDelete.setToolTipText(bundle.getString("button.catalogdel")); // NOI18N
         m_jCatalogDelete.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -281,7 +285,8 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
         jLabel8.setBounds(390, 64, 110, 20);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jCatalogDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCatalogDeleteActionPerformed
+    private void m_jCatalogDeleteActionPerformed(java.awt.event.ActionEvent
+                                                 evt) {//GEN-FIRST:event_m_jCatalogDeleteActionPerformed
 
         try {
             m_sentdel.exec(m_id);
@@ -291,12 +296,14 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
             m_jCatalogAdd.setEnabled(true);
             jLabel8.setText(AppLocal.getIntString("label.CatalogueStatusNo"));
         } catch (BasicException e) {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotexecute"), e));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                            AppLocal.getIntString("message.cannotexecute"), e));
         }
 
     }//GEN-LAST:event_m_jCatalogDeleteActionPerformed
 
-    private void m_jCatalogAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCatalogAddActionPerformed
+    private void m_jCatalogAddActionPerformed(java.awt.event.ActionEvent
+                                              evt) {//GEN-FIRST:event_m_jCatalogAddActionPerformed
 
         try {
             Object param = m_id;
@@ -309,7 +316,8 @@ public final class CategoriesEditor extends JPanel implements EditorRecord {
             jLabel8.setText(AppLocal.getIntString("label.CatalogueStatusYes"));
 
         } catch (BasicException e) {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotexecute"), e));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                            AppLocal.getIntString("message.cannotexecute"), e));
         }
 
     }//GEN-LAST:event_m_jCatalogAddActionPerformed

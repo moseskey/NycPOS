@@ -53,7 +53,7 @@ public abstract class Codes {
             }
             out.write(ESCPOS.BAR_HRIFONT1);
             out.write(ESCPOS.BAR_CODE02);
-            out.write(DeviceTicket.transNumber(DeviceTicket.alignBarCode(code,13).substring(0,12)));
+            out.write(DeviceTicket.transNumber(DeviceTicket.alignBarCode(code, 13).substring(0, 12)));
             out.write(new byte[] { 0x00 });
 
             out.write(getNewLine());
@@ -62,7 +62,7 @@ public abstract class Codes {
 
     public byte[] transImage(BufferedImage image) {
 
-            CenteredImage centeredimage = new CenteredImage(image, getImageWidth());
+        CenteredImage centeredimage = new CenteredImage(image, getImageWidth());
 
         // Imprimo los par\u00e1metros en cu\u00e1druple
         int iWidth = (centeredimage.getWidth() + 7) / 8; // n\u00famero de bytes
@@ -78,10 +78,10 @@ public abstract class Codes {
 
         // Dimension de la imagen
         // JG note: nested ++'s not good construct need change later
-        bData[index ++] = (byte) (iWidth % 256);
-        bData[index ++] = (byte) (iWidth / 256);
-        bData[index ++] = (byte) (iHeight % 256);
-        bData[index ++] = (byte) (iHeight / 256);
+        bData[index ++] = (byte)(iWidth % 256);
+        bData[index ++] = (byte)(iWidth / 256);
+        bData[index ++] = (byte)(iHeight % 256);
+        bData[index ++] = (byte)(iHeight / 256);
 
         // Raw data
         // JG note: nested ++'s  and var assignments not good construct need change later

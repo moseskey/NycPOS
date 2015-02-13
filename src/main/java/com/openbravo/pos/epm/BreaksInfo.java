@@ -35,7 +35,7 @@ public class BreaksInfo implements IKeyed {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return m_sName;
     }
 }

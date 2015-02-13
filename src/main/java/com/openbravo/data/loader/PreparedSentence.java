@@ -18,7 +18,8 @@ public class PreparedSentence extends JDBCSentence {
     // Estado
     private PreparedStatement m_Stmt;
 
-    public PreparedSentence(Session s, String sentence, SerializerWrite serwrite, SerializerRead serread) {
+    public PreparedSentence(Session s, String sentence, SerializerWrite serwrite,
+                            SerializerRead serread) {
         super(s);
         m_sentence = sentence;
         m_SerWrite = serwrite;
@@ -82,7 +83,8 @@ public class PreparedSentence extends JDBCSentence {
         @Override
         public void setTimestamp(int paramIndex, java.util.Date dValue) throws BasicException {
             try {
-                m_ps.setObject(paramIndex, dValue == null ? null : new Timestamp(dValue.getTime()), Types.TIMESTAMP);
+                m_ps.setObject(paramIndex, dValue == null ? null : new Timestamp(dValue.getTime()),
+                               Types.TIMESTAMP);
             } catch (SQLException eSQL) {
                 throw new BasicException(eSQL);
             }
@@ -152,7 +154,7 @@ public class PreparedSentence extends JDBCSentence {
         // false -> un updatecount (si -1 entonces se acabo)
 
         try {
-            if (m_Stmt.getMoreResults()){
+            if (m_Stmt.getMoreResults()) {
                 // tenemos resultset
                 return new JDBCDataResultSet(m_Stmt.getResultSet(), m_SerRead);
             } else {
@@ -175,11 +177,11 @@ public class PreparedSentence extends JDBCSentence {
         if (m_Stmt != null) {
             try {
                 m_Stmt.close();
-           } catch (SQLException eSQL) {
+            } catch (SQLException eSQL) {
                 throw new BasicException(eSQL);
             } finally {
                 m_Stmt = null;
             }
         }
-     }
+    }
 }

@@ -89,7 +89,7 @@ public class ImageUtils {
         } else {
             try {
                 return ImageIO.read(new ByteArrayInputStream(b));
-            } catch(IOException e) {
+            } catch (IOException e) {
                 return null;
             }
         }
@@ -105,7 +105,7 @@ public class ImageUtils {
                 b.flush();
                 b.close();
                 return b.toByteArray();
-            } catch(IOException e) {
+            } catch (IOException e) {
                 return null;
             }
         }
@@ -162,7 +162,7 @@ public class ImageUtils {
 
     public static String bytes2hex(byte[] binput) {
 
-        StringBuilder s = new StringBuilder(binput.length *2);
+        StringBuilder s = new StringBuilder(binput.length * 2);
         for (int i = 0; i < binput.length; i++) {
             byte b = binput[i];
             s.append(HEXCHARS[(b & 0xF0) >> 4]);

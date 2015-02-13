@@ -32,7 +32,7 @@ public class PaymentGatewayCaixa implements PaymentGateway {
     private boolean bSha;
     private boolean m_bTestMode;
 
-    public PaymentGatewayCaixa (AppProperties props) {
+    public PaymentGatewayCaixa(AppProperties props) {
         AltEncrypter cypher = new AltEncrypter("cypherkey");
         this.sCommerceSign = cypher.decrypt(props.getProperty("payment.commercesign").substring(6));
 
@@ -40,20 +40,20 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 
         //EUR, USD, GPB
         this.m_sCurrency = (Locale.getDefault().getCountry().isEmpty())
-            ? Currency.getInstance("EUR").getCurrencyCode()
-            : Currency.getInstance(Locale.getDefault()).getCurrencyCode();
+                           ? Currency.getInstance("EUR").getCurrencyCode()
+                           : Currency.getInstance(Locale.getDefault()).getCurrencyCode();
 
         this.sTerminal = props.getProperty("payment.terminal");
         this.sMerchantCode = props.getProperty("payment.commerceid");
         this.bSha = Boolean.valueOf(props.getProperty("payment.SHA")).booleanValue();
 
         ENDPOINTADDRESS = (m_bTestMode)
-                ? "https://sis-t.sermepa.es:25443/sis/operaciones"
-                : "https://sis.sermepa.es/sis/realizarPago";
+                          ? "https://sis-t.sermepa.es:25443/sis/operaciones"
+                          : "https://sis.sermepa.es/sis/realizarPago";
 
     }
 
-    public PaymentGatewayCaixa(){
+    public PaymentGatewayCaixa() {
 
     }
 
@@ -61,7 +61,7 @@ public class PaymentGatewayCaixa implements PaymentGateway {
     private String createOrderId() {
         Random r = new Random();
         NumberFormat nf = new DecimalFormat("0000000000");
-        return nf.format( Math.abs(r.nextInt()) + (Math.abs(System.currentTimeMillis()) % 1000000) );
+        return nf.format(Math.abs(r.nextInt()) + (Math.abs(System.currentTimeMillis()) % 1000000));
     }
 
     @Override
@@ -73,7 +73,7 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 // JG 16 May 12 use StringBuilder in place of StringBuilder
         StringBuilder sb = new StringBuilder();
         String currency = "978"; //default euros
-        String xml="";
+        String xml = "";
 // JG 16 May 12 use switch
         switch (m_sCurrency) {
             case "USD":
@@ -85,58 +85,60 @@ public class PaymentGatewayCaixa implements PaymentGateway {
         }
 
         NumberFormat nf = new DecimalFormat("00");
-        String amount = nf.format( Math.abs(payinfo.getTotal())*100 );
+        String amount = nf.format(Math.abs(payinfo.getTotal()) * 100);
         String orderid = createOrderId();
 
         try {
 
-        if (payinfo.getTotal() > 0.0) {
-            String firma = amount + orderid + sMerchantCode + currency + payinfo.getCardNumber() + SALE + sCommerceSign;
+            if (payinfo.getTotal() > 0.0) {
+                String firma = amount + orderid + sMerchantCode + currency + payinfo.getCardNumber() + SALE +
+                               sCommerceSign;
 
-            xml = "<DATOSENTRADA>" +
-            "<DS_Version>0.1</DS_Version>" +
-            "<DS_MERCHANT_AMOUNT>"+ amount +"</DS_MERCHANT_AMOUNT>" +
-            "<DS_MERCHANT_CURRENCY>"+currency+"</DS_MERCHANT_CURRENCY>" +
-            "<DS_MERCHANT_ORDER>"+ orderid +"</DS_MERCHANT_ORDER>" +
-            "<DS_MERCHANT_MERCHANTCODE>"+ sMerchantCode +"</DS_MERCHANT_MERCHANTCODE>" +
-            "<DS_MERCHANT_MERCHANTURL></DS_MERCHANT_MERCHANTURL>" +
-            //"<DS_MERCHANT_MERCHANTNAME>sample merchant</DS_MERCHANT_MERCHANTNAME>" + //Optional
-            "<DS_MERCHANT_MERCHANTSIGNATURE>"+getSHA1(firma)+"</DS_MERCHANT_MERCHANTSIGNATURE>" +
-            "<DS_MERCHANT_TERMINAL>"+ sTerminal +"</DS_MERCHANT_TERMINAL>" +
-            "<DS_MERCHANT_TRANSACTIONTYPE>"+SALE+"</DS_MERCHANT_TRANSACTIONTYPE>" +
-            //"<DS_MERCHANT_MERCHANTDATA>sample data</DS_MERCHANT_MERCHANTDATA>" + //Optional
-            "<DS_MERCHANT_PAN>"+ payinfo.getCardNumber() +"</DS_MERCHANT_PAN>" +
-            "<DS_MERCHANT_EXPIRYDATE>"+ payinfo.getExpirationDate() +"</DS_MERCHANT_EXPIRYDATE>" +
-            //"<DS_MERCHANT_CVV2>sample cvv</DS_MERCHANT_CVV2>" + //Optional
-            "</DATOSENTRADA>";
-        } else {
-            String firma = amount + payinfo.getTransactionID() + sMerchantCode + currency + REFUND + sCommerceSign;
+                xml = "<DATOSENTRADA>" +
+                      "<DS_Version>0.1</DS_Version>" +
+                      "<DS_MERCHANT_AMOUNT>" + amount + "</DS_MERCHANT_AMOUNT>" +
+                      "<DS_MERCHANT_CURRENCY>" + currency + "</DS_MERCHANT_CURRENCY>" +
+                      "<DS_MERCHANT_ORDER>" + orderid + "</DS_MERCHANT_ORDER>" +
+                      "<DS_MERCHANT_MERCHANTCODE>" + sMerchantCode + "</DS_MERCHANT_MERCHANTCODE>" +
+                      "<DS_MERCHANT_MERCHANTURL></DS_MERCHANT_MERCHANTURL>" +
+                      //"<DS_MERCHANT_MERCHANTNAME>sample merchant</DS_MERCHANT_MERCHANTNAME>" + //Optional
+                      "<DS_MERCHANT_MERCHANTSIGNATURE>" +getSHA1(firma) + "</DS_MERCHANT_MERCHANTSIGNATURE>" +
+                      "<DS_MERCHANT_TERMINAL>" + sTerminal + "</DS_MERCHANT_TERMINAL>" +
+                      "<DS_MERCHANT_TRANSACTIONTYPE>" + SALE + "</DS_MERCHANT_TRANSACTIONTYPE>" +
+                      //"<DS_MERCHANT_MERCHANTDATA>sample data</DS_MERCHANT_MERCHANTDATA>" + //Optional
+                      "<DS_MERCHANT_PAN>" + payinfo.getCardNumber() + "</DS_MERCHANT_PAN>" +
+                      "<DS_MERCHANT_EXPIRYDATE>" + payinfo.getExpirationDate() + "</DS_MERCHANT_EXPIRYDATE>" +
+                      //"<DS_MERCHANT_CVV2>sample cvv</DS_MERCHANT_CVV2>" + //Optional
+                      "</DATOSENTRADA>";
+            } else {
+                String firma = amount + payinfo.getTransactionID() + sMerchantCode + currency + REFUND +
+                               sCommerceSign;
 
-            xml = "<DATOSENTRADA>" +
-            "<DS_Version>0.1</DS_Version>" +
-            "<DS_MERCHANT_AMOUNT>"+ amount +"</DS_MERCHANT_AMOUNT>" +
-            "<DS_MERCHANT_CURRENCY>"+currency+"</DS_MERCHANT_CURRENCY>" +
-            "<DS_MERCHANT_ORDER>"+ payinfo.getTransactionID() +"</DS_MERCHANT_ORDER>" +
-            "<DS_MERCHANT_MERCHANTCODE>"+ sMerchantCode +"</DS_MERCHANT_MERCHANTCODE>" +
-            "<DS_MERCHANT_MERCHANTURL></DS_MERCHANT_MERCHANTURL>" +
-            "<DS_MERCHANT_MERCHANTSIGNATURE>"+getSHA1(firma)+"</DS_MERCHANT_MERCHANTSIGNATURE>" +
-            "<DS_MERCHANT_TERMINAL>"+ sTerminal +"</DS_MERCHANT_TERMINAL>" +
-            "<DS_MERCHANT_TRANSACTIONTYPE>"+REFUND+"</DS_MERCHANT_TRANSACTIONTYPE>" +
-            "</DATOSENTRADA>";
-        }
+                xml = "<DATOSENTRADA>" +
+                      "<DS_Version>0.1</DS_Version>" +
+                      "<DS_MERCHANT_AMOUNT>" + amount + "</DS_MERCHANT_AMOUNT>" +
+                      "<DS_MERCHANT_CURRENCY>" + currency + "</DS_MERCHANT_CURRENCY>" +
+                      "<DS_MERCHANT_ORDER>" + payinfo.getTransactionID() + "</DS_MERCHANT_ORDER>" +
+                      "<DS_MERCHANT_MERCHANTCODE>" + sMerchantCode + "</DS_MERCHANT_MERCHANTCODE>" +
+                      "<DS_MERCHANT_MERCHANTURL></DS_MERCHANT_MERCHANTURL>" +
+                      "<DS_MERCHANT_MERCHANTSIGNATURE>" + getSHA1(firma) + "</DS_MERCHANT_MERCHANTSIGNATURE>" +
+                      "<DS_MERCHANT_TERMINAL>" + sTerminal + "</DS_MERCHANT_TERMINAL>" +
+                      "<DS_MERCHANT_TRANSACTIONTYPE>" + REFUND + "</DS_MERCHANT_TRANSACTIONTYPE>" +
+                      "</DATOSENTRADA>";
+            }
 
 // JG 16 May 12 use chain
-        sb.append("entrada=").append(URLEncoder.encode(xml, "UTF-8"));
+            sb.append("entrada=").append(URLEncoder.encode(xml, "UTF-8"));
 
-        // open secure connection
-        URL url = new URL(ENDPOINTADDRESS);
-        URLConnection connection = url.openConnection();
-        connection.setDoOutput(true);
-        connection.setUseCaches(false);
+            // open secure connection
+            URL url = new URL(ENDPOINTADDRESS);
+            URLConnection connection = url.openConnection();
+            connection.setDoOutput(true);
+            connection.setUseCaches(false);
 
-        // not necessarily required but fixes a bug with some servers
+            // not necessarily required but fixes a bug with some servers
 // JG 16 May 12 use try-with-resources
-        connection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             try (DataOutputStream out = new DataOutputStream(connection.getOutputStream())) {
                 out.write(sb.toString().getBytes());
                 out.flush();
@@ -147,31 +149,35 @@ public class PaymentGatewayCaixa implements PaymentGateway {
                 sReturned = in.readLine();
             }
 
-        if (sReturned == null) {
-            payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Response empty.");
-        } else {
-            LaCaixaParser lpp = new LaCaixaParser(sReturned);
-            Map props = lpp.splitXML();
+            if (sReturned == null) {
+                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Response empty.");
+            } else {
+                LaCaixaParser lpp = new LaCaixaParser(sReturned);
+                Map props = lpp.splitXML();
 
-            if (lpp.getResult().equals(LocalRes.getIntString("button.ok"))) {
-                //printResponse(props);
+                if (lpp.getResult().equals(LocalRes.getIntString("button.ok"))) {
+                    //printResponse(props);
 
-                if (SALEAPPROVED.equals(props.get("Ds_Response")) || REFUNDAPPROVED.equals(props.get("Ds_Response"))) {
-                    //Transaction approved
-                    payinfo.paymentOK((String) props.get("Ds_AuthorisationCode"), (String) props.get("Ds_Order"), sReturned);
-                } else {
+                    if (SALEAPPROVED.equals(props.get("Ds_Response")) ||
+                        REFUNDAPPROVED.equals(props.get("Ds_Response"))) {
+                        //Transaction approved
+                        payinfo.paymentOK((String) props.get("Ds_AuthorisationCode"), (String) props.get("Ds_Order"),
+                                          sReturned);
+                    } else {
 
-                    String sCode = (String) props.get("Ds_Response");
+                        String sCode = (String) props.get("Ds_Response");
 // JG 16 May 12 use switch
-                    switch (sCode) {
+                        switch (sCode) {
                             case "0101":
                                 payinfo.paymentError(AppLocal.getIntString("message.paymentnotauthorised"), "Card date expired");
                                 break;
                             case "0102":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta en excepciÃ³n transitoria o bajo sospecha de fraude.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"),
+                                                     "Tarjeta en excepciÃ³n transitoria o bajo sospecha de fraude.");
                                 break;
                             case "0104":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "OperaciÃ³n no permitida para esa tarjeta o terminal.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"),
+                                                     "OperaciÃ³n no permitida para esa tarjeta o terminal.");
                                 break;
                             case "0116":
                                 payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Disponible insuficiente.");
@@ -180,25 +186,30 @@ public class PaymentGatewayCaixa implements PaymentGateway {
                                 payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta no registrada.");
                                 break;
                             case "0129":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "CVV2 security code invalid. Amount not supplied or invalid.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"),
+                                                     "CVV2 security code invalid. Amount not supplied or invalid.");
                                 break;
                             case "0180":
                                 payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta ajena al servicio.");
                                 break;
                             case "0184":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Cardholder authentication error.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"),
+                                                     "Cardholder authentication error.");
                                 break;
                             case "0190":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Denegation of service without reason.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"),
+                                                     "Denegation of service without reason.");
                                 break;
                             case "0191":
                                 payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Expiry date invalid.");
                                 break;
                             case "0202":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta en excepciÃ³n transitoria o bajo sospecha de fraude con retirada de tarjeta.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"),
+                                                     "Tarjeta en excepciÃ³n transitoria o bajo sospecha de fraude con retirada de tarjeta.");
                                 break;
                             case "0904":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Comercio no registrado en FUC.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"),
+                                                     "Comercio no registrado en FUC.");
                                 break;
                             case "9912":
                             case "912":
@@ -209,38 +220,39 @@ public class PaymentGatewayCaixa implements PaymentGateway {
                                 break;
                         }
 
-                    sCode = (String)props.get("CODIGO");
+                        sCode = (String)props.get("CODIGO");
 // JG 16 May 12 use switch
-                    switch (sCode) {
+                        switch (sCode) {
                             case "SIS0054":
                                 payinfo.paymentError(AppLocal.getIntString("message.paymentnotauthorised"), "Pedido repetido.");
                                 break;
                             case "SIS0078":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "MÃ(c)todo de pago no disponible para su tarjeta.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"),
+                                                     "MÃ(c)todo de pago no disponible para su tarjeta.");
                                 break;
                             case "SIS0093":
                                 payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Tarjeta no vÃ¡lida.");
                                 break;
                             case "SIS0094":
-                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), "Error en la llamada al MPI sin controlar.");
+                                payinfo.paymentError(AppLocal.getIntString("message.paymenterror"),
+                                                     "Error en la llamada al MPI sin controlar.");
                                 break;
                         }
+                    }
+                } else {
+                    payinfo.paymentError(lpp.getResult(), "");
                 }
             }
-            else {
-                payinfo.paymentError(lpp.getResult(), "");
-            }
-        }
 // JG 16 May 12 use multicatch
         } catch (UnsupportedEncodingException | MalformedURLException eUE) {
             payinfo.paymentError(AppLocal.getIntString("message.paymentexceptionservice"), eUE.getMessage());
-        } catch(IOException e){
+        } catch (IOException e) {
             payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), e.getMessage());
-    }
+        }
 
     }
 
-    public String getSHA1(String input){
+    public String getSHA1(String input) {
         byte[] output = null;
         try {
             MessageDigest md = MessageDigest.getInstance("SHA1");
@@ -254,121 +266,120 @@ public class PaymentGatewayCaixa implements PaymentGateway {
 
     public class LaCaixaParser extends DefaultHandler {
 
-    private SAXParser m_sp = null;
-    private Map props = new HashMap();
-    private String text;
-    private InputStream is;
-    private String result;
+        private SAXParser m_sp = null;
+        private Map props = new HashMap();
+        private String text;
+        private InputStream is;
+        private String result;
 
         public LaCaixaParser(String in) {
-        is = new ByteArrayInputStream(in.getBytes());
-    }
-
-        public Map splitXML(){
-        try {
-            if (m_sp == null) {
-                SAXParserFactory spf = SAXParserFactory.newInstance();
-                m_sp = spf.newSAXParser();
-            }
-            m_sp.parse(is, this);
-        } catch (ParserConfigurationException ePC) {
-            result = LocalRes.getIntString("exception.parserconfig");
-        } catch (SAXException eSAX) {
-            result = LocalRes.getIntString("exception.xmlfile");
-        } catch (IOException eIO) {
-            result = LocalRes.getIntString("exception.iofile");
+            is = new ByteArrayInputStream(in.getBytes());
         }
-        result = LocalRes.getIntString("button.ok");
-        return props;
-    }
 
-    @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
-        try {
+        public Map splitXML() {
+            try {
+                if (m_sp == null) {
+                    SAXParserFactory spf = SAXParserFactory.newInstance();
+                    m_sp = spf.newSAXParser();
+                }
+                m_sp.parse(is, this);
+            } catch (ParserConfigurationException ePC) {
+                result = LocalRes.getIntString("exception.parserconfig");
+            } catch (SAXException eSAX) {
+                result = LocalRes.getIntString("exception.xmlfile");
+            } catch (IOException eIO) {
+                result = LocalRes.getIntString("exception.iofile");
+            }
+            result = LocalRes.getIntString("button.ok");
+            return props;
+        }
+
+        @Override
+        public void endElement(String uri, String localName, String qName) throws SAXException {
+            try {
 // JG 16 May 12 use switch
-            switch (qName) {
+                switch (qName) {
                     case "CODIGO":
                         props.put("CODIGO", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_Version":
                         props.put("Ds_Version", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_Amount":
                         props.put("Ds_Amount", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_Currency":
                         props.put("Ds_Currency", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_Order":
                         props.put("Ds_Order", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_Signature":
                         props.put("Ds_Signature", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_Terminal":
                         props.put("Ds_Terminal", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_Response":
                         props.put("Ds_Response", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_AuthorisationCode":
                         props.put("Ds_AuthorisationCode", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_TransactionType":
                         props.put("Ds_TransactionType", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_SecurePayment":
                         props.put("Ds_SecurePayment", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_Language":
                         props.put("Ds_Language", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_MerchantData":
                         props.put("Ds_MerchantData", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "Ds_Card_Country":
                         props.put("Ds_Card_Country", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                 }
+            } catch (UnsupportedEncodingException eUE) {
+                result = eUE.getMessage();
+            }
         }
-        catch(UnsupportedEncodingException eUE){
-            result = eUE.getMessage();
+
+        @Override
+        public void startDocument() throws SAXException {
+            text = new String();
         }
-    }
 
-    @Override
-    public void startDocument() throws SAXException {
-        text = new String();
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-    }
-
-    @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
-        if (text!=null) {
-            text = new String(ch, start, length);
+        @Override
+        public void endDocument() throws SAXException {
         }
-    }
 
-        public String getResult(){
-        return this.result;
-    }
+        @Override
+        public void characters(char[] ch, int start, int length) throws SAXException {
+            if (text != null) {
+                text = new String(ch, start, length);
+            }
+        }
+
+        public String getResult() {
+            return this.result;
+        }
     }
 
 }

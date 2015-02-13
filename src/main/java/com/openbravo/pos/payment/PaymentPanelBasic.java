@@ -16,7 +16,7 @@ public class PaymentPanelBasic extends javax.swing.JPanel implements PaymentPane
     }
 
     @Override
-    public JComponent getComponent(){
+    public JComponent getComponent() {
         return this;
     }
 
@@ -27,9 +27,9 @@ public class PaymentPanelBasic extends javax.swing.JPanel implements PaymentPane
         m_dTotal = dTotal;
 
         jLabel1.setText(
-                m_dTotal > 0.0
-                ? AppLocal.getIntString("message.paymentgatewayext")
-                : AppLocal.getIntString("message.paymentgatewayextrefund"));
+            m_dTotal > 0.0
+            ? AppLocal.getIntString("message.paymentgatewayext")
+            : AppLocal.getIntString("message.paymentgatewayextrefund"));
 
         m_notifier.setStatus(true, true);
     }
@@ -39,24 +39,24 @@ public class PaymentPanelBasic extends javax.swing.JPanel implements PaymentPane
 
         if (m_dTotal > 0.0) {
             return new PaymentInfoMagcard(
-                    "",
-                    "",
-                    "",
-                    null,
-                    null,
-                    null,
-                    m_sTransactionID,
-                    m_dTotal);
+                       "",
+                       "",
+                       "",
+                       null,
+                       null,
+                       null,
+                       m_sTransactionID,
+                       m_dTotal);
         } else {
             return new PaymentInfoMagcardRefund(
-                    "",
-                    "",
-                    "",
-                    null,
-                    null,
-                    null,
-                    m_sTransactionID,
-                    m_dTotal);
+                       "",
+                       "",
+                       "",
+                       null,
+                       null,
+                       null,
+                       m_sTransactionID,
+                       m_dTotal);
         }
     }
 

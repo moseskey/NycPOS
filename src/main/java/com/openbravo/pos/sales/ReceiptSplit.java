@@ -26,7 +26,8 @@ public class ReceiptSplit extends javax.swing.JDialog {
         super(parent, true);
     }
 
-    private void init(String ticketline, DataLogicSales dlSales, DataLogicCustomers dlCustomers, TaxesLogic taxeslogic) {
+    private void init(String ticketline, DataLogicSales dlSales, DataLogicCustomers dlCustomers,
+                      TaxesLogic taxeslogic) {
 
         initComponents();
         getRootPane().setDefaultButton(m_jButtonOK);
@@ -39,7 +40,8 @@ public class ReceiptSplit extends javax.swing.JDialog {
         jPanel3.add(receipttwo, BorderLayout.CENTER);
     }
 
-    public static ReceiptSplit getDialog(Component parent, String ticketline, DataLogicSales dlSales, DataLogicCustomers dlCustomers, TaxesLogic taxeslogic) {
+    public static ReceiptSplit getDialog(Component parent, String ticketline, DataLogicSales dlSales,
+                                         DataLogicCustomers dlCustomers, TaxesLogic taxeslogic) {
 
         Window window = getWindow(parent);
 
@@ -104,7 +106,8 @@ public class ReceiptSplit extends javax.swing.JDialog {
         jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         m_jButtonCancel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel.png"))); // NOI18N
+        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(
+                                    getClass().getResource("/images/cancel.png"))); // NOI18N
         m_jButtonCancel.setText(AppLocal.getIntString("Button.Cancel")); // NOI18N
         m_jButtonCancel.setFocusPainted(false);
         m_jButtonCancel.setFocusable(false);
@@ -142,7 +145,8 @@ public class ReceiptSplit extends javax.swing.JDialog {
         jPanel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.setLayout(new java.awt.GridBagLayout());
 
-        jBtnToRightAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2rightarrow.png"))); // NOI18N
+        jBtnToRightAll.setIcon(new javax.swing.ImageIcon(
+                                   getClass().getResource("/images/2rightarrow.png"))); // NOI18N
         jBtnToRightAll.setToolTipText("Split All Line Items");
         jBtnToRightAll.setFocusPainted(false);
         jBtnToRightAll.setFocusable(false);
@@ -157,7 +161,8 @@ public class ReceiptSplit extends javax.swing.JDialog {
         gridBagConstraints.gridy = 0;
         jPanel4.add(jBtnToRightAll, gridBagConstraints);
 
-        jBtnToRightOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1rightarrow.png"))); // NOI18N
+        jBtnToRightOne.setIcon(new javax.swing.ImageIcon(
+                                   getClass().getResource("/images/1rightarrow.png"))); // NOI18N
         jBtnToRightOne.setToolTipText("Split only one of the Line Items");
         jBtnToRightOne.setFocusPainted(false);
         jBtnToRightOne.setFocusable(false);
@@ -173,7 +178,8 @@ public class ReceiptSplit extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
         jPanel4.add(jBtnToRightOne, gridBagConstraints);
 
-        jBtnToLeftOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1leftarrow.png"))); // NOI18N
+        jBtnToLeftOne.setIcon(new javax.swing.ImageIcon(
+                                  getClass().getResource("/images/1leftarrow.png"))); // NOI18N
         jBtnToLeftOne.setToolTipText("Un-Split only one of the Line Items");
         jBtnToLeftOne.setFocusPainted(false);
         jBtnToLeftOne.setFocusable(false);
@@ -189,7 +195,8 @@ public class ReceiptSplit extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
         jPanel4.add(jBtnToLeftOne, gridBagConstraints);
 
-        jBtnToLeftAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2leftarrow.png"))); // NOI18N
+        jBtnToLeftAll.setIcon(new javax.swing.ImageIcon(
+                                  getClass().getResource("/images/2leftarrow.png"))); // NOI18N
         jBtnToLeftAll.setToolTipText("Un-Split All Line Items");
         jBtnToLeftAll.setFocusPainted(false);
         jBtnToLeftAll.setFocusable(false);
@@ -214,10 +221,11 @@ public class ReceiptSplit extends javax.swing.JDialog {
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-730)/2, (screenSize.height-470)/2, 730, 470);
+        setBounds((screenSize.width - 730) / 2, (screenSize.height - 470) / 2, 730, 470);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonOKActionPerformed
+    private void m_jButtonOKActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_m_jButtonOKActionPerformed
 
         if (receipttwo.getTicket().getLinesCount() > 0) {
             accepted = true;
@@ -226,47 +234,52 @@ public class ReceiptSplit extends javax.swing.JDialog {
 
     }//GEN-LAST:event_m_jButtonOKActionPerformed
 
-    private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed
+    private void m_jButtonCancelActionPerformed(java.awt.event.ActionEvent
+                                                evt) {//GEN-FIRST:event_m_jButtonCancelActionPerformed
 
         dispose();
 
     }//GEN-LAST:event_m_jButtonCancelActionPerformed
 
-    private void jBtnToRightAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnToRightAllActionPerformed
+    private void jBtnToRightAllActionPerformed(java.awt.event.ActionEvent
+                                               evt) {//GEN-FIRST:event_jBtnToRightAllActionPerformed
 
         TicketLineInfo[] lines = receiptone.getSelectedLines();
         if (lines != null) {
             receipttwo.addSelectedLines(lines);
         }
 
-}//GEN-LAST:event_jBtnToRightAllActionPerformed
+    }//GEN-LAST:event_jBtnToRightAllActionPerformed
 
-    private void jBtnToRightOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnToRightOneActionPerformed
+    private void jBtnToRightOneActionPerformed(java.awt.event.ActionEvent
+                                               evt) {//GEN-FIRST:event_jBtnToRightOneActionPerformed
 
         TicketLineInfo[] lines = receiptone.getSelectedLinesUnit();
         if (lines != null) {
             receipttwo.addSelectedLines(lines);
         }
 
-}//GEN-LAST:event_jBtnToRightOneActionPerformed
+    }//GEN-LAST:event_jBtnToRightOneActionPerformed
 
-    private void jBtnToLeftOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnToLeftOneActionPerformed
+    private void jBtnToLeftOneActionPerformed(java.awt.event.ActionEvent
+                                              evt) {//GEN-FIRST:event_jBtnToLeftOneActionPerformed
 
         TicketLineInfo[] lines = receipttwo.getSelectedLinesUnit();
         if (lines != null) {
             receiptone.addSelectedLines(lines);
         }
 
-}//GEN-LAST:event_jBtnToLeftOneActionPerformed
+    }//GEN-LAST:event_jBtnToLeftOneActionPerformed
 
-    private void jBtnToLeftAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnToLeftAllActionPerformed
+    private void jBtnToLeftAllActionPerformed(java.awt.event.ActionEvent
+                                              evt) {//GEN-FIRST:event_jBtnToLeftAllActionPerformed
 
         TicketLineInfo[] lines = receipttwo.getSelectedLines();
         if (lines != null) {
             receiptone.addSelectedLines(lines);
         }
 
-}//GEN-LAST:event_jBtnToLeftAllActionPerformed
+    }//GEN-LAST:event_jBtnToLeftAllActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

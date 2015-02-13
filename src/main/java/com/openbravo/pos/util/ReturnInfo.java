@@ -42,7 +42,7 @@ public class ReturnInfo implements SerializableRead, IKeyed {
             @Override
             public Object readValues(DataRead dr) throws BasicException {
                 return new ReturnInfo(
-                        dr.getInt(1));
+                           dr.getInt(1));
             }
         };
     }

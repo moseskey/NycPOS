@@ -23,7 +23,7 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
         m_sName = AppLocal.getIntString("Printer.Screen");
 
-         m_ticketcurrent = null;
+        m_ticketcurrent = null;
 
         m_jTicketContainer = new JTicketContainer();
         m_jScrollView.setViewportView(m_jTicketContainer);
@@ -37,7 +37,7 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
     }
 
     @Override
-    public void printLogo(){
+    public void printLogo() {
     }
 
     @Override
@@ -59,7 +59,7 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
 
     // INTERFAZ PRINTER 2
 
-        @Override
+    @Override
     public void beginReceipt() {
 //JG July 2014 - Thank you Ron Isaacson        m_ticketcurrent = new BasicTicket();
         m_ticketcurrent = new BasicTicketForScreen();
@@ -94,7 +94,8 @@ public class DevicePrinterPanel extends javax.swing.JPanel implements DevicePrin
     @Override
     public void endReceipt() {
 //JG July 2014 - Thank you Ron Isaacson        m_jTicketContainer.addTicket(new JTicket(m_ticketcurrent));
-        m_jTicketContainer.addTicket(new JTicket(m_ticketcurrent, Integer.parseInt(m_props.getProperty("screen.receipt.columns"))));
+        m_jTicketContainer.addTicket(new JTicket(m_ticketcurrent,
+                                                 Integer.parseInt(m_props.getProperty("screen.receipt.columns"))));
         m_ticketcurrent = null;
     }
 

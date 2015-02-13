@@ -19,8 +19,8 @@ public class StringUtils {
     }
 
     public static String getCardNumber() {
-    return cardformat.format(Math.abs(System.currentTimeMillis()) % 1000000L)
-         + cardformat.format(Math.abs(cardrandom.nextLong()) % 1000000L);
+        return cardformat.format(Math.abs(System.currentTimeMillis()) % 1000000L)
+               + cardformat.format(Math.abs(cardrandom.nextLong()) % 1000000L);
     }
 
     public static String encodeXML(String sValue) {
@@ -74,7 +74,7 @@ public class StringUtils {
         for (int i = 0, j = 0; j < length; i++) {
             int f = Character.digit(sinput.charAt(j++), 16) << 4;
             f = f | Character.digit(sinput.charAt(j++), 16);
-            out[i] = (byte) (f & 0xFF);
+            out[i] = (byte)(f & 0xFF);
         }
 
         return out;
@@ -97,15 +97,16 @@ public class StringUtils {
         return new String(data, "UTF-8");
     }
 
-    public static boolean isNumber(String sCardNumber){
+    public static boolean isNumber(String sCardNumber) {
 
-        if ( (sCardNumber==null) || (sCardNumber.equals("")) ){
+        if ((sCardNumber == null) || (sCardNumber.equals(""))) {
             return false;
         }
 
         for (int i = 0; i < sCardNumber.length(); i++) {
             char c = sCardNumber.charAt(i);
-            if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9') {
+            if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' &&
+                c != '8' && c != '9') {
                 return false;
             }
         }

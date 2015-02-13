@@ -73,7 +73,7 @@ public class JTicketsBagTicket extends JTicketsBag {
         try {
             taxeslogic = new TaxesLogic(m_dlSales.getTaxList().list());
         } catch (BasicException ex) {
-    }
+        }
     }
 
     @Override
@@ -118,7 +118,8 @@ public class JTicketsBagTicket extends JTicketsBag {
             try {
                 m_dlSales.deleteTicket(m_ticketCopy, m_App.getInventoryLocation());
             } catch (BasicException eData) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.nosaveticket"), eData);
+                MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                                AppLocal.getIntString("message.nosaveticket"), eData);
                 msg.show(this);
             }
         }
@@ -152,23 +153,24 @@ public class JTicketsBagTicket extends JTicketsBag {
     }
 
     private void readTicket(int iTicketid, int iTickettype) {
-        Integer findTicket=0;
+        Integer findTicket = 0;
         try {
-                findTicket = m_jTicketEditor.getValueInteger();
-            }catch (BasicException e){
-            }
+            findTicket = m_jTicketEditor.getValueInteger();
+        } catch (BasicException e) {
+        }
 
         try {
 
-            TicketInfo ticket = (iTicketid==-1)
-                ? m_dlSales.loadTicket(iTickettype,  findTicket)
-                : m_dlSales.loadTicket(iTickettype, iTicketid) ;
+            TicketInfo ticket = (iTicketid == -1)
+                                ? m_dlSales.loadTicket(iTickettype,  findTicket)
+                                : m_dlSales.loadTicket(iTickettype, iTicketid) ;
 
             if (ticket == null) {
                 //MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.notexiststicket"));
                 //msg.show(this);
                 JFrame frame = new JFrame();
-                JOptionPane.showMessageDialog(frame,AppLocal.getIntString("message.notexiststicket"),AppLocal.getIntString("message.notexiststickettitle"),JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(frame, AppLocal.getIntString("message.notexiststicket"),
+                                              AppLocal.getIntString("message.notexiststickettitle"), JOptionPane.WARNING_MESSAGE);
 
             } else {
                 m_ticket = ticket;
@@ -177,13 +179,14 @@ public class JTicketsBagTicket extends JTicketsBag {
                 try {
                     taxeslogic.calculateTaxes(m_ticket);
                     TicketTaxInfo[] taxlist = m_ticket.getTaxLines();
-                  //  taxcollection = new ListKeyed<TaxInfo>(taxlist);
+                    //  taxcollection = new ListKeyed<TaxInfo>(taxlist);
                 } catch (TaxesException ex) {}
                 printTicket();
             }
 
         } catch (BasicException e) {
-            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotloadticket"), e);
+            MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                            AppLocal.getIntString("message.cannotloadticket"), e);
             msg.show(this);
         }
 
@@ -197,9 +200,10 @@ public class JTicketsBagTicket extends JTicketsBag {
 
         try {
             m_jEdit.setEnabled(
-                    m_ticket != null
-                    && (m_ticket.getTicketType() == TicketInfo.RECEIPT_NORMAL || m_ticket.getTicketType() == TicketInfo.RECEIPT_REFUND)
-                    && m_dlSales.isCashActive(m_ticket.getActiveCash()));
+                m_ticket != null
+                && (m_ticket.getTicketType() == TicketInfo.RECEIPT_NORMAL ||
+                    m_ticket.getTicketType() == TicketInfo.RECEIPT_REFUND)
+                && m_dlSales.isCashActive(m_ticket.getActiveCash()));
         } catch (BasicException e) {
             m_jEdit.setEnabled(false);
         }
@@ -219,8 +223,9 @@ public class JTicketsBagTicket extends JTicketsBag {
                 script.put("ticket", m_ticket);
                 script.put("taxes", m_ticket.getTaxLines());
                 m_TTP.printTicket(script.eval(m_dlSystem.getResourceAsXML("Printer.TicketPreview")).toString());
-            } catch (    ScriptException | TicketPrinterException e) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotprintticket"), e);
+            } catch (ScriptException | TicketPrinterException e) {
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                AppLocal.getIntString("message.cannotprintticket"), e);
                 msg.show(this);
             }
         }
@@ -262,14 +267,18 @@ public class JTicketsBagTicket extends JTicketsBag {
 
         m_jTicketId.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jTicketId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        m_jTicketId.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jTicketId.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                                  javax.swing.BorderFactory.createLineBorder(
+                                      javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")),
+                                  javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jTicketId.setOpaque(true);
         m_jTicketId.setPreferredSize(new java.awt.Dimension(160, 25));
         m_jTicketId.setRequestFocusEnabled(false);
         m_jButtons.add(m_jTicketId);
 
         jButton2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search24.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(
+                             getClass().getResource("/images/search24.png"))); // NOI18N
         jButton2.setText(AppLocal.getIntString("button.print")); // NOI18N
         jButton2.setToolTipText("Search Tickets");
         jButton2.setFocusPainted(false);
@@ -287,7 +296,8 @@ public class JTicketsBagTicket extends JTicketsBag {
         m_jButtons.add(jButton2);
 
         m_jEdit.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        m_jEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_editline.png"))); // NOI18N
+        m_jEdit.setIcon(new javax.swing.ImageIcon(
+                            getClass().getResource("/images/sale_editline.png"))); // NOI18N
         m_jEdit.setText(AppLocal.getIntString("button.print")); // NOI18N
         m_jEdit.setToolTipText("Edit current Ticket");
         m_jEdit.setFocusPainted(false);
@@ -323,7 +333,8 @@ public class JTicketsBagTicket extends JTicketsBag {
         m_jButtons.add(m_jRefund);
 
         m_jPrint.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        m_jPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer24.png"))); // NOI18N
+        m_jPrint.setIcon(new javax.swing.ImageIcon(
+                             getClass().getResource("/images/printer24.png"))); // NOI18N
         m_jPrint.setText(AppLocal.getIntString("button.print")); // NOI18N
         m_jPrint.setToolTipText("Reprint Receipt");
         m_jPrint.setFocusPainted(false);
@@ -420,7 +431,8 @@ public class JTicketsBagTicket extends JTicketsBag {
         add(jPanel3, java.awt.BorderLayout.EAST);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jEditActionPerformed
+    private void m_jEditActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_m_jEditActionPerformed
 
         m_ticketCopy = m_ticket;
         m_TicketsBagTicketBag.showEdit();
@@ -431,7 +443,8 @@ public class JTicketsBagTicket extends JTicketsBag {
 
     }//GEN-LAST:event_m_jEditActionPerformed
 
-    private void m_jPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jPrintActionPerformed
+    private void m_jPrintActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_m_jPrintActionPerformed
 
         if (m_ticket != null) {
             try {
@@ -440,19 +453,22 @@ public class JTicketsBagTicket extends JTicketsBag {
                 script.put("taxes", m_ticket.getTaxLines());
                 m_TTP2.printTicket(script.eval(m_dlSystem.getResourceAsXML("Printer.TicketPreview")).toString());
             } catch (ScriptException e) {
-                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotprint"), e));
+                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_NOTICE,
+                                                                AppLocal.getIntString("message.cannotprint"), e));
             } catch (TicketPrinterException e) {
-                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotprint"), e));
+                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_NOTICE,
+                                                                AppLocal.getIntString("message.cannotprint"), e));
             }
         }
 
     }//GEN-LAST:event_m_jPrintActionPerformed
 
-    private void m_jRefundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jRefundActionPerformed
+    private void m_jRefundActionPerformed(java.awt.event.ActionEvent
+                                          evt) {//GEN-FIRST:event_m_jRefundActionPerformed
 
         java.util.List aRefundLines = new ArrayList();
 
-        for(int i = 0; i < m_ticket.getLinesCount(); i++) {
+        for (int i = 0; i < m_ticket.getLinesCount(); i++) {
             TicketLineInfo newline = new TicketLineInfo(m_ticket.getLine(i));
             aRefundLines.add(newline);
         }
@@ -470,19 +486,22 @@ public class JTicketsBagTicket extends JTicketsBag {
         m_panelticketedit.setActiveTicket(refundticket, null);
     }//GEN-LAST:event_m_jRefundActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         readTicket(-1, jrbSales.isSelected() ? 0 : 1);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void m_jKeysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jKeysActionPerformed
+    private void m_jKeysActionPerformed(java.awt.event.ActionEvent
+                                        evt) {//GEN-FIRST:event_m_jKeysActionPerformed
 
         readTicket(-1, jrbSales.isSelected() ? 0 : 1);
 
     }//GEN-LAST:event_m_jKeysActionPerformed
 
-private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JTicketsFinder finder = JTicketsFinder.getReceiptFinder(this, m_dlSales, dlCustomers);
         finder.setVisible(true);
         FindTicketsInfo selectedTicket = finder.getSelectedCustomer();
@@ -492,7 +511,7 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         } else {
             readTicket(selectedTicket.getTicketId(), selectedTicket.getTicketType());
         }
-}//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;

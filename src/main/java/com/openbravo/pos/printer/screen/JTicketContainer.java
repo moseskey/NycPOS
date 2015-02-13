@@ -33,7 +33,7 @@ class JTicketContainer extends javax.swing.JPanel {
         int iMaxx = 0;
         int iMaxy = ins.top + V_GAP;
         int n = getComponentCount();
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             Component comp = getComponent(i);
             Dimension dc = comp.getPreferredSize();
             if (dc.width > iMaxx) {
@@ -47,12 +47,12 @@ class JTicketContainer extends javax.swing.JPanel {
 
     @Override
     public Dimension getMaximumSize() {
-      return getPreferredSize();
+        return getPreferredSize();
     }
 
     @Override
     public Dimension getMinimumSize() {
-      return getPreferredSize();
+        return getPreferredSize();
     }
 
     @Override
@@ -62,7 +62,7 @@ class JTicketContainer extends javax.swing.JPanel {
         int y = ins.top + V_GAP;
 
         int n = getComponentCount();
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             Component comp = getComponent(i);
             Dimension dc = comp.getPreferredSize();
 

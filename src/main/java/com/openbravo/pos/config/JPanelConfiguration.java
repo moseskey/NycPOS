@@ -16,9 +16,9 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
     public JPanelConfiguration(AppView oApp) {
         this(oApp.getProperties());
-    // If config is being run from with application the hide Exit button
-    // Added 05.11.12 JDL
-        if (oApp!= null) {
+        // If config is being run from with application the hide Exit button
+        // Added 05.11.12 JDL
+        if (oApp != null) {
             jbtnExit.setVisible(false);
         }
 
@@ -81,7 +81,8 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
         if (config.delete()) {
             loadProperties();
         } else {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotdeleteconfig")));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                            AppLocal.getIntString("message.cannotdeleteconfig")));
         }
     }
 
@@ -90,7 +91,7 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
         config.load();
 
         // paneles auxiliares
-        for (PanelConfig c: m_panelconfig) {
+        for (PanelConfig c : m_panelconfig) {
             c.loadProperties(config);
         }
     }
@@ -98,15 +99,17 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
     private void saveProperties() {
 
         // paneles auxiliares
-        for (PanelConfig c: m_panelconfig) {
+        for (PanelConfig c : m_panelconfig) {
             c.saveProperties(config);
         }
 
         try {
             config.save();
-            JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.restartchanges"), AppLocal.getIntString("message.title"), JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, AppLocal.getIntString("message.restartchanges"),
+                                          AppLocal.getIntString("message.title"), JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException e) {
-            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotsaveconfig"), e));
+            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                            AppLocal.getIntString("message.cannotsaveconfig"), e));
         }
     }
 
@@ -129,7 +132,7 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
     public boolean deactivate() {
 
         boolean haschanged = false;
-        for (PanelConfig c: m_panelconfig) {
+        for (PanelConfig c : m_panelconfig) {
             if (c.hasChanged()) {
                 haschanged = true;
             }
@@ -137,7 +140,9 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
 
         if (haschanged) {
-            int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannasave"), AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannasave"),
+                                                    AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_CANCEL_OPTION,
+                                                    JOptionPane.QUESTION_MESSAGE);
             if (res == JOptionPane.YES_OPTION) {
                 saveProperties();
                 return true;
@@ -181,7 +186,8 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
         jPanelDatabase.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanelDatabase.setPreferredSize(new java.awt.Dimension(0, 400));
-        jPanelDatabase.setLayout(new javax.swing.BoxLayout(jPanelDatabase, javax.swing.BoxLayout.LINE_AXIS));
+        jPanelDatabase.setLayout(new javax.swing.BoxLayout(jPanelDatabase,
+                                                           javax.swing.BoxLayout.LINE_AXIS));
         jTabbedPane1.addTab("Database Setup", jPanelDatabase);
 
         jPanelGeneral.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -201,7 +207,8 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
         jPanelPeripheral.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanelPeripheral.setPreferredSize(new java.awt.Dimension(0, 400));
-        jPanelPeripheral.setLayout(new javax.swing.BoxLayout(jPanelPeripheral, javax.swing.BoxLayout.LINE_AXIS));
+        jPanelPeripheral.setLayout(new javax.swing.BoxLayout(jPanelPeripheral,
+                                                             javax.swing.BoxLayout.LINE_AXIS));
         jTabbedPane1.addTab("Peripherals", jPanelPeripheral);
 
         jPanelSystem.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -211,7 +218,8 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
 
         jPanelTicketSetup.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanelTicketSetup.setPreferredSize(new java.awt.Dimension(0, 400));
-        jPanelTicketSetup.setLayout(new javax.swing.BoxLayout(jPanelTicketSetup, javax.swing.BoxLayout.LINE_AXIS));
+        jPanelTicketSetup.setLayout(new javax.swing.BoxLayout(jPanelTicketSetup,
+                                                              javax.swing.BoxLayout.LINE_AXIS));
         jTabbedPane1.addTab("Ticket Setup", jPanelTicketSetup);
 
         jbtnRestore.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -252,20 +260,26 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jbtnRestore, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(230, 230, 230)
-                .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
-                .addComponent(jbtnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                      .addContainerGap()
+                      .addComponent(jbtnRestore, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addGap(230, 230, 230)
+                      .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
+                      .addComponent(jbtnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jbtnRestore, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jbtnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addComponent(jbtnRestore, javax.swing.GroupLayout.PREFERRED_SIZE, 33,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 33,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(jbtnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 33,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -273,36 +287,46 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                      .addContainerGap()
+                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              Short.MAX_VALUE)
+                                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                              javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                      .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                    javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                       javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                      .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                    javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnRestoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRestoreActionPerformed
+    private void jbtnRestoreActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_jbtnRestoreActionPerformed
 
-        if (JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.configfactory"), AppLocal.getIntString("message.title"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+        if (JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.configfactory"),
+                                          AppLocal.getIntString("message.title"), JOptionPane.YES_NO_OPTION,
+                                          JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
             restoreProperties();
         }
 
     }//GEN-LAST:event_jbtnRestoreActionPerformed
 
-    private void jbtnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSaveActionPerformed
+    private void jbtnSaveActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jbtnSaveActionPerformed
 
         saveProperties();
 
     }//GEN-LAST:event_jbtnSaveActionPerformed
 
-    private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
+    private void jbtnExitActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_jbtnExitActionPerformed
         deactivate();
         System.exit(0);
     }//GEN-LAST:event_jbtnExitActionPerformed

@@ -110,7 +110,8 @@ public class SwingUtils {
      * @param incrementSize the increment size
      * @param displayTime the time in ms the dialog is fully visible
      */
-    public static void fadeInAndOut(final JDialog dialog, final int delay, final float incrementSize, final int displayTime) {
+    public static void fadeInAndOut(final JDialog dialog, final int delay, final float incrementSize,
+                                    final int displayTime) {
         final Timer timer = new Timer(delay, null);
         timer.setRepeats(true);
         timer.addActionListener(new ActionListener() {

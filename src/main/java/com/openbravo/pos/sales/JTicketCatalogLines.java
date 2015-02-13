@@ -16,7 +16,8 @@ public class JTicketCatalogLines extends javax.swing.JPanel {
     private JRefundLines m_reflines;
     private CatalogSelector m_catalog;
 
-    public JTicketCatalogLines(AppView app, JPanelTicketEdits jTicketEdit, boolean pricevisible, boolean taxesincluded, int width, int height) {
+    public JTicketCatalogLines(AppView app, JPanelTicketEdits jTicketEdit, boolean pricevisible,
+                               boolean taxesincluded, int width, int height) {
 
         DataLogicSystem dlSystem = null;
         DataLogicSales dlSales = null;

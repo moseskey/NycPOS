@@ -88,7 +88,8 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
         jTextField1 = new javax.swing.JTextField();
         btnCustomer = new javax.swing.JButton();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder(AppLocal.getIntString("label.bycustomer"))); // NOI18N
+        setBorder(javax.swing.BorderFactory.createTitledBorder(
+                      AppLocal.getIntString("label.bycustomer"))); // NOI18N
         setPreferredSize(new java.awt.Dimension(400, 60));
         setLayout(null);
 
@@ -101,7 +102,8 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
         add(jTextField1);
         jTextField1.setBounds(140, 20, 200, 25);
 
-        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customer_sml.png"))); // NOI18N
+        btnCustomer.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/images/customer_sml.png"))); // NOI18N
         btnCustomer.setToolTipText("Get Customers");
         btnCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +114,8 @@ public class JParamsCustomer extends javax.swing.JPanel implements ReportEditorC
         btnCustomer.setBounds(350, 10, 57, 40);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
+    private void btnCustomerActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_btnCustomerActionPerformed
 
         JCustomerFinder finder = JCustomerFinder.getCustomerFinder(this, dlCustomers);
         finder.search(currentcustomer);

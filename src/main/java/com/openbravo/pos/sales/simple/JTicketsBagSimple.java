@@ -19,7 +19,8 @@ public class JTicketsBagSimple extends JTicketsBag {
         m_panelticket.setActiveTicket(new TicketInfo(), null);
 
         // Authorization
-        m_jDelTicket.setEnabled(m_App.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
+        m_jDelTicket.setEnabled(
+            m_App.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
 
     }
 
@@ -54,7 +55,8 @@ public class JTicketsBagSimple extends JTicketsBag {
         setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        m_jDelTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_delete.png"))); // NOI18N
+        m_jDelTicket.setIcon(new javax.swing.ImageIcon(
+                                 getClass().getResource("/images/sale_delete.png"))); // NOI18N
         m_jDelTicket.setToolTipText("Delete current Sale");
         m_jDelTicket.setFocusPainted(false);
         m_jDelTicket.setFocusable(false);
@@ -71,9 +73,11 @@ public class JTicketsBagSimple extends JTicketsBag {
         add(m_jDelTicket);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_jDelTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jDelTicketActionPerformed
+    private void m_jDelTicketActionPerformed(java.awt.event.ActionEvent
+                                             evt) {//GEN-FIRST:event_m_jDelTicketActionPerformed
 
-        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannadelete"), AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannadelete"),
+                                                AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (res == JOptionPane.YES_OPTION) {
             deleteTicket();
         }

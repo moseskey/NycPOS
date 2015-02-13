@@ -81,13 +81,13 @@ public class JRootApp extends JPanel implements AppView {
         initOldClasses();
     }
 
-/**
- * JG Added 3.07.2011 - Add clock to the title bar - T Sirwani
- */
+    /**
+     * JG Added 3.07.2011 - Add clock to the title bar - T Sirwani
+     */
     private class PrintTimeAction implements ActionListener {
 
-    @Override
-    public void actionPerformed(ActionEvent evt) {
+        @Override
+        public void actionPerformed(ActionEvent evt) {
             m_clock = getLineTimer();
             m_date = getLineDate();
             m_jLblTitle.setText(m_dlSystem.getResourceAsText("Window.Title"));
@@ -96,7 +96,7 @@ public class JRootApp extends JPanel implements AppView {
         }
     }
 
-   private String getLineTimer() {
+    private String getLineTimer() {
         return Formats.HOURMIN.formatValue(new Date());
     }
     private String getLineDate() {
@@ -110,14 +110,14 @@ public class JRootApp extends JPanel implements AppView {
         m_aBeanFactories = new HashMap<>();
 
         // Inicializo los componentes visuales
-        initComponents ();
+        initComponents();
         jScrollPane1.getVerticalScrollBar().setPreferredSize(new Dimension(30, 30));
     }
 
     public boolean initApp(AppProperties props) {
 
         m_props = props;
-                m_jPanelDown.setVisible(!(Boolean.valueOf(m_props.getProperty("till.hideinfo"))));
+        m_jPanelDown.setVisible(!(Boolean.valueOf(m_props.getProperty("till.hideinfo"))));
 
         // support for different component orientation languages.
         applyComponentOrientation(ComponentOrientation.getOrientation(Locale.getDefault()));
@@ -138,20 +138,21 @@ public class JRootApp extends JPanel implements AppView {
 
             // Create or upgrade database
             String sScript = sDBVersion == null
-                    ? m_dlSystem.getInitScript() + "-create.sql"
-                    : m_dlSystem.getInitScript() + "-upgrade-" + sDBVersion + ".sql";
+                             ? m_dlSystem.getInitScript() + "-create.sql"
+                             : m_dlSystem.getInitScript() + "-upgrade-" + sDBVersion + ".sql";
             if (JRootApp.class.getResource(sScript) == null) {
                 JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER, sDBVersion == null
-                            ? AppLocal.getIntString("message.databasenotsupported", session.DB.getName()) // Create script does not exists. Database not supported
-                            : AppLocal.getIntString("message.noupdatescript"))); // Upgrade script does not exist.
+                                                                ? AppLocal.getIntString("message.databasenotsupported",
+                                                                                        session.DB.getName()) // Create script does not exists. Database not supported
+                                                                : AppLocal.getIntString("message.noupdatescript"))); // Upgrade script does not exist.
                 session.close();
                 return false;
             } else {
                 // Create or upgrade script exists.
                 if (JOptionPane.showConfirmDialog(this,
-                         AppLocal.getIntString(sDBVersion == null ? "message.createdatabase" : "message.updatedatabase"),
-                         AppLocal.getIntString("message.title"),
-                         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+                                                  AppLocal.getIntString(sDBVersion == null ? "message.createdatabase" : "message.updatedatabase"),
+                                                  AppLocal.getIntString("message.title"),
+                                                  JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
 
                     try {
                         BatchSentence bsentence = new BatchSentenceResource(session, sScript);
@@ -161,10 +162,12 @@ public class JRootApp extends JPanel implements AppView {
 
                         java.util.List l = bsentence.list();
                         if (l.size() > 0) {
-                            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("Database.ScriptWarning"), l.toArray(new Throwable[l.size()])));
+                            JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_WARNING,
+                                                                            AppLocal.getIntString("Database.ScriptWarning"), l.toArray(new Throwable[l.size()])));
                         }
-                   } catch (BasicException e) {
-                        JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER, AppLocal.getIntString("Database.ScriptError"), e));
+                    } catch (BasicException e) {
+                        JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_DANGER,
+                                                                        AppLocal.getIntString("Database.ScriptError"), e));
                         session.close();
                         return false;
                     }
@@ -182,21 +185,23 @@ public class JRootApp extends JPanel implements AppView {
         try {
             String sActiveCashIndex = m_propsdb.getProperty("activecash");
             Object[] valcash = sActiveCashIndex == null
-                    ? null
-                    : m_dlSystem.findActiveCash(sActiveCashIndex);
+                               ? null
+                               : m_dlSystem.findActiveCash(sActiveCashIndex);
             if (valcash == null || !m_props.getHost().equals(valcash[0])) {
                 // no la encuentro o no es de mi host por tanto creo una...
-                setActiveCash(UUID.randomUUID().toString(), m_dlSystem.getSequenceCash(m_props.getHost()) + 1, new Date(), null);
+                setActiveCash(UUID.randomUUID().toString(), m_dlSystem.getSequenceCash(m_props.getHost()) + 1,
+                              new Date(), null);
 
                 // creamos la caja activa
                 m_dlSystem.execInsertCash(
-                        new Object[] {getActiveCashIndex(), m_props.getHost(), getActiveCashSequence(), getActiveCashDateStart(), getActiveCashDateEnd()});
+                    new Object[] {getActiveCashIndex(), m_props.getHost(), getActiveCashSequence(), getActiveCashDateStart(), getActiveCashDateEnd()});
             } else {
                 setActiveCash(sActiveCashIndex, (Integer) valcash[1], (Date) valcash[2], (Date) valcash[3]);
             }
         } catch (BasicException e) {
             // Casco. Sin caja no hay pos
-            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotclosecash"), e);
+            MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE,
+                                            AppLocal.getIntString("message.cannotclosecash"), e);
             msg.show(this);
             session.close();
             return false;
@@ -246,41 +251,45 @@ public class JRootApp extends JPanel implements AppView {
         m_jHost.setText("<html>" + m_props.getHost() + " - " + sWareHouse + "<br>" + url);
 
 
- // display the new logo if set
+// display the new logo if set
         String newLogo = m_props.getProperty("start.logo");
-       if (newLogo != null) {
-           if ("".equals(newLogo)){
-                 jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png")));
-           }else{
-       jLabel1.setIcon(new javax.swing.ImageIcon (newLogo));
-       }}
+        if (newLogo != null) {
+            if ("".equals(newLogo)) {
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png")));
+            } else {
+                jLabel1.setIcon(new javax.swing.ImageIcon(newLogo));
+            }
+        }
 
- // change text under logo
+// change text under logo
 
         String newText = m_props.getProperty("start.text");
         if (newText != null) {
-            if (newText.equals("")){
-            jLabel1.setText("<html><center>uniCenta oPOS - Touch Friendly Point of Sale<br>" +
-            "Copyright \u00A9 2009-2014 uniCenta <br>" +
-            "http://www.unicenta.com/<br>" +
-            "<br>" +
-            "uniCenta oPOS is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br>" +
-            "<br>" +
-            "uniCenta oPOS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.<br>" +
-            "<br>" +
-            "You should have received a copy of the GNU General Public License along with uniCenta oPOS.  If not, see http://www.gnu.org/licenses/<br>" +
-            "</center>");}
-            else{
-            try {
-            String newTextCode = new Scanner(new File(newText),"UTF-8").useDelimiter("\\A").next();
-            jLabel1.setText(newTextCode);
-            }catch (Exception e) {}
+            if (newText.equals("")) {
+                jLabel1.setText("<html><center>uniCenta oPOS - Touch Friendly Point of Sale<br>" +
+                                "Copyright \u00A9 2009-2014 uniCenta <br>" +
+                                "http://www.unicenta.com/<br>" +
+                                "<br>" +
+                                "uniCenta oPOS is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br>"
+                                +
+                                "<br>" +
+                                "uniCenta oPOS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.<br>"
+                                +
+                                "<br>" +
+                                "You should have received a copy of the GNU General Public License along with uniCenta oPOS.  If not, see http://www.gnu.org/licenses/<br>"
+                                +
+                                "</center>");
+            } else {
+                try {
+                    String newTextCode = new Scanner(new File(newText), "UTF-8").useDelimiter("\\A").next();
+                    jLabel1.setText(newTextCode);
+                } catch (Exception e) {}
 
-        jLabel1.setAlignmentX(0.5F);
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel1.setMaximumSize(new java.awt.Dimension(800, 1024));
-        jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        }
+                jLabel1.setAlignmentX(0.5F);
+                jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+                jLabel1.setMaximumSize(new java.awt.Dimension(800, 1024));
+                jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+            }
         }
 
         showLogin();
@@ -315,8 +324,8 @@ public class JRootApp extends JPanel implements AppView {
 
     // Interfaz de aplicacion
 
-        @Override
-    public DeviceTicket getDeviceTicket(){
+    @Override
+    public DeviceTicket getDeviceTicket() {
         return m_TP;
     }
 
@@ -356,7 +365,7 @@ public class JRootApp extends JPanel implements AppView {
     }
 
     @Override
-    public Date getActiveCashDateEnd(){
+    public Date getActiveCashDateEnd() {
         return m_dActiveCashDateEnd;
     }
 
@@ -405,7 +414,9 @@ public class JRootApp extends JPanel implements AppView {
                     }
 
 // JG 16 May 2013 use multicatch
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | SecurityException | IllegalArgumentException | InvocationTargetException e) {
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                             NoSuchMethodException | SecurityException | IllegalArgumentException | InvocationTargetException
+                             e) {
                     // ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException
                     throw new BeanFactoryException(e);
                 }
@@ -425,8 +436,8 @@ public class JRootApp extends JPanel implements AppView {
     private static String mapNewClass(String classname) {
         String newclass = m_oldclasses.get(classname);
         return newclass == null
-                ? classname
-                : newclass;
+               ? classname
+               : newclass;
     }
 
     private static void initOldClasses() {
@@ -460,7 +471,7 @@ public class JRootApp extends JPanel implements AppView {
     }
 
     @Override
-    public void waitCursorEnd(){
+    public void waitCursorEnd() {
         setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
     }
 
@@ -543,14 +554,15 @@ public class JRootApp extends JPanel implements AppView {
             } else {
                 // comprobemos la clave antes de entrar...
                 String sPassword = JPasswordDialog.showEditPassword(JRootApp.this,
-                        AppLocal.getIntString("Label.Password"),
-                        m_actionuser.getName(),
-                        m_actionuser.getIcon());
+                                                                    AppLocal.getIntString("Label.Password"),
+                                                                    m_actionuser.getName(),
+                                                                    m_actionuser.getIcon());
                 if (sPassword != null) {
                     if (m_actionuser.authenticate(sPassword)) {
                         openAppView(m_actionuser);
                     } else {
-                        MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.BadPassword"));
+                        MessageInf msg = new MessageInf(MessageInf.SGN_WARNING,
+                                                        AppLocal.getIntString("message.BadPassword"));
                         msg.show(JRootApp.this);
                     }
                 }
@@ -630,7 +642,7 @@ public class JRootApp extends JPanel implements AppView {
 
     private void processKey(char c) {
 
-        if ((c == '\n') || (c =='?')) {
+        if ((c == '\n') || (c == '?')) {
 
             AppUser user = null;
             try {
@@ -671,7 +683,8 @@ public class JRootApp extends JPanel implements AppView {
         m_jPanelLogin = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 0));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 10),
+                                             new java.awt.Dimension(32767, 0));
         jPanel5 = new javax.swing.JPanel();
         m_jLogonName = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -689,7 +702,8 @@ public class JRootApp extends JPanel implements AppView {
         setPreferredSize(new java.awt.Dimension(1024, 768));
         setLayout(new java.awt.BorderLayout());
 
-        m_jPanelTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")));
+        m_jPanelTitle.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0,
+                                                                            javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")));
         m_jPanelTitle.setLayout(new java.awt.BorderLayout());
 
         m_jLblTitle.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -698,7 +712,8 @@ public class JRootApp extends JPanel implements AppView {
         m_jPanelTitle.add(m_jLblTitle, java.awt.BorderLayout.CENTER);
 
         poweredby.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        poweredby.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/poweredby_uni.png"))); // NOI18N
+        poweredby.setIcon(new javax.swing.ImageIcon(
+                              getClass().getResource("/images/poweredby_uni.png"))); // NOI18N
         poweredby.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5));
         poweredby.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         poweredby.setMaximumSize(new java.awt.Dimension(180, 34));
@@ -720,17 +735,21 @@ public class JRootApp extends JPanel implements AppView {
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/unicenta.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(
+                            getClass().getResource("/images/unicenta.png"))); // NOI18N
         jLabel1.setText("<html><center>uniCenta oPOS - Touch Friendly Point of Sale<br>" +
-            "Copyright \u00A9 2009-2014 uniCenta <br>" +
-            "http://www.unicenta.com<br>" +
-            "<br>" +
-            "uniCenta oPOS is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br>" +
-            "<br>" +
-            "uniCenta oPOS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.<br>" +
-            "<br>" +
-            "You should have received a copy of the GNU General Public License along with uniCenta oPOS.  If not, see http://www.gnu.org/licenses/<br>" +
-            "</center>");
+                        "Copyright \u00A9 2009-2014 uniCenta <br>" +
+                        "http://www.unicenta.com<br>" +
+                        "<br>" +
+                        "uniCenta oPOS is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br>"
+                        +
+                        "<br>" +
+                        "uniCenta oPOS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.<br>"
+                        +
+                        "<br>" +
+                        "You should have received a copy of the GNU General Public License along with uniCenta oPOS.  If not, see http://www.gnu.org/licenses/<br>"
+                        +
+                        "</center>");
         jLabel1.setAlignmentX(0.5F);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel1.setMaximumSize(new java.awt.Dimension(800, 1024));
@@ -756,7 +775,8 @@ public class JRootApp extends JPanel implements AppView {
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setHorizontalScrollBarPolicy(
+            javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         m_txtKeys.setPreferredSize(new java.awt.Dimension(0, 0));
@@ -784,21 +804,24 @@ public class JRootApp extends JPanel implements AppView {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel1Layout.createSequentialGroup()
-                        .add(m_txtKeys, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(0, 0, Short.MAX_VALUE))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(m_jClose, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)))
-                .addContainerGap())
+                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                      .add(jPanel1Layout.createSequentialGroup()
+                           .add(m_txtKeys, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+                                org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                           .add(0, 0, Short.MAX_VALUE))
+                      .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
+                           .addContainerGap()
+                           .add(m_jClose, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)))
+                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
-                .add(m_txtKeys, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(m_jClose, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                 .add(m_txtKeys, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+                      org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                 .add(m_jClose, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+                      org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
         );
 
         org.jdesktop.layout.GroupLayout jPanel5Layout = new org.jdesktop.layout.GroupLayout(jPanel5);
@@ -806,27 +829,31 @@ public class JRootApp extends JPanel implements AppView {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jScrollPane1))
-                .add(104, 104, 104)
-                .add(m_jLogonName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(0, 0, Short.MAX_VALUE))
+                 .addContainerGap()
+                 .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                      .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                           org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                      .add(jScrollPane1))
+                 .add(104, 104, 104)
+                 .add(m_jLogonName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+                      org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                 .add(0, 0, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel5Layout.createSequentialGroup()
-                .add(15, 15, 15)
-                .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel5Layout.createSequentialGroup()
-                        .add(m_jLogonName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(434, 434, 434))
-                    .add(jPanel5Layout.createSequentialGroup()
-                        .add(jScrollPane1)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                 .add(15, 15, 15)
+                 .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                      .add(jPanel5Layout.createSequentialGroup()
+                           .add(m_jLogonName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+                                org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                           .add(434, 434, 434))
+                      .add(jPanel5Layout.createSequentialGroup()
+                           .add(jScrollPane1)
+                           .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                           .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+                                org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                           .addContainerGap())))
         );
 
         m_jPanelLogin.add(jPanel5, java.awt.BorderLayout.EAST);
@@ -835,7 +862,8 @@ public class JRootApp extends JPanel implements AppView {
 
         add(m_jPanelContainer, java.awt.BorderLayout.CENTER);
 
-        m_jPanelDown.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")));
+        m_jPanelDown.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0,
+                                                                           javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")));
         m_jPanelDown.setLayout(new java.awt.BorderLayout());
 
         m_jHost.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -850,7 +878,8 @@ public class JRootApp extends JPanel implements AppView {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void m_jCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCloseActionPerformed
+    private void m_jCloseActionPerformed(java.awt.event.ActionEvent
+                                         evt) {//GEN-FIRST:event_m_jCloseActionPerformed
 
         tryToClose();
 

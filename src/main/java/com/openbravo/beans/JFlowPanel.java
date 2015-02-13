@@ -46,7 +46,7 @@ public class JFlowPanel extends JPanel implements Scrollable {
         if (getParent() != null && getParent() instanceof JViewport) {
             JViewport viewport = (JViewport) getParent();
             maxWidth = viewport.getExtentSize().width;
-        } else if (getParent() != null){
+        } else if (getParent() != null) {
             maxWidth = getParent().getWidth();
         } else {
             maxWidth = getWidth();
@@ -119,7 +119,7 @@ public class JFlowPanel extends JPanel implements Scrollable {
     }
 
     public void doLayout() {
-       calculateFlowLayout(true);
+        calculateFlowLayout(true);
     }
 
     public boolean getScrollableTracksViewportHeight() {
@@ -135,9 +135,9 @@ public class JFlowPanel extends JPanel implements Scrollable {
             return orientation == SwingConstants.HORIZONTAL ? hgap : vgap;
         } else {
             return orientation == SwingConstants.HORIZONTAL
-                    ? getComponent(0).getWidth() + hgap
-                    : getComponent(0).getHeight() + vgap;
-	}
+                   ? getComponent(0).getWidth() + hgap
+                   : getComponent(0).getHeight() + vgap;
+        }
     }
 
     public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {

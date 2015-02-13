@@ -8,7 +8,7 @@ public class PaymentInfoCash extends PaymentInfo {
     private double m_dPaid;
     private double m_dTotal;
     private double m_dTendered;
-    private String m_dCardName =null;
+    private String m_dCardName = null;
 
     public PaymentInfoCash(double dTotal, double dPaid, double dTendered) {
         m_dTotal = dTotal;
@@ -23,7 +23,7 @@ public class PaymentInfoCash extends PaymentInfo {
 
     @Override
     public PaymentInfo copyPayment() {
-       return new PaymentInfoCash(m_dTotal, m_dPaid, m_dTendered, prePayAmount);
+        return new PaymentInfoCash(m_dTotal, m_dPaid, m_dTendered, prePayAmount);
 //        return new PaymentInfoCash(m_dTotal, m_dPaid, prePayAmount);
     }
 
@@ -53,15 +53,15 @@ public class PaymentInfoCash extends PaymentInfo {
     }
 
     @Override
-   public double getChange(){
-       return m_dPaid - m_dTotal;
-   }
+    public double getChange() {
+        return m_dPaid - m_dTotal;
+    }
 
     @Override
 
     public String getCardName() {
-       return m_dCardName;
-   }
+        return m_dCardName;
+    }
 
     public boolean hasPrePay() {
         return prePayAmount > 0;
@@ -72,8 +72,8 @@ public class PaymentInfoCash extends PaymentInfo {
     }
 
     public String printTendered() {
-       return Formats.CURRENCY.formatValue(m_dTendered);
-   }
+        return Formats.CURRENCY.formatValue(m_dTendered);
+    }
 
     public String printPaid() {
         return Formats.CURRENCY.formatValue(m_dPaid);

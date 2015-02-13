@@ -70,7 +70,8 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
     public void activate() {
 
         // Authorization
-        m_DelTicket.setEnabled(m_App.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
+        m_DelTicket.setEnabled(
+            m_App.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
 
     }
 
@@ -79,18 +80,19 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
     }
 
 
- private void printTicket(String sresourcename, TicketInfo ticket, String table) {
-            if (ticket != null) {
+    private void printTicket(String sresourcename, TicketInfo ticket, String table) {
+        if (ticket != null) {
             try {
                 ScriptEngine script = ScriptFactory.getScriptEngine(ScriptFactory.VELOCITY);
                 script.put("ticket", ticket);
-                script.put("place",m_restaurant.getTableName());
+                script.put("place", m_restaurant.getTableName());
                 m_TTP2.printTicket(script.eval(m_dlSystem.getResourceAsXML(sresourcename)).toString());
-            } catch ( ScriptException | TicketPrinterException e) {
-                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.cannotprint"), e));
+            } catch (ScriptException | TicketPrinterException e) {
+                JMessageDialog.showMessage(this, new MessageInf(MessageInf.SGN_NOTICE,
+                                                                AppLocal.getIntString("message.cannotprint"), e));
             }
         }
- }
+    }
 
 
     /**
@@ -112,7 +114,8 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(250, 50));
         setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        m_DelTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sale_delete.png"))); // NOI18N
+        m_DelTicket.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/images/sale_delete.png"))); // NOI18N
         m_DelTicket.setToolTipText("Delete Current Order");
         m_DelTicket.setFocusPainted(false);
         m_DelTicket.setFocusable(false);
@@ -128,7 +131,8 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         });
         add(m_DelTicket);
 
-        m_MoveTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/movetable.png"))); // NOI18N
+        m_MoveTable.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/images/movetable.png"))); // NOI18N
         m_MoveTable.setToolTipText("Move Table");
         m_MoveTable.setFocusPainted(false);
         m_MoveTable.setFocusable(false);
@@ -144,7 +148,8 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         });
         add(m_MoveTable);
 
-        m_TablePlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tables.png"))); // NOI18N
+        m_TablePlan.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/images/tables.png"))); // NOI18N
         m_TablePlan.setToolTipText("Go to Table Plan");
         m_TablePlan.setFocusPainted(false);
         m_TablePlan.setFocusable(false);
@@ -160,7 +165,8 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         });
         add(m_TablePlan);
 
-        m_KitchenPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer24.png"))); // NOI18N
+        m_KitchenPrint.setIcon(new javax.swing.ImageIcon(
+                                   getClass().getResource("/images/printer24.png"))); // NOI18N
         m_KitchenPrint.setToolTipText("Send to Kichen Printer");
         m_KitchenPrint.setMargin(new java.awt.Insets(0, 4, 0, 4));
         m_KitchenPrint.setMaximumSize(new java.awt.Dimension(50, 40));
@@ -174,7 +180,8 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         add(m_KitchenPrint);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void m_MoveTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_MoveTableActionPerformed
+    private void m_MoveTableActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_m_MoveTableActionPerformed
 
 // JG 6 Nov 13 - clear Customer from orignal table - Thanks David Kurniawan
         restDB.clearCustomerNameInTableById(m_restaurant.getTable());
@@ -186,9 +193,11 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
     }//GEN-LAST:event_m_MoveTableActionPerformed
 
     @SuppressWarnings("empty-statement")
-    private void m_DelTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_DelTicketActionPerformed
+    private void m_DelTicketActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_m_DelTicketActionPerformed
 
-        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannadelete"), AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannadelete"),
+                                                AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (res == JOptionPane.YES_OPTION) {
 
             restDB.clearCustomerNameInTableById(m_restaurant.getTable());
@@ -199,43 +208,45 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
 
     }//GEN-LAST:event_m_DelTicketActionPerformed
 
-    private void m_TablePlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_TablePlanActionPerformed
+    private void m_TablePlanActionPerformed(java.awt.event.ActionEvent
+                                            evt) {//GEN-FIRST:event_m_TablePlanActionPerformed
         m_restaurant.newTicket();
 
     }//GEN-LAST:event_m_TablePlanActionPerformed
 
     @SuppressWarnings("empty-statement")
-    private void m_KitchenPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_KitchenPrintActionPerformed
+    private void m_KitchenPrintActionPerformed(java.awt.event.ActionEvent
+                                               evt) {//GEN-FIRST:event_m_KitchenPrintActionPerformed
 // This replaces the code from the buttons script
 
-          ticket = m_restaurant.getActiveTicket();
-          String rScript = (m_dlSystem.getResourceAsText("script.SendOrder"));
+        ticket = m_restaurant.getActiveTicket();
+        String rScript = (m_dlSystem.getResourceAsText("script.SendOrder"));
 
-            Interpreter i = new Interpreter();
+        Interpreter i = new Interpreter();
         try {
             i.set("ticket", ticket);
-            i.set("place",m_restaurant.getTableName());
+            i.set("place", m_restaurant.getTableName());
             i.set("user", m_App.getAppUserView().getUser());
             i.set("sales", this);
             Object result = i.eval(rScript);
         } catch (EvalError ex) {
             Logger.getLogger(JPanelTicket.class.getName()).log(Level.SEVERE, null, ex);
         }
-         // Autologoff after sales
-            String autoLogoff = (m_App.getProperties().getProperty("till.autoLogoff"));
-            String autoLogoffRestaurant =(m_App.getProperties().getProperty("till.autoLogoffrestaurant"));
-            if (autoLogoff != null){
-                if (autoLogoff.equals("true")){
-         // check how far to logoof to ie tables or application
-                    if (autoLogoffRestaurant == null){
-                        ((JRootApp)m_App).closeAppView();
-                    }else if (autoLogoffRestaurant.equals("true")){
-                        m_restaurant.newTicket();
-                    }else{
-                        ((JRootApp)m_App).closeAppView();
-                    };
-                    }
-                }
+        // Autologoff after sales
+        String autoLogoff = (m_App.getProperties().getProperty("till.autoLogoff"));
+        String autoLogoffRestaurant = (m_App.getProperties().getProperty("till.autoLogoffrestaurant"));
+        if (autoLogoff != null) {
+            if (autoLogoff.equals("true")) {
+                // check how far to logoof to ie tables or application
+                if (autoLogoffRestaurant == null) {
+                    ((JRootApp)m_App).closeAppView();
+                } else if (autoLogoffRestaurant.equals("true")) {
+                    m_restaurant.newTicket();
+                } else {
+                    ((JRootApp)m_App).closeAppView();
+                };
+            }
+        }
     }//GEN-LAST:event_m_KitchenPrintActionPerformed
 
 

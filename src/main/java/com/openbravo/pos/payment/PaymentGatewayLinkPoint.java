@@ -47,8 +47,8 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
         this.sPasswordCert = cypher.decrypt(props.getProperty("payment.certificatePassword").substring(6));
 
         HOST = (m_bTestMode)
-                ? "staging.linkpt.net"
-                : "secure.linkpt.net";
+               ? "staging.linkpt.net"
+               : "secure.linkpt.net";
     }
 
     public PaymentGatewayLinkPoint() {
@@ -57,7 +57,7 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
 
     @Override
     public void execute(PaymentInfoMagcard payinfo) {
-        String sReturned="";
+        String sReturned = "";
         URL url;
 
         System.setProperty("javax.net.ssl.keyStore", sClientCertPath);
@@ -67,7 +67,7 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
 
 
         try {
-            url = new URL("https://"+HOST+":"+PORT);
+            url = new URL("https://" + HOST + ":" + PORT);
             HttpsURLConnection connection = (HttpsURLConnection)url.openConnection();
             connection.setHostnameVerifier(new NullHostNameVerifier());
 
@@ -105,8 +105,7 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
                 //Transaction declined
                 payinfo.paymentError(AppLocal.getIntString("message.paymenterror"), (String)props.get("r_error"));
             }
-        }
-        else {
+        } else {
             payinfo.paymentError(lpp.getResult(), "");
         }
     }
@@ -122,9 +121,9 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
         StringBuilder moreInfo = new StringBuilder();
         StringBuilder xml = new StringBuilder();
 
-        String sTransactionType = (payinfo.getTotal()>0.0)
-            ? SALE
-            : REFUND;
+        String sTransactionType = (payinfo.getTotal() > 0.0)
+                                  ? SALE
+                                  : REFUND;
 
         NumberFormat formatter = new DecimalFormat("0000.00");
         String amount = formatter.format(Math.abs(payinfo.getTotal()));
@@ -132,40 +131,44 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
         String tmp = payinfo.getExpirationDate();
 
         String refundLine = (sTransactionType.equals("CREDIT"))
-               ? "<oid>"+ payinfo.getTransactionID() +"</oid>"
-               :  "";
+                            ? "<oid>" + payinfo.getTransactionID() + "</oid>"
+                            :  "";
 
         try {
 
-        if (payinfo.getTrack1(true) == null){
-            moreInfo.append("<creditcard>");
+            if (payinfo.getTrack1(true) == null) {
+                moreInfo.append("<creditcard>");
 // JG 16 May 12 use chain of .append
-            moreInfo.append("<cardnumber>").append(payinfo.getCardNumber()).append("</cardnumber> ");
-                moreInfo.append("<cardexpmonth>").append(tmp.charAt(0)).append("").append(tmp.charAt(1)).append("</cardexpmonth>");
-                StringBuilder append = moreInfo.append("<cardexpyear>").append(tmp.charAt(2)).append("").append(tmp.charAt(3)).append("</cardexpyear>");
-            moreInfo.append("</creditcard>");
+                moreInfo.append("<cardnumber>").append(payinfo.getCardNumber()).append("</cardnumber> ");
+                moreInfo.append("<cardexpmonth>").append(tmp.charAt(0)).append("").append(tmp.charAt(
+                                                                                              1)).append("</cardexpmonth>");
+                StringBuilder append = moreInfo.append("<cardexpyear>").append(tmp.charAt(2)).append("").append(
+                                           tmp.charAt(3)).append("</cardexpyear>");
+                moreInfo.append("</creditcard>");
 
-        } else {
-            moreInfo.append("<creditcard>");
-            moreInfo.append("<track>");
-            //moreInfo.append("%B4111111111111111^PADILLA VISDOMINE/LUIS ^1206120000000000000000999000000?");
-            moreInfo.append(payinfo.getTrack1(true));
-            //moreInfo.append(payinfo.getTrack2(true));
-            moreInfo.append("</track>");
-            moreInfo.append("</creditcard>");
-        }
+            } else {
+                moreInfo.append("<creditcard>");
+                moreInfo.append("<track>");
+                //moreInfo.append("%B4111111111111111^PADILLA VISDOMINE/LUIS ^1206120000000000000000999000000?");
+                moreInfo.append(payinfo.getTrack1(true));
+                //moreInfo.append(payinfo.getTrack2(true));
+                moreInfo.append("</track>");
+                moreInfo.append("</creditcard>");
+            }
 
-        //Construct the order
-        xml.append("<order>");
+            //Construct the order
+            xml.append("<order>");
 // JG 16 May 12 use chain of .append
             xml.append("<merchantinfo><configfile>").append(sConfigfile).append("</configfile></merchantinfo>");
-            xml.append("<orderoptions><ordertype>").append(sTransactionType).append("</ordertype><result>TEST</result></orderoptions>");
-            xml.append("<payment><chargetotal>").append(URLEncoder.encode(amount.replace(',', '.'), "UTF-8")).append("</chargetotal></payment>");
-        xml.append(moreInfo);
-        xml.append("<transactiondetails>");
-        xml.append(refundLine);
-        xml.append("<transactionorigin>RETAIL</transactionorigin><terminaltype>POS</terminaltype></transactiondetails>");
-        xml.append("</order>");
+            xml.append("<orderoptions><ordertype>").append(
+                sTransactionType).append("</ordertype><result>TEST</result></orderoptions>");
+            xml.append("<payment><chargetotal>").append(URLEncoder.encode(amount.replace(',', '.'),
+                                                                          "UTF-8")).append("</chargetotal></payment>");
+            xml.append(moreInfo);
+            xml.append("<transactiondetails>");
+            xml.append(refundLine);
+            xml.append("<transactionorigin>RETAIL</transactionorigin><terminaltype>POS</terminaltype></transactiondetails>");
+            xml.append("</order>");
 
         } catch (UnsupportedEncodingException ex) {
             payinfo.paymentError(AppLocal.getIntString("message.paymentexceptionservice"), ex.getMessage());
@@ -177,115 +180,114 @@ public class PaymentGatewayLinkPoint implements PaymentGateway {
 
     private class LinkPointParser extends DefaultHandler {
 
-    private SAXParser m_sp = null;
-    private final Map props = new HashMap();
-    private String text;
-    private final InputStream is;
-    private String result;
+        private SAXParser m_sp = null;
+        private final Map props = new HashMap();
+        private String text;
+        private final InputStream is;
+        private String result;
 
-    public LinkPointParser(String in) {
-        String input = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><returned>" + in + "</returned>";
-        is = new ByteArrayInputStream(input.getBytes());
-    }
-
-    public Map splitXML(){
-        try {
-            if (m_sp == null) {
-                SAXParserFactory spf = SAXParserFactory.newInstance();
-                m_sp = spf.newSAXParser();
-            }
-            m_sp.parse(is, this);
-        } catch (ParserConfigurationException ePC) {
-            result = LocalRes.getIntString("exception.parserconfig");
-        } catch (SAXException eSAX) {
-            result = LocalRes.getIntString("exception.xmlfile");
-        } catch (IOException eIO) {
-            result = LocalRes.getIntString("exception.iofile");
+        public LinkPointParser(String in) {
+            String input = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><returned>" + in + "</returned>";
+            is = new ByteArrayInputStream(input.getBytes());
         }
-        result = LocalRes.getIntString("button.ok");
-        return props;
-    }
 
-    @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
-        try {
+        public Map splitXML() {
+            try {
+                if (m_sp == null) {
+                    SAXParserFactory spf = SAXParserFactory.newInstance();
+                    m_sp = spf.newSAXParser();
+                }
+                m_sp.parse(is, this);
+            } catch (ParserConfigurationException ePC) {
+                result = LocalRes.getIntString("exception.parserconfig");
+            } catch (SAXException eSAX) {
+                result = LocalRes.getIntString("exception.xmlfile");
+            } catch (IOException eIO) {
+                result = LocalRes.getIntString("exception.iofile");
+            }
+            result = LocalRes.getIntString("button.ok");
+            return props;
+        }
+
+        @Override
+        public void endElement(String uri, String localName, String qName) throws SAXException {
+            try {
 // JG 16 May 12 use switch
-            switch (qName) {
+                switch (qName) {
                     case "r_csp":
                         props.put("r_csp", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_time":
                         props.put("r_time", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_ref":
                         props.put("r_ref", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_error":
                         props.put("r_error", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_ordernum":
                         props.put("r_ordernum", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_message":
                         props.put("r_message", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_code":
                         props.put("r_code", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_tdate":
                         props.put("r_tdate", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_score":
                         props.put("r_score", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_authresponse":
                         props.put("r_authresponse", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_approved":
                         props.put("r_approved", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                     case "r_avs":
                         props.put("r_avs", URLDecoder.decode(text, "UTF-8"));
-                        text="";
+                        text = "";
                         break;
                 }
+            } catch (UnsupportedEncodingException eUE) {
+                result = eUE.getMessage();
+            }
         }
-        catch(UnsupportedEncodingException eUE){
-            result = eUE.getMessage();
+
+        @Override
+        public void startDocument() throws SAXException {
+            text = new String();
         }
-    }
 
-    @Override
-    public void startDocument() throws SAXException {
-        text = new String();
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-    }
-
-    @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
-        if (text!=null) {
-            text = new String(ch, start, length);
+        @Override
+        public void endDocument() throws SAXException {
         }
-    }
 
-    public String getResult(){
-        return this.result;
-    }
+        @Override
+        public void characters(char[] ch, int start, int length) throws SAXException {
+            if (text != null) {
+                text = new String(ch, start, length);
+            }
+        }
 
- }
+        public String getResult() {
+            return this.result;
+        }
+
+    }
 
 }

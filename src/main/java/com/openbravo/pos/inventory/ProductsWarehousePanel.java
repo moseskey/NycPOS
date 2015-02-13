@@ -32,27 +32,29 @@ public class ProductsWarehousePanel extends JPanelTable2 {
         m_paramslocation.addActionListener(new ReloadActionListener());
 
         row = new Row(
-                new Field("ID", Datas.STRING, Formats.STRING),
-                new Field("PRODUCT_ID", Datas.STRING, Formats.STRING),
-                new Field(AppLocal.getIntString("label.prodref"), Datas.STRING, Formats.STRING, true, true, true),
-                new Field(AppLocal.getIntString("label.prodname"), Datas.STRING, Formats.STRING, true, true, true),
-                new Field("LOCATION", Datas.STRING, Formats.STRING),
-                new Field("STOCKSECURITY", Datas.DOUBLE, Formats.DOUBLE),
-                new Field("STOCKMAXIMUM", Datas.DOUBLE, Formats.DOUBLE),
-                new Field("UNITS", Datas.DOUBLE, Formats.DOUBLE)
+            new Field("ID", Datas.STRING, Formats.STRING),
+            new Field("PRODUCT_ID", Datas.STRING, Formats.STRING),
+            new Field(AppLocal.getIntString("label.prodref"), Datas.STRING, Formats.STRING, true, true, true),
+            new Field(AppLocal.getIntString("label.prodname"), Datas.STRING, Formats.STRING, true, true, true),
+            new Field("LOCATION", Datas.STRING, Formats.STRING),
+            new Field("STOCKSECURITY", Datas.DOUBLE, Formats.DOUBLE),
+            new Field("STOCKMAXIMUM", Datas.DOUBLE, Formats.DOUBLE),
+            new Field("UNITS", Datas.DOUBLE, Formats.DOUBLE)
         );
 
         lpr = new ListProviderCreator(new PreparedSentence(app.getSession(),
-                "SELECT L.ID, P.ID, P.REFERENCE, P.NAME," +
-                "L.STOCKSECURITY, L.STOCKMAXIMUM, COALESCE(S.SUMUNITS, 0) " +
-                "FROM PRODUCTS P " +
-                "LEFT OUTER JOIN (SELECT ID, PRODUCT, LOCATION, STOCKSECURITY, STOCKMAXIMUM FROM STOCKLEVEL WHERE LOCATION = ?) L ON P.ID = L.PRODUCT " +
-                "LEFT OUTER JOIN (SELECT PRODUCT, SUM(UNITS) AS SUMUNITS FROM STOCKCURRENT WHERE LOCATION = ? GROUP BY PRODUCT) S ON P.ID = S.PRODUCT " +
-                "ORDER BY P.NAME",
-                new SerializerWriteBasicExt(new Datas[] {Datas.OBJECT, Datas.STRING}, new int[]{1, 1}),
-                new WarehouseSerializerRead()
-                ),
-                m_paramslocation);
+                                                           "SELECT L.ID, P.ID, P.REFERENCE, P.NAME," +
+                                                           "L.STOCKSECURITY, L.STOCKMAXIMUM, COALESCE(S.SUMUNITS, 0) " +
+                                                           "FROM PRODUCTS P " +
+                                                           "LEFT OUTER JOIN (SELECT ID, PRODUCT, LOCATION, STOCKSECURITY, STOCKMAXIMUM FROM STOCKLEVEL WHERE LOCATION = ?) L ON P.ID = L.PRODUCT "
+                                                           +
+                                                           "LEFT OUTER JOIN (SELECT PRODUCT, SUM(UNITS) AS SUMUNITS FROM STOCKCURRENT WHERE LOCATION = ? GROUP BY PRODUCT) S ON P.ID = S.PRODUCT "
+                                                           +
+                                                           "ORDER BY P.NAME",
+                                                           new SerializerWriteBasicExt(new Datas[] {Datas.OBJECT, Datas.STRING}, new int[] {1, 1}),
+                                                           new WarehouseSerializerRead()
+                                                          ),
+                                      m_paramslocation);
 
 
         SentenceExec updatesent =  new SentenceExecTransaction(app.getSession()) {
@@ -63,13 +65,13 @@ public class ProductsWarehousePanel extends JPanelTable2 {
                     // INSERT
                     values[0] = UUID.randomUUID().toString();
                     return new PreparedSentence(app.getSession(),
-                         "INSERT INTO STOCKLEVEL (ID, LOCATION, PRODUCT, STOCKSECURITY, STOCKMAXIMUM) VALUES (?, ?, ?, ?, ?)",
-                         new SerializerWriteBasicExt(row.getDatas(), new int[] {0, 4, 1, 5, 6})).exec(params);
+                                                "INSERT INTO STOCKLEVEL (ID, LOCATION, PRODUCT, STOCKSECURITY, STOCKMAXIMUM) VALUES (?, ?, ?, ?, ?)",
+                                                new SerializerWriteBasicExt(row.getDatas(), new int[] {0, 4, 1, 5, 6})).exec(params);
                 } else {
                     // UPDATE
                     return new PreparedSentence(app.getSession(),
-                         "UPDATE STOCKLEVEL SET STOCKSECURITY = ?, STOCKMAXIMUM = ? WHERE ID = ?",
-                         new SerializerWriteBasicExt(row.getDatas(), new int[] {5, 6, 0})).exec(params);
+                                                "UPDATE STOCKLEVEL SET STOCKSECURITY = ?, STOCKMAXIMUM = ? WHERE ID = ?",
+                                                new SerializerWriteBasicExt(row.getDatas(), new int[] {5, 6, 0})).exec(params);
                 }
             }
         };
@@ -115,15 +117,15 @@ public class ProductsWarehousePanel extends JPanelTable2 {
         @Override
         public Object readValues(DataRead dr) throws BasicException {
             return new Object[] {
-                dr.getString(1),
-                dr.getString(2),
-                dr.getString(3),
-                dr.getString(4),
-                ((Object[]) m_paramslocation.createValue())[1],
-                dr.getDouble(5),
-                dr.getDouble(6),
-                dr.getDouble(7)
-            };
+                       dr.getString(1),
+                       dr.getString(2),
+                       dr.getString(3),
+                       dr.getString(4),
+                       ((Object[]) m_paramslocation.createValue())[1],
+                       dr.getDouble(5),
+                       dr.getDouble(6),
+                       dr.getDouble(7)
+                   };
         }
     }
 }

@@ -12,7 +12,7 @@ public class JNumberKeys extends javax.swing.JPanel {
     private boolean equalsenabled = true;
 
     public JNumberKeys() {
-        initComponents ();
+        initComponents();
 
         m_jKey0.addActionListener(new MyKeyNumberListener('0'));
         m_jKey1.addActionListener(new MyKeyNumberListener('1'));
@@ -87,7 +87,7 @@ public class JNumberKeys extends javax.swing.JPanel {
     public void dotIs00(boolean enabled) {
         if (enabled) {
             m_jKeyDot.setIcon(new javax.swing.ImageIcon(getClass()
-                    .getResource("/images/btn00.png")));
+                                                        .getResource("/images/btn00.png")));
         }
     }
 
@@ -107,7 +107,7 @@ public class JNumberKeys extends javax.swing.JPanel {
 
         private final char m_cCad;
 
-        public MyKeyNumberListener(char cCad){
+        public MyKeyNumberListener(char cCad) {
             m_cCad = cCad;
         }
         @Override
@@ -173,7 +173,8 @@ public class JNumberKeys extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
         add(m_jCE, gridBagConstraints);
 
-        m_jMultiply.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btnmult.png"))); // NOI18N
+        m_jMultiply.setIcon(new javax.swing.ImageIcon(
+                                getClass().getResource("/images/btnmult.png"))); // NOI18N
         m_jMultiply.setFocusPainted(false);
         m_jMultiply.setFocusable(false);
         m_jMultiply.setMargin(new java.awt.Insets(8, 16, 8, 16));
@@ -190,7 +191,8 @@ public class JNumberKeys extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
         add(m_jMultiply, gridBagConstraints);
 
-        m_jMinus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btnminus.png"))); // NOI18N
+        m_jMinus.setIcon(new javax.swing.ImageIcon(
+                             getClass().getResource("/images/btnminus.png"))); // NOI18N
         m_jMinus.setFocusPainted(false);
         m_jMinus.setFocusable(false);
         m_jMinus.setMargin(new java.awt.Insets(8, 16, 8, 16));
@@ -385,7 +387,8 @@ public class JNumberKeys extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
         add(m_jKey0, gridBagConstraints);
 
-        m_jKeyDot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btndot.png"))); // NOI18N
+        m_jKeyDot.setIcon(new javax.swing.ImageIcon(
+                              getClass().getResource("/images/btndot.png"))); // NOI18N
         m_jKeyDot.setFocusPainted(false);
         m_jKeyDot.setFocusable(false);
         m_jKeyDot.setMargin(new java.awt.Insets(8, 16, 8, 16));
@@ -402,7 +405,8 @@ public class JNumberKeys extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
         add(m_jKeyDot, gridBagConstraints);
 
-        m_jEquals.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btnequals.png"))); // NOI18N
+        m_jEquals.setIcon(new javax.swing.ImageIcon(
+                              getClass().getResource("/images/btnequals.png"))); // NOI18N
         m_jEquals.setFocusPainted(false);
         m_jEquals.setFocusable(false);
         m_jEquals.setMargin(new java.awt.Insets(8, 16, 8, 16));

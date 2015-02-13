@@ -33,7 +33,7 @@ public class JPanelMenu extends JPanel implements JPanelView {
 
         if (created == false) {
 
-            for(int i = 0; i < m_menu.countMenuElements(); i++) {
+            for (int i = 0; i < m_menu.countMenuElements(); i++) {
                 MenuElement menuitem = m_menu.getMenuElement(i);
                 menuitem.addComponent(this);
             }

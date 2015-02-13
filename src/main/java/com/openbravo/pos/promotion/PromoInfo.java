@@ -28,48 +28,50 @@ public class PromoInfo implements SerializableRead, IKeyed {
 
     private List<PromoInfo> promos = new ArrayList<PromoInfo>();
 
-    public PromoInfo(String sID,String sName,Integer iStartHour,Integer iEndHour, String sArticle,
-     String sArticleCategory,Integer iType,Double bdAmount,Integer iMinQuantity,Integer iMaxQuantity,
-     Integer iStepQuantity,Integer iStepAmount,String sArticleBonus,String sArticleBonusDescription) {
+    public PromoInfo(String sID, String sName, Integer iStartHour, Integer iEndHour, String sArticle,
+                     String sArticleCategory, Integer iType, Double bdAmount, Integer iMinQuantity, Integer iMaxQuantity,
+                     Integer iStepQuantity, Integer iStepAmount, String sArticleBonus, String sArticleBonusDescription) {
 
-        this.m_sID =sID;
-                this.m_sName =sName;
-                this.m_iStartHour = iStartHour;
-                this.m_iEndHour = iEndHour;
-                this.m_sArticle = sArticle;
-                this.m_sArticleCategory = sArticleCategory;
-                this.m_iType = iType;
-                this.m_bdAmount = bdAmount;
-                this.m_iMinQuantity = iMinQuantity;
-                this.m_iMaxQuantity = iMaxQuantity;
-                this.m_iStepQuantity = iStepQuantity;
-                this.m_iStepAmount = iStepAmount;
-                this.m_sArticleBonus = sArticleBonus;
-                this.m_sArticleBonusDescription = sArticleBonusDescription;
+        this.m_sID = sID;
+        this.m_sName = sName;
+        this.m_iStartHour = iStartHour;
+        this.m_iEndHour = iEndHour;
+        this.m_sArticle = sArticle;
+        this.m_sArticleCategory = sArticleCategory;
+        this.m_iType = iType;
+        this.m_bdAmount = bdAmount;
+        this.m_iMinQuantity = iMinQuantity;
+        this.m_iMaxQuantity = iMaxQuantity;
+        this.m_iStepQuantity = iStepQuantity;
+        this.m_iStepAmount = iStepAmount;
+        this.m_sArticleBonus = sArticleBonus;
+        this.m_sArticleBonusDescription = sArticleBonusDescription;
     }
 
     public static SerializerRead getSerializerRead() {
-        return new SerializerRead() { public Object readValues(DataRead dr) throws BasicException {
+        return new SerializerRead() {
+            public Object readValues(DataRead dr) throws BasicException {
 
-            return new PromoInfo(
+                return new PromoInfo(
 
-                        dr.getString(1),
-                        dr.getString(2),
-                        dr.getInt(3),
-                        dr.getInt(4),
-                        dr.getString(5),
-                        dr.getString(6),
-                        dr.getInt(7),
-                        dr.getDouble(8),
-                        dr.getInt(9),
-                        dr.getInt(10),
-                        dr.getInt(11),
-                        dr.getInt(12),
-                        dr.getString(13),
-                        dr.getString(14)
+                           dr.getString(1),
+                           dr.getString(2),
+                           dr.getInt(3),
+                           dr.getInt(4),
+                           dr.getString(5),
+                           dr.getString(6),
+                           dr.getInt(7),
+                           dr.getDouble(8),
+                           dr.getInt(9),
+                           dr.getInt(10),
+                           dr.getInt(11),
+                           dr.getInt(12),
+                           dr.getString(13),
+                           dr.getString(14)
 
-                    );
-        }};
+                       );
+            }
+        };
     }
 
     public PromoInfo() {
@@ -207,7 +209,7 @@ public class PromoInfo implements SerializableRead, IKeyed {
         iStepAmount = m_iStepAmount;
     }
 
-    public String toString(){
+    public String toString() {
         return m_sName;
     }
 

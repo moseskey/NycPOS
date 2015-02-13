@@ -50,7 +50,7 @@ public class JEditorPassword extends JEditorText {
             return "";
         } else {
             char[] c = new char[sValue.length()];
-            for(int i = 0; i < sValue.length(); i++) {
+            for (int i = 0; i < sValue.length(); i++) {
                 c[i] = ECHO_CHAR;
             }
             return new String(c);
