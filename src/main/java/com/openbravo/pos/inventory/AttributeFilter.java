@@ -22,10 +22,10 @@ public class AttributeFilter extends javax.swing.JPanel implements ReportEditorC
     @Override
     public void init(AppView app) {
 
-        attsent = new StaticSentence(app.getSession()
-            , "SELECT ID, NAME FROM ATTRIBUTE ORDER BY NAME"
-            , null
-            , new SerializerRead() {@Override
+        attsent = new StaticSentence(app.getSession(),
+             "SELECT ID, NAME FROM ATTRIBUTE ORDER BY NAME",
+             null,
+             new SerializerRead() {@Override
  public Object readValues(DataRead dr) throws BasicException {
                 return new AttributeInfo(dr.getString(1), dr.getString(2));
             }});

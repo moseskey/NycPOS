@@ -24,12 +24,12 @@ public class JPanelFloors extends JPanelTable {
     @Override
     protected void init() {
         tfloors = new TableDefinition(app.getSession(),
-            "FLOORS"
-            , new String[] {"ID", "NAME", "IMAGE"}
-            , new String[] {"ID", AppLocal.getIntString("Label.Name"), "IMAGE"}
-            , new Datas[] {Datas.STRING, Datas.STRING, Datas.IMAGE}
-            , new Formats[] {Formats.NULL, Formats.STRING}
-            , new int[] {0}
+            "FLOORS",
+             new String[] {"ID", "NAME", "IMAGE"},
+             new String[] {"ID", AppLocal.getIntString("Label.Name"), "IMAGE"},
+             new Datas[] {Datas.STRING, Datas.STRING, Datas.IMAGE},
+             new Formats[] {Formats.NULL, Formats.STRING},
+             new int[] {0}
         );
         jeditor = new FloorsEditor(dirty);
     }

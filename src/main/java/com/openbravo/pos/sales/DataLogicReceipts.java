@@ -30,22 +30,22 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
         if (Id == null) {
             return null;
         } else {
-            Object[]record = (Object[]) new StaticSentence(s
-                    , "SELECT CONTENT FROM SHAREDTICKETS WHERE ID = ?"
-                    , SerializerWriteString.INSTANCE
-                    , new SerializerReadBasic(new Datas[] {Datas.SERIALIZABLE})).find(Id);
+            Object[]record = (Object[]) new StaticSentence(s,
+                     "SELECT CONTENT FROM SHAREDTICKETS WHERE ID = ?",
+                     SerializerWriteString.INSTANCE,
+                     new SerializerReadBasic(new Datas[] {Datas.SERIALIZABLE})).find(Id);
             return record == null ? null : (TicketInfo) record[0];
         }
     }
 
     public final List<SharedTicketInfo> getSharedTicketList() throws BasicException {
 
-        return (List<SharedTicketInfo>) new StaticSentence(s
+        return (List<SharedTicketInfo>) new StaticSentence(s,
 // JG 20 Aug 13 Bug Fix: invalid SQL string
-//                , "SELECT ID, NAME, CONTENT PICKUPID FROM SHAREDTICKETS ORDER BY ID"
-                , "SELECT ID, NAME, CONTENT, PICKUPID FROM SHAREDTICKETS ORDER BY ID"
-                , null
-                , new SerializerReadClass(SharedTicketInfo.class)).list();
+//                , "SELECT ID, NAME, CONTENT PICKUPID FROM SHAREDTICKETS ORDER BY ID",
+                 "SELECT ID, NAME, CONTENT, PICKUPID FROM SHAREDTICKETS ORDER BY ID",
+                 null,
+                 new SerializerReadClass(SharedTicketInfo.class)).list();
     }
 
     public final void updateSharedTicket(final String id, final TicketInfo ticket, int pickupid) throws BasicException {
@@ -62,13 +62,13 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
             Datas.SERIALIZABLE,
             Datas.INT
         };
-        new PreparedSentence(s
-                , "UPDATE SHAREDTICKETS SET "
+        new PreparedSentence(s,
+                 "UPDATE SHAREDTICKETS SET "
                 + "NAME = ?, "
                 + "CONTENT = ?, "
                 + "PICKUPID = ? "
-                + "WHERE ID = ?"
-                , new SerializerWriteBasicExt(datas, new int[] {1, 2, 3, 0})).exec(values);
+                + "WHERE ID = ?",
+                 new SerializerWriteBasicExt(datas, new int[] {1, 2, 3, 0})).exec(values);
     }
 
     public final void insertSharedTicket(final String id, final TicketInfo ticket, int pickupid) throws BasicException {
@@ -86,21 +86,21 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
             Datas.SERIALIZABLE,
             Datas.INT
         };
-        new PreparedSentence(s
-            , "INSERT INTO SHAREDTICKETS ("
+        new PreparedSentence(s,
+             "INSERT INTO SHAREDTICKETS ("
                 + "ID, "
                 + "NAME, "
                 + "CONTENT, "
                 + "PICKUPID) "
-                + "VALUES (?, ?, ?, ?)"
-            , new SerializerWriteBasicExt(datas, new int[] {0, 1, 2, 3})).exec(values);
+                + "VALUES (?, ?, ?, ?)",
+             new SerializerWriteBasicExt(datas, new int[] {0, 1, 2, 3})).exec(values);
     }
 
     public final void deleteSharedTicket(final String id) throws BasicException {
 
-        new StaticSentence(s
-            , "DELETE FROM SHAREDTICKETS WHERE ID = ?"
-            , SerializerWriteString.INSTANCE).exec(id);
+        new StaticSentence(s,
+             "DELETE FROM SHAREDTICKETS WHERE ID = ?",
+             SerializerWriteString.INSTANCE).exec(id);
     }
 
     public final Integer getPickupId(String Id) throws BasicException {
@@ -108,10 +108,10 @@ public class DataLogicReceipts extends BeanFactoryDataSingle {
         if (Id == null) {
             return null;
         } else {
-            Object[]record = (Object[]) new StaticSentence(s
-                    , "SELECT PICKUPID FROM SHAREDTICKETS WHERE ID = ?"
-                    , SerializerWriteString.INSTANCE
-                    , new SerializerReadBasic(new Datas[] {Datas.INT})).find(Id);
+            Object[]record = (Object[]) new StaticSentence(s,
+                     "SELECT PICKUPID FROM SHAREDTICKETS WHERE ID = ?",
+                     SerializerWriteString.INSTANCE,
+                     new SerializerReadBasic(new Datas[] {Datas.INT})).find(Id);
             return record == null ? 0 : (Integer)record[0];
         }
     }

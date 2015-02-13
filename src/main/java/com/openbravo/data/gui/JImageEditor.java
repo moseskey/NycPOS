@@ -163,11 +163,11 @@ public class JImageEditor extends javax.swing.JPanel {
 
         g2d.fillRect(0, 0, mywidth, myheight);
         if (scalex < scaley) {
-            g2d.drawImage(img, 0,(int) ((myheight - img.getHeight(null) * scalex) / 2.0)
-            , mywidth, (int) (img.getHeight(null) * scalex),  null);
+            g2d.drawImage(img, 0,(int) ((myheight - img.getHeight(null) * scalex) / 2.0),
+             mywidth, (int) (img.getHeight(null) * scalex),  null);
         } else {
-           g2d.drawImage(img, (int) ((mywidth - img.getWidth(null) * scaley) / 2.0), 0
-           , (int) (img.getWidth(null) * scaley), myheight, null);
+           g2d.drawImage(img, (int) ((mywidth - img.getWidth(null) * scaley) / 2.0), 0,
+            (int) (img.getWidth(null) * scaley), myheight, null);
         }
         g2d.dispose();
 

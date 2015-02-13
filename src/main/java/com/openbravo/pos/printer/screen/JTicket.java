@@ -41,8 +41,8 @@ class JTicket extends javax.swing.JPanel {
         }
 
         Insets i = getInsets();
-        g2d.setPaint(new GradientPaint(getWidth() - i.left - i.right - 100, getHeight() - i.top - i.bottom - 100, getBackground()
-                                     , getWidth() - i.left - i.right, getHeight() - i.top - i.bottom, new Color(0xf0f0f0), true));
+        g2d.setPaint(new GradientPaint(getWidth() - i.left - i.right - 100, getHeight() - i.top - i.bottom - 100, getBackground(),
+                                      getWidth() - i.left - i.right, getHeight() - i.top - i.bottom, new Color(0xf0f0f0), true));
         g2d.fillRect(i.left, i.top, getWidth() - i.left - i.right, getHeight() - i.top - i.bottom);
 
         g.setColor(getForeground());
@@ -55,8 +55,8 @@ class JTicket extends javax.swing.JPanel {
     public Dimension getPreferredSize() {
         Insets ins = getInsets();
 //JG July 2014 - Thank you Ron Isaacson        return new Dimension((int) (LINEWIDTH + 2 * H_GAP) + ins.left + ins.right
-        return new Dimension((int) (linewidth + 2 * H_GAP) + ins.left + ins.right
-                           , (int) (basict.getHeight() + 2 * V_GAP) + ins.top + ins.bottom);
+        return new Dimension((int) (linewidth + 2 * H_GAP) + ins.left + ins.right,
+                            (int) (basict.getHeight() + 2 * V_GAP) + ins.top + ins.bottom);
     }
 
     @Override

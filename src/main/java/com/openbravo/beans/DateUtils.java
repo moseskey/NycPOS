@@ -31,8 +31,8 @@ public class DateUtils {
         // el dia de hoy sin horas ni nada.
         GregorianCalendar ddate = new GregorianCalendar();
         ddate.setTime(d);
-        GregorianCalendar ddateday = new GregorianCalendar(ddate.get(GregorianCalendar.YEAR), ddate.get(GregorianCalendar.MONTH), ddate.get(GregorianCalendar.DAY_OF_MONTH)
-                                                         , ddate.get(GregorianCalendar.HOUR_OF_DAY), ddate.get(GregorianCalendar.MINUTE));
+        GregorianCalendar ddateday = new GregorianCalendar(ddate.get(GregorianCalendar.YEAR), ddate.get(GregorianCalendar.MONTH), ddate.get(GregorianCalendar.DAY_OF_MONTH),
+                                                          ddate.get(GregorianCalendar.HOUR_OF_DAY), ddate.get(GregorianCalendar.MINUTE));
         return ddateday.getTime();
     }
 
@@ -43,8 +43,8 @@ public class DateUtils {
 
         Calendar dNow = Calendar.getInstance();
         dNow.clear();
-        dNow.set(ddate.get(Calendar.YEAR), ddate.get(Calendar.MONTH), ddate.get(Calendar.DAY_OF_MONTH)
-               , ddate.get(Calendar.HOUR_OF_DAY), 0, 0);
+        dNow.set(ddate.get(Calendar.YEAR), ddate.get(Calendar.MONTH), ddate.get(Calendar.DAY_OF_MONTH),
+                ddate.get(Calendar.HOUR_OF_DAY), 0, 0);
 
         return dNow.getTime();
     }
@@ -59,8 +59,8 @@ public class DateUtils {
 
         Calendar dNow = Calendar.getInstance();
         dNow.clear();
-        dNow.set(dDay.get(Calendar.YEAR), dDay.get(Calendar.MONTH), dDay.get(Calendar.DAY_OF_MONTH)
-        , dHour.get(Calendar.HOUR_OF_DAY), dHour.get(Calendar.MINUTE), dHour.get(Calendar.SECOND));
+        dNow.set(dDay.get(Calendar.YEAR), dDay.get(Calendar.MONTH), dDay.get(Calendar.DAY_OF_MONTH),
+         dHour.get(Calendar.HOUR_OF_DAY), dHour.get(Calendar.MINUTE), dHour.get(Calendar.SECOND));
 
         return dNow.getTime();
     }

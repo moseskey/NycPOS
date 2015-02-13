@@ -103,115 +103,115 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
                        );
             }};
 
- 	m_getProductAllFields = new PreparedSentence(s
-		, "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND CODE=? AND NAME=? "
-		, new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING, Datas.STRING})
-		, productIdRead
+ 	m_getProductAllFields = new PreparedSentence(s,
+		 "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND CODE=? AND NAME=? ",
+		 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING, Datas.STRING}),
+		 productIdRead
                 );
 
-       m_getProductRefAndCode  = new PreparedSentence(s
-		, "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND CODE=?"
-		, new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING})
-		, productIdRead
+       m_getProductRefAndCode  = new PreparedSentence(s,
+		 "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND CODE=?",
+		 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}),
+		 productIdRead
                 );
 
-       m_getProductRefAndName  = new PreparedSentence(s
-		, "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND NAME=? "
-		, new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING})
-		, productIdRead
+       m_getProductRefAndName  = new PreparedSentence(s,
+		 "SELECT ID FROM PRODUCTS WHERE REFERENCE=? AND NAME=? ",
+		 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}),
+		 productIdRead
                 );
 
-       m_getProductCodeAndName  = new PreparedSentence(s
-		, "SELECT ID FROM PRODUCTS WHERE CODE=? AND NAME=? "
-		, new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING})
-		, productIdRead
+       m_getProductCodeAndName  = new PreparedSentence(s,
+		 "SELECT ID FROM PRODUCTS WHERE CODE=? AND NAME=? ",
+		 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}),
+		 productIdRead
                 );
 
-      m_getProductByReference  = new PreparedSentence(s
-		, "SELECT ID FROM PRODUCTS WHERE REFERENCE=? "
-		, SerializerWriteString.INSTANCE //(Datas.STRING)
-		, productIdRead
+      m_getProductByReference  = new PreparedSentence(s,
+		 "SELECT ID FROM PRODUCTS WHERE REFERENCE=? ",
+		 SerializerWriteString.INSTANCE, //(Datas.STRING)
+		 productIdRead
                 );
 
-      m_getProductByCode  = new PreparedSentence(s
-		, "SELECT ID FROM PRODUCTS WHERE CODE=? "
-              , SerializerWriteString.INSTANCE //(Datas.STRING)
-		//, new SerializerWriteBasic(Datas.STRING)
-		, productIdRead
+      m_getProductByCode  = new PreparedSentence(s,
+		 "SELECT ID FROM PRODUCTS WHERE CODE=? ",
+               SerializerWriteString.INSTANCE, //(Datas.STRING)
+		//, new SerializerWriteBasic(Datas.STRING),
+		 productIdRead
                 );
 
-      m_getProductByName  = new PreparedSentence(s
-		, "SELECT ID FROM PRODUCTS WHERE NAME=? "
-		, SerializerWriteString.INSTANCE //(Datas.STRING)
-              //, new SerializerWriteBasic(Datas.STRING)
-		, productIdRead
+      m_getProductByName  = new PreparedSentence(s,
+		 "SELECT ID FROM PRODUCTS WHERE NAME=? ",
+		 SerializerWriteString.INSTANCE, //(Datas.STRING)
+              //, new SerializerWriteBasic(Datas.STRING),
+		 productIdRead
                 );
 
  //******************************************************************
 
 
 
-        m_peoplevisible = new StaticSentence(s
-            , "SELECT ID, NAME, APPPASSWORD, CARD, ROLE, IMAGE FROM PEOPLE WHERE VISIBLE = " + s.DB.TRUE() + " ORDER BY NAME"
-            , null
-            , peopleread);
+        m_peoplevisible = new StaticSentence(s,
+             "SELECT ID, NAME, APPPASSWORD, CARD, ROLE, IMAGE FROM PEOPLE WHERE VISIBLE = " + s.DB.TRUE() + " ORDER BY NAME",
+             null,
+             peopleread);
 
-        m_peoplebycard = new PreparedSentence(s
-            , "SELECT ID, NAME, APPPASSWORD, CARD, ROLE, IMAGE FROM PEOPLE WHERE CARD = ? AND VISIBLE = " + s.DB.TRUE()
-            , SerializerWriteString.INSTANCE
-            , peopleread);
+        m_peoplebycard = new PreparedSentence(s,
+             "SELECT ID, NAME, APPPASSWORD, CARD, ROLE, IMAGE FROM PEOPLE WHERE CARD = ? AND VISIBLE = " + s.DB.TRUE(),
+             SerializerWriteString.INSTANCE,
+             peopleread);
 
-        m_resourcebytes = new PreparedSentence(s
-            , "SELECT CONTENT FROM RESOURCES WHERE NAME = ?"
-            , SerializerWriteString.INSTANCE
-            , SerializerReadBytes.INSTANCE);
+        m_resourcebytes = new PreparedSentence(s,
+             "SELECT CONTENT FROM RESOURCES WHERE NAME = ?",
+             SerializerWriteString.INSTANCE,
+             SerializerReadBytes.INSTANCE);
 
         Datas[] resourcedata = new Datas[] {Datas.STRING, Datas.STRING, Datas.INT, Datas.BYTES};
-        m_resourcebytesinsert = new PreparedSentence(s
-                , "INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES (?, ?, ?, ?)"
-                , new SerializerWriteBasic(resourcedata));
-        m_resourcebytesupdate = new PreparedSentence(s
-                , "UPDATE RESOURCES SET NAME = ?, RESTYPE = ?, CONTENT = ? WHERE NAME = ?"
-                , new SerializerWriteBasicExt(resourcedata, new int[] {1, 2, 3, 1}));
+        m_resourcebytesinsert = new PreparedSentence(s,
+                 "INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES (?, ?, ?, ?)",
+                 new SerializerWriteBasic(resourcedata));
+        m_resourcebytesupdate = new PreparedSentence(s,
+                 "UPDATE RESOURCES SET NAME = ?, RESTYPE = ?, CONTENT = ? WHERE NAME = ?",
+                 new SerializerWriteBasicExt(resourcedata, new int[] {1, 2, 3, 1}));
 
-        m_rolepermissions = new PreparedSentence(s
-                , "SELECT PERMISSIONS FROM ROLES WHERE ID = ?"
-            , SerializerWriteString.INSTANCE
-            , SerializerReadBytes.INSTANCE);
+        m_rolepermissions = new PreparedSentence(s,
+                 "SELECT PERMISSIONS FROM ROLES WHERE ID = ?",
+             SerializerWriteString.INSTANCE,
+             SerializerReadBytes.INSTANCE);
 
-        m_changepassword = new StaticSentence(s
-                , "UPDATE PEOPLE SET APPPASSWORD = ? WHERE ID = ?"
-                ,new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}));
+        m_changepassword = new StaticSentence(s,
+                 "UPDATE PEOPLE SET APPPASSWORD = ? WHERE ID = ?",
+                new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING}));
 
         m_sequencecash = new StaticSentence(s,
                 "SELECT MAX(HOSTSEQUENCE) FROM CLOSEDCASH WHERE HOST = ?",
                 SerializerWriteString.INSTANCE,
                 SerializerReadInteger.INSTANCE);
 
-        m_activecash = new StaticSentence(s
-            , "SELECT HOST, HOSTSEQUENCE, DATESTART, DATEEND, NOSALES FROM CLOSEDCASH WHERE MONEY = ?"
-            , SerializerWriteString.INSTANCE
-            , new SerializerReadBasic(new Datas[] {
+        m_activecash = new StaticSentence(s,
+             "SELECT HOST, HOSTSEQUENCE, DATESTART, DATEEND, NOSALES FROM CLOSEDCASH WHERE MONEY = ?",
+             SerializerWriteString.INSTANCE,
+             new SerializerReadBasic(new Datas[] {
                 Datas.STRING,
                 Datas.INT,
                 Datas.TIMESTAMP,
                 Datas.TIMESTAMP,
                 Datas.INT}));
 
-        m_insertcash = new StaticSentence(s
-                , "INSERT INTO CLOSEDCASH(MONEY, HOST, HOSTSEQUENCE, DATESTART, DATEEND) " +
-                  "VALUES (?, ?, ?, ?, ?)"
-                , new SerializerWriteBasic(new Datas[] {
+        m_insertcash = new StaticSentence(s,
+                 "INSERT INTO CLOSEDCASH(MONEY, HOST, HOSTSEQUENCE, DATESTART, DATEEND) " +
+                  "VALUES (?, ?, ?, ?, ?)",
+                 new SerializerWriteBasic(new Datas[] {
                     Datas.STRING,
                     Datas.STRING,
                     Datas.INT,
                     Datas.TIMESTAMP,
                     Datas.TIMESTAMP}));
 
-        m_draweropened = new StaticSentence(s
-                , "INSERT INTO DRAWEROPENED ( NAME, TICKETID) " +
-                  "VALUES (?, ?)"
-                , new SerializerWriteBasic(new Datas[] {
+        m_draweropened = new StaticSentence(s,
+                 "INSERT INTO DRAWEROPENED ( NAME, TICKETID) " +
+                  "VALUES (?, ?)",
+                 new SerializerWriteBasic(new Datas[] {
                     Datas.STRING,
                     Datas.STRING}));
 
@@ -220,32 +220,32 @@ public class DataLogicSystem extends BeanFactoryDataSingle {
                 "VALUES (?, ?, ?, ?, ?)",
                 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING, Datas.STRING, Datas.STRING, Datas.DOUBLE}));
 
-        m_locationfind = new StaticSentence(s
-                , "SELECT NAME FROM LOCATIONS WHERE ID = ?"
-                , SerializerWriteString.INSTANCE
-                , SerializerReadString.INSTANCE);
+        m_locationfind = new StaticSentence(s,
+                 "SELECT NAME FROM LOCATIONS WHERE ID = ?",
+                 SerializerWriteString.INSTANCE,
+                 SerializerReadString.INSTANCE);
 
 //Add 13.2.14 JDL for new gui based permissions
-        m_permissionlist = new StaticSentence(s
-                , "SELECT PERMISSIONS FROM PERMISSIONS WHERE ID = ?"
-                , SerializerWriteString.INSTANCE
-                , new SerializerReadBasic(new Datas[] {
+        m_permissionlist = new StaticSentence(s,
+                 "SELECT PERMISSIONS FROM PERMISSIONS WHERE ID = ?",
+                 SerializerWriteString.INSTANCE,
+                 new SerializerReadBasic(new Datas[] {
                     Datas.STRING
                 }));
 
-        m_updatepermissions = new StaticSentence(s
-                , "INSERT INTO PERMISSIONS (ID, PERMISSIONS) " +
-                  "VALUES (?, ?)"
-                , new SerializerWriteBasic(new Datas[] {
+        m_updatepermissions = new StaticSentence(s,
+                 "INSERT INTO PERMISSIONS (ID, PERMISSIONS) " +
+                  "VALUES (?, ?)",
+                 new SerializerWriteBasic(new Datas[] {
                     Datas.STRING,
                     Datas.STRING}));
 
 
 // added 1.3.14.14 JDL new routine to write to CSV table, to clean up CSV import routine
-        m_insertCSVEntry = new StaticSentence(s
-                , "INSERT INTO CSVIMPORT (ID, ROWNUMBER, CSVERROR, REFERENCE, CODE, NAME, PRICEBUY, PRICESELL, PREVIOUSBUY, PREVIOUSSELL,CATEGORY) " +
-                  "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-                , new SerializerWriteBasic(new Datas[] {
+        m_insertCSVEntry = new StaticSentence(s,
+                 "INSERT INTO CSVIMPORT (ID, ROWNUMBER, CSVERROR, REFERENCE, CODE, NAME, PRICEBUY, PRICESELL, PREVIOUSBUY, PREVIOUSSELL,CATEGORY) " +
+                  "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                 new SerializerWriteBasic(new Datas[] {
                     Datas.STRING,
                     Datas.STRING,
                     Datas.STRING,

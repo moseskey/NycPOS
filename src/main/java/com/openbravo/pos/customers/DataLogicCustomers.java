@@ -29,9 +29,9 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
     public void init(Session s){
 // JG 03 Oct - Added Customer Image
         this.s = s;
-        tcustomers = new TableDefinition(s
-            , "CUSTOMERS"
-            , new String[] {
+        tcustomers = new TableDefinition(s,
+             "CUSTOMERS",
+             new String[] {
                 "ID",
                 "TAXID",
                 "SEARCHKEY",
@@ -55,8 +55,8 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
                 "REGION",
                 "COUNTRY",
                 "TAXCATEGORY",
-                "IMAGE" }
-            , new String[] {
+                "IMAGE" },
+             new String[] {
                 "ID",
                 AppLocal.getIntString("label.taxid"),
                 AppLocal.getIntString("label.searchkey"),
@@ -80,8 +80,8 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
                 AppLocal.getIntString("label.region"),
                 AppLocal.getIntString("label.country"),
                 "TAXCATEGORY",
-                "IMAGE" }
-            , new Datas[] {
+                "IMAGE" },
+             new Datas[] {
                 Datas.STRING,
                 Datas.STRING,
                 Datas.STRING,
@@ -105,8 +105,8 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
                 Datas.STRING,
                 Datas.STRING,
                 Datas.STRING,
-                Datas.IMAGE }
-            , new Formats[] {
+                Datas.IMAGE },
+             new Formats[] {
                 Formats.STRING,
                 Formats.STRING,
                 Formats.STRING,
@@ -130,8 +130,8 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
                 Formats.STRING,
                 Formats.STRING,
                 Formats.STRING,
-                Formats.NULL }
-            , new int[] {0}
+                Formats.NULL },
+             new int[] {0}
         );
     }
 
@@ -144,16 +144,16 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
     */
     //JG July 2014 - Amend to PHONE from PHONE2
         public SentenceList getCustomerList() {
-        return new StaticSentence(s
-            , new QBFBuilder("SELECT ID, TAXID, SEARCHKEY, NAME, POSTAL, EMAIL, PHONE FROM CUSTOMERS WHERE VISIBLE = " + s.DB.TRUE() + " AND ?(QBF_FILTER) ORDER BY NAME", new String[] {"TAXID", "SEARCHKEY", "NAME", "POSTAL", "PHONE", "EMAIL"})
-            , new SerializerWriteBasic(new Datas[] {
+        return new StaticSentence(s,
+             new QBFBuilder("SELECT ID, TAXID, SEARCHKEY, NAME, POSTAL, EMAIL, PHONE FROM CUSTOMERS WHERE VISIBLE = " + s.DB.TRUE() + " AND ?(QBF_FILTER) ORDER BY NAME", new String[] {"TAXID", "SEARCHKEY", "NAME", "POSTAL", "PHONE", "EMAIL"}),
+             new SerializerWriteBasic(new Datas[] {
                 Datas.OBJECT, Datas.STRING,
                 Datas.OBJECT, Datas.STRING,
                 Datas.OBJECT, Datas.STRING,
                 Datas.OBJECT, Datas.STRING,
                 Datas.OBJECT, Datas.STRING,
-                Datas.OBJECT, Datas.STRING})
-            , new SerializerRead() {
+                Datas.OBJECT, Datas.STRING}),
+             new SerializerRead() {
             @Override
                     public Object readValues(DataRead dr) throws BasicException {
                         CustomerInfo c = new CustomerInfo(dr.getString(1));
@@ -171,9 +171,9 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
 
     public int updateCustomerExt(final CustomerInfoExt customer) throws BasicException {
 
-        return new PreparedSentence(s
-                , "UPDATE CUSTOMERS SET NOTES = ? WHERE ID = ?"
-                , SerializerWriteParams.INSTANCE
+        return new PreparedSentence(s,
+                 "UPDATE CUSTOMERS SET NOTES = ? WHERE ID = ?",
+                 SerializerWriteParams.INSTANCE
                 ).exec(new DataParams() {@Override
         public void writeValues() throws BasicException {
                         setString(1, customer.getNotes());
@@ -186,12 +186,12 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
      * @return customer's existing reservation (restaurant mode)
      */
     public final SentenceList getReservationsList() {
-        return new PreparedSentence(s
-            , "SELECT R.ID, R.CREATED, R.DATENEW, C.CUSTOMER, CUSTOMERS.TAXID, CUSTOMERS.SEARCHKEY, COALESCE(CUSTOMERS.NAME, R.TITLE),  R.CHAIRS, R.ISDONE, R.DESCRIPTION " +
+        return new PreparedSentence(s,
+             "SELECT R.ID, R.CREATED, R.DATENEW, C.CUSTOMER, CUSTOMERS.TAXID, CUSTOMERS.SEARCHKEY, COALESCE(CUSTOMERS.NAME, R.TITLE),  R.CHAIRS, R.ISDONE, R.DESCRIPTION " +
               "FROM RESERVATIONS R LEFT OUTER JOIN RESERVATION_CUSTOMERS C ON R.ID = C.ID LEFT OUTER JOIN CUSTOMERS ON C.CUSTOMER = CUSTOMERS.ID " +
-              "WHERE R.DATENEW >= ? AND R.DATENEW < ?"
-            , new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.TIMESTAMP})
-            , new SerializerReadBasic(customerdatas));
+              "WHERE R.DATENEW >= ? AND R.DATENEW < ?",
+             new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.TIMESTAMP}),
+             new SerializerReadBasic(customerdatas));
     }
 
     /**
@@ -203,17 +203,17 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
             @Override
             public int execInTransaction(Object params) throws BasicException {
 
-                new PreparedSentence(s
-                    , "DELETE FROM RESERVATION_CUSTOMERS WHERE ID = ?"
-                    , new SerializerWriteBasicExt(customerdatas, new int[]{0})).exec(params);
+                new PreparedSentence(s,
+                     "DELETE FROM RESERVATION_CUSTOMERS WHERE ID = ?",
+                     new SerializerWriteBasicExt(customerdatas, new int[]{0})).exec(params);
                 if (((Object[]) params)[3] != null) {
-                    new PreparedSentence(s
-                        , "INSERT INTO RESERVATION_CUSTOMERS (ID, CUSTOMER) VALUES (?, ?)"
-                        , new SerializerWriteBasicExt(customerdatas, new int[]{0, 3})).exec(params);
+                    new PreparedSentence(s,
+                         "INSERT INTO RESERVATION_CUSTOMERS (ID, CUSTOMER) VALUES (?, ?)",
+                         new SerializerWriteBasicExt(customerdatas, new int[]{0, 3})).exec(params);
                 }
-                return new PreparedSentence(s
-                    , "UPDATE RESERVATIONS SET ID = ?, CREATED = ?, DATENEW = ?, TITLE = ?, CHAIRS = ?, ISDONE = ?, DESCRIPTION = ? WHERE ID = ?"
-                    , new SerializerWriteBasicExt(customerdatas, new int[]{0, 1, 2, 6, 7, 8, 9, 0})).exec(params);
+                return new PreparedSentence(s,
+                     "UPDATE RESERVATIONS SET ID = ?, CREATED = ?, DATENEW = ?, TITLE = ?, CHAIRS = ?, ISDONE = ?, DESCRIPTION = ? WHERE ID = ?",
+                     new SerializerWriteBasicExt(customerdatas, new int[]{0, 1, 2, 6, 7, 8, 9, 0})).exec(params);
             }
         };
     }
@@ -227,12 +227,12 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
             @Override
             public int execInTransaction(Object params) throws BasicException {
 
-                new PreparedSentence(s
-                    , "DELETE FROM RESERVATION_CUSTOMERS WHERE ID = ?"
-                    , new SerializerWriteBasicExt(customerdatas, new int[]{0})).exec(params);
-                return new PreparedSentence(s
-                    , "DELETE FROM RESERVATIONS WHERE ID = ?"
-                    , new SerializerWriteBasicExt(customerdatas, new int[]{0})).exec(params);
+                new PreparedSentence(s,
+                     "DELETE FROM RESERVATION_CUSTOMERS WHERE ID = ?",
+                     new SerializerWriteBasicExt(customerdatas, new int[]{0})).exec(params);
+                return new PreparedSentence(s,
+                     "DELETE FROM RESERVATIONS WHERE ID = ?",
+                     new SerializerWriteBasicExt(customerdatas, new int[]{0})).exec(params);
             }
         };
     }
@@ -246,14 +246,14 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
             @Override
             public int execInTransaction(Object params) throws BasicException {
 
-                int i = new PreparedSentence(s
-                    , "INSERT INTO RESERVATIONS (ID, CREATED, DATENEW, TITLE, CHAIRS, ISDONE, DESCRIPTION) VALUES (?, ?, ?, ?, ?, ?, ?)"
-                    , new SerializerWriteBasicExt(customerdatas, new int[]{0, 1, 2, 6, 7, 8, 9})).exec(params);
+                int i = new PreparedSentence(s,
+                     "INSERT INTO RESERVATIONS (ID, CREATED, DATENEW, TITLE, CHAIRS, ISDONE, DESCRIPTION) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                     new SerializerWriteBasicExt(customerdatas, new int[]{0, 1, 2, 6, 7, 8, 9})).exec(params);
 
                 if (((Object[]) params)[3] != null) {
-                    new PreparedSentence(s
-                        , "INSERT INTO RESERVATION_CUSTOMERS (ID, CUSTOMER) VALUES (?, ?)"
-                        , new SerializerWriteBasicExt(customerdatas, new int[]{0, 3})).exec(params);
+                    new PreparedSentence(s,
+                         "INSERT INTO RESERVATION_CUSTOMERS (ID, CUSTOMER) VALUES (?, ?)",
+                         new SerializerWriteBasicExt(customerdatas, new int[]{0, 3})).exec(params);
                 }
                 return i;
             }

@@ -26,10 +26,10 @@ public class AttributeUseEditor extends javax.swing.JPanel implements EditorReco
 
     public AttributeUseEditor(AppView app, DirtyManager dirty) {
 
-        attributesent = new StaticSentence(app.getSession()
-            , "SELECT ID, NAME FROM ATTRIBUTE ORDER BY NAME"
-            , null
-            , new SerializerRead() {@Override
+        attributesent = new StaticSentence(app.getSession(),
+             "SELECT ID, NAME FROM ATTRIBUTE ORDER BY NAME",
+             null,
+             new SerializerRead() {@Override
  public Object readValues(DataRead dr) throws BasicException {
                 return new AttributeInfo(dr.getString(1), dr.getString(2));
             }}

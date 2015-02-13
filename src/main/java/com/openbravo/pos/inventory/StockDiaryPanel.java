@@ -29,9 +29,9 @@ public class StockDiaryPanel extends JPanelTable {
 
     @Override
     public SaveProvider getSaveProvider() {
-        return  new SaveProvider(null
-                , m_dlSales.getStockDiaryInsert()
-                , m_dlSales.getStockDiaryDelete());
+        return  new SaveProvider(null,
+                 m_dlSales.getStockDiaryInsert(),
+                 m_dlSales.getStockDiaryDelete());
     }
 
     @Override

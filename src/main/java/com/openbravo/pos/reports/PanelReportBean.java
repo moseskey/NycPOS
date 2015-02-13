@@ -96,10 +96,10 @@ public class PanelReportBean extends JPanelReport {
     }
 
     protected BaseSentence getSentence() {
-        return new StaticSentence(m_App.getSession()
-            , new QBFBuilder(sentence, paramnames.toArray(new String[paramnames.size()]))
-            , qbffilter.getSerializerWrite()
-            , new SerializerReadBasic(fielddatas.toArray(new Datas[fielddatas.size()])));
+        return new StaticSentence(m_App.getSession(),
+             new QBFBuilder(sentence, paramnames.toArray(new String[paramnames.size()])),
+             qbffilter.getSerializerWrite(),
+             new SerializerReadBasic(fielddatas.toArray(new Datas[fielddatas.size()])));
     }
 
     protected ReportFields getReportFields() {

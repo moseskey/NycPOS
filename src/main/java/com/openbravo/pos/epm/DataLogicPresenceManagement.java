@@ -54,107 +54,107 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
             }
         };
 
-        tbreaks = new TableDefinition(s
-            , "BREAKS"
-            , new String[] { "ID", "NAME", "NOTES", "VISIBLE"}
-            , new String[] { "ID", AppLocal.getIntString("label.epm.employee"), AppLocal.getIntString("label.epm.notes"), "VISIBLE"}
-            , new Datas[] { Datas.STRING, Datas.STRING, Datas.STRING, Datas.BOOLEAN}
-            , new Formats[] { Formats.STRING, Formats.STRING, Formats.STRING, Formats.BOOLEAN}
-            , new int[] {0}
+        tbreaks = new TableDefinition(s,
+             "BREAKS",
+             new String[] { "ID", "NAME", "NOTES", "VISIBLE"},
+             new String[] { "ID", AppLocal.getIntString("label.epm.employee"), AppLocal.getIntString("label.epm.notes"), "VISIBLE"},
+             new Datas[] { Datas.STRING, Datas.STRING, Datas.STRING, Datas.BOOLEAN},
+             new Formats[] { Formats.STRING, Formats.STRING, Formats.STRING, Formats.BOOLEAN},
+             new int[] {0}
         );
 
-         tleaves = new TableDefinition(s
-            , "LEAVES"
-            , new String[] { "ID", "PPLID", "NAME", "STARTDATE", "ENDDATE", "NOTES"}
-            , new String[] { "ID", AppLocal.getIntString("label.epm.employee.id"), AppLocal.getIntString("label.epm.employee"), AppLocal.getIntString("Label.StartDate"), AppLocal.getIntString("Label.EndDate"), AppLocal.getIntString("label.notes")}
-            , new Datas[] { Datas.STRING, Datas.STRING, Datas.STRING, Datas.TIMESTAMP, Datas.TIMESTAMP, Datas.STRING}
-            , new Formats[] { Formats.STRING, Formats.STRING, Formats.STRING, Formats.TIMESTAMP, Formats.TIMESTAMP, Formats.STRING}
-            , new int[] {0}
+         tleaves = new TableDefinition(s,
+             "LEAVES",
+             new String[] { "ID", "PPLID", "NAME", "STARTDATE", "ENDDATE", "NOTES"},
+             new String[] { "ID", AppLocal.getIntString("label.epm.employee.id"), AppLocal.getIntString("label.epm.employee"), AppLocal.getIntString("Label.StartDate"), AppLocal.getIntString("Label.EndDate"), AppLocal.getIntString("label.notes")},
+             new Datas[] { Datas.STRING, Datas.STRING, Datas.STRING, Datas.TIMESTAMP, Datas.TIMESTAMP, Datas.STRING},
+             new Formats[] { Formats.STRING, Formats.STRING, Formats.STRING, Formats.TIMESTAMP, Formats.TIMESTAMP, Formats.STRING},
+             new int[] {0}
         );
 
-        m_breaksvisible = new StaticSentence(s
-            , "SELECT ID, NAME, NOTES, VISIBLE FROM BREAKS WHERE VISIBLE = " + s.DB.TRUE()
-            , null
-            , breakread);
+        m_breaksvisible = new StaticSentence(s,
+             "SELECT ID, NAME, NOTES, VISIBLE FROM BREAKS WHERE VISIBLE = " + s.DB.TRUE(),
+             null,
+             breakread);
 
-        m_checkin =  new PreparedSentence(s
-                , "INSERT INTO SHIFTS(ID, STARTSHIFT, PPLID) VALUES (?, ?, ?)"
-                , new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.TIMESTAMP, Datas.STRING}));
+        m_checkin =  new PreparedSentence(s,
+                 "INSERT INTO SHIFTS(ID, STARTSHIFT, PPLID) VALUES (?, ?, ?)",
+                 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.TIMESTAMP, Datas.STRING}));
 
-        m_checkout = new StaticSentence(s
-                , "UPDATE SHIFTS SET ENDSHIFT = ? WHERE ENDSHIFT IS NULL AND PPLID = ?"
-                ,new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.STRING}));
+        m_checkout = new StaticSentence(s,
+                 "UPDATE SHIFTS SET ENDSHIFT = ? WHERE ENDSHIFT IS NULL AND PPLID = ?",
+                new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.STRING}));
 
-        m_checkdate = new StaticSentence(s
-            , "SELECT COUNT(*) FROM SHIFTS WHERE ENDSHIFT IS NULL AND PPLID = ?"
-            , SerializerWriteString.INSTANCE
-            , SerializerReadString.INSTANCE);
+        m_checkdate = new StaticSentence(s,
+             "SELECT COUNT(*) FROM SHIFTS WHERE ENDSHIFT IS NULL AND PPLID = ?",
+             SerializerWriteString.INSTANCE,
+             SerializerReadString.INSTANCE);
 
-        m_startbreak =  new PreparedSentence(s
-                , "INSERT INTO SHIFT_BREAKS(ID, SHIFTID, BREAKID, STARTTIME) VALUES (?, ?, ?, ?)"
-                , new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING, Datas.STRING, Datas.TIMESTAMP}));
+        m_startbreak =  new PreparedSentence(s,
+                 "INSERT INTO SHIFT_BREAKS(ID, SHIFTID, BREAKID, STARTTIME) VALUES (?, ?, ?, ?)",
+                 new SerializerWriteBasic(new Datas[] {Datas.STRING, Datas.STRING, Datas.STRING, Datas.TIMESTAMP}));
 
-        m_endbreak = new StaticSentence(s
-                , "UPDATE SHIFT_BREAKS SET ENDTIME = ? WHERE ENDTIME IS NULL AND SHIFTID = ?"
-                ,new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.STRING}));
+        m_endbreak = new StaticSentence(s,
+                 "UPDATE SHIFT_BREAKS SET ENDTIME = ? WHERE ENDTIME IS NULL AND SHIFTID = ?",
+                new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.STRING}));
 
-        m_isonbreak = new StaticSentence(s
-//            , "SELECT COUNT(*) FROM SHIFT_BREAKS WHERE ENDTIME IS NULL AND SHIFTID = ?"
-            , "SELECT COUNT(*) FROM SHIFT_BREAKS WHERE ENDTIME IS NULL"
-            , SerializerWriteString.INSTANCE
-            , SerializerReadString.INSTANCE);
+        m_isonbreak = new StaticSentence(s,
+//            , "SELECT COUNT(*) FROM SHIFT_BREAKS WHERE ENDTIME IS NULL AND SHIFTID = ?",
+             "SELECT COUNT(*) FROM SHIFT_BREAKS WHERE ENDTIME IS NULL",
+             SerializerWriteString.INSTANCE,
+             SerializerReadString.INSTANCE);
 
-        m_shiftid = new StaticSentence(s
-            , "SELECT ID FROM SHIFTS WHERE ENDSHIFT IS NULL AND PPLID = ?"
-            , SerializerWriteString.INSTANCE
-            , SerializerReadString.INSTANCE);
+        m_shiftid = new StaticSentence(s,
+             "SELECT ID FROM SHIFTS WHERE ENDSHIFT IS NULL AND PPLID = ?",
+             SerializerWriteString.INSTANCE,
+             SerializerReadString.INSTANCE);
 
-        m_isonleave = new StaticSentence(s
-            , "SELECT COUNT(*) FROM LEAVES WHERE STARTDATE < ? AND ENDDATE > ? AND PPLID = ?"
-            , new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.TIMESTAMP, Datas.STRING})
-            , SerializerReadString.INSTANCE);
+        m_isonleave = new StaticSentence(s,
+             "SELECT COUNT(*) FROM LEAVES WHERE STARTDATE < ? AND ENDDATE > ? AND PPLID = ?",
+             new SerializerWriteBasic(new Datas[] {Datas.TIMESTAMP, Datas.TIMESTAMP, Datas.STRING}),
+             SerializerReadString.INSTANCE);
 
-        m_lastcheckin = new StaticSentence(s
-            , "SELECT STARTSHIFT FROM SHIFTS WHERE ENDSHIFT IS NULL AND PPLID = ?"
-            , SerializerWriteString.INSTANCE
-            , SerializerReadDate.INSTANCE);
+        m_lastcheckin = new StaticSentence(s,
+             "SELECT STARTSHIFT FROM SHIFTS WHERE ENDSHIFT IS NULL AND PPLID = ?",
+             SerializerWriteString.INSTANCE,
+             SerializerReadDate.INSTANCE);
 
-        m_lastcheckout = new StaticSentence(s
-            , "SELECT MAX(ENDSHIFT) FROM SHIFTS WHERE PPLID = ?"
-            , SerializerWriteString.INSTANCE
-            , SerializerReadDate.INSTANCE);
+        m_lastcheckout = new StaticSentence(s,
+             "SELECT MAX(ENDSHIFT) FROM SHIFTS WHERE PPLID = ?",
+             SerializerWriteString.INSTANCE,
+             SerializerReadDate.INSTANCE);
 
-        m_startbreaktime = new StaticSentence(s
-            , "SELECT STARTTIME FROM SHIFT_BREAKS WHERE ENDTIME IS NULL AND SHIFTID = ?"
-            , SerializerWriteString.INSTANCE
-            , SerializerReadDate.INSTANCE);
+        m_startbreaktime = new StaticSentence(s,
+             "SELECT STARTTIME FROM SHIFT_BREAKS WHERE ENDTIME IS NULL AND SHIFTID = ?",
+             SerializerWriteString.INSTANCE,
+             SerializerReadDate.INSTANCE);
 
-        m_lastbreakid = new StaticSentence(s
-            , "SELECT BREAKID FROM SHIFT_BREAKS WHERE ENDTIME IS NULL AND SHIFTID = ?"
-            , SerializerWriteString.INSTANCE
-            , SerializerReadString.INSTANCE);
+        m_lastbreakid = new StaticSentence(s,
+             "SELECT BREAKID FROM SHIFT_BREAKS WHERE ENDTIME IS NULL AND SHIFTID = ?",
+             SerializerWriteString.INSTANCE,
+             SerializerReadString.INSTANCE);
 
-        m_breakname = new StaticSentence(s
-            , "SELECT NAME FROM BREAKS WHERE ID = ?"
-            , SerializerWriteString.INSTANCE
-            , SerializerReadString.INSTANCE);
+        m_breakname = new StaticSentence(s,
+             "SELECT NAME FROM BREAKS WHERE ID = ?",
+             SerializerWriteString.INSTANCE,
+             SerializerReadString.INSTANCE);
     }
 
     public final SentenceList getBreaksList() {
-        return new StaticSentence(s
-            , "SELECT ID, NAME FROM BREAKS ORDER BY NAME"
-            , null
-            , new SerializerRead() {@Override
+        return new StaticSentence(s,
+             "SELECT ID, NAME FROM BREAKS ORDER BY NAME",
+             null,
+             new SerializerRead() {@Override
  public Object readValues(DataRead dr) throws BasicException {
                 return new BreaksInfo(dr.getString(1), dr.getString(2));
             }});
     }
 
     public final SentenceList getLeavesList() {
-        return new StaticSentence(s
-            , "SELECT ID, PPLID, NAME, STARTDATE, ENDDATE, NOTES FROM LEAVES ORDER BY NAME"
-            , null
-            , new SerializerRead() {@Override
+        return new StaticSentence(s,
+             "SELECT ID, PPLID, NAME, STARTDATE, ENDDATE, NOTES FROM LEAVES ORDER BY NAME",
+             null,
+             new SerializerRead() {@Override
  public Object readValues(DataRead dr) throws BasicException {
                 return new LeavesInfo(dr.getString(1), dr.getString(2), dr.getString(3), dr.getString(4), dr.getString(5), dr.getString(6));
             }});
@@ -251,10 +251,10 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
     // Changed ='4' to !='0' --it lists all the users except admin who doesn´t clock in
 
         public SentenceList getEmployeeList() {
-        return new StaticSentence(s
-            , new QBFBuilder("SELECT ID, NAME FROM PEOPLE WHERE ROLE != '0' AND VISIBLE = " + s.DB.TRUE() + " AND ?(QBF_FILTER) ORDER BY NAME", new String[] {"NAME"})
-            , new SerializerWriteBasic(new Datas[] {Datas.OBJECT, Datas.STRING})
-            , new SerializerRead() {
+        return new StaticSentence(s,
+             new QBFBuilder("SELECT ID, NAME FROM PEOPLE WHERE ROLE != '0' AND VISIBLE = " + s.DB.TRUE() + " AND ?(QBF_FILTER) ORDER BY NAME", new String[] {"NAME"}),
+             new SerializerWriteBasic(new Datas[] {Datas.OBJECT, Datas.STRING}),
+             new SerializerRead() {
             @Override
                     public Object readValues(DataRead dr) throws BasicException {
                         EmployeeInfo c = new EmployeeInfo(dr.getString(1));
@@ -281,10 +281,10 @@ public class DataLogicPresenceManagement extends BeanFactoryDataSingle {
     }
 
     public EmployeeInfoExt loadEmployeeExt(String id) throws BasicException {
-        return (EmployeeInfoExt) new PreparedSentence(s
-                , "SELECT ID, NAME FROM PEOPLE WHERE ID = ?"
-                , SerializerWriteString.INSTANCE
-                , new EmployeeExtRead()).find(id);
+        return (EmployeeInfoExt) new PreparedSentence(s,
+                 "SELECT ID, NAME FROM PEOPLE WHERE ID = ?",
+                 SerializerWriteString.INSTANCE,
+                 new EmployeeExtRead()).find(id);
     }
 
     protected static class EmployeeExtRead implements SerializerRead {

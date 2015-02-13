@@ -23,19 +23,19 @@ public class JInventoryLines extends javax.swing.JPanel {
         DefaultTableColumnModel columns = new DefaultTableColumnModel();
         TableColumn c;
 
-        c = new TableColumn(0, 200
-                , new DataCellRenderer(javax.swing.SwingConstants.LEFT)
-                , new DefaultCellEditor(new JTextField()));
+        c = new TableColumn(0, 200,
+                 new DataCellRenderer(javax.swing.SwingConstants.LEFT),
+                 new DefaultCellEditor(new JTextField()));
         c.setHeaderValue(AppLocal.getIntString("label.item"));
         columns.addColumn(c);
-        c = new TableColumn(1, 75
-                , new DataCellRenderer(javax.swing.SwingConstants.RIGHT)
-                , new DefaultCellEditor(new JTextField()));
+        c = new TableColumn(1, 75,
+                 new DataCellRenderer(javax.swing.SwingConstants.RIGHT),
+                 new DefaultCellEditor(new JTextField()));
         c.setHeaderValue(AppLocal.getIntString("label.units"));
         columns.addColumn(c);
-        c = new TableColumn(2, 75
-                , new DataCellRenderer(javax.swing.SwingConstants.RIGHT)
-                , new DefaultCellEditor(new JTextField()));
+        c = new TableColumn(2, 75,
+                 new DataCellRenderer(javax.swing.SwingConstants.RIGHT),
+                 new DefaultCellEditor(new JTextField()));
         c.setHeaderValue(AppLocal.getIntString("label.price"));
         columns.addColumn(c);
 
