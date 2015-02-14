@@ -40,4 +40,18 @@ if [ ! -f $HOME/.m2/repository/io/knq/javapos/javapos/1.14.0/javapos-1.14.0.jar 
     -DgeneratePom=true
 fi
 
+# check if already cached locally
+if [ ! -f $HOME/.m2/repository/net/saliman/gradle-liquibase-plugin/1.0.1-SNAPSHOT/gradle-liquibase-plugin-1.0.1-SNAPSHOT.jar ]; then
+  pushd $HOME > /dev/null
+  rm -rf gradle-liquibase-plugin
+  git clone https://github.com/tlberglund/gradle-liquibase-plugin.git
+
+  pushd $HOME/gradle-liquibase-plugin
+  git checkout ccd4c7b7
+  ./gradlew build install
+
+  popd > /dev/null
+  popd > /dev/null
+fi
+
 exit 0
