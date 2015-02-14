@@ -1,6 +1,6 @@
 // due to the way gradle compilies its scripts, this must be a separate file,
-// so that it can be shared between the buildscript {} and dependencies {}
-// stanzas in the project's build.gradle
+// so that it can be shared in the buildscript {} init stanza and within the
+// actual project
 
 // list of jdbc/database dependencies
 ext.db_deps = [
