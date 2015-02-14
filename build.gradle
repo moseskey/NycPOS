@@ -1,12 +1,22 @@
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()
     }
 
     dependencies {
+        // code coverage and better error reporting
         classpath 'net.saliman:gradle-cobertura-plugin:2.2.4'
         classpath 'net.ltgt.gradle:gradle-errorprone-plugin:latest.release'
+
+        // liquibase plugin (installed locally, as the latest isn't yet
+        // available in a public maven repo)
+        classpath 'net.saliman:gradle-liquibase-plugin:1.0.1-SNAPSHOT'
     }
+
+    // load shared dbdeps.gradle (needed for the liquibase tasks)
+    apply from: 'dbdeps.gradle'
+    ext.db_deps.each { v -> dependencies.classpath v }
 }
 
 apply plugin: 'java'
@@ -15,6 +25,7 @@ apply plugin: 'eclipse'
 apply plugin: 'application'
 apply plugin: 'errorprone'
 apply plugin: 'cobertura'
+apply plugin: 'liquibase'
 
 version         = '0.1'
 group           = 'io.knq.NycPOS'
@@ -22,19 +33,22 @@ description     = 'NycPOS'
 //mainClassName   = 'com.openbravo.pos.config.JFrmConfig'
 mainClassName   = 'com.openbravo.pos.forms.StartPOS'
 
+// add maven repositories
 repositories {
     mavenLocal()
     mavenCentral()
 }
 
+// set up project dependencies
 dependencies {
+    // testing deps
     //testCompile 'junit:junit:4.11'
     testCompile 'org.testng:testng:6.8.8'
 
-    // logging dependencies
+    // logging deps
     compile 'org.slf4j:slf4j-simple:1.7.10'
 
-    // dependencies taken from unicenta source
+    // deps taken from unicenta source
     compile 'axis:axis:1.3'
     compile 'commons-lang:commons-lang:2.4'
     compile 'net.sf.barcode4j:barcode4j:2.1'
@@ -46,17 +60,16 @@ dependencies {
     compile 'org.swinglabs:swing-layout:1.0.3'
     compile 'org.swinglabs.swingx:swingx-all:1.6.4'
 
-    // jdbc & sql providers
-    //compile 'mysql:mysql-connector-java:5.1.34'
-    //compile 'org.apache.derby:derby:10.11.1.1'
-    compile 'org.postgresql:postgresql:9.4-1200-jdbc41'
-
-    // manually installed jars
+    // manually installed deps (FIXME)
     compile 'io.knq.beanshell2:bsh:2.1.8'
     compile 'io.knq.javapos:javapos:1.14.0'
-    //compile 'io.knq.javapos:javapos-controls:1.14.0'
 }
 
+// add database deps to gradle deps
+apply from: 'dbdeps.gradle'
+ext.db_deps.each { v -> dependencies.compile v }
+
+// configure jar build
 jar {
     manifest {
         attributes 'Main-Class': mainClassName
@@ -73,13 +86,14 @@ jar {
 }
 
 // simple divider ...
-project.ext.dv = "--------------------------------------------------------------------------------------------------------"
+def divider = "--------------------------------------------------------------------------------------------------------"
 
+// configure unit testing
 test {
     useTestNG()
 
     beforeTest { desc ->
-        logger.lifecycle(project.ext.dv)
+        logger.lifecycle(divider)
         logger.lifecycle("> ${desc.className}:${desc.name}: START")
     }
 
@@ -96,12 +110,13 @@ test {
         afterSuite { desc, result ->
             // match only the outermost suite
             if (!desc.parent) {
-                println "${project.ext.dv}\n> TestNG Results: ${result.resultType} (${result.testCount} total, ${result.successfulTestCount} succeeded, ${result.failedTestCount} failed, ${result.skippedTestCount} skipped)\n${project.ext.dv}\n"
+                println "${divider}\n> TestNG Results: ${result.resultType} (${result.testCount} total, ${result.successfulTestCount} succeeded, ${result.failedTestCount} failed, ${result.skippedTestCount} skipped)\n${divider}\n"
             }
         }
     }
 }
 
+// configure java compiliation parameters
 compileJava {
     // original unicenta code is overriding deprecated APIs (what the f???)
     // so toggle error output
@@ -113,3 +128,10 @@ compileJava {
     //options.compilerArgs << file('path/to/annotation-processor.jar')
 }
 
+// print project's properties
+task printProjectProps << {
+    println "${divider}\n> Project properties: \n"
+    project.ext.properties.each {k, v ->
+        println "${k} = ${v}"
+    }
+}
