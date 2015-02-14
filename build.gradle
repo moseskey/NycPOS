@@ -27,9 +27,9 @@ apply plugin: 'errorprone'
 apply plugin: 'cobertura'
 apply plugin: 'liquibase'
 
-version         = '0.1'
-group           = 'io.knq.NycPOS'
-description     = 'NycPOS'
+version         = project.ext.app_version
+group           = 'io.knq.' + project.ext.app_name
+description     = project.ext.app_name
 //mainClassName   = 'com.openbravo.pos.config.JFrmConfig'
 mainClassName   = 'com.openbravo.pos.forms.StartPOS'
 
