@@ -1,0 +1,325 @@
+main/java/com/openbravo/editor/JEditorKeys.java:246:                    .getResource("/com/openbravo/images/btn00.png")));
+main/java/com/openbravo/editor/JEditorKeys.java:277:        m_jKey0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn0.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:292:        m_jKey1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn1.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:305:        m_jKey4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn4a.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:318:        m_jKey7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn7a.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:331:        m_jCE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnce.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:346:        m_jMinus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnminus.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:360:        m_jKey9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn9a.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:373:        m_jKey8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn8a.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:386:        m_jKey5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn5a.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:399:        m_jKey6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn6a.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:412:        m_jKey3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn3a.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:425:        m_jKey2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn2a.png"))); // NOI18N
+main/java/com/openbravo/editor/JEditorKeys.java:438:        m_jKeyDot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btndot.png"))); // NOI18N
+main/java/com/openbravo/pos/forms/JRootApp.java:114:            m_jLblTitle.setText(m_dlSystem.getResourceAsText("Window.Title"));
+main/java/com/openbravo/pos/forms/JRootApp.java:170:            if (JRootApp.class.getResource(sScript) == null) {
+main/java/com/openbravo/pos/forms/JRootApp.java:206:        m_propsdb = m_dlSystem.getResourceAsProperties(m_props.getHost() + "/properties");
+main/java/com/openbravo/pos/forms/JRootApp.java:278:                 jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/logo.png")));
+main/java/com/openbravo/pos/forms/JRootApp.java:565:        String sresource = m_dlSystem.getResourceAsXML("Printer.Start");
+main/java/com/openbravo/pos/forms/JRootApp.java:798:        poweredby.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/poweredby_uni.png"))); // NOI18N
+main/java/com/openbravo/pos/forms/JRootApp.java:820:        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/unicenta.png"))); // NOI18N
+main/java/com/openbravo/pos/forms/JRootApp.java:867:        m_jClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/exit.png"))); // NOI18N
+main/java/com/openbravo/pos/forms/JRootApp.java:939:        m_jHost.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/display.png"))); // NOI18N
+main/java/com/openbravo/pos/forms/MenuPanelAction.java:42:        putValue(Action.SMALL_ICON, new ImageIcon(JPrincipalApp.class.getResource(icon)));
+main/java/com/openbravo/pos/forms/JPrincipalApp.java:102:            menu_open = new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/menu-right.png"));
+main/java/com/openbravo/pos/forms/JPrincipalApp.java:103:            menu_close = new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/menu-left.png"));
+main/java/com/openbravo/pos/forms/JPrincipalApp.java:105:            menu_open = new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/menu-left.png"));
+main/java/com/openbravo/pos/forms/JPrincipalApp.java:106:            menu_close = new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/menu-right.png"));
+main/java/com/openbravo/pos/forms/JPrincipalApp.java:118:         m_jPanelLeft.setViewportView(getScriptMenu(m_dlSystem.getResourceAsText("Menu.Root")));
+main/java/com/openbravo/pos/forms/JPrincipalApp.java:398:            putValue(Action.SMALL_ICON, new ImageIcon(JPrincipalApp.class.getResource(icon)));
+main/java/com/openbravo/pos/forms/JPrincipalApp.java:419:            putValue(Action.SMALL_ICON, new ImageIcon(JPrincipalApp.class.getResource(icon)));
+main/java/com/openbravo/pos/forms/JRootFrame.java:80:                this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/com/openbravo/images/favicon.png")));
+main/java/com/openbravo/pos/forms/JDlgChangePassword.java:120:        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/forms/JDlgChangePassword.java:130:        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/forms/MenuExecAction.java:42:        putValue(Action.SMALL_ICON, new ImageIcon(JPrincipalApp.class.getResource(icon)));
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:403://    private final byte[] getResource(String name) {
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:404:        private byte[] getResource(String name) {
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:455:    public final byte[] getResourceAsBinary(String sName) {
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:456:        return getResource(sName);
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:464:    public final String getResourceAsText(String sName) {
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:465:        return Formats.BYTEA.formatValue(getResource(sName));
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:473:    public final String getResourceAsXML(String sName) {
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:474:        return Formats.BYTEA.formatValue(getResource(sName));
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:482:    public final BufferedImage getResourceAsImage(String sName) {
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:484:            byte[] img = getResource(sName); // , ".png"
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:514:    public final Properties getResourceAsProperties(String sName) {
+main/java/com/openbravo/pos/forms/DataLogicSystem.java:518:            byte[] img = getResourceAsBinary(sName);
+main/java/com/openbravo/pos/ticket/FindTicketsRenderer.java:44:        this.icoTicketNormal = new ImageIcon(getClass().getClassLoader().getResource("com/openbravo/images/pay.png"));
+main/java/com/openbravo/pos/ticket/FindTicketsRenderer.java:45:        this.icoTicketRefund = new ImageIcon(getClass().getClassLoader().getResource("com/openbravo/images/refundit.png"));
+main/java/com/openbravo/pos/mant/PlacesEditor.java:258:        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/restaurant_floor_sml.png"))); // NOI18N
+main/java/com/openbravo/pos/mant/PlacesEditor.java:260:        jLabel4.setBorder(new javax.swing.border.MatteBorder(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/restaurant_floor_sml.png")))); // NOI18N
+main/java/com/openbravo/pos/reports/JParamsDatesInterval.java:144:        btnDateStart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/reports/JParamsDatesInterval.java:155:        btnDateEnd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/reports/JParamsCustomer.java:148:        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_sml.png"))); // NOI18N
+main/java/com/openbravo/pos/reports/PanelReportBean.java:143:    protected String getResourceBundle() {
+main/java/com/openbravo/pos/reports/JPanelReport.java:103:            InputStream in = getClass().getResourceAsStream(getReport() + ".ser");
+main/java/com/openbravo/pos/reports/JPanelReport.java:106:                JasperDesign jd = JRXmlLoader.load(getClass().getResourceAsStream(getReport() + ".jrxml"));
+main/java/com/openbravo/pos/reports/JPanelReport.java:141:    protected abstract String getResourceBundle();
+main/java/com/openbravo/pos/reports/JPanelReport.java:219:                String res = getResourceBundle();
+main/java/com/openbravo/pos/reports/JPanelReport.java:279:        jToggleFilter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1downarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/reports/JPanelReport.java:282:        jToggleFilter.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1uparrow.png"))); // NOI18N
+main/java/com/openbravo/pos/reports/JPanelReport.java:291:        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/printer/TicketParser.java:295:                    AudioClip oAudio = Applet.newAudioClip(getClass().getClassLoader().getResource(text.toString()));
+main/java/com/openbravo/pos/printer/TicketParser.java:311:                    // BufferedImage image = ImageIO.read(getClass().getClassLoader().getResourceAsStream(m_sText.toString()));
+main/java/com/openbravo/pos/printer/TicketParser.java:312:                    BufferedImage image = m_system.getResourceAsImage(text.toString());
+main/java/com/openbravo/pos/customers/CustomerRenderer.java:39:        icocustomer = new ImageIcon(getClass().getClassLoader().getResource("com/openbravo/images/customer_sml.png"));
+main/java/com/openbravo/pos/customers/DataLogicCustomers.java:221:    public final SentenceList getReservationsList() {
+main/java/com/openbravo/pos/customers/DataLogicCustomers.java:234:    public final SentenceExec getReservationsUpdate() {
+main/java/com/openbravo/pos/customers/DataLogicCustomers.java:258:    public final SentenceExec getReservationsDelete() {
+main/java/com/openbravo/pos/customers/DataLogicCustomers.java:277:    public final SentenceExec getReservationsInsert() {
+main/java/com/openbravo/pos/customers/CustomersPayment.java:228:        String resource = dlsystem.getResourceAsXML(resname);
+main/java/com/openbravo/pos/customers/CustomersPayment.java:287:        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_sml.png"))); // NOI18N
+main/java/com/openbravo/pos/customers/CustomersPayment.java:300:        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/filesave.png"))); // NOI18N
+main/java/com/openbravo/pos/customers/CustomersPayment.java:315:        btnPay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/pay.png"))); // NOI18N
+main/java/com/openbravo/pos/customers/CustomersPayment.java:351:        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/customers/OrderCustomerList.java:198:                            InputStream is = getClass().getResourceAsStream("/com/openbravo/images/no_image.png");
+main/java/com/openbravo/pos/customers/CustomersView.java:653:        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/encrypted.png"))); // NOI18N
+main/java/com/openbravo/pos/customers/CustomersView.java:664:        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileclose.png"))); // NOI18N
+main/java/com/openbravo/pos/customers/JCustomerFinder.java:369:        jcmdReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
+main/java/com/openbravo/pos/customers/JCustomerFinder.java:383:        jcmdExecute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/customers/JCustomerFinder.java:489:        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/customers/JCustomerFinder.java:502:        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/dbupdate/JdbUpdate.java:52:            this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/com/openbravo/images/favicon.png")));
+main/java/com/openbravo/pos/panels/AuxiliarFilter.java:224:        Enter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/products24.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/AuxiliarFilter.java:244:        Enter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/barcode.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/AuxiliarFilter.java:259:        search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JProductFinder.java:194:        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JProductFinder.java:234:        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JProductFinder.java:248:        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JTicketsFinder.java:370:        btnDateStart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JTicketsFinder.java:379:        btnDateEnd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JTicketsFinder.java:391:        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_sml.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JTicketsFinder.java:485:        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JTicketsFinder.java:496:        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JTicketsFinder.java:538:        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JTicketsFinder.java:552:        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JPanelCloseMoney.java:270:        String sresource = m_dlSystem.getResourceAsXML(report);
+main/java/com/openbravo/pos/panels/JPanelCloseMoney.java:580:        m_jCloseCashTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/calculator.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JPanelCloseMoney.java:595:        m_jPrintCashTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JPanelCloseMoney.java:628:        m_jCloseCash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/calculator.png"))); // NOI18N
+main/java/com/openbravo/pos/panels/JPanelCloseMoney.java:643:        m_jPrintCash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer.png"))); // NOI18N
+main/java/com/openbravo/pos/promotion/PromoEditor.java:1055:        btnValidTo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/promotion/PromoEditor.java:1064:        btnValidFrom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/promotion/PromoEditor.java:1074:        m_jSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+main/java/com/openbravo/pos/promotion/PromoEditor.java:1083:        m_jSearch1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+main/java/com/openbravo/pos/scale/ScaleDialog.java:52:        return JNumberDialog.showEditNumber(parent, AppLocal.getIntString("label.scale"), AppLocal.getIntString("label.scaleinput"), new ImageIcon(ScaleDialog.class.getResource("/com/openbravo/images/ark2.png")));
+main/java/com/openbravo/pos/imports/JPanelCSVCleardb.java:165:        jButtonCleardb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_delete.png"))); // NOI18N
+main/java/com/openbravo/pos/imports/JPanelCSVImport.java:748:        jbtnDbDriverLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileopen.png"))); // NOI18N
+main/java/com/openbravo/pos/catalog/JCatalog.java:505:        m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1uparrow.png"))); // NOI18N
+main/java/com/openbravo/pos/catalog/JCatalog.java:517:        m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1downarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/catalog/JCatalog.java:549:        m_btnBack1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2uparrow.png"))); // NOI18N
+main/java/com/openbravo/pos/admin/PeopleView.java:232:        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileclose.png"))); // NOI18N
+main/java/com/openbravo/pos/admin/PeopleView.java:272:        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/encrypted.png"))); // NOI18N
+main/java/com/openbravo/pos/config/JPanelConfigGeneral.java:350:        jbtnLogoName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileopen.png"))); // NOI18N
+main/java/com/openbravo/pos/config/JPanelConfigGeneral.java:357:        jbtnLogoText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileopen.png"))); // NOI18N
+main/java/com/openbravo/pos/config/JPanelConfigDatabase.java:184:        jbtnDbDriverLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileopen.png"))); // NOI18N
+main/java/com/openbravo/pos/config/JPanelConfigDatabase.java:216:        jButtonTest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/database.png"))); // NOI18N
+main/java/com/openbravo/pos/config/JPanelConfigDatabase.java:228:        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/uniCenta_logo_vert_100.png"))); // NOI18N
+main/java/com/openbravo/pos/config/JFrmConfig.java:50:            this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/com/openbravo/images/favicon.png")));
+main/java/com/openbravo/pos/epm/EmployeeRenderer.java:38:        icoemployee = new ImageIcon(getClass().getClassLoader().getResource("com/openbravo/images/user.png"));
+main/java/com/openbravo/pos/epm/JEmployeeFinder.java:233:        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
+main/java/com/openbravo/pos/epm/JEmployeeFinder.java:243:        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/epm/JEmployeeFinder.java:284:        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/epm/JEmployeeFinder.java:299:        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/epm/LeavesView.java:270:        btnEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/user_sml.png"))); // NOI18N
+main/java/com/openbravo/pos/epm/LeavesView.java:283:        btnEndDate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/epm/LeavesView.java:291:        btnStartDate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/util/SelectPrinter.java:126:        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/util/SelectPrinter.java:137:        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:863:        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/filesave.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:872:        btnPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/yast_printer.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:881:        btnReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:891:        btnActualSize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/mime.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:900:        btnFitPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/mime2.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:909:        btnFitWidth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/mime3.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:919:        btnZoomIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/viewmag+.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:945:        btnZoomOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/viewmag-.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:955:        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2leftarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:964:        btnPrevious.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:984:        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/util/JRViewer300.java:993:        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2rightarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/util/ThumbNailBuilder.java:66:            init(width, height, ImageIO.read(getClass().getClassLoader().getResourceAsStream(img)));
+main/java/com/openbravo/pos/util/StringUtils.java:134:        InputStream in = StringUtils.class.getResourceAsStream(resource);
+main/java/com/openbravo/pos/util/Hashcypher.java:94:                new ImageIcon(Hashcypher.class.getResource("/com/openbravo/images/password.png")));
+main/java/com/openbravo/pos/util/Hashcypher.java:99:                    new ImageIcon(Hashcypher.class.getResource("/com/openbravo/images/password.png")));
+main/java/com/openbravo/pos/util/Hashcypher.java:123:                new ImageIcon(Hashcypher.class.getResource("/com/openbravo/images/password.png")));
+main/java/com/openbravo/pos/payment/PaymentGatewayLinkPoint.java:131:        if (lpp.getResult().equals(LocalRes.getIntString("button.ok"))) {
+main/java/com/openbravo/pos/payment/PaymentGatewayLinkPoint.java:143:            payinfo.paymentError(lpp.getResult(), "");
+main/java/com/openbravo/pos/payment/PaymentGatewayLinkPoint.java:318:    public String getResult(){
+main/java/com/openbravo/pos/payment/PaymentGatewayAuthorizeNet.java:209:            if (anp.getResult().equals(LocalRes.getIntString("button.ok"))) {
+main/java/com/openbravo/pos/payment/PaymentGatewayAuthorizeNet.java:234:                payinfo.paymentError(anp.getResult(), "");
+main/java/com/openbravo/pos/payment/PaymentGatewayAuthorizeNet.java:349:    public String getResult(){
+main/java/com/openbravo/pos/payment/JPaymentSelect.java:205:                    new javax.swing.ImageIcon(getClass().getResource(jpay.getIconKey())),
+main/java/com/openbravo/pos/payment/JPaymentSelect.java:743:        m_jButtonAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnplus.png"))); // NOI18N
+main/java/com/openbravo/pos/payment/JPaymentSelect.java:752:        m_jButtonRemove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnminus.png"))); // NOI18N
+main/java/com/openbravo/pos/payment/JPaymentSelect.java:783:        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/payment/JPaymentSelect.java:797:        m_jButtonOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/payment/JPaymentSelect.java:814:        m_jButtonPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24_off.png"))); // NOI18N
+main/java/com/openbravo/pos/payment/JPaymentSelect.java:821:        m_jButtonPrint.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24.png"))); // NOI18N
+main/java/com/openbravo/pos/payment/PaymentPanelMagCard.java:201:        jReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
+main/java/com/openbravo/pos/payment/ConfigPaymentPanelLinkPoint.java:162:        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileopen.png"))); // NOI18N
+main/java/com/openbravo/pos/payment/PaymentGatewayCaixa.java:190:            if (lpp.getResult().equals(LocalRes.getIntString("button.ok"))) {
+main/java/com/openbravo/pos/payment/PaymentGatewayCaixa.java:265:                payinfo.paymentError(lpp.getResult(), "");
+main/java/com/openbravo/pos/payment/PaymentGatewayCaixa.java:423:        public String getResult(){
+main/java/com/openbravo/pos/payment/JPaymentCashPos.java:77:        String code = dlSystem.getResourceAsXML("payment.cash");
+main/java/com/openbravo/pos/payment/JPaymentCashPos.java:193:                     btn.setIcon(new ImageIcon(tnbbutton.getThumbNailText(dlSystem.getResourceAsImage(image),"")));
+main/java/com/openbravo/pos/payment/JPaymentCashPos.java:195:                     btn.setIcon(new ImageIcon(tnbbutton.getThumbNailText(dlSystem.getResourceAsImage(image), Formats.CURRENCY.formatValue(amount))));
+main/java/com/openbravo/pos/payment/JPaymentCashPos.java:198:                    btn.setIcon(new ImageIcon(tnbbutton.getThumbNailText(dlSystem.getResourceAsImage(image), Formats.CURRENCY.formatValue(amount))));
+main/java/com/openbravo/pos/payment/PaymentGatewayBluePayAUTHNETEMU.java:170:            if (anp.getResult().equals(LocalRes.getIntString("button.ok"))) {
+main/java/com/openbravo/pos/payment/PaymentGatewayBluePayAUTHNETEMU.java:190:                payinfo.paymentError(anp.getResult(), "");
+main/java/com/openbravo/pos/payment/PaymentGatewayBluePayAUTHNETEMU.java:316:    public String getResult(){
+main/java/com/openbravo/pos/inventory/JDlgUploadProducts.java:118:        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/JDlgUploadProducts.java:128:        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockDiaryEditor.java:492:        m_jbtndate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockDiaryEditor.java:522:        jEditProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockDiaryEditor.java:553:        m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/barcode.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockDiaryEditor.java:583:        m_jEnter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/products.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockDiaryEditor.java:609:        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/attributes.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/CategoriesEditor.java:266:        m_jCatalogAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/editnew.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/CategoriesEditor.java:281:        m_jCatalogDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/editdelete.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockManagement.java:384:        String sresource = m_dlSystem.getResourceAsXML("Printer.Inventory");
+main/java/com/openbravo/pos/inventory/StockManagement.java:469:        m_jbtndate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockManagement.java:514:        m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1uparrow.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockManagement.java:527:        m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1downarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockManagement.java:540:        m_jDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/editdelete.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockManagement.java:553:        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/attributes.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/StockManagement.java:628:        m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/barcode.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/AuxiliarEditor.java:288:        m_jEnter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/AuxiliarEditor.java:297:        m_jEnter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/barcode.png"))); // NOI18N
+main/java/com/openbravo/pos/inventory/AuxiliarEditor.java:306:        m_jSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+main/java/com/openbravo/pos/migrate/JFrmMigrate.java:47:            this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/com/openbravo/images/favicon.png")));
+main/java/com/openbravo/pos/migrate/JPaneldbMigrate.java:359:        jbtnDbDriverLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileopen.png"))); // NOI18N
+main/java/com/openbravo/pos/migrate/JPaneldbMigrate.java:403:        jButtonTest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/database.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/simple/JTicketsBagSimple.java:100:        m_jDelTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_delete.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JMooringDetails.java:170:        jbtnCreateTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelButtons.java:78:        String sConfigRes = panelticket.getResourceAsXML(sConfigKey);
+main/java/com/openbravo/pos/sales/JPanelButtons.java:206:            setIcon(new ImageIcon(tnbmacro.getThumbNail(panelticket.getResourceAsImage(sImage))));
+main/java/com/openbravo/pos/sales/ReceiptSplit.java:154:        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/ReceiptSplit.java:168:        m_jButtonOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/ReceiptSplit.java:192:        jBtnToRightAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2rightarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/ReceiptSplit.java:207:        jBtnToRightOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/ReceiptSplit.java:223:        jBtnToLeftOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/ReceiptSplit.java:239:        jBtnToLeftAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2leftarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JProductAttEdit.java:317:        m_jButtonOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JProductAttEdit.java:331:        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JRefundLines.java:48:        ticketlines = new JTicketLines(dlSystem.getResourceAsXML("Ticket.Line"));
+main/java/com/openbravo/pos/sales/JResetPickupID.java:57:            this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/com/openbravo/images/favicon.png")));
+main/java/com/openbravo/pos/sales/JTicketsBagTicketBag.java:79:        m_jBtnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_delete.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JTicketsBagTicketBag.java:97:        m_jBtnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JTicketsBagTicketBag.java:118:        m_jBtnCancel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileclose.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurant.java:122:                m_TTP2.printTicket(script.eval(m_dlSystem.getResourceAsXML(sresourcename)).toString());
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurant.java:148:        m_DelTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_delete.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurant.java:164:        m_MoveTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/movetable.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurant.java:180:        m_TablePlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/tables.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurant.java:196:        m_KitchenPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurant.java:245:          String rScript = (m_dlSystem.getResourceAsText("script.SendOrder"));
+main/java/com/openbravo/pos/sales/restaurant/Place.java:40:    private static final Icon ICO_OCU = new ImageIcon(Place.class.getResource("/com/openbravo/images/edit_group.png"));
+main/java/com/openbravo/pos/sales/restaurant/Floor.java:54://            defimg = ImageIO.read(getClass().getClassLoader().getResourceAsStream("com/openbravo/images/atlantikdesigner.png"));
+main/java/com/openbravo/pos/sales/restaurant/Floor.java:55:            defimg = ImageIO.read(getClass().getClassLoader().getResourceAsStream("com/openbravo/images/floors.png"));
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurantMap.java:57://    private static final Icon ICO_OCU = new ImageIcon(JTicketsBag.class.getResource("/com/openbravo/images/edit_group.png"));
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurantMap.java:78:    private static final Icon ICO_OCU_SM = new ImageIcon(Place.class.getResource("/com/openbravo/images/edit_group_sm.png"));
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurantMap.java:782:        m_jbtnReservations.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/date.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurantMap.java:797:        m_jbtnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurantRes.java:112:        ListProvider lpr = new ListProviderCreator(dlCustomers.getReservationsList(), new MyDateFilter());
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurantRes.java:113:        SaveProvider spr = new SaveProvider(dlCustomers.getReservationsUpdate(), dlCustomers.getReservationsInsert(), dlCustomers.getReservationsDelete());
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurantRes.java:417:        m_jbtnTables.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/tables.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurantRes.java:431:        m_jbtnReceive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/receive.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/restaurant/JTicketsBagRestaurantRes.java:498:        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_add_sml.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/shared/JTicketsBagSharedList.java:178:        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/shared/JTicketsBagShared.java:203:        m_jNewTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_new.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/shared/JTicketsBagShared.java:219:        m_jDelTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_delete.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/shared/JTicketsBagShared.java:236:        m_jListTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_pending.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/SimpleReceipt.java:68:        // dlSystem.getResourceAsXML("Ticket.Line")
+main/java/com/openbravo/pos/sales/SimpleReceipt.java:382:        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_sml.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JProductLineEdit.java:330:        m_jButtonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JProductLineEdit.java:344:        m_jButtonOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JTicketsBagTicket.java:271:                m_TTP.printTicket(script.eval(m_dlSystem.getResourceAsXML("Printer.TicketPreview")).toString());
+main/java/com/openbravo/pos/sales/JTicketsBagTicket.java:321:        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JTicketsBagTicket.java:339:        m_jEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_editline.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JTicketsBagTicket.java:357:        m_jRefund.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/inbox.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JTicketsBagTicket.java:375:        m_jPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JTicketsBagTicket.java:418:        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JTicketsBagTicket.java:490:                m_TTP2.printTicket(script.eval(m_dlSystem.getResourceAsXML("Printer.TicketPreview")).toString());
+main/java/com/openbravo/pos/sales/JPanelTicket.java:237:        m_ticketlines = new JTicketLines(dlSystem.getResourceAsXML("Ticket.Line"));
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1455:        String sresource = dlSystem.getResourceAsXML(sresourcename);
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1502:            InputStream in = getClass().getResourceAsStream(resourcefile + ".ser");
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1505:                JasperDesign jd = JRXmlLoader.load(getClass().getResourceAsStream(resourcefile + ".jrxml"));
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1546:                m_TTP.printTicket(script.eval(dlSystem.getResourceAsXML("Printer.TicketLine")).toString());
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1561:            return scr.evalScript(dlSystem.getResourceAsXML(resource), args);
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1628:    public String getResourceAsXML(String sresourcename) {
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1629:        return dlSystem.getResourceAsXML(sresourcename);
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1637:    public BufferedImage getResourceAsImage(String sresourcename) {
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1638:        return dlSystem.getResourceAsImage(sresourcename);
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1870:        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_add_sml.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1885:        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_sml.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1900:        btnSplit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_split_sml.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1948:        m_jbtnScale.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/scale.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:1979:        j_btnKitchenPrt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:2015:        m_jUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1uparrow.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:2031:        m_jDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1downarrow.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:2047:        m_jDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/editdelete.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:2063:        m_jList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search32.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:2079:        m_jEditLine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_editline.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:2095:        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/attributes.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:2247:        m_jEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/barcode.png"))); // NOI18N
+main/java/com/openbravo/pos/sales/JPanelTicket.java:2431:            ReceiptSplit splitdialog = ReceiptSplit.getDialog(this, dlSystem.getResourceAsXML("Ticket.Line"), dlSales, dlCustomers, taxeslogic);
+main/java/com/openbravo/pos/sales/JPanelTicket.java:2520:        String rScript = (dlSystem.getResourceAsText("script.SendOrder"));
+main/java/com/openbravo/beans/JNumberDialog.java:156:        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberDialog.java:167:        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/beans/JTimePanel.java:102:            m_jbtnplushour = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/2rightarrow.png")), dateclick);
+main/java/com/openbravo/beans/JTimePanel.java:108:            m_jbtnplusfifteen = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png")), dateclick);
+main/java/com/openbravo/beans/JTimePanel.java:114:            m_jbtnplusminute = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png")), dateclick);
+main/java/com/openbravo/beans/JTimePanel.java:123:            m_jbtnminusminute = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png")), dateclick);
+main/java/com/openbravo/beans/JTimePanel.java:129:            m_jbtnminusfifteen = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png")), dateclick);
+main/java/com/openbravo/beans/JTimePanel.java:135:            m_jbtnminushour = new JButtonDate(f.format(c.getTime()), new ImageIcon(getClass().getResource("/com/openbravo/images/2leftarrow.png")), dateclick);
+main/java/com/openbravo/beans/JPasswordDialog.java:161:        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/beans/JPasswordDialog.java:172:        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:138:                    .getResource("/com/openbravo/images/btn00.png")));
+main/java/com/openbravo/beans/JNumberKeys.java:217:        m_jCE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnce.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:235:        m_jMultiply.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnmult.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:252:        m_jMinus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnminus.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:269:        m_jPlus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnplus.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:285:        m_jKey9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn9.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:301:        m_jKey8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn8.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:317:        m_jKey7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn7.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:333:        m_jKey4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn4.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:349:        m_jKey5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn5.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:365:        m_jKey6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn6.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:381:        m_jKey3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn3.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:397:        m_jKey2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn2.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:413:        m_jKey1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn1.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:429:        m_jKey0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btn0.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:447:        m_jKeyDot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btndot.png"))); // NOI18N
+main/java/com/openbravo/beans/JNumberKeys.java:464:        m_jEquals.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/btnequals.png"))); // NOI18N
+main/java/com/openbravo/beans/JCalendarDialog.java:189:        jcmdOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
+main/java/com/openbravo/beans/JCalendarDialog.java:200:        jcmdCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/cancel.png"))); // NOI18N
+main/java/com/openbravo/beans/JCalendarPanel.java:263:        m_jBtnYearDec = new JButtonDate(new ImageIcon(getClass().getResource("/com/openbravo/images/2leftarrow.png")), dateclick);
+main/java/com/openbravo/beans/JCalendarPanel.java:264:        m_jBtnMonthDec = new JButtonDate(new ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png")), dateclick);
+main/java/com/openbravo/beans/JCalendarPanel.java:266:        m_jBtnMonthInc = new JButtonDate(new ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png")), dateclick);
+main/java/com/openbravo/beans/JCalendarPanel.java:267:        m_jBtnYearInc = new JButtonDate(new ImageIcon(getClass().getResource("/com/openbravo/images/2rightarrow.png")), dateclick);
+main/java/com/openbravo/data/loader/PreparedSentence.java:188:                return new JDBCDataResultSet(m_Stmt.getResultSet(), m_SerRead);
+main/java/com/openbravo/data/loader/PreparedSentence.java:215:                return new JDBCDataResultSet(m_Stmt.getResultSet(), m_SerRead);
+main/java/com/openbravo/data/loader/BatchSentenceResource.java:51:        InputStream in = BatchSentenceResource.class.getResourceAsStream(m_sResScript);
+main/java/com/openbravo/data/loader/StaticSentence.java:118:                return new JDBCDataResultSet(m_Stmt.getResultSet(), m_SerRead);
+main/java/com/openbravo/data/loader/StaticSentence.java:161:                return new JDBCDataResultSet(m_Stmt.getResultSet(), m_SerRead);
+main/java/com/openbravo/data/loader/ImageUtils.java:63:        InputStream in = ImageUtils.class.getResourceAsStream(file);
+main/java/com/openbravo/data/gui/JSaver.java:97:        jbtnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/editnew.png"))); // NOI18N
+main/java/com/openbravo/data/gui/JSaver.java:110:        jbtnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sale_delete.png"))); // NOI18N
+main/java/com/openbravo/data/gui/JSaver.java:124:        jbtnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/filesave.png"))); // NOI18N
+main/java/com/openbravo/data/gui/JNavigator.java:82:            jbtnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2leftarrow.png")));
+main/java/com/openbravo/data/gui/JNavigator.java:97:            jbtnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1leftarrow.png")));
+main/java/com/openbravo/data/gui/JNavigator.java:111:        jbtnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1downarrow.png")));
+main/java/com/openbravo/data/gui/JNavigator.java:125:            jbtnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/1rightarrow.png")));
+main/java/com/openbravo/data/gui/JNavigator.java:140:            jbtnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/2rightarrow.png")));
+main/java/com/openbravo/data/gui/JNavigator.java:157:            jbtnReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png")));
+main/java/com/openbravo/data/gui/JNavigator.java:177:            jbtnFind.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search24.png")));
+main/java/com/openbravo/data/gui/JNavigator.java:193:            jbtnSort.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/sort_incr.png")));
+main/java/com/openbravo/data/gui/JImageEditor.java:330:        m_jImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/no_photo.png"))); // NOI18N
+main/java/com/openbravo/data/gui/JImageEditor.java:341:        m_jbtnopen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/camera.png"))); // NOI18N
+main/java/com/openbravo/data/gui/JImageEditor.java:350:        m_jbtnclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileclose.png"))); // NOI18N
+main/java/com/openbravo/data/gui/JImageEditor.java:359:        m_jbtnzoomin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/viewmag+.png"))); // NOI18N
+main/java/com/openbravo/data/gui/JImageEditor.java:373:        m_jbtnzoomout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/viewmag-.png"))); // NOI18N
+main/java/com/openbravo/data/gui/JLabelDirty.java:40:            m_IconModif = new ImageIcon(getClass().getResource("/com/openbravo/images/edit.png"));
+main/resources/com/openbravo/pos/templates/script.StockCurrentSet.txt:34: Properties p = logicsystem.getResourceAsProperties(hostname + "/properties");
+main/resources/com/openbravo/pos/templates/script.StockCurrentAdd.txt:34:Properties p = logicsystem.getResourceAsProperties(hostname + "/properties");

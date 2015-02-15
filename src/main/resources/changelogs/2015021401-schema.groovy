@@ -1,7 +1,9 @@
 databaseChangeLog {
   changeSet(author: 'kenneth.shaw@knq.io', id: 'create-schema-01') {
+  println(">> HERE")
     createTable(tableName: 'roles') {
-        column(name: 'id', type: 'varchar') {
+  println(">> HERE 22")
+        column(name: 'id', type: 'varchar(25))') {
             constraints(nullable: false, primaryKey: true)
         }
         column(name: 'name', type: 'varchar') {
