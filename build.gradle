@@ -33,6 +33,16 @@ description     = project.ext.app_name
 //mainClassName   = 'com.openbravo.pos.config.JFrmConfig'
 mainClassName   = 'com.openbravo.pos.forms.StartPOS'
 
+// useful variables
+import groovy.transform.Field
+@Field int    MAX_COLUMNS = 120
+@Field String DIVIDER     = "-".multiply(MAX_COLUMNS)
+
+// prints a header for output
+def logHeader(String headerText) {
+    logger.lifecycle("${DIVIDER}\n${headerText.center(MAX_COLUMNS)}\n${DIVIDER}")
+}
+
 // add maven repositories
 repositories {
     mavenLocal()
@@ -85,16 +95,12 @@ jar {
     }
 }
 
-// simple divider ...
-def divider = "--------------------------------------------------------------------------------------------------------"
-
 // configure unit testing
 test {
     useTestNG()
 
     beforeTest { desc ->
-        logger.lifecycle(divider)
-        logger.lifecycle("> ${desc.className}:${desc.name}: START")
+        logHeader("TestNG: ${desc.className}:${desc.name}: START")
     }
 
     onOutput { desc, event ->
@@ -103,14 +109,15 @@ test {
     }
 
     afterTest { desc ->
-        logger.lifecycle("> ${desc.className}:${desc.name}: END")
+        //logger.lifecycle("> ${desc.className}:${desc.name}: END")
+        logger.lifecycle(DIVIDER)
     }
 
     testLogging {
         afterSuite { desc, result ->
             // match only the outermost suite
             if (!desc.parent) {
-                println "${divider}\n> TestNG Results: ${result.resultType} (${result.testCount} total, ${result.successfulTestCount} succeeded, ${result.failedTestCount} failed, ${result.skippedTestCount} skipped)\n${divider}\n"
+                logger.lifecycle("${DIVIDER}\n> TestNG Results: ${result.resultType} (${result.testCount} total, ${result.successfulTestCount} succeeded, ${result.failedTestCount} failed, ${result.skippedTestCount} skipped)\n${DIVIDER}\n")
             }
         }
     }
@@ -130,8 +137,30 @@ compileJava {
 
 // print project's properties
 task printProjectProps << {
-    println "${divider}\n> Project properties: \n"
-    project.ext.properties.each {k, v ->
-        println "${k} = ${v}"
+    logHeader("Project Properties")
+
+    // print all the keys alphabetically and nicely aligned
+    def mlen = project.ext.properties*.key.max { it.length() }.length()
+    project.ext.properties.sort()*.key.each { k ->
+        logger.lifecycle("${k.padRight(mlen)} = ${project.ext[k]}")
+    }
+
+    logger.lifecycle(DIVIDER)
+}
+
+// setup liquibase
+liquibase {
+    activities {
+        main {
+            changeLogFile 'src/main/resources/changelog.groovy'
+            url      project.ext.db_jdbc_url
+            username project.ext.db_username
+            password project.ext.db_password
+            changeLogParameters([
+                APP_GROUP: group,
+                APP_NAME: project.ext.app_name,
+                APP_VERSION: project.ext.app_version
+            ])
+        }
     }
 }
