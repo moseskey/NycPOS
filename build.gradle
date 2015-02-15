@@ -164,3 +164,11 @@ liquibase {
         }
     }
 }
+
+// add a task to run embedded h2 server
+task runH2DbServer(type: JavaExec) {
+    group = 'database'
+    workingDir = projectDir
+    main = 'org.h2.tools.Server'
+    classpath = runtimeClasspath
+}
