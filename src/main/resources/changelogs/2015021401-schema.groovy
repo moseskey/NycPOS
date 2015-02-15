@@ -4,7 +4,7 @@ databaseChangeLog {
     // create roles table
     createTable(tableName: 'roles') {
       column(name: 'id', type: 'varchar') {
-        constraints(nullable: false, primaryKey: true, deleteCascade: true)
+        constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
         constraints(nullable: false, unique: true)
@@ -15,7 +15,7 @@ databaseChangeLog {
     // create people table
     createTable(tableName: 'people') {
       column(name: 'id', type: 'varchar') {
-        constraints(nullable: false, primaryKey: true, deleteCascade: true)
+        constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
         constraints(nullable: false, unique: true)
@@ -37,7 +37,7 @@ databaseChangeLog {
     // create resources table
     createTable(tableName: 'resources') {
       column(name: 'id', type: 'varchar') {
-        constraints(nullable: false, primaryKey: true, deleteCascade: true)
+        constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
         constraints(nullable: false, unique: true)
@@ -51,7 +51,7 @@ databaseChangeLog {
     // create taxcustcategories table
     createTable(tableName: 'taxcustcategories') {
       column(name: 'id', type: 'varchar') {
-        constraints(nullable: false, primaryKey: true, deleteCascade: true)
+        constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
         constraints(nullable: false, unique: true)
@@ -61,7 +61,7 @@ databaseChangeLog {
     // ceate customers table
     createTable(tableName: 'customers') {
       column(name: 'id', type: 'varchar') {
-        constraints(nullable: false, primaryKey: true, deleteCascade: true)
+        constraints(nullable: false, primaryKey: true)
       }
       column(name: 'searchkey', type: 'varchar') {
         constraints(nullable: false, unique: true)
@@ -110,196 +110,311 @@ databaseChangeLog {
       column(name: 'card')
     }
 
+    // create categories table
+    createTable(tableName: 'categories') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'parentid', type: 'varchar') {
+        constraints(nullable: false, references: 'categories', foreignKeyName: 'fk_categories_parent')
+      }
+      column(name: 'image', type: 'blob')
+      column(name: 'texttip', type: 'varchar', defaultValue: null)
+      column(name: 'catshowname', type: 'boolean', defaultValue: true) {
+        constraints(nullable: false)
+      }
+    }
+
+    // create taxcategories table
+    createTable(tableName: 'taxcategories') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+    }
+
+    // create taxes table
+    createTable(tableName: 'taxes') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'category', type: 'varchar') {
+        constraints(nullable: false, references: 'taxcategories', foreignKeyName: 'fk_taxes_taxcategories')
+      }
+      column(name: 'custcategory', type: 'varchar') {
+        constraints(nullable: false, references: 'taxcustcategories', foreignKeyName: 'fk_taxes_taxcustcategories')
+      }
+      column(name: 'parentid', type: 'varchar') {
+        constraints(nullable: false, references: 'taxes', foreignKeyName: 'fk_taxes_parent')
+      }
+      column(name: 'rate', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+      column(name: 'ratecascade', type: 'boolean', defaultValue: false) {
+        constraints(nullable: false)
+      }
+      column(name: 'rateorder', type: 'integer')
+    }
+
+    // create attribute table
+    createTable(tableName: 'attribute') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false)
+      }
+    }
+
+    // create attributevalue table
+    createTable(tableName: 'attributevalue') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'attribute_id', type: 'varchar') {
+        constraints(nullable: false, references: 'attribute', foreignKeyName: 'fk_attributevalue_attribute', deleteCascade: true)
+      }
+    }
+
+    // create attributeset table
+    createTable(tableName: 'attributeset') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false)
+      }
+    }
+
+    // create attributeuse table
+    createTable(tableName: 'attributeuse') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'attributeset_id', type: 'varchar') {
+        constraints(nullable: false, references: 'attributeset', foreignKeyName: 'fk_attributeuse_attributeset', deleteCascade: true)
+      }
+      column(name: 'attribute_id', type: 'varchar') {
+        constraints(nullable: false, references: 'attribute', foreignKeyName: 'fk_attributeuse_attribute', deleteCascade: true)
+      }
+      column(name: 'lineno', type: 'integer')
+    }
+    createIndex(tableName: 'attributeuse', indexName: 'attributeuse_attributesetid_lineno_idx') {
+      column(name: 'attributeset_id')
+      column(name: 'lineno')
+    }
+
+    // create attributesetinstance table
+    createTable(tableName: 'attributesetinstance') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'attributeset_id', type: 'varchar') {
+        constraints(nullable: false, references: 'attributeset', foreignKeyName: 'fk_attributesetinstance_attributeset', deleteCascade: true)
+      }
+      column(name: 'description', type: 'varchar')
+    }
+
+    // create attributeinstance table
+    createTable(tableName: 'attributeinstance') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'attributesetinstance_id', type: 'varchar') {
+        constraints(nullable: false, references: 'attributesetinstance', foreignKeyName: 'fk_attributeinstance_attributesetinstance', deleteCascade: true)
+      }
+      column(name: 'attribute_id', type: 'varchar') {
+        constraints(nullable: false, references: 'attribute', foreignKeyName: 'fk_attributeinstance_attribute', deleteCascade: true)
+      }
+      column(name: 'value', type: 'varchar')
+    }
+
+    // create products table
+    createTable(tableName: 'products') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'reference', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'code', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'codetype', type: 'varchar')
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'pricebuy', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+      column(name: 'pricesell', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+      column(name: 'category', type: 'varchar') {
+        constraints(nullable: false, references: 'categories', foreignKeyName: 'fk_products_categories')
+      }
+      column(name: 'taxcat', type: 'varchar') {
+        constraints(nullable: false, references: 'taxcategories', foreignKeyName: 'fk_products_taxcategories')
+      }
+      column(name: 'attributeset_id', type: 'varchar') {
+        constraints(references: 'attributeset', foreignKeyName: 'fk_products_attributeset')
+      }
+      column(name: 'stockcost', type: 'double')
+      column(name: 'stockvolume', type: 'double')
+      column(name: 'image', type: 'blob')
+      ['iscom', 'isscale', 'iskitchen', 'printkb', 'sendstatus', 'isservice'].each { f ->
+        column(name: f, type: 'boolean', defaultValue: false) {
+          constraints(nullable: false)
+        }
+      }
+      column(name: 'display', type: 'varchar')
+      column(name: 'attributes', type: 'blob')
+      ['isvprice', 'isverpatrib'].each { f ->
+        column(name: f, type: 'boolean', defaultValue: false) {
+          constraints(nullable: false)
+        }
+      }
+      column(name: 'texttip', type: 'varchar', defaultValue: '')
+      column(name: 'warranty', type: 'boolean', defaultValue: false) {
+        constraints(nullable: false)
+      }
+      column(name: 'stockunits', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+    }
+
+    // create products_cat table
+    createTable(tableName: 'products_cat') {
+      column(name: 'product', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true, references: 'products', foreignKeyName: 'fk_products_cat_products')
+      }
+      column(name: 'catorder', type: 'integer')
+    }
+    createIndex(tableName: 'products_cat', indexName: 'products_cat_catorder_idx') {
+      column(name: 'catorder')
+    }
+
+    // create products_com table
+    createTable(tableName: 'products_com') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'product', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true, references: 'products', foreignKeyName: 'fk_products_com_products')
+      }
+      column(name: 'product2', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true, references: 'products', foreignKeyName: 'fk_products_com_products2')
+      }
+    }
+    createIndex(tableName: 'products_com', indexName: 'products_com_product_product2_idx', unique: true) {
+      column(name: 'product')
+      column(name: 'product2')
+    }
+
+    // create locations table
+    createTable(tableName: 'locations') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'address', type: 'varchar')
+    }
+
+    // create stockdiary table
+    createTable(tableName: 'stockdiary') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'datenew', type: 'timestamp') {
+        constraints(nullable: false)
+      }
+      column(name: 'reason', type: 'integer') {
+        constraints(nullable: false)
+      }
+      column(name: 'location', type: 'varchar') {
+        constraints(nullable: false, references: 'locations', foreignKeyName: 'fk_stockdiary_locations')
+      }
+      column(name: 'product', type: 'varchar') {
+        constraints(nullable: false, references: 'products', foreignKeyName: 'fk_stockdiary_products')
+      }
+      column(name: 'attributesetinstance_id', type: 'varchar') {
+        constraints(nullable: false, references: 'attributesetinstance', foreignKeyName: 'fk_stockdiary_attributesetinstance')
+      }
+      column(name: 'units', type: 'double') {
+        constraints(nullable: false)
+      }
+      column(name: 'price', type: 'double') {
+        constraints(nullable: false)
+      }
+      column(name: 'appuser', type: 'varchar')
+    }
+    createIndex(tableName: 'stockdiary', indexName: 'stockdairy_datenew_idx') {
+      column(name: 'datenew')
+    }
+
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//
+//    // create table
+//    createTable(tableName: '') {
+//    }
+//
+//    // create table
+//    createTable(tableName: '') {
+//    }
 
   }
 }
 
-
-
-
-
-
-
-
-//CREATE TABLE CATEGORIES (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    PARENTID VARCHAR,
-//    IMAGE BYTEA,
-//    TEXTTIP VARCHAR DEFAULT NULL,
-//    CATSHOWNAME BOOLEAN NOT NULL DEFAULT TRUE,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT CATEGORIES_FK_1 FOREIGN KEY (PARENTID) REFERENCES CATEGORIES(ID)
-//);
-//CREATE UNIQUE INDEX CATEGORIES_NAME_IDX ON CATEGORIES(NAME);
-
-
-
-//CREATE TABLE TAXCATEGORIES (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    PRIMARY KEY (ID)
-//);
-//CREATE UNIQUE INDEX TAXCAT_NAME_IDX ON TAXCATEGORIES(NAME);
-
-
-
-//CREATE TABLE TAXES (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    CATEGORY VARCHAR NOT NULL,
-//    CUSTCATEGORY VARCHAR,
-//    PARENTID VARCHAR,
-//    RATE DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    RATECASCADE BOOLEAN NOT NULL DEFAULT FALSE,
-//    RATEORDER INTEGER,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT TAXES_CAT_FK FOREIGN KEY (CATEGORY) REFERENCES TAXCATEGORIES(ID),
-//    CONSTRAINT TAXES_CUSTCAT_FK FOREIGN KEY (CUSTCATEGORY) REFERENCES TAXCUSTCATEGORIES(ID),
-//    CONSTRAINT TAXES_TAXES_FK FOREIGN KEY (PARENTID) REFERENCES TAXES(ID)
-//);
-//CREATE UNIQUE INDEX TAXES_NAME_IDX ON TAXES(NAME);
-
-//CREATE TABLE ATTRIBUTE (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    PRIMARY KEY (ID)
-//);
-
-//CREATE TABLE ATTRIBUTEVALUE (
-//    ID VARCHAR NOT NULL,
-//    ATTRIBUTE_ID VARCHAR NOT NULL,
-//    VALUE VARCHAR,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT ATTVAL_ATT FOREIGN KEY (ATTRIBUTE_ID) REFERENCES ATTRIBUTE(ID) ON DELETE CASCADE
-//);
-
-//CREATE TABLE ATTRIBUTESET (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    PRIMARY KEY (ID)
-//);
-
-//CREATE TABLE ATTRIBUTEUSE (
-//    ID VARCHAR NOT NULL,
-//    ATTRIBUTESET_ID VARCHAR NOT NULL,
-//    ATTRIBUTE_ID VARCHAR NOT NULL,
-//    LINENO INTEGER,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT ATTUSE_SET FOREIGN KEY (ATTRIBUTESET_ID) REFERENCES ATTRIBUTESET(ID) ON DELETE CASCADE,
-//    CONSTRAINT ATTUSE_ATT FOREIGN KEY (ATTRIBUTE_ID) REFERENCES ATTRIBUTE(ID)
-//);
-//CREATE UNIQUE INDEX ATTUSE_LINE ON ATTRIBUTEUSE(ATTRIBUTESET_ID, LINENO);
-
-
-
-//CREATE TABLE ATTRIBUTESETINSTANCE (
-//    ID VARCHAR NOT NULL,
-//    ATTRIBUTESET_ID VARCHAR NOT NULL,
-//    DESCRIPTION VARCHAR,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT ATTSETINST_SET FOREIGN KEY (ATTRIBUTESET_ID) REFERENCES ATTRIBUTESET(ID) ON DELETE CASCADE
-//);
-
-
-
-//CREATE TABLE ATTRIBUTEINSTANCE (
-//    ID VARCHAR NOT NULL,
-//    ATTRIBUTESETINSTANCE_ID VARCHAR NOT NULL,
-//    ATTRIBUTE_ID VARCHAR NOT NULL,
-//    VALUE VARCHAR,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT ATTINST_SET FOREIGN KEY (ATTRIBUTESETINSTANCE_ID) REFERENCES ATTRIBUTESETINSTANCE(ID) ON DELETE CASCADE,
-//    CONSTRAINT ATTINST_ATT FOREIGN KEY (ATTRIBUTE_ID) REFERENCES ATTRIBUTE(ID)
-//);
-
-
-
-//CREATE TABLE PRODUCTS (
-//    ID VARCHAR NOT NULL,
-//    REFERENCE VARCHAR NOT NULL,
-//    CODE VARCHAR NOT NULL,
-//    CODETYPE VARCHAR,
-//    NAME VARCHAR NOT NULL,
-//    PRICEBUY DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    PRICESELL DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    CATEGORY VARCHAR NOT NULL,
-//    TAXCAT VARCHAR NOT NULL,
-//    ATTRIBUTESET_ID VARCHAR,
-//    STOCKCOST DOUBLE PRECISION,
-//    STOCKVOLUME DOUBLE PRECISION,
-//    IMAGE BYTEA,
-//    ISCOM BOOLEAN NOT NULL DEFAULT FALSE,
-//    ISSCALE BOOLEAN NOT NULL DEFAULT FALSE,
-//    ISKITCHEN BOOLEAN NOT NULL DEFAULT FALSE,
-//    PRINTKB BOOLEAN NOT NULL DEFAULT FALSE,
-//    SENDSTATUS BOOLEAN NOT NULL DEFAULT FALSE,
-//    ISSERVICE BOOLEAN NOT NULL DEFAULT FALSE,
-//    DISPLAY VARCHAR,
-//    ATTRIBUTES BYTEA,
-//    ISVPRICE BOOLEAN NOT NULL DEFAULT FALSE,
-//    ISVERPATRIB BOOLEAN NOT NULL DEFAULT FALSE,
-//    TEXTTIP VARCHAR DEFAULT '',
-//    WARRANTY BOOLEAN NOT NULL DEFAULT FALSE,
-//    STOCKUNITS DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT PRODUCTS_FK_1 FOREIGN KEY (CATEGORY) REFERENCES CATEGORIES(ID),
-//    CONSTRAINT PRODUCTS_TAXCAT_FK FOREIGN KEY (TAXCAT) REFERENCES TAXCATEGORIES(ID),
-//    CONSTRAINT PRODUCTS_ATTRSET_FK FOREIGN KEY (ATTRIBUTESET_ID) REFERENCES ATTRIBUTESET(ID)
-//);
-//CREATE UNIQUE INDEX PRODUCTS_IDX_0 ON PRODUCTS(REFERENCE);
-//CREATE UNIQUE INDEX PRODUCTS_IDX_1 ON PRODUCTS(CODE);
-//CREATE UNIQUE INDEX PRODUCTS_NAME_IDX ON PRODUCTS(NAME);
-
-
-
-//CREATE TABLE PRODUCTS_CAT (
-//    PRODUCT VARCHAR NOT NULL,
-//    CATORDER INTEGER,
-//    PRIMARY KEY (PRODUCT),
-//    CONSTRAINT PRODUCTS_CAT_FK_1 FOREIGN KEY (PRODUCT) REFERENCES PRODUCTS(ID)
-//);
-//CREATE INDEX PRODUCTS_CAT_IDX_1 ON PRODUCTS_CAT(CATORDER);
-
-//CREATE TABLE PRODUCTS_COM (
-//    ID VARCHAR NOT NULL,
-//    PRODUCT VARCHAR NOT NULL,
-//    PRODUCT2 VARCHAR NOT NULL,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT PRODUCTS_COM_FK_1 FOREIGN KEY (PRODUCT) REFERENCES PRODUCTS(ID),
-//    CONSTRAINT PRODUCTS_COM_FK_2 FOREIGN KEY (PRODUCT2) REFERENCES PRODUCTS(ID)
-//);
-//CREATE UNIQUE INDEX PCOM_IDX_PROD ON PRODUCTS_COM(PRODUCT, PRODUCT2);
-
-
-
-//CREATE TABLE LOCATIONS (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    ADDRESS VARCHAR,
-//    PRIMARY KEY (ID)
-//);
-//CREATE UNIQUE INDEX LOCATIONS_NAME_IDX ON LOCATIONS(NAME);
-
-
-
-//CREATE TABLE STOCKDIARY (
-//    ID VARCHAR NOT NULL,
-//    DATENEW TIMESTAMP NOT NULL,
-//    REASON INTEGER NOT NULL,
-//    LOCATION VARCHAR NOT NULL,
-//    PRODUCT VARCHAR NOT NULL,
-//    ATTRIBUTESETINSTANCE_ID VARCHAR,
-//    UNITS DOUBLE PRECISION NOT NULL,
-//    PRICE DOUBLE PRECISION NOT NULL,
-//    APPUSER VARCHAR,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT STOCKDIARY_FK_1 FOREIGN KEY (PRODUCT) REFERENCES PRODUCTS(ID),
-//    CONSTRAINT STOCKDIARY_ATTSETINST FOREIGN KEY (ATTRIBUTESETINSTANCE_ID) REFERENCES ATTRIBUTESETINSTANCE(ID),
-//    CONSTRAINT STOCKDIARY_FK_2 FOREIGN KEY (LOCATION) REFERENCES LOCATIONS(ID)
-//);
-//CREATE INDEX STOCKDIARY_IDX_1 ON STOCKDIARY(DATENEW);
-//
 //CREATE TABLE STOCKLEVEL (
 //    ID VARCHAR NOT NULL,
 //    LOCATION VARCHAR NOT NULL,
@@ -310,7 +425,11 @@ databaseChangeLog {
 //    CONSTRAINT STOCKLEVEL_PRODUCT FOREIGN KEY (PRODUCT) REFERENCES PRODUCTS(ID),
 //    CONSTRAINT STOCKLEVEL_LOCATION FOREIGN KEY (LOCATION) REFERENCES LOCATIONS(ID)
 //);
-//
+
+
+
+
+
 //CREATE TABLE STOCKCURRENT (
 //    LOCATION VARCHAR NOT NULL,
 //    PRODUCT VARCHAR NOT NULL,
@@ -321,7 +440,11 @@ databaseChangeLog {
 //    CONSTRAINT STOCKCURRENT_FK_2 FOREIGN KEY (LOCATION) REFERENCES LOCATIONS(ID)
 //);
 //CREATE UNIQUE INDEX STOCKCURRENT_IDX ON STOCKCURRENT(LOCATION, PRODUCT, ATTRIBUTESETINSTANCE_ID);
-//
+
+
+
+
+
 //CREATE TABLE CLOSEDCASH (
 //    MONEY VARCHAR NOT NULL,
 //    HOST VARCHAR NOT NULL,
@@ -333,7 +456,11 @@ databaseChangeLog {
 //);
 //CREATE INDEX CLOSEDCASH_IDX_1 ON CLOSEDCASH(DATESTART);
 //CREATE UNIQUE INDEX CLOSEDCASH_IDX_SEQ ON CLOSEDCASH(HOST, HOSTSEQUENCE);
-//
+
+
+
+
+
 //CREATE TABLE RECEIPTS (
 //    ID VARCHAR NOT NULL,
 //    MONEY VARCHAR NOT NULL,
@@ -344,7 +471,11 @@ databaseChangeLog {
 //CONSTRAINT RECEIPTS_FK_MONEY FOREIGN KEY (MONEY) REFERENCES CLOSEDCASH(MONEY)
 //);
 //CREATE INDEX RECEIPTS_IDX_1 ON RECEIPTS(DATENEW);
-//
+
+
+
+
+
 //CREATE TABLE TICKETS (
 //    ID VARCHAR NOT NULL,
 //    TICKETTYPE INTEGER DEFAULT 0 NOT NULL,
@@ -358,12 +489,24 @@ databaseChangeLog {
 //    CONSTRAINT TICKETS_CUSTOMERS_FK FOREIGN KEY (CUSTOMER) REFERENCES CUSTOMERS(ID)
 //);
 //CREATE INDEX TICKETS_TICKETID ON TICKETS(TICKETTYPE, TICKETID);
-//
+
+
+
+
+
 //CREATE SEQUENCE TICKETSNUM START WITH 1;
 //CREATE SEQUENCE TICKETSNUM_REFUND START WITH 1;
 //CREATE SEQUENCE TICKETSNUM_PAYMENT START WITH 1;
-//
-//
+
+
+
+
+
+
+
+
+
+
 //CREATE TABLE TICKETLINES (
 //    TICKET VARCHAR NOT NULL,
 //    LINE INTEGER NOT NULL,
@@ -379,7 +522,11 @@ databaseChangeLog {
 //    CONSTRAINT TICKETLINES_ATTSETINST FOREIGN KEY (ATTRIBUTESETINSTANCE_ID) REFERENCES ATTRIBUTESETINSTANCE(ID),
 //    CONSTRAINT TICKETLINES_FK_3 FOREIGN KEY (TAXID) REFERENCES TAXES(ID)
 //);
-//
+
+
+
+
+
 // CREATE TABLE LINEREMOVED (
 //  REMOVEDDATE TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 //  NAME VARCHAR DEFAULT NULL,
@@ -388,7 +535,11 @@ databaseChangeLog {
 //  PRODUCTNAME VARCHAR DEFAULT NULL,
 //  UNITS DOUBLE PRECISION NOT NULL
 //);
-//
+
+
+
+
+
 //CREATE TABLE PAYMENTS (
 //    ID VARCHAR NOT NULL,
 //    RECEIPT VARCHAR NOT NULL,
@@ -403,7 +554,11 @@ databaseChangeLog {
 //    CONSTRAINT PAYMENTS_FK_RECEIPT FOREIGN KEY (RECEIPT) REFERENCES RECEIPTS(ID)
 //);
 //CREATE INDEX PAYMENTS_IDX_1 ON PAYMENTS(PAYMENT);
-//
+
+
+
+
+
 //CREATE TABLE TAXLINES (
 //    ID VARCHAR NOT NULL,
 //    RECEIPT VARCHAR NOT NULL,
@@ -414,7 +569,11 @@ databaseChangeLog {
 //    CONSTRAINT TAXLINES_TAX FOREIGN KEY (TAXID) REFERENCES TAXES(ID),
 //    CONSTRAINT TAXLINES_RECEIPT FOREIGN KEY (RECEIPT) REFERENCES RECEIPTS(ID)
 //);
-//
+
+
+
+
+
 //CREATE TABLE FLOORS (
 //    ID VARCHAR NOT NULL,
 //    NAME VARCHAR NOT NULL,
@@ -422,7 +581,11 @@ databaseChangeLog {
 //    PRIMARY KEY (ID)
 //);
 //CREATE UNIQUE INDEX FLOORS_NAME_IDX ON FLOORS(NAME);
-//
+
+
+
+
+
 //CREATE TABLE PLACES (
 //    ID VARCHAR NOT NULL,
 //    NAME VARCHAR NOT NULL,
@@ -437,7 +600,11 @@ databaseChangeLog {
 //    CONSTRAINT PLACES_FK_1 FOREIGN KEY (FLOOR) REFERENCES FLOORS(ID)
 //);
 //CREATE UNIQUE INDEX PLACES_NAME_IDX ON PLACES(NAME);
-//
+
+
+
+
+
 //CREATE TABLE RESERVATIONS (
 //    ID VARCHAR NOT NULL,
 //    CREATED TIMESTAMP NOT NULL,
@@ -449,7 +616,11 @@ databaseChangeLog {
 //    PRIMARY KEY (ID)
 //);
 //CREATE INDEX RESERVATIONS_IDX_1 ON RESERVATIONS(DATENEW);
-//
+
+
+
+
+
 //CREATE TABLE RESERVATION_CUSTOMERS (
 //    ID VARCHAR NOT NULL,
 //    CUSTOMER VARCHAR NOT NULL,
@@ -457,7 +628,11 @@ databaseChangeLog {
 //    CONSTRAINT RES_CUST_FK_1 FOREIGN KEY (ID) REFERENCES RESERVATIONS(ID),
 //    CONSTRAINT RES_CUST_FK_2 FOREIGN KEY (CUSTOMER) REFERENCES CUSTOMERS(ID)
 //);
-//
+
+
+
+
+
 //CREATE TABLE THIRDPARTIES (
 //    ID VARCHAR NOT NULL,
 //    CIF VARCHAR NOT NULL,
@@ -476,7 +651,11 @@ databaseChangeLog {
 //);
 //CREATE UNIQUE INDEX THIRDPARTIES_CIF_IDX ON THIRDPARTIES(CIF);
 //CREATE UNIQUE INDEX THIRDPARTIES_NAME_IDX ON THIRDPARTIES(NAME);
-//
+
+
+
+
+
 //CREATE TABLE SHAREDTICKETS (
 //    ID VARCHAR NOT NULL,
 //    NAME VARCHAR NOT NULL,
@@ -485,7 +664,11 @@ databaseChangeLog {
 //    APPUSER VARCHAR,
 //    PRIMARY KEY (ID)
 //);
-//
+
+
+
+
+
 //-- Added for Employee Presence Management
 //CREATE TABLE SHIFTS (
 //  ID VARCHAR NOT NULL,
@@ -494,7 +677,11 @@ databaseChangeLog {
 //  PPLID VARCHAR NOT NULL,
 //  PRIMARY KEY (ID)
 //);
-//
+
+
+
+
+
 //CREATE TABLE LEAVES (
 //  ID VARCHAR NOT NULL,
 //  PPLID VARCHAR NOT NULL,
@@ -505,7 +692,11 @@ databaseChangeLog {
 //  PRIMARY KEY (ID),
 //  CONSTRAINT lEAVES_PPLID FOREIGN KEY (PPLID) REFERENCES PEOPLE(ID)
 //);
-//
+
+
+
+
+
 //CREATE TABLE BREAKS (
 //  ID VARCHAR NOT NULL,
 //  NAME VARCHAR NOT NULL,
@@ -513,7 +704,11 @@ databaseChangeLog {
 //  VISIBLE BOOLEAN NOT NULL,
 //  PRIMARY KEY (ID)
 //);
-//
+
+
+
+
+
 //CREATE TABLE SHIFT_BREAKS (
 //  ID VARCHAR NOT NULL,
 //  SHIFTID VARCHAR NOT NULL,
@@ -524,7 +719,11 @@ databaseChangeLog {
 //  CONSTRAINT SHIFT_BREAKS_BREAKID FOREIGN KEY (BREAKID) REFERENCES BREAKS(ID),
 //  CONSTRAINT SHIFT_BREAKS_SHIFTID FOREIGN KEY (SHIFTID) REFERENCES SHIFTS(ID)
 //);
-//
+
+
+
+
+
 //CREATE TABLE CSVIMPORT (
 //  ID VARCHAR NOT NULL,
 //  ROWNUMBER VARCHAR,
@@ -539,9 +738,17 @@ databaseChangeLog {
 //  CATEGORY VARCHAR,
 //  PRIMARY KEY (ID)
 //);
-//
+
+
+
+
+
 //CREATE SEQUENCE PICKUP_NUMBER START WITH 1;
-//
+
+
+
+
+
 //CREATE TABLE DRAWEROPENED (
 //  OPENDATE TIMESTAMP DEFAULT NOW(),
 //  NAME VARCHAR,
