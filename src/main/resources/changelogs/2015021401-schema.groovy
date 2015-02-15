@@ -1,15 +1,13 @@
 databaseChangeLog {
   changeSet(author: 'kenneth.shaw@knq.io', id: 'create-schema-01') {
-//CREATE TABLE ROLES (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    PERMISSIONS BYTEA,
-//    PRIMARY KEY (ID)
-//);
-//CREATE UNIQUE INDEX ROLES_NAME_IDX ON ROLES(NAME);
-
     createTable(tableName: 'roles') {
-        column()
+        column(name: 'id', type: 'varchar') {
+            constraints(nullable: false, primaryKey: true)
+        }
+        column(name: 'name', type: 'varchar') {
+            constraints(nullable: false, unique: true)
+        }
+        column(name: 'permissions', type: 'blob')
     }
   }
 }
