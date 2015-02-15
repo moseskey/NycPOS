@@ -3,6 +3,7 @@
 .DS_Store
 workbench.xmi
 *.log
+.db
 
 .settings
 .project
