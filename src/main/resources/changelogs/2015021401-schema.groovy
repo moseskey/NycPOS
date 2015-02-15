@@ -1,83 +1,126 @@
 databaseChangeLog {
-  changeSet(author: 'kenneth.shaw@knq.io', id: 'create-schema-01') {
-  println(">> HERE")
+  // create initial database schema
+  changeSet(author: 'kenneth.shaw@knq.io', id: 'create-schema') {
+    // create roles table
     createTable(tableName: 'roles') {
-  println(">> HERE 22")
-        column(name: 'id', type: 'varchar(25))') {
-            constraints(nullable: false, primaryKey: true)
-        }
-        column(name: 'name', type: 'varchar') {
-            constraints(nullable: false, unique: true)
-        }
-        column(name: 'permissions', type: 'blob')
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true, deleteCascade: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'permissions', type: 'blob')
     }
+
+    // create people table
+    createTable(tableName: 'people') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true, deleteCascade: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'apppassword', type: 'varchar')
+      column(name: 'card', type: 'varchar')
+      column(name: 'role', type: 'varchar') {
+        constraints(nullable: false, references: 'roles', foreignKeyName: 'fk_people_roles')
+      }
+      column(name: 'visible', type: 'boolean') {
+        constraints(nullable: false)
+      }
+      column(name: 'image', type: 'blob')
+    }
+    createIndex(tableName: 'people', indexName: 'people_card_idx') {
+      column(name: 'card')
+    }
+
+    // create resources table
+    createTable(tableName: 'resources') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true, deleteCascade: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'restype', type: 'integer') {
+        constraints(nullable: false)
+      }
+      column(name: 'content', type: 'blob')
+    }
+
+    // create taxcustcategories table
+    createTable(tableName: 'taxcustcategories') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true, deleteCascade: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+    }
+
+    // ceate customers table
+    createTable(tableName: 'customers') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true, deleteCascade: true)
+      }
+      column(name: 'searchkey', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'taxid', type: 'varchar')
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'taxcategory', type: 'varchar') {
+        constraints(nullable: false, references: 'taxcustcategories', foreignKeyName: 'fk_customers_taxcustcategories')
+      }
+      column(name: 'card', type: 'varchar')
+      column(name: 'maxdebt', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+      column(name: 'address', type: 'varchar')
+      column(name: 'address2', type: 'varchar')
+      column(name: 'postal', type: 'varchar')
+      column(name: 'city', type: 'varchar')
+      column(name: 'region', type: 'varchar')
+      column(name: 'country', type: 'varchar')
+      column(name: 'firstname', type: 'varchar')
+      column(name: 'lastname', type: 'varchar')
+      column(name: 'email', type: 'varchar')
+      column(name: 'phone', type: 'varchar')
+      column(name: 'phone2', type: 'varchar')
+      column(name: 'fax', type: 'varchar')
+      column(name: 'notes', type: 'varchar')
+      column(name: 'visible', type: 'boolean', defaultValue: true) {
+        constraints(nullable: false)
+      }
+      column(name: 'curdate', type: 'timestamp')
+      column(name: 'curdebt', type: 'double', defaultValue: 0)
+      column(name: 'image', type: 'blob')
+    }
+    createIndex(tableName: 'customers', indexName: 'customers_searchkey_idx') {
+      column(name: 'searchkey')
+    }
+    createIndex(tableName: 'customers', indexName: 'customers_taxid_idx') {
+      column(name: 'taxid')
+    }
+    createIndex(tableName: 'customers', indexName: 'customers_name_idx') {
+      column(name: 'name')
+    }
+    createIndex(tableName: 'customers', indexName: 'customers_card_idx') {
+      column(name: 'card')
+    }
+
+
   }
 }
 
-//
-//CREATE TABLE PEOPLE (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    APPPASSWORD VARCHAR,
-//    CARD VARCHAR,
-//    ROLE VARCHAR NOT NULL,
-//    VISIBLE BOOLEAN NOT NULL,
-//    IMAGE BYTEA,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT PEOPLE_FK_1 FOREIGN KEY (ROLE) REFERENCES ROLES(ID)
-//);
-//CREATE UNIQUE INDEX PEOPLE_NAME_IDX ON PEOPLE(NAME);
-//CREATE INDEX PEOPLE_CARD_IDX ON PEOPLE(CARD);
-//
-//CREATE TABLE RESOURCES (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    RESTYPE INTEGER NOT NULL,
-//    CONTENT BYTEA,
-//    PRIMARY KEY (ID)
-//);
-//CREATE UNIQUE INDEX RESOURCES_NAME_IDX ON RESOURCES(NAME);
-//
-//CREATE TABLE TAXCUSTCATEGORIES (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    PRIMARY KEY (ID)
-//);
-//CREATE UNIQUE INDEX TAXCUSTCAT_NAME_IDX ON TAXCUSTCATEGORIES(NAME);
-//
-//CREATE TABLE CUSTOMERS (
-//    ID VARCHAR NOT NULL,
-//    SEARCHKEY VARCHAR NOT NULL,
-//    TAXID VARCHAR,
-//    NAME VARCHAR NOT NULL,
-//    TAXCATEGORY VARCHAR,
-//    CARD VARCHAR,
-//    MAXDEBT DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    ADDRESS VARCHAR,
-//    ADDRESS2 VARCHAR,
-//    POSTAL VARCHAR,
-//    CITY VARCHAR,
-//    REGION VARCHAR,
-//    COUNTRY VARCHAR,
-//    FIRSTNAME VARCHAR,
-//    LASTNAME VARCHAR,
-//    EMAIL VARCHAR,
-//    PHONE VARCHAR,
-//    PHONE2 VARCHAR,
-//    FAX VARCHAR,
-//    NOTES VARCHAR,
-//    VISIBLE BOOLEAN NOT NULL DEFAULT TRUE,
-//    CURDATE TIMESTAMP,
-//    CURDEBT DOUBLE PRECISION DEFAULT 0,
-//    IMAGE BYTEA,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT CUSTOMERS_TAXCAT FOREIGN KEY (TAXCATEGORY) REFERENCES TAXCUSTCATEGORIES(ID)
-//);
-//CREATE UNIQUE INDEX CUSTOMERS_SKEY_IDX ON CUSTOMERS(SEARCHKEY);
-//CREATE INDEX CUSTOMERS_TAXID_IDX ON CUSTOMERS(TAXID);
-//CREATE INDEX CUSTOMERS_NAME_IDX ON CUSTOMERS(NAME);
-//CREATE INDEX CUSTOMERS_CARD_IDX ON CUSTOMERS(CARD);
-//
+
+
+
+
+
+
+
 //CREATE TABLE CATEGORIES (
 //    ID VARCHAR NOT NULL,
 //    NAME VARCHAR NOT NULL,
@@ -89,14 +132,18 @@ databaseChangeLog {
 //    CONSTRAINT CATEGORIES_FK_1 FOREIGN KEY (PARENTID) REFERENCES CATEGORIES(ID)
 //);
 //CREATE UNIQUE INDEX CATEGORIES_NAME_IDX ON CATEGORIES(NAME);
-//
+
+
+
 //CREATE TABLE TAXCATEGORIES (
 //    ID VARCHAR NOT NULL,
 //    NAME VARCHAR NOT NULL,
 //    PRIMARY KEY (ID)
 //);
 //CREATE UNIQUE INDEX TAXCAT_NAME_IDX ON TAXCATEGORIES(NAME);
-//
+
+
+
 //CREATE TABLE TAXES (
 //    ID VARCHAR NOT NULL,
 //    NAME VARCHAR NOT NULL,
@@ -112,13 +159,13 @@ databaseChangeLog {
 //    CONSTRAINT TAXES_TAXES_FK FOREIGN KEY (PARENTID) REFERENCES TAXES(ID)
 //);
 //CREATE UNIQUE INDEX TAXES_NAME_IDX ON TAXES(NAME);
-//
+
 //CREATE TABLE ATTRIBUTE (
 //    ID VARCHAR NOT NULL,
 //    NAME VARCHAR NOT NULL,
 //    PRIMARY KEY (ID)
 //);
-//
+
 //CREATE TABLE ATTRIBUTEVALUE (
 //    ID VARCHAR NOT NULL,
 //    ATTRIBUTE_ID VARCHAR NOT NULL,
@@ -126,13 +173,13 @@ databaseChangeLog {
 //    PRIMARY KEY (ID),
 //    CONSTRAINT ATTVAL_ATT FOREIGN KEY (ATTRIBUTE_ID) REFERENCES ATTRIBUTE(ID) ON DELETE CASCADE
 //);
-//
+
 //CREATE TABLE ATTRIBUTESET (
 //    ID VARCHAR NOT NULL,
 //    NAME VARCHAR NOT NULL,
 //    PRIMARY KEY (ID)
 //);
-//
+
 //CREATE TABLE ATTRIBUTEUSE (
 //    ID VARCHAR NOT NULL,
 //    ATTRIBUTESET_ID VARCHAR NOT NULL,
@@ -143,7 +190,9 @@ databaseChangeLog {
 //    CONSTRAINT ATTUSE_ATT FOREIGN KEY (ATTRIBUTE_ID) REFERENCES ATTRIBUTE(ID)
 //);
 //CREATE UNIQUE INDEX ATTUSE_LINE ON ATTRIBUTEUSE(ATTRIBUTESET_ID, LINENO);
-//
+
+
+
 //CREATE TABLE ATTRIBUTESETINSTANCE (
 //    ID VARCHAR NOT NULL,
 //    ATTRIBUTESET_ID VARCHAR NOT NULL,
@@ -151,7 +200,9 @@ databaseChangeLog {
 //    PRIMARY KEY (ID),
 //    CONSTRAINT ATTSETINST_SET FOREIGN KEY (ATTRIBUTESET_ID) REFERENCES ATTRIBUTESET(ID) ON DELETE CASCADE
 //);
-//
+
+
+
 //CREATE TABLE ATTRIBUTEINSTANCE (
 //    ID VARCHAR NOT NULL,
 //    ATTRIBUTESETINSTANCE_ID VARCHAR NOT NULL,
@@ -161,7 +212,9 @@ databaseChangeLog {
 //    CONSTRAINT ATTINST_SET FOREIGN KEY (ATTRIBUTESETINSTANCE_ID) REFERENCES ATTRIBUTESETINSTANCE(ID) ON DELETE CASCADE,
 //    CONSTRAINT ATTINST_ATT FOREIGN KEY (ATTRIBUTE_ID) REFERENCES ATTRIBUTE(ID)
 //);
-//
+
+
+
 //CREATE TABLE PRODUCTS (
 //    ID VARCHAR NOT NULL,
 //    REFERENCE VARCHAR NOT NULL,
@@ -197,7 +250,9 @@ databaseChangeLog {
 //CREATE UNIQUE INDEX PRODUCTS_IDX_0 ON PRODUCTS(REFERENCE);
 //CREATE UNIQUE INDEX PRODUCTS_IDX_1 ON PRODUCTS(CODE);
 //CREATE UNIQUE INDEX PRODUCTS_NAME_IDX ON PRODUCTS(NAME);
-//
+
+
+
 //CREATE TABLE PRODUCTS_CAT (
 //    PRODUCT VARCHAR NOT NULL,
 //    CATORDER INTEGER,
@@ -205,7 +260,7 @@ databaseChangeLog {
 //    CONSTRAINT PRODUCTS_CAT_FK_1 FOREIGN KEY (PRODUCT) REFERENCES PRODUCTS(ID)
 //);
 //CREATE INDEX PRODUCTS_CAT_IDX_1 ON PRODUCTS_CAT(CATORDER);
-//
+
 //CREATE TABLE PRODUCTS_COM (
 //    ID VARCHAR NOT NULL,
 //    PRODUCT VARCHAR NOT NULL,
@@ -215,7 +270,9 @@ databaseChangeLog {
 //    CONSTRAINT PRODUCTS_COM_FK_2 FOREIGN KEY (PRODUCT2) REFERENCES PRODUCTS(ID)
 //);
 //CREATE UNIQUE INDEX PCOM_IDX_PROD ON PRODUCTS_COM(PRODUCT, PRODUCT2);
-//
+
+
+
 //CREATE TABLE LOCATIONS (
 //    ID VARCHAR NOT NULL,
 //    NAME VARCHAR NOT NULL,
@@ -223,7 +280,9 @@ databaseChangeLog {
 //    PRIMARY KEY (ID)
 //);
 //CREATE UNIQUE INDEX LOCATIONS_NAME_IDX ON LOCATIONS(NAME);
-//
+
+
+
 //CREATE TABLE STOCKDIARY (
 //    ID VARCHAR NOT NULL,
 //    DATENEW TIMESTAMP NOT NULL,
