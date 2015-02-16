@@ -476,17 +476,235 @@ databaseChangeLog {
     createSequence(sequenceName: 'ticketsnum_refund', startValue: 1)
     createSequence(sequenceName: 'ticketsnum_payment', startValue: 1)
 
+    // create ticketlines table
+    createTable(tableName: 'ticketlines') {
+      column(name: 'ticket', type: 'varchar') {
+        constraints(nullable: false, references: 'tickets', foreignKeyName: 'fk_ticketlines_tickets')
+      }
+      column(name: 'line', type: 'integer') {
+        constraints(nullable: false)
+      }
+      column(name: 'product', type: 'varchar') {
+        constraints(references: 'products', foreignKeyName: 'fk_ticketlines_products')
+      }
+      column(name: 'attributesetinstance_id', type: 'varchar') {
+        constraints(references: 'attributesetinstance', foreignKeyName: 'fk_ticketlines_attributesetinstance')
+      }
+      column(name: 'units', type: 'double') {
+        constraints(nullable: false)
+      }
+      column(name: 'price', type: 'double') {
+        constraints(nullable: false)
+      }
+      column(name: 'taxid', type: 'varchar') {
+        constraints(nullable: false, references: 'taxes', foreignKeyName: 'fk_ticketlines_taxes')
+      }
+      column(name: 'attributes', type: 'blob')
+    }
+    addPrimaryKey(tableName: 'ticketlines', columnNames: 'ticket, line', constraintName: 'pk_ticketlines')
+
+    // create lineremoved table
+    createTable(tableName: 'lineremoved') {
+      column(name: 'removeddate', type: 'timestamp', defaultValueComputed: 'CURRENT_TIMESTAMP') {
+        constraints(nullable: false)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'ticketid', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'productid', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'productname', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'units', type: 'double') {
+        constraints(nullable: false)
+      }
+    }
+
+    // create payments table
+    createTable(tableName: 'payments') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'receipt', type: 'varchar') {
+        constraints(nullable: false, references: 'receipts', foreignKeyName: 'fk_payments_receipts')
+      }
+      column(name: 'payment', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'total', type: 'double') {
+        constraints(nullable: false)
+      }
+      column(name: 'transid', type: 'varchar')
+      column(name: 'notes', type: 'varchar')
+      column(name: 'returnmsg', type: 'blob')
+      column(name: 'tendered', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+      column(name: 'cardname', type: 'varchar')
+    }
+    createIndex(tableName: 'payments', indexName: 'payments_payment_idx') {
+      column(name: 'payment')
+    }
+
+    // create taxlines table
+    createTable(tableName: 'taxlines') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'receipt', type: 'varchar') {
+        constraints(nullable: false, references: 'receipts', foreignKeyName: 'fk_taxlines_receipts')
+      }
+      column(name: 'taxid', type: 'varchar') {
+        constraints(nullable: false, references: 'taxes', foreignKeyName: 'fk_taxlines_taxes')
+      }
+      column(name: 'base', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+      column(name: 'amount', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+    }
+
+    // create floors table
+    createTable(tableName: 'floors') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'image', type: 'blob')
+    }
+
+    // create places table
+    createTable(tableName: 'places') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'x', type: 'integer') {
+        constraints(nullable: false)
+      }
+      column(name: 'y', type: 'integer') {
+        constraints(nullable: false)
+      }
+      column(name: 'floor', type: 'varchar') {
+        constraints(nullable: false, references: 'floors', foreignKeyName: 'fk_places_floors')
+      }
+      column(name: 'customer', type: 'varchar')
+      column(name: 'waiter', type: 'varchar')
+      column(name: 'ticketid', type: 'varchar')
+      column(name: 'tablemoved', type: 'boolean', defaultValue: false) {
+        constraints(nullable: false)
+      }
+    }
+
+    // create reservations table
+    createTable(tableName: 'reservations') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'created', type: 'timestamp') {
+        constraints(nullable: false)
+      }
+      column(name: 'datenew', type: 'timestamp', defaultValueDate: '2013-01-01T00:00:00') {
+        constraints(nullable: false)
+      }
+      column(name: 'title', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'chairs', type: 'integer') {
+        constraints(nullable: false)
+      }
+      column(name: 'isdone', type: 'boolean') {
+        constraints(nullable: false)
+      }
+      column(name: 'description', type: 'varchar')
+    }
+    createIndex(tableName: 'reservations', indexName: 'reservations_datenew_idx') {
+      column(name: 'datenew')
+    }
+
+    // create reservation_customers table
+    createTable(tableName: 'reservation_customers') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true, references: 'reservations', foreignKeyName: 'fk_reservation_customers_reservations')
+      }
+      column(name: 'customer', type: 'varchar') {
+        constraints(nullable: false, references: 'customers', foreignKeyName: 'fk_reservation_customers_customers')
+      }
+    }
+
+    // create thirdparties table
+    createTable(tableName: 'thirdparties') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'cif', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false, unique: true)
+      }
+      column(name: 'address', type: 'varchar')
+      column(name: 'contactcomm', type: 'varchar')
+      column(name: 'contactfact', type: 'varchar')
+      column(name: 'payrule', type: 'varchar')
+      column(name: 'faxnumber', type: 'varchar')
+      column(name: 'phonenumber', type: 'varchar')
+      column(name: 'mobilenumber', type: 'varchar')
+      column(name: 'email', type: 'varchar')
+      column(name: 'webpage', type: 'varchar')
+      column(name: 'notes', type: 'varchar')
+    }
+
+    // create sharedtickets table
+    createTable(tableName: 'sharedtickets') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'content', type: 'blob')
+      column(name: 'pickupid', type: 'integer', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+      column(name: 'appuser', type: 'varchar')
+    }
+
 //    // create table
 //    createTable(tableName: '') {
+//      column(name: '', type: 'varchar')
+//      column(name: '', type: 'varchar')
+//      column(name: '', type: 'varchar') {
+//        constraints(nullable: false)
+//      }
+//      column(name: '', type: 'varchar')
+//      column(name: '', type: 'varchar') {
+//        constraints(nullable: false)
+//      }
 //    }
+////-- Added for Employee Presence Management
+////CREATE TABLE SHIFTS (
+////  ID VARCHAR NOT NULL,
+////  STARTSHIFT TIMESTAMP NOT NULL,
+////  ENDSHIFT TIMESTAMP,
+////  PPLID VARCHAR NOT NULL,
+////  PRIMARY KEY (ID)
+////);
 //
 //    // create table
 //    createTable(tableName: '') {
 //    }
 //
-//    // create table
-//    createTable(tableName: '') {
-//    }
 //    // create table
 //    createTable(tableName: '') {
 //    }
@@ -509,165 +727,6 @@ databaseChangeLog {
 
   }
 }
-
-//CREATE TABLE TICKETLINES (
-//    TICKET VARCHAR NOT NULL,
-//    LINE INTEGER NOT NULL,
-//    PRODUCT VARCHAR,
-//    ATTRIBUTESETINSTANCE_ID VARCHAR,
-//    UNITS DOUBLE PRECISION NOT NULL,
-//    PRICE DOUBLE PRECISION NOT NULL,
-//    TAXID VARCHAR NOT NULL,
-//    ATTRIBUTES BYTEA,
-//    PRIMARY KEY (TICKET, LINE),
-//    CONSTRAINT TICKETLINES_FK_TICKET FOREIGN KEY (TICKET) REFERENCES TICKETS(ID),
-//    CONSTRAINT TICKETLINES_FK_2 FOREIGN KEY (PRODUCT) REFERENCES PRODUCTS(ID),
-//    CONSTRAINT TICKETLINES_ATTSETINST FOREIGN KEY (ATTRIBUTESETINSTANCE_ID) REFERENCES ATTRIBUTESETINSTANCE(ID),
-//    CONSTRAINT TICKETLINES_FK_3 FOREIGN KEY (TAXID) REFERENCES TAXES(ID)
-//);
-
-
-
-
-
-// CREATE TABLE LINEREMOVED (
-//  REMOVEDDATE TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-//  NAME VARCHAR DEFAULT NULL,
-//  TICKETID VARCHAR DEFAULT NULL,
-//  PRODUCTID VARCHAR DEFAULT NULL,
-//  PRODUCTNAME VARCHAR DEFAULT NULL,
-//  UNITS DOUBLE PRECISION NOT NULL
-//);
-
-
-
-
-
-//CREATE TABLE PAYMENTS (
-//    ID VARCHAR NOT NULL,
-//    RECEIPT VARCHAR NOT NULL,
-//    PAYMENT VARCHAR NOT NULL,
-//    TOTAL DOUBLE PRECISION NOT NULL,
-//    TRANSID VARCHAR,
-//    NOTES VARCHAR,
-//    RETURNMSG BYTEA,
-//    TENDERED DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    CARDNAME VARCHAR,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT PAYMENTS_FK_RECEIPT FOREIGN KEY (RECEIPT) REFERENCES RECEIPTS(ID)
-//);
-//CREATE INDEX PAYMENTS_IDX_1 ON PAYMENTS(PAYMENT);
-
-
-
-
-
-//CREATE TABLE TAXLINES (
-//    ID VARCHAR NOT NULL,
-//    RECEIPT VARCHAR NOT NULL,
-//    TAXID VARCHAR NOT NULL,
-//    BASE DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    AMOUNT DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT TAXLINES_TAX FOREIGN KEY (TAXID) REFERENCES TAXES(ID),
-//    CONSTRAINT TAXLINES_RECEIPT FOREIGN KEY (RECEIPT) REFERENCES RECEIPTS(ID)
-//);
-
-
-
-
-
-//CREATE TABLE FLOORS (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    IMAGE BYTEA,
-//    PRIMARY KEY (ID)
-//);
-//CREATE UNIQUE INDEX FLOORS_NAME_IDX ON FLOORS(NAME);
-
-
-
-
-
-//CREATE TABLE PLACES (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    X INTEGER NOT NULL,
-//    Y INTEGER NOT NULL,
-//    FLOOR VARCHAR NOT NULL,
-//    CUSTOMER VARCHAR,
-//    WAITER VARCHAR,
-//    TICKETID VARCHAR,
-//    TABLEMOVED BOOLEAN NOT NULL DEFAULT FALSE,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT PLACES_FK_1 FOREIGN KEY (FLOOR) REFERENCES FLOORS(ID)
-//);
-//CREATE UNIQUE INDEX PLACES_NAME_IDX ON PLACES(NAME);
-
-
-
-
-
-//CREATE TABLE RESERVATIONS (
-//    ID VARCHAR NOT NULL,
-//    CREATED TIMESTAMP NOT NULL,
-//    DATENEW TIMESTAMP DEFAULT '2013-01-01 00:00:00' NOT NULL,
-//    TITLE VARCHAR NOT NULL,
-//    CHAIRS INTEGER NOT NULL,
-//    ISDONE BOOLEAN NOT NULL,
-//    DESCRIPTION VARCHAR,
-//    PRIMARY KEY (ID)
-//);
-//CREATE INDEX RESERVATIONS_IDX_1 ON RESERVATIONS(DATENEW);
-
-
-
-
-
-//CREATE TABLE RESERVATION_CUSTOMERS (
-//    ID VARCHAR NOT NULL,
-//    CUSTOMER VARCHAR NOT NULL,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT RES_CUST_FK_1 FOREIGN KEY (ID) REFERENCES RESERVATIONS(ID),
-//    CONSTRAINT RES_CUST_FK_2 FOREIGN KEY (CUSTOMER) REFERENCES CUSTOMERS(ID)
-//);
-
-
-
-
-
-//CREATE TABLE THIRDPARTIES (
-//    ID VARCHAR NOT NULL,
-//    CIF VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    ADDRESS VARCHAR,
-//    CONTACTCOMM VARCHAR,
-//    CONTACTFACT VARCHAR,
-//    PAYRULE VARCHAR,
-//    FAXNUMBER VARCHAR,
-//    PHONENUMBER VARCHAR,
-//    MOBILENUMBER VARCHAR,
-//    EMAIL VARCHAR,
-//    WEBPAGE VARCHAR,
-//    NOTES VARCHAR,
-//    PRIMARY KEY (ID)
-//);
-//CREATE UNIQUE INDEX THIRDPARTIES_CIF_IDX ON THIRDPARTIES(CIF);
-//CREATE UNIQUE INDEX THIRDPARTIES_NAME_IDX ON THIRDPARTIES(NAME);
-
-
-
-
-
-//CREATE TABLE SHAREDTICKETS (
-//    ID VARCHAR NOT NULL,
-//    NAME VARCHAR NOT NULL,
-//    CONTENT BYTEA,
-//    PICKUPID INTEGER NOT NULL DEFAULT 0,
-//    APPUSER VARCHAR,
-//    PRIMARY KEY (ID)
-//);
-
 
 
 
