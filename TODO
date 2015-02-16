@@ -12,3 +12,4 @@ Remove all manually generated SQL, and native SQL calls with jOOQ
 Re-add Oracle, MySQL, HSQLDB database support
 Strip AWT/swing screens with JavaFX 8
 Add support for SQLite
+Redesign / normalize all databases and make use of correct typing / sequences / other modern database features

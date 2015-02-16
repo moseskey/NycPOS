@@ -362,25 +362,120 @@ databaseChangeLog {
       column(name: 'datenew')
     }
 
-//    // create table
-//    createTable(tableName: '') {
-//    }
-//
-//    // create table
-//    createTable(tableName: '') {
-//    }
-//
-//    // create table
-//    createTable(tableName: '') {
-//    }
-//    // create table
-//    createTable(tableName: '') {
-//    }
-//
-//    // create table
-//    createTable(tableName: '') {
-//    }
-//
+    // create stocklevel table
+    createTable(tableName: 'stocklevel') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'location', type: 'varchar') {
+        constraints(nullable: false, references: 'locations', foreignKeyName: 'fk_stocklevel_locations')
+      }
+      column(name: 'product', type: 'varchar') {
+        constraints(nullable: false, references: 'products', foreignKeyName: 'fk_stocklevel_products')
+      }
+      column(name: 'stocksecurity', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+      column(name: 'stockmaximum', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+    }
+
+    // create stockcurrent table
+    createTable(tableName: 'stockcurrent') {
+      column(name: 'location', type: 'varchar') {
+        constraints(nullable: false, references: 'locations', foreignKeyName: 'fk_stockcurrent_locations')
+      }
+      column(name: 'product', type: 'varchar') {
+        constraints(nullable: false, references: 'products', foreignKeyName: 'fk_stockcurrent_products')
+      }
+      column(name: 'attributesetinstance_id', type: 'varchar') {
+        constraints(nullable: false, references: 'attributesetinstance', foreignKeyName: 'fk_stockcurrent_attributesetinstance')
+      }
+      column(name: 'units', type: 'double', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+    }
+    createIndex(tableName: 'stockcurrent', indexName: 'stockcurrent_location_product_attributesetinstance_id_idx', unique: true) {
+      column(name: 'location')
+      column(name: 'product')
+      column(name: 'attributesetinstance_id')
+    }
+
+    // create closedcash table
+    createTable(tableName: 'closedcash') {
+      column(name: 'money', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'host', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'hostsequence', type: 'integer') {
+        constraints(nullable: false)
+      }
+      column(name: 'datestart', type: 'timestamp') {
+        constraints(nullable: false)
+      }
+      column(name: 'dateend', type: 'timestamp')
+      column(name: 'nosales', type: 'integer', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+    }
+    createIndex(tableName: 'closedcash', indexName: 'closedcash_datestart_idx') {
+      column(name: 'datestart')
+    }
+    createIndex(tableName: 'closedcash', indexName: 'closedcash_host_hostsequence_idx', unique: true) {
+      column(name: 'host')
+      column(name: 'hostsequence')
+    }
+
+    // create receipts table
+    createTable(tableName: 'receipts') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'money', type: 'varchar') {
+        constraints(nullable: false, references: 'closedcash', foreignKeyName: 'fk_receipts_closedcash')
+      }
+      column(name: 'datenew', type: 'timestamp') {
+        constraints(nullable: false)
+      }
+      column(name: 'attributes', type: 'blob')
+      column(name: 'person', type: 'varchar')
+    }
+    createIndex(tableName: 'receipts', indexName: 'receipts_datenew_idx') {
+      column(name: 'datenew')
+    }
+
+    // create tickets table
+    createTable(tableName: 'tickets') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true, references: 'receipts', foreignKeyName: 'fk_tickets_receipts')
+      }
+      column(name: 'tickettype', type: 'integer', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+      column(name: 'ticketid', type: 'integer') {
+        constraints(nullable: false)
+      }
+      column(name: 'person', type: 'varchar') {
+        constraints(nullable: false, references: 'people', foreignKeyName: 'fk_tickets_people')
+      }
+      column(name: 'customer', type: 'varchar') {
+        constraints(references: 'customers', foreignKeyName: 'fk_tickets_customers')
+      }
+      column(name: 'status', type: 'integer', defaultValue: 0) {
+        constraints(nullable: false)
+      }
+    }
+    createIndex(tableName: 'tickets', indexName: 'tickets_tickettype_ticketid_idx') {
+      column(name: 'tickettype')
+      column(name: 'ticketid')
+    }
+    createSequence(sequenceName: 'ticketsnum', startValue: 1)
+    createSequence(sequenceName: 'ticketsnum_refund', startValue: 1)
+    createSequence(sequenceName: 'ticketsnum_payment', startValue: 1)
+
 //    // create table
 //    createTable(tableName: '') {
 //    }
@@ -414,98 +509,6 @@ databaseChangeLog {
 
   }
 }
-
-//CREATE TABLE STOCKLEVEL (
-//    ID VARCHAR NOT NULL,
-//    LOCATION VARCHAR NOT NULL,
-//    PRODUCT VARCHAR NOT NULL,
-//    STOCKSECURITY DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    STOCKMAXIMUM DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT STOCKLEVEL_PRODUCT FOREIGN KEY (PRODUCT) REFERENCES PRODUCTS(ID),
-//    CONSTRAINT STOCKLEVEL_LOCATION FOREIGN KEY (LOCATION) REFERENCES LOCATIONS(ID)
-//);
-
-
-
-
-
-//CREATE TABLE STOCKCURRENT (
-//    LOCATION VARCHAR NOT NULL,
-//    PRODUCT VARCHAR NOT NULL,
-//    ATTRIBUTESETINSTANCE_ID VARCHAR,
-//    UNITS DOUBLE PRECISION DEFAULT 0 NOT NULL,
-//    CONSTRAINT STOCKCURRENT_FK_1 FOREIGN KEY (PRODUCT) REFERENCES PRODUCTS(ID),
-//    CONSTRAINT STOCKCURRENT_ATTSETINST FOREIGN KEY (ATTRIBUTESETINSTANCE_ID) REFERENCES ATTRIBUTESETINSTANCE(ID),
-//    CONSTRAINT STOCKCURRENT_FK_2 FOREIGN KEY (LOCATION) REFERENCES LOCATIONS(ID)
-//);
-//CREATE UNIQUE INDEX STOCKCURRENT_IDX ON STOCKCURRENT(LOCATION, PRODUCT, ATTRIBUTESETINSTANCE_ID);
-
-
-
-
-
-//CREATE TABLE CLOSEDCASH (
-//    MONEY VARCHAR NOT NULL,
-//    HOST VARCHAR NOT NULL,
-//    HOSTSEQUENCE INTEGER NOT NULL,
-//    DATESTART TIMESTAMP NOT NULL,
-//    DATEEND TIMESTAMP,
-//    NOSALES INTEGER DEFAULT 0 NOT NULL,
-//    PRIMARY KEY(MONEY)
-//);
-//CREATE INDEX CLOSEDCASH_IDX_1 ON CLOSEDCASH(DATESTART);
-//CREATE UNIQUE INDEX CLOSEDCASH_IDX_SEQ ON CLOSEDCASH(HOST, HOSTSEQUENCE);
-
-
-
-
-
-//CREATE TABLE RECEIPTS (
-//    ID VARCHAR NOT NULL,
-//    MONEY VARCHAR NOT NULL,
-//    DATENEW TIMESTAMP NOT NULL,
-//    ATTRIBUTES BYTEA,
-//    PERSON VARCHAR,
-//    PRIMARY KEY (ID),
-//CONSTRAINT RECEIPTS_FK_MONEY FOREIGN KEY (MONEY) REFERENCES CLOSEDCASH(MONEY)
-//);
-//CREATE INDEX RECEIPTS_IDX_1 ON RECEIPTS(DATENEW);
-
-
-
-
-
-//CREATE TABLE TICKETS (
-//    ID VARCHAR NOT NULL,
-//    TICKETTYPE INTEGER DEFAULT 0 NOT NULL,
-//    TICKETID INTEGER NOT NULL,
-//    PERSON VARCHAR NOT NULL,
-//    CUSTOMER VARCHAR,
-//    STATUS INTEGER DEFAULT 0 NOT NULL,
-//    PRIMARY KEY (ID),
-//    CONSTRAINT TICKETS_FK_ID FOREIGN KEY (ID) REFERENCES RECEIPTS(ID),
-//    CONSTRAINT TICKETS_FK_2 FOREIGN KEY (PERSON) REFERENCES PEOPLE(ID),
-//    CONSTRAINT TICKETS_CUSTOMERS_FK FOREIGN KEY (CUSTOMER) REFERENCES CUSTOMERS(ID)
-//);
-//CREATE INDEX TICKETS_TICKETID ON TICKETS(TICKETTYPE, TICKETID);
-
-
-
-
-
-//CREATE SEQUENCE TICKETSNUM START WITH 1;
-//CREATE SEQUENCE TICKETSNUM_REFUND START WITH 1;
-//CREATE SEQUENCE TICKETSNUM_PAYMENT START WITH 1;
-
-
-
-
-
-
-
-
-
 
 //CREATE TABLE TICKETLINES (
 //    TICKET VARCHAR NOT NULL,
