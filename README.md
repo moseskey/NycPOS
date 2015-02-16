@@ -1,10 +1,10 @@
 # About NycPOS [![Build Status](https://travis-ci.org/KNQ/NycPOS.svg)](https://travis-ci.org/KNQ/NycPOS)
-This is a full, top-down rewrite of OpenBravo POS/uniCenta oPOS using modern
-development tools, methods, and libraries. Additionally, once complete, it will
-carry a new UI written using modern Java UI (likely JavaFX 8), and more
-consistent themeing. An attempt is being made to salvage as much of the
-original code as possible, in order to provide an upgrade path for those
-currently on outdated versions of OpenBravo/uniCenta. 
+This is a full, top-down rewrite of [OpenBravo POS](http://www.openbravo.com/)/[uniCenta oPOS](http://www.unicenta.com/)
+using modern development tools, methods, and libraries. Additionally, once
+complete, it will carry a new UI written using modern Java UI (likely JavaFX
+8), and more consistent themeing. An attempt is being made to salvage as much
+of the original code as possible, in order to provide an upgrade path for those
+currently on outdated versions of OpenBravo/uniCenta.
 
 Additionally, while we are doing a full rewrite of the UI, we are aiming to
 keep the same general look, feel, and button layout/positioning, in order
@@ -13,10 +13,11 @@ otherwise limit interruptions for existing retail businesses, should they
 choose to switch to NycPOS.
 
 Please be advised that this project is currently in a state of flux, however it
-is currently able to compile "out of the box." However, it is nowhere near
-ready for production use. We expect it will take 4-6 weeks of development time
-to get the code into a modern, stable state before it will be usable by
-non-developers.
+is currently compiles "out of the box." Please be aware, however, that it is
+nowhere near ready for production use. We expect it will take a further 4-6
+weeks of development time to get the code into a modern, stable state before it
+will be usable by non-developers. We are hoping for an Alpha release by March
+1st, 2015.
 
 ## Compiling and Running
 
@@ -40,6 +41,26 @@ as these are likely to change faster than the documentation will.
 Additionally, you will need to extract images from the uniCenta 3.81 source
 tree and copy them into the `src/main/resources/images` and
 `src/main/resources/templates/default` directories.
+
+### Database setup
+
+The project is currently in a state of flux with regards to the database
+(design/schema/imports/etc). However, you can currently import the base schema
+with [Liquibase](http://www.liquibase.org/) via the following commands:
+
+    cd NycPOS
+    rm -rf .db && ./gradlew lqbUpdate
+
+You can then run the embedded H2 database via the following:
+
+    cd NycPOS
+    ./gradlew runH2DbServer
+
+We plan in the future to support all databases that support modern SQL and that
+Liquibase also supports. We are also planning to support imports from uniCenta
+3.70/3.81 into NycPOS directly out of the box. For older versions of uniCenta,
+one will need to first upgrade their uniCenta installation, and then migrate to
+NycPOS.
 
 ## Look to the Future
 
@@ -72,7 +93,7 @@ specific or promised delivery order):
 * Modernize database schema/structure/scripts
   * Standardize database schema (reflection?)
   * Swap out hard coded SQL for ORM style generated code (jOOQ)
-  * Separate sample data from scripts into template resource files 
+  * Separate sample data from scripts into template resource files
 * Fix database upgrades/migrations (liquibase)
 * Fix broken scripts in template resources
   * Add multiple templates for various types of businesses
@@ -87,4 +108,9 @@ specific or promised delivery order):
   in client (for security/sanity purposes)
   * Isolate business logic from client logic
   * Define API
-* Much much more ...
+* Strip beanshell2 dependency and replace with generic scripting engine support
+  (Groovy, JRuby, etc)
+* Replace velocity templates/dependency with updated templates in Groovy
+  Templates or other modern Java based template engine (preference for lowest
+  external dependency count) 
+* *And much, much, more ... please see `TODO` file for immediate worklog*
