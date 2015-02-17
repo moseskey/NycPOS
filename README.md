@@ -12,12 +12,12 @@ eliminate (as much as possible) employee re-training, and to hopefully
 otherwise limit interruptions for existing retail businesses, should they
 choose to switch to NycPOS.
 
-Please be advised that this project is currently in a state of flux, however it
-is currently compiles "out of the box." Please be aware, however, that it is
-nowhere near ready for production use. We expect it will take a further 4-6
-weeks of development time to get the code into a modern, stable state before it
-will be usable by non-developers. We are hoping for an Alpha release by March
-1st, 2015.
+NOTE: This project is currently in a state of flux -- but currently, it can
+compile "out of the box." Please be advised, however, that the current state of
+the code is nowhere near ready for production use. We expect it will take a
+further 4-6 weeks of development time to get the code into a modern, stable
+state before it will be usable by non-developers. We are hoping for an Alpha
+release by March 1st, 2015.
 
 ## Compiling and Running
 
