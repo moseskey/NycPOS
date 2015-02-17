@@ -775,6 +775,5 @@ databaseChangeLog {
       column(name: 'name', type: 'varchar')
       column(name: 'ticketid', type: 'varchar')
     }
-
   }
 }
