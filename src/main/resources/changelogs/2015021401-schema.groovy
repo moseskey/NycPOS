@@ -472,6 +472,8 @@ databaseChangeLog {
       column(name: 'tickettype')
       column(name: 'ticketid')
     }
+
+    // create ticketsnum, ticketsnum_refund, ticketsnum_payment sequences
     createSequence(sequenceName: 'ticketsnum', startValue: 1)
     createSequence(sequenceName: 'ticketsnum_refund', startValue: 1)
     createSequence(sequenceName: 'ticketsnum_payment', startValue: 1)
@@ -680,139 +682,99 @@ databaseChangeLog {
       column(name: 'appuser', type: 'varchar')
     }
 
-//    // create table
-//    createTable(tableName: '') {
-//      column(name: '', type: 'varchar')
-//      column(name: '', type: 'varchar')
-//      column(name: '', type: 'varchar') {
-//        constraints(nullable: false)
-//      }
-//      column(name: '', type: 'varchar')
-//      column(name: '', type: 'varchar') {
-//        constraints(nullable: false)
-//      }
-//    }
-////-- Added for Employee Presence Management
-////CREATE TABLE SHIFTS (
-////  ID VARCHAR NOT NULL,
-////  STARTSHIFT TIMESTAMP NOT NULL,
-////  ENDSHIFT TIMESTAMP,
-////  PPLID VARCHAR NOT NULL,
-////  PRIMARY KEY (ID)
-////);
-//
-//    // create table
-//    createTable(tableName: '') {
-//    }
-//
-//    // create table
-//    createTable(tableName: '') {
-//    }
-//
-//    // create table
-//    createTable(tableName: '') {
-//    }
-//
-//    // create table
-//    createTable(tableName: '') {
-//    }
-//
-//    // create table
-//    createTable(tableName: '') {
-//    }
-//
-//    // create table
-//    createTable(tableName: '') {
-//    }
+    // create shifts table
+    createTable(tableName: 'shifts') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'startshift', type: 'timestamp') {
+        constraints(nullable: false)
+      }
+      column(name: 'endshift', type: 'timestamp')
+      column(name: 'pplid', type: 'varchar') {
+        constraints(nullable: false)
+      }
+    }
+
+    // create leaves table
+    createTable(tableName: 'leaves') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'pplid', type: 'varchar') {
+        constraints(nullable: false, references: 'people', foreignKeyName: 'fk_leaves_people')
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'startdate', type: 'timestamp') {
+        constraints(nullable: false)
+      }
+      column(name: 'enddate', type: 'timestamp') {
+        constraints(nullable: false)
+      }
+      column(name: 'notes', type: 'varchar')
+    }
+
+    // create breaks table
+    createTable(tableName: 'breaks') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'notes', type: 'varchar')
+      column(name: 'visible', type: 'boolean') {
+        constraints(nullable: false)
+      }
+    }
+
+    // create shift_breaks table
+    createTable(tableName: 'shift_breaks') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'shiftid', type: 'varchar') {
+        constraints(nullable: false, references: 'shifts', foreignKeyName: 'fk_shift_breaks_shifts')
+      }
+      column(name: 'breakid', type: 'varchar') {
+        constraints(nullable: false, references: 'breaks', foreignKeyName: 'fk_shift_breaks_breaks')
+      }
+      column(name: 'starttime', type: 'timestamp') {
+        constraints(nullable: false)
+      }
+      column(name: 'endtime', type: 'timestamp')
+    }
+
+    // create csvimport table
+    createTable(tableName: 'csvimport') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'rownumber', type: 'varchar')
+      column(name: 'csverror', type: 'varchar')
+      column(name: 'reference', type: 'varchar')
+      column(name: 'code', type: 'varchar')
+      column(name: 'name', type: 'varchar')
+      column(name: 'pricebuy', type: 'double')
+      column(name: 'pricesell', type: 'double')
+      column(name: 'previousbuy', type: 'double')
+      column(name: 'previoussell', type: 'double')
+      column(name: 'category', type: 'varchar')
+    }
+
+    // create pickup_number sequence
+    createSequence(sequenceName: 'pickup_number', startValue: 1)
+
+    // create draweropened table
+    createTable(tableName: 'draweropened') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar')
+      column(name: 'ticketid', type: 'varchar')
+    }
 
   }
 }
-
-
-
-
-//-- Added for Employee Presence Management
-//CREATE TABLE SHIFTS (
-//  ID VARCHAR NOT NULL,
-//  STARTSHIFT TIMESTAMP NOT NULL,
-//  ENDSHIFT TIMESTAMP,
-//  PPLID VARCHAR NOT NULL,
-//  PRIMARY KEY (ID)
-//);
-
-
-
-
-
-//CREATE TABLE LEAVES (
-//  ID VARCHAR NOT NULL,
-//  PPLID VARCHAR NOT NULL,
-//  NAME VARCHAR NOT NULL,
-//  STARTDATE TIMESTAMP NOT NULL,
-//  ENDDATE TIMESTAMP NOT NULL,
-//  NOTES VARCHAR,
-//  PRIMARY KEY (ID),
-//  CONSTRAINT lEAVES_PPLID FOREIGN KEY (PPLID) REFERENCES PEOPLE(ID)
-//);
-
-
-
-
-
-//CREATE TABLE BREAKS (
-//  ID VARCHAR NOT NULL,
-//  NAME VARCHAR NOT NULL,
-//  NOTES VARCHAR,
-//  VISIBLE BOOLEAN NOT NULL,
-//  PRIMARY KEY (ID)
-//);
-
-
-
-
-
-//CREATE TABLE SHIFT_BREAKS (
-//  ID VARCHAR NOT NULL,
-//  SHIFTID VARCHAR NOT NULL,
-//  BREAKID VARCHAR NOT NULL,
-//  STARTTIME TIMESTAMP NOT NULL,
-//  ENDTIME TIMESTAMP,
-//  PRIMARY KEY (ID),
-//  CONSTRAINT SHIFT_BREAKS_BREAKID FOREIGN KEY (BREAKID) REFERENCES BREAKS(ID),
-//  CONSTRAINT SHIFT_BREAKS_SHIFTID FOREIGN KEY (SHIFTID) REFERENCES SHIFTS(ID)
-//);
-
-
-
-
-
-//CREATE TABLE CSVIMPORT (
-//  ID VARCHAR NOT NULL,
-//  ROWNUMBER VARCHAR,
-//  CSVERROR VARCHAR,
-//  REFERENCE VARCHAR,
-//  CODE VARCHAR,
-//  NAME VARCHAR,
-//  PRICEBUY DOUBLE PRECISION,
-//  PRICESELL DOUBLE PRECISION,
-//  PREVIOUSBUY DOUBLE PRECISION,
-//  PREVIOUSSELL DOUBLE PRECISION,
-//  CATEGORY VARCHAR,
-//  PRIMARY KEY (ID)
-//);
-
-
-
-
-
-//CREATE SEQUENCE PICKUP_NUMBER START WITH 1;
-
-
-
-
-
-//CREATE TABLE DRAWEROPENED (
-//  OPENDATE TIMESTAMP DEFAULT NOW(),
-//  NAME VARCHAR,
-//  TICKETID VARCHAR
-//);
