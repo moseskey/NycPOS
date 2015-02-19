@@ -36,7 +36,12 @@ mainClassName   = 'com.openbravo.pos.forms.StartPOS'
 // useful variables
 import groovy.transform.Field
 @Field int    MAX_COLUMNS = 120
-@Field String DIVIDER     = "-".multiply(MAX_COLUMNS)
+@Field String DIVIDER     = '-'.multiply(MAX_COLUMNS)
+
+// get currently configured git user and set up as user.email system property
+// which is used for liquibase diffs author id's
+@Field String GIT_USER    = 'git config user.email'.execute().in.text.trim()
+System.properties['user.name'] = GIT_USER
 
 // prints a header for output
 def logHeader(String headerText) {
