@@ -11,7 +11,7 @@ buildscript {
 
         // liquibase plugin (installed locally, as the latest isn't yet
         // available in a public maven repo)
-        classpath 'net.saliman:gradle-liquibase-plugin:1.0.1-SNAPSHOT'
+        classpath 'net.saliman:gradle-liquibase-plugin:3.3.x-SNAPSHOT'
     }
 
     // load shared dbdeps.gradle (needed for the liquibase tasks)
