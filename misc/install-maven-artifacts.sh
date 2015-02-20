@@ -41,13 +41,25 @@ if [ ! -f $HOME/.m2/repository/io/knq/javapos/javapos/1.14.0/javapos-1.14.0.jar 
 fi
 
 # check if already cached locally
-if [ ! -f $HOME/.m2/repository/net/saliman/gradle-liquibase-plugin/1.0.1-SNAPSHOT/gradle-liquibase-plugin-1.0.1-SNAPSHOT.jar ]; then
+if [ ! -f $HOME/.m2/repository/net/saliman/groovy-liquibase-dsl/3.3.x-SNAPSHOT/groovy-liquibase-dsl-3.3.x-SNAPSHOT.jar ]; then
+  pushd $HOME > /dev/null
+  rm -rf groovy-liquibase
+  git clone https://github.com/KNQ/groovy-liquibase.git
+
+  pushd $HOME/groovy-liquibase
+  ./gradlew build install
+
+  popd > /dev/null
+  popd > /dev/null
+fi
+
+# check if already cached locally
+if [ ! -f $HOME/.m2/repository/net/saliman/gradle-liquibase-plugin/3.3.x-SNAPSHOT/gradle-liquibase-plugin-3.3.x-SNAPSHOT.jar ]; then
   pushd $HOME > /dev/null
   rm -rf gradle-liquibase-plugin
-  git clone https://github.com/tlberglund/gradle-liquibase-plugin.git
+  git clone https://github.com/KNQ/gradle-liquibase-plugin.git
 
   pushd $HOME/gradle-liquibase-plugin
-  git checkout ccd4c7b7
   ./gradlew build install
 
   popd > /dev/null
