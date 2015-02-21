@@ -550,7 +550,7 @@ databaseChangeLog {
       }
       column(name: 'attributes', type: 'blob')
     }
-    addPrimaryKey(tableName: 'ticketlines', columnNames: 'ticket, line', constraintName: 'pk_ticketlines')
+    addPrimaryKey(tableName: 'ticketlines', columnNames: 'ticket,line')
 
     // create lineremoved table
     createTable(tableName: 'lineremoved') {
