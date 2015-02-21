@@ -1,15 +1,31 @@
 databaseChangeLog {
   // create initial database schema
   changeSet(author: 'kenneth.shaw@knq.io', id: 'create-schema') {
+    // create applications table
+    createTable(tableName: 'applications') {
+      column(name: 'id', type: 'varchar') {
+        constraints(nullable: false, primaryKey: true)
+      }
+      column(name: 'name', type: 'varchar') {
+        constraints(nullable: false)
+      }
+      column(name: 'version', type: 'varchar') {
+        constraints(nullable: false)
+      }
+    }
+
     // create roles table
     createTable(tableName: 'roles') {
       column(name: 'id', type: 'varchar') {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'permissions', type: 'blob')
+    }
+    createIndex(tableName: 'roles', unique: true) {
+      column(name: 'name')
     }
 
     // create people table
@@ -18,7 +34,7 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'apppassword', type: 'varchar')
       column(name: 'card', type: 'varchar')
@@ -30,8 +46,11 @@ databaseChangeLog {
       }
       column(name: 'image', type: 'blob')
     }
-    createIndex(tableName: 'people', indexName: 'people_card_idx') {
+    createIndex(tableName: 'people') {
       column(name: 'card')
+    }
+    createIndex(tableName: 'people', unique: true) {
+      column(name: 'name')
     }
 
     // create resources table
@@ -40,12 +59,15 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'restype', type: 'integer') {
         constraints(nullable: false)
       }
       column(name: 'content', type: 'blob')
+    }
+    createIndex(tableName: 'resources', unique: true) {
+      column(name: 'name')
     }
 
     // create taxcustcategories table
@@ -54,8 +76,11 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
+    }
+    createIndex(tableName: 'taxcustcategories', unique: true) {
+      column(name: 'name')
     }
 
     // ceate customers table
@@ -64,14 +89,14 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'searchkey', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'taxid', type: 'varchar')
       column(name: 'name', type: 'varchar') {
         constraints(nullable: false)
       }
       column(name: 'taxcategory', type: 'varchar') {
-        constraints(nullable: false, references: 'taxcustcategories', foreignKeyName: 'fk_customers_taxcustcategories')
+        constraints(references: 'taxcustcategories', foreignKeyName: 'fk_customers_taxcustcategories')
       }
       column(name: 'card', type: 'varchar')
       column(name: 'maxdebt', type: 'double', defaultValue: 0) {
@@ -93,20 +118,20 @@ databaseChangeLog {
       column(name: 'visible', type: 'boolean', defaultValue: true) {
         constraints(nullable: false)
       }
-      column(name: 'curdate', type: 'timestamp')
+      column(name: 'curdate', type: '${type.timestamp}')
       column(name: 'curdebt', type: 'double', defaultValue: 0)
       column(name: 'image', type: 'blob')
     }
-    createIndex(tableName: 'customers', indexName: 'customers_searchkey_idx') {
+    createIndex(tableName: 'customers', unique: true) {
       column(name: 'searchkey')
     }
-    createIndex(tableName: 'customers', indexName: 'customers_taxid_idx') {
+    createIndex(tableName: 'customers') {
       column(name: 'taxid')
     }
-    createIndex(tableName: 'customers', indexName: 'customers_name_idx') {
+    createIndex(tableName: 'customers') {
       column(name: 'name')
     }
-    createIndex(tableName: 'customers', indexName: 'customers_card_idx') {
+    createIndex(tableName: 'customers') {
       column(name: 'card')
     }
 
@@ -116,16 +141,19 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'parentid', type: 'varchar') {
-        constraints(nullable: false, references: 'categories', foreignKeyName: 'fk_categories_parent')
+        constraints(references: 'categories', foreignKeyName: 'fk_categories_parent')
       }
       column(name: 'image', type: 'blob')
       column(name: 'texttip', type: 'varchar', defaultValue: null)
       column(name: 'catshowname', type: 'boolean', defaultValue: true) {
         constraints(nullable: false)
       }
+    }
+    createIndex(tableName: 'categories', unique: true) {
+      column(name: 'name')
     }
 
     // create taxcategories table
@@ -134,8 +162,11 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
+    }
+    createIndex(tableName: 'taxcategories', unique: true) {
+      column(name: 'name')
     }
 
     // create taxes table
@@ -144,16 +175,16 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'category', type: 'varchar') {
         constraints(nullable: false, references: 'taxcategories', foreignKeyName: 'fk_taxes_taxcategories')
       }
       column(name: 'custcategory', type: 'varchar') {
-        constraints(nullable: false, references: 'taxcustcategories', foreignKeyName: 'fk_taxes_taxcustcategories')
+        constraints(references: 'taxcustcategories', foreignKeyName: 'fk_taxes_taxcustcategories')
       }
       column(name: 'parentid', type: 'varchar') {
-        constraints(nullable: false, references: 'taxes', foreignKeyName: 'fk_taxes_parent')
+        constraints(references: 'taxes', foreignKeyName: 'fk_taxes_parent')
       }
       column(name: 'rate', type: 'double', defaultValue: 0) {
         constraints(nullable: false)
@@ -162,6 +193,9 @@ databaseChangeLog {
         constraints(nullable: false)
       }
       column(name: 'rateorder', type: 'integer')
+    }
+    createIndex(tableName: 'taxes', unique: true) {
+      column(name: 'name')
     }
 
     // create attribute table
@@ -182,6 +216,7 @@ databaseChangeLog {
       column(name: 'attribute_id', type: 'varchar') {
         constraints(nullable: false, references: 'attribute', foreignKeyName: 'fk_attributevalue_attribute', deleteCascade: true)
       }
+      column(name: 'value', type: 'varchar')
     }
 
     // create attributeset table
@@ -203,11 +238,11 @@ databaseChangeLog {
         constraints(nullable: false, references: 'attributeset', foreignKeyName: 'fk_attributeuse_attributeset', deleteCascade: true)
       }
       column(name: 'attribute_id', type: 'varchar') {
-        constraints(nullable: false, references: 'attribute', foreignKeyName: 'fk_attributeuse_attribute', deleteCascade: true)
+        constraints(nullable: false, references: 'attribute', foreignKeyName: 'fk_attributeuse_attribute')
       }
       column(name: 'lineno', type: 'integer')
     }
-    createIndex(tableName: 'attributeuse', indexName: 'attributeuse_attributesetid_lineno_idx') {
+    createIndex(tableName: 'attributeuse', unique: true) {
       column(name: 'attributeset_id')
       column(name: 'lineno')
     }
@@ -232,7 +267,7 @@ databaseChangeLog {
         constraints(nullable: false, references: 'attributesetinstance', foreignKeyName: 'fk_attributeinstance_attributesetinstance', deleteCascade: true)
       }
       column(name: 'attribute_id', type: 'varchar') {
-        constraints(nullable: false, references: 'attribute', foreignKeyName: 'fk_attributeinstance_attribute', deleteCascade: true)
+        constraints(nullable: false, references: 'attribute', foreignKeyName: 'fk_attributeinstance_attribute')
       }
       column(name: 'value', type: 'varchar')
     }
@@ -243,14 +278,14 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'reference', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'code', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'codetype', type: 'varchar')
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'pricebuy', type: 'double', defaultValue: 0) {
         constraints(nullable: false)
@@ -290,6 +325,15 @@ databaseChangeLog {
         constraints(nullable: false)
       }
     }
+    createIndex(tableName: 'products', unique: true) {
+      column(name: 'reference')
+    }
+    createIndex(tableName: 'products', unique: true) {
+      column(name: 'code')
+    }
+    createIndex(tableName: 'products', unique: true) {
+      column(name: 'name')
+    }
 
     // create products_cat table
     createTable(tableName: 'products_cat') {
@@ -298,7 +342,7 @@ databaseChangeLog {
       }
       column(name: 'catorder', type: 'integer')
     }
-    createIndex(tableName: 'products_cat', indexName: 'products_cat_catorder_idx') {
+    createIndex(tableName: 'products_cat') {
       column(name: 'catorder')
     }
 
@@ -308,13 +352,13 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'product', type: 'varchar') {
-        constraints(nullable: false, primaryKey: true, references: 'products', foreignKeyName: 'fk_products_com_products')
+        constraints(nullable: false, references: 'products', foreignKeyName: 'fk_products_com_products')
       }
       column(name: 'product2', type: 'varchar') {
-        constraints(nullable: false, primaryKey: true, references: 'products', foreignKeyName: 'fk_products_com_products2')
+        constraints(nullable: false, references: 'products', foreignKeyName: 'fk_products_com_products2')
       }
     }
-    createIndex(tableName: 'products_com', indexName: 'products_com_product_product2_idx', unique: true) {
+    createIndex(tableName: 'products_com', unique: true) {
       column(name: 'product')
       column(name: 'product2')
     }
@@ -325,9 +369,12 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'address', type: 'varchar')
+    }
+    createIndex(tableName: 'locations', unique: true) {
+      column(name: 'name')
     }
 
     // create stockdiary table
@@ -335,7 +382,7 @@ databaseChangeLog {
       column(name: 'id', type: 'varchar') {
         constraints(nullable: false, primaryKey: true)
       }
-      column(name: 'datenew', type: 'timestamp') {
+      column(name: 'datenew', type: '${type.timestamp}') {
         constraints(nullable: false)
       }
       column(name: 'reason', type: 'integer') {
@@ -348,7 +395,7 @@ databaseChangeLog {
         constraints(nullable: false, references: 'products', foreignKeyName: 'fk_stockdiary_products')
       }
       column(name: 'attributesetinstance_id', type: 'varchar') {
-        constraints(nullable: false, references: 'attributesetinstance', foreignKeyName: 'fk_stockdiary_attributesetinstance')
+        constraints(references: 'attributesetinstance', foreignKeyName: 'fk_stockdiary_attributesetinstance')
       }
       column(name: 'units', type: 'double') {
         constraints(nullable: false)
@@ -358,7 +405,7 @@ databaseChangeLog {
       }
       column(name: 'appuser', type: 'varchar')
     }
-    createIndex(tableName: 'stockdiary', indexName: 'stockdairy_datenew_idx') {
+    createIndex(tableName: 'stockdiary') {
       column(name: 'datenew')
     }
 
@@ -390,13 +437,13 @@ databaseChangeLog {
         constraints(nullable: false, references: 'products', foreignKeyName: 'fk_stockcurrent_products')
       }
       column(name: 'attributesetinstance_id', type: 'varchar') {
-        constraints(nullable: false, references: 'attributesetinstance', foreignKeyName: 'fk_stockcurrent_attributesetinstance')
+        constraints(references: 'attributesetinstance', foreignKeyName: 'fk_stockcurrent_attributesetinstance')
       }
       column(name: 'units', type: 'double', defaultValue: 0) {
         constraints(nullable: false)
       }
     }
-    createIndex(tableName: 'stockcurrent', indexName: 'stockcurrent_location_product_attributesetinstance_id_idx', unique: true) {
+    createIndex(tableName: 'stockcurrent', unique: true) {
       column(name: 'location')
       column(name: 'product')
       column(name: 'attributesetinstance_id')
@@ -413,18 +460,18 @@ databaseChangeLog {
       column(name: 'hostsequence', type: 'integer') {
         constraints(nullable: false)
       }
-      column(name: 'datestart', type: 'timestamp') {
+      column(name: 'datestart', type: '${type.timestamp}') {
         constraints(nullable: false)
       }
-      column(name: 'dateend', type: 'timestamp')
+      column(name: 'dateend', type: '${type.timestamp}')
       column(name: 'nosales', type: 'integer', defaultValue: 0) {
         constraints(nullable: false)
       }
     }
-    createIndex(tableName: 'closedcash', indexName: 'closedcash_datestart_idx') {
+    createIndex(tableName: 'closedcash') {
       column(name: 'datestart')
     }
-    createIndex(tableName: 'closedcash', indexName: 'closedcash_host_hostsequence_idx', unique: true) {
+    createIndex(tableName: 'closedcash', unique: true) {
       column(name: 'host')
       column(name: 'hostsequence')
     }
@@ -437,13 +484,13 @@ databaseChangeLog {
       column(name: 'money', type: 'varchar') {
         constraints(nullable: false, references: 'closedcash', foreignKeyName: 'fk_receipts_closedcash')
       }
-      column(name: 'datenew', type: 'timestamp') {
+      column(name: 'datenew', type: '${type.timestamp}') {
         constraints(nullable: false)
       }
       column(name: 'attributes', type: 'blob')
       column(name: 'person', type: 'varchar')
     }
-    createIndex(tableName: 'receipts', indexName: 'receipts_datenew_idx') {
+    createIndex(tableName: 'receipts') {
       column(name: 'datenew')
     }
 
@@ -468,7 +515,7 @@ databaseChangeLog {
         constraints(nullable: false)
       }
     }
-    createIndex(tableName: 'tickets', indexName: 'tickets_tickettype_ticketid_idx') {
+    createIndex(tableName: 'tickets') {
       column(name: 'tickettype')
       column(name: 'ticketid')
     }
@@ -507,21 +554,13 @@ databaseChangeLog {
 
     // create lineremoved table
     createTable(tableName: 'lineremoved') {
-      column(name: 'removeddate', type: 'timestamp', defaultValueComputed: 'CURRENT_TIMESTAMP') {
+      column(name: 'removeddate', type: '${type.timestamp}', defaultValueComputed: 'CURRENT_TIMESTAMP') {
         constraints(nullable: false)
       }
-      column(name: 'name', type: 'varchar') {
-        constraints(nullable: false)
-      }
-      column(name: 'ticketid', type: 'varchar') {
-        constraints(nullable: false)
-      }
-      column(name: 'productid', type: 'varchar') {
-        constraints(nullable: false)
-      }
-      column(name: 'productname', type: 'varchar') {
-        constraints(nullable: false)
-      }
+      column(name: 'name', type: 'varchar')
+      column(name: 'ticketid', type: 'varchar')
+      column(name: 'productid', type: 'varchar')
+      column(name: 'productname', type: 'varchar')
       column(name: 'units', type: 'double') {
         constraints(nullable: false)
       }
@@ -549,7 +588,7 @@ databaseChangeLog {
       }
       column(name: 'cardname', type: 'varchar')
     }
-    createIndex(tableName: 'payments', indexName: 'payments_payment_idx') {
+    createIndex(tableName: 'payments') {
       column(name: 'payment')
     }
 
@@ -578,9 +617,12 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'image', type: 'blob')
+    }
+    createIndex(tableName: 'floors', unique: true) {
+      column(name: 'name')
     }
 
     // create places table
@@ -589,7 +631,7 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'x', type: 'integer') {
         constraints(nullable: false)
@@ -607,16 +649,19 @@ databaseChangeLog {
         constraints(nullable: false)
       }
     }
+    createIndex(tableName: 'places', unique: true) {
+      column(name: 'name')
+    }
 
     // create reservations table
     createTable(tableName: 'reservations') {
       column(name: 'id', type: 'varchar') {
         constraints(nullable: false, primaryKey: true)
       }
-      column(name: 'created', type: 'timestamp') {
+      column(name: 'created', type: '${type.timestamp}') {
         constraints(nullable: false)
       }
-      column(name: 'datenew', type: 'timestamp', defaultValueDate: '2013-01-01T00:00:00') {
+      column(name: 'datenew', type: '${type.timestamp}', defaultValueDate: '2013-01-01T00:00:00') {
         constraints(nullable: false)
       }
       column(name: 'title', type: 'varchar') {
@@ -630,7 +675,7 @@ databaseChangeLog {
       }
       column(name: 'description', type: 'varchar')
     }
-    createIndex(tableName: 'reservations', indexName: 'reservations_datenew_idx') {
+    createIndex(tableName: 'reservations') {
       column(name: 'datenew')
     }
 
@@ -650,10 +695,10 @@ databaseChangeLog {
         constraints(nullable: false, primaryKey: true)
       }
       column(name: 'cif', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'name', type: 'varchar') {
-        constraints(nullable: false, unique: true)
+        constraints(nullable: false)
       }
       column(name: 'address', type: 'varchar')
       column(name: 'contactcomm', type: 'varchar')
@@ -665,6 +710,12 @@ databaseChangeLog {
       column(name: 'email', type: 'varchar')
       column(name: 'webpage', type: 'varchar')
       column(name: 'notes', type: 'varchar')
+    }
+    createIndex(tableName: 'thirdparties', unique: true) {
+      column(name: 'cif')
+    }
+    createIndex(tableName: 'thirdparties', unique: true) {
+      column(name: 'name')
     }
 
     // create sharedtickets table
@@ -687,10 +738,10 @@ databaseChangeLog {
       column(name: 'id', type: 'varchar') {
         constraints(nullable: false, primaryKey: true)
       }
-      column(name: 'startshift', type: 'timestamp') {
+      column(name: 'startshift', type: '${type.timestamp}') {
         constraints(nullable: false)
       }
-      column(name: 'endshift', type: 'timestamp')
+      column(name: 'endshift', type: '${type.timestamp}')
       column(name: 'pplid', type: 'varchar') {
         constraints(nullable: false)
       }
@@ -707,10 +758,10 @@ databaseChangeLog {
       column(name: 'name', type: 'varchar') {
         constraints(nullable: false)
       }
-      column(name: 'startdate', type: 'timestamp') {
+      column(name: 'startdate', type: '${type.timestamp}') {
         constraints(nullable: false)
       }
-      column(name: 'enddate', type: 'timestamp') {
+      column(name: 'enddate', type: '${type.timestamp}') {
         constraints(nullable: false)
       }
       column(name: 'notes', type: 'varchar')
@@ -741,10 +792,20 @@ databaseChangeLog {
       column(name: 'breakid', type: 'varchar') {
         constraints(nullable: false, references: 'breaks', foreignKeyName: 'fk_shift_breaks_breaks')
       }
-      column(name: 'starttime', type: 'timestamp') {
+      column(name: 'starttime', type: '${type.timestamp}') {
         constraints(nullable: false)
       }
-      column(name: 'endtime', type: 'timestamp')
+      column(name: 'endtime', type: '${type.timestamp}')
+    }
+
+    // create moorers table
+    createTable(tableName: 'moorers') {
+      column(name: 'vesselname', type: 'varchar')
+      column(name: 'size', type: 'integer')
+      column(name: 'days', type: 'integer')
+      column(name: 'power', type: 'boolean', defaultValue: false) {
+        constraints(nullable: false)
+      }
     }
 
     // create csvimport table
@@ -769,9 +830,7 @@ databaseChangeLog {
 
     // create draweropened table
     createTable(tableName: 'draweropened') {
-      column(name: 'id', type: 'varchar') {
-        constraints(nullable: false, primaryKey: true)
-      }
+      column(name: 'opendate', type: '${type.timestamp}', defaultValueComputed: 'CURRENT_TIMESTAMP')
       column(name: 'name', type: 'varchar')
       column(name: 'ticketid', type: 'varchar')
     }
