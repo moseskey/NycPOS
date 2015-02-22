@@ -3,6 +3,7 @@ package com.openbravo.pos.config;
 import java.awt.BorderLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.InputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.UIManager;
@@ -23,7 +24,10 @@ public class JFrmConfig extends javax.swing.JFrame {
         initComponents();
 
         try {
-            this.setIconImage(ImageIO.read(JRootFrame.class.getResourceAsStream("/images/nycpos-icon-64.png")));
+            InputStream is = JRootFrame.class.getResourceAsStream("/images/nycpos-icon-64.png");
+            if (is != null) {
+                this.setIconImage(ImageIO.read(is));
+            }
         } catch (IOException e) {
         }
 
