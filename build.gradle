@@ -90,6 +90,7 @@ jar {
         attributes 'Main-Class': mainClassName
     }
 
+    // exclude certain files from other jars, as these cause signing/signature verification errors
     doFirst {
         from (configurations.runtime.resolve().collect { it.isDirectory() ? it : zipTree(it) }) {
             exclude 'META-INF/MANIFEST.MF'
@@ -157,7 +158,7 @@ task printProjectProps << {
 liquibase {
     activities {
         main {
-            logLevel project.logger.isDebugEnabled() ? 'debug': 'info'
+            logLevel project.logger.isDebugEnabled() ? 'debug' : 'info'
             changeLogFile 'src/main/resources/changelog.groovy'
             url      project.ext.db_jdbc_url
             username project.ext.db_username
