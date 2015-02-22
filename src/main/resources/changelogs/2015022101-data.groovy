@@ -1,7 +1,7 @@
 databaseChangeLog {
   def getTemplateFileContents = { file ->
-    def s = new File('./src/main/resources/' + file).text
-    return "decode('${s.bytes.encodeBase64()}', 'base64')"
+    def f = new File('./src/main/resources/' + file)
+    return "decode('${f.bytes.encodeBase64()}', 'base64')"
   }
 
   changeSet(id: 'insertdata-1', author: 'kenneth.shaw@knq.io') {
