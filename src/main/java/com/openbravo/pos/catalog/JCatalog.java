@@ -81,10 +81,12 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
     public void showCatalogPanel(String id) {
 
         if (id == null) {
-// if the product selected is a sub category then display the products under that category  other wise show the root catagory products
+            // if the product selected is a sub category then display the
+            // products under that category  other wise show the root catagory
+            // products
             showRootCategoriesPanel();
         } else {
-// this is the sub catergory view
+            // this is the sub catergory view
             showProductPanel(id);
         }
     }
@@ -186,10 +188,10 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
                 m_jProducts.add(jcurrTab, catid);
                 m_categoriesset.add(catid);
 
-// Add subcategories
+                // Add subcategories
                 java.util.List<CategoryInfo> categories = m_dlSales.getSubcategories(catid);
                 for (CategoryInfo cat : categories) {
-// these the sub categories displayed in the main products Panel
+                    // these the sub categories displayed in the main products Panel
 
                     if (cat.getCatShowName()) {
                         jcurrTab.addButton(new ImageIcon(tnbsubcat.getThumbNailText(cat.getImage(), cat.getName())),
@@ -200,10 +202,10 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
                     }
                 }
 
-// Add products
+                // Add products
                 java.util.List<ProductInfoExt> products = m_dlSales.getProductCatalog(catid);
                 for (ProductInfoExt prod : products) {
-// These are the products selection panel
+                    // These are the products selection panel
                     jcurrTab.addButton(new ImageIcon(tnbbutton.getThumbNailText(prod.getImage(),
                                                                                 getProductLabel(prod))), new SelectedAction(prod), prod.getTextTip());
                 }
@@ -262,8 +264,8 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
     }
 
     private void showSubcategoryPanel(CategoryInfo category) {
-// Modified JDL 13.04.13
-// this is the new panel that displays when a sub catergory is selected mouse does not work here
+        // Modified JDL 13.04.13
+        // this is the new panel that displays when a sub catergory is selected mouse does not work here
         selectIndicatorPanel(new ImageIcon(tnbsubcat.getThumbNail(category.getImage())), category.getName(),
                              category.getTextTip());
         selectCategoryPanel(category.getID());
@@ -287,7 +289,7 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
                     // Create  products panel
                     java.util.List<ProductInfoExt> products = m_dlSales.getProductComments(id);
 
-// JG Aug 2013 switched to isEmpty()
+                    // JG Aug 2013 switched to isEmpty()
 //                    if (products.size() == 0) {
                     if (products.isEmpty()) {
                         // no hay productos por tanto lo anado a la de vacios y muestro el panel principal.
@@ -309,7 +311,7 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
 
                         // Add products
                         for (ProductInfoExt prod : products) {
-// ADDED JDL 09.04.13 TEXT TIP FUNCTION   getProductLabel(prod)))      product.getDisplay()
+                            // ADDED JDL 09.04.13 TEXT TIP FUNCTION   getProductLabel(prod)))      product.getDisplay()
                             jcurrTab.addButton(new ImageIcon(tnbbutton.getThumbNailText(prod.getImage(),
                                                                                         getProductLabel(prod))), new SelectedAction(prod), prod.getTextTip());
 
