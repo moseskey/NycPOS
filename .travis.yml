@@ -3,6 +3,7 @@ jdk:
     - oraclejdk8
 before_install:
     - ./misc/install-maven-artifacts.sh
+    - ./misc/copy-unicenta-files.sh
 cache:
     directories:
         - $HOME/.m2
