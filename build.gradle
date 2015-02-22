@@ -157,6 +157,7 @@ task printProjectProps << {
 liquibase {
     activities {
         main {
+            logLevel project.logger.isDebugEnabled() ? 'debug': 'info'
             changeLogFile 'src/main/resources/changelog.groovy'
             url      project.ext.db_jdbc_url
             username project.ext.db_username
