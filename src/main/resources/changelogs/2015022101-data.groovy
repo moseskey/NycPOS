@@ -1,4 +1,9 @@
 databaseChangeLog {
+  def getTemplateFileContents = { file ->
+    def s = new File('./src/main/resources/' + file).text
+    return "decode('${s.bytes.encodeBase64()}', 'base64')"
+  }
+
   changeSet(id: 'insertdata-1', author: 'kenneth.shaw@knq.io') {
     insert(tableName: 'applications') {
       column(name: 'id', value: 'unicentaopos')
@@ -71,7 +76,7 @@ databaseChangeLog {
     insert(tableName: 'floors') {
       column(name: 'id', value: '0')
       column(name: 'name', value: 'Restaurant floor')
-      column(name: 'image' /* , valueBlobFile: 'templates/default/floors.png' */)
+      column(name: 'image', valueComputed: getTemplateFileContents('templates/default/floors.png'))
     }
   }
 
@@ -256,7 +261,7 @@ databaseChangeLog {
       column(name: 'id', value: '0')
       column(name: 'name', value: 'Menu.Root')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Menu.Root.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Menu.Root.txt'))
     }
   }
 
@@ -265,7 +270,7 @@ databaseChangeLog {
       column(name: 'id', value: '1')
       column(name: 'name', value: 'coin.2')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/coin.2.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/coin.2.png'))
     }
   }
 
@@ -274,7 +279,7 @@ databaseChangeLog {
       column(name: 'id', value: '2')
       column(name: 'name', value: 'coin.1')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/coin.1.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/coin.1.png'))
     }
   }
 
@@ -283,7 +288,7 @@ databaseChangeLog {
       column(name: 'id', value: '3')
       column(name: 'name', value: 'coin.50')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/coin.50.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/coin.50.png'))
     }
   }
 
@@ -292,7 +297,7 @@ databaseChangeLog {
       column(name: 'id', value: '4')
       column(name: 'name', value: 'coin.20')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/coin.20.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/coin.20.png'))
     }
   }
 
@@ -301,7 +306,7 @@ databaseChangeLog {
       column(name: 'id', value: '5')
       column(name: 'name', value: 'coin.10')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/coin.10.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/coin.10.png'))
     }
   }
 
@@ -310,7 +315,7 @@ databaseChangeLog {
       column(name: 'id', value: '6')
       column(name: 'name', value: 'coin.05')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/coin.05.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/coin.05.png'))
     }
   }
 
@@ -319,7 +324,7 @@ databaseChangeLog {
       column(name: 'id', value: '7')
       column(name: 'name', value: 'coin.02')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/coin.02.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/coin.02.png'))
     }
   }
 
@@ -328,7 +333,7 @@ databaseChangeLog {
       column(name: 'id', value: '8')
       column(name: 'name', value: 'coin.01')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/coin.01.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/coin.01.png'))
     }
   }
 
@@ -337,7 +342,7 @@ databaseChangeLog {
       column(name: 'id', value: '9')
       column(name: 'name', value: 'img.cash')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/cash.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/cash.png'))
     }
   }
 
@@ -346,7 +351,7 @@ databaseChangeLog {
       column(name: 'id', value: '10')
       column(name: 'name', value: 'img.cashdrawer')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/cashdrawer.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/cashdrawer.png'))
     }
   }
 
@@ -355,7 +360,7 @@ databaseChangeLog {
       column(name: 'id', value: '11')
       column(name: 'name', value: 'img.discount')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/discount.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/discount.png'))
     }
   }
 
@@ -364,7 +369,7 @@ databaseChangeLog {
       column(name: 'id', value: '12')
       column(name: 'name', value: 'img.empty')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/empty.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/empty.png'))
     }
   }
 
@@ -373,7 +378,7 @@ databaseChangeLog {
       column(name: 'id', value: '13')
       column(name: 'name', value: 'img.heart')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/heart.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/heart.png'))
     }
   }
 
@@ -382,7 +387,7 @@ databaseChangeLog {
       column(name: 'id', value: '14')
       column(name: 'name', value: 'img.no_photo')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/no_photo.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/no_photo.png'))
     }
   }
 
@@ -391,7 +396,7 @@ databaseChangeLog {
       column(name: 'id', value: '15')
       column(name: 'name', value: 'img.kit_print')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/kit_print.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/kit_print.png'))
     }
   }
 
@@ -400,7 +405,7 @@ databaseChangeLog {
       column(name: 'id', value: '16')
       column(name: 'name', value: 'img.refundit')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/refundit.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/refundit.png'))
     }
   }
 
@@ -409,7 +414,7 @@ databaseChangeLog {
       column(name: 'id', value: '17')
       column(name: 'name', value: 'img.run_script')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/run_script.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/run_script.png'))
     }
   }
 
@@ -418,7 +423,7 @@ databaseChangeLog {
       column(name: 'id', value: '18')
       column(name: 'name', value: 'img.ticket_print')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/ticket_print.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/ticket_print.png'))
     }
   }
 
@@ -427,7 +432,7 @@ databaseChangeLog {
       column(name: 'id', value: '19')
       column(name: 'name', value: 'img.user')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/user.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/user.png'))
     }
   }
 
@@ -436,7 +441,7 @@ databaseChangeLog {
       column(name: 'id', value: '20')
       column(name: 'name', value: 'note.50')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/note.50.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/note.50.png'))
     }
   }
 
@@ -445,7 +450,7 @@ databaseChangeLog {
       column(name: 'id', value: '21')
       column(name: 'name', value: 'note.20')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/note.20.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/note.20.png'))
     }
   }
 
@@ -454,7 +459,7 @@ databaseChangeLog {
       column(name: 'id', value: '22')
       column(name: 'name', value: 'note.10')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/note.10.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/note.10.png'))
     }
   }
 
@@ -463,7 +468,7 @@ databaseChangeLog {
       column(name: 'id', value: '23')
       column(name: 'name', value: 'note.5')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/note.5.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/note.5.png'))
     }
   }
 
@@ -472,7 +477,7 @@ databaseChangeLog {
       column(name: 'id', value: '24')
       column(name: 'name', value: 'payment.cash')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/payment.cash.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/payment.cash.txt'))
     }
   }
 
@@ -481,7 +486,7 @@ databaseChangeLog {
       column(name: 'id', value: '25')
       column(name: 'name', value: 'Printer.CloseCash')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.CloseCash.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.CloseCash.xml'))
     }
   }
 
@@ -490,7 +495,7 @@ databaseChangeLog {
       column(name: 'id', value: '26')
       column(name: 'name', value: 'Printer.CustomerPaid')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.CustomerPaid.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.CustomerPaid.xml'))
     }
   }
 
@@ -499,7 +504,7 @@ databaseChangeLog {
       column(name: 'id', value: '27')
       column(name: 'name', value: 'Printer.CustomerPaid2')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.CustomerPaid2.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.CustomerPaid2.xml'))
     }
   }
 
@@ -508,7 +513,7 @@ databaseChangeLog {
       column(name: 'id', value: '28')
       column(name: 'name', value: 'Printer.FiscalTicket')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.FiscalTicket.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.FiscalTicket.xml'))
     }
   }
 
@@ -517,7 +522,7 @@ databaseChangeLog {
       column(name: 'id', value: '29')
       column(name: 'name', value: 'Printer.Inventory')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.Inventory.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.Inventory.xml'))
     }
   }
 
@@ -526,7 +531,7 @@ databaseChangeLog {
       column(name: 'id', value: '30')
       column(name: 'name', value: 'Printer.OpenDrawer')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.OpenDrawer.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.OpenDrawer.xml'))
     }
   }
 
@@ -535,7 +540,7 @@ databaseChangeLog {
       column(name: 'id', value: '43')
       column(name: 'name', value: 'script.AddLineNote')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/script.AddLineNote.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/script.AddLineNote.txt'))
     }
   }
 
@@ -544,7 +549,7 @@ databaseChangeLog {
       column(name: 'id', value: '31')
       column(name: 'name', value: 'Printer.PartialCash')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.PartialCash.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.PartialCash.xml'))
     }
   }
 
@@ -553,7 +558,7 @@ databaseChangeLog {
       column(name: 'id', value: '32')
       column(name: 'name', value: 'Printer.Product')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.Product.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.Product.xml'))
     }
   }
 
@@ -562,7 +567,7 @@ databaseChangeLog {
       column(name: 'id', value: '33')
       column(name: 'name', value: 'Printer.Start')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.Start.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.Start.xml'))
     }
   }
 
@@ -571,7 +576,7 @@ databaseChangeLog {
       column(name: 'id', value: '34')
       column(name: 'name', value: 'Printer.Ticket')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.Ticket.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.Ticket.xml'))
     }
   }
 
@@ -580,7 +585,7 @@ databaseChangeLog {
       column(name: 'id', value: '35')
       column(name: 'name', value: 'Printer.Ticket2')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.Ticket2.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.Ticket2.xml'))
     }
   }
 
@@ -589,7 +594,7 @@ databaseChangeLog {
       column(name: 'id', value: '36')
       column(name: 'name', value: 'Printer.TicketClose')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.TicketClose.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.TicketClose.xml'))
     }
   }
 
@@ -598,7 +603,7 @@ databaseChangeLog {
       column(name: 'id', value: '37')
       column(name: 'name', value: 'Printer.TicketKitchen')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.TicketKitchen.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.TicketKitchen.xml'))
     }
   }
 
@@ -607,7 +612,7 @@ databaseChangeLog {
       column(name: 'id', value: '38')
       column(name: 'name', value: 'Printer.TicketLine')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.TicketLine.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.TicketLine.xml'))
     }
   }
 
@@ -616,7 +621,7 @@ databaseChangeLog {
       column(name: 'id', value: '39')
       column(name: 'name', value: 'Printer.TicketNew')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.TicketNew.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.TicketNew.xml'))
     }
   }
 
@@ -625,7 +630,7 @@ databaseChangeLog {
       column(name: 'id', value: '40')
       column(name: 'name', value: 'Printer.TicketPreview')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.TicketPreview.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.TicketPreview.xml'))
     }
   }
 
@@ -634,7 +639,7 @@ databaseChangeLog {
       column(name: 'id', value: '41')
       column(name: 'name', value: 'Printer.TicketTotal')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.TicketTotal.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Printer.TicketTotal.xml'))
     }
   }
 
@@ -643,7 +648,7 @@ databaseChangeLog {
       column(name: 'id', value: '42')
       column(name: 'name', value: 'Printer.Ticket.Logo')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Printer.Ticket.Logo.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/printer.ticket.logo.png'))
     }
   }
 
@@ -652,7 +657,7 @@ databaseChangeLog {
       column(name: 'id', value: '44')
       column(name: 'name', value: 'script.Event.Total')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/script.Event.Total.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/script.Event.Total.txt'))
     }
   }
 
@@ -661,7 +666,7 @@ databaseChangeLog {
       column(name: 'id', value: '45')
       column(name: 'name', value: 'script.linediscount')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/script.linediscount.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/script.linediscount.txt'))
     }
   }
 
@@ -670,7 +675,7 @@ databaseChangeLog {
       column(name: 'id', value: '46')
       column(name: 'name', value: 'script.ReceiptConsolidate')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/script.ReceiptConsolidate.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/script.ReceiptConsolidate.txt'))
     }
   }
 
@@ -679,7 +684,7 @@ databaseChangeLog {
       column(name: 'id', value: '47')
       column(name: 'name', value: 'script.Refundit')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/script.Refundit.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/script.Refundit.txt'))
     }
   }
 
@@ -688,7 +693,7 @@ databaseChangeLog {
       column(name: 'id', value: '48')
       column(name: 'name', value: 'script.SendOrder')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/script.SendOrder.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/script.SendOrder.txt'))
     }
   }
 
@@ -706,7 +711,7 @@ databaseChangeLog {
       column(name: 'id', value: '50')
       column(name: 'name', value: 'script.SetPerson')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/script.SetPerson.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/script.SetPerson.txt'))
     }
   }
 
@@ -715,7 +720,7 @@ databaseChangeLog {
       column(name: 'id', value: '51')
       column(name: 'name', value: 'script.StockCurrentAdd')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/script.StockCurrentAdd.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/script.StockCurrentAdd.txt'))
     }
   }
 
@@ -724,7 +729,7 @@ databaseChangeLog {
       column(name: 'id', value: '52')
       column(name: 'name', value: 'script.StockCurrentSet')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/script.StockCurrentSet.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/script.StockCurrentSet.txt'))
     }
   }
 
@@ -733,7 +738,7 @@ databaseChangeLog {
       column(name: 'id', value: '53')
       column(name: 'name', value: 'script.totaldiscount')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/script.totaldiscount.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/script.totaldiscount.txt'))
     }
   }
 
@@ -742,7 +747,7 @@ databaseChangeLog {
       column(name: 'id', value: '54')
       column(name: 'name', value: 'Ticket.Buttons')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Ticket.Buttons.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Ticket.Buttons.xml'))
     }
   }
 
@@ -751,7 +756,7 @@ databaseChangeLog {
       column(name: 'id', value: '55')
       column(name: 'name', value: 'Ticket.Close')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Ticket.Close.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Ticket.Close.xml'))
     }
   }
 
@@ -760,7 +765,7 @@ databaseChangeLog {
       column(name: 'id', value: '56')
       column(name: 'name', value: 'Ticket.Discount')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Ticket.Discount.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Ticket.Discount.xml'))
     }
   }
 
@@ -769,7 +774,7 @@ databaseChangeLog {
       column(name: 'id', value: '57')
       column(name: 'name', value: 'Ticket.Line')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Ticket.Line.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Ticket.Line.xml'))
     }
   }
 
@@ -778,7 +783,7 @@ databaseChangeLog {
       column(name: 'id', value: '58')
       column(name: 'name', value: 'Ticket.TicketLineTaxesIncluded')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Ticket.TicketLineTaxesIncluded.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Ticket.TicketLineTaxesIncluded.xml'))
     }
   }
 
@@ -787,7 +792,7 @@ databaseChangeLog {
       column(name: 'id', value: '59')
       column(name: 'name', value: 'Window.Logo')
       column(name: 'restype', valueNumeric: 1)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Window.Logo.png' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Window.Logo.png'))
     }
   }
 
@@ -796,7 +801,7 @@ databaseChangeLog {
       column(name: 'id', value: '60')
       column(name: 'name', value: 'Window.Title')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/Window.Title.txt' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/Window.Title.txt'))
     }
   }
 
@@ -805,7 +810,7 @@ databaseChangeLog {
       column(name: 'id', value: '10e0f3f0-0bd6-4e0b-bcd6-2077f3d6ef51')
       column(name: 'name', value: 'ken-desktop/properties')
       column(name: 'restype', valueNumeric: 0)
-      column(name: 'content' /* , valueBlobFile: 'templates/default/ken-desktop.properties.xml' */)
+      column(name: 'content', valueComputed: getTemplateFileContents('templates/default/ken-desktop.properties.xml'))
     }
   }
 
@@ -813,7 +818,7 @@ databaseChangeLog {
     insert(tableName: 'roles') {
       column(name: 'id', value: '0')
       column(name: 'name', value: 'Administrator role')
-      column(name: 'permissions' /* , valueBlobFile: 'templates/default/Role.Administrator.xml' */)
+      column(name: 'permissions', valueComputed: getTemplateFileContents('templates/default/Role.Administrator.xml'))
     }
   }
 
@@ -821,7 +826,7 @@ databaseChangeLog {
     insert(tableName: 'roles') {
       column(name: 'id', value: '1')
       column(name: 'name', value: 'Manager role')
-      column(name: 'permissions' /* , valueBlobFile: 'templates/default/role.manager.xml' */)
+      column(name: 'permissions', valueComputed: getTemplateFileContents('templates/default/Role.Manager.xml'))
     }
   }
 
@@ -829,7 +834,7 @@ databaseChangeLog {
     insert(tableName: 'roles') {
       column(name: 'id', value: '2')
       column(name: 'name', value: 'Employee role')
-      column(name: 'permissions' /* , valueBlobFile: 'templates/default/role.employee.xml' */)
+      column(name: 'permissions', valueComputed: getTemplateFileContents('templates/default/Role.Employee.xml'))
     }
   }
 
@@ -837,7 +842,7 @@ databaseChangeLog {
     insert(tableName: 'roles') {
       column(name: 'id', value: '3')
       column(name: 'name', value: 'Guest role')
-      column(name: 'permissions' /* , valueBlobFile: 'templates/default/Role.Guest.xml' */)
+      column(name: 'permissions', valueComputed: getTemplateFileContents('templates/default/Role.Guest.xml'))
     }
   }
 
