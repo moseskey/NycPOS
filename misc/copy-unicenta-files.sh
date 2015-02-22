@@ -12,15 +12,21 @@ if [ ! -f $IMGDIR/unicenta.png ]; then
 
   pushd $TMPDIR > /dev/null
 
-  # grab and extract unicenta source
-  wget -O $UC_ZIP http://www.knq.io/nycpos/$UC_ZIP
+  # grab unicenta source
+  if [ -f ~/Downloads/$UC_ZIP ]; then
+    cp ~/Downloads/$UC_ZIP .
+  else
+    wget -O $UC_ZIP http://www.knq.io/nycpos/$UC_ZIP
+  fi
+
+  # extract archive
   unzip $UC_ZIP
 
   # fix file permissions
-  find unicenta* -type f -exec chmod 0644 {} \;
+  find ./unicenta* -type f -exec chmod 0644 {} \;
 
   # copy image files over
-  rsync -avP unicenta*/src-beans/com/openbravo/images/*.png $IMGDIR/
+  rsync -avP ./unicenta*/src-beans/com/openbravo/images/*.png $IMGDIR/
 
   popd > /dev/null
 fi
