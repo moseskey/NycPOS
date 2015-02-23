@@ -7,27 +7,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-
 public class PropertyUtils {
-
     private Properties m_propsconfig;
     private File configFile;
     private final String APP_ID = "upos-app";
 
     public PropertyUtils() {
-        init(getDefaultConfig());
-    }
+        this.configFile = new File("unicentaopos.properties");
 
-    private void init(File configfile) {
-        this.configFile = configfile;
-        load();
-    }
-
-    private File getDefaultConfig() {
-        return new File(new File(".\\"), "unicentaopos.properties");
-    }
-
-    private void load() {
         // Load Properties
         try {
             InputStream in = new FileInputStream(configFile);
@@ -49,7 +36,7 @@ public class PropertyUtils {
     }
 
     public String getUrl() {
-        return m_propsconfig.getProperty("db.URL");
+        return m_propsconfig.getProperty("db.url");
     }
 
     public String getDBUser() {
