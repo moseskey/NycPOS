@@ -386,7 +386,7 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
             jtxtDbDriver.setText("org.postgresql.Driver");
             jtxtDbURL.setText("jdbc:postgresql://localhost:5432/unicentaopos");
         } /*else {
-            System.out.println("bad database selected");
+            logger.info("bad database selected");
             System.exit(1);
         }*/
     }//GEN-LAST:event_jcboDBDriverActionPerformed

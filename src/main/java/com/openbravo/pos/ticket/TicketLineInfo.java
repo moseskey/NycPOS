@@ -195,18 +195,18 @@ public class TicketLineInfo implements SerializableWrite, SerializableRead, Seri
     }
 
     public String getProductID() {
-// System.out.println(productid);
+// logger.info(productid);
         return productid;
 
     }
     public void setProductID(String value) {
 //        if (value == null) {
 //            productid = getProductName();
-//System.out.println(getProductName());
-//System.out.println(value);
+//logger.info(getProductName());
+//logger.info(value);
 //        }else{
         productid = value;
-//System.out.println(value);
+//logger.info(value);
 
     }
 

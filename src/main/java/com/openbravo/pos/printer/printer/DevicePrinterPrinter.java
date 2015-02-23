@@ -12,8 +12,8 @@ import java.awt.Component;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.print.*;
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
@@ -33,9 +33,7 @@ import javax.swing.JComponent;
  *
  */
 public class DevicePrinterPrinter implements DevicePrinter {
-
-    private static final Logger logger =
-        Logger.getLogger("com.openbravo.pos.printer.printer.DevicePrinterPrinter");
+    private static final Logger logger = LoggerFactory.getLogger(DevicePrinterPrinter.class);
 
     private Component parent;
     /*name of a printer*/
@@ -210,7 +208,7 @@ public class DevicePrinterPrinter implements DevicePrinter {
             if (printservice == null) {
                 String[] printers = ReportUtils.getPrintNames();
                 if (printers.length == 0) {
-                    logger.warning(AppLocal.getIntString("message.noprinters"));
+                    logger.debug(AppLocal.getIntString("message.noprinters"));
                     ps = null;
                 } else {
                     SelectPrinter selectprinter = SelectPrinter.getSelectPrinter(parent, printers);
@@ -240,7 +238,7 @@ public class DevicePrinterPrinter implements DevicePrinter {
             }
 
         } catch (PrintException ex) {
-            logger.log(Level.WARNING, AppLocal.getIntString("message.printererror"), ex);
+            logger.debug(AppLocal.getIntString("message.printererror"), ex);
             JMessageDialog.showMessage(parent, new MessageInf(MessageInf.SGN_WARNING,
                                                               AppLocal.getIntString("message.printererror"), ex));
         }

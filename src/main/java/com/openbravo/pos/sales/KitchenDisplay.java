@@ -10,8 +10,12 @@ import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class KitchenDisplay {
+    private static final Logger logger = LoggerFactory.getLogger(KitchenDisplay.class);
+
     private Session s;
     private Connection con;
     private Statement stmt;
@@ -30,7 +34,7 @@ public class KitchenDisplay {
             s = m_App.getSession();
             con = s.getConnection();
         } catch (Exception e) {
-//            System.out.print("No session or connection");
+          logger.error("Encountered Exception: {}: No session or connection", e);
         }
     }
 
@@ -38,7 +42,7 @@ public class KitchenDisplay {
                           String attributes) {
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
-        System.out.println(dateFormat.format(date));
+        logger.info(dateFormat.format(date));
 
 
         try {

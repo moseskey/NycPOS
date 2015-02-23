@@ -7,8 +7,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Properties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ImageUtils {
+    private static final Logger logger = LoggerFactory.getLogger(ImageUtils.class);
 
     private static char[] HEXCHARS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
@@ -33,7 +36,7 @@ public class ImageUtils {
         //InputStream in = ImageUtils.class.getResourceAsStream(file);
         //InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(file);
         InputStream in = ClassLoader.class.getResourceAsStream(file);
-        System.out.println(">> ImageUtils.getBytesFromResource: " + file + " // " + in);
+        logger.info(">> getBytesFromResource: " + file + " // " + in);
 
         if (in == null) {
             return null;
@@ -121,10 +124,10 @@ public class ImageUtils {
                 in.close();
                 return obj;
             } catch (ClassNotFoundException eCNF) {
-                //logger.error("Cannot create lists object", eCNF);
+                logger.error("Cannot create lists object", eCNF);
                 return null;
             } catch (IOException eIO) {
-                //logger.error("Cannot load lists file", eIO);
+                logger.error("Cannot load lists file", eIO);
                 return null;
             }
         }

@@ -5,8 +5,7 @@ import com.openbravo.pos.forms.AppLocal;
 import javax.swing.JPanel;
 
 
-public class ConfigPaymentPanelBluePay20POST extends javax.swing.JPanel implements
-    PaymentConfiguration {
+public class ConfigPaymentPanelBluePay20POST extends javax.swing.JPanel implements PaymentConfiguration {
 
     public ConfigPaymentPanelBluePay20POST() {
         initComponents();
@@ -22,8 +21,6 @@ public class ConfigPaymentPanelBluePay20POST extends javax.swing.JPanel implemen
         String sAccountID = config.getProperty("payment.BluePay.accountID");
         String sSecretKey = config.getProperty("payment.BluePay.secretKey");
         String sURL = config.getProperty("payment.BluePay.URL");
-
-//        System.out.println(sURL);
 
         if (sAccountID != null && sSecretKey != null && sURL != null && sURL.startsWith("https://")) {
             jtxtURL.setText(config.getProperty("payment.BluePay.URL"));

@@ -16,8 +16,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -34,6 +34,7 @@ import org.apache.commons.lang.StringUtils;
  * classes available within Unicenta
  */
 public class JPanelCSVImport extends JPanel implements JPanelView {
+    private static final Logger logger = LoggerFactory.getLogger(JPanelCSVImport.class);
 
     private ArrayList<String> Headers = new ArrayList<>();
     private Session s;
@@ -439,7 +440,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
                 noChanges++;
             }
         } catch (BasicException ex) {
-            Logger.getLogger(JPanelCSVImport.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
     }
 
@@ -599,7 +600,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
                 spr.updateData(myprod);
             }
         } catch (BasicException ex) {
-            Logger.getLogger(JPanelCSVImport.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
     }
 
@@ -621,7 +622,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
         try {
             m_dlSystem.execAddCSVEntry(myprod);
         } catch (BasicException ex) {
-            Logger.getLogger(JPanelCSVImport.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
     }
 
@@ -634,7 +635,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
         try {
             return (m_dlSystem.getProductRecordType(myprod));
         } catch (BasicException ex) {
-            Logger.getLogger(JPanelCSVImport.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
         return "Exception";
     }
@@ -1349,7 +1350,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
         try {
             GetheadersFromFile(jFileName.getText());
         } catch (IOException ex) {
-            Logger.getLogger(JPanelCSVImport.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered IOException {}", ex);
         }
     }//GEN-LAST:event_jHeaderReadActionPerformed
 
@@ -1361,7 +1362,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
         try {
             ImportCsvFile(jFileName.getText());
         } catch (IOException ex) {
-            Logger.getLogger(JPanelCSVImport.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered IOException {}", ex);
         }
 
     }//GEN-LAST:event_jImportActionPerformed
@@ -1397,7 +1398,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
             try {
                 CSVConfig.save();
             } catch (IOException ex) {
-                Logger.getLogger(JPanelCSVImport.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error("Encountered IOException {}", ex);
             }
         }
 
@@ -1531,7 +1532,7 @@ public class JPanelCSVImport extends JPanel implements JPanelView {
                 jComboDefaultCategory.setModel(m_CategoryModel);
             }
         } catch (BasicException ex) {
-            Logger.getLogger(JPanelCSVImport.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
         checkFieldMapping();
 

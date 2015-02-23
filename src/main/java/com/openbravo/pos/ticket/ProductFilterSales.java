@@ -11,9 +11,11 @@ import com.openbravo.editor.JEditorKeys;
 import com.openbravo.editor.JEditorString;
 import com.openbravo.pos.forms.AppLocal;
 import com.openbravo.pos.forms.DataLogicSales;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ProductFilterSales extends javax.swing.JPanel implements EditorCreator {
+    private static final Logger logger = LoggerFactory.getLogger(ProductFilterSales.class);
 
     private final SentenceList m_sentcat;
     private ComboBoxValModel m_CategoryModel;
@@ -117,9 +119,9 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
             afilter[11] = m_jStockUnits.getDoubleValue();
         }
 
-        System.out.println(afilter[10]);
-        System.out.println(afilter[11]);
-        System.out.println(afilter);
+        logger.info("{}", afilter[10]);
+        logger.info("{}", afilter[11]);
+        logger.info("{}", afilter);
 
         return afilter;
     }

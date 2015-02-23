@@ -14,8 +14,8 @@ import java.awt.Rectangle;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
@@ -32,8 +32,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class JTicketLines extends javax.swing.JPanel {
-
-    private static final Logger logger = Logger.getLogger("com.openbravo.pos.sales.JTicketLines");
+    private static final Logger logger = LoggerFactory.getLogger(JTicketLines.class);
 
     private static SAXParser m_sp = null;
 
@@ -57,11 +56,11 @@ public class JTicketLines extends javax.swing.JPanel {
                 acolumns = columnshandler.getColumns();
 
             } catch (ParserConfigurationException ePC) {
-                logger.log(Level.WARNING, LocalRes.getIntString("exception.parserconfig"), ePC);
+                logger.debug(LocalRes.getIntString("exception.parserconfig"), ePC);
             } catch (SAXException eSAX) {
-                logger.log(Level.WARNING, LocalRes.getIntString("exception.xmlfile"), eSAX);
+                logger.debug(LocalRes.getIntString("exception.xmlfile"), eSAX);
             } catch (IOException eIO) {
-                logger.log(Level.WARNING, LocalRes.getIntString("exception.iofile"), eIO);
+                logger.debug(LocalRes.getIntString("exception.iofile"), eIO);
             }
         }
 

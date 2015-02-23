@@ -27,11 +27,13 @@ import java.util.UUID;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 // import org.joda.time.format.DateTimeFormat;
 // import org.joda.time.format.DateTimeFormatter;
 
-
 public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryApp {
+    private static final Logger logger = LoggerFactory.getLogger(JPanelCloseMoney.class);
 
     private AppView m_App;
     private DataLogicSystem m_dlSystem;
@@ -199,7 +201,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
             if ("H2".equals(sdbmanager) || "PostgreSQL".equals(sdbmanager)) {
                 SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > " + "'" + m_PaymentsToClose.printDateStart() + "'";
             } else {
-                System.out.println("Unsupported database!!!");
+                logger.error("Unsupported database!!!");
                 System.exit(1);
                 //SQL = "SELECT * FROM DRAWEROPENED WHERE TICKETID = 'No Sale' AND OPENDATE > {fn TIMESTAMP('" + m_PaymentsToClose.getDateStartDerby() + "')}";
             }
@@ -213,7 +215,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
             con = null;
             s = null;
         } catch (SQLException e) {
-            System.out.println("error = " + e);
+            logger.error("Encountered SQLException {}", e);
         }
 
         m_jNoCashSales.setText(result.toString());

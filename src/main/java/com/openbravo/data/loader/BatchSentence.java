@@ -9,8 +9,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class BatchSentence extends BaseSentence {
+    private static final Logger logger = LoggerFactory.getLogger(BatchSentence.class);
 
     protected Session m_s;
 
@@ -140,10 +143,8 @@ public abstract class BatchSentence extends BaseSentence {
                         // Replace all occurrences of pattern in input
                         StringBuffer buf = new StringBuffer();
                         while (matcher.find()) {
-                            System.out.println("BatchSentence::openExec:matcher: " + matcher.group(1) + " // " + matcher.group(
-                                                   2));
+                            logger.info("BatchSentence::openExec:matcher: " + matcher.group(1) + " // " + matcher.group(2));
                             if ("FILE".equals(matcher.group(1))) {
-
                                 paramlist.add(ImageUtils.getBytesFromResource(matcher.group(2)));
                                 matcher.appendReplacement(buf, "?");
                             } else {

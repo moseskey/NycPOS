@@ -8,8 +8,8 @@ import java.io.StringReader;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.swing.Icon;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -20,8 +20,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class AppUser {
-
-    private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.AppUser");
+    private static final Logger logger = LoggerFactory.getLogger(AppUser.class);
 
     private static SAXParser m_sp = null;
     private static HashMap<String, String> m_oldclasses; // This is for backwards compatibility purposes
@@ -104,11 +103,11 @@ public class AppUser {
                 m_sp.parse(new InputSource(new StringReader(sRolePermisions)), new ConfigurationHandler());
 
             } catch (ParserConfigurationException ePC) {
-                logger.log(Level.WARNING, LocalRes.getIntString("exception.parserconfig"), ePC);
+                logger.debug(LocalRes.getIntString("exception.parserconfig"), ePC);
             } catch (SAXException eSAX) {
-                logger.log(Level.WARNING, LocalRes.getIntString("exception.xmlfile"), eSAX);
+                logger.debug(LocalRes.getIntString("exception.xmlfile"), eSAX);
             } catch (IOException eIO) {
-                logger.log(Level.WARNING, LocalRes.getIntString("exception.iofile"), eIO);
+                logger.debug(LocalRes.getIntString("exception.iofile"), eIO);
             }
         }
 

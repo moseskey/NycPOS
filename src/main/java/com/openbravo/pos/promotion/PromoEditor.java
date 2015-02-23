@@ -27,12 +27,13 @@ import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class PromoEditor extends JPanel implements EditorRecord {
+    private static final Logger logger = LoggerFactory.getLogger(PromoEditor.class);
 
     private SentenceList m_sentPromo;
     private ComboBoxValModel m_jTypeModel;
@@ -209,17 +210,17 @@ public class PromoEditor extends JPanel implements EditorRecord {
         try {
             getProdName(m_jArticle.getText());
         } catch (BasicException ex) {
-            Logger.getLogger(PromoEditor.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
         try {
             getBonusName(m_jBonusArticle.getText());
         } catch (BasicException ex) {
-            Logger.getLogger(PromoEditor.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
         try {
             getCatName(m_jCategory.getText());
         } catch (BasicException ex) {
-            Logger.getLogger(PromoEditor.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
 
 
@@ -264,17 +265,17 @@ public class PromoEditor extends JPanel implements EditorRecord {
         try {
             getProdName(m_jArticle.getText());
         } catch (BasicException ex) {
-            Logger.getLogger(PromoEditor.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
         try {
             getBonusName(m_jBonusArticle.getText());
         } catch (BasicException ex) {
-            Logger.getLogger(PromoEditor.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
         try {
             getCatName(m_jCategory.getText());
         } catch (BasicException ex) {
-            Logger.getLogger(PromoEditor.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
 
         /*        m_jName.setEnabled(true);
@@ -1336,7 +1337,7 @@ public class PromoEditor extends JPanel implements EditorRecord {
             try {
                 getProdName(prod.getID());
             } catch (BasicException ex) {
-                Logger.getLogger(PromoEditor.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error("Encountered BasicException {}", ex);
             }
         }
     }//GEN-LAST:event_m_jSearchActionPerformed
@@ -1350,7 +1351,7 @@ public class PromoEditor extends JPanel implements EditorRecord {
             try {
                 getBonusName(prod.getID());
             } catch (BasicException ex) {
-                Logger.getLogger(PromoEditor.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error("Encountered BasicException {}", ex);
             }
         }
     }//GEN-LAST:event_m_jSearch1ActionPerformed
@@ -1360,7 +1361,7 @@ public class PromoEditor extends JPanel implements EditorRecord {
         try {
             getCatID(m_jCatModel.getSelectedText());
         } catch (BasicException ex) {
-            Logger.getLogger(PromoEditor.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered BasicException {}", ex);
         }
     }//GEN-LAST:event_m_jCatNameActionPerformed
 
@@ -1427,7 +1428,7 @@ public class PromoEditor extends JPanel implements EditorRecord {
             // Could not find the database driver
         } catch (SQLException e) {
             // Could not connect to the database
-//            System.out.println(e);
+//            logger.info(e);
 
 
         }
@@ -1475,7 +1476,7 @@ public class PromoEditor extends JPanel implements EditorRecord {
             // Could not find the database driver
         } catch (SQLException e) {
             // Could not connect to the database
-//            System.out.println(e);
+//            logger.info(e);
 
 
         }
@@ -1513,7 +1514,7 @@ public class PromoEditor extends JPanel implements EditorRecord {
             // Could not find the database driver
         } catch (SQLException e) {
             // Could not connect to the database
-//            System.out.println(e);
+//            logger.info(e);
 
 
         }
@@ -1551,7 +1552,7 @@ public class PromoEditor extends JPanel implements EditorRecord {
             // Could not find the database driver
         } catch (SQLException e) {
             // Could not connect to the database
-//            System.out.println(e);
+//            logger.info(e);
 
 
         }

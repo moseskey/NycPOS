@@ -19,9 +19,11 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DataLogicSales extends BeanFactoryDataSingle {
+    private static final Logger logger = LoggerFactory.getLogger(DataLogicSales.class);
 
     protected Session s;
     protected Datas[] auxiliarDatas;
@@ -41,7 +43,6 @@ public class DataLogicSales extends BeanFactoryDataSingle {
     public static final String DEBT = "debt";
     public static final String DEBT_PAID = "debtpaid";
     protected static final String PREPAY = "prepay";
-    private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.DataLogicSales");
 
 // JG 22 Oct 2013
     private String getCardName;

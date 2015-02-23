@@ -2,9 +2,12 @@ package com.openbravo.pos.util;
 
 import javax.swing.*;
 import java.awt.event.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 // this is a dialog that will dispose of itself after a given amount of time
 public class Test extends JDialog {
+    private static final Logger logger = LoggerFactory.getLogger(Test.class);
 
     private int lifeTime = 0;
 
@@ -14,12 +17,12 @@ public class Test extends JDialog {
     }
 
     public void setVisible(boolean b) {
-        System.out.println("setVisible(" + b + ")");
+        logger.info("setVisible(" + b + ")");
         super.setVisible(b);
         if (b && lifeTime != 0) {
             Action disposeAction = new AbstractAction() {
                 public void actionPerformed(ActionEvent e) {
-                    System.out.println("disposing");
+                    logger.info("disposing");
                     dispose();
                 }
             };

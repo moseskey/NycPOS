@@ -7,8 +7,11 @@ import java.io.InputStream;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ThumbNailBuilder {
+    private static final Logger logger = LoggerFactory.getLogger(ThumbNailBuilder.class);
 
     private Image m_imgdefault;
     private int m_width;
@@ -26,11 +29,11 @@ public class ThumbNailBuilder {
         Image defimg;
         try {
             //init(width, height, ImageIO.read(getClass().getClassLoader().getResource(img)));
-            System.out.println(">> ThumbNailBuilder: " + width + ", " + height + ": " + img);
+            logger.info(">> width: {}, height: {}, img: {}", width, height, img);
             InputStream is = getClass().getResourceAsStream(img);
             init(width, height, ImageIO.read(is));
         } catch (IOException fnfe) {
-            System.out.println(">>>>>>>>>>>>>>>>>>>> ThumbNailBuilder exception on init!!!!!!!!!!!!!!!!! " + fnfe);
+            logger.error(">>>>>>>>>>>>>>>>>>>> ThumbNailBuilder exception on init!!!!!!!!!!!!!!!!!: {}", fnfe);
             init(width, height, null);
         }
     }

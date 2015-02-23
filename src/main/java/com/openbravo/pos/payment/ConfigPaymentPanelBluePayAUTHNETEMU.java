@@ -23,8 +23,6 @@ public class ConfigPaymentPanelBluePayAUTHNETEMU extends javax.swing.JPanel impl
         String sSecretKey = config.getProperty("payment.BluePay.secretKey");
         String sURL = config.getProperty("payment.BluePay.URL");
 
-//        System.out.println(sURL);
-
         if (sAccountID != null && sSecretKey != null && sURL != null && sURL.startsWith("https://")) {
             jtxtURL.setText(config.getProperty("payment.BluePay.URL"));
             jtxtAccountID.setText(config.getProperty("payment.BluePay.accountID"));

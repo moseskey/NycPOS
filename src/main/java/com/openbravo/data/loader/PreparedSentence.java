@@ -2,12 +2,11 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PreparedSentence extends JDBCSentence {
-
-    private static final Logger logger = Logger.getLogger("com.openbravo.data.loader.PreparedSentence");
+    private static final Logger logger = LoggerFactory.getLogger(PreparedSentence.class);
 
     private String m_sentence;
 
@@ -122,9 +121,8 @@ public class PreparedSentence extends JDBCSentence {
         closeExec();
 
         try {
-
-            logger.log(Level.INFO, "Executing prepared SQL: {0}", m_sentence);
-            logger.log(Level.INFO, "SQL Params: {}", params);
+            logger.info("SQL: {}", m_sentence);
+            logger.info("Params: {}", params);
 
             m_Stmt = m_s.getConnection().prepareStatement(m_sentence);
 

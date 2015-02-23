@@ -19,12 +19,13 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 
 public final class CustomersView extends javax.swing.JPanel implements EditorRecord {
+    private static final Logger logger = LoggerFactory.getLogger(CustomersView.class);
 
     private static final long serialVersionUID = 1L;
     private Object m_oId;
@@ -73,7 +74,7 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
 
             init();
         } catch (Exception ex) {
-            Logger.getLogger(CustomersView.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered Exception: " + ex);
         }
     }
 
@@ -507,7 +508,7 @@ public final class CustomersView extends javax.swing.JPanel implements EditorRec
 //                    Double amountT = amount;
 //                    Tamount = amountT + amount;
 //                    amountT = null;
-//System.out.println(Tamount);
+//logger.info(Tamount);
 //txtTurnover.setText(Tamount.toString());
 //
 

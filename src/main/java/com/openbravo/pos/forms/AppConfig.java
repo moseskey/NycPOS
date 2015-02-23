@@ -3,16 +3,16 @@ package com.openbravo.pos.forms;
 import java.io.*;
 import java.util.Locale;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Creation and Editing of stored settings
  * unicentaopos.properties
  */
 public class AppConfig implements AppProperties {
-
-    private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.AppConfig");
+    private static final Logger logger = LoggerFactory.getLogger(AppConfig.class);
 
     private static AppConfig m_instance = null;
     private Properties m_propsconfig;
@@ -34,7 +34,7 @@ public class AppConfig implements AppProperties {
         this.configfile = configfile;
         m_propsconfig = new Properties();
 
-        logger.log(Level.INFO, "Reading configuration file: {0}", configfile.getAbsolutePath());
+        logger.info("Reading configuration file: {}", configfile.getAbsolutePath());
     }
 
     private File getDefaultConfig() {

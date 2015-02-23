@@ -11,12 +11,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
-
-
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RestaurantDBUtils {
+    private static final Logger logger = LoggerFactory.getLogger(RestaurantDBUtils.class);
+
     private Session s;
     private Connection con;
     private Statement stmt;
@@ -36,10 +36,8 @@ public class RestaurantDBUtils {
             s = m_App.getSession();
             con = s.getConnection();
         } catch (SQLException e) {
-            System.out.print("No session or connection");
+            logger.error("Encountered SQLException {}: No session or connection", e);
         }
-
-
     }
 
     public void moveCustomer(String newTable, String ticketID) {

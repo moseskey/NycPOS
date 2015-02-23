@@ -23,7 +23,11 @@ import java.util.List;
 import java.util.UUID;
 import javax.swing.SwingUtilities;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class JProductAttEdit extends javax.swing.JDialog {
+    private static final Logger logger = LoggerFactory.getLogger(JProductAttEdit.class);
 
     private SentenceFind attsetSent;
     private SentenceList attvaluesSent;
@@ -344,7 +348,7 @@ public class JProductAttEdit extends javax.swing.JDialog {
                 // Exist an attribute set instance with these values for the attributeset selected
                 id = (String) attsetinstExistsSent.find(attsetid, description.toString());
             } catch (BasicException ex) {
-                // Logger.getLogger(JProductAttEdit.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error("Encountered BasicException {}", ex);
                 return;
             }
 
@@ -361,7 +365,7 @@ public class JProductAttEdit extends javax.swing.JDialog {
                     }
 
                 } catch (BasicException ex) {
-                    // Logger.getLogger(JProductAttEdit.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error("Encountered BasicException {}", ex);
                     return;
                 }
             }

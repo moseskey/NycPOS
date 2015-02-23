@@ -121,7 +121,7 @@ public class PaymentGatewayBluePayAUTHNETEMU implements PaymentGateway {
             connection.setDoOutput(true);
             connection.setUseCaches(false);
 
-            //System.out.println(ENDPOINTADDRESS + "?" + sb.toString() );
+            //logger.info(ENDPOINTADDRESS + "?" + sb.toString() );
             // not necessarily required but fixes a bug with some servers
             // JG May 12 added try-with-resources
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
@@ -136,7 +136,7 @@ public class PaymentGatewayBluePayAUTHNETEMU implements PaymentGateway {
 
             BluePayParser anp = new BluePayParser(returned);
             Map props = anp.splitXML();
-            //System.out.println(returned);
+            //logger.info(returned);
             if (anp.getResult().equals(LocalRes.getIntString("button.ok"))) {
                 if (APPROVED.equals(props.get("ResponseCode"))) {
                     //Transaction approved

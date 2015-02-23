@@ -35,13 +35,13 @@ public class LuhnAlgorithm {
 //    public static void main(String[] args) {
 //        // Testing sample numbers
 //
-//        System.out.println(LuhnAlgorithm.checkCC("4111111111111111")); // Visa
-//        System.out.println(LuhnAlgorithm.checkCC("5500000000000004")); // Master card
-//        System.out.println(LuhnAlgorithm.checkCC("340000000000009")); // AMEX
-//        System.out.println(LuhnAlgorithm.checkCC("30000000000004")); // Diners
-//        System.out.println(LuhnAlgorithm.checkCC("30000000000004")); // Carte blanche
-//        System.out.println(LuhnAlgorithm.checkCC("6011000000000004")); // Discover
-//        System.out.println(LuhnAlgorithm.checkCC("201400000000009")); // EnRoute
+//        logger.info(LuhnAlgorithm.checkCC("4111111111111111")); // Visa
+//        logger.info(LuhnAlgorithm.checkCC("5500000000000004")); // Master card
+//        logger.info(LuhnAlgorithm.checkCC("340000000000009")); // AMEX
+//        logger.info(LuhnAlgorithm.checkCC("30000000000004")); // Diners
+//        logger.info(LuhnAlgorithm.checkCC("30000000000004")); // Carte blanche
+//        logger.info(LuhnAlgorithm.checkCC("6011000000000004")); // Discover
+//        logger.info(LuhnAlgorithm.checkCC("201400000000009")); // EnRoute
 
 }
 

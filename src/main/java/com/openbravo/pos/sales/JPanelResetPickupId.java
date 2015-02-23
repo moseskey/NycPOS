@@ -19,8 +19,12 @@ import java.sql.Statement;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JPanelResetPickupId extends JPanel implements JPanelView {
+    private static final Logger logger = LoggerFactory.getLogger(JPanelResetPickupId.class);
+
     private AppConfig config;
     private Connection con;
     private String sdbmanager;
@@ -47,37 +51,39 @@ public class JPanelResetPickupId extends JPanel implements JPanelView {
             SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
             try {
                 stmt.executeUpdate(SQL);
-            } catch (SQLException e) {System.out.println(e.getMessage());}
+            } catch (SQLException e) {logger.info(e.getMessage());}
         } else if ("MySQL".equals(sdbmanager)) {
             SQL = "UPDATE PICKUP_NUMBER SET ID=0";
             try {
                 stmt.executeUpdate(SQL);
-            } catch (SQLException e) {System.out.println(e.getMessage());}
+            } catch (SQLException e) {logger.info(e.getMessage());}
         } else if ("PostgreSQL".equals(sdbmanager)) {
             SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
             try {
                 stmt.executeUpdate(SQL);
-            } catch (SQLException e) {System.out.println(e.getMessage());}
+            } catch (SQLException e) {logger.info(e.getMessage());}
         } else if ("Oracle".equals(sdbmanager)) {
             SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
             try {
                 stmt.executeUpdate(SQL);
-            } catch (SQLException e) {System.out.println(e.getMessage());}
+            } catch (SQLException e) {logger.info(e.getMessage());}
         } else if ("Apache Derby".equals(sdbmanager)) {
             SQL = "ALTER TABLE PICKUP_NUMBER ALTER COLUMN ID RESTART WITH 1";
             try {
                 stmt.executeUpdate(SQL);
-            } catch (SQLException e) {System.out.println(e.getMessage());}
+            } catch (SQLException e) {logger.info(e.getMessage());}
         } else if ("Derby".equals(sdbmanager)) {
             SQL =  "UPDATE PICKUP_NUMBER SET ID=0";
             try {
                 stmt.executeUpdate(SQL);
-            } catch (SQLException e) {System.out.println(e.getMessage());}*/
+            } catch (SQLException e) {logger.info(e.getMessage());}*/
         } else {
             SQL = "ALTER SEQUENCE PICKUP_NUMBER RESTART WITH 1";
             try {
                 stmt.executeUpdate(SQL);
-            } catch (SQLException e) {System.out.println(e.getMessage());}
+            } catch (SQLException e) {
+                logger.error("Encountered SQLException {}", e);
+            }
         }
 
         JOptionPane.showMessageDialog(this, "Reset complete.");

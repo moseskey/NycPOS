@@ -13,8 +13,8 @@ import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.xml.parsers.ParserConfigurationException;
@@ -26,8 +26,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class JPanelButtons extends javax.swing.JPanel {
-
-    private static final Logger logger = Logger.getLogger("com.openbravo.pos.sales.JPanelButtons");
+    private static final Logger logger = LoggerFactory.getLogger(JPanelButtons.class);
 
     private static SAXParser m_sp = null;
 
@@ -60,11 +59,11 @@ public class JPanelButtons extends javax.swing.JPanel {
                 m_sp.parse(new InputSource(new StringReader(sConfigRes)), new ConfigurationHandler());
 
             } catch (ParserConfigurationException ePC) {
-                logger.log(Level.WARNING, LocalRes.getIntString("exception.parserconfig"), ePC);
+                logger.error(LocalRes.getIntString("exception.parserconfig"), ePC);
             } catch (SAXException eSAX) {
-                logger.log(Level.WARNING, LocalRes.getIntString("exception.xmlfile"), eSAX);
+                logger.error(LocalRes.getIntString("exception.xmlfile"), eSAX);
             } catch (IOException eIO) {
-                logger.log(Level.WARNING, LocalRes.getIntString("exception.iofile"), eIO);
+                logger.error(LocalRes.getIntString("exception.iofile"), eIO);
             }
         }
 
@@ -158,7 +157,7 @@ public class JPanelButtons extends javax.swing.JPanel {
 
             setName(sKey);
             setText(title);
-            System.out.println(">>> JButtonFunc(): " + sImage);
+            logger.info(">>> JButtonFunc(): {}", sImage);
             setIcon(new ImageIcon(tnbmacro.getThumbNail(panelticket.getResourceAsImage(sImage))));
             setFocusPainted(false);
             setFocusable(false);

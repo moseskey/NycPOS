@@ -26,12 +26,15 @@ import net.sf.jasperreports.engine.xml.JRPrintXmlLoader;
 import net.sf.jasperreports.view.JRHyperlinkListener;
 import net.sf.jasperreports.view.JRSaveContributor;
 import net.sf.jasperreports.view.save.JRPrintSaveContributor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
  * @version $Id: JRViewer300.java 2160 2008-04-29 11:31:51Z lucianc $
  */
 public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlinkListener {
+    private static final Logger logger = LoggerFactory.getLogger(JRViewer300.class);
     private static final long serialVersionUID = JRConstants.SERIAL_VERSION_UID;
 
     /**
@@ -376,8 +379,8 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
         switch (hyperlink.getHyperlinkTypeValue()) {
             case REFERENCE : {
                     if (isOnlyHyperlinkListener()) {
-                        System.out.println("Hyperlink reference : " + hyperlink.getHyperlinkReference());
-                        System.out.println("Implement your own JRHyperlinkListener to manage this type of event.");
+                        logger.info("Hyperlink reference : {}", hyperlink.getHyperlinkReference());
+                        logger.info("Implement your own JRHyperlinkListener to manage this type of event.");
                     }
                     break;
                 }
@@ -439,24 +442,24 @@ public final class JRViewer300 extends javax.swing.JPanel implements JRHyperlink
                 }
             case REMOTE_ANCHOR : {
                     if (isOnlyHyperlinkListener()) {
-                        System.out.println("Hyperlink reference : " + hyperlink.getHyperlinkReference());
-                        System.out.println("Hyperlink anchor    : " + hyperlink.getHyperlinkAnchor());
-                        System.out.println("Implement your own JRHyperlinkListener to manage this type of event.");
+                        logger.info("Hyperlink reference : {}", hyperlink.getHyperlinkReference());
+                        logger.info("Hyperlink anchor    : {}", hyperlink.getHyperlinkAnchor());
+                        logger.info("Implement your own JRHyperlinkListener to manage this type of event.");
                     }
                     break;
                 }
             case REMOTE_PAGE : {
                     if (isOnlyHyperlinkListener()) {
-                        System.out.println("Hyperlink reference : " + hyperlink.getHyperlinkReference());
-                        System.out.println("Hyperlink page      : " + hyperlink.getHyperlinkPage());
-                        System.out.println("Implement your own JRHyperlinkListener to manage this type of event.");
+                        logger.info("Hyperlink reference : {}", hyperlink.getHyperlinkReference());
+                        logger.info("Hyperlink page      : {}", hyperlink.getHyperlinkPage());
+                        logger.info("Implement your own JRHyperlinkListener to manage this type of event.");
                     }
                     break;
                 }
             case CUSTOM : {
                     if (isOnlyHyperlinkListener()) {
-                        System.out.println("Hyperlink of type " + hyperlink.getLinkType());
-                        System.out.println("Implement your own JRHyperlinkListener to manage this type of event.");
+                        logger.info("Hyperlink of type {}", hyperlink.getLinkType());
+                        logger.info("Implement your own JRHyperlinkListener to manage this type of event.");
                     }
                     break;
                 }

@@ -15,12 +15,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DeviceTicket {
-
-    private static final Logger logger = Logger.getLogger("com.openbravo.pos.printer.DeviceTicket");
+    private static final Logger logger = LoggerFactory.getLogger(DeviceTicket.class);
 
     private DeviceFiscalPrinter m_deviceFiscal;
     private DeviceDisplay m_devicedisplay;
@@ -103,7 +102,7 @@ public class DeviceTicket {
                     break;
             }
         } catch (TicketPrinterException e) {
-            logger.log(Level.WARNING, e.getMessage(), e);
+            logger.debug(e.getMessage(), e);
             m_devicedisplay = new DeviceDisplayNull(e.getMessage());
         }
 
@@ -182,7 +181,7 @@ public class DeviceTicket {
                         break;
                 }
             } catch (TicketPrinterException e) {
-                logger.log(Level.WARNING, e.getMessage(), e);
+                logger.debug(e.getMessage(), e);
             }
 
             iPrinterIndex++;

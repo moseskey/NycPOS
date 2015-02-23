@@ -6,7 +6,11 @@ import gnu.io.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class PrinterWritterRXTX extends PrinterWritter { /* implements SerialPortEventListener */
+    private static final Logger logger = LoggerFactory.getLogger(PrinterWritterRXTX.class);
 
     private CommPortIdentifier m_PortIdPrinter;
     private CommPort m_CommPortPrinter;
@@ -46,7 +50,7 @@ public class PrinterWritterRXTX extends PrinterWritter { /* implements SerialPor
 // JG 16 May 12 use multicatch
         } catch (NoSuchPortException | PortInUseException | UnsupportedCommOperationException | IOException
                      e) {
-            System.err.println(e);
+            logger.error("Encountered Exception: {}", e);
         }
     }
 
@@ -57,7 +61,7 @@ public class PrinterWritterRXTX extends PrinterWritter { /* implements SerialPor
                 m_out.flush();
             }
         } catch (IOException e) {
-            System.err.println(e);
+            logger.error("Encountered IOException: {}", e);
         }
     }
 
@@ -72,7 +76,7 @@ public class PrinterWritterRXTX extends PrinterWritter { /* implements SerialPor
                 m_PortIdPrinter = null;
             }
         } catch (IOException e) {
-            System.err.println(e);
+            logger.error("Encountered IOException: {}", e);
         }
     }
 }

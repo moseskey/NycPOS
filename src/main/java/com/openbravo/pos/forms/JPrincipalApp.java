@@ -15,15 +15,14 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.swing.*;
 import org.jdesktop.swingx.JXTaskPane;
 import org.jdesktop.swingx.JXTaskPaneContainer;
 
 public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
-
-    private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.JPrincipalApp");
+    private static final Logger logger = LoggerFactory.getLogger(AppUserView.class);
 
     private final JRootApp m_appview;
     private final AppUser m_appuser;
@@ -91,13 +90,13 @@ public class JPrincipalApp extends javax.swing.JPanel implements AppUserView {
 
             m_jPanelLeft.setViewportView(getScriptMenu(m_dlSystem.getResourceAsText("Menu.Root")));
         } catch (ScriptException e) {
-            logger.log(Level.SEVERE, "Cannot read Menu.Root resource. Trying default menu.", e);
+            logger.error("Cannot read Menu.Root resource. Trying default menu.", e);
             try {
                 m_jPanelLeft.setViewportView(getScriptMenu(
                                                  StringUtils.readResource("/templates/default/Menu.Root.txt")));
 // JG 6 May 2013 use multicatch
             } catch (IOException | ScriptException ex) {
-                logger.log(Level.SEVERE, "Cannot read default menu", ex);
+                logger.error("Cannot read default menu", ex);
             }
         }
     }

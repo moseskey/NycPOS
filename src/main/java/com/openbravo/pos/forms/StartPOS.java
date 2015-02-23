@@ -5,8 +5,8 @@ import com.openbravo.pos.instance.InstanceQuery;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -15,9 +15,7 @@ import org.pushingpixels.substance.api.SubstanceSkin;
 import com.openbravo.pos.ticket.TicketInfo;
 
 public class StartPOS {
-
-    private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.StartPOS");
-
+    private static final Logger logger = LoggerFactory.getLogger(StartPOS.class);
 
     private StartPOS() {
     }
@@ -74,7 +72,7 @@ public class StartPOS {
 // JG 6 May 2013 to multicatch
                 } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
                              UnsupportedLookAndFeelException e) {
-                    logger.log(Level.WARNING, "Cannot set Look and Feel", e);
+                    logger.debug("Cannot set Look and Feel", e);
                 }
 // JG July 2014 Hostname for Tickets
                 String hostname = config.getProperty("machine.hostname");

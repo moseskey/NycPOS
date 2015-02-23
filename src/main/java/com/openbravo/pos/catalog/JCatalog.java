@@ -21,8 +21,11 @@ import javax.swing.*;
 import javax.swing.event.EventListenerList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JCatalog extends JPanel implements ListSelectionListener, CatalogSelector {
+    private static final Logger logger = LoggerFactory.getLogger(ThumbNailBuilder.class);
 
     protected EventListenerList listeners = new EventListenerList();
     private DataLogicSales m_dlSales;
@@ -389,7 +392,7 @@ public class JCatalog extends JPanel implements ListSelectionListener, CatalogSe
             super.getListCellRendererComponent(list, null, index, isSelected, cellHasFocus);
             CategoryInfo cat = (CategoryInfo) value;
             setText(cat.getName());
-            System.out.println(">>> FIXME SmallCategoryRenderer: " + cat.getName() + " // " + cat.getImage());
+            logger.info(">>> FIXME SmallCategoryRenderer: " + cat.getName() + " // " + cat.getImage());
             if (cat.getImage() != null) {
                 setIcon(new ImageIcon(tnbcat.getThumbNail(cat.getImage())));
             }

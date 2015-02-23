@@ -12,10 +12,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JPaneldbUpdate extends JPanel implements JPanelView {
-
-
+    private static final Logger logger = LoggerFactory.getLogger(JPaneldbUpdate.class);
 
     private AppConfig config;
     private Connection con;
@@ -76,7 +77,7 @@ public class JPaneldbUpdate extends JPanel implements JPanelView {
                 eScript = "/sql/PostgreSQL" + sScript;
                 break;
             default:
-                System.out.println("Unsupported database type");
+                logger.info("Unsupported database type");
                 System.exit(1);
         }
 

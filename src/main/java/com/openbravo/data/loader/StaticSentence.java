@@ -2,12 +2,11 @@ package com.openbravo.data.loader;
 
 import com.openbravo.basic.BasicException;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class StaticSentence extends JDBCSentence {
-
-    private static final Logger logger = Logger.getLogger("com.openbravo.data.loader.StaticSentence");
+    private static final Logger logger = LoggerFactory.getLogger(StaticSentence.class);
 
     private ISQLBuilderStatic m_sentence;
 
@@ -55,7 +54,8 @@ public class StaticSentence extends JDBCSentence {
 
             String sentence = m_sentence.getSQL(m_SerWrite, params);
 
-            logger.log(Level.INFO, "Executing static SQL: {0}", sentence);
+            logger.info("SQL: {}", sentence);
+            logger.info("Params: {}", params);
 
             if (m_Stmt.execute(sentence)) {
                 return new JDBCDataResultSet(m_Stmt.getResultSet(), m_SerRead);

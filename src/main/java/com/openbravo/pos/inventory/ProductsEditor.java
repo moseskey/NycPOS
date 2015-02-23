@@ -34,8 +34,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class ProductsEditor extends JPanel implements EditorRecord {
+    private static final Logger logger = LoggerFactory.getLogger(ProductsEditor.class);
 
     private final SentenceList m_sentcat;
     private ComboBoxValModel m_CategoryModel;
@@ -594,8 +597,7 @@ public final class ProductsEditor extends JPanel implements EditorRecord {
                                             "VALUES (1001, 'Simpson', 'Mr.', 'Springfield', 2001)");
                 }
             } catch (SQLException e) {
-                System.err.println("Got an exception! ");
-                System.err.println(e.getMessage());
+                logger.error("Encountered SQLException: {}", e);
             }
         }
     }

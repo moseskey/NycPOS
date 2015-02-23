@@ -17,8 +17,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -26,6 +26,10 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.EventListenerList;
 
 public class OrderCustomerList extends JPanel implements TicketSelector {
+    /**
+     * Logging / Monitor
+     */
+    private static final Logger logger = LoggerFactory.getLogger(OrderCustomerList.class);
 
     /**
      * Source origin and Ticket
@@ -45,12 +49,6 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
     private final DataLogicCustomers dataLogicCustomers;
     private final DataLogicReceipts dataLogicReceipts;
     private final ThumbNailBuilder tnbbutton;
-
-    /**
-     * Logging / Monitor
-     */
-    protected static final Logger LOGGER =
-        Logger.getLogger("com.openbravo.pos.customers.CustomersList");
 
     public OrderCustomerList(DataLogicCustomers dlCustomers, AppView app, TicketsEditor panelticket) {
         this.application = app;
@@ -94,16 +92,16 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
                 try {
 
 //                    customers = dataLogicCustomers.getCustomers();
-                    LOGGER.log(Level.INFO, "Time of getCustomersWithOutImage {0}", (System.currentTimeMillis() - time));
+                    logger.info("Time of getCustomersWithOutImage {}", (System.currentTimeMillis() - time));
                     time = System.currentTimeMillis();
 
                     ticketList = dataLogicReceipts.getSharedTicketList();
-                    LOGGER.log(Level.INFO, "Time of getSharedTicketList {0}", (System.currentTimeMillis() - time));
+                    logger.info("Time of getSharedTicketList {}", (System.currentTimeMillis() - time));
                     time = System.currentTimeMillis();
 
 
                 } catch (BasicException ex) {
-                    Logger.getLogger(OrderCustomerList.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error("Encountered BasicException {}", ex);
                 }
                 HashMap<SharedTicketInfo, CustomerInfoExt> orderMap = new HashMap<>();
 
@@ -136,7 +134,7 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
                 TreeMap<SharedTicketInfo, CustomerInfoExt> sortedMap = new TreeMap<>(bvc);
                 sortedMap.putAll(orderMap);
 
-                LOGGER.log(Level.INFO, "Time of orderMap {0}", (System.currentTimeMillis() - time));
+                logger.info("Time of orderMap {}", (System.currentTimeMillis() - time));
                 time = System.currentTimeMillis();
 
                 // set button list
@@ -151,7 +149,7 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
 //                        try {
 //                            image = dataLogicCustomers.getCustomerImage(customer.getId());
 //                        } catch (BasicException ex) {
-//                            Logger.getLogger(OrderCustomerList.class.getName()).log(Level.SEVERE, null, ex);
+//                            logger.error("Encountered Exception {}", ex);
 //                        }
 //                    }
                     if (image == null) {
@@ -161,7 +159,7 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
                                 image = ImageIO.read(is);
                             }
                         } catch (IOException ex) {
-                            Logger.getLogger(OrderCustomerList.class.getName()).log(Level.SEVERE, null, ex);
+                            logger.error("Encountered IOException {}", ex);
                         }
                     }
                     String username;
@@ -177,8 +175,7 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
                     ImageIcon icon = new ImageIcon(tnbbutton.getThumbNailText(image, text));
 //                    flowTab.addButton(icon, new SelectedCustomerAction(ticket.getId()));
                 }
-                LOGGER.log(Level.INFO, "Time of finished loadCustomerOrders {0}",
-                           (System.currentTimeMillis() - time));
+                logger.info("Time of finished loadCustomerOrders {}", (System.currentTimeMillis() - time));
             }
         });
     }
@@ -239,7 +236,7 @@ public class OrderCustomerList extends JPanel implements TicketSelector {
     // add newest tickets from provider
 //            orderSynchroniseHelper.synchSharedTickets(panelticket.getActiveTicket());
 //        } catch (Exception e) {
-//            LOGGER.log(Level.WARNING, "Error synchronise orders", e);
+//            logger.log(Level.WARNING, "Error synchronise orders", e);
 //        }
 //    }
 

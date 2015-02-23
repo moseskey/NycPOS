@@ -9,11 +9,12 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.net.ssl.HttpsURLConnection;
 
 public class PaymentGatewayBluePay20POST implements PaymentGateway {
+    private static final Logger logger = LoggerFactory.getLogger(PaymentGatewayBluePay20POST.class);
 
     private static String ENDPOINTADDRESS;
     private static final String APPROVED = "1";
@@ -143,7 +144,7 @@ public class PaymentGatewayBluePay20POST implements PaymentGateway {
                 sb.append(URLEncoder.encode(md5hex, "UTF-8"));
 
             } catch (NoSuchAlgorithmException ex) {
-                Logger.getLogger(PaymentGatewayBluePay20POST.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error("Encountered NoSuchAlgorithmException {}", ex);
             } // End Tamper Proof Seal
 
             // open secure connection

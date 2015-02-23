@@ -21,11 +21,12 @@ import com.openbravo.pos.scripting.ScriptFactory;
 import com.openbravo.pos.ticket.TicketInfo;
 import com.openbravo.pos.ticket.TicketLineInfo;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.swing.*;
 
 public class JTicketsBagRestaurant extends javax.swing.JPanel {
+    private static final Logger logger = LoggerFactory.getLogger(JTicketsBagRestaurant.class);
 
     private final AppView m_App;
     private final JTicketsBagRestaurantMap m_restaurant;
@@ -230,7 +231,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
             i.set("sales", this);
             Object result = i.eval(rScript);
         } catch (EvalError ex) {
-            Logger.getLogger(JPanelTicket.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered EvalError exception: " + ex);
         }
         // Autologoff after sales
         String autoLogoff = (m_App.getProperties().getProperty("till.autoLogoff"));

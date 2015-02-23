@@ -7,8 +7,11 @@ import javax.swing.ActionMap;
 import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class NewOkCancelDialog extends javax.swing.JDialog {
+    private static final Logger logger = LoggerFactory.getLogger(NewOkCancelDialog.class);
 
     /**
      * A return status code - returned if Cancel button has been pressed
@@ -165,8 +168,7 @@ public class NewOkCancelDialog extends javax.swing.JDialog {
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
                      javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewOkCancelDialog.class.getName()).log(
-                java.util.logging.Level.SEVERE, null, ex);
+            logger.error("Encountered Exception {}", ex);
         }
         //</editor-fold>
 

@@ -42,8 +42,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.print.PrintService;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -55,8 +55,8 @@ import net.sf.jasperreports.engine.data.JRMapArrayDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
-public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFactoryApp,
-    TicketsEditor {
+public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFactoryApp, TicketsEditor {
+    private static final Logger logger = LoggerFactory.getLogger(JPanelTicket.class);
 
     // Variable numerica
     private final static int NUMBERZERO = 0;
@@ -1310,7 +1310,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
 //                            if (m_oTicket.getLoyaltyCardNumber() != null){
 // add points to the card
-//                                System.out.println("Point added to card = " + ticket.getTotal()/100);
+//                                logger.info("Point added to card = " + ticket.getTotal()/100);
 // reset card pointer
                             //  loyaltyCardNumber = null;
 
@@ -1673,8 +1673,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
             // more arguments
             for (ScriptArg arg : args) {
                 script.put(arg.getKey(), arg.getValue());
-//                System.out.println(arg.getKey());
-//                System.out.println(arg.getValue());
+//                logger.info(arg.getKey());
+//                logger.info(arg.getValue());
             }
 
             return script.eval(code);
@@ -2457,7 +2457,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
             Object result;
             result = i.eval(rScript);
         } catch (EvalError ex) {
-            Logger.getLogger(JPanelTicket.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error("Encountered EvalError {}", ex);
         }
 
 // Autologoff after sending to kitchen

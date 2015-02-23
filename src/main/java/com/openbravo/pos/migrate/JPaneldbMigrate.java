@@ -29,8 +29,11 @@ import java.util.List;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import javax.swing.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JPaneldbMigrate extends JPanel implements JPanelView {
+    private static final Logger logger = LoggerFactory.getLogger(JPaneldbMigrate.class);
 
     private DirtyManager dirty = new DirtyManager();
     private AppConfig config;
@@ -89,7 +92,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
     public Boolean createMigratedb() {
 
         if ((!"MySQL".equals(sdbmanager2)) && (!"PostgreSQL".equals(sdbmanager2))) {
-            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> not sure what this is <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+            logger.error(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> not sure what this is <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
             return (false);
         }
 
@@ -550,7 +553,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
                     while (rs.next()) {
                         SQL = "INSERT INTO ATTRIBUTESETINSTANCE (ID, ATTRIBUTESET_ID, DESCRIPTION) VALUES (?, ?, ?)";
                         pstmt = con2.prepareStatement(SQL);
-                        //System.out.println(rs.getString("DESCRIPTION"));
+                        //logger.info(rs.getString("DESCRIPTION"));
                         pstmt.setString(1, rs.getString("ID"));
                         pstmt.setString(2, rs.getString("ATTRIBUTESET_ID"));
                         pstmt.setString(3, rs.getString("DESCRIPTION"));
@@ -1278,7 +1281,7 @@ public class JPaneldbMigrate extends JPanel implements JPanelView {
             jtxtDbDriver.setText("org.postgresql.Driver");
             jtxtDbURL.setText("jdbc:postgresql://localhost:5432/unicentaopos");
         } else {
-            System.out.println("wildly unsupported database");
+            logger.error("wildly unsupported database");
             System.exit(1);
         }
     }//GEN-LAST:event_jNewdbTypeActionPerformed

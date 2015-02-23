@@ -16,8 +16,11 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PaymentGatewayCaixa implements PaymentGateway {
+    private static final Logger logger = LoggerFactory.getLogger(PaymentGatewayCaixa.class);
 
     private static String ENDPOINTADDRESS;
     private static final String SALE = "A";
@@ -259,7 +262,7 @@ public class PaymentGatewayCaixa implements PaymentGateway {
             md.update(input.getBytes());
             output = md.digest();
         } catch (Exception e) {
-//            System.out.println("Exception: "+e);
+            logger.error("Encountered Exception {}", e);
         }
         return StringUtils.byte2hex(output);
     }

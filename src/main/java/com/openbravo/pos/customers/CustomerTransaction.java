@@ -7,8 +7,9 @@ import com.openbravo.pos.forms.DataLogicSales;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -16,6 +17,7 @@ import java.util.logging.Logger;
  * ticketline values
  */
 public class CustomerTransaction {
+    private static final Logger logger = LoggerFactory.getLogger(CustomerTransaction.class);
 
     String ticketId;
     String productName;
@@ -150,7 +152,7 @@ public class CustomerTransaction {
                 try {
                     date = formatter.parse(dateValue);
                 } catch (ParseException ex) {
-                    Logger.getLogger(DataLogicSales.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error("Encountered ParseException: " + ex);
                 }
                 return new CustomerTransaction(ticketId, productName, unit, amount, total, date, customerName);
             }
