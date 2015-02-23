@@ -7,10 +7,13 @@ import java.awt.Frame;
 import java.awt.Window;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import net.proteanit.sql.DbUtils;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 public class JMooringDetails extends javax.swing.JDialog {
 
@@ -47,7 +50,7 @@ public class JMooringDetails extends javax.swing.JDialog {
             SQL = "SELECT * FROM MOORERS";
             rs = stmt.executeQuery(SQL);
 
-            jTableSelector.setModel(DbUtils.resultSetToTableModel(rs));
+            jTableSelector.setModel(resultSetToTableModel(rs));
             jTableSelector.getColumnModel().getColumn(0).setPreferredWidth(200);
             jTableSelector.getColumnModel().getColumn(1).setPreferredWidth(40);
             jTableSelector.getColumnModel().getColumn(2).setPreferredWidth(40);
@@ -266,4 +269,35 @@ public class JMooringDetails extends javax.swing.JDialog {
     private javax.swing.JButton jbtnCreateTicket;
     // End of variables declaration//GEN-END:variables
 
+    private static TableModel resultSetToTableModel(ResultSet rs) {
+        try {
+            ResultSetMetaData metaData = rs.getMetaData();
+            int numberOfColumns = metaData.getColumnCount();
+            Vector columnNames = new Vector();
+
+            // Get the column names
+            for (int column = 0; column < numberOfColumns; column++) {
+                columnNames.addElement(metaData.getColumnLabel(column + 1));
+            }
+
+            // Get all rows.
+            Vector rows = new Vector();
+
+            while (rs.next()) {
+                Vector newRow = new Vector();
+
+                for (int i = 1; i <= numberOfColumns; i++) {
+                    newRow.addElement(rs.getObject(i));
+                }
+
+                rows.addElement(newRow);
+            }
+
+            return new DefaultTableModel(rows, columnNames);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            return null;
+        }
+    }
 }
