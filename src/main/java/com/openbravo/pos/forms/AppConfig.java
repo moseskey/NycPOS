@@ -104,7 +104,7 @@ public class AppConfig implements AppProperties {
                 in.close();
             }
         } catch (IOException e) {
-            logger.info("Could not load property file '{}}', using defaults instead", m_propFile.getAbsolutePath());
+            logger.info("Could not load property file '{}', using defaults instead", m_propFile.getAbsolutePath());
             loadDefault();
         }
     }
