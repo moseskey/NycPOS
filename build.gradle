@@ -1,83 +1,89 @@
 buildscript {
-    repositories {
-        mavenCentral()
-        mavenLocal()
-    }
+  repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+  }
 
-    dependencies {
-        // code coverage and better error reporting
-        classpath 'net.saliman:gradle-cobertura-plugin:2.2.4'
-        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:latest.release'
+  dependencies {
+    // code coverage and better error reporting
+    classpath 'net.saliman:gradle-cobertura-plugin:2.2.4'
+    //classpath 'net.ltgt.gradle:gradle-errorprone-plugin:latest.release'
 
-        // liquibase plugin (installed locally, as the latest isn't yet
-        // available in a public maven repo)
-        classpath 'net.saliman:gradle-liquibase-plugin:3.3.x-SNAPSHOT'
-    }
+    // liquibase plugin (installed locally, as the latest isn't yet
+    // available in a public maven repo)
+    classpath 'net.saliman:gradle-liquibase-plugin:3.3.x-SNAPSHOT'
 
-    // load shared dbdeps.gradle (needed for the liquibase tasks)
-    apply from: 'dbdeps.gradle'
-    ext.db_deps.each { v -> dependencies.classpath v }
+    // jooq plugin
+    classpath 'nu.studer:gradle-jooq-plugin:1.0.5'
+  }
+
+  // load shared dbdeps.gradle (needed for the liquibase tasks)
+  apply from: 'dbdeps.gradle'
+  ext.db_deps.each { v -> dependencies.classpath v }
 }
 
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'eclipse'
 apply plugin: 'application'
-apply plugin: 'errorprone'
+//apply plugin: 'errorprone'
 apply plugin: 'cobertura'
 apply plugin: 'liquibase'
+apply plugin: 'nu.studer.jooq'
 
-version         = project.ext.app_version
-group           = 'io.knq.' + project.ext.app_name
-description     = project.ext.app_name
+version     = project.ext.app_version
+group       = 'io.knq.' + project.ext.app_name
+description   = project.ext.app_name
 //mainClassName   = 'com.openbravo.pos.config.JFrmConfig'
 mainClassName   = 'com.openbravo.pos.forms.StartPOS'
 
 // useful variables
 import groovy.transform.Field
-@Field int    MAX_COLUMNS = 120
-@Field String DIVIDER     = '-'.multiply(MAX_COLUMNS)
+@Field int  MAX_COLUMNS = 120
+@Field String DIVIDER   = '-'.multiply(MAX_COLUMNS)
 
 // get currently configured git user and set up as user.email system property
 // which is used for liquibase diffs author id's
-@Field String GIT_USER    = 'git config user.email'.execute().in.text.trim()
+@Field String GIT_USER  = 'git config user.email'.execute().in.text.trim()
 System.properties['user.name'] = GIT_USER
 
 // prints a header for output
 def logHeader(String headerText) {
-    logger.lifecycle("${DIVIDER}\n${headerText.center(MAX_COLUMNS)}\n${DIVIDER}")
+  logger.lifecycle("${DIVIDER}\n${headerText.center(MAX_COLUMNS)}\n${DIVIDER}")
 }
 
 // add maven repositories
 repositories {
-    mavenLocal()
-    mavenCentral()
+  mavenLocal()
+  jcenter()
+  mavenCentral()
 }
 
 // set up project dependencies
 dependencies {
-    // testing deps
-    //testCompile 'junit:junit:4.11'
-    testCompile 'org.testng:testng:6.8.8'
+  // testing deps
+  //testCompile 'junit:junit:4.11'
+  testCompile 'org.testng:testng:6.8.8'
 
-    // logging deps
-    compile 'org.slf4j:slf4j-simple:1.7.10'
+  // logging deps
+  compile 'org.slf4j:slf4j-simple:1.7.10'
 
-    // deps taken from unicenta source
-    compile 'axis:axis:1.3'
-    compile 'commons-lang:commons-lang:2.4'
-    compile 'net.sf.barcode4j:barcode4j:2.1'
-    compile 'net.sf.jasperreports:jasperreports:4.5.1'
-    compile 'net.sourceforge.javacsv:javacsv:2.0'
-    compile 'org.apache.velocity:velocity:1.7'
-    compile 'org.java.net.substance:substance:6.0'
-    compile 'org.rxtx:rxtx:2.1.7'
-    compile 'org.swinglabs:swing-layout:1.0.3'
-    compile 'org.swinglabs.swingx:swingx-all:1.6.4'
+  // deps taken from unicenta source
+  compile 'axis:axis:1.3'
+  compile 'commons-lang:commons-lang:2.4'
+  compile 'net.sf.barcode4j:barcode4j:2.1'
+  compile 'net.sf.jasperreports:jasperreports:4.5.1'
+  compile 'net.sourceforge.javacsv:javacsv:2.0'
+  compile 'org.apache.velocity:velocity:1.7'
+  compile 'org.java.net.substance:substance:6.0'
+  compile 'org.rxtx:rxtx:2.1.7'
+  compile 'org.swinglabs:swing-layout:1.0.3'
+  compile 'org.swinglabs.swingx:swingx-all:1.6.4'
 
-    // manually installed deps (FIXME)
-    compile 'io.knq.beanshell2:bsh:2.1.8'
-    compile 'io.knq.javapos:javapos:1.14.0'
+  // manually installed deps (FIXME)
+  compile 'io.knq.beanshell2:bsh:2.1.8'
+  compile 'io.knq.javapos:javapos:1.14.0'
 }
 
 // add database deps to gradle deps
@@ -86,96 +92,113 @@ ext.db_deps.each { v -> dependencies.compile v }
 
 // configure jar build
 jar {
-    manifest {
-        attributes 'Main-Class': mainClassName
-    }
+  manifest {
+    attributes 'Main-Class': mainClassName
+  }
 
-    // exclude certain files from other jars, as these cause signing/signature verification errors
-    doFirst {
-        from (configurations.runtime.resolve().collect { it.isDirectory() ? it : zipTree(it) }) {
-            exclude 'META-INF/MANIFEST.MF'
-            exclude 'META-INF/*.SF'
-            exclude 'META-INF/*.DSA'
-            exclude 'META-INF/*.RSA'
-        }
+  // exclude certain files from other jars, as these cause signing/signature verification errors
+  doFirst {
+    from (configurations.runtime.resolve().collect { it.isDirectory() ? it : zipTree(it) }) {
+      exclude 'META-INF/MANIFEST.MF'
+      exclude 'META-INF/*.SF'
+      exclude 'META-INF/*.DSA'
+      exclude 'META-INF/*.RSA'
     }
+  }
 }
 
 // configure unit testing
 test {
-    useTestNG()
+  useTestNG()
 
-    beforeTest { desc ->
-        logHeader("TestNG: ${desc.className}:${desc.name}: START")
-    }
+  beforeTest { desc ->
+    logHeader("TestNG: ${desc.className}:${desc.name}: START")
+  }
 
-    onOutput { desc, event ->
-        //logger.lifecycle("> ${desc.className}:${desc.name}: ${event.message}")
-        logger.lifecycle("> ${desc.name}: " + event.message.replaceAll(/\s*$/, ''))
-    }
+  onOutput { desc, event ->
+    //logger.lifecycle("> ${desc.className}:${desc.name}: ${event.message}")
+    logger.lifecycle("> ${desc.name}: " + event.message.replaceAll(/\s*$/, ''))
+  }
 
-    afterTest { desc ->
-        //logger.lifecycle("> ${desc.className}:${desc.name}: END")
-        logger.lifecycle(DIVIDER)
-    }
+  afterTest { desc ->
+    //logger.lifecycle("> ${desc.className}:${desc.name}: END")
+    logger.lifecycle(DIVIDER)
+  }
 
-    testLogging {
-        afterSuite { desc, result ->
-            // match only the outermost suite
-            if (!desc.parent) {
-                logger.lifecycle("${DIVIDER}\n> TestNG Results: ${result.resultType} (${result.testCount} total, ${result.successfulTestCount} succeeded, ${result.failedTestCount} failed, ${result.skippedTestCount} skipped)\n${DIVIDER}\n")
-            }
-        }
+  testLogging {
+    afterSuite { desc, result ->
+      // match only the outermost suite
+      if (!desc.parent) {
+        logger.lifecycle("${DIVIDER}\n> TestNG Results: ${result.resultType} (${result.testCount} total, ${result.successfulTestCount} succeeded, ${result.failedTestCount} failed, ${result.skippedTestCount} skipped)\n${DIVIDER}\n")
+      }
     }
+  }
 }
 
 // configure java compiliation parameters
 compileJava {
-    // original unicenta code is overriding deprecated APIs (what the f???)
-    // so toggle error output
-    options.compilerArgs << '-Xlint:deprecation'
-    options.compilerArgs << '-Xlint:unchecked'
+  // original unicenta code is overriding deprecated APIs (what the f???)
+  // so toggle error output
+//  options.compilerArgs << '-Xlint:deprecation'
+//  options.compilerArgs << '-Xlint:unchecked'
 
-    // inject annotation processor to compiler
-    //options.compilerArgs << '-processorpath'
-    //options.compilerArgs << file('path/to/annotation-processor.jar')
+  // inject annotation processor to compiler
+  //options.compilerArgs << '-processorpath'
+  //options.compilerArgs << file('path/to/annotation-processor.jar')
 }
 
 // print project's properties
 task printProjectProps << {
-    logHeader("Project Properties")
+  logHeader("Project Properties")
 
-    // print all the keys alphabetically and nicely aligned
-    def mlen = project.ext.properties*.key.max { it.length() }.length()
-    project.ext.properties.sort()*.key.each { k ->
-        logger.lifecycle("${k.padRight(mlen)} = ${project.ext[k]}")
-    }
+  // print all the keys alphabetically and nicely aligned
+  def mlen = project.ext.properties*.key.max { it.length() }.length()
+  project.ext.properties.sort()*.key.each { k ->
+    logger.lifecycle("${k.padRight(mlen)} = ${project.ext[k]}")
+  }
 
-    logger.lifecycle(DIVIDER)
+  logger.lifecycle(DIVIDER)
 }
 
 // setup liquibase
 liquibase {
-    activities {
-        main {
-            logLevel project.logger.isDebugEnabled() ? 'debug' : 'info'
-            changeLogFile 'src/main/resources/changelog.groovy'
-            url      project.ext.db_jdbc_url
-            username project.ext.db_username
-            password project.ext.db_password
-            changeLogParameters([
-                APP_GROUP: group,
-                APP_NAME: project.ext.app_name,
-                APP_VERSION: project.ext.app_version
-            ])
-        }
+  activities {
+    main {
+      logLevel project.logger.isDebugEnabled() ? 'debug' : 'info'
+      changeLogFile 'src/main/resources/changelog.groovy'
+      url       project.ext.db_jdbc_url
+      username  project.ext.db_username
+      password  project.ext.db_password
+      changeLogParameters([
+        APP_GROUP:    group,
+        APP_NAME:     project.ext.app_name,
+        APP_VERSION:  project.ext.app_version
+      ])
     }
+  }
 }
+
+// setup jooq
+jooq {
+  main(sourceSets.main) {
+    jdbc {
+      url       = project.ext.db_jdbc_url
+      user      = project.ext.db_username
+      password  = project.ext.db_password
+    }
+    generator {
+      target {
+        packageName = group.toLowerCase() + '.jooq'
+      }
+    }
+  }
+}
+
 
 // add a task to run embedded h2 server
 task runH2DbServer(type: JavaExec) {
-    group = 'database'
-    workingDir = projectDir
-    main = 'org.h2.tools.Server'
-    classpath = runtimeClasspath
+  group = 'database'
+  workingDir = projectDir
+  main = 'org.h2.tools.Server'
+  classpath = runtimeClasspath
 }
