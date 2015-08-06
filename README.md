@@ -1,4 +1,4 @@
-# About NycPOS [![Build Status](https://travis-ci.org/KNQ/NycPOS.svg)](https://travis-ci.org/KNQ/NycPOS)
+# About NycPOS [![Build Status](https://travis-ci.org/knq/NycPOS.svg)](https://travis-ci.org/knq/NycPOS)
 This is a full, top-down rewrite of [OpenBravo POS](http://www.openbravo.com/)/[uniCenta oPOS](http://www.unicenta.com/)
 using modern development tools, methods, and libraries. Additionally, once
 complete, it will carry a new UI written using modern Java UI (likely JavaFX
@@ -24,7 +24,7 @@ release by March 1st, 2015.
 Currently (although much is still broken), NycPOS will compile and run via the
 following:
 
-    git clone https://github.com/KNQ/NycPOS.git
+    git clone https://github.com/knq/NycPOS.git
     cd NycPOS
     ./gradlew build run
 
